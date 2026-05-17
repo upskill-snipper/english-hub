@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rationale": "Conservative initial Art. 15 gates. RATCHET-ONLY: values may be RAISED as the verified real gold set grows and metrics stabilise, and may NEVER be lowered to make a failing run pass without a written justification in the PR description and sign-off from the Provider accountable person (cj@upskillenergy.com). minExactAgreement 0.60: grade boundaries shift yearly so exact match is inherently noisy. minAdjacentAgreement 0.95: a prediction off by MORE than one grade is the materially harmful, user-visible error. minQwk 0.70: conventional 'substantial agreement' floor for ordinal human/automated marking; to be re-ratified against the examiner-examiner baseline QWK on the same real scripts once licensed. maxDisparityDelta 0.10: a cohort slice whose exact-agreement OR QWK is >0.10 worse than overall is flagged for disparate-impact review (doc 05 §5.1). maxGradeInstabilityRate 0.15: with default (unpinned) model sampling, at most 15% of scripts may change grade across N>=3 re-runs (test-retest); only assessed for the LLM adapter.",
+  "minExactAgreement": 0.6,
+  "minAdjacentAgreement": 0.95,
+  "minQwk": 0.7,
+  "maxDisparityDelta": 0.1,
+  "maxGradeInstabilityRate": 0.15
+}

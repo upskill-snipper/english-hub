@@ -7,30 +7,30 @@ import { useT } from '@/lib/i18n/use-t'
 export interface GradePredictionCardProps {
   /** GCSE grade 1-9 */
   grade: number
-  /** 0-100 model confidence */
-  confidence: number
+  /** 0–100 score percentage (totalMarks/maxMarks) — NOT model confidence */
+  scorePercent: number
   /** e.g. "AQA English Literature Paper 1" */
   paperLabel?: string
   className?: string
 }
 
 /**
- * Big prominent grade display with confidence.
+ * Big prominent grade display with the score percentage.
  * Uses theme tokens only — no hardcoded colours.
  */
 export function GradePredictionCard({
   grade,
-  confidence,
+  scorePercent,
   paperLabel,
   className,
 }: GradePredictionCardProps) {
   const t = useT()
-  const confidenceLabel =
-    confidence >= 80
-      ? t('marking.confidence_high')
-      : confidence >= 60
-        ? t('marking.confidence_moderate')
-        : t('marking.confidence_developing')
+  const scoreLabel =
+    scorePercent >= 80
+      ? t('marking.score_high')
+      : scorePercent >= 60
+        ? t('marking.score_moderate')
+        : t('marking.score_developing')
 
   return (
     <Card
@@ -60,7 +60,7 @@ export function GradePredictionCard({
           <div className="mt-3 flex items-center gap-2">
             <span className="inline-flex h-2 w-2 rounded-full bg-primary" />
             <span className="text-xs font-medium text-muted-foreground">
-              {confidenceLabel} {t('marking.confidence_label')} ({confidence}%)
+              {scoreLabel} {t('marking.score_label')} ({scorePercent}%)
             </span>
           </div>
         </div>

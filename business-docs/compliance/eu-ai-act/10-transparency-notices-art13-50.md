@@ -82,7 +82,9 @@ Use §2.1 panel body **plus** prepend: *"This CEFR level is an AI estimate for p
 
 ## 4. Single-source sub-processor / provider disclosure table (reconciliation)
 
-**Authoritative source:** `src/config/subprocessors.ts:59-157` (`SUBPROCESSORS`, render `LIVE_SUBPROCESSORS` `:160`). That module **expressly states it is NOT yet wired into the published legal tables** (`src/config/subprocessors.ts:5-42`) and that the three published lists differ. The table below is the reconciled disclosure to publish.
+**Authoritative source:** `src/config/subprocessors.ts` — now the **single source of truth**, rebuilt with structured fields (`purpose`, `dataCategories`, `location`, `dpaStatus: 'signed'|'pending'|'unconfirmed'`, `zeroRetention: 'contractual'|'endpoint'|'unconfirmed'|'n/a'`, `sourceUrl`) and typed exports `SUBPROCESSORS`, `LIVE_SUBPROCESSORS`, `AI_SUBPROCESSOR`, `SUBPROCESSORS_NEEDING_CONFIRMATION`. It still **expressly states it is NOT yet wired into the published legal tables** (header) — wiring is the small follow-up once the contractual sign-off (below) happens. The provider set is now **code-verified** (package.json + source grep), not assumed. The table below is the reconciled disclosure to publish.
+
+> **Provider reality (code-verified 2026-05-17):** the **only** LLM provider called is **Anthropic** (`@anthropic-ai/sdk@^0.90.0`, model `claude-sonnet-4-20250514`, via the new shared client `src/lib/anthropic-client.ts`, used by all 6 AI routes). **No OpenAI SDK, no `api.openai.com` call, no GPT model string exists in `src/`** (only incidental comments). Anthropic no-training/retention is **contractual, not a code flag** — the SDK exposes no retention/no-training/privacy option (see `src/lib/anthropic-client.ts` `ANTHROPIC_DATA_POLICY`; full analysis in **doc 17**).
 
 | Provider | Purpose | Region | DPA | Consent-gated | Notes for AI Act / Art 50 |
 |---|---|---|---|---|---|
@@ -90,9 +92,9 @@ Use §2.1 panel body **plus** prepend: *"This CEFR level is an AI estimate for p
 | Vercel | App hosting, edge | US / global edge | Yes | No | |
 | Cloudflare | Edge, DNS, protective layer | Global edge | Yes | No | Omitted from `/data-processing` & `/legal/privacy` today |
 | Microsoft Azure | Backend API processing | UK South | Yes | No | |
-| **Anthropic (Claude)** | **AI essay feedback / marking / study-material / CEFR generation** | **US** | Yes (**ZDR/no-training to be confirmed in writing — see `human-action-checklist.md`**) | No | **The high-risk AI sub-processor — must be named in every AI transparency & GDPR notice** |
-| Stripe | Payments / billing | EU / US | Yes | No | |
-| Resend | Transactional email | US | Yes | No | **Note:** RoPA v1 (`business-docs/compliance/rfc/ropa-v1.md`) names *Postmark*; subprocessors.ts names *Resend* — reconcile (see inconsistency #5) |
+| **Anthropic (Claude)** | **AI essay marking / predicted grade / feedback / CEFR / study-material generation** (`claude-sonnet-4-20250514`) | **US** | **`dpaStatus: 'unconfirmed'`** — counter-signed DPA + written no-training/ZDR not yet in hand (**doc 17**; `human-action-checklist.md` item 4) | No | **The high-risk AI sub-processor — must be named in every AI transparency & GDPR notice.** No-training/retention is **contractual, not a code flag** (SDK has none). `zeroRetention: 'unconfirmed'` until counsel closes item 4 |
+| Stripe | Payments / billing | EU / US | Yes (`pending`) | No | |
+| Transactional email (Resend / Postmark — **UNCONFIRMED**) | Transactional email | US | **`unconfirmed`** — neither `resend` nor `postmark` is a package.json dependency; RoPA v1 names *Postmark*, register historically named *Resend* | No | **Reconcile provider before publishing** (see inconsistency #5) |
 | Sentry | Error/performance monitoring | EU / US | Yes | No | |
 | Vercel Analytics & Speed Insights | Aggregate web perf | US | Yes | **Yes** | |
 | Google Analytics 4 | Aggregate usage | US | Yes | **Yes** | |
@@ -101,15 +103,15 @@ Use §2.1 panel body **plus** prepend: *"This CEFR level is an AI estimate for p
 
 ### Exact inconsistencies to fix (hand to DPO/legal)
 
-1. **Provider contradiction:** `/legal/privacy` says **Anthropic only** (`dictionary-legal-long.ts:867-873`); `/legal/ai-governance` §9 says **"OpenAI and Anthropic"** (`dictionary-legal-long.ts:538`). Code calls **Anthropic only** (`src/app/api/essay/feedback/route.ts:62-90`, model `claude-sonnet-4-20250514`). → **Correct to Anthropic-only everywhere** unless OpenAI is genuinely live (it is not in code).
+1. **Provider contradiction (RESOLVED in code, copy fix still required):** `/legal/privacy` says **Anthropic only** (`dictionary-legal-long.ts:867-873`); `/legal/ai-governance` §9 says **"OpenAI and Anthropic"** (`dictionary-legal-long.ts:538`). **Code-verified 2026-05-17:** the only LLM provider is **Anthropic** (all 6 routes via `src/lib/anthropic-client.ts`); **`openai` is not a dependency and there is no `api.openai.com`/GPT reference in `src/`** (only incidental comments). `src/config/subprocessors.ts` now records Anthropic-only as the single source of truth. → **Correct `legal_long.ai_gov.s9.p1` to Anthropic-only.** Exact replacement wording in **doc 17 §4.1**.
 2. **Cloudflare** omitted from the `/data-processing` table and `/legal/privacy` list but is live (`subprocessors.ts:77-83`). → add.
 3. **PostHog** appears only in Qatar strings + a flags comment; liveness unconfirmed (`subprocessors.ts:149`). → confirm live/retired, then align all pages.
 4. **Three divergent published lists** (`/data-processing`, `/legal/privacy`, Qatar notices) per `subprocessors.ts:5-16`. → refactor all to render from `LIVE_SUBPROCESSORS`.
-5. **Resend vs Postmark:** `subprocessors.ts:108-115` lists **Resend**; RoPA v1 lists **Postmark** for transactional email (and also lists **Trustpilot**, absent from subprocessors.ts). → reconcile the canonical email + reviews processor and update both the register and RoPA.
-6. **`/legal/ai-transparency` has no real sub-processor list** (`subprocessors.ts:38-39`). → render the table above.
+5. **Resend vs Postmark (now flagged honestly):** `src/config/subprocessors.ts` no longer asserts a confirmed email provider — the entry is `"Transactional email provider (Resend / Postmark — UNCONFIRMED)"` with `dpaStatus: 'unconfirmed'`, because **neither `resend` nor `postmark` is a package.json dependency** and RoPA v1 names **Postmark** (+ **Trustpilot**, absent from the register). → DPO confirms the actual provider, then set the register + RoPA consistently.
+6. **`/legal/ai-transparency` has no real sub-processor list.** → render `LIVE_SUBPROCESSORS` from the now-single-source register.
 7. **`/legal/ai-governance` self-contradiction:** row `s4.t.r4.c2` "humans review flagged outputs" (`dictionary-legal-long.ts:295-298`) vs `:629` "that button does not yet exist". → correct row to reflect reality (no B2C human review in product).
 
-**Action owner:** Provider DPO + counsel (contractual disclosure change — see `subprocessors.ts:18-26` and `human-action-checklist.md`). Wiring is a small refactor once the two TODO facts (PostHog liveness; per-entry DPA/region/purpose) are confirmed.
+**Action owner:** Provider DPO + counsel (contractual disclosure change — see `src/config/subprocessors.ts` header and `human-action-checklist.md` items 4 & 14). **Engineering portion is now done:** the register is the typed single source with honest `dpaStatus`/`zeroRetention`, and the Anthropic client posture is documented centrally (`src/lib/anthropic-client.ts`). The **only residual is human/contractual**: (a) counsel obtains the counter-signed Anthropic DPA + written no-training/ZDR confirmation (item 4 / doc 17); (b) DPO confirms PostHog liveness + the email provider; (c) DPO/legal sign off and the small render-from-`LIVE_SUBPROCESSORS` refactor ships.
 
 ---
 
@@ -127,7 +129,8 @@ Use §2.1 panel body **plus** prepend: *"This CEFR level is an AI estimate for p
 | False "Reviewed by humans" label live on T1/T2/T3 | Provider eng | **Immediate** — replace with §2.1 |
 | No pre-submission AI notice (§2.2) | Provider eng | Before 2 Aug 2026 |
 | No B2C self-serve human-review UI (so copy must stay email-only) | Provider eng | doc 16 roadmap |
-| Sub-processor lists not single-sourced (§4) | Provider DPO/counsel | Before 2 Aug 2026 |
-| Provider contradiction Anthropic vs OpenAI+Anthropic | Provider DPO | **Immediate** |
+| Sub-processor single-source register (§4) — **eng done** (`src/config/subprocessors.ts` is the typed single source); residual = DPO/counsel sign-off + render-from-`LIVE_SUBPROCESSORS` refactor | Provider DPO/counsel | Before 2 Aug 2026 |
+| Provider contradiction Anthropic vs OpenAI+Anthropic — **code-verified Anthropic-only**; residual = paste doc 17 §4.1 copy into i18n | Provider DPO (copy) | **Immediate** |
+| Anthropic no-training/ZDR asserted but unconfirmed — **eng done** (posture documented in `src/lib/anthropic-client.ts`; register honest); residual = counsel obtains counter-signed DPA + written confirmation | Counsel | doc 17 / checklist item 4; before DoC |
 
 *End of doc 10.*

@@ -1,121 +1,186 @@
 # Marking Accuracy / Robustness Evals — EU AI Act Article 15
 
-This directory provides **offline, deterministic** accuracy and robustness
-evidence for the GCSE marking feature, in support of **EU AI Act Article 15**
-(accuracy, robustness and cybersecurity of high-risk AI systems).
+This directory is a **defensible accuracy/robustness instrument** for the GCSE
+marking feature (high-risk, Annex III(3)(b)), in support of **EU AI Act
+Article 15**. It measures agreement between predicted and human-examiner grades
+on a gold-standard set — **per board, per cohort and overall** — with
+statistical rigor, and a CI gate that **refuses to certify accuracy from
+synthetic data**.
 
-It measures how closely the grade predictor agrees with **human-examiner
-grades** on a gold-standard dataset, sliced **per exam board** and **overall**.
+> **The single remaining human handoff** is sourcing licensed, dual-marked,
+> senior-adjudicated **real** scripts, running the live evaluation, and signing
+> off the resulting figure. Everything else (metrics, slicing, gate, offline
+> reproducibility, the LLM path) is built and CI-enforced. See
+> [`datasets/REAL-DATA-PROTOCOL.md`](datasets/REAL-DATA-PROTOCOL.md).
 
-> Scope note: this harness currently evaluates the **grade-boundary model**
-> (the deterministic mark → grade mapping) by replaying examiner AO marks
-> through the production `predictGrade`. It deliberately does **not** call the
-> LLM marker — see _Adapters_ below. This isolates boundary-model validity
-> (the Art. 15 concern flagged in review: the AQA table is applied cross-board)
-> from LLM marking variance, and keeps the harness hermetic for CI.
+## Two adapters — what is being measured depends on the adapter
 
-## What it measures
+`evals/adapters/`. The metrics/reporting code is adapter-agnostic.
 
-For the gold set, per board and overall:
+| Adapter                       | `EVAL_ADAPTER`    | Measures                                                                                                                                                                                             | Network                                                                    |
+| ----------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **examiner-replay** (default) | `examiner-replay` | The deterministic **grade-boundary model** only (replays examiner AO marks through production `predictGrade`). Isolates the AQA cross-board proxy concern (doc 06 §C). **Does NOT measure the LLM.** | Never                                                                      |
+| **llm-marker**                | `llm`             | The **exact production marking path**: `buildMarkingPrompt` → `claude-sonnet-4-20250514` → `generateFeedback` → `predictGrade`. The only adapter that can produce an LLM-accuracy figure.            | **Offline by default** (fixture replay). Live only with `EVAL_LLM_LIVE=1`. |
 
-| Metric                             | Definition                                                                                                                                         |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Exact agreement**                | Fraction of cases where predicted grade == examiner grade.                                                                                         |
-| **Adjacent agreement**             | Fraction within ±1 grade step on the ordinal scale `U,1,2,…,9`.                                                                                    |
-| **Quadratic Weighted Kappa (QWK)** | Chance-corrected ordinal agreement vs examiner grades (1 = perfect, 0 = chance, can be negative). Standard quadratic weights over the grade scale. |
+### Offline-CI ↔ live-LLM split (Art. 15 evidence must reproduce offline)
 
-QWK is the headline metric because it is the standard for ordinal automated /
-human marking agreement and penalises larger grade errors quadratically.
+The `llm` adapter is **offline and deterministic by default**:
 
-## Pass thresholds
+- **Default / CI:** replays the raw model response from a recorded **fixture
+  cache** (`evals/fixtures/<key>.json`), keyed by
+  `sha256(model · systemPrompt · userMessage · markSchemeId · questionId · caseId)`.
+  Any prompt/model/case change invalidates the fixture. A **missing fixture
+  fails the run loudly** — it never silently falls back to the network.
+- **Live:** `EVAL_LLM_LIVE=1` + `ANTHROPIC_API_KEY` performs the real Anthropic
+  call. The SDK is dynamically imported **only** on this path, so CI never even
+  loads it.
+- **Record:** `EVAL_LLM_RECORD=1` (implies live) persists each live response to
+  the fixture cache for future offline replay.
 
-Defined in `run.ts` (`THRESHOLDS`) and enforced **per board _and_ overall** —
-a single weak board fails the run:
+5 illustrative **synthetic** fixtures are shipped (`source:
+synthetic-authored`). They prove the LLM pipeline works end-to-end offline; they
+are **not** real model output and **cannot** certify accuracy. Re-seed with
+`node_modules/.bin/vitest run --config evals/fixtures/seed.config.ts --disableConsoleIntercept`
+(see `fixtures/README.md`).
 
-| Threshold              | Value  | Rationale                                                                                  |
-| ---------------------- | ------ | ------------------------------------------------------------------------------------------ |
-| `minExactAgreement`    | `0.60` | Grade boundaries shift yearly; exact match on the first attempt is inherently noisy.       |
-| `minAdjacentAgreement` | `0.95` | A prediction off by **more than one grade** is the materially harmful, user-visible error. |
-| `minQwk`               | `0.70` | Conventional "substantial agreement" floor for ordinal human/automated marking.            |
+## What it computes (`evals/stats.ts`, pure & unit-tested)
 
-These are **conservative initial gates**, not targets. They are intentionally
-strict on adjacent agreement (the metric that maps to real student harm) and
-moderate on exact agreement.
+For every slice (overall, per board, per cohort):
+
+| Metric                       | Definition                                                                                                                                                 |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Exact agreement**          | Fraction where predicted grade == examiner grade.                                                                                                          |
+| **Adjacent (±1) agreement**  | Fraction within one grade step on `U,1,…,9`.                                                                                                               |
+| **Quadratic Weighted Kappa** | Chance-corrected ordinal agreement; quadratic weights over the grade scale.                                                                                |
+| **QWK 95% CI**               | **Percentile bootstrap** (2000 resamples, **seeded** mulberry32 → byte-for-byte reproducible; `null` when n<2).                                            |
+| **Per-AO MAE**               | Mean \|predicted − examiner\| per Assessment Objective (id-matched).                                                                                       |
+| **Mean grade error**         | Mean absolute grade-step distance.                                                                                                                         |
+| **Grade-band confusion**     | 4×4 matrix over `Grade 1-3/4-5/6-7/8-9`.                                                                                                                   |
+| **Test–retest variance**     | With `EVAL_RUNS=N` (N≥2): fraction of cases whose grade changes across runs + mean/max spread. Deterministic adapter ⇒ 0; informative for the sampled LLM. |
+
+`stats.ts` has **no `@/` imports, no I/O, no `Math.random()`** and is covered by
+`stats.test.ts` (sanity cases only, offline).
+
+## Sub-group / disparate-impact slicing
+
+The gold schema carries optional `cohort` attributes — `eal`, `send`,
+`dialect`, `firstLanguage`, `isMinor` (coarse, **non-identifying** flags; not
+personal data). The harness computes every metric per slice and a
+**disparate-impact delta** vs the overall figure.
+
+**Fairness threshold:** a cohort slice whose exact-agreement **or** QWK is more
+than **`maxDisparityDelta` (0.10)** _worse_ than overall is **flagged**, and —
+if that slice contains real data — fails the run. Rationale and value live in
+`thresholds.json` and doc 05 §5.1.
+
+## The synthetic-vs-real CI gate (non-negotiable)
+
+Synthetic data can validate the _instrument_; it can **never** certify the
+system's _accuracy_. Enforced in `run.ts`:
+
+- A board with **zero real (`synthetic:false`) cases** has its numeric verdict
+  **hard-suppressed**; the report prints a loud
+  `NOT YET VALID FOR <board> — synthetic only` banner.
+- A run is **`certifiable` only** with the **`llm` adapter AND real data**. A
+  synthetic-only or boundary-only run can still **PASS as a mechanics check**,
+  but is explicitly labelled `MECHANICS CHECK ONLY — NOT a certified accuracy
+figure` and emits a `NOT A CERTIFIED ACCURACY RESULT` banner.
+- Threshold gates apply only to slices with ≥1 real case (synthetic data cannot
+  fail→pass-certify accuracy).
+- The runner exits **non-zero** on any threshold/fairness/stability breach on a
+  gated slice.
+
+## Thresholds (ratchet-only) — `evals/thresholds.json`
+
+| Threshold                 | Value  | Maps to                                            |
+| ------------------------- | ------ | -------------------------------------------------- |
+| `minExactAgreement`       | `0.60` | Yearly boundary shift makes exact match noisy.     |
+| `minAdjacentAgreement`    | `0.95` | >1-grade error = material, user-visible harm.      |
+| `minQwk`                  | `0.70` | "Substantial agreement" floor for ordinal marking. |
+| `maxDisparityDelta`       | `0.10` | Disparate-impact flag threshold (doc 05 §5.1).     |
+| `maxGradeInstabilityRate` | `0.15` | Max test–retest grade churn (LLM only).            |
+
+**Ratchet rule:** values may only be **raised** as the verified real set grows.
+Lowering one to make a failing run pass requires a written justification in the
+PR and **Provider sign-off** (cj@upskillenergy.com). To finalise: re-ratify
+`minQwk` against the examiner–examiner baseline QWK on the same real scripts.
 
 ## Drift & regression policy
 
-- **CI gate (regression):** the harness runs in CI and **fails the build**
-  (non-zero exit) if any per-board or overall metric drops below threshold.
-  Treat a failure as a release blocker for the marking feature.
-- **Ratchet:** thresholds may only be **raised** as the verified gold set
-  grows and metrics stabilise — never lowered to make a failing run pass.
-  Lowering a threshold requires a written justification in the PR description
-  and sign-off from the feature owner.
-- **Drift watch:** when real per-board grade boundaries are sourced, re-run
-  with the updated table and record overall + per-board QWK in the PR.
-  A QWK drop of **> 0.05** vs the previous recorded run on an unchanged
-  dataset is a regression and must be investigated before merge.
-- **Provenance check:** the report prints how many cases were scored with the
-  **AQA cross-board proxy** boundaries (`boundarySource: aqa-5yr-average-proxy`).
-  This count should trend to zero as board-specific boundaries land. It exists
-  so the validity caveat is auditable, not hidden.
-- **Cadence:** re-run on every change to `src/lib/marking/**` and at minimum
-  once per exam-results cycle (when awarding bodies publish new boundaries).
+- **CI gate:** fails the build below threshold on any gated slice. Release
+  blocker for the marking feature.
+- **Re-eval triggers:** change of the pinned model literal
+  `claude-sonnet-4-20250514`; any prompt change (`prompt-builder.ts`); any
+  change to the boundary table or `mark-schemes/**`; scheduled quarterly;
+  a post-market signal. A model-literal change also invalidates all fixtures
+  (re-record required).
+- **Drift watch:** a QWK drop **> 0.05** vs the previous recorded run on an
+  unchanged dataset is a regression to investigate before merge.
+- **Provenance check:** the report prints how many cases used the **AQA
+  cross-board proxy** boundary (`aqa-5yr-average-proxy`); should trend to zero
+  as board-specific boundaries land.
 
-## Adapters (offline now, LLM later)
+## Datasets
 
-`run.ts` marks each case via a `MarkerAdapter` (`types.ts`). The default,
-`examinerReplayAdapter`, is **pure and offline**: it feeds the examiner's AO
-marks into `predictGrade` and returns the grade. No network, no LLM, fully
-deterministic — safe for CI.
+- `datasets/gold-standard.example.jsonl` — original 5-case example (kept).
+- `datasets/gold-standard.synthetic.jsonl` — **~28 synthetic** cases spanning
+  AQA/Edexcel/OCR/WJEC Eduqas/Cambridge(0500/0990) × grades U–9 × the AOs, each
+  `synthetic:true` with `provenance` and `cohort`. **Default dataset.**
+- `datasets/REAL-DATA-PROTOCOL.md` — the exact spec for ingesting licensed,
+  dual-marked, senior-adjudicated **real** scripts (schema, ≥150/board,
+  GDPR/Children's-Code anonymisation for minors, sign-off matrix). **The human
+  handoff.**
 
-To later evaluate the **live LLM marker**, implement `MarkerAdapter` (e.g.
-`llmMarkerAdapter`) that produces a grade from the model's output and pass it
-to `runEval(adapter)`. The metrics, slicing and reporting code does **not**
-change. Keep any networked adapter **out of the default CI path** — Art. 15
-evidence must remain reproducible offline.
-
-## Dataset
-
-`datasets/gold-standard.example.jsonl` — **JSON Lines**, one case per line;
-blank lines and `//` lines are ignored. Schema: see `types.ts`
-(`GoldStandardCase`). The shipped cases are **synthetic placeholders** and
-exist to exercise the harness and document the format.
-
-> **Data safety / GDPR:** never commit real candidate work or any
-> child/student personal data to this repo. `studentAnswer` must always be an
-> obviously synthetic placeholder. Real examiner-verified cases should live in
-> a separate, access-controlled store and be loaded by path at eval time, not
-> checked in here.
-
-### How to add cases
-
-1. Obtain an **examiner-marked** response (per-AO marks + the awarded grade)
-   from a verified, consented/licensed source. Strip all personal data.
-2. Append one JSON object per line to a dataset file with the `types.ts`
-   schema. Use a real `markSchemeId` from
-   `src/lib/marking/mark-schemes` and real AO codes for that scheme.
-3. Set `examinerMarks` to the human per-AO marks and `examinerGrade` to the
-   human/awarding-body grade. Optionally set `questionMaxMarks`.
-4. Keep `studentAnswer` a synthetic/redacted placeholder.
-5. Re-run the harness; confirm metrics still pass and update any recorded
-   QWK baseline per the drift policy above.
+> **Data safety / GDPR:** never commit real candidate work or any child/student
+> personal data. `studentAnswer` in shipped data is always a synthetic
+> placeholder. Real scripts live in a separate access-controlled store and are
+> loaded by path (`EVAL_REAL_DATASET=/secure/path.jsonl`) at eval time.
 
 ## Running it
 
-No `tsx` runner is installed in this project, but **`vitest` is**, so the
-harness is wrapped in a single `vitest` test that prints the report and exits
-non-zero below threshold. It is **not** part of `npm test`: the root vitest
-`include` is `src/**/*.test.{ts,tsx}` (this lives outside `src/`), so the
-harness uses its own config, `evals/vitest.eval.config.ts`, which targets only
-`evals/run.ts`.
-
 ```bash
 # from D:\Coding\english-hub
-node_modules/.bin/vitest run --config evals/vitest.eval.config.ts --disableConsoleIntercept
-# or, via the added npm script:
+
+# 1. Default: boundary baseline + stats unit tests (offline, deterministic).
+npm run eval:marking
+
+# 2. LLM marking path, OFFLINE (fixture replay — CI default for the model path).
+EVAL_ADAPTER=llm npm run eval:marking
+
+# 3. Pure stats tests already run alongside (evals/stats.test.ts).
+
+# 4. REAL evaluation (human handoff — see datasets/REAL-DATA-PROTOCOL.md):
+EVAL_REAL_DATASET=/secure/aqa-lit-p1-real.jsonl \
+EVAL_ADAPTER=llm EVAL_LLM_LIVE=1 ANTHROPIC_API_KEY=sk-... EVAL_RUNS=3 \
 npm run eval:marking
 ```
 
-The command prints a per-board + overall table, the boundary-provenance
-count, and `RESULT: PASS ✅` / `FAIL ❌`.
+`npm run eval:marking` =
+`vitest run --config evals/vitest.eval.config.ts --disableConsoleIntercept`.
+It is **not** part of `npm test` (root include is `src/**/*.test.{ts,tsx}`).
+
+### Env
+
+| Var                 | Default           | Meaning                                                         |
+| ------------------- | ----------------- | --------------------------------------------------------------- |
+| `EVAL_ADAPTER`      | `examiner-replay` | `examiner-replay` \| `llm`                                      |
+| `EVAL_DATASET`      | `synthetic`       | `synthetic` \| `example` \| absolute path                       |
+| `EVAL_REAL_DATASET` | _(unset)_         | Absolute path to the secure real set (overrides `EVAL_DATASET`) |
+| `EVAL_RUNS`         | `1`               | N≥1; N>1 enables test–retest variance                           |
+| `EVAL_LLM_LIVE`     | _(unset)_         | `1` permits the real Anthropic call (llm only)                  |
+| `EVAL_LLM_RECORD`   | _(unset)_         | `1` records live responses as fixtures (implies live)           |
+
+## What a human still must do
+
+1. **Source & licence** real GCSE/IGCSE scripts (≥150 per board/paper),
+   dual-marked + senior-adjudicated, per `datasets/REAL-DATA-PROTOCOL.md`.
+2. **Anonymise** (minors' data — UK GDPR + Children's Code) and store outside
+   the repo; update DPIA/ROPA.
+3. **Run the live LLM evaluation** (`EVAL_ADAPTER=llm EVAL_LLM_LIVE=1
+EVAL_RUNS=3`) per board.
+4. **Ratify** `minQwk` against the examiner–examiner baseline on those scripts.
+5. **Sign off** the per-board accuracy figure (Provider accountable person) and
+   transcribe it into doc 06 §A5 / doc 04 Annex IV / doc 13.
+
+Until then the harness self-reports **NOT YET VALID** and never certifies a
+number.

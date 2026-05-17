@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
+import { getAnthropicClient } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { formatMarkSchemeForPrompt } from '@/data/mark-schemes'
@@ -196,8 +196,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 7. Call Claude API
-    const anthropic = new Anthropic({ apiKey })
+    // 7. Call Claude API (shared client — privacy posture documented in
+    // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
+    const anthropic = getAnthropicClient(apiKey)
 
     const systemPrompt = withArabicDirective(
       buildSystemPrompt(body.board, body.paper, body.questionType),

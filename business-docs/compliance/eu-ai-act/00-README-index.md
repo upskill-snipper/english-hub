@@ -51,6 +51,7 @@ and a target date, never as an implemented control.
 | 14 | EU database registration record (Art. 49 / Art. 71) | Art. 49, Art. 71 | **NOT STARTED** | Founder |
 | 15 | Reconciled DPIA ↔ AI Act control statement | Art. 9(9), GDPR Art. 35 | **NOT STARTED — HIGH PRIORITY** | Data Protection Lead + Founder |
 | 16 | Certification / conformity roadmap to 2 Aug 2026 | Art. 113 | **NOT STARTED** | Founder |
+| 17 | Anthropic DPA / zero-retention / no-training pack (closes DPIA C5 / checklist item 4) | GDPR Art. 28, Art. 25; AI Act Art. 25 | **ISSUED v0.1 DRAFT** — eng portion complete; residual is a counsel/contractual act | Counsel + DPO |
 
 > **Numbering note.** Docs are numbered for the full target pack. Only 00–03 exist today.
 > Creating 04–16 is the work tracked in doc 16 (roadmap). Do not cite an unissued doc as
@@ -85,7 +86,7 @@ Status legend: **CONFORMS** (implemented & evidenced) · **PARTIAL** (some contr
 | Art. 22 | Authorised representative (if provider outside EU) | 01, 14 | **GAP** — depends on Art. 2 decision; appoint if provider is non-EU establishment | Founder + counsel |
 | Art. 23 | Importer obligations | n/a | **N/A** — service provided directly, not imported as a product | — |
 | Art. 24 | Distributor obligations | n/a | **N/A** | — |
-| Art. 25 | Responsibilities along the value chain (Anthropic = GPAI upstream) | 01, 04 | **DOC-ONLY** — Anthropic role mapped in 01 | Founder |
+| Art. 25 | Responsibilities along the value chain (Anthropic = GPAI upstream) | 01, 04, 17 | **PARTIAL** — Anthropic role mapped in 01; client posture centralised & documented (`src/lib/anthropic-client.ts`); counter-signed DPA + written no-training/ZDR confirmation is the residual (doc 17 / checklist item 4) | Founder + counsel |
 | Art. 26 | Deployer obligations (schools) | 09 | **GAP** — no deployer brief issued | Founder |
 | Art. 27 | Fundamental Rights Impact Assessment (public-body / education deployers) | 09 | **GAP** — FRIA template not produced for schools | Founder |
 | Art. 47 + Annex V | EU Declaration of Conformity | 13 | **GAP** — DoC not drafted | Founder |
@@ -130,3 +131,6 @@ Status legend: **CONFORMS** (implemented & evidenced) · **PARTIAL** (some contr
 - Record of Processing Activities: `business-docs/compliance/rfc/ropa-v1.md`
 - Children's Code gap analysis: `business-docs/compliance/childrens-code/01-assessment/gap-analysis.md`
 - Public AI-governance honest-assessment page source: `src/lib/i18n/dictionary-legal-long.ts`
+- Shared Anthropic client + canonical data-protection posture: `src/lib/anthropic-client.ts` (`ANTHROPIC_DATA_POLICY`, `isZeroRetentionConfigured()`)
+- Single-source sub-processor register: `src/config/subprocessors.ts` (`SUBPROCESSORS`, `LIVE_SUBPROCESSORS`, `AI_SUBPROCESSOR`, `SUBPROCESSORS_NEEDING_CONFIRMATION`)
+- Anthropic DPA / ZDR / no-training counsel pack: `business-docs/compliance/eu-ai-act/17-anthropic-dpa-zdr-pack.md`

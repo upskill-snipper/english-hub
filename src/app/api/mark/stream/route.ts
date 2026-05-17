@@ -12,7 +12,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
+import { getAnthropicClient } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { hasActiveSubscription } from '@/lib/course-access'
@@ -134,8 +134,9 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // 9. Spin up the stream
-  const anthropic = new Anthropic({ apiKey })
+  // 9. Spin up the stream (shared client — privacy posture documented in
+  // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
+  const anthropic = getAnthropicClient(apiKey)
   const encoder = new TextEncoder()
 
   // EU AI Act Art. 12/19: capture the decision context once, then emit an

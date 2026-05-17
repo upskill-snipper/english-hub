@@ -4,7 +4,8 @@
 // response for compliance, and returns feedback with content warnings.
 
 import { NextRequest, NextResponse } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
+import type Anthropic from '@anthropic-ai/sdk'
+import { getAnthropicClient } from '@/lib/anthropic-client'
 import { filterAIResponse, type UserCountry } from '@/lib/content-filter'
 import { getDisclaimer } from '@/lib/ai-disclaimer'
 import { rateLimit } from '@/lib/rate-limit'
@@ -61,7 +62,9 @@ async function generateAIFeedback(
     throw new Error('AI service is temporarily unavailable.')
   }
 
-  const anthropic = new Anthropic({ apiKey })
+  // Shared client — privacy posture documented in src/lib/anthropic-client.ts;
+  // behaviour identical to new Anthropic({ apiKey }).
+  const anthropic = getAnthropicClient(apiKey)
 
   const baseSystemPrompt = [
     `You are an expert GCSE English teacher providing constructive feedback on student essays.`,

@@ -6,6 +6,7 @@ import { hasActiveSubscription } from '@/lib/course-access'
 import { logAiDecision } from '@/lib/ai-audit-log'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
+import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 
 export const maxDuration = 60
 
@@ -279,6 +280,16 @@ Be specific, include example quotations, and give practical exam advice.`
         request.signal.addEventListener('abort', clientAbort)
         const timeoutId = setTimeout(() => ac.abort(), 45_000)
 
+        // NOTE: this route intentionally keeps the raw `fetch` (not the shared
+        // getAnthropicClient SDK wrapper) because it relies on a bespoke
+        // AbortController that both caps the round-trip at 45s AND cancels on
+        // client disconnect — swapping to the SDK here would change that
+        // behaviour and the branch logic, which this refactor must not do. The
+        // privacy posture is unchanged and documented centrally in
+        // src/lib/anthropic-client.ts (ANTHROPIC_DATA_POLICY): no-training /
+        // retention is governed by the commercial contract, not a request flag
+        // or header, so no header differs between the SDK and this path. Only
+        // the model string is centralised via ANTHROPIC_MODEL.
         let response: Response
         try {
           response = await fetch('https://api.anthropic.com/v1/messages', {
@@ -289,7 +300,7 @@ Be specific, include example quotations, and give practical exam advice.`
               'anthropic-version': '2023-06-01',
             },
             body: JSON.stringify({
-              model: 'claude-sonnet-4-20250514',
+              model: ANTHROPIC_MODEL,
               max_tokens: 2000,
               system: systemPrompt,
               messages: [{ role: 'user', content: prompt }],

@@ -251,7 +251,7 @@ export default function SubmitEssayPage() {
           gradeBand: result.gradeBand,
           totalMarks: result.totalMarks,
           maxMarks: result.maxMarks,
-          confidence: Math.round((result.totalMarks / result.maxMarks) * 100),
+          scorePercent: Math.round((result.totalMarks / result.maxMarks) * 100),
           // AO breakdown — map to the shape the results page expects
           aos: (result.aoScores ?? []).map(
             (ao: {

@@ -16,8 +16,8 @@ import type {
   MarkScheme,
   MarkingResult,
   QuestionScheme,
-} from "./mark-schemes/types"
-import { predictGrade } from "./grade-predictor"
+} from './mark-schemes/types'
+import { predictGrade } from './grade-predictor'
 
 // ─── Shape returned by the LLM ───────────────────────────────────────────────
 
@@ -35,15 +35,15 @@ interface RawLLMResponse {
   improvements?: Array<{ point?: string; suggestion?: string; quote?: string }>
   nextStepsToNextGrade?: string[]
   summary?: string
-  error?: "INVALID_SUBMISSION" | "OFF_TOPIC"
+  error?: 'INVALID_SUBMISSION' | 'OFF_TOPIC'
 }
 
 // ─── Errors ──────────────────────────────────────────────────────────────────
 
 export type FeedbackError =
-  | { type: "INVALID_SUBMISSION" }
-  | { type: "OFF_TOPIC" }
-  | { type: "INVALID_RESPONSE"; reason: string }
+  | { type: 'INVALID_SUBMISSION' }
+  | { type: 'OFF_TOPIC' }
+  | { type: 'INVALID_RESPONSE'; reason: string }
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -68,15 +68,13 @@ export type FeedbackGeneratorResult =
 /**
  * Parse the model's raw response text into a structured `MarkingResult`.
  */
-export function generateFeedback(
-  input: FeedbackGeneratorInput,
-): FeedbackGeneratorResult {
+export function generateFeedback(input: FeedbackGeneratorInput): FeedbackGeneratorResult {
   const question = findQuestion(input.scheme, input.questionId)
   if (!question) {
     return {
       ok: false,
       error: {
-        type: "INVALID_RESPONSE",
+        type: 'INVALID_RESPONSE',
         reason: `Unknown question "${input.questionId}" for mark scheme "${input.scheme.id}"`,
       },
     }
@@ -87,24 +85,23 @@ export function generateFeedback(
     return {
       ok: false,
       error: {
-        type: "INVALID_RESPONSE",
-        reason: "Model response was not valid JSON",
+        type: 'INVALID_RESPONSE',
+        reason: 'Model response was not valid JSON',
       },
     }
   }
 
-  if (parsed.error === "INVALID_SUBMISSION")
-    return { ok: false, error: { type: "INVALID_SUBMISSION" } }
-  if (parsed.error === "OFF_TOPIC")
-    return { ok: false, error: { type: "OFF_TOPIC" } }
+  if (parsed.error === 'INVALID_SUBMISSION')
+    return { ok: false, error: { type: 'INVALID_SUBMISSION' } }
+  if (parsed.error === 'OFF_TOPIC') return { ok: false, error: { type: 'OFF_TOPIC' } }
 
   const aoScores = normaliseAOScores(parsed.aoScores, question)
   if (aoScores.length === 0) {
     return {
       ok: false,
       error: {
-        type: "INVALID_RESPONSE",
-        reason: "Model returned no AO scores",
+        type: 'INVALID_RESPONSE',
+        reason: 'Model returned no AO scores',
       },
     }
   }
@@ -113,11 +110,17 @@ export function generateFeedback(
   const improvements = normaliseImprovements(parsed.improvements)
   const nextSteps = normaliseNextSteps(parsed.nextStepsToNextGrade)
   const summary =
-    typeof parsed.summary === "string" && parsed.summary.trim().length > 0
+    typeof parsed.summary === 'string' && parsed.summary.trim().length > 0
       ? parsed.summary.trim().slice(0, 1_500)
-      : ""
+      : ''
 
-  const prediction = predictGrade(aoScores, question.totalMarks)
+  // Thread the exam board through so the predictor can use that board's
+  // verified published grade boundaries (./grade-boundaries) instead of the
+  // AQA proxy. `MarkScheme.board` is the per-scheme board label (e.g. "AQA",
+  // "Edexcel", "WJEC Eduqas", "Cambridge"); the predictor/registry normalise
+  // it. If the board has no verified table the prediction comes back flagged
+  // `indicativeOnly` (callers/UI should label it as an estimate).
+  const prediction = predictGrade(aoScores, question.totalMarks, input.scheme.board)
 
   const result: MarkingResult = {
     markSchemeId: input.scheme.id,
@@ -129,11 +132,13 @@ export function generateFeedback(
     aoScores,
     strengths,
     improvements,
-    nextStepsToNextGrade: nextSteps.length
-      ? nextSteps
-      : buildFallbackNextSteps(prediction),
-    summary:
-      summary || buildFallbackSummary(prediction, question, aoScores),
+    nextStepsToNextGrade: nextSteps.length ? nextSteps : buildFallbackNextSteps(prediction),
+    summary: summary || buildFallbackSummary(prediction, question, aoScores),
+    // Boundary provenance — additive, optional. Lets the API/UI label the
+    // grade as indicative when the board has no verified boundary table.
+    boundarySource: prediction.boundarySource,
+    gradeIsIndicativeOnly: prediction.indicativeOnly === true,
+    boundaryDetail: prediction.boundaryDetail,
   }
 
   return { ok: true, result }
@@ -145,16 +150,16 @@ function tryParseJSON(text: string): RawLLMResponse | null {
   if (!text) return null
   const cleaned = text
     .trim()
-    .replace(/^```(?:json)?\s*/i, "")
-    .replace(/\s*```$/i, "")
+    .replace(/^```(?:json)?\s*/i, '')
+    .replace(/\s*```$/i, '')
     .trim()
 
   try {
     return JSON.parse(cleaned) as RawLLMResponse
   } catch {
     // Attempt to recover a JSON object from within the text.
-    const firstBrace = cleaned.indexOf("{")
-    const lastBrace = cleaned.lastIndexOf("}")
+    const firstBrace = cleaned.indexOf('{')
+    const lastBrace = cleaned.lastIndexOf('}')
     if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
       return null
     }
@@ -166,43 +171,32 @@ function tryParseJSON(text: string): RawLLMResponse | null {
   }
 }
 
-function normaliseAOScores(
-  raw: RawLLMResponse["aoScores"],
-  question: QuestionScheme,
-): AOScore[] {
+function normaliseAOScores(raw: RawLLMResponse['aoScores'], question: QuestionScheme): AOScore[] {
   if (!Array.isArray(raw)) return []
-  const expectedById = new Map(
-    question.assessmentObjectives.map((ao) => [ao.id, ao]),
-  )
+  const expectedById = new Map(question.assessmentObjectives.map((ao) => [ao.id, ao]))
 
   const results: AOScore[] = []
   for (const entry of raw) {
-    if (!entry || typeof entry !== "object") continue
-    const id = typeof entry.id === "string" ? entry.id.toUpperCase() : ""
+    if (!entry || typeof entry !== 'object') continue
+    const id = typeof entry.id === 'string' ? entry.id.toUpperCase() : ''
     const expected = expectedById.get(id)
     const maxMarks =
-      typeof entry.maxMarks === "number" && Number.isFinite(entry.maxMarks)
+      typeof entry.maxMarks === 'number' && Number.isFinite(entry.maxMarks)
         ? entry.maxMarks
-        : expected?.maxMarks ?? 0
-    const marks = clamp(
-      typeof entry.marks === "number" ? entry.marks : 0,
-      0,
-      maxMarks,
-    )
+        : (expected?.maxMarks ?? 0)
+    const marks = clamp(typeof entry.marks === 'number' ? entry.marks : 0, 0, maxMarks)
 
     results.push({
-      id: id || expected?.id || "AO?",
+      id: id || expected?.id || 'AO?',
       label: entry.label || expected?.label || id,
       marks: Math.round(marks),
       maxMarks,
-      band: typeof entry.band === "string" ? entry.band : "",
+      band: typeof entry.band === 'string' ? entry.band : '',
       justification:
-        typeof entry.justification === "string"
-          ? entry.justification.slice(0, 800)
-          : "",
+        typeof entry.justification === 'string' ? entry.justification.slice(0, 800) : '',
       evidence: Array.isArray(entry.evidence)
         ? entry.evidence
-            .filter((q): q is string => typeof q === "string")
+            .filter((q): q is string => typeof q === 'string')
             .map((q) => q.slice(0, MAX_QUOTE_CHARS))
             .slice(0, 3)
         : undefined,
@@ -218,21 +212,18 @@ function normaliseFeedback(
   if (!Array.isArray(raw)) return []
   return raw
     .filter((entry): entry is { point: string } =>
-      Boolean(entry && typeof entry === "object" && typeof entry.point === "string"),
+      Boolean(entry && typeof entry === 'object' && typeof entry.point === 'string'),
     )
     .slice(0, max)
     .map((entry) => ({
       point: entry.point.slice(0, 400),
       quote:
-        typeof (entry as { quote?: string }).quote === "string"
+        typeof (entry as { quote?: string }).quote === 'string'
           ? (entry as { quote?: string }).quote!.slice(0, MAX_QUOTE_CHARS)
           : undefined,
       suggestion:
-        typeof (entry as { suggestion?: string }).suggestion === "string"
-          ? (entry as { suggestion?: string }).suggestion!.slice(
-              0,
-              MAX_SUGGESTION_CHARS,
-            )
+        typeof (entry as { suggestion?: string }).suggestion === 'string'
+          ? (entry as { suggestion?: string }).suggestion!.slice(0, MAX_SUGGESTION_CHARS)
           : undefined,
     }))
 }
@@ -250,22 +241,20 @@ function normaliseImprovements(
 function normaliseNextSteps(raw: string[] | undefined): string[] {
   if (!Array.isArray(raw)) return []
   return raw
-    .filter((s): s is string => typeof s === "string" && s.trim().length > 0)
+    .filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
     .map((s) => s.trim().slice(0, 260))
     .slice(0, MAX_NEXT_STEPS)
 }
 
 // ─── Fallbacks ───────────────────────────────────────────────────────────────
 
-function buildFallbackNextSteps(
-  prediction: ReturnType<typeof predictGrade>,
-): string[] {
+function buildFallbackNextSteps(prediction: ReturnType<typeof predictGrade>): string[] {
   if (!prediction.nextGrade) {
-    return ["Keep reviewing and applying the marking criteria."]
+    return ['Keep reviewing and applying the marking criteria.']
   }
   return [
     `You need approximately ${prediction.marksToNextGrade} more marks to reach Grade ${prediction.nextGrade}.`,
-    "Focus on the improvements above, and try another practice response using the same marking criteria.",
+    'Focus on the improvements above, and try another practice response using the same marking criteria.',
   ]
 }
 
@@ -274,17 +263,13 @@ function buildFallbackSummary(
   question: QuestionScheme,
   aoScores: readonly AOScore[],
 ): string {
-  const topAO = [...aoScores].sort(
-    (a, b) => b.marks / b.maxMarks - a.marks / a.maxMarks,
-  )[0]
-  const weakestAO = [...aoScores].sort(
-    (a, b) => a.marks / a.maxMarks - b.marks / b.maxMarks,
-  )[0]
+  const topAO = [...aoScores].sort((a, b) => b.marks / b.maxMarks - a.marks / a.maxMarks)[0]
+  const weakestAO = [...aoScores].sort((a, b) => a.marks / a.maxMarks - b.marks / b.maxMarks)[0]
 
   return (
     `This response sits at a predicted Grade ${prediction.grade} (${prediction.totalMarks}/${prediction.maxMarks}) on ${question.questionType}. ` +
-    (topAO ? `Strongest area: ${topAO.label}. ` : "") +
-    (weakestAO ? `Focus next on ${weakestAO.label}.` : "")
+    (topAO ? `Strongest area: ${topAO.label}. ` : '') +
+    (weakestAO ? `Focus next on ${weakestAO.label}.` : '')
   )
 }
 
@@ -295,14 +280,9 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max)
 }
 
-function findQuestion(
-  scheme: MarkScheme,
-  questionId: string,
-): QuestionScheme | undefined {
+function findQuestion(scheme: MarkScheme, questionId: string): QuestionScheme | undefined {
   const normalised = questionId.trim().toLowerCase()
   return scheme.questions.find(
-    (q) =>
-      q.id.toLowerCase() === normalised ||
-      q.questionType.toLowerCase() === normalised,
+    (q) => q.id.toLowerCase() === normalised || q.questionType.toLowerCase() === normalised,
   )
 }

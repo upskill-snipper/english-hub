@@ -71,7 +71,7 @@ export interface MarkScheme {
   /** Exam board, e.g. "AQA". */
   board: string
   /** Subject, e.g. "English Literature". */
-  subject: "English Literature" | "English Language"
+  subject: 'English Literature' | 'English Language'
   /** Paper name, e.g. "Paper 1" or "Paper 2". */
   paper: string
   /** Paper title, e.g. "Shakespeare and the 19th-century novel". */
@@ -146,4 +146,20 @@ export interface MarkingResult {
   nextStepsToNextGrade: readonly string[]
   /** Holistic summary paragraph. */
   summary: string
+  /**
+   * Provenance of the grade-boundary model behind {@link predictedGrade}.
+   * Additive/optional — existing consumers may ignore it. Mirrors
+   * `GradePrediction.boundarySource` from the grade predictor.
+   */
+  boundarySource?: string
+  /**
+   * `true` when {@link predictedGrade} was derived from the AQA proxy curve
+   * as a fallback (the student's board has no human-verified boundary table
+   * yet) and is therefore an INDICATIVE estimate, not a board-specific grade.
+   * The UI SHOULD label the grade as approximate when this is true. Additive
+   * and optional; absent/false ⇒ verified board boundaries were used.
+   */
+  gradeIsIndicativeOnly?: boolean
+  /** Human-readable boundary provenance for traceability (EU AI Act Art. 12/15). */
+  boundaryDetail?: string
 }

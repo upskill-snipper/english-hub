@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "key": "eed7f0dc660f55212c05c6b7ab0c4f422da72f7c2cbc1b44cb7ea10ed2213994",
+  "model": "claude-sonnet-4-20250514",
+  "caseId": "cambridge-0500-p1-q1f-syn-20",
+  "markSchemeId": "cambridge-0500-paper1",
+  "questionId": "Q1f",
+  "source": "synthetic-authored",
+  "rawResponseText": "{\"aoScores\":[{\"id\":\"R4\",\"label\":\"R4 — synthetic\",\"marks\":13,\"maxMarks\":15,\"band\":\"High\",\"justification\":\"[SYNTHETIC FIXTURE] R4 placed in High; mark reflects the band descriptor as illustrated by the placeholder response.\",\"evidence\":[\"[synthetic quote]\"]}],\"strengths\":[{\"point\":\"[SYNTHETIC] Clear focus on the question\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Relevant supporting references\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Coherent argument structure\",\"quote\":\"[synthetic quote]\"}],\"improvements\":[{\"point\":\"[SYNTHETIC] Deepen analysis of method\",\"suggestion\":\"Comment on why the writer made specific choices, not just what they are.\"},{\"point\":\"[SYNTHETIC] Vary supporting evidence\",\"suggestion\":\"Bring in a wider range of precise references across the text.\"},{\"point\":\"[SYNTHETIC] Sharpen the conceptual line of argument\",\"suggestion\":\"Open each paragraph with an idea-led point rather than a feature.\"}],\"nextStepsToNextGrade\":[\"Develop a more conceptual thesis sustained across the response.\",\"Integrate precise references more fluently into analysis.\"],\"summary\":\"[SYNTHETIC FIXTURE] An illustrative response for case cambridge-0500-p1-q1f-syn-20; marks placed to exercise the offline LLM adapter pipeline — NOT real model output and NOT an accuracy claim.\"}"
+}

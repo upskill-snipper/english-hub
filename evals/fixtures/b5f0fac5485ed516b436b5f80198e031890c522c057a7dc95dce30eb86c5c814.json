@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "key": "b5f0fac5485ed516b436b5f80198e031890c522c057a7dc95dce30eb86c5c814",
+  "model": "claude-sonnet-4-20250514",
+  "caseId": "edexcel-lang-p1-q4-syn-09",
+  "markSchemeId": "edexcel-lang-paper1",
+  "questionId": "Q4",
+  "source": "synthetic-authored",
+  "rawResponseText": "{\"aoScores\":[{\"id\":\"AO4\",\"label\":\"AO4 — synthetic\",\"marks\":13,\"maxMarks\":20,\"band\":\"Level 3\",\"justification\":\"[SYNTHETIC FIXTURE] AO4 placed in Level 3; mark reflects the band descriptor as illustrated by the placeholder response.\",\"evidence\":[\"[synthetic quote]\"]}],\"strengths\":[{\"point\":\"[SYNTHETIC] Clear focus on the question\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Relevant supporting references\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Coherent argument structure\",\"quote\":\"[synthetic quote]\"}],\"improvements\":[{\"point\":\"[SYNTHETIC] Deepen analysis of method\",\"suggestion\":\"Comment on why the writer made specific choices, not just what they are.\"},{\"point\":\"[SYNTHETIC] Vary supporting evidence\",\"suggestion\":\"Bring in a wider range of precise references across the text.\"},{\"point\":\"[SYNTHETIC] Sharpen the conceptual line of argument\",\"suggestion\":\"Open each paragraph with an idea-led point rather than a feature.\"}],\"nextStepsToNextGrade\":[\"Develop a more conceptual thesis sustained across the response.\",\"Integrate precise references more fluently into analysis.\"],\"summary\":\"[SYNTHETIC FIXTURE] An illustrative response for case edexcel-lang-p1-q4-syn-09; marks placed to exercise the offline LLM adapter pipeline — NOT real model output and NOT an accuracy claim.\"}"
+}

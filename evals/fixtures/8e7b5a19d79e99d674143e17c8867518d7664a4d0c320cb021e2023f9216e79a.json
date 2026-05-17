@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "key": "8e7b5a19d79e99d674143e17c8867518d7664a4d0c320cb021e2023f9216e79a",
+  "model": "claude-sonnet-4-20250514",
+  "caseId": "aqa-lang-p1-q2-syn-03",
+  "markSchemeId": "aqa-lang-paper1",
+  "questionId": "Q2",
+  "source": "synthetic-authored",
+  "rawResponseText": "{\"aoScores\":[{\"id\":\"AO2\",\"label\":\"AO2 — synthetic\",\"marks\":5,\"maxMarks\":8,\"band\":\"Level 3\",\"justification\":\"[SYNTHETIC FIXTURE] AO2 placed in Level 3; mark reflects the band descriptor as illustrated by the placeholder response.\",\"evidence\":[\"[synthetic quote]\"]}],\"strengths\":[{\"point\":\"[SYNTHETIC] Clear focus on the question\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Relevant supporting references\",\"quote\":\"[synthetic quote]\"},{\"point\":\"[SYNTHETIC] Coherent argument structure\",\"quote\":\"[synthetic quote]\"}],\"improvements\":[{\"point\":\"[SYNTHETIC] Deepen analysis of method\",\"suggestion\":\"Comment on why the writer made specific choices, not just what they are.\"},{\"point\":\"[SYNTHETIC] Vary supporting evidence\",\"suggestion\":\"Bring in a wider range of precise references across the text.\"},{\"point\":\"[SYNTHETIC] Sharpen the conceptual line of argument\",\"suggestion\":\"Open each paragraph with an idea-led point rather than a feature.\"}],\"nextStepsToNextGrade\":[\"Develop a more conceptual thesis sustained across the response.\",\"Integrate precise references more fluently into analysis.\"],\"summary\":\"[SYNTHETIC FIXTURE] An illustrative response for case aqa-lang-p1-q2-syn-03; marks placed to exercise the offline LLM adapter pipeline — NOT real model output and NOT an accuracy claim.\"}"
+}

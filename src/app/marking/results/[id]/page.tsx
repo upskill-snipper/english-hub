@@ -32,7 +32,9 @@ interface StoredResult {
   gradeBand?: string
   totalMarks?: number
   maxMarks?: number
-  confidence: number
+  scorePercent: number
+  /** legacy localStorage key written before the confidence→scorePercent rename */
+  confidence?: number
   aos: AOScore[]
   submittedAt: string
   // AI feedback fields
@@ -52,7 +54,7 @@ const FALLBACK: StoredResult = {
   question: 'How does Shakespeare present ambition in Macbeth?',
   wordCount: 612,
   grade: 7,
-  confidence: 82,
+  scorePercent: 82,
   submittedAt: new Date().toISOString(),
   aos: [
     {
@@ -209,7 +211,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
         <GradePredictionCard
           grade={result.grade}
-          confidence={result.confidence}
+          scorePercent={result.scorePercent ?? result.confidence ?? 0}
           paperLabel={`${result.board} · ${result.paper}`}
         />
         <AOBreakdown scores={result.aos} />

@@ -3482,14 +3482,14 @@ export const DICTIONARY: Dictionary = {
     en: 'Based on AQA-style marking guide',
     ar: 'حسب دليل تصحيح على نمط AQA',
   },
-  'marking.confidence_high': { en: 'High', ar: 'عالية' },
-  'marking.confidence_moderate': { en: 'Moderate', ar: 'متوسطة' },
-  'marking.confidence_developing': { en: 'Developing', ar: 'تتطور' },
+  'marking.score_high': { en: 'High', ar: 'عالية' },
+  'marking.score_moderate': { en: 'Moderate', ar: 'متوسطة' },
+  'marking.score_developing': { en: 'Developing', ar: 'تتطور' },
   // Renders as "{High|Moderate|Developing} score (NN%)". This value is
   // totalMarks/maxMarks — a score percentage, NOT model confidence.
   // Mislabelling it "confidence" overstated AI certainty (EU AI Act
   // Art 13 transparency / over-reliance on minors). See evals/ + doc 06.
-  'marking.confidence_label': { en: 'score', ar: 'الدرجة' },
+  'marking.score_label': { en: 'score', ar: 'الدرجة' },
   'marking.improvement_trend': { en: 'Improvement Trend', ar: 'تطور أدائك' },
   'marking.trend_empty_state': {
     en: 'Submit a few essays to start seeing your trend.',

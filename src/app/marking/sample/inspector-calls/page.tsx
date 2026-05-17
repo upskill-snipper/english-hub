@@ -32,7 +32,7 @@ interface ModelEssay {
   question: string
   paper: string
   board: string
-  confidence: number
+  scorePercent: number
   gradeJustification: string
   commentary: string
   paragraphs: string[]
@@ -53,7 +53,7 @@ const ESSAYS: ModelEssay[] = [
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
     paper: 'English Literature — Paper 2',
-    confidence: 84,
+    scorePercent: 84,
     gradeJustification:
       'Meets Grade 5 descriptors: clear understanding of the theme with relevant textual references. Quotations are used to support points but analysis tends toward identification of meaning rather than exploration of method. Context is present but attached to the end rather than woven into the argument. Spelling, punctuation and grammar are generally accurate.',
     commentary:
@@ -116,7 +116,7 @@ const ESSAYS: ModelEssay[] = [
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
     paper: 'English Literature — Paper 2',
-    confidence: 89,
+    scorePercent: 89,
     gradeJustification:
       'Meets Grade 7 descriptors: a thoughtful, developed response with sustained focus on the question. Methods are identified and analysed, and context is integrated into the argument rather than bolted on. The response handles multiple characters and structural choices with a clear thesis. To reach Grade 8/9, the student needs more precise word-level analysis and a fully conceptualised argument.',
     commentary:
@@ -179,7 +179,7 @@ const ESSAYS: ModelEssay[] = [
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
     paper: 'English Literature — Paper 2',
-    confidence: 95,
+    scorePercent: 95,
     gradeJustification:
       'Meets Grade 9 descriptors: a perceptive, conceptualised response in which every paragraph advances an original, sustained thesis. Language, form and structure are analysed at word level, with terminology serving interpretation rather than display. Context is woven into the fabric of the argument. The conclusion synthesises ideas rather than restating them.',
     commentary:
@@ -251,7 +251,7 @@ const ESSAYS: ModelEssay[] = [
     question: 'How does Priestley use the character of Sheila to convey his message?',
     board: 'AQA',
     paper: 'English Literature — Paper 2',
-    confidence: 83,
+    scorePercent: 83,
     gradeJustification:
       "Meets Grade 5 descriptors: clear understanding of Sheila's role with appropriate textual references. Some method identification (stage directions, repetition) but effects are stated rather than explored. Context is present but not integrated. Accurate SPaG throughout.",
     commentary:
@@ -305,7 +305,7 @@ const ESSAYS: ModelEssay[] = [
     question: 'How does Priestley use the character of Sheila to convey his message?',
     board: 'AQA',
     paper: 'English Literature — Paper 2',
-    confidence: 94,
+    scorePercent: 94,
     gradeJustification:
       'Meets Grade 9 descriptors: a perceptive, fully conceptualised response that reads Sheila as a structural device as well as a character. Language and form are analysed at word level, with context integrated throughout. The thesis is original and sustained across every paragraph, and the conclusion offers synthesis rather than summary.',
     commentary:
@@ -505,7 +505,7 @@ export default async function InspectorCallsSamplePage() {
             <div className="mb-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
               <GradePredictionCard
                 grade={essay.grade}
-                confidence={essay.confidence}
+                scorePercent={essay.scorePercent}
                 paperLabel={`${essay.board} · ${essay.paper}`}
               />
               <AOBreakdown scores={essay.aos} />
