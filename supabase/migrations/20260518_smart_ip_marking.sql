@@ -36,6 +36,14 @@
 -- ALTERs below are then idempotent no-ops on a freshly-created table and
 -- still apply the deltas on a DB where the original migration DID run.
 
+-- Defensive User backfill (mirrors the original 20260512 migration's own
+-- comment: "absence causes silent data loss"). The `is_minor` column is
+-- declared in the Prisma schema and read by consent/minor-handling code;
+-- on DBs where the user-minor migration never ran out-of-band, any
+-- Prisma query selecting it throws. Idempotent.
+ALTER TABLE IF EXISTS public."User"
+  ADD COLUMN IF NOT EXISTS is_minor BOOLEAN NOT NULL DEFAULT FALSE;
+
 CREATE TABLE IF NOT EXISTS public.marking_submissions (
   id                  UUID            PRIMARY KEY DEFAULT gen_random_uuid(),
   school_id           UUID,
