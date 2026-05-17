@@ -712,7 +712,7 @@ model BulkUploadJob {
 model MarkingSubmission {
   id                  String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   schoolId            String?   @map("school_id") @db.Uuid
-  studentId           String    @map("student_id") @db.Uuid
+  studentId           String?   @map("student_id") @db.Uuid
   classId             String?   @map("class_id") @db.Uuid
   source              String    @default("b2b_class")
   examBoard           String    @map("exam_board")
@@ -752,11 +752,17 @@ model MarkingSubmission {
   approvedAt          DateTime? @map("approved_at") @db.Timestamptz(6)
   trainingEligible    Boolean?  @map("training_eligible")
   moderationNotes     String?   @map("moderation_notes") @db.Text
+  assignedMarkerId    String?   @map("assigned_marker_id") @db.Uuid
+  batchId             String?   @map("batch_id") @db.Uuid
+  isGold              Boolean   @default(false) @map("is_gold")
+  goldExpected        Json?     @map("gold_expected")
 
   student      User?              @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
   modelVersion ModelVersion?      @relation(fields: [modelVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
   promptVersion PromptVersion?    @relation(fields: [promptVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
   rubricVersion RubricVersion?    @relation(fields: [rubricVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  marker       Marker?            @relation(fields: [assignedMarkerId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  batch        MarkerBatch?       @relation(fields: [batchId], references: [id], onDelete: SetNull, onUpdate: NoAction)
   moderations  TeacherModeration[]
   trainingData TrainingData[]
 
@@ -765,7 +771,51 @@ model MarkingSubmission {
   @@index([classId])
   @@index([status])
   @@index([source])
+  @@index([assignedMarkerId, status])
+  @@index([batchId])
   @@map("marking_submissions")
+}
+
+// ─── Smart IP — paid marker drive ─────────────────────────────────────────
+// Mirrors supabase/migrations/20260519_marker_drive.sql. user_id / created_by
+// reference Supabase-only auth.users (plain Uuid columns, no Prisma relation).
+
+model Marker {
+  id               String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId           String?   @unique @map("user_id") @db.Uuid
+  displayName      String    @map("display_name")
+  email            String?
+  boards           String[]  @default([])
+  qualification    String?
+  status           String    @default("active")
+  contractSignedAt DateTime? @map("contract_signed_at") @db.Timestamptz(6)
+  ndaSignedAt      DateTime? @map("nda_signed_at") @db.Timestamptz(6)
+  payRatePence     Int?      @map("pay_rate_pence")
+  notes            String?   @db.Text
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  submissions MarkingSubmission[]
+
+  @@index([userId])
+  @@index([status])
+  @@map("markers")
+}
+
+model MarkerBatch {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  label       String
+  board       String
+  paper       String?
+  sourceType  String    @map("source_type")
+  targetCount Int       @default(0) @map("target_count")
+  status      String    @default("open")
+  createdBy   String?   @map("created_by") @db.Uuid
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  submissions MarkingSubmission[]
+
+  @@index([board, status])
+  @@map("marker_batches")
 }
 
 // ─── Smart IP — versioning + moderation + training corpus ─────────────────
