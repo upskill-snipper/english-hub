@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
     const admin = createServiceRoleClient()
     const { data: submission, error: subErr } = await admin
       .from('marking_submissions')
-      .select('id, student_id, school_id')
+      .select('id, student_id, school_id, ai_grade, ai_score, ai_feedback')
       .eq('id', submissionId)
       .single()
 
@@ -217,6 +217,45 @@ export async function POST(request: NextRequest) {
     if (updateErr || !updated) {
       console.error('[marking/override] update failed', updateErr)
       return serverErrorResponse('Failed to save override.')
+    }
+
+    // 7b. Capture the legacy override in the Smart-IP audit/label trail.
+    //     decision = 'corrected' (this path is always a grade correction).
+    //     Best-effort: a failure here must NOT change the existing override
+    //     behaviour or response, so we only log and continue.
+    {
+      const sub = submission as unknown as {
+        ai_grade: string | null
+        ai_score: number | null
+        ai_feedback: string | null
+      }
+      const gradeNum = Number.parseInt(teacherGrade, 10)
+      const teacherScore = Number.isFinite(gradeNum) ? gradeNum : null
+      // teacher_reviewed_by is a UUID FK; site-admin synthetic members have a
+      // non-UUID id ("site-admin-<uuid>") — null it out for the FK column.
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+        member.id,
+      )
+      const reviewerMemberId = isUuid ? member.id : null
+      const { error: modErr } = await admin.from('teacher_moderations').insert({
+        submission_id: submissionId,
+        reviewer_user_id: user.id,
+        reviewer_member_id: reviewerMemberId,
+        decision: 'corrected',
+        ai_grade: sub.ai_grade ?? null,
+        teacher_grade: teacherGrade,
+        ai_score: sub.ai_score ?? null,
+        teacher_score: teacherScore,
+        ao_corrections: null,
+        feedback_before: sub.ai_feedback ?? null,
+        feedback_after: teacherComment,
+        adjustment_reason: null,
+        moderation_notes: null,
+        training_eligible: null,
+      })
+      if (modErr) {
+        console.error('[marking/override] teacher_moderations insert failed', modErr)
+      }
     }
 
     // 8. Hydrate display fields the client expects (student_name, class_name)

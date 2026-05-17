@@ -73,4 +73,22 @@ export const AI_ACT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'AI transparency & your rights',
     ar: 'شفافية الذكاء الاصطناعي وحقوقك',
   },
+
+  // ─── Smart IP — student "awaiting teacher review" state ─────────────
+  // Shown on /marking/results/[id] when a teacher-linked (b2b_class)
+  // submission has NOT yet been approved by a teacher. The hard rule:
+  // students never see a draft AI mark for teacher-set work — only the
+  // teacher-approved feedback, once it exists.
+  'marking.results.awaiting_title': {
+    en: 'Awaiting teacher review',
+    ar: 'بانتظار مراجعة المعلّم',
+  },
+  'marking.results.awaiting_body': {
+    en: 'Your work has been submitted and is waiting for your teacher to review it. Your feedback and mark will appear here once your teacher has checked and approved them. You will not see an automated mark for teacher-set work before then.',
+    ar: 'انرسل شغلك وهو بانتظار معلّمك يراجعه. ملاحظاتك ودرجتك بتبيّن هني أول ما يشيّكها معلّمك ويعتمدها. ما بتشوف درجة تلقائية للشغل اللي حدّده المعلّم قبل جذي.',
+  },
+  'marking.results.awaiting_status': {
+    en: 'Status: waiting for teacher approval',
+    ar: 'الحالة: بانتظار اعتماد المعلّم',
+  },
 }

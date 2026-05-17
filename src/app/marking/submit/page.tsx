@@ -195,6 +195,96 @@ export default function SubmitEssayPage() {
     essay.trim().length > 0 &&
     wordCount >= 50
 
+  /**
+   * Persist the submission to the server marking spine, then trigger the AI
+   * mark, then route to the server-backed results page by submissionId.
+   *
+   * Contract (built in parallel — not implemented here):
+   *   POST /api/submissions { source:'b2c_self', examBoard, qualification?,
+   *     paper?, questionText, questionType?, studiedText?, studentAnswer,
+   *     targetGrade?, markSchemeId, questionId }  → { submissionId }
+   *   POST /api/marking/run { submissionId }       → runs the AI mark
+   *
+   * Returns the submissionId on success, or null if the spine is
+   * unavailable (e.g. not yet deployed → 404/405) so the caller can fall
+   * back to the legacy /api/mark + localStorage path. Throws only on a
+   * definitive submission-spine error (auth/limit/validation) that the
+   * legacy path could not recover either.
+   */
+  const trySubmissionSpine = useCallback(
+    async (args: {
+      examBoard: string
+      paper: string
+      questionText: string
+      questionType?: string
+      studentAnswer: string
+      markSchemeId: string
+      questionId: string
+    }): Promise<{ submissionId: string } | { unavailable: true } | { failed: string }> => {
+      let createRes: Response
+      try {
+        createRes = await fetch('/api/submissions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            source: 'b2c_self',
+            examBoard: args.examBoard,
+            paper: args.paper,
+            questionText: args.questionText,
+            questionType: args.questionType,
+            studentAnswer: args.studentAnswer,
+            markSchemeId: args.markSchemeId,
+            questionId: args.questionId,
+          }),
+        })
+      } catch {
+        // Network error reaching the spine — let the caller fall back.
+        return { unavailable: true }
+      }
+
+      // Spine not deployed yet → fall back silently to the legacy path.
+      if (createRes.status === 404 || createRes.status === 405) {
+        return { unavailable: true }
+      }
+
+      if (!createRes.ok) {
+        let message = ''
+        try {
+          const body = await createRes.json()
+          message = body?.error ?? body?.message ?? ''
+        } catch {
+          /* non-JSON */
+        }
+        return { failed: friendlyError(createRes.status, message) }
+      }
+
+      let submissionId = ''
+      try {
+        const body = await createRes.json()
+        submissionId = String(body?.submissionId ?? '')
+      } catch {
+        return { unavailable: true }
+      }
+      if (!submissionId) return { unavailable: true }
+
+      // Fire the AI mark. A failure here is non-fatal for navigation — the
+      // results page polls status and shows an "awaiting"/"in progress"
+      // state, and the human-review path is always available there.
+      try {
+        await fetch('/api/marking/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ submissionId }),
+        })
+      } catch {
+        /* non-fatal — results page handles a not-yet-marked submission */
+      }
+
+      return { submissionId }
+    },
+    [],
+  )
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault()
@@ -205,8 +295,62 @@ export default function SubmitEssayPage() {
       const id = `mk_${Date.now().toString(36)}`
       const boardLabel = selectedBoard.label
       const paperLabel = selectedPaper.label
-      const questionLabel = questionOptions.find((q) => q.value === question)?.label ?? question
+      const questionOption = questionOptions.find((q) => q.value === question)
+      const questionLabel = questionOption?.label ?? question
       const markSchemeId = selectedPaper.scheme.id
+      const questionType = selectedPaper.scheme.questions.find(
+        (q) => q.id === question,
+      )?.questionType
+
+      // ── Server persistence (Smart IP submission spine) ─────────────────
+      // Preferred path: persist + AI-mark server-side and route by
+      // submissionId. Falls back to the legacy /api/mark + localStorage
+      // path below if the spine is not available, so existing behaviour
+      // (and offline history) keeps working.
+      const spine = await trySubmissionSpine({
+        examBoard: boardLabel,
+        paper: paperLabel,
+        questionText: questionLabel,
+        questionType,
+        studentAnswer: essay,
+        markSchemeId,
+        questionId: question,
+      })
+
+      if ('failed' in spine) {
+        setError(spine.failed)
+        setIsSubmitting(false)
+        return
+      }
+      if ('submissionId' in spine) {
+        // Mirror a lightweight entry into localStorage history so the
+        // existing /marking/history list still shows this attempt even
+        // before the server feed is wired into that page.
+        try {
+          const histEntry = {
+            id: spine.submissionId,
+            title: title.trim() || questionLabel,
+            board: boardLabel,
+            paper: paperLabel,
+            question: questionLabel,
+            essay,
+            wordCount,
+            grade: 0,
+            scorePercent: 0,
+            aos: [],
+            serverBacked: true,
+            submittedAt: new Date().toISOString(),
+          }
+          const raw = localStorage.getItem('english-hub-marking-history')
+          const prev = raw ? JSON.parse(raw) : []
+          localStorage.setItem('english-hub-marking-history', JSON.stringify([histEntry, ...prev]))
+        } catch {
+          /* ignore localStorage errors — server is the source of truth */
+        }
+        router.push(`/marking/results/${spine.submissionId}`)
+        return
+      }
+      // spine.unavailable → fall through to the legacy path unchanged.
 
       try {
         const res = await fetch('/api/mark', {
@@ -309,6 +453,7 @@ export default function SubmitEssayPage() {
       canSubmit,
       isSubmitting,
       router,
+      trySubmissionSpine,
     ],
   )
 

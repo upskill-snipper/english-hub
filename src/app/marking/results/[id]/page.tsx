@@ -109,34 +109,305 @@ function findParagraphForQuote(paragraphs: string[], quote: string): number {
   return paragraphs.findIndex((p) => p.toLowerCase().replace(/['']/g, "'").includes(normalised))
 }
 
+/* ─── Server submission (Smart IP spine) ───────────────────── */
+
+/**
+ * Shape returned by GET /api/marking/[submissionId] (built in parallel).
+ * Only the fields this page consumes are typed; everything is optional so a
+ * partially-populated row (e.g. AI not run yet) renders the right waiting
+ * state rather than throwing.
+ */
+interface ServerSubmission {
+  id: string
+  source?: 'b2c_self' | 'b2b_class' | string
+  status?: string
+  examBoard?: string | null
+  exam_board?: string | null
+  paper?: string | null
+  questionText?: string | null
+  question_text?: string | null
+  essayTitle?: string | null
+  studentAnswer?: string | null
+  essay_text?: string | null
+  aiResult?: unknown
+  ai_result?: unknown
+  aiScore?: number | null
+  aiMaxMarks?: number | null
+  aiGradeBand?: string | null
+  aiFeedback?: string | null
+  // Final teacher decision (B2B approved path)
+  finalTeacherMark?: string | null
+  finalTeacherFeedback?: string | null
+  teacherGrade?: string | null
+  teacherComment?: string | null
+}
+
+/**
+ * Decide whether the viewing student is allowed to see AI/teacher feedback.
+ *
+ * SAFEGUARD (hard rule): a student on a B2B / teacher-linked submission
+ * ('b2b_class') may ONLY ever see feedback once a teacher has APPROVED it
+ * (status === 'approved'). They must NEVER see a draft AI mark for a
+ * teacher-linked submission. B2C self-study ('b2c_self') has no teacher in
+ * the loop, so AI feedback is visible once the model has marked it
+ * ('ai_marked') or it was later approved.
+ */
+function canStudentSeeFeedback(sub: ServerSubmission): boolean {
+  const status = sub.status ?? ''
+  const source = sub.source ?? 'b2b_class' // default to the stricter path
+  if (source === 'b2b_class') {
+    return status === 'approved'
+  }
+  // b2c_self (or any non-b2b source): AI feedback is the product.
+  return status === 'ai_marked' || status === 'approved'
+}
+
+/** Map a server submission's AI result JSON into the StoredResult render shape. */
+function serverToStoredResult(sub: ServerSubmission): StoredResult {
+  const board = sub.examBoard ?? sub.exam_board ?? ''
+  const paper = sub.paper ?? ''
+  const question = sub.questionText ?? sub.question_text ?? undefined
+  const essay = sub.studentAnswer ?? sub.essay_text ?? ''
+  const title = sub.essayTitle?.trim() || question || 'Marked submission'
+
+  // ai_result is the full production MarkingResult JSON when present.
+  const ai = (sub.aiResult ?? sub.ai_result ?? null) as {
+    predictedGrade?: string
+    gradeBand?: string
+    totalMarks?: number
+    maxMarks?: number
+    summary?: string
+    strengths?: FeedbackItem[]
+    improvements?: FeedbackItem[]
+    nextStepsToNextGrade?: string[]
+    aoScores?: Array<{
+      id: string
+      label: string
+      marks: number
+      maxMarks: number
+      band?: string
+      justification?: string
+      evidence?: string[]
+    }>
+  } | null
+
+  // Prefer the teacher's final mark/feedback when this is an approved row.
+  const teacherMark = sub.finalTeacherMark ?? sub.teacherGrade ?? null
+  const numericGrade =
+    (teacherMark != null ? parseInt(teacherMark, 10) : NaN) ||
+    (ai?.predictedGrade != null ? parseInt(ai.predictedGrade, 10) : NaN) ||
+    (typeof sub.aiScore === 'number' ? sub.aiScore : 0)
+
+  const totalMarks = ai?.totalMarks ?? (typeof sub.aiScore === 'number' ? sub.aiScore : undefined)
+  const maxMarks = ai?.maxMarks ?? (typeof sub.aiMaxMarks === 'number' ? sub.aiMaxMarks : undefined)
+  const scorePercent =
+    totalMarks != null && maxMarks != null && maxMarks > 0
+      ? Math.round((totalMarks / maxMarks) * 100)
+      : 0
+
+  const teacherFeedback = sub.finalTeacherFeedback ?? sub.teacherComment ?? null
+
+  return {
+    id: sub.id,
+    title,
+    board,
+    paper,
+    question,
+    essay,
+    wordCount: essay.trim() ? essay.trim().split(/\s+/).length : 0,
+    grade: Number.isFinite(numericGrade) ? (numericGrade as number) : 0,
+    predictedGrade: ai?.predictedGrade,
+    gradeBand: ai?.gradeBand ?? sub.aiGradeBand ?? undefined,
+    totalMarks,
+    maxMarks,
+    scorePercent,
+    aos: (ai?.aoScores ?? []).map((ao) => ({
+      code: ao.id,
+      label: ao.label,
+      score: ao.marks,
+      max: ao.maxMarks,
+      band: ao.band,
+      justification: ao.justification,
+      evidence: ao.evidence,
+    })) as AOScore[],
+    strengths: ai?.strengths,
+    improvements: ai?.improvements,
+    nextStepsToNextGrade: ai?.nextStepsToNextGrade,
+    // When a teacher has finalised, surface their comment as the summary so
+    // the approved feedback the student sees is the human-reviewed one.
+    summary: teacherFeedback ?? ai?.summary,
+    submittedAt: new Date().toISOString(),
+  }
+}
+
 /* ─── Page ─────────────────────────────────────────────────── */
+
+/** Awaiting-teacher-review state for B2B submissions not yet approved. */
+function AwaitingReviewState({
+  tx,
+  title,
+  meta,
+}: {
+  tx: (k: string) => string
+  title: string
+  meta: string
+}) {
+  const awaitingTitle =
+    tx('marking.results.awaiting_title') === '[[marking.results.awaiting_title]]'
+      ? 'Awaiting teacher review'
+      : tx('marking.results.awaiting_title')
+  const awaitingBody =
+    tx('marking.results.awaiting_body') === '[[marking.results.awaiting_body]]'
+      ? 'Your work has been submitted and is waiting for your teacher to review it. Your feedback and mark will appear here once your teacher has checked and approved them. You will not see an automated mark for teacher-set work before then.'
+      : tx('marking.results.awaiting_body')
+  return (
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
+          <li>
+            <Link href="/marking" className="hover:text-primary">
+              {tx('marking.nav.marking')}
+            </Link>
+          </li>
+          <li aria-hidden>/</li>
+          <li className="font-medium text-foreground">{tx('marking.results.breadcrumb')}</li>
+        </ol>
+      </nav>
+
+      <header className="mb-6 flex flex-col gap-2">
+        <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
+          {title}
+        </h1>
+        {meta && <p className="text-sm text-muted-foreground">{meta}</p>}
+      </header>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{awaitingTitle}</CardTitle>
+          <CardDescription>{awaitingBody}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center gap-3 rounded-lg border border-amber-500/40 bg-amber-500/[0.06] px-4 py-3 text-sm text-muted-foreground">
+            <span
+              aria-hidden
+              className="inline-block h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-amber-500"
+            />
+            <span>
+              {tx('marking.results.awaiting_status') === '[[marking.results.awaiting_status]]'
+                ? 'Status: waiting for teacher approval'
+                : tx('marking.results.awaiting_status')}
+            </span>
+          </div>
+          <div className="mt-6">
+            <Button variant="outline" render={<Link href="/marking/history" />}>
+              {tx('marking.results.btn_back')}
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
 
 export default function ResultsPage({ params }: { params: Promise<{ id: string }> }) {
   const tx = useT()
   const { id } = use(params)
   const [result, setResult] = useState<StoredResult | null>(null)
   const [loaded, setLoaded] = useState(false)
+  /** Set when the server says this is a teacher-linked row not yet approved. */
+  const [awaiting, setAwaiting] = useState<{ title: string; meta: string } | null>(null)
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem('english-hub-marking-history')
-      if (raw) {
-        const list: StoredResult[] = JSON.parse(raw)
-        const found = list.find((e) => e.id === id)
-        if (found) {
-          setResult(found)
-          setLoaded(true)
+    let cancelled = false
+
+    /** Legacy path: resolve from localStorage, else the sample fallback. */
+    function resolveFromLocalStorage() {
+      if (cancelled) return
+      try {
+        const raw = localStorage.getItem('english-hub-marking-history')
+        if (raw) {
+          const list: StoredResult[] = JSON.parse(raw)
+          const found = list.find((e) => e.id === id)
+          // A server-backed stub (no AI fields yet) must NOT short-circuit to
+          // a localStorage render — the server is the source of truth there.
+          if (found && !(found as { serverBacked?: boolean }).serverBacked) {
+            setResult(found)
+            setLoaded(true)
+            return
+          }
+        }
+      } catch {
+        /* ignore */
+      }
+      setResult(FALLBACK)
+      setLoaded(true)
+    }
+
+    async function resolve() {
+      // 1. Try the server marking spine first. Legacy localStorage ids
+      //    (mk_…, "sample") will simply 404 here and fall through.
+      try {
+        const res = await fetch(`/api/marking/${encodeURIComponent(id)}`, {
+          headers: { Accept: 'application/json' },
+        })
+
+        if (res.status === 404 || res.status === 405) {
+          // Not a server submission (or spine not deployed) → legacy path.
+          resolveFromLocalStorage()
           return
         }
+
+        if (res.ok) {
+          const body = await res.json().catch(() => null)
+          const sub: ServerSubmission | null =
+            body && typeof body === 'object'
+              ? ((body.submission ?? body) as ServerSubmission)
+              : null
+
+          if (sub && sub.id) {
+            const stored = serverToStoredResult(sub)
+            // SAFEGUARD: students only ever see APPROVED feedback for
+            // teacher-linked (b2b_class) work; B2C self-study sees AI
+            // feedback once marked. Anything else → awaiting state.
+            if (!cancelled) {
+              if (canStudentSeeFeedback(sub)) {
+                setResult(stored)
+              } else {
+                const meta = [stored.board, stored.paper, stored.question]
+                  .filter(Boolean)
+                  .join(' · ')
+                setAwaiting({ title: stored.title, meta })
+              }
+              setLoaded(true)
+            }
+            return
+          }
+        }
+      } catch {
+        /* network/parse error — fall back to the legacy path below */
       }
-    } catch {
-      /* ignore */
+      resolveFromLocalStorage()
     }
-    setResult(FALLBACK)
-    setLoaded(true)
+
+    void resolve()
+    return () => {
+      cancelled = true
+    }
   }, [id])
 
-  if (!loaded || !result) {
+  if (!loaded) {
+    return (
+      <div className="mx-auto max-w-4xl px-4 py-16 text-center text-sm text-muted-foreground">
+        {tx('marking.results.loading')}
+      </div>
+    )
+  }
+
+  if (awaiting) {
+    return <AwaitingReviewState tx={tx} title={awaiting.title} meta={awaiting.meta} />
+  }
+
+  if (!result) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-16 text-center text-sm text-muted-foreground">
         {tx('marking.results.loading')}

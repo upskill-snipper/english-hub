@@ -65,6 +65,7 @@ export type AiAuditFeature =
   | 'essay/feedback'
   | 'cefr-assess'
   | 'toolkit/generate-notes'
+  | 'marking/run'
 
 /** Token usage, when the SDK surfaces it (streaming/raw-fetch paths may not). */
 export interface AiAuditTokenUsage {

@@ -21,8 +21,12 @@ import {
   AlertTriangle,
   Sparkles,
   GraduationCap,
+  CheckCircle2,
+  XCircle,
+  Undo2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -46,15 +50,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Switch } from '@/components/ui/switch'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
-type SubmissionStatus = 'pending' | 'ai_marked' | 'teacher_reviewed'
+// Includes the original three statuses plus the Smart-IP lifecycle values
+// (the GET route may now return any of these).
+type SubmissionStatus =
+  | 'submitted'
+  | 'pending'
+  | 'ai_marked'
+  | 'teacher_review_required'
+  | 'teacher_reviewed'
+  | 'approved'
+  | 'rejected'
+  | 'training_ready'
+  | 'excluded_from_training'
 
 interface BandMark {
   band: string
   score: number
   max: number
+}
+
+interface LatestModeration {
+  id: string
+  decision: string
+  teacher_grade: string | null
+  ai_grade: string | null
+  adjustment_reason: string | null
+  moderation_notes: string | null
+  training_eligible: boolean | null
+  reviewer_user_id: string | null
+  created_at: string
 }
 
 interface MarkingSubmission {
@@ -75,7 +103,22 @@ interface MarkingSubmission {
   status: SubmissionStatus
   submitted_at: string
   reviewed_at: string | null
+  // ── Smart-IP additive fields (optional — older rows may omit them) ────────
+  source?: string | null
+  ai_score?: number | null
+  ai_max_marks?: number | null
+  ai_grade_band?: string | null
+  final_teacher_mark?: string | null
+  final_teacher_feedback?: string | null
+  teacher_adjustment_reason?: string | null
+  moderation_notes?: string | null
+  training_eligible?: boolean | null
+  approved_by?: string | null
+  approved_at?: string | null
+  latest_moderation?: LatestModeration | null
 }
+
+type ReviewDecision = 'approve' | 'reject' | 'correct' | 'send_back'
 
 // ─── Constants ─────────────────────────────────────────────────────────────
 
@@ -86,13 +129,45 @@ const STATUS_OPTIONS: { value: SubmissionStatus | 'all'; label: string }[] = [
   { value: 'all', label: 'All statuses' },
   { value: 'pending', label: 'Awaiting AI' },
   { value: 'ai_marked', label: 'AI marked' },
+  { value: 'teacher_review_required', label: 'Needs review' },
   { value: 'teacher_reviewed', label: 'Teacher reviewed' },
+  { value: 'approved', label: 'Approved' },
+  { value: 'rejected', label: 'Rejected' },
 ]
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
 
 function statusBadge(status: SubmissionStatus) {
   switch (status) {
+    case 'approved':
+    case 'training_ready':
+      return (
+        <Badge
+          variant="outline"
+          className="border-green-500/20 bg-green-500/10 text-green-600 dark:text-green-400"
+        >
+          {status === 'training_ready' ? 'Training ready' : 'Approved'}
+        </Badge>
+      )
+    case 'rejected':
+    case 'excluded_from_training':
+      return (
+        <Badge
+          variant="outline"
+          className="border-destructive/20 bg-destructive/10 text-destructive"
+        >
+          {status === 'excluded_from_training' ? 'Excluded' : 'Rejected'}
+        </Badge>
+      )
+    case 'teacher_review_required':
+      return (
+        <Badge
+          variant="outline"
+          className="border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400"
+        >
+          Needs review
+        </Badge>
+      )
     case 'teacher_reviewed':
       return (
         <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
@@ -105,6 +180,7 @@ function statusBadge(status: SubmissionStatus) {
           AI marked
         </Badge>
       )
+    case 'submitted':
     case 'pending':
     default:
       return (
@@ -146,6 +222,7 @@ function truncate(s: string, n: number): string {
 // ─── Component ─────────────────────────────────────────────────────────────
 
 export default function SchoolMarkingPage() {
+  const t = useT()
   const [submissions, setSubmissions] = useState<MarkingSubmission[]>([])
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -159,6 +236,17 @@ export default function SchoolMarkingPage() {
   const [overrideComment, setOverrideComment] = useState<string>('')
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState<string | null>(null)
+
+  // ── Teacher decision (review / moderation) state ──────────────────────────
+  // The AI mark is a draft; this is the editable final teacher decision.
+  const [reviewGrade, setReviewGrade] = useState<string>('')
+  const [reviewFeedback, setReviewFeedback] = useState<string>('')
+  const [reviewReason, setReviewReason] = useState<string>('')
+  const [reviewNotes, setReviewNotes] = useState<string>('')
+  const [reviewTraining, setReviewTraining] = useState<boolean>(false)
+  // Which decision button is mid-flight (null = idle).
+  const [reviewBusy, setReviewBusy] = useState<ReviewDecision | null>(null)
+  const [reviewError, setReviewError] = useState<string | null>(null)
 
   // ── Fetch ────────────────────────────────────────────────────────────────
 
@@ -199,10 +287,26 @@ export default function SchoolMarkingPage() {
       setOverrideGrade(active.teacher_grade ?? active.ai_grade ?? '')
       setOverrideComment(active.teacher_comment ?? '')
       setSaveError(null)
+      // Prefill the teacher-decision form: final teacher values first, then
+      // any earlier override, then the AI draft as the starting point.
+      setReviewGrade(active.final_teacher_mark ?? active.teacher_grade ?? active.ai_grade ?? '')
+      setReviewFeedback(
+        active.final_teacher_feedback ?? active.teacher_comment ?? active.ai_feedback ?? '',
+      )
+      setReviewReason(active.teacher_adjustment_reason ?? '')
+      setReviewNotes(active.moderation_notes ?? '')
+      setReviewTraining(active.training_eligible === true)
+      setReviewError(null)
     } else {
       setOverrideGrade('')
       setOverrideComment('')
       setSaveError(null)
+      setReviewGrade('')
+      setReviewFeedback('')
+      setReviewReason('')
+      setReviewNotes('')
+      setReviewTraining(false)
+      setReviewError(null)
     }
   }, [active])
 
@@ -253,6 +357,45 @@ export default function SchoolMarkingPage() {
       setSaveError(err instanceof Error ? err.message : 'Could not save override')
     } finally {
       setSaving(false)
+    }
+  }
+
+  // ── Teacher decision (review / moderation) ────────────────────────────────
+
+  async function handleReview(decision: ReviewDecision) {
+    if (!active || reviewBusy) return
+    setReviewBusy(decision)
+    setReviewError(null)
+    try {
+      const res = await fetch(`/api/marking/${active.id}/review`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          decision,
+          teacherGrade: reviewGrade || null,
+          teacherFeedback: reviewFeedback.trim() || null,
+          adjustmentReason: reviewReason.trim() || null,
+          moderationNotes: reviewNotes.trim() || null,
+          trainingEligible: reviewTraining,
+        }),
+      })
+      if (!res.ok) {
+        const body = (await res.json().catch(() => ({}))) as { error?: string }
+        throw new Error(body.error ?? 'Failed to submit decision')
+      }
+      const updated = (await res.json()) as { submission: MarkingSubmission }
+      setSubmissions((prev) =>
+        prev.map((s) => (s.id === updated.submission.id ? updated.submission : s)),
+      )
+      // Approve / reject are terminal — close the drawer. Correct / send-back
+      // stay in the queue, so keep the drawer open for further edits.
+      if (decision === 'approve' || decision === 'reject') {
+        setActiveId(null)
+      }
+    } catch (err) {
+      setReviewError(err instanceof Error ? err.message : 'Could not submit decision')
+    } finally {
+      setReviewBusy(null)
     }
   }
 
@@ -546,6 +689,145 @@ export default function SchoolMarkingPage() {
                   </h3>
                   <div className="whitespace-pre-wrap rounded-lg border border-border bg-muted/30 p-3 text-sm leading-relaxed text-foreground">
                     {active.ai_feedback?.trim() || 'No AI feedback available.'}
+                  </div>
+                </section>
+
+                {/* Teacher decision — the editable final mark + moderation.
+                    The AI mark above is only a draft; approving here is what
+                    sets the submission to 'approved'. Kept compact for speed. */}
+                <section>
+                  <div className="mb-2 flex items-center justify-between">
+                    <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      {t('marking.teacherDecision') || 'Teacher decision'}
+                    </h3>
+                    {active.latest_moderation && (
+                      <span className="text-[11px] text-muted-foreground">
+                        {t('marking.lastAction') || 'Last action'}:{' '}
+                        {active.latest_moderation.decision} ·{' '}
+                        {formatDate(active.latest_moderation.created_at)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="space-y-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+                      <div className="space-y-1.5">
+                        <Label htmlFor="review-grade">
+                          {t('marking.finalGrade') || 'Final grade'}
+                        </Label>
+                        <Select value={reviewGrade} onValueChange={setReviewGrade}>
+                          <SelectTrigger id="review-grade" className="w-32">
+                            <SelectValue placeholder="Grade" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {GRADE_OPTIONS.map((g) => (
+                              <SelectItem key={g} value={g}>
+                                {g}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="flex items-center gap-2 pb-2 sm:pb-0">
+                        <Switch
+                          id="review-training"
+                          checked={reviewTraining}
+                          onCheckedChange={(v: boolean) => setReviewTraining(v)}
+                        />
+                        <Label htmlFor="review-training" className="cursor-pointer text-sm">
+                          {t('marking.suitableForTraining') || 'Suitable for training'}
+                        </Label>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <Label htmlFor="review-feedback">
+                        {t('marking.feedbackToStudent') || 'Feedback to student'}
+                      </Label>
+                      <Textarea
+                        id="review-feedback"
+                        value={reviewFeedback}
+                        onChange={(e) => setReviewFeedback(e.target.value)}
+                        placeholder="Final feedback the student will see…"
+                        rows={5}
+                      />
+                    </div>
+
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="space-y-1.5">
+                        <Label htmlFor="review-reason">
+                          {t('marking.adjustmentReason') || 'Adjustment reason'}
+                        </Label>
+                        <Textarea
+                          id="review-reason"
+                          value={reviewReason}
+                          onChange={(e) => setReviewReason(e.target.value)}
+                          placeholder="Why the AI mark was changed (internal)…"
+                          rows={2}
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <Label htmlFor="review-notes">
+                          {t('marking.moderationNotes') || 'Moderation notes'}
+                        </Label>
+                        <Textarea
+                          id="review-notes"
+                          value={reviewNotes}
+                          onChange={(e) => setReviewNotes(e.target.value)}
+                          placeholder="Internal moderation notes (not shown to student)…"
+                          rows={2}
+                        />
+                      </div>
+                    </div>
+
+                    {reviewError && <p className="text-sm text-destructive">{reviewError}</p>}
+
+                    <div className="flex flex-col gap-2 sm:flex-row">
+                      <Button
+                        type="button"
+                        className="flex-1 bg-green-600 text-white hover:bg-green-700"
+                        onClick={() => handleReview('approve')}
+                        disabled={reviewBusy !== null}
+                      >
+                        {reviewBusy === 'approve' ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <CheckCircle2 className="h-4 w-4" />
+                        )}
+                        {t('marking.approve') || 'Approve'}
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="flex-1 border-amber-500/40 text-amber-600 hover:bg-amber-500/10 dark:text-amber-400"
+                        onClick={() => handleReview('send_back')}
+                        disabled={reviewBusy !== null}
+                      >
+                        {reviewBusy === 'send_back' ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <Undo2 className="h-4 w-4" />
+                        )}
+                        {t('marking.sendBack') || 'Send back to student'}
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="flex-1 border-destructive/40 text-destructive hover:bg-destructive/10"
+                        onClick={() => handleReview('reject')}
+                        disabled={reviewBusy !== null}
+                      >
+                        {reviewBusy === 'reject' ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <XCircle className="h-4 w-4" />
+                        )}
+                        {t('marking.reject') || 'Reject'}
+                      </Button>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground">
+                      {t('marking.draftHint') ||
+                        'The AI mark is a draft. Approving records the final teacher mark and locks the submission.'}
+                    </p>
                   </div>
                 </section>
 

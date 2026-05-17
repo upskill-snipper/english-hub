@@ -59,6 +59,12 @@ export async function GET(_req: NextRequest) {
     }
 
     // Build the visibility filter.
+    //
+    // Additively surfaces the Smart-IP review fields (source, structured AI
+    // result summary, final teacher decision, training/moderation metadata)
+    // alongside the original columns. Every pre-existing response key is kept
+    // byte-identical so existing readers (the /school/marking table) do not
+    // break; new keys are purely additive.
     let query = supabase
       .from('marking_submissions')
       .select(
@@ -77,7 +83,20 @@ export async function GET(_req: NextRequest) {
         teacher_comment,
         status,
         submitted_at,
-        teacher_reviewed_at
+        teacher_reviewed_at,
+        source,
+        ai_result,
+        ai_score,
+        ai_max_marks,
+        ai_grade_band,
+        ai_ao_breakdown,
+        final_teacher_mark,
+        final_teacher_feedback,
+        teacher_adjustment_reason,
+        moderation_notes,
+        training_eligible,
+        approved_by,
+        approved_at
         `,
       )
       .eq('school_id', member.school_id)
@@ -107,12 +126,46 @@ export async function GET(_req: NextRequest) {
       query = query.in('class_id', classIds)
     }
 
-    const { data: rows, error: queryError } = await query
+    const { data: rowsRaw, error: queryError } = await query
     if (queryError) {
       // Most likely cause: marking_submissions table doesn't exist yet.
       // The teacher dashboard handles an empty list cleanly.
       return NextResponse.json({ submissions: [] })
     }
+
+    // Supabase generated types don't yet know about marking_submissions /
+    // the Smart-IP columns (Prisma client not regenerated — see migration
+    // note), so pin the SELECT shape we expect.
+    const rows = (rowsRaw ?? []) as unknown as Array<{
+      id: string
+      student_id: string
+      class_id: string | null
+      exam_board: string | null
+      essay_title: string | null
+      essay_text: string | null
+      ai_grade: string | null
+      ai_confidence: number | null
+      ai_feedback: string | null
+      ai_band_marks: unknown
+      teacher_grade: string | null
+      teacher_comment: string | null
+      status: string | null
+      submitted_at: string
+      teacher_reviewed_at: string | null
+      source: string | null
+      ai_result: unknown
+      ai_score: number | null
+      ai_max_marks: number | null
+      ai_grade_band: string | null
+      ai_ao_breakdown: unknown
+      final_teacher_mark: string | null
+      final_teacher_feedback: string | null
+      teacher_adjustment_reason: string | null
+      moderation_notes: string | null
+      training_eligible: boolean | null
+      approved_by: string | null
+      approved_at: string | null
+    }>
 
     // Hydrate student names + class names in two batched lookups so we
     // never N+1 the database. Failures here also degrade to nulls rather
@@ -140,25 +193,104 @@ export async function GET(_req: NextRequest) {
     )
     const classNameById = new Map((classesRes.data ?? []).map((c) => [c.id, c.name ?? 'Class']))
 
-    const submissions = rows.map((r) => ({
-      id: r.id,
-      student_id: r.student_id,
-      student_name: studentNameById.get(r.student_id) ?? 'Student',
-      class_id: r.class_id ?? '',
-      class_name: r.class_id ? (classNameById.get(r.class_id) ?? 'Class') : '',
-      exam_board: r.exam_board ?? null,
-      essay_title: r.essay_title ?? null,
-      essay_text: r.essay_text ?? '',
-      ai_grade: r.ai_grade ?? null,
-      ai_confidence: r.ai_confidence ?? null,
-      ai_feedback: r.ai_feedback ?? null,
-      ai_band_marks: Array.isArray(r.ai_band_marks) ? r.ai_band_marks : [],
-      teacher_grade: r.teacher_grade ?? null,
-      teacher_comment: r.teacher_comment ?? null,
-      status: r.status ?? 'pending',
-      submitted_at: r.submitted_at,
-      reviewed_at: r.teacher_reviewed_at ?? null,
-    }))
+    // Latest teacher_moderations row per submission, so the table can show
+    // the most recent reviewer action without an extra round-trip. One
+    // batched query ordered newest-first; we keep the first seen per
+    // submission_id. Degrades to "no moderation" on any error.
+    const submissionIds = rows.map((r) => r.id)
+    const latestModerationBySubmission = new Map<
+      string,
+      {
+        id: string
+        decision: string
+        teacher_grade: string | null
+        ai_grade: string | null
+        adjustment_reason: string | null
+        moderation_notes: string | null
+        training_eligible: boolean | null
+        reviewer_user_id: string | null
+        created_at: string
+      }
+    >()
+    if (submissionIds.length > 0) {
+      const { data: moderationsRaw } = await supabase
+        .from('teacher_moderations')
+        .select(
+          'id, submission_id, decision, teacher_grade, ai_grade,' +
+            ' adjustment_reason, moderation_notes, training_eligible,' +
+            ' reviewer_user_id, created_at',
+        )
+        .in('submission_id', submissionIds)
+        .order('created_at', { ascending: false })
+
+      for (const m of (moderationsRaw ?? []) as unknown as Array<{
+        id: string
+        submission_id: string
+        decision: string
+        teacher_grade: string | null
+        ai_grade: string | null
+        adjustment_reason: string | null
+        moderation_notes: string | null
+        training_eligible: boolean | null
+        reviewer_user_id: string | null
+        created_at: string
+      }>) {
+        if (!latestModerationBySubmission.has(m.submission_id)) {
+          latestModerationBySubmission.set(m.submission_id, {
+            id: m.id,
+            decision: m.decision,
+            teacher_grade: m.teacher_grade,
+            ai_grade: m.ai_grade,
+            adjustment_reason: m.adjustment_reason,
+            moderation_notes: m.moderation_notes,
+            training_eligible: m.training_eligible,
+            reviewer_user_id: m.reviewer_user_id,
+            created_at: m.created_at,
+          })
+        }
+      }
+    }
+
+    const submissions = rows.map((r) => {
+      const aiResult = r.ai_result && typeof r.ai_result === 'object' ? r.ai_result : null
+      return {
+        // ── Original keys (byte-identical — do not change) ────────────────
+        id: r.id,
+        student_id: r.student_id,
+        student_name: studentNameById.get(r.student_id) ?? 'Student',
+        class_id: r.class_id ?? '',
+        class_name: r.class_id ? (classNameById.get(r.class_id) ?? 'Class') : '',
+        exam_board: r.exam_board ?? null,
+        essay_title: r.essay_title ?? null,
+        essay_text: r.essay_text ?? '',
+        ai_grade: r.ai_grade ?? null,
+        ai_confidence: r.ai_confidence ?? null,
+        ai_feedback: r.ai_feedback ?? null,
+        ai_band_marks: Array.isArray(r.ai_band_marks) ? r.ai_band_marks : [],
+        teacher_grade: r.teacher_grade ?? null,
+        teacher_comment: r.teacher_comment ?? null,
+        status: r.status ?? 'pending',
+        submitted_at: r.submitted_at,
+        reviewed_at: r.teacher_reviewed_at ?? null,
+        // ── Smart-IP additive keys ────────────────────────────────────────
+        source: r.source ?? 'b2b_class',
+        ai_result: aiResult,
+        ai_score: r.ai_score ?? null,
+        ai_max_marks: r.ai_max_marks ?? null,
+        ai_grade_band: r.ai_grade_band ?? null,
+        ai_ao_breakdown: Array.isArray(r.ai_ao_breakdown)
+          ? r.ai_ao_breakdown
+          : (r.ai_ao_breakdown ?? null),
+        final_teacher_mark: r.final_teacher_mark ?? null,
+        final_teacher_feedback: r.final_teacher_feedback ?? null,
+        teacher_adjustment_reason: r.teacher_adjustment_reason ?? null,
+        moderation_notes: r.moderation_notes ?? null,
+        training_eligible: r.training_eligible ?? null,
+        approved_by: r.approved_by ?? null,
+        approved_at: r.approved_at ?? null,
+        latest_moderation: latestModerationBySubmission.get(r.id) ?? null,
+      }
+    })
 
     return NextResponse.json({ submissions })
   } catch (err) {
