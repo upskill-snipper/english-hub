@@ -21,7 +21,9 @@
  */
 export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── Settings: account / linked child ────────────────────────────
-  'parent.linked_child': { en: 'Linked child', ar: 'الطفل المرتبط' },
+  // NOTE: 'parent.linked_child' lives in PARENT_1_DICTIONARY (wired
+  // before PARENT_2 in the resolver chain). Deduped here to keep a
+  // single source of truth.
   'parent.linked_to_prefix': { en: 'Linked to', ar: 'تم الربط مع' },
   'parent.linking': { en: 'Linking…', ar: 'يتم الربط…' },
 

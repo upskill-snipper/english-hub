@@ -59,6 +59,11 @@ import { SCHOOL_1_DICTIONARY } from './dictionary-school-1'
 import { SCHOOL_2_DICTIONARY } from './dictionary-school-2'
 import { PARENT_1_DICTIONARY } from './dictionary-parent-1'
 import { PARENT_2_DICTIONARY } from './dictionary-parent-2'
+import { AFF_PORTAL_DICTIONARY } from './dictionary-aff-portal'
+import { AFF_COMP_DICTIONARY } from './dictionary-aff-comp'
+import { TEACHER_DICTIONARY } from './dictionary-teacher'
+import { AMG_DICTIONARY } from './dictionary-amg'
+import { SCHOOL_3_DICTIONARY } from './dictionary-school-3'
 
 export type Locale = 'en' | 'ar'
 
@@ -14752,6 +14757,14 @@ export function lookup(key: string, locale: Locale): string {
     SCHOOL_2_DICTIONARY[key] ??
     PARENT_1_DICTIONARY[key] ??
     PARENT_2_DICTIONARY[key] ??
+    // Bucket A Tier-2b — curated EN+AR for affiliate portal/components,
+    // teacher dashboard, analytics/marking/games, and the residual
+    // school.* gap. Curated tier: precedes all placeholder/junk fixes.
+    SCHOOL_3_DICTIONARY[key] ??
+    AFF_PORTAL_DICTIONARY[key] ??
+    AFF_COMP_DICTIONARY[key] ??
+    TEACHER_DICTIONARY[key] ??
+    AMG_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
