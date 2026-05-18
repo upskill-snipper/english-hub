@@ -342,9 +342,27 @@ export async function middleware(request: NextRequest) {
   // This runs FIRST so every other concern (board cookie, auth, CSP)
   // only ever operates on the canonical host. Caught + verified by
   // site_health_monitor.
-  const host = request.headers.get('host') ?? ''
-  if (host === 'www.theenglishhub.app') {
-    const target = new URL(request.url)
+  // Read the USER-FACING host. On Vercel the bare `host` header is often
+  // the internal deployment host; the real requested host is in
+  // `x-forwarded-host`. The 2026-05-16 exact `host === 'www…'` check
+  // therefore never matched in prod, so this 308 block was dead code.
+  // Scoped to the production www host only — preview/branch deployments
+  // (*.vercel.app) must NEVER be redirected (would loop).
+  //
+  // CAVEAT (verified 2026-05-18 via live probe): a Vercel *platform*
+  // domain redirect currently intercepts www at the edge BEFORE this
+  // middleware runs and serves a 307 (Temporary). No app code (this
+  // middleware, nor a next.config `has:host` rule) can override a
+  // platform-level domain redirect — making it PERMANENT (308) is a
+  // Vercel Domains dashboard setting. This block is the correct fallback
+  // and will emit 308 the moment that platform redirect is removed.
+  const fwdHost = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '')
+    .split(',')[0]
+    .trim()
+    .split(':')[0]
+    .toLowerCase()
+  if (fwdHost === 'www.theenglishhub.app') {
+    const target = request.nextUrl.clone()
     target.host = 'theenglishhub.app'
     target.protocol = 'https:'
     target.port = ''
