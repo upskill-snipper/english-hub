@@ -1377,12 +1377,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.3,
     },
-    {
-      url: `${base}/legal/safeguarding`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
+    // Note: /legal/safeguarding 308-redirects to /safeguarding (listed above),
+    // so the redirecting URL is intentionally excluded from the sitemap.
     {
       url: `${base}/legal/rights`,
       lastModified: now,
@@ -1543,6 +1539,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 4 banded practice sets.
   // ============================================================
   const ealCefrSlugs = ['a2', 'b1', 'b2', 'c1'] as const
+  // Only the a2 level page per topic is indexable; b1/b2/c1 level variants
+  // are set to noindex elsewhere, so they are excluded from the sitemap.
+  const ealIndexableLevelSlugs = ['a2'] as const
   const ealRoutes: MetadataRoute.Sitemap = [
     { url: `${base}/eal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     {
@@ -1564,7 +1563,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.6,
       },
-      ...ealCefrSlugs.map((l) => ({
+      ...ealIndexableLevelSlugs.map((l) => ({
         url: `${base}/eal/${topic.id}/level/${l}`,
         lastModified: now,
         changeFrequency: 'monthly' as const,

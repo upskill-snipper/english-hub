@@ -413,6 +413,36 @@ export default function SafeguardingReportPage() {
           </div>
         )}
 
+        {/* Emergency & SLA notice — shown directly at the point of reporting */}
+        <div
+          role="note"
+          className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-sm text-muted-foreground"
+        >
+          <p className="text-red-700 dark:text-red-300">
+            <strong>
+              If you or someone else is in immediate danger, do not wait for this form.
+            </strong>{' '}
+            Call 999 (UK) or your local emergency number now. You can also contact Childline free on{' '}
+            <a href="tel:08001111" className="font-semibold underline">
+              0800 1111
+            </a>{' '}
+            (UK), the NSPCC on{' '}
+            <a href="tel:08088005000" className="font-semibold underline">
+              0808 800 5000
+            </a>
+            , or, in Qatar, the child and woman protection line on{' '}
+            <a href="tel:919" className="font-semibold underline">
+              919
+            </a>
+            .
+          </p>
+          <p className="mt-2">
+            Your report is confidential and goes to our Designated Safeguarding Lead. We aim to
+            acknowledge it within 24 hours. This form is monitored during stated hours and is not a
+            live emergency channel.
+          </p>
+        </div>
+
         {/* Submit */}
         <button type="submit" disabled={submitting} className="btn-primary w-full">
           {submitting ? t('safeguard.sending_report') : t('safeguard.send_report_cta')}

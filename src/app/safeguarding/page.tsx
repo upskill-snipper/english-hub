@@ -146,55 +146,49 @@ export default async function SafeguardingPolicyPage() {
         <PolicySection id="dsl" number="3" title={await t('safeguard.s3.title')}>
           <p>{await t('safeguard.s3.p1')}</p>
           <div className="rounded-lg border border-border bg-muted p-4">
-            <p className="text-sm font-semibold text-primary">
-              {await t('safeguard.s3.card.heading')}
-            </p>
+            <p className="text-sm font-semibold text-primary">Designated Safeguarding Lead (DSL)</p>
             <p className="mt-2">
-              <strong>{await t('safeguard.s3.card.name_label')}</strong> [DSL_NAME]
-            </p>
-            <p className="mt-1">
-              <strong>{await t('safeguard.s3.card.email_label')}</strong>{' '}
-              <a
-                href="mailto:[DSL_EMAIL]"
+              The English Hub&rsquo;s Designated Safeguarding Lead can be reached through our{' '}
+              <Link
+                href="/safeguarding/report"
                 className="font-semibold text-accent hover:text-accent/80 underline"
               >
-                [DSL_EMAIL]
-              </a>
-            </p>
-            <p className="mt-1">
-              <strong>{await t('safeguard.s3.card.phone_label')}</strong>{' '}
+                safeguarding report form
+              </Link>{' '}
+              and our monitored safeguarding inbox at{' '}
               <a
-                href="tel:[DSL_PHONE]"
+                href="mailto:safeguarding@theenglishhub.app"
                 className="font-semibold text-accent hover:text-accent/80 underline"
               >
-                [DSL_PHONE]
+                safeguarding@theenglishhub.app
               </a>
+              . We aim to acknowledge all safeguarding concerns within 24 hours.
             </p>
-            <p className="mt-1 text-xs">{await t('safeguard.s3.card.note')}</p>
+            <p className="mt-1 text-xs">
+              This service is for learners aged 13 and over; 13&ndash;15 require parent or guardian
+              consent.
+            </p>
           </div>
 
-          <div className="mt-4 rounded-lg border border-accent/20 bg-accent/5 p-4">
-            <p className="text-sm font-semibold text-primary">
-              {await t('safeguard.s3.how_title')}
-            </p>
+          <div className="mt-4 rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+            <p className="text-sm font-semibold text-primary">If a child is in immediate danger</p>
             <p className="mt-2 text-sm">
-              {await t('safeguard.s3.how_body_pre')}{' '}
+              Call <strong>999</strong> (UK) or your local emergency number. You can also contact
+              Childline on{' '}
               <a
-                href="mailto:[DSL_EMAIL]"
+                href="tel:08001111"
                 className="font-semibold text-accent hover:text-accent/80 underline"
               >
-                [DSL_EMAIL]
-              </a>{' '}
-              {await t('safeguard.s3.how_body_or_call')}{' '}
-              <a
-                href="tel:[DSL_PHONE]"
-                className="font-semibold text-accent hover:text-accent/80 underline"
-              >
-                [DSL_PHONE]
+                0800 1111
               </a>
-              {await t('safeguard.s3.how_body_emergency')}{' '}
-              <strong>{await t('safeguard.s3.how_body_999')}</strong>
-              {await t('safeguard.s3.how_body_ceop_pre')}{' '}
+              , the NSPCC on{' '}
+              <a
+                href="tel:08088005000"
+                className="font-semibold text-accent hover:text-accent/80 underline"
+              >
+                0808 800 5000
+              </a>
+              , or CEOP at{' '}
               <a
                 href="https://www.ceop.police.uk"
                 target="_blank"
@@ -202,13 +196,13 @@ export default async function SafeguardingPolicyPage() {
                 className="text-accent hover:text-accent/80 underline"
               >
                 ceop.police.uk
-              </a>{' '}
-              {await t('safeguard.s3.how_body_childline')}{' '}
+              </a>
+              . In Qatar, call the child and woman protection line on{' '}
               <a
-                href="tel:08001111"
+                href="tel:919"
                 className="font-semibold text-accent hover:text-accent/80 underline"
               >
-                0800 1111
+                919
               </a>
               .
             </p>

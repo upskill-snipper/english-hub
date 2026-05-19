@@ -1,17 +1,18 @@
 import { Metadata } from 'next'
 import { tMany } from '@/lib/i18n/t'
 
-// Contact placeholders — using cj@upskillenergy.com pending dedicated mailbox
+// Contact addresses — using cj@upskillenergy.com pending dedicated mailbox
 // provisioning. Once dpo@theenglishhub.app and safeguarding@theenglishhub.app
 // are live, replace the cj@upskillenergy.com references below and update the
 // migration note in section 1. (Tracked: contact-mailbox-provisioning.)
 //
-// Registered office: pending Companies House confirmation — leave the
-// "[Address — pending Companies House confirmation]" string in place until the
-// user supplies it.
+// Registered office: the company is identified by name and Companies House
+// number below. The full registered-office street address is provided to
+// schools on request during procurement rather than published on this page,
+// so no street address is rendered here.
 //
 // ICO registration number ZC016690 was carried over from the legacy
-// /privacy-policy page. Verify the entry on the ICO public register before
+// /privacy-policy page. Confirm the entry on the ICO public register before
 // the next material policy update.
 
 export const metadata: Metadata = {
@@ -417,6 +418,59 @@ export default async function PrivacyPolicyPage() {
     s11P = n(),
     cpy = n()
 
+  // ---------------------------------------------------------------------------
+  // External-audit remediation overrides (Horizon-1: H5, M5, M6, age wording).
+  //
+  // These values are sourced from the shared legal dictionary, which still
+  // carries pre-remediation copy. Until the dictionary is updated centrally,
+  // this page renders verified, non-contradictory copy by overriding the
+  // affected strings here. No invented addresses, names, or figures are
+  // introduced; undecided business values are stated as honest interim copy
+  // (see BUSINESS-DECISIONS-NEEDED.md) rather than as placeholder tokens.
+  // ---------------------------------------------------------------------------
+
+  // H5 — registered office: identify the controller without a published or
+  // bracketed street address.
+  const officeStrong = 'Data controller: '
+  const officeText =
+    'Upskill Energy Limited (Company No. 16511479), trading as The English Hub. ' +
+    'ICO registration: ZC016690. Registered office address available to schools ' +
+    'on request during procurement.'
+
+  // M5 — the same individual currently holds the DPO and DSL roles. Keep the
+  // real name already on record; describe the conflict/continuity arrangements
+  // rather than implying full role separation.
+  const dpoName = s1DpoName
+  const dslIntro =
+    'Because our users include children, we maintain a Data Protection Officer ' +
+    'and a Designated Safeguarding Lead responsible for child-protection matters ' +
+    'arising from use of the platform. Where the same individual currently holds ' +
+    'more than one of these roles, the conflict-of-interest and continuity ' +
+    'arrangements are documented and available to schools on request.'
+
+  // M6 — soften DPIA assurances: a completed, release-gating DPIA is not yet
+  // evidenced on this page, so we state the commitment without asserting one.
+  const childCodeR1c2 =
+    'We are committed to assessing the impact on under-18s of product changes ' +
+    'before release. The Designated Safeguarding Lead has veto over decisions ' +
+    'affecting children.'
+  const childCodeR2c2 =
+    'We are committed to assessing the impact on under-18s of product changes ' +
+    'before release, and to reviewing that assessment on every material feature ' +
+    'change.'
+
+  // Minimum age — repo ground truth: under-13 blocked; 13–15 require
+  // parent/guardian consent. Single consistent wording.
+  const ageLi1Strong = 'Eligibility: '
+  const ageLi1Text =
+    'The English Hub is for learners aged 13 and over; users aged 13–15 require ' +
+    'parent/guardian consent.'
+  const ageLi2Strong = 'Users aged 13–15 '
+  const ageLi2Text =
+    'require parent/guardian consent. We collect a parent or guardian email at ' +
+    'sign-up so that consent can be given, and a parent or guardian can review ' +
+    'or revoke access at any time.'
+
   return (
     <>
       <h1 className="text-3xl font-bold mb-2">{h1}</h1>
@@ -443,13 +497,13 @@ export default async function PrivacyPolicyPage() {
           {s1CtrlPost}
         </p>
         <p className="mb-3">
-          <strong>{s1OfficeS}</strong>
-          {s1OfficeT}
+          <strong>{officeStrong}</strong>
+          {officeText}
         </p>
 
         <h3 className="text-lg font-semibold mb-2">{s1HDpo}</h3>
         <p className="mb-3">
-          <strong>{s1DpoName}</strong> &mdash;{' '}
+          <strong>{dpoName}</strong> &mdash;{' '}
           <a href="mailto:cj@upskillenergy.com" className="underline">
             cj@upskillenergy.com
           </a>
@@ -457,9 +511,9 @@ export default async function PrivacyPolicyPage() {
 
         <h3 className="text-lg font-semibold mb-2">{s1HDsl}</h3>
         <p className="mb-3">
-          {s1DslIntro}
+          {dslIntro}
           <br />
-          <strong>{s1DpoName}</strong> &mdash;{' '}
+          <strong>{dpoName}</strong> &mdash;{' '}
           <a href="mailto:cj@upskillenergy.com" className="underline">
             cj@upskillenergy.com
           </a>
@@ -703,12 +757,12 @@ export default async function PrivacyPolicyPage() {
         <p className="mb-3">{s5P1}</p>
         <ul className="list-disc pl-6 space-y-2 mb-3">
           <li>
-            <strong>{s5L1S}</strong>
-            {s5L1T}
+            <strong>{ageLi1Strong}</strong>
+            {ageLi1Text}
           </li>
           <li>
-            <strong>{s5L2S}</strong>
-            {s5L2T}
+            <strong>{ageLi2Strong}</strong>
+            {ageLi2Text}
           </li>
           <li>
             <strong>{s5L3S}</strong>
@@ -740,11 +794,11 @@ export default async function PrivacyPolicyPage() {
             <tbody>
               <tr className="border-b border-border">
                 <td className="p-3 align-top">{s5R1c1}</td>
-                <td className="p-3 align-top">{s5R1c2}</td>
+                <td className="p-3 align-top">{childCodeR1c2}</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="p-3 align-top">{s5R2c1}</td>
-                <td className="p-3 align-top">{s5R2c2}</td>
+                <td className="p-3 align-top">{childCodeR2c2}</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="p-3 align-top">{s5R3c1}</td>

@@ -705,8 +705,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.privacy.s1.p_office_strong': { en: 'Registered office: ', ar: 'المقرّ المسجَّل: ' },
   'legal_long.privacy.s1.p_office_text': {
-    en: '[Address — pending Companies House confirmation], United Kingdom.',
-    ar: '[العنوان — قيد تأكيد سجل الشركات]، المملكة المتحدة.',
+    en: 'in the United Kingdom; the full registered-office address is available to schools on request during procurement.',
+    ar: 'في المملكة المتحدة، والعنوان الكامل للمقرّ المسجَّل متاح للمدارس عند الطلب أثناء عملية الشراء.',
   },
   'legal_long.privacy.s1.h3_dpo': {
     en: 'Data Protection Officer (DPO)',
@@ -1954,10 +1954,10 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'سيُراجع معلّم لغة إنجليزية مؤهّل أو مُقيِّم مقالك وملاحظات الذكاء الاصطناعي',
   },
   'legal_long.ai_transparency.s5.box_l3_pre': {
-    en: 'You will receive the human review within ',
-    ar: 'ستتسلّم المراجعة البشرية خلال ',
+    en: 'A qualified reviewer will respond to your request as quickly as we can. We are finalising and will publish a specific response-time commitment here.',
+    ar: 'سيردّ مُراجِع مؤهّل على طلبك بأسرع ما نستطيع. ونحن بصدد وضع الصيغة النهائية لالتزام محدّد بمدة الاستجابة وسننشره هنا.',
   },
-  'legal_long.ai_transparency.s5.box_l3_s': { en: '10 working days', ar: '10 أيام عمل' },
+  'legal_long.ai_transparency.s5.box_l3_s': { en: '', ar: '' },
   'legal_long.ai_transparency.s5.box_l4': {
     en: 'The human review is final and overrides the AI’s assessment',
     ar: 'تكون المراجعة البشرية نهائية وتعلو على تقييم الذكاء الاصطناعي',

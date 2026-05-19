@@ -100,6 +100,26 @@ const nextConfig = {
         destination: '/resources/revision-notes/between-a-rock-and-a-hard-place',
         permanent: true,
       },
+      // H1 I3: the AO5 blog post was retitled to focus on AO2. Blog slugs
+      // are file-derived (content/blog/<slug>.mdx) and `dynamicParams =
+      // false` hard-404s any slug without a backing file. The content file
+      // keeps its name (ao5-gcse-english-literature.mdx), so the original
+      // public URL must stay the canonical resolvable one. We add the
+      // ALIAS direction: the new corrected-title URL → the existing file
+      // slug, so inbound links using the new slug don't 404. Sitemap owner:
+      // canonical blog URL remains /blog/ao5-gcse-english-literature.
+      {
+        source: '/blog/the-methods-objective-ao2-gcse-english-literature',
+        destination: '/blog/ao5-gcse-english-literature',
+        permanent: true,
+      },
+      // H1 H7: consolidate safeguarding onto the single authoritative
+      // policy at /safeguarding.
+      {
+        source: '/legal/safeguarding',
+        destination: '/safeguarding',
+        permanent: true,
+      },
     ]
   },
   async headers() {
