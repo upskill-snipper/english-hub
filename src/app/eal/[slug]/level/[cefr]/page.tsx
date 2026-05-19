@@ -44,6 +44,10 @@ export default async function EALLevelPage({
 
   const nativeBand = topic.cefr
   const showsNativeBand = nativeBand === band
+  // Level-specific B1/B2/C1 material is still in development; non-native
+  // bands currently present the topic's native treatment, so we are honest
+  // about that and avoid claiming level differentiation that does not exist.
+  const inDevelopment = !showsNativeBand
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
@@ -57,11 +61,11 @@ export default async function EALLevelPage({
         {tr(CEFR_DESCRIPTORS[band])}
       </p>
 
-      {!showsNativeBand && (
+      {inDevelopment && (
         <p className="rounded-lg border border-amber-400/30 bg-amber-500/[0.04] px-4 py-3 mb-6 text-sm">
           {isAr
-            ? `هذا الموضوع موجّه أصلاً لمستوى ${nativeBand}. تشوفه الآن بإطار ${band}.`
-            : `This topic is pitched at ${nativeBand}. You're viewing the ${band} framing of it.`}
+            ? `هذه هي معالجتنا لموضوع «${tr(topic.title)}» على مستوى ${nativeBand}. مواد ${band} الخاصة بهذا المستوى قيد الإعداد.`
+            : `This is our ${nativeBand}-level treatment of ${tr(topic.title)}. Level-specific ${band} material is in development.`}
         </p>
       )}
 
@@ -170,14 +174,22 @@ export async function generateMetadata({
   if (!topic) {
     return { title: `EAL — ${band}` }
   }
+  const nativeBand = topic.cefr
+  // Only the topic's native band carries genuinely level-specific content.
+  // Other bands reuse the native treatment, so keep them out of the index
+  // and point canonical at the native-band URL to avoid duplicate/misleading
+  // CEFR pages until level-differentiated material ships.
+  const isNativeBand = nativeBand === band
   const title = `${topic.title.en} — ${band} | EAL for Arabic speakers`
-  const description = `${topic.description.en} Pitched for CEFR ${band} with bilingual (English/Arabic) explanations and Arabic-L1 common errors.`
+  const description = isNativeBand
+    ? `${topic.description.en} Pitched for CEFR ${band} with bilingual (English/Arabic) explanations and Arabic-L1 common errors.`
+    : `${topic.description.en} Our ${nativeBand}-level treatment with bilingual (English/Arabic) explanations; level-specific ${band} material is in development.`
+  const canonical = `https://theenglishhub.app/eal/${slug}/level/${nativeBand.toLowerCase()}`
   return {
     title,
     description,
-    alternates: {
-      canonical: `https://theenglishhub.app/eal/${slug}/level/${cefr.toLowerCase()}`,
-    },
+    alternates: { canonical },
+    ...(isNativeBand ? {} : { robots: { index: false, follow: true } }),
     openGraph: { title, description, type: 'article', locale: 'en_GB' },
   }
 }
