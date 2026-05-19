@@ -15,6 +15,13 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
+      - run: node scripts/check-placeholders.mjs
+      # I6 EAL duplicate-body guard. Currently REPORT-ONLY (|| true):
+      # b1/b2/c1 still reuse the A2 body — the H1 mitigation noindexes +
+      # honestly labels those level pages; authoring real level-
+      # differentiated content is Horizon 3. Flip to blocking (remove
+      # `|| true`) once the content model carries per-level bodies.
+      - run: node scripts/check-eal-level-dupes.mjs || true
       - run: npx next lint
       - run: npx tsc --noEmit
 

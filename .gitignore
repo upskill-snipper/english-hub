@@ -45,3 +45,6 @@ secrets/
 *.p12
 *.mobileprovision
 google-play-service-account.json
+
+# External audit pack (reference only, not committed)
+external-audit-pack/

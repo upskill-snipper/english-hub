@@ -3,4 +3,7 @@
 # Windows shells (without it, Cygwin / Git Bash / PowerShell-shell-out fails
 # with "Exec format error"). lint-staged formats only the files staged for
 # this commit so the hook stays fast.
+# I1 — placeholder publish gate (audit remediation 2026-05-19): never let a
+# [DSL_*]/[FACT-CHECK]/[Address —]/[PLACEHOLDER]/[VERIFY] token reach a commit.
+node scripts/check-placeholders.mjs || exit 1
 npx lint-staged
