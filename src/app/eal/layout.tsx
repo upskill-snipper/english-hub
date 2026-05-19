@@ -13,22 +13,24 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
  * Hub" template, so adding the brand here would double it.
  */
 export const metadata: Metadata = {
-  title: 'EAL — English for Arabic Speakers (CEFR A2–C1)',
+  title: 'Structured English support for EAL learners',
   description:
-    'Free, bilingual English lessons and a real CEFR placement test for Arabic L1 learners preparing for UK GCSE/IGCSE: grammar, sentence structure, vocabulary, pronunciation and common Arabic-to-English errors.',
+    'Structured English support for EAL learners — vocabulary, reading fluency, comprehension, grammar and writing confidence — with teacher visibility, differentiated support and progress reporting. Built for international and GCC schools and includes a bilingual CEFR placement test for Arabic L1 learners.',
   keywords: [
-    'English for Arabic speakers',
-    'CEFR placement test',
-    'EAL',
+    'EAL support platform',
+    'EAL learners English support',
     'English as an additional language',
-    'A2 B1 B2 C1 English',
-    'Arabic L1 English errors',
+    'CEFR placement test',
+    'English for Arabic speakers',
+    'Qatar EdTech English platform',
+    'GCC school English platform',
+    'international school IGCSE English',
   ],
   alternates: { canonical: 'https://theenglishhub.app/eal' },
   openGraph: {
-    title: 'EAL — English for Arabic Speakers (CEFR A2–C1) — The English Hub',
+    title: 'Structured English support for EAL learners — The English Hub',
     description:
-      'Bilingual English lessons and a real CEFR placement test for Arabic L1 learners preparing for UK GCSE/IGCSE.',
+      'Vocabulary, reading fluency, comprehension, grammar and writing confidence for EAL learners, with teacher visibility and progress reporting. Includes a bilingual CEFR placement test.',
     url: 'https://theenglishhub.app/eal',
     siteName: 'The English Hub',
     type: 'website',
@@ -36,8 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EAL — English for Arabic Speakers (CEFR A2–C1) — The English Hub',
-    description: 'Bilingual English lessons and a real CEFR placement test for Arabic L1 learners.',
+    title: 'Structured English support for EAL learners — The English Hub',
+    description:
+      'Structured EAL support with teacher visibility and progress reporting, plus a bilingual CEFR placement test.',
   },
 }
 

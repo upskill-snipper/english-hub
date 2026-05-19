@@ -6,7 +6,8 @@ import { useSearchParams } from 'next/navigation'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { PRICING } from '@/constants/pricing'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
+import { SchoolPricingCards } from '@/components/schools/SchoolPricingCards'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
@@ -1015,85 +1016,22 @@ function PricingContent() {
           <div className="text-center mb-14">
             <Badge
               variant="outline"
-              className="bg-amber-500/10 border-amber-500/25 text-amber-600 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
+              className="bg-primary/10 border-primary/25 text-primary text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
-              Limited founding cohort
+              The English Hub for Schools
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
-              {t('pricing.founding_schools_2026')}
+              Structured pilots and annual deployment
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              {t('pricing.founding_strategic_partnership')}
+              Most schools begin with a structured Founder School Pilot over{' '}
+              {PRICING_DISPLAY.schoolPilotLength}, then move to an annual deployment. Founder pilots
+              are available for early school partners.
             </p>
           </div>
 
-          <Card className="relative border-amber-500/30 bg-amber-500/[0.03] p-0 overflow-visible">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
-
-            <div className="p-8 sm:p-10">
-              {/* Founding Schools price — single canonical founding figure */}
-              <div className="mb-8">
-                <div className="mx-auto max-w-md rounded-xl border border-amber-500/40 bg-amber-500/10 p-6 text-center">
-                  <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-3">
-                    {t('pricing.founding_pricing_label')}
-                  </span>
-                  <div className="flex items-baseline justify-center gap-2">
-                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-                      {PRICING.CURRENCY}
-                      {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
-                    </span>
-                    <span className="text-muted-foreground text-sm">
-                      {t('pricing.per_year_short')}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground text-xs mt-3">
-                    Founding-partner rate for whole-school access. Standard pricing has not yet been
-                    set; founding partners help shape the platform roadmap.
-                  </p>
-                </div>
-              </div>
-
-              {/* What schools receive */}
-              <div className="max-w-lg mx-auto mb-10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-4 text-center">
-                  {t('pricing.school_receives.heading')}
-                </p>
-                <ul className="space-y-3">
-                  {SCHOOL_RECEIVES_KEYS.map((key) => (
-                    <li
-                      key={key}
-                      className="flex items-start gap-2.5 text-sm text-muted-foreground"
-                    >
-                      <CheckCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                      {t(key)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Closing note */}
-              <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-center mb-8">
-                <p className="text-sm text-muted-foreground">
-                  We are onboarding a limited founding cohort while the platform is at launch stage.
-                  Get in touch to discuss whether a founding partnership is right for your school.
-                </p>
-              </div>
-
-              {/* CTA */}
-              <div className="text-center">
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="bg-amber-500 hover:bg-amber-500/85 text-white shadow-lg shadow-amber-500/20 text-base px-10 h-12"
-                  render={<Link href="/contact" />}
-                >
-                  {t('pricing.cta.book_20min_call')}
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-              </div>
-            </div>
-          </Card>
+          <SchoolPricingCards />
 
           <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
             {VAT_LABEL}

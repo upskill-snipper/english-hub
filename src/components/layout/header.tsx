@@ -53,18 +53,23 @@ function getNavForBoardType(
     // top-level nav headings.
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
-      { href: '/for-teachers', labelKey: 'header.nav.teachers' },
-      { href: '/for-schools', labelKey: 'header.nav.schools' },
+      { href: '/schools', labelKey: 'header.nav.schools' },
+      { href: '/teachers', labelKey: 'header.nav.teachers' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
   }
 
+  // Institutional-first ordering: Schools leads, then the supporting
+  // audiences, then the conversion routes. /school-pilot is the primary
+  // institutional CTA so it sits alongside Pricing + Contact.
   return [
-    { href: '/board-select', labelKey: 'header.nav.students' },
-    { href: '/for-parents', labelKey: 'header.nav.parents' },
-    { href: '/for-teachers', labelKey: 'header.nav.teachers' },
-    { href: '/for-schools', labelKey: 'header.nav.schools' },
+    { href: '/schools', labelKey: 'header.nav.schools' },
+    { href: '/teachers', labelKey: 'header.nav.teachers' },
+    { href: '/students', labelKey: 'header.nav.students' },
+    { href: '/eal', labelKey: 'header.nav.eal' },
+    { href: '/school-pilot', labelKey: 'header.nav.school_pilot' },
     { href: '/pricing', labelKey: 'header.nav.pricing' },
+    { href: '/contact', labelKey: 'header.nav.contact' },
   ]
 }
 

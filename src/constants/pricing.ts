@@ -66,6 +66,29 @@ export const PRICING = {
   /** @deprecated 2026-04-19 — no upper limit once the cohort is capped. */
   FOUNDER_SCHOOL_MAX: null as number | null,
 
+  // ── School pilots & annual deployment (institutional positioning) ──
+  //
+  // 2026-05-19 institutional repositioning. The English Hub for Schools
+  // is sold as a structured pilot first, then annual deployment. All
+  // figures are INDICATIVE founder pricing — final pricing depends on
+  // school size, scope and rollout requirements, so every surface must
+  // use "from" framing and the indicative-pricing caveat.
+  //
+  // Founder School Pilot (≈ one term / 8–12 weeks):
+  PILOT_FROM: 3000, // headline "from" used in previews/nav
+  PILOT_YEAR_GROUP_FROM: 2500, // single year-group pilot
+  PILOT_DEPARTMENT_FROM: 4000, // whole English department pilot
+  // Multi-campus / education-group pilot = custom (no fixed floor).
+  //
+  // Annual school deployment (post-pilot, per academic year):
+  ANNUAL_SMALL_SCHOOL_FROM: 6000,
+  ANNUAL_MID_SCHOOL_FROM: 12000,
+  ANNUAL_LARGE_SCHOOL_FROM: 25000, // large school / group — "typically from"
+  /** Caveat appended wherever school pricing is shown. */
+  SCHOOL_PRICING_CAVEAT:
+    'Indicative founder pricing. Final pricing depends on school size, scope and rollout requirements.',
+  SCHOOL_PILOT_LENGTH: 'one term (around 8–12 weeks)',
+
   // ── Urgency messaging (shown on every price banner) ───────────────
   /** Month the standard pricing takes effect. Used for urgency copy. */
   PRICE_INCREASE_DATE: 'August 2026',
@@ -115,6 +138,16 @@ export const PRICING_DISPLAY = {
   founderSchoolsPrice: `£${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}`,
   founderSchoolsLegacyPrice: `£${PRICING.FOUNDER_SCHOOL_LEGACY.toLocaleString('en-GB')}`,
   schoolStandardPrice: `£${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}`,
+  // School pilots & annual deployment — institutional positioning.
+  pilotFrom: `from £${PRICING.PILOT_FROM.toLocaleString('en-GB')}`,
+  pilotYearGroupFrom: `from £${PRICING.PILOT_YEAR_GROUP_FROM.toLocaleString('en-GB')}`,
+  pilotDepartmentFrom: `from £${PRICING.PILOT_DEPARTMENT_FROM.toLocaleString('en-GB')}`,
+  pilotMultiCampus: 'Custom',
+  annualSmallFrom: `from £${PRICING.ANNUAL_SMALL_SCHOOL_FROM.toLocaleString('en-GB')}/year`,
+  annualMidFrom: `from £${PRICING.ANNUAL_MID_SCHOOL_FROM.toLocaleString('en-GB')}/year`,
+  annualLargeFrom: `Custom, typically from £${PRICING.ANNUAL_LARGE_SCHOOL_FROM.toLocaleString('en-GB')}/year`,
+  schoolPricingCaveat: PRICING.SCHOOL_PRICING_CAVEAT,
+  schoolPilotLength: PRICING.SCHOOL_PILOT_LENGTH,
   // Urgency
   priceIncrease: PRICING.PRICE_INCREASE_MESSAGE,
   priceIncreaseDate: PRICING.PRICE_INCREASE_DATE,

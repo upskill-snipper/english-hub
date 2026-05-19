@@ -81,10 +81,13 @@ export type Dictionary = Record<string, { en: string; ar?: string }>
 export const DICTIONARY: Dictionary = {
   // ─── Header / nav / CTAs ────────────────────────────────────────────
   'brand.name': { en: 'The English Hub', ar: 'The English Hub' },
-  'header.nav.students': { en: 'For Students', ar: 'للطلاب' },
+  'header.nav.students': { en: 'Students', ar: 'الطلاب' },
   'header.nav.parents': { en: 'For Parents', ar: 'لأولياء الأمور' },
-  'header.nav.teachers': { en: 'For Teachers', ar: 'للمعلمين' },
-  'header.nav.schools': { en: 'For Schools', ar: 'للمدارس' },
+  'header.nav.teachers': { en: 'Teachers', ar: 'المعلمون' },
+  'header.nav.schools': { en: 'Schools', ar: 'المدارس' },
+  'header.nav.eal': { en: 'EAL', ar: 'EAL' },
+  'header.nav.school_pilot': { en: 'School Pilot', ar: 'برنامج تجريبي للمدارس' },
+  'header.nav.contact': { en: 'Contact', ar: 'تواصل معنا' },
   'header.nav.pricing': { en: 'Pricing', ar: 'الأسعار' },
   'header.nav.ks3': { en: 'KS3', ar: 'KS3' },
   'header.nav.your_hub': { en: 'Your Hub', ar: 'Hub مالك' },
@@ -625,6 +628,10 @@ export const DICTIONARY: Dictionary = {
   'footer.company_registration': {
     en: 'Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England & Wales · Registered office on request',
     ar: 'Upskill Energy Limited · رقم الشركة 16511479 · ICO ZC016690 · مسجَّلة في إنجلترا وويلز · العنوان المسجَّل عند الطلب',
+  },
+  'footer.disclaimer.responsible': {
+    en: 'The English Hub is an independent learning and assessment support platform. It is not affiliated with or endorsed by any exam board unless explicitly stated. AI-assisted feedback is designed to support learning and teacher judgement, not replace professional assessment.',
+    ar: 'The English Hub منصة مستقلة لدعم التعلّم والتقييم. وهي غير مرتبطة بأي مجلس امتحانات ولا معتمدة منه ما لم يُذكر ذلك صراحةً. التغذية الراجعة المدعومة بالذكاء الاصطناعي مصمَّمة لدعم التعلّم وحكم المعلّم، لا لتحل محل التقييم المهني.',
   },
   'footer.bottom.privacy': { en: 'Privacy', ar: 'الخصوصية' },
   'footer.bottom.terms': { en: 'Terms', ar: 'الشروط' },

@@ -1,25 +1,64 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import {
+  Brain,
+  LineChart,
+  Languages,
+  ClipboardCheck,
+  Users2,
+  GraduationCap,
+  Building2,
+  Clock,
+  Eye,
+  Target,
+  FileText,
+  Layers,
+  ArrowRight,
+} from 'lucide-react'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { BenefitGrid } from '@/components/schools/BenefitCard'
+import { FeatureGrid } from '@/components/schools/FeatureGrid'
+import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
+import { PRICING_DISPLAY } from '@/constants/pricing'
 import { t } from '@/lib/i18n/t'
 
+const OG =
+  '/api/og?title=AI-assisted+English+improvement+for+schools&subtitle=Assessment,+intervention+and+reporting+for+modern+English+departments'
+
 export const metadata: Metadata = {
+  title: 'AI-assisted English improvement and intervention platform for schools',
+  description:
+    'The English Hub helps English departments reduce workload, support targeted intervention and give leaders clearer visibility of progress across English Language, Literature and EAL.',
+  alternates: { canonical: 'https://theenglishhub.app' },
+  keywords: [
+    'AI English platform for schools',
+    'English intervention platform',
+    'AI marking for English teachers',
+    'English department analytics',
+    'EAL support platform',
+    'IGCSE English support',
+    'school English assessment platform',
+  ],
   openGraph: {
+    title: 'AI-assisted English improvement and intervention for schools',
+    description:
+      'Assessment, intervention and reporting for modern English departments. Built for students, teachers and schools.',
+    url: 'https://theenglishhub.app',
     images: [
       {
-        url: '/api/og?title=GCSE+and+IGCSE+English+revision,+AI+marked&subtitle=Pick+your+exam+board+to+start.',
+        url: OG,
         width: 1200,
         height: 630,
-        alt: 'The English Hub — GCSE and IGCSE English revision, AI marked',
+        alt: 'The English Hub — AI-assisted English improvement and intervention for schools',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [
-      '/api/og?title=GCSE+and+IGCSE+English+revision,+AI+marked&subtitle=Pick+your+exam+board+to+start.',
-    ],
+    images: [OG],
   },
 }
 
@@ -47,16 +86,70 @@ export default async function Home() {
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
 
-      {/* 1. Foundation + bilingual learning rail — sits at the very top
-           because these two tracks (KS3 and EAL) were previously buried
-           and most parents/learners need to see them before the GCSE
-           board grid. KS3 is the year-7–9 curriculum that comes BEFORE
-           exam boards; EAL is the dedicated Arabic-speaker English track
-           that runs ALONGSIDE every board. They aren't exam boards, so
-           a separate visually distinct section keeps the funnel clean. */}
-      {await FeatureRail()}
+      {/* 1. Institutional hero */}
+      <HomeHero />
 
-      {/* 2. GCSE board picker — opens the page; clear level split. */}
+      {/* 2. Built for students, teachers and schools */}
+      <AudienceSection />
+
+      {/* 3. School platform section */}
+      <SchoolPlatformSection />
+
+      {/* 4. Key benefits */}
+      <KeyBenefitsSection />
+
+      {/* 5 + 6. AI-assisted marking + analytics/intervention */}
+      <CapabilitiesSection />
+
+      {/* 7. EAL support */}
+      <EalSection />
+
+      {/* 8. Founder school pilot CTA */}
+      <PilotCtaSection />
+
+      {/* 9. Pricing preview */}
+      <PricingPreviewSection />
+
+      {/* 10. FAQ */}
+      <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+          <h2
+            id="home-faq-heading"
+            className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground"
+          >
+            Questions from school leaders
+          </h2>
+          <SchoolFAQ />
+        </div>
+      </section>
+
+      {/* 11. Final CTA */}
+      <FinalCtaSection />
+
+      {/* ───── Students: choose your exam board (existing funnel preserved) ───── */}
+      <section
+        aria-labelledby="students-board-heading"
+        className="border-t border-border/60 bg-muted/30"
+      >
+        <div className="mx-auto max-w-[1400px] px-4 pt-14 sm:px-6 sm:pt-20">
+          <div className="text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+              For students &amp; parents
+            </p>
+            <h2
+              id="students-board-heading"
+              className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
+              Studying for an English exam? Choose your board
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Individual learners and families can start straight away — pick your exam board and
+              land in a personalised revision hub.
+            </p>
+          </div>
+        </div>
+      </section>
+      {await FeatureRail()}
       <BoardPickerSection
         level="gcse"
         boards={GCSE_BOARDS}
@@ -65,11 +158,9 @@ export default async function Home() {
         heading={copy.gcseHeading}
         subheading={copy.gcseSubheading}
         showHelpLink={false}
-        headingLevel="h1"
+        headingLevel="h2"
         showDivider
       />
-
-      {/* 3. IGCSE board picker — international split with a thin divider on top. */}
       <BoardPickerSection
         level="igcse"
         boards={IGCSE_BOARDS}
@@ -83,6 +174,400 @@ export default async function Home() {
         <GeoFaq faqs={GCSE_BOARD_FAQS} heading={copy.faqHeading} />
       </div>
     </main>
+  )
+}
+
+/* ───────────────────── Institutional sections ───────────────────── */
+
+function HomeHero() {
+  return (
+    <section className="relative overflow-hidden border-b border-border/60">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
+          The English Hub for Schools
+        </p>
+        <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          AI-assisted English improvement and intervention for schools
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          The English Hub helps English departments reduce workload, support targeted intervention
+          and give leaders clearer visibility of student progress across English Language,
+          Literature and EAL.
+        </p>
+        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/school-pilot" />}>
+            Book a School Pilot
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="h-12 px-7 text-base"
+            render={<Link href="/schools" />}
+          >
+            Explore the Platform
+          </Button>
+        </div>
+        <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
+          Built for students, teachers and schools. Designed for assessment, feedback, reporting and
+          intervention.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function AudienceSection() {
+  const cards = [
+    {
+      icon: GraduationCap,
+      title: 'Students',
+      body: 'Structured practice, essay feedback and revision aligned to the specification their school teaches.',
+      href: '/students',
+      cta: 'For students',
+    },
+    {
+      icon: Users2,
+      title: 'Teachers',
+      body: 'AI-assisted feedback, homework setting and clearer insight into class weaknesses — without adding workload.',
+      href: '/teachers',
+      cta: 'For teachers',
+    },
+    {
+      icon: Building2,
+      title: 'Schools',
+      body: 'Department-wide assessment, intervention insight and reporting that leaders can act on.',
+      href: '/schools',
+      cta: 'For schools',
+    },
+  ]
+  return (
+    <section
+      aria-labelledby="audience-heading"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
+    >
+      <div className="text-center">
+        <h2
+          id="audience-heading"
+          className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        >
+          Built for students, teachers and schools
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+          One platform that supports the whole English department — from individual practice to
+          department-wide intelligence.
+        </p>
+      </div>
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        {cards.map(({ icon: Icon, title, body, href, cta }) => (
+          <Card key={title} className="flex h-full flex-col p-6 border-border/50">
+            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Icon className="h-5 w-5" />
+            </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">{title}</h3>
+            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            <Link
+              href={href}
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            >
+              {cta} <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </Card>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function SchoolPlatformSection() {
+  return (
+    <section aria-labelledby="platform-heading" className="border-y border-border/60 bg-muted/30">
+      <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-20">
+        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
+          School infrastructure for English departments
+        </p>
+        <h2
+          id="platform-heading"
+          className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        >
+          From revision support to department-wide English intelligence
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+          The English Hub is designed to become embedded in how an English department works —
+          assessment, feedback, intervention and reporting in one place, supporting teacher
+          judgement rather than replacing it.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function KeyBenefitsSection() {
+  return (
+    <section
+      aria-labelledby="benefits-heading"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
+    >
+      <h2
+        id="benefits-heading"
+        className="text-center font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+      >
+        What it helps schools do
+      </h2>
+      <div className="mt-10">
+        <BenefitGrid
+          items={[
+            {
+              icon: Clock,
+              title: 'Reduce teacher workload',
+              body: 'Reduce repetitive marking workload so teachers can focus more time on teaching.',
+            },
+            {
+              icon: Eye,
+              title: 'Improve intervention visibility',
+              body: 'Identify students who may need support earlier, before gaps widen.',
+            },
+            {
+              icon: Languages,
+              title: 'Support EAL learners',
+              body: 'Structured practice designed to build EAL learners’ confidence in English.',
+            },
+            {
+              icon: Target,
+              title: 'Strengthen exam readiness',
+              body: 'Specification-aligned practice across English Language and Literature.',
+            },
+            {
+              icon: FileText,
+              title: 'Generate clearer student reports',
+              body: 'Turn student activity into clearer, shareable progress summaries.',
+            },
+            {
+              icon: LineChart,
+              title: 'Track progress across cohorts',
+              body: 'Give leaders clearer visibility across classes and year groups.',
+            },
+          ]}
+        />
+      </div>
+    </section>
+  )
+}
+
+function CapabilitiesSection() {
+  return (
+    <section
+      aria-labelledby="capabilities-heading"
+      className="border-y border-border/60 bg-muted/30"
+    >
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="text-center">
+          <h2
+            id="capabilities-heading"
+            className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+          >
+            AI-assisted marking, analytics and intervention
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+            Designed to support teacher judgement and surface where attention is needed — not to
+            replace professional assessment.
+          </p>
+        </div>
+        <div className="mt-10">
+          <FeatureGrid
+            items={[
+              {
+                icon: Brain,
+                title: 'AI-assisted marking & feedback',
+                body: 'Students receive structured, criteria-referenced feedback teachers can review and build on.',
+              },
+              {
+                icon: LineChart,
+                title: 'Class & year-group analytics',
+                body: 'See patterns across cohorts and where the department should focus next.',
+              },
+              {
+                icon: Eye,
+                title: 'Intervention insights',
+                body: 'Surface students who may need support earlier in the term.',
+              },
+              {
+                icon: ClipboardCheck,
+                title: 'Homework & worksheet support',
+                body: 'Set practice and generate resources aligned to the specification.',
+              },
+              {
+                icon: FileText,
+                title: 'Student reports',
+                body: 'Clearer progress summaries for parents, reviews and leadership.',
+              },
+              {
+                icon: Layers,
+                title: 'Reading & comprehension support',
+                body: 'Structured comprehension and reading practice across key stages.',
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function EalSection() {
+  return (
+    <section
+      aria-labelledby="eal-heading"
+      className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20"
+    >
+      <div className="rounded-2xl border border-border/60 bg-card p-8 sm:p-10">
+        <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <Languages className="h-5 w-5" />
+        </div>
+        <h2
+          id="eal-heading"
+          className="mt-5 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+        >
+          Structured English support for EAL learners
+        </h2>
+        <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
+          A growing priority for international and GCC schools. The English Hub is built to help EAL
+          learners develop vocabulary, reading fluency, comprehension and writing confidence, with
+          teacher visibility over progress and differentiated support.
+        </p>
+        <Button variant="outline" size="lg" className="mt-6 h-11" render={<Link href="/eal" />}>
+          Explore EAL support
+        </Button>
+      </div>
+    </section>
+  )
+}
+
+function PilotCtaSection() {
+  return (
+    <section className="border-y border-border/60 bg-primary text-primary-foreground">
+      <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
+        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary-foreground/70">
+          Founder School Programme
+        </p>
+        <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+          Start a 90-day Founder School Pilot
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-primary-foreground/80">
+          Most schools begin with a structured one-term pilot focused on one year group or the
+          English department. The pilot is designed to prove value before wider rollout.
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="h-12 px-7 text-base"
+            render={<Link href="/school-pilot" />}
+          >
+            Book a School Pilot
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="h-12 border-primary-foreground/30 px-7 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            render={<Link href="/schools" />}
+          >
+            Explore School Deployment
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PricingPreviewSection() {
+  return (
+    <section
+      aria-labelledby="pricing-preview-heading"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
+    >
+      <div className="text-center">
+        <h2
+          id="pricing-preview-heading"
+          className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        >
+          Pricing
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+          Individual access for learners and teachers, and structured pilots and annual deployment
+          for schools.
+        </p>
+      </div>
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <Card className="p-6 border-border/50">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Student
+          </p>
+          <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
+            {PRICING_DISPLAY.studentMonthly}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">Individual learner access.</p>
+        </Card>
+        <Card className="p-6 border-border/50">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Teacher
+          </p>
+          <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
+            {PRICING_DISPLAY.teacherMonthly}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">Teacher tools and classroom support.</p>
+        </Card>
+        <Card className="p-6 border-primary/40 ring-1 ring-primary/15">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+            Schools
+          </p>
+          <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
+            Pilots {PRICING_DISPLAY.pilotFrom}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Annual deployment {PRICING_DISPLAY.annualSmallFrom}.
+          </p>
+        </Card>
+      </div>
+      <div className="mt-8 text-center">
+        <Button size="lg" className="h-12" render={<Link href="/pricing" />}>
+          Request School Pricing
+        </Button>
+        <p className="mx-auto mt-4 max-w-xl text-xs text-muted-foreground">
+          {PRICING_DISPLAY.schoolPricingCaveat}
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function FinalCtaSection() {
+  return (
+    <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+      <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        Discuss your English department&rsquo;s needs
+      </h2>
+      <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+        Talk to us about a pilot, an annual deployment, or how The English Hub could support your
+        department.
+      </p>
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/school-pilot" />}>
+          Book a School Pilot
+        </Button>
+        <Button
+          variant="outline"
+          size="lg"
+          className="h-12 px-7 text-base"
+          render={<Link href="/contact" />}
+        >
+          Discuss a School Rollout
+        </Button>
+      </div>
+    </section>
   )
 }
 

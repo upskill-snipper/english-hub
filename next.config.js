@@ -55,6 +55,32 @@ const nextConfig = {
       // Canonical www→apex host redirect lives in src/middleware.ts
       // (a next.config `has:host` rule did not fire because the edge
       // serves the www alias before the route layer — see middleware).
+
+      // ── 2026-05-19 institutional repositioning ───────────────────
+      // The /for-* marketing routes were consolidated onto cleaner
+      // canonical URLs. 308s preserve link equity from inbound links,
+      // the sitemap and prior SEO. More specific paths first.
+      {
+        source: '/for-schools/pilot',
+        destination: '/school-pilot',
+        permanent: true,
+      },
+      {
+        source: '/for-schools',
+        destination: '/schools',
+        permanent: true,
+      },
+      {
+        source: '/for-teachers',
+        destination: '/teachers',
+        permanent: true,
+      },
+      {
+        source: '/for-students',
+        destination: '/students',
+        permanent: true,
+      },
+
       {
         source: '/privacy-policy',
         destination: '/legal/privacy',

@@ -115,9 +115,11 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: '/about', labelKey: 'footer.link.about' },
       { href: '/about/verified-content', labelKey: 'footer.link.verified_content' },
       { href: '/about/content-verification', labelKey: 'footer.link.content_verification' },
-      { href: '/for-teachers', labelKey: 'header.nav.teachers' },
-      { href: '/for-schools', labelKey: 'header.nav.schools' },
-      { href: '/for-schools/pilot', labelKey: 'footer.link.school_pilot_pack' },
+      { href: '/schools', labelKey: 'header.nav.schools' },
+      { href: '/school-pilot', labelKey: 'header.nav.school_pilot' },
+      { href: '/teachers', labelKey: 'header.nav.teachers' },
+      { href: '/students', labelKey: 'header.nav.students' },
+      { href: '/eal', labelKey: 'header.nav.eal' },
       { href: '/for-parents', labelKey: 'header.nav.parents' },
       { href: '/contact', labelKey: 'footer.link.contact' },
       { href: '/press', labelKey: 'footer.link.press' },
@@ -302,6 +304,13 @@ export function Footer() {
             which is tuned for light surfaces. */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
           <ReviewedByline className="text-[11px] text-[#B5B8B3]/70" />
+        </div>
+
+        {/* Responsible-use disclaimer (institutional positioning) */}
+        <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+          <p className="max-w-3xl text-[11px] leading-relaxed text-[#B5B8B3]/55">
+            {t('footer.disclaimer.responsible')}
+          </p>
         </div>
 
         {/* Bottom bar */}
