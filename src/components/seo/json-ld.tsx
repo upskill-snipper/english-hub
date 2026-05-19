@@ -51,19 +51,10 @@ export function CourseJsonLd({
   if (timeRequired) jsonLd.timeRequired = timeRequired
   if (url) jsonLd.url = url
 
-  // Review + AggregateRating — gated behind NEXT_PUBLIC_EDTECH_IMPACT_LIVE
-  // so it only appears once the founder has verified external review data is
-  // real (EdTech Impact, Trustpilot etc.). TODO(founder): flip the env var
-  // once the first independent reviews are syndicated.
-  if (process.env.NEXT_PUBLIC_EDTECH_IMPACT_LIVE === 'true') {
-    jsonLd.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8', // TODO(founder): pull live rating from EdTech Impact
-      reviewCount: '0', // TODO(founder): pull live review count
-      bestRating: '5',
-      worstRating: '1',
-    }
-  }
+  // NOTE: no aggregateRating/review is emitted. Structured-data ratings must
+  // be backed by a real, verifiable review dataset; emitting placeholder or
+  // unverified ratings risks a Google manual action. Reinstate only when a
+  // genuine review source is wired in with live values.
 
   return (
     <script

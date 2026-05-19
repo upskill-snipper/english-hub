@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: 'https://theenglishhub.app/about',
     images: [
       {
-        url: '/api/og?title=About+The+English+Hub&subtitle=Built+around+how+examiners+actually+mark',
+        url: '/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision',
         width: 1200,
         height: 630,
-        alt: 'About The English Hub — built around how examiners actually mark',
+        alt: 'About The English Hub — GCSE & IGCSE English revision',
       },
     ],
   },
@@ -30,9 +30,7 @@ export const metadata: Metadata = {
     title: 'About — The English Hub',
     description:
       'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
-    images: [
-      '/api/og?title=About+The+English+Hub&subtitle=Built+around+how+examiners+actually+mark',
-    ],
+    images: ['/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision'],
   },
 }
 
@@ -83,8 +81,6 @@ export default async function AboutPage() {
     compAccess,
     compCyber,
     compDpa,
-    comingSoon,
-    dpaAvailable,
     breadcrumbHome,
     breadcrumbAbout,
   ] = await tMany([
@@ -133,8 +129,6 @@ export default async function AboutPage() {
     'about.compliance.access_statement',
     'about.compliance.cyber',
     'about.compliance.dpa',
-    'about.compliance.coming_soon',
-    'about.compliance.dpa_available',
     'nav.home',
     'footer.link.about',
   ])
@@ -240,43 +234,17 @@ export default async function AboutPage() {
         {/* Compliance */}
         <section id="compliance">
           <h2 className="text-xl font-semibold text-foreground">{complianceH2}</h2>
-          {/* Compliance documents will be published here once finalised. See business-docs/. */}
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
-            <li>
-              {compDpia}{' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — {comingSoon}
-              </span>
-            </li>
-            <li>
-              {compSafeguard}{' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — {comingSoon}
-              </span>
-            </li>
-            <li>
-              {compVpat}{' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — {comingSoon}
-              </span>
-            </li>
+            <li>{compDpia}</li>
+            <li>{compSafeguard}</li>
+            <li>{compVpat}</li>
             <li>
               <a className="underline hover:text-foreground" href="/accessibility">
                 {compAccess}
               </a>
             </li>
-            <li>
-              {compCyber}{' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — {comingSoon}
-              </span>
-            </li>
-            <li>
-              {compDpa}{' '}
-              <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — {dpaAvailable}
-              </span>
-            </li>
+            <li>{compCyber}</li>
+            <li>{compDpa}</li>
           </ul>
         </section>
       </div>

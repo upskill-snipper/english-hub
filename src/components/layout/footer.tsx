@@ -4,7 +4,6 @@ import { useMemo } from 'react'
 import Link from 'next/link'
 import { BookOpen } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { TrustpilotReviewLink } from '@/components/trustpilot/TrustpilotReviewLink'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { isGcseBoard, isIgcseBoard } from '@/lib/board/board-filter'
@@ -244,9 +243,6 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-[#B5B8B3]/70 max-w-[240px]">
               {t('footer.brand_tagline')}
             </p>
-            <div className="mt-4">
-              <TrustpilotReviewLink />
-            </div>
             {process.env.NEXT_PUBLIC_EDTECH_IMPACT_LIVE === 'true' && (
               <div className="mt-3 flex items-center gap-2 text-[11px] font-mono tracking-wide text-[#B5B8B3]/70">
                 {/* Grey star icon */}

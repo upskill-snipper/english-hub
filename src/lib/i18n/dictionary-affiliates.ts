@@ -58,8 +58,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'The English Hub',
   },
   'aff_comp.public.hero.subtitle': {
-    en: 'Recommend an independent, exam-board aligned English platform to the families and educators who trust you, and earn recurring commission on every annual subscription you refer.',
-    ar: 'انصح الأهالي والمعلّمين اللي يثقون فيك بمنصّة إنجليزي مستقلّة ومتوافقة مع مجالس الامتحانات، واكسب عمولة متكرّرة على كل اشتراك سنوي يجي عن طريقك.',
+    en: "Partner with a launch-stage English revision platform. The English Hub is a new GCSE/IGCSE revision tool built by English teachers. We are recruiting our first cohort of partners now. We don't publish usage or earnings figures we can't yet evidence — your dashboard shows your real, verified referrals and commission from day one.",
+    ar: 'كن شريكاً لمنصّة مراجعة إنجليزي في مرحلة الإطلاق. The English Hub أداة مراجعة GCSE/IGCSE جديدة صاغها معلّمو إنجليزي. نحن نضم أول مجموعة من شركائنا الآن. ما ننشر أرقام استخدام أو أرباح ما نقدر نوثّقها بعد — لوحة تحكّمك تبيّن إحالاتك وعمولتك الحقيقية الموثّقة من أول يوم.',
   },
   'aff_comp.public.cta.get_code': {
     en: 'Get your referral code',
@@ -106,12 +106,12 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'منتج يفيد جمهورك فعلاً، ومكافآت متكرّرة وعادلة لك، وتتبّع شفّاف من أوّله لآخره.',
   },
   'aff_comp.public.why.reason1.title': {
-    en: 'Industry-leading commissions',
-    ar: 'عمولات هي الأعلى بالمجال',
+    en: 'One clear programme',
+    ar: 'برنامج واحد واضح',
   },
   'aff_comp.public.why.reason1.desc': {
-    en: 'Start at 20% on every plan, climb to 35% as you grow — paid monthly with no minimum payout.',
-    ar: 'تبدأ بـ 20% على كل خطّة، وتطلع لـ 35% كل ما تكبر — تنصرف لك شهرياً وما في حد أدنى للسحب.',
+    en: 'One programme, one set of terms — paid monthly. Your dashboard shows your real verified referrals and earnings, and the current commission rate that applies to you.',
+    ar: 'برنامج واحد، مجموعة شروط واحدة — تنصرف لك شهرياً. لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة، ونسبة العمولة الحالية اللي تنطبّق عليك.',
   },
   'aff_comp.public.why.reason2.title': {
     en: 'A product parents actually trust',
@@ -168,8 +168,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'تستلم فلوسك شهرياً',
   },
   'aff_comp.public.how.step4.desc': {
-    en: 'Commissions clear on the 5th of each month via Stripe or PayPal — for every plan, including renewals, for as long as the customer stays.',
-    ar: 'العمولات تنصرف يوم 5 من كل شهر عن طريق Stripe أو PayPal — على كل خطّة، حتى التجديدات، وطول ما العميل باقٍ مشترك.',
+    en: 'Commissions are paid monthly via Stripe or PayPal — for as long as the customer stays. Your dashboard shows the exact payout date and your real verified earnings.',
+    ar: 'العمولات تنصرف شهرياً عن طريق Stripe أو PayPal — طول ما العميل باقٍ مشترك. لوحة تحكّمك تبيّن تاريخ الصرف بالضبط وأرباحك الحقيقية الموثّقة.',
   },
   'aff_comp.public.how.annual_only_lead': {
     en: 'Annual plans only',
@@ -186,8 +186,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'هيكل العمولة',
   },
   'aff_comp.public.commission.subheading': {
-    en: 'Transparent recurring commission on every referred annual plan, with higher rates as your referrals grow.',
-    ar: 'عمولة متكرّرة وشفّافة على كل خطّة سنوية تجي عن طريقك، ونِسَب أعلى كل ما تكثر إحالاتك.',
+    en: 'Transparent recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    ar: 'عمولة متكرّرة وشفّافة على كل خطّة سنوية تجي عن طريقك. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
   },
   'aff_comp.public.commission.col_plan': {
     en: 'Plan',
@@ -218,8 +218,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'لكل تسجيل',
   },
   'aff_comp.public.commission.footnote': {
-    en: 'Commission is recurring while the referred subscription stays active. Rates are tiered by referral volume and confirmed in your partner dashboard.',
-    ar: 'العمولة متكرّرة طول ما الاشتراك اللي جاء عن طريقك فعّال. النِسَب مدرّجة حسب عدد الإحالات وتتأكّد لك في لوحة تحكّم الشريك حقّتك.',
+    en: 'Commission is recurring while the referred subscription stays active. One programme, one set of terms; the rate that applies to you and your real verified earnings are confirmed in your partner dashboard.',
+    ar: 'العمولة متكرّرة طول ما الاشتراك اللي جاء عن طريقك فعّال. برنامج واحد، مجموعة شروط واحدة؛ النسبة اللي تنطبّق عليك وأرباحك الحقيقية الموثّقة مؤكّدة لك في لوحة تحكّم الشريك حقّتك.',
   },
 
   /* ─── Your impact ──────────────────────────────────────────── */
@@ -231,29 +231,34 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     en: 'Every referral helps a student build real confidence in English, from KS3 through GCSE, IGCSE and EAL.',
     ar: 'كل إحالة تساعد طالب يبني ثقة حقيقية في الإنجليزي، من KS3 لين GCSE وIGCSE وEAL.',
   },
+  // 2026-05-19 (H2/M15): the three fabricated stat tiles
+  // ("14,000+ students", "871 board-specific revision routes",
+  // "£42 average commission per referral, year one") were removed —
+  // no usage or earnings figures we cannot yet evidence. Replaced with
+  // honest launch-stage copy. No invented replacement count.
   'aff_comp.public.impact.stat1.value': {
-    en: '14,000+',
-    ar: '+14,000',
+    en: 'New',
+    ar: 'جديدة',
   },
   'aff_comp.public.impact.stat1.label': {
-    en: 'students revising on the platform',
-    ar: 'طالب يراجع على المنصّة',
+    en: 'GCSE / IGCSE revision platform, built by English teachers',
+    ar: 'منصّة مراجعة GCSE / IGCSE، صاغها معلّمو إنجليزي',
   },
   'aff_comp.public.impact.stat2.value': {
-    en: '871',
-    ar: '871',
+    en: 'Every board',
+    ar: 'كل مجلس',
   },
   'aff_comp.public.impact.stat2.label': {
-    en: 'board-specific revision routes',
-    ar: 'مسار مراجعة مخصّص لكل مجلس',
+    en: 'Revision aligned to the major exam boards',
+    ar: 'مراجعة متوافقة مع مجالس الامتحانات الرئيسية',
   },
   'aff_comp.public.impact.stat3.value': {
-    en: '£42',
-    ar: '£42',
+    en: 'Verified',
+    ar: 'موثّقة',
   },
   'aff_comp.public.impact.stat3.label': {
-    en: 'average commission per referral, year one',
-    ar: 'متوسّط العمولة لكل إحالة، السنة الأولى',
+    en: 'Your dashboard shows your real referrals and commission from day one',
+    ar: 'لوحة تحكّمك تبيّن إحالاتك وعمولتك الحقيقية من أول يوم',
   },
   'aff_comp.public.impact.empty_testimonials': {
     en: 'Partner case studies and stories are coming as the programme grows. Be one of the early partners who helps shape it.',
@@ -270,12 +275,12 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'كل اللي تحتاجه عشان تنشر The English Hub بثقة وتتابع نتايجك.',
   },
   'aff_comp.public.what_you_get.perk1': {
-    en: 'Up to 35% recurring commission',
-    ar: 'عمولة متكرّرة لين 35%',
+    en: 'Recurring commission — the rate that applies to you is shown in your dashboard',
+    ar: 'عمولة متكرّرة — النسبة اللي تنطبّق عليك مبيّنة في لوحة تحكّمك',
   },
   'aff_comp.public.what_you_get.perk2': {
-    en: '90-day cookie window',
-    ar: 'نافذة تتبّع 90 يوم',
+    en: 'Referral tracking window confirmed in your dashboard',
+    ar: 'نافذة تتبّع الإحالة مؤكّدة في لوحة تحكّمك',
   },
   'aff_comp.public.what_you_get.perk3': {
     en: 'Designed banner pack and screenshot library',
@@ -304,8 +309,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'لازم أكون معلّم عشان أنضم؟',
   },
   'aff_comp.public.faq.q1.a': {
-    en: 'The programme is open to anyone with a relevant audience, including educators, tutors, parent communities, content creators and education websites. There are no follower or traffic minimums. We simply ask that promotion is honest and that The English Hub is presented as an independent platform that is exam-board aligned but not endorsed by any exam board.',
-    ar: 'البرنامج مفتوح لأي واحد عنده جمهور مناسب — معلّمين، مدرّسين خصوصيين، مجتمعات أهالي، صنّاع محتوى، ومواقع تعليمية. ما في حد أدنى للمتابعين أو الزيارات. كل اللي نطلبه إن الترويج يكون صادق، وإن The English Hub تنعرض كمنصّة مستقلّة متوافقة مع مجالس الامتحانات بس مو معتمدة من أي مجلس امتحانات.',
+    en: 'You must be 18 or over to join. Beyond that, the programme is open to anyone with a relevant audience, including educators, tutors, parent communities, content creators and education websites. There are no follower or traffic minimums. We simply ask that promotion is honest and that The English Hub is presented as an independent platform that is exam-board aligned but not endorsed by any exam board.',
+    ar: 'لازم يكون عمرك 18 سنة أو أكثر عشان تنضم. وزيادة على هذا، البرنامج مفتوح لأي واحد عنده جمهور مناسب — معلّمين، مدرّسين خصوصيين، مجتمعات أهالي، صنّاع محتوى، ومواقع تعليمية. ما في حد أدنى للمتابعين أو الزيارات. كل اللي نطلبه إن الترويج يكون صادق، وإن The English Hub تنعرض كمنصّة مستقلّة متوافقة مع مجالس الامتحانات بس مو معتمدة من أي مجلس امتحانات.',
   },
   'aff_comp.public.faq.q2.q': {
     en: 'How long does it take to be approved?',
@@ -328,16 +333,16 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'أقدر أروّج على TikTok / Instagram / YouTube؟',
   },
   'aff_comp.public.faq.q4.a': {
-    en: 'Referrals are tracked with a 90-day cookie that starts from the first click on your link. If someone clicks today and subscribes any time within those 90 days, the referral is still credited to you, giving people time to consider before committing to an annual plan.',
-    ar: 'الإحالات تنتتبّع بكوكي مدّته 90 يوم يبدأ من أول ضغطة على رابطك. لو واحد ضغط اليوم واشترك بأي وقت خلال هذي الـ 90 يوم، الإحالة تنحسب لك، وهذا يعطي الناس وقت يفكّرون قبل ما يلتزمون بخطّة سنوية.',
+    en: 'Referrals are tracked with a cookie that starts from the first click on your link, so someone who clicks today and subscribes later is still credited to you. The exact tracking window is one set of terms, confirmed in your partner dashboard.',
+    ar: 'الإحالات تنتتبّع بكوكي يبدأ من أول ضغطة على رابطك، فاللي يضغط اليوم ويشترك عقب فترة تنحسب لك. مدّة التتبّع بالضبط ضمن مجموعة شروط واحدة، ومؤكّدة في لوحة تحكّم الشريك حقّتك.',
   },
   'aff_comp.public.faq.q5.q': {
     en: 'Is the program available worldwide?',
     ar: 'هل البرنامج متوفّر بالعالم كلّه؟',
   },
   'aff_comp.public.faq.q5.a': {
-    en: 'Commission is tiered by referral volume, so the more active subscriptions you refer, the higher your rate becomes on each one. Everyone starts earning from their very first signup, and your current tier and rate are always visible in your partner dashboard.',
-    ar: 'العمولة مدرّجة حسب عدد الإحالات، فكل ما تجيب اشتراكات فعّالة أكثر، ترتفع نسبتك على كل وحدة منها. الكل يبدأ يكسب من أول تسجيل، ومستواك ونسبتك الحالية يبيّنون لك دايماً في لوحة تحكّم الشريك حقّتك.',
+    en: 'There is one programme with one set of terms. Everyone starts earning from their very first signup, and the commission rate that applies to you, along with your real verified referrals and earnings, is always visible in your partner dashboard.',
+    ar: 'في برنامج واحد بمجموعة شروط واحدة. الكل يبدأ يكسب من أول تسجيل، ونسبة العمولة اللي تنطبّق عليك، مع إحالاتك وأرباحك الحقيقية الموثّقة، تبيّن لك دايماً في لوحة تحكّم الشريك حقّتك.',
   },
   'aff_comp.public.faq.q6.q': {
     en: 'Do you offer custom landing pages for high-volume affiliates?',
@@ -382,8 +387,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'زين تعرف',
   },
   'aff_comp.public.apply.annual_only_note_body': {
-    en: 'Commission applies to referred annual subscriptions. Referrals are tracked for 90 days from the first click, so you are credited even if someone subscribes later.',
-    ar: 'العمولة تنطبّق على الاشتراكات السنوية اللي تجي عن طريقك. الإحالات تنتتبّع 90 يوم من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة.',
+    en: 'Commission applies to referred annual subscriptions. Referrals are tracked from the first click, so you are credited even if someone subscribes later. One programme, one set of terms — confirmed in your dashboard.',
+    ar: 'العمولة تنطبّق على الاشتراكات السنوية اللي تجي عن طريقك. الإحالات تنتتبّع من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة. برنامج واحد، مجموعة شروط واحدة — مؤكّدة في لوحة تحكّمك.',
   },
   'aff_comp.public.apply.signin_first': {
     en: 'Sign in first',
@@ -408,12 +413,12 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'أساسيات البرنامج',
   },
   'aff_comp.public.basics.attribution.title': {
-    en: '90-day attribution',
-    ar: 'إسناد 90 يوم',
+    en: 'Click attribution',
+    ar: 'إسناد الضغطة',
   },
   'aff_comp.public.basics.attribution.desc': {
-    en: 'A 90-day cookie tracks each referral from the first click, so you are credited even when someone subscribes later.',
-    ar: 'كوكي مدّته 90 يوم يتتبّع كل إحالة من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة.',
+    en: 'A cookie tracks each referral from the first click, so you are credited even when someone subscribes later. The tracking window is one set of terms, confirmed in your dashboard.',
+    ar: 'كوكي يتتبّع كل إحالة من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة. مدّة التتبّع ضمن مجموعة شروط واحدة، مؤكّدة في لوحة تحكّمك.',
   },
   'aff_comp.public.basics.min_payout.title': {
     en: 'Low minimum payout',
@@ -432,12 +437,12 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'العمولة تستمر تنصرف لك طول ما إحالتك باقية مشتركة، فكل إحالة ممكن تكسب لك أكثر بوايد من السنة الأولى.',
   },
   'aff_comp.public.basics.commission.title': {
-    en: 'Tiered commission',
-    ar: 'عمولة مدرّجة',
+    en: 'Recurring commission',
+    ar: 'عمولة متكرّرة',
   },
   'aff_comp.public.basics.commission.desc': {
-    en: 'Earn recurring commission on every referred annual plan, with higher rates unlocked as your referral volume grows.',
-    ar: 'اكسب عمولة متكرّرة على كل خطّة سنوية تجي عن طريقك، ونِسَب أعلى تنفتح لك كل ما يكبر عدد إحالاتك.',
+    en: 'Earn recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    ar: 'اكسب عمولة متكرّرة على كل خطّة سنوية تجي عن طريقك. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
   },
 
   /* ─── Bottom CTA ───────────────────────────────────────────── */

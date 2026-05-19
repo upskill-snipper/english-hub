@@ -295,29 +295,17 @@ function HowItWorksSection() {
 
 function CommissionSection() {
   const t = useT()
-  const tiers = [
-    {
-      planKey: 'aff_comp.public.commission.plan.student_monthly',
-      commission: '£5.00',
-    },
-    {
-      planKey: 'aff_comp.public.commission.plan.student_annual',
-      commission: '£15.00',
-    },
-    {
-      planKey: 'aff_comp.public.commission.plan.teacher_monthly',
-      commission: '£7.00',
-    },
-    {
-      planKey: 'aff_comp.public.commission.plan.teacher_annual',
-      commission: '£20.00',
-    },
-  ]
-
+  // Audit remediation (M15, 2026-05-19): the previous hard-coded
+  // per-signup commission table (£5/£15/£7/£20) contradicted the
+  // single-programme partner copy and the /creators page. Per the
+  // anti-hallucination contract no reconciled rate is invented here —
+  // the live, verified commission for each referral is shown in the
+  // partner dashboard. The canonical commission structure is an open
+  // business decision (see BUSINESS-DECISIONS-NEEDED.md).
   return (
     <section className="px-4 py-20 sm:py-24">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t('aff_comp.public.commission.heading')}
           </h2>
@@ -326,39 +314,13 @@ function CommissionSection() {
           </p>
         </div>
 
-        <Card className="overflow-hidden p-0 border-border/40">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border/60 bg-muted/40">
-                  <th className="text-left py-4 px-6 font-semibold text-foreground">
-                    {t('aff_comp.public.commission.col_plan')}
-                  </th>
-                  <th className="text-right py-4 px-6 font-semibold text-foreground">
-                    {t('aff_comp.public.commission.col_commission')}
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border/40">
-                {tiers.map((tr) => (
-                  <tr key={tr.planKey} className="hover:bg-muted/20 transition-colors">
-                    <td className="py-4 px-6 text-foreground font-medium">{t(tr.planKey)}</td>
-                    <td className="py-4 px-6 text-right">
-                      <span className="text-primary font-bold text-base">{tr.commission}</span>
-                      <span className="text-muted-foreground text-xs ml-1">
-                        {t('aff_comp.public.commission.per_signup')}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <Card className="border-border/40 p-7">
+          <p className="text-foreground leading-relaxed">
+            One programme, one set of terms. We don&rsquo;t publish earnings figures we can&rsquo;t
+            yet evidence — your partner dashboard shows your real, verified referrals and the exact
+            commission for each one, from day one.
+          </p>
         </Card>
-
-        <p className="text-muted-foreground text-sm mt-5 text-center">
-          {t('aff_comp.public.commission.footnote')}
-        </p>
       </div>
     </section>
   )

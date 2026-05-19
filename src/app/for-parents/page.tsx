@@ -68,7 +68,7 @@ const faqs = [
   {
     question: 'Is The English Hub safe for my child?',
     answer:
-      "We are designed to comply with the UK Children's Code and applicable child-data rules including COPPA where relevant. Accounts use a date-of-birth age gate, and learners under 16 must provide a parent or guardian email so consent can be confirmed before their account becomes active.",
+      "The English Hub is designed for users in the United Kingdom and Qatar and complies with the UK Children's Code (Age Appropriate Design Code) and applicable UK and Qatari data-protection law. Accounts use a date-of-birth age gate: children under 13 cannot register, and learners aged 13 to 15 must provide a parent or guardian email so consent can be confirmed before their account becomes active.",
   },
   {
     question: 'How is this different from a private tutor?',
@@ -106,9 +106,9 @@ const faqs = [
       'No problem. Simply enter their email address or invite code in your parent dashboard, and we will send them a link request. They must accept it before you can see their data.',
   },
   {
-    question: 'What are Working At Grade and Predicted Grade?',
+    question: 'What are Working At Grade and the progress estimate?',
     answer:
-      "Working At Grade is your child's current GCSE grade (1-9) based on their recent quiz and assessment scores. Predicted Grade is where our system estimates they are heading based on their progress trajectory. Both use the UK GCSE 1-9 grading system so you always have a clear picture.",
+      "Working At Grade reflects your child's recent quiz and assessment scores, shown on the UK GCSE 1-9 scale. What is the progress estimate? It is the platform's internal estimate of where your child may be heading, based on their practice on the site. It is a guide to help focus revision — not an official grade, not a prediction of exam results, and not used by any exam board.",
   },
   {
     question: 'Can I cancel anytime?',
@@ -118,7 +118,7 @@ const faqs = [
   {
     question: "Is my child's data safe?",
     answer:
-      "We comply with UK GDPR and the Children's Code. Data is encrypted in transit and at rest. We do not sell data to third parties. Parent access is strictly limited to learning progress data.",
+      "The English Hub is designed for users in the United Kingdom and Qatar and complies with the UK Children's Code (Age Appropriate Design Code) and applicable UK and Qatari data-protection law. Data is encrypted in transit and at rest. We do not sell data to third parties. Parent access is strictly limited to learning progress data.",
   },
 ]
 
@@ -361,8 +361,8 @@ export default async function ForParentsPage() {
               {
                 icon: Target,
                 color: 'text-emerald-400 bg-emerald-500/10',
-                title: 'Working At Grade & Predicted Grade',
-                desc: 'See your child’s current Working At Grade (based on recent performance) and their Predicted Grade (where they’re heading) using GCSE grades 1–9. Clear, at-a-glance indicators of progress.',
+                title: 'Working At Grade & progress estimate',
+                desc: 'See your child’s Working At Grade (based on recent performance, on the GCSE 1–9 scale) and a progress estimate — the platform’s internal guide to where they may be heading. It helps focus revision and is not an official grade or a prediction of exam results.',
               },
               {
                 icon: Bell,

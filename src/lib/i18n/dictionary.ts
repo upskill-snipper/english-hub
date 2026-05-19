@@ -260,8 +260,8 @@ export const DICTIONARY: Dictionary = {
   'home.cta.try_free': { en: 'Try it free', ar: 'جرّبه ببلاش' },
   'home.cta.no_card': { en: 'No card needed', ar: 'من غير بطاقة' },
   'home.trust_line': {
-    en: 'Trusted by students, parents and teachers across the UK and the Gulf',
-    ar: 'محل ثقة الطلاب والأهالي والمعلمين في بريطانيا والخليج',
+    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي',
   },
   'home.boards_supported': {
     en: 'Built for AQA, Edexcel, OCR, Cambridge, WJEC',
@@ -313,8 +313,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'لا — طلاب وايد بالخليج يستخدمون The English Hub لامتحانات بريطانيا كل يوم.',
   },
   'home.trusted_by_count': {
-    en: 'Trusted by over 10,000 families',
-    ar: 'أكثر من ١٠٬٠٠٠ عائلة يثقون فينا',
+    en: 'A new GCSE and IGCSE revision platform built by English teachers',
+    ar: 'منصة مراجعة جديدة لـ GCSE و IGCSE من إعداد معلمي إنجليزي',
   },
   'home.reviews_cta': { en: 'Read our reviews', ar: 'اقرأ آراء المستخدمين' },
   'home.start_trial': { en: 'Start your free trial', ar: 'ابدأ تجربتك المجانية الحين' },
@@ -653,8 +653,8 @@ export const DICTIONARY: Dictionary = {
   'home.hero.cta_browse': { en: 'Browse Courses', ar: 'تصفّح الكورسات' },
   'home.hero.cta_demo': { en: 'Try Interactive Demo', ar: 'جرّب الديمو التفاعلي' },
   'home.social_proof.heading': {
-    en: 'Trusted by students, teachers, and schools across the UK',
-    ar: 'محل ثقة الطلاب والمعلمين والمدارس في كل بريطانيا',
+    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي',
   },
   'home.stat.lessons': { en: 'Structured Lessons', ar: 'دروس مرتّبة' },
   'home.stat.mocks': { en: 'Mock Papers', ar: 'أوراق تجريبية' },
@@ -2612,8 +2612,8 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.hero.badge': { en: 'Pricing', ar: 'الأسعار' },
   'pricing.hero.title': {
-    en: 'The AI English platform trusted by schools, teachers, and students.',
-    ar: 'منصة English بالذكاء الاصطناعي اللي تثق فيها المدارس والمعلمين والطلاب.',
+    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers.',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي.',
   },
   'pricing.hero.subtitle': {
     en: 'Exam-board aligned revision, AI marking, lesson planning, and analytics — built for results.',
@@ -5114,14 +5114,14 @@ export const DICTIONARY: Dictionary = {
   },
   'about.who.h2': { en: "Who It's For", ar: 'لمين' },
   'about.who.body': {
-    en: 'The English Hub is designed for students aged 14 to 16 preparing for their English exams, but it supports the wider community around them too. Teachers use the platform to set homework, track progress, and supplement classroom teaching. Schools integrate our courses into their intervention and revision programmes. Parents gain visibility into what their child is studying and how they are progressing, giving them the confidence to support learning at home.',
-    ar: 'The English Hub مصمَّم للطلاب من ١٤ إلى ١٦ سنة اللي يحضّرون لامتحانات English، بس يدعم كل المجتمع حولهم. المعلمين يستخدمون المنصة عشان يعطون واجبات، يتابعون التقدّم، ويكمّلون التدريس في الفصل. المدارس تدمج كورساتنا في برامج التدخّل والمراجعة. أولياء الأمور يشوفون وش يدرس طفلهم وكيف يتقدّم، عشان يكونون واثقين يدعمونه في البيت.',
+    en: 'The English Hub is designed for learners aged 13 and over (13–15 require parent/guardian consent) preparing for their English exams, but it supports the wider community around them too. Teachers use the platform to set homework, track progress, and supplement classroom teaching. Schools integrate our courses into their intervention and revision programmes. Parents gain visibility into what their child is studying and how they are progressing, giving them the confidence to support learning at home.',
+    ar: 'The English Hub مصمَّم للمتعلّمين من عمر ١٣ سنة فأكثر (من ١٣ إلى ١٥ يحتاجون موافقة ولي الأمر) اللي يحضّرون لامتحانات English، بس يدعم كل المجتمع حولهم. المعلمين يستخدمون المنصة عشان يعطون واجبات، يتابعون التقدّم، ويكمّلون التدريس في الفصل. المدارس تدمج كورساتنا في برامج التدخّل والمراجعة. أولياء الأمور يشوفون وش يدرس طفلهم وكيف يتقدّم، عشان يكونون واثقين يدعمونه في البيت.',
   },
   'about.values.h2': { en: 'Our Values', ar: 'قيمنا' },
   'about.values.quality.name': { en: 'Quality content', ar: 'محتوى بجودة عالية' },
   'about.values.quality.desc': {
-    en: 'every lesson is written and reviewed by experienced English educators to ensure accuracy and clarity.',
-    ar: 'كل درس مكتوب ومراجَع من معلمين English ذوي خبرة عشان نضمن الدقّة والوضوح.',
+    en: 'our learning content is written and reviewed by qualified English teachers with GCSE/IGCSE teaching experience. We aim to reflect how the published mark schemes are applied; the mark scheme and any final assessment decision always remain the exam board’s and the examiner’s.',
+    ar: 'محتوانا التعليمي مكتوب ومراجَع من معلمين English مؤهَّلين عندهم خبرة تدريس GCSE/IGCSE. نهدف نعكس كيف تُطبَّق أنظمة التصحيح المنشورة؛ ونظام التصحيح وأي قرار تقييم نهائي يبقى دايماً لبورد الامتحان وللمصحِّح.',
   },
   'about.values.access.name': { en: 'Accessibility', ar: 'سهولة الوصول' },
   'about.values.access.desc': {
@@ -5167,30 +5167,30 @@ export const DICTIONARY: Dictionary = {
   },
   'about.compliance.h2': { en: 'Compliance', ar: 'الالتزام' },
   'about.compliance.dpia': {
-    en: 'Data Protection Impact Assessment (PDF)',
-    ar: 'تقييم أثر حماية البيانات (PDF)',
+    en: 'Data Protection Impact Assessment — in preparation; not yet available for inspection.',
+    ar: 'تقييم أثر حماية البيانات — قيد الإعداد؛ غير متاح للاطّلاع بعد.',
   },
   'about.compliance.safeguard': { en: 'Safeguarding Policy (PDF)', ar: 'سياسة الحماية (PDF)' },
   'about.compliance.vpat': {
-    en: 'VPAT — Voluntary Product Accessibility Template (PDF)',
-    ar: 'VPAT — نموذج إمكانية الوصول الطوعي للمنتج (PDF)',
+    en: 'VPAT (Voluntary Product Accessibility Template) — no VPAT available yet.',
+    ar: 'VPAT (نموذج إمكانية الوصول الطوعي للمنتج) — لا يتوفّر VPAT بعد.',
   },
   'about.compliance.access_statement': {
-    en: 'Accessibility Statement (WCAG 2.2 AA target)',
-    ar: 'بيان إمكانية الوصول (هدف WCAG 2.2 AA)',
+    en: 'Accessibility Statement — we target WCAG 2.2 Level AA. This is currently a self-assessment, not an independently audited conformance claim, and no VPAT is available yet. Known limitations are listed on our Accessibility page.',
+    ar: 'بيان إمكانية الوصول — نستهدف WCAG 2.2 المستوى AA. هذا حالياً تقييم ذاتي، وليس ادّعاء مطابقة مُدقَّق بشكل مستقل، ولا يتوفّر VPAT بعد. القيود المعروفة مدرجة في صفحة إمكانية الوصول لدينا.',
   },
   'about.compliance.cyber': {
-    en: 'Cyber Essentials certificate (filing Q3 2026)',
-    ar: 'شهادة Cyber Essentials (تقديم Q3 2026)',
+    en: 'Cyber Essentials — not currently held.',
+    ar: 'Cyber Essentials — غير حاصلين عليها حالياً.',
   },
   'about.compliance.dpa': {
-    en: 'Data Processing Agreement template (Word)',
-    ar: 'قالب اتفاقية معالجة البيانات (Word)',
+    en: 'Data Processing Agreement — available to schools on request during procurement (legal@theenglishhub.app).',
+    ar: 'اتفاقية معالجة البيانات — متاحة للمدارس عند الطلب أثناء عملية الشراء (legal@theenglishhub.app).',
   },
   'about.compliance.coming_soon': { en: 'coming soon', ar: 'قريب' },
   'about.compliance.dpa_available': {
-    en: 'available on request (legal@theenglishhub.app)',
-    ar: 'متوفّر عند الطلب (legal@theenglishhub.app)',
+    en: 'available to schools on request during procurement (legal@theenglishhub.app)',
+    ar: 'متاحة للمدارس عند الطلب أثناء عملية الشراء (legal@theenglishhub.app)',
   },
   'contact.title': { en: 'Contact Us', ar: 'تواصل معانا' },
   'contact.lead': {
@@ -8585,8 +8585,8 @@ export const DICTIONARY: Dictionary = {
   },
   'help.gs.q1.q': { en: 'How do I create an account?', ar: 'كيف أسوّي حساب؟' },
   'help.gs.q1.a': {
-    en: 'Visit theenglishhub.app and click "Get Started" or "Sign Up". You can register with your email address or sign in with Google. Your 30-day free trial starts automatically — no payment details required upfront.',
-    ar: "ادخل theenglishhub.app واضغط 'ابدأ' أو 'سوِّ حساب'. تقدر تسجّل بإيميلك أو تدخل بحساب Google. تجربة الـ ٣٠ يوم المجانية تبدأ تلقائياً — ما تحتاج بيانات دفع من البداية.",
+    en: 'Visit theenglishhub.app and click "Get Started" or "Sign Up". You can register with your email address or sign in with Google. A 7-day free trial starts when you add a payment card; you are not charged during the trial and can cancel any time before it ends.',
+    ar: "ادخل theenglishhub.app واضغط 'ابدأ' أو 'سوِّ حساب'. تقدر تسجّل بإيميلك أو تدخل بحساب Google. تبدأ تجربة مجانية لمدة ٧ أيام عند إضافة بطاقة دفع؛ لا يُخصم أي مبلغ خلال التجربة ويمكنك الإلغاء في أي وقت قبل انتهائها.",
   },
   'help.gs.q2.q': {
     en: 'What exam boards do you support?',
@@ -9530,24 +9530,24 @@ export const DICTIONARY: Dictionary = {
   },
   'refund.s4.h2': { en: '4. Free trial', ar: '٤. التجربة المجانية' },
   'refund.s4.p_intro': {
-    en: 'We offer a 30-day free trial so you can explore The English Hub before committing to a paid plan. During the trial:',
-    ar: 'نُقدّم تجربة مجانية لمدة ٣٠ يوماً حتى تتمكّن من استكشاف The English Hub قبل الالتزام بخطة مدفوعة. وخلال هذه التجربة:',
+    en: 'The English Hub offers a single 7-day free trial. A payment card is required to start the trial. You will not be charged during the 7-day trial period.',
+    ar: 'يُقدّم The English Hub تجربة مجانية واحدة لمدة ٧ أيام. ويلزم وجود بطاقة دفع لبدء التجربة. ولن تتم محاسبتك خلال فترة التجربة البالغة ٧ أيام.',
   },
   'refund.s4.li1': {
-    en: 'You will not be charged anything for the first 30 days.',
-    ar: 'لن تتم محاسبتك بأي مبلغ خلال أول ٣٠ يوماً.',
+    en: 'If you do not cancel before the end of day 7, your subscription begins and the card is charged at the plan price you selected.',
+    ar: 'إذا لم تُلغِ قبل نهاية اليوم السابع، فسيبدأ اشتراكك وتتم محاسبة البطاقة بسعر الخطة التي اخترتها.',
   },
   'refund.s4.li2': {
-    en: 'If you cancel at any point during the 30-day trial, your account will simply revert to a free account and you will never be billed.',
-    ar: 'إذا ألغيت الاشتراك في أي وقت خلال فترة التجربة، فسيعود حسابك ببساطة إلى حساب مجاني ولن تُحاسَب أبداً.',
+    en: 'You can cancel at any time before day 7 from your account settings, and we send a reminder email before the trial ends.',
+    ar: 'يمكنك الإلغاء في أي وقت قبل اليوم السابع من إعدادات حسابك، ونرسل بريداً إلكترونياً للتذكير قبل انتهاء التجربة.',
   },
   'refund.s4.li3': {
-    en: 'If you do not cancel before the trial ends, your chosen subscription plan will begin and your payment method will be charged automatically.',
-    ar: 'إذا لم تُلغِ قبل انتهاء التجربة، فستبدأ خطة الاشتراك التي اخترتها، وستتم محاسبة طريقة الدفع تلقائياً.',
+    en: 'If you cancel before the end of day 7, you are not charged and no payment is taken.',
+    ar: 'إذا ألغيت قبل نهاية اليوم السابع، فلن تتم محاسبتك ولن تُسحب أي دفعة.',
   },
   'refund.s4.p_outro': {
-    en: 'We recommend setting a reminder if you are unsure whether you want to continue. You can check your trial end date at any time in your account settings.',
-    ar: 'نوصي بضبط تذكير إذا كنت غير متأكد من رغبتك في الاستمرار. ويمكنك مراجعة تاريخ انتهاء التجربة في أي وقت من إعدادات حسابك.',
+    en: 'Because no payment is taken during the trial, there is nothing to refund if you cancel before day 7. Refund entitlement applies only after a charge has been taken — see the subscription cancellations and cooling-off sections above.',
+    ar: 'نظراً لعدم سحب أي دفعة خلال التجربة، فلا يوجد ما يُستردّ إذا ألغيت قبل اليوم السابع. ولا ينطبق حق الاسترداد إلا بعد سحب دفعة — راجع قسمَي إلغاءات الاشتراك وفترة التروّي أعلاه.',
   },
   'refund.s5.h2': { en: '5. One-time course purchases', ar: '٥. عمليات الشراء لمرة واحدة للدورات' },
   'refund.s5.p_intro': {
@@ -9656,8 +9656,8 @@ export const DICTIONARY: Dictionary = {
   },
   'terms.s2.h2': { en: '2. Eligibility', ar: '٢. الأهلية' },
   'terms.s2.p1': {
-    en: "You must be at least 13 years of age (the age of digital consent in the UK under the Data Protection Act 2018) to create an account on The English Hub. If you are under 16 years of age, you must have the consent of a parent or legal guardian before registering. By creating an account for a user under 16, the parent or guardian agrees to these Terms on the minor's behalf and accepts responsibility for the minor's use of the Service.",
-    ar: 'يجب ألا يقلّ عمرك عن ١٣ عاماً (سنّ الموافقة الرقمية في المملكة المتحدة بموجب قانون حماية البيانات لعام ٢٠١٨) لإنشاء حساب على The English Hub. وإذا كان عمرك أقلّ من ١٦ عاماً، فيجب الحصول على موافقة ولي الأمر أو الوصي القانوني قبل التسجيل. وبإنشاء حساب لمستخدم دون السادسة عشرة، يوافق ولي الأمر أو الوصي على هذه الشروط نيابةً عن القاصر، ويتحمّل مسؤولية استخدام القاصر للخدمة.',
+    en: "You must be at least 13 years of age to create an account on The English Hub; accounts cannot be created for children under 13. Users aged 13 to 15 require the consent of a parent or legal guardian before registering. By creating an account for a user aged 13 to 15, the parent or guardian agrees to these Terms on the minor's behalf and accepts responsibility for the minor's use of the Service.",
+    ar: 'يجب ألا يقلّ عمرك عن ١٣ عاماً لإنشاء حساب على The English Hub؛ ولا يمكن إنشاء حسابات للأطفال دون سنّ الثالثة عشرة. ويتطلّب المستخدمون الذين تتراوح أعمارهم بين ١٣ و١٥ عاماً موافقة ولي الأمر أو الوصي القانوني قبل التسجيل. وبإنشاء حساب لمستخدم تتراوح سنّه بين ١٣ و١٥ عاماً، يوافق ولي الأمر أو الوصي على هذه الشروط نيابةً عن القاصر، ويتحمّل مسؤولية استخدام القاصر للخدمة.',
   },
   'terms.s2.p2': {
     en: 'School and institutional accounts are provisioned and managed by the subscribing educational institution. Where a school creates accounts on behalf of its students, the school is responsible for obtaining any necessary parental consents and for ensuring compliance with applicable data protection legislation, including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Individual students using school-provisioned accounts are also bound by these Terms.',
@@ -9831,12 +9831,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'وفقاً للائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣، يحقّ لك إلغاء اشتراك جديد أو شراء لمرة واحدة خلال ١٤ يوماً من تاريخ الشراء واسترداد المبلغ كاملاً، بشرط ألّا تكون قد استخدمت الخدمة استخداماً جوهرياً خلال تلك الفترة. وعند استخدامك الخدمة خلال فترة الإلغاء البالغة ١٤ يوماً، قد نَخصم مبلغاً تناسبياً يعكس الخدمات المُقدَّمة بالفعل.',
   },
   'terms.s10.p3': {
-    en: 'For subscriptions cancelled after the 14-day statutory cancellation period, we offer a pro-rated refund for the unused portion of the current billing cycle if you request a refund within 14 days of your most recent renewal date. Refund requests made more than 14 days after the renewal date will not be eligible for a refund, though your access will continue until the end of the billing period.',
-    ar: 'بالنسبة للاشتراكات المُلغاة بعد فترة الإلغاء القانونية البالغة ١٤ يوماً، نُقدّم استرداداً تناسبياً عن الجزء غير المُستخدَم من دورة الفوترة الحالية إذا طلبت الاسترداد خلال ١٤ يوماً من أحدث تاريخ تجديد. ولن تكون طلبات الاسترداد المُقدَّمة بعد مرور أكثر من ١٤ يوماً على تاريخ التجديد مُؤهَّلة للاسترداد، إلا أن صلاحية وصولك ستستمرّ حتى نهاية فترة الفوترة.',
+    en: 'Cancellation outside the 14-day statutory period does not, by itself, entitle you to a refund of the current billing period; your access continues until the end of the period you have already paid for. Our full Refund Policy sets out the complete refund terms — including how cancellations, free trials and one-time course purchases are handled — and is the single source of refund detail. Where this section and the Refund Policy differ, the Refund Policy prevails.',
+    ar: 'لا يُخوّلك الإلغاء خارج فترة الإلغاء القانونية البالغة ١٤ يوماً، بحدّ ذاته، استرداد قيمة فترة الفوترة الحالية؛ وتستمرّ صلاحية وصولك حتى نهاية الفترة التي دفعت ثمنها بالفعل. وتُحدّد سياسة استرداد الأموال الكاملة شروط الاسترداد بالكامل — بما في ذلك كيفية التعامل مع الإلغاءات والتجارب المجانية وعمليات الشراء لمرة واحدة للدورات — وهي المرجع الوحيد لتفاصيل الاسترداد. وعند اختلاف هذا القسم عن سياسة استرداد الأموال، تكون الغلبة لسياسة استرداد الأموال.',
   },
   'terms.s10.p4': {
-    en: 'If your free trial converts to a paid subscription and you did not intend to continue, please contact us within 14 days of the first charge and we will issue a full refund. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
-    ar: 'إذا تحوّلت تجربتك المجانية إلى اشتراك مدفوع ولم تكن تعتزم الاستمرار، فيُرجى التواصل معنا خلال ١٤ يوماً من أول دفعة، وسنُصدر استرداداً كاملاً. وتتم معالجة المبالغ المُستردَّة إلى طريقة الدفع الأصلية، وعادةً ما يستغرق ظهورها من ٥ إلى ١٠ أيام عمل.',
+    en: 'The 7-day free trial requires a valid payment method and converts automatically to your chosen paid plan unless you cancel before it ends. If your trial converts and you did not intend to continue, the eligibility and timeframe for a refund of that first charge are governed by the Refund Policy. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
+    ar: 'تتطلّب التجربة المجانية لمدة ٧ أيام طريقة دفع صالحة، وتتحوّل تلقائياً إلى الخطة المدفوعة التي اخترتها ما لم تُلغِها قبل انتهائها. وإذا تحوّلت تجربتك ولم تكن تعتزم الاستمرار، فإنّ أهلية استرداد تلك الدفعة الأولى ومدّتها تخضعان لسياسة استرداد الأموال. وتتم معالجة المبالغ المُستردَّة إلى طريقة الدفع الأصلية، وعادةً ما يستغرق ظهورها من ٥ إلى ١٠ أيام عمل.',
   },
   'terms.s11.h2': { en: '11. Limitation of Liability', ar: '١١. تحديد المسؤولية' },
   'terms.s11.p1': {
@@ -9896,9 +9896,12 @@ export const DICTIONARY: Dictionary = {
   // Brand name "Trustpilot" stays Latin even within Arabic copy — it is
   // a trademarked product label, not translatable content. See ARIA in
   // TrustBox.tsx and TrustpilotReviewLink.tsx.
+  // Unscored review CTA removed pending a genuine, scored review base.
+  // Key + type preserved so TrustBox.tsx / TrustpilotReviewLink.tsx
+  // consumers do not break; empty values render nothing.
   'trustpilot.read_reviews': {
-    en: 'Read our reviews on Trustpilot',
-    ar: 'اقرا تقييماتنا على Trustpilot',
+    en: '',
+    ar: '',
   },
   'trustpilot.brand': { en: 'Trustpilot', ar: 'Trustpilot' },
 
@@ -13772,14 +13775,14 @@ export const DICTIONARY: Dictionary = {
   'creators.how.step_label': { en: 'Step', ar: 'الخطوة' },
   'creators.calc.h2': { en: 'Earning Calculator', ar: 'حاسبة الأرباح' },
   'creators.calc.intro': {
-    en: 'See how much you could earn with our 20% recurring commission on the',
-    ar: 'شوف كم تقدر تكسب مع عمولة ٢٠٪ المتكرّرة على',
+    en: 'An illustrative example of recurring commission earnings on the',
+    ar: 'مثال توضيحي لأرباح العمولة المتكرّرة على',
   },
   'creators.calc.plan_suffix': { en: '/mo plan.', ar: 'باقة شهرية.' },
   'creators.calc.footnote_prefix': { en: 'Based on', ar: 'بناءً على' },
   'creators.calc.footnote_suffix': {
-    en: '/mo subscription price. Commission is recurring for as long as the student remains subscribed.',
-    ar: 'سعر اشتراك شهري. العمولة متكرّرة طول ما الطالب مشترك.',
+    en: '/mo subscription price. Illustrative only — one programme, one set of terms; your dashboard shows your real verified earnings.',
+    ar: 'سعر اشتراك شهري. توضيحي فقط — برنامج واحد، شروط واحدة؛ لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
   'creators.calc.students_referred': { en: 'students referred', ar: 'طالب موصّل' },
   'creators.calc.per_month': { en: 'per month, recurring', ar: 'بالشهر، متكرّر' },
@@ -13790,10 +13793,10 @@ export const DICTIONARY: Dictionary = {
     ar: 'تيك توك ولا يوتيوب شورتس ١٥-٣٠ ثانية تبيّن نصائح سريعة من المنصة.',
   },
   'creators.ideas.hacks.platform': { en: 'TikTok / Shorts', ar: 'TikTok / Shorts' },
-  'creators.ideas.grade9.title': { en: '"How I got a Grade 9"', ar: '"شلون حصلت Grade 9"' },
+  'creators.ideas.grade9.title': { en: '"My revision routine"', ar: '"روتين مراجعتي"' },
   'creators.ideas.grade9.desc': {
-    en: 'Study vlogs showing your revision routine using The English Hub.',
-    ar: 'فلوغ دراسة يبيّن روتين مراجعتك باستخدام The English Hub.',
+    en: 'Show how you organise revision and use The English Hub, without claiming or implying any specific grade or guaranteed outcome. Every post must be clearly labelled as an ad/paid partnership (e.g. "#ad") in line with ASA/CMA rules. Content must not target or be primarily directed at under-13s.',
+    ar: 'بيّن شلون تنظّم مراجعتك وتستخدم The English Hub، بدون ادعاء أو تلميح لأي درجة محددة أو نتيجة مضمونة. كل منشور لازم يكون موسوم بوضوح كإعلان/شراكة مدفوعة (مثل "#ad") حسب قواعد ASA/CMA. المحتوى لازم ما يستهدف أو يكون موجّه أساساً لمن هم دون ١٣ سنة.',
   },
   'creators.ideas.grade9.platform': { en: 'YouTube / TikTok', ar: 'YouTube / TikTok' },
   'creators.ideas.best.title': {
@@ -13812,15 +13815,15 @@ export const DICTIONARY: Dictionary = {
   },
   'creators.ideas.swm.platform': { en: 'YouTube / TikTok LIVE', ar: 'YouTube / TikTok LIVE' },
   'creators.benefits.h2': { en: 'Partner Benefits', ar: 'مزايا الشريك' },
-  'creators.benefits.recurring.title': { en: '20% recurring commission', ar: '٢٠٪ عمولة متكرّرة' },
+  'creators.benefits.recurring.title': { en: 'Recurring commission', ar: 'عمولة متكرّرة' },
   'creators.benefits.recurring.desc': {
-    en: 'Earn on every payment, not just the first. As long as they subscribe, you earn.',
-    ar: 'اكسب على كل دفعة، مو بس الأولى. طول ما هو مشترك، إنت تكسب.',
+    en: 'One programme, one set of terms. Your dashboard shows your real verified earnings.',
+    ar: 'برنامج واحد، شروط واحدة. لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
-  'creators.benefits.cookie.title': { en: '30-day cookie window', ar: 'نافذة كوكي ٣٠ يوم' },
+  'creators.benefits.cookie.title': { en: 'Tracked referral window', ar: 'نافذة إحالة متتبَّعة' },
   'creators.benefits.cookie.desc': {
-    en: 'If someone clicks your link, you get credit for 30 days — even if they don’t sign up immediately.',
-    ar: 'لو واحد ضغط على رابطك، تأخذ كريديت ٣٠ يوم — حتى لو ما سجّل فوراً.',
+    en: 'One programme, one set of terms. Your dashboard shows your real verified earnings.',
+    ar: 'برنامج واحد، شروط واحدة. لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
   'creators.benefits.dashboard.title': { en: 'Real-time dashboard', ar: 'لوحة لحظية' },
   'creators.benefits.dashboard.desc': {
@@ -13834,8 +13837,8 @@ export const DICTIONARY: Dictionary = {
   },
   'creators.benefits.payout.title': { en: 'Monthly payouts', ar: 'دفعات شهرية' },
   'creators.benefits.payout.desc': {
-    en: 'Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer.',
-    ar: 'العمولات المؤكّدة تتدفع أول كل شهر عبر PayPal ولا تحويل بنكي.',
+    en: 'Confirmed commissions are paid via PayPal or bank transfer. Your dashboard shows your real verified earnings.',
+    ar: 'العمولات المؤكّدة تتدفع عبر PayPal ولا تحويل بنكي. لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
   'creators.benefits.support.title': { en: 'Dedicated support', ar: 'دعم مخصّص' },
   'creators.benefits.support.desc': {
@@ -13901,18 +13904,18 @@ export const DICTIONARY: Dictionary = {
   },
   'creators.faq.q2': { en: 'How does tracking work?', ar: 'شلون يشتغل التتبع؟' },
   'creators.faq.a2': {
-    en: 'You get a unique referral link (e.g. theenglishhub.app?via=yourcode). When someone clicks it, a 30-day cookie tracks them. If they subscribe within 30 days, you earn the commission.',
-    ar: 'تأخذ رابط إحالة خاص (مثلاً theenglishhub.app?via=yourcode). لمن واحد يضغطه، كوكي ٣٠ يوم يتتبّعه. لو اشترك خلال ٣٠ يوم، تأخذ العمولة.',
+    en: 'You get a unique referral link (e.g. theenglishhub.app?via=yourcode). When someone clicks it, they are tracked within the programme’s referral window. One programme, one set of terms; your dashboard shows your real verified earnings.',
+    ar: 'تأخذ رابط إحالة خاص (مثلاً theenglishhub.app?via=yourcode). لمن واحد يضغطه، يتم تتبّعه خلال نافذة الإحالة الخاصة بالبرنامج. برنامج واحد، شروط واحدة؛ لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
   'creators.faq.q3': { en: 'When do I get paid?', ar: 'متى أنادفع؟' },
   'creators.faq.a3': {
-    en: 'Commissions are confirmed 30 days after each signup (to allow for refunds). Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer.',
-    ar: 'العمولات تتأكد بعد ٣٠ يوم من كل تسجيل (للسماح بالاسترجاعات). العمولات المؤكّدة تتدفع أول كل شهر عبر PayPal ولا تحويل بنكي.',
+    en: 'Commissions are confirmed after a refund-protection period, then paid out via PayPal or bank transfer. One programme, one set of terms; your dashboard shows your real verified earnings.',
+    ar: 'العمولات تتأكد بعد فترة حماية للاسترجاع، ثم تتدفع عبر PayPal ولا تحويل بنكي. برنامج واحد، شروط واحدة؛ لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
-  'creators.faq.q4': { en: 'Can I apply if I’m under 18?', ar: 'أقدر أقدّم لو عمري أقل من ١٨؟' },
+  'creators.faq.q4': { en: 'Who can apply?', ar: 'مين يقدر يقدّم؟' },
   'creators.faq.a4': {
-    en: 'Yes! We welcome student creators. If you’re under 18, we’ll just need parental consent.',
-    ar: 'إي! نرحّب بصنّاع المحتوى الطلاب. لو عمرك أقل من ١٨، بس بنحتاج موافقة الأهل.',
+    en: 'You must be 18 or over to join the partner programme.',
+    ar: 'لازم يكون عمرك ١٨ سنة أو أكثر للانضمام لبرنامج الشركاء.',
   },
   'creators.faq.q5': {
     en: 'Do I need a minimum number of followers?',

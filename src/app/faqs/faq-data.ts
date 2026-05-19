@@ -90,7 +90,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Can I get a refund?',
         answer:
-          "If you're not satisfied within the first 14 days of a paid subscription, contact our support team and we'll arrange a full refund. After 14 days, you can cancel to prevent future charges, but we don't offer partial refunds for the current billing period.",
+          'Refund eligibility, the statutory cooling-off period, and how to request a refund are all set out in our Refund Policy, which is the single source of truth — please read it for the current terms. If you have any questions, contact our support team. You can also cancel at any time from your account settings to prevent future charges.',
       },
     ],
   },
@@ -137,7 +137,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'What if the AI gets the mark wrong?',
         answer:
-          "Every AI-marked essay has a one-click ‘request human review’ option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative — the mark scheme remains the examiner's.",
+          "Every AI-marked essay has a one-click ‘request human review’ option. A qualified reviewer will re-mark your work and respond as quickly as possible — see our AI Transparency page for the current service commitment. We're transparent that AI marking is indicative, not authoritative.",
       },
       {
         question: 'Do you mark essays in real time in class?',

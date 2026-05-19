@@ -283,7 +283,7 @@ const FAQS = [
   {
     question: 'Is the platform GDPR compliant?',
     answer:
-      'Yes. We are fully GDPR compliant. All student data is stored securely on UK-based servers. We do not share data with third parties, run no advertising or tracking on the platform, and can sign a Data Processing Agreement with your school.',
+      "Yes. We are GDPR compliant. We do not sell student data and we do not use behavioural advertising networks. We use a defined set of named sub-processors to operate the service (hosting, payment processing, error monitoring, analytics), each listed with purpose and location in our Data Processing page and Privacy Policy. You can manage non-essential cookies via 'Manage Cookies'. We can sign a Data Processing Agreement with your school.",
   },
   {
     question: 'What happens after the Founding Schools Programme?',
@@ -914,7 +914,7 @@ export default async function ForSchoolsPage() {
                   'Class-by-class and student-by-student drill down',
                   'Department reports aligned to Ofsted English subject deep-dive criteria',
                   'Comparison against previous cohorts and national averages',
-                  'Predicted grades for students who miss exams, based on continuous assessment and mock performance',
+                  'An internal progress estimate from practice and mock activity to help target teaching support',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -924,9 +924,12 @@ export default async function ForSchoolsPage() {
               </ul>
               <div className="mt-6 rounded-xl bg-primary/[0.06] border border-primary/20 p-4">
                 <p className="text-sm text-foreground/90 leading-relaxed">
-                  Our platform provides predicted grades based on continuous assessment, mock
-                  performance, and coursework data &mdash; supporting fair outcomes when students
-                  miss exams for any reason.
+                  The platform produces an internal progress estimate from a student&rsquo;s
+                  practice and mock activity to help teachers see where to focus support. This is a
+                  teaching aid only &mdash; not a predicted grade for any awarding body, not a
+                  substitute for any exam-board or centre-assessment process, and not used to
+                  determine results when a student misses an exam (those are decided solely by the
+                  awarding body).
                 </p>
               </div>
               <div className="mt-8">
@@ -1288,31 +1291,37 @@ export default async function ForSchoolsPage() {
               <li>
                 Data Processing Agreement (Word){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — coming soon
+                  — available to schools on request during procurement
                 </span>
               </li>
               <li>
                 Data Protection Impact Assessment (PDF){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — coming soon
+                  — in preparation; not yet available for inspection
                 </span>
               </li>
               <li>
                 Safeguarding Policy (PDF){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — coming soon
+                  — available to schools on request during procurement
                 </span>
               </li>
               <li>
-                Cyber Essentials certificate (filing Q3 2026){' '}
+                Cyber Essentials certificate{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — coming soon
+                  — not currently held
+                </span>
+              </li>
+              <li>
+                VPAT / accessibility conformance{' '}
+                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                  — not currently held
                 </span>
               </li>
             </ul>
             <p className="text-sm text-slate-600">
-              ICO ref: ZC016690 · Hosting: Supabase (EU) + Vercel (EU) · Sub-processors list on
-              request (legal@theenglishhub.app)
+              ICO ref: ZC016690 · Hosting via EU-region cloud sub-processors (Supabase, Vercel) ·
+              Full sub-processor list with purpose and location on request (legal@theenglishhub.app)
             </p>
           </div>
         </div>

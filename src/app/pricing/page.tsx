@@ -478,8 +478,8 @@ function PricingContent() {
             as="h1"
             badge={t('pricing.hero.badge')}
             badgeIcon={Sparkles}
-            title={t('pricing.hero.title')}
-            subtitle={t('pricing.hero.subtitle')}
+            title="AI-supported English revision for GCSE and IGCSE — built by English teachers."
+            subtitle="A structured revision platform with instant, criteria-referenced practice feedback. We are at launch stage and onboarding our first Founding Schools now."
           />
           <div className="mt-6 flex justify-center">
             <TrustBox variant="micro-star" />
@@ -796,10 +796,6 @@ function PricingContent() {
                   </p>
                 </div>
 
-                <p className="mb-6 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
-                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
-                </p>
-
                 {/* Free features */}
                 <div className="mb-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
@@ -924,10 +920,7 @@ function PricingContent() {
                     </span>
                   )}
                 </p>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
-                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
-                </p>
-                <p className="text-sm text-emerald-600 font-semibold mb-3">
+                <p className="text-sm text-emerald-600 font-semibold mb-3 mt-3">
                   {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
                 </p>
 
@@ -1025,7 +1018,7 @@ function PricingContent() {
               className="bg-amber-500/10 border-amber-500/25 text-amber-600 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
-              {t('pricing.limited_10_schools')}
+              Limited founding cohort
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
               {t('pricing.founding_schools_2026')}
@@ -1039,60 +1032,26 @@ function PricingContent() {
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
 
             <div className="p-8 sm:p-10">
-              {/* Price — Founding vs Standard anchor */}
-              <div className="grid gap-6 mb-8 sm:grid-cols-2">
-                {/* Founding Schools price */}
-                <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-6 text-center">
+              {/* Founding Schools price — single canonical founding figure */}
+              <div className="mb-8">
+                <div className="mx-auto max-w-md rounded-xl border border-amber-500/40 bg-amber-500/10 p-6 text-center">
                   <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-3">
                     {t('pricing.founding_pricing_label')}
                   </span>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-                      {t('pricing.standard_from_prefix')} {PRICING.CURRENCY}
+                      {PRICING.CURRENCY}
                       {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
                     </span>
                     <span className="text-muted-foreground text-sm">
                       {t('pricing.per_year_short')}
                     </span>
                   </div>
-                  {/* TODO(backend): wire places-remaining to a Supabase row so counter updates automatically */}
-                  <p className="mt-3 text-sm font-semibold text-amber-700">
-                    {t('pricing.places_remaining')}
-                  </p>
-                  <p className="mt-2 text-xs text-foreground/80">
-                    {t('pricing.mat_pricing_blurb')
-                      .replace('{currency}', PRICING.CURRENCY)
-                      .replace('{amount}', PRICING.SCHOOL_STANDARD.toLocaleString('en-GB'))}
-                  </p>
-                  <p className="text-muted-foreground text-xs mt-2">
-                    {t('pricing.founders_lock_rate')}
+                  <p className="text-muted-foreground text-xs mt-3">
+                    Founding-partner rate for whole-school access. Standard pricing has not yet been
+                    set; founding partners help shape the platform roadmap.
                   </p>
                 </div>
-                {/* Standard (projected) price anchor */}
-                <div className="rounded-xl border border-border/60 bg-background/50 p-6 text-center">
-                  <span className="inline-block rounded-full bg-muted/40 border border-border px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                    {t('pricing.standard_pricing_label')}
-                  </span>
-                  <div className="flex items-baseline justify-center gap-2">
-                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-muted-foreground">
-                      {PRICING.CURRENCY}
-                      {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}
-                    </span>
-                    <span className="text-muted-foreground text-sm">
-                      {t('pricing.per_year_long')}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground text-xs mt-2">
-                    {t('pricing.estimated_std_rate')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Urgency banner */}
-              <div className="mb-8 rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-center">
-                <p className="text-sm font-semibold text-amber-700">
-                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE} &middot; {t('pricing.urgency_first_come')}
-                </p>
               </div>
 
               {/* What schools receive */}
@@ -1116,10 +1075,8 @@ function PricingContent() {
               {/* Closing note */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-center mb-8">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-amber-600">
-                    {t('pricing.programme_closes_strong')}
-                  </span>{' '}
-                  {t('pricing.programme_closes_after')}
+                  We are onboarding a limited founding cohort while the platform is at launch stage.
+                  Get in touch to discuss whether a founding partnership is right for your school.
                 </p>
               </div>
 
@@ -1137,10 +1094,6 @@ function PricingContent() {
               </div>
             </div>
           </Card>
-
-          <p className="mt-6 text-center text-sm text-slate-600 max-w-2xl mx-auto">
-            {t('pricing.cohort_2_note')}
-          </p>
 
           <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
             {VAT_LABEL}
