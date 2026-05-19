@@ -27,40 +27,45 @@ export const metadata = {
 const POEM: PoemData = {
   title: 'The Émigrée',
   poet: 'Carol Rumens',
+  // NOTE: "The \u00c9migr\u00e9e" (Carol Rumens, 1993) remains in copyright. To avoid
+  // reproducing the poem verbatim, each line below is given as a PARAPHRASE /
+  // structural description rather than the poet's exact words. Students must
+  // read the full original text in the AQA Power & Conflict anthology
+  // (or Rumens, "Thinking of Skins: New & Selected Poems", Bloodaxe Books).
   lines: [
     // Stanza 1
     {
-      text: 'There once was a country... I left it as a child',
+      text: '[Stanza 1, opening] The speaker recalls a country left behind in childhood.',
       annotations: [
         {
           type: 'Opening',
-          note: 'Fairy-tale opening ("There once was") immediately establishes a sense of nostalgia and a distant, romanticised past.',
+          note: 'A fairy-tale-style opening immediately establishes a sense of nostalgia and a distant, romanticised past.',
           color: '#3b82f6',
         },
         {
           type: 'Ellipsis',
-          note: 'The ellipsis creates a pause, suggesting the speaker is reaching back into fragmented memory.',
+          note: 'An ellipsis creates a pause, suggesting the speaker is reaching back into fragmented memory.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'but my memory of it is sunlight-clear.',
+      text: '[Paraphrase] Yet the memory of it remains as bright and clear as sunlight.',
       annotations: [
         {
           type: 'Light imagery',
-          note: '"Sunlight-clear" introduces the central motif of light and sunlight. The memory is presented as vivid, pure, and untainted by time.',
+          note: 'A compound "sunlight"/clarity image introduces the central motif of light. The memory is presented as vivid, pure, and untainted by time.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'It may be at war, it may be sick with tyrants,' },
+    { text: '[Paraphrase] The country may now be at war or ruled by tyrants.' },
     {
-      text: 'but I am branded by an impression of sunlight.',
+      text: '[Paraphrase] Even so, the speaker feels permanently marked by an impression of sunlight.',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Branded" suggests the memory is permanently marked onto her, like a scar or cattle brand -- painful yet indelible.',
+          note: 'The idea of being "branded" suggests the memory is permanently marked onto her, like a scar or cattle brand -- painful yet indelible.',
           color: '#10b981',
         },
         {
@@ -73,54 +78,56 @@ const POEM: PoemData = {
     { text: '' }, // stanza break
 
     // Stanza 2
-    { text: 'The white streets of that city, the graceful slopes' },
+    { text: '[Stanza 2] The speaker pictures the bright streets and graceful slopes of the city.' },
     {
-      text: 'I can\u2019t get to now. There may be a massacre',
+      text: '[Paraphrase] She cannot reach it now; there may be a massacre under way.',
       annotations: [
         {
           type: 'Contrast',
-          note: 'The abrupt shift from beautiful imagery ("graceful slopes") to violent reality ("massacre") highlights the tension between memory and present truth.',
+          note: 'The abrupt shift from beautiful imagery (graceful slopes) to violent reality (a massacre) highlights the tension between memory and present truth.',
           color: '#ef4444',
         },
       ],
     },
-    { text: 'taking place. The bulldozers go back and forth,' },
+    { text: '[Paraphrase] Bulldozers move back and forth, indifferent to what they destroy.' },
     {
-      text: 'without regard. No flag is flying any more.',
+      text: '[Paraphrase] No flag flies over the city any longer.',
       annotations: [
         {
           type: 'Political imagery',
-          note: '"No flag" suggests the country has lost its identity or sovereignty. The bulldozers may represent the destruction of the old homeland.',
+          note: 'The absent flag suggests the country has lost its identity or sovereignty. The bulldozers may represent the destruction of the old homeland.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'I am told I can\u2019t go back. Perhaps my city',
+      text: '[Paraphrase] She is told she cannot return; perhaps the city itself is gone.',
       annotations: [
         {
           type: 'Possessive language',
-          note: '"My city" -- the speaker claims ownership of the place through memory, even though she is denied physical return.',
+          note: 'The speaker claims the place as "my city" through memory, even though she is denied physical return.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'has been erased; frontiers rise between us.',
+      text: '[Paraphrase] The city may have been erased, with frontiers rising between her and it.',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Frontiers rise" personifies political borders as aggressive barriers. "Erased" suggests deliberate destruction of identity.',
+          note: 'Rising "frontiers" personify political borders as aggressive barriers. "Erased" suggests deliberate destruction of identity.',
           color: '#10b981',
         },
       ],
     },
-    { text: 'But I am branded by an impression of sunlight.' },
+    {
+      text: '[Paraphrase] Still, she remains branded by that impression of sunlight (stanza refrain).',
+    },
     { text: '' }, // stanza break
 
     // Stanza 3
     {
-      text: 'My memory is a passport. I can return',
+      text: '[Stanza 3] The speaker calls her memory a passport that lets her return.',
       annotations: [
         {
           type: 'Metaphor',
@@ -129,9 +136,9 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'to every corner of it. I can\u2019t be stopped.' },
+    { text: '[Paraphrase] It carries her to every corner of the city; nothing can stop her.' },
     {
-      text: 'My city takes me dancing through the streets',
+      text: '[Paraphrase] The personified city takes her dancing through its streets.',
       annotations: [
         {
           type: 'Personification',
@@ -140,23 +147,25 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'when I\u2019m asleep. In this city I have no passport,' },
     {
-      text: 'no I.D. The authorities can\u2019t get past my eyes.',
+      text: '[Paraphrase] This happens while she sleeps; in her present city she has no passport.',
+    },
+    {
+      text: '[Paraphrase] She has no I.D., but the authorities cannot see past her eyes.',
       annotations: [
         {
           type: 'Defiance',
-          note: 'The speaker is undocumented in the new country but defiant -- "can\'t get past my eyes" suggests her inner vision of home is impenetrable to outside control.',
+          note: 'The speaker is undocumented in the new country but defiant -- the authorities cannot get past her eyes, suggesting her inner vision of home is impenetrable to outside control.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Every morning I am deporting myself to sunlight.',
+      text: '[Paraphrase, final line] Each morning she describes deporting herself to sunlight.',
       annotations: [
         {
           type: 'Refrain / Irony',
-          note: '"Deporting myself" subverts the language of forced removal. The speaker chooses to return to her sunlit memory, reclaiming agency over the act of exile.',
+          note: 'The reflexive idea of "deporting myself" subverts the language of forced removal. The speaker chooses to return to her sunlit memory, reclaiming agency over the act of exile.',
           color: '#f59e0b',
         },
         {
@@ -186,29 +195,29 @@ const POEM: PoemData = {
 
   summary: `The speaker reflects on a country they left as a child, describing memories bathed in an unchanging sunlight that no amount of political violence or personal distance can extinguish.
 
-In the first stanza, the speaker introduces their homeland through the lens of childhood memory. Despite acknowledging that the country may now be at war or under tyrannical rule, their memory remains "sunlight-clear" -- vivid, warm, and permanently imprinted.
+In the first stanza, the speaker introduces their homeland through the lens of childhood memory. Despite acknowledging that the country may now be at war or under tyrannical rule, their memory remains as clear as sunlight -- vivid, warm, and permanently imprinted.
 
 The second stanza develops the contrast between the beautiful remembered city and its possible destruction. White streets and graceful slopes give way to massacres and bulldozers. The speaker is told they cannot return, and the city may have been erased, yet the refrain insists: the impression of sunlight endures.
 
-The final stanza is the most defiant. Memory becomes a "passport" granting free access to every corner of the lost city. The city personified takes the speaker dancing. In the new country, the speaker has no official identity, but the authorities cannot penetrate their inner world. The poem closes with the speaker "deporting myself to sunlight" -- a powerful reclaiming of the language of exile, transforming forced removal into a daily, voluntary return to the light of memory.`,
+The final stanza is the most defiant. Memory becomes a passport granting free access to every corner of the lost city. The personified city takes the speaker dancing. In the new country, the speaker has no official identity, but the authorities cannot penetrate their inner world. The poem closes with the speaker describing deporting herself to sunlight -- a powerful reclaiming of the language of exile, transforming forced removal into a daily, voluntary return to the light of memory.`,
 
   summaryAr: `المتكلّمة تتذكّر بلد تركتها وهي صغيرة، وتوصف ذكريات مغمورة بشمس ما تتغيّر، ما يقدر يطفيها لا عنف سياسي ولا بعد مكاني.
 
-في المقطع الأول، المتكلّمة تعرّف وطنها من خلال عدسة ذكريات الطفولة. مع إنها تعترف إن البلد يمكن الآن في حرب أو تحت حكم طغيان، ذاكرتها تبقى "sunlight-clear" — حيّة ودافية ومطبوعة بشكل دائم.
+في المقطع الأول، المتكلّمة تعرّف وطنها من خلال عدسة ذكريات الطفولة. مع إنها تعترف إن البلد يمكن الآن في حرب أو تحت حكم طغيان، ذاكرتها تبقى صافية مثل ضوء الشمس — حيّة ودافية ومطبوعة بشكل دائم.
 
 المقطع الثاني يطوّر التباين بين المدينة الجميلة المتذكَّرة وبين دمارها المحتمل. الشوارع البيضاء والمنحدرات الرشيقة تتحوّل إلى مذابح وجرّافات. المتكلّمة يقولون لها ما تقدر ترجع، ويمكن المدينة انمحت، بس اللازمة (refrain) تصرّ: انطباع الشمس يدوم.
 
-المقطع الأخير هو الأكثر تحدّياً. الذاكرة تصير "passport" يمنحها حرية الوصول لكل ركن من المدينة المفقودة. المدينة، بالتشخيص، تأخذها ترقص. وفي البلد الجديد، المتكلّمة ما عندها هوية رسمية، بس السلطات ما تقدر تخترق عالمها الداخلي. القصيدة تختم بالمتكلّمة وهي "deporting myself to sunlight" — استرجاع قوي للغة المنفى، يحوّل الإبعاد القسري إلى عودة يومية اختيارية لنور الذاكرة.`,
+المقطع الأخير هو الأكثر تحدّياً. الذاكرة تصير جواز سفر (passport) يمنحها حرية الوصول لكل ركن من المدينة المفقودة. المدينة، بالتشخيص، تأخذها ترقص. وفي البلد الجديد، المتكلّمة ما عندها هوية رسمية، بس السلطات ما تقدر تخترق عالمها الداخلي. القصيدة تختم بالمتكلّمة وهي تصف نفسها وكأنها تُبعِد نفسها نحو ضوء الشمس — استرجاع قوي للغة المنفى، يحوّل الإبعاد القسري إلى عودة يومية اختيارية لنور الذاكرة.`,
 
   formAndStructure: `Form: Free verse with no regular rhyme scheme or metre, reflecting the fragmented, displaced nature of the émigrée's experience.
 
 Three stanzas: The poem is organised into three substantial stanzas of roughly equal length. Each stanza ends with a reference to "sunlight," creating a structural refrain that anchors the poem.
 
-Refrain: The word "sunlight" closes every stanza, evolving from passive memory ("branded by an impression of sunlight") to active defiance ("deporting myself to sunlight"). This progression mirrors the speaker's growing assertion of identity.
+Refrain: A reference to sunlight closes every stanza, evolving from passive memory (being branded by an impression of sunlight) to active defiance (deporting oneself to sunlight). This progression mirrors the speaker's growing assertion of identity.
 
 Enjambment: Lines frequently run on without punctuation, creating a flowing, stream-of-consciousness effect that mirrors the way memory works -- unpredictable, associative, and difficult to contain.
 
-Caesura: Mid-line pauses ("I can't get to now. There may be a massacre") create abrupt tonal shifts, jolting the reader between beauty and violence.
+Caesura: Mid-line full stops (for example, where the speaker breaks off from being unable to reach the city to the possibility of a massacre) create abrupt tonal shifts, jolting the reader between beauty and violence.
 
 First person: The consistent use of "I" and "my" throughout creates an intimate, personal tone. The possessive language ("my memory," "my city") emphasises the speaker's claim over their homeland.
 
@@ -218,64 +227,69 @@ Contrast: The structure consistently juxtaposes the bright, idealised past again
 
 ثلاث مقاطع (stanzas): القصيدة منظّمة في ثلاث مقاطع كبيرة بأطوال متقاربة. كل مقطع ينتهي بإشارة لـ"sunlight"، ويخلق refrain هيكلي يثبّت القصيدة.
 
-اللازمة (Refrain): كلمة "sunlight" تختم كل مقطع، وتتطوّر من ذاكرة سلبية ("branded by an impression of sunlight") لتحدٍّ فاعل ("deporting myself to sunlight"). هذا التدرّج يعكس تأكيد المتكلّمة المتنامي لهويتها.
+اللازمة (Refrain): إشارة لضوء الشمس تختم كل مقطع، وتتطوّر من ذاكرة سلبية (الإحساس بأنها موسومة بانطباع من ضوء الشمس) لتحدٍّ فاعل (إبعاد النفس نحو ضوء الشمس). هذا التدرّج يعكس تأكيد المتكلّمة المتنامي لهويتها.
 
 Enjambment: الأبيات وايد منها تتواصل بدون توقّف، ويخلق هذا تدفّق ذهني (stream-of-consciousness) يعكس طريقة عمل الذاكرة — غير متوقّعة، ترابطية، صعب تتحكّم فيها.
 
-Caesura: التوقّفات في وسط البيت ("I can't get to now. There may be a massacre") تخلق تحوّلات نبرية مفاجئة، تنقل القارئ بصدمة من الجمال إلى العنف.
+Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل المتكلّمة من عجزها عن الوصول للمدينة إلى احتمال وقوع مذبحة) تخلق تحوّلات نبرية مفاجئة، تنقل القارئ بصدمة من الجمال إلى العنف.
 
 ضمير المتكلّم (First person): استخدام "I" و"my" بشكل مستمر يخلق نبرة حميمة وشخصية. ولغة التملّك ("my memory"، "my city") تأكّد على ملكية المتكلّمة لوطنها.
 
 التباين (Contrast): البنية باستمرار تضع الماضي المضيء المثالي قبال الحاضر المظلم العنيف، بس دائماً ترجع للنور — يلمّح بانتصار الذاكرة على الدمار السياسي.`,
 
+  // Quotation note: "The Émigrée" is in copyright. The references below
+  // describe and paraphrase the poem's lines rather than reproducing them
+  // verbatim. Confirm exact wording in the AQA Power & Conflict anthology
+  // (or Bloodaxe's "Thinking of Skins: New & Selected Poems") before quoting
+  // in an exam answer.
   keyQuotes: [
     {
-      quote: 'There once was a country... I left it as a child',
+      quote: 'The fairy-tale opening line (a country left in childhood) — paraphrase',
       analysis:
-        'The fairy-tale opening ("There once was") creates a sense of nostalgia and distance, as if the homeland exists only in story. The ellipsis represents a gap in memory or a reluctance to fully confront the past. Leaving "as a child" explains why the memory is so pure and uncomplicated.',
+        'The fairy-tale-style opening creates a sense of nostalgia and distance, as if the homeland exists only in story. The ellipsis represents a gap in memory or a reluctance to fully confront the past. Leaving the country in childhood explains why the memory is so pure and uncomplicated.',
       themes: ['Memory', 'Loss', 'Identity'],
       analysisAr:
         'الافتتاحية بصيغة الحكاية ("There once was") تخلق إحساس بالحنين والبعد، وكأن الوطن موجود بس في القصص. والـellipsis تمثّل فجوة في الذاكرة أو تردّد في مواجهة الماضي بالكامل. ومغادرة البلد "as a child" تفسّر ليش الذاكرة طاهرة وبسيطة.',
       themesAr: ['الذاكرة', 'الخسارة', 'الهوية'],
     },
     {
-      quote: 'my memory of it is sunlight-clear',
+      quote: 'The "sunlight"/clarity compound describing the memory — paraphrase',
       analysis:
-        'The compound adjective "sunlight-clear" fuses the poem\'s central motif of light with absolute clarity. The memory is presented as transparent and uncorrupted, contrasting with the murky political reality of the present.',
+        "A compound adjective fuses the poem's central motif of light with absolute clarity. The memory is presented as transparent and uncorrupted, contrasting with the murky political reality of the present.",
       themes: ['Memory', 'Light imagery', 'Nostalgia'],
       analysisAr:
-        'الصفة المركّبة "sunlight-clear" تدمج بين موتيف النور المحوري في القصيدة وبين الوضوح المطلق. الذاكرة تُقدَّم شفّافة وما تشوبها شائبة، وتتناقض مع الواقع السياسي الضبابي في الحاضر.',
+        'الصفة المركّبة التي تربط ضوء الشمس بالوضوح تدمج بين موتيف النور المحوري في القصيدة وبين الوضوح المطلق. الذاكرة تُقدَّم شفّافة وما تشوبها شائبة، وتتناقض مع الواقع السياسي الضبابي في الحاضر.',
       themesAr: ['الذاكرة', 'صور النور', 'الحنين'],
     },
     {
-      quote: 'I am branded by an impression of sunlight',
+      quote: 'The recurring "branded by an impression of sunlight" refrain — paraphrase',
       analysis:
-        '"Branded" carries connotations of both ownership (as in cattle branding) and permanent marking (as in a burn). The memory is not gentle -- it is seared into the speaker, suggesting both pain and permanence. This refrain anchors each stanza.',
+        'The idea of being "branded" carries connotations of both ownership (as in cattle branding) and permanent marking (as in a burn). The memory is not gentle -- it is seared into the speaker, suggesting both pain and permanence. This refrain anchors each stanza.',
       themes: ['Memory', 'Identity', 'Power of the past'],
       analysisAr:
         'كلمة "branded" فيها إيحاء بالملكية (مثل وسم المواشي) وبالعلامة الدائمة (مثل حرق). الذاكرة مو هاديّة — هي مكويّة على المتكلّمة، وهذا يلمّح بالألم وبالدوام في نفس الوقت. وهذي اللازمة (refrain) تثبّت كل مقطع.',
       themesAr: ['الذاكرة', 'الهوية', 'قوة الماضي'],
     },
     {
-      quote: 'it may be sick with tyrants',
+      quote: 'The "sick with tyrants" image of the homeland — paraphrase',
       analysis:
-        'Personification of the country as "sick" suggests tyranny is a disease infecting the nation. The tentative "may be" shows the speaker is cut off from current information, relying on speculation rather than knowledge.',
+        'Personifying the country as "sick" suggests tyranny is a disease infecting the nation. The tentative "may be" phrasing shows the speaker is cut off from current information, relying on speculation rather than knowledge.',
       themes: ['Political oppression', 'Conflict', 'Displacement'],
       analysisAr:
         'تشخيص البلد على إنها "sick" يلمّح بإن الطغيان مرض يصيب الأمة. وعبارة "may be" المتردّدة تبيّن إن المتكلّمة مقطوعة عن المعلومات الحالية، تعتمد على التخمين مو على المعرفة.',
       themesAr: ['القمع السياسي', 'الصراع', 'التشريد'],
     },
     {
-      quote: 'frontiers rise between us',
+      quote: 'The "frontiers rise between us" border image — paraphrase',
       analysis:
-        'Personification of borders as actively "rising" presents political boundaries as aggressive, living barriers. "Between us" implies a personal, almost romantic separation between the speaker and their city.',
+        'Personifying borders as actively "rising" presents political boundaries as aggressive, living barriers. The "between us" phrasing implies a personal, almost romantic separation between the speaker and their city.',
       themes: ['Conflict', 'Political oppression', 'Displacement'],
       analysisAr:
         'تشخيص الحدود على إنها "rise" بشكل فاعل يقدّم الحواجز السياسية كحواجز عدوانية وحيّة. وعبارة "between us" تلمّح بانفصال شخصي، شبه رومانسي، بين المتكلّمة ومدينتها.',
       themesAr: ['الصراع', 'القمع السياسي', 'التشريد'],
     },
     {
-      quote: 'My memory is a passport',
+      quote: 'The "memory is a passport" metaphor — paraphrase',
       analysis:
         "This metaphor is the poem's most powerful image. A passport is a document of identity and freedom of movement -- things the émigrée has been denied. By making memory a passport, the speaker asserts that internal experience transcends political control.",
       themes: ['Memory', 'Identity', 'Power', 'Defiance'],
@@ -284,16 +298,17 @@ Caesura: التوقّفات في وسط البيت ("I can't get to now. There m
       themesAr: ['الذاكرة', 'الهوية', 'السلطة', 'التحدّي'],
     },
     {
-      quote: 'My city takes me dancing through the streets',
+      quote: 'The personified city "takes me dancing" image — paraphrase',
       analysis:
-        'Personification of the city as a dance partner creates an image of joyful intimacy. The city actively welcomes and embraces the speaker, suggesting a reciprocal relationship of love. This happens in dreams, where political restrictions have no power.',
+        'Personifying the city as a dance partner creates an image of joyful intimacy. The city actively welcomes and embraces the speaker, suggesting a reciprocal relationship of love. This happens in dreams, where political restrictions have no power.',
       themes: ['Memory', 'Belonging', 'Joy', 'Personification'],
       analysisAr:
         'تشخيص المدينة كشريك رقص يخلق صورة حميمة وفرحة. المدينة بشكل فاعل ترحّب بالمتكلّمة وتحضنها، وهذا يلمّح بعلاقة حب متبادلة. وهذا يصير في الأحلام، لين القيود السياسية ما لها سلطة.',
       themesAr: ['الذاكرة', 'الانتماء', 'الفرح', 'التشخيص'],
     },
     {
-      quote: 'Every morning I am deporting myself to sunlight',
+      quote:
+        'The final line — the speaker "deporting" herself to sunlight each morning (paraphrase; flagged UNVERIFIED by audit)',
       analysis:
         'The final line subverts the violent language of "deportation" -- normally something done to a person against their will -- into a voluntary, daily act of self-determination. The speaker chooses to return to the light of memory, transforming exile from punishment into liberation.',
       themes: ['Defiance', 'Memory', 'Identity', 'Power'],
@@ -303,59 +318,64 @@ Caesura: التوقّفات في وسط البيت ("I can't get to now. There m
     },
   ],
 
+  // Language-device "example" fields paraphrase the poem rather than quoting
+  // it verbatim (poem is in copyright). Verify wording in the AQA anthology.
   languageDevices: [
     {
       device: 'Personification',
-      example: 'My city takes me dancing through the streets',
+      example: 'The personified city "takes the speaker dancing" through its streets',
       effect:
         "The city is given human qualities, acting as a lover or companion who actively embraces the speaker. This creates a sense of mutual belonging and intimacy that transcends physical distance, suggesting the homeland is alive within the speaker's imagination.",
       lineRef: 16,
     },
     {
       device: 'Light / dark imagery',
-      example: 'sunlight-clear... branded by an impression of sunlight',
+      example:
+        'The recurring sunlight imagery and the "branded by an impression of sunlight" idea (paraphrase)',
       effect:
         "Sunlight represents the warmth, clarity, and permanence of the speaker's childhood memories. It contrasts with the implied darkness of war, tyranny, and destruction in the present-day homeland. Light becomes a symbol of hope and resistance against political erasure.",
       lineRef: 1,
     },
     {
       device: 'Refrain',
-      example: 'sunlight (closing each stanza)',
+      example: 'The sunlight reference that closes each stanza (paraphrase)',
       effect:
         'The repetition of "sunlight" at the end of every stanza creates a structural anchor and a sense of inevitability -- no matter what darkness is described, the poem always returns to light. The refrain also mirrors the cyclical nature of memory, which keeps returning to the same bright images.',
       lineRef: 3,
     },
     {
       device: 'Metaphor',
-      example: 'I am branded by an impression of sunlight',
+      example: 'The "branded by an impression of sunlight" image (paraphrase)',
       effect:
         '"Branded" compares memory to a physical mark burned into the skin. This suggests the memory is both painful and permanent -- it cannot be removed or forgotten. The violence of the word "branded" contrasts with the gentle warmth of "sunlight," capturing the bittersweet nature of nostalgic exile.',
       lineRef: 3,
     },
     {
       device: 'Contrast',
-      example: 'The white streets... graceful slopes / There may be a massacre',
+      example: 'Beautiful streets and graceful slopes set against a possible massacre (paraphrase)',
       effect:
         "The juxtaposition of beauty and violence is a key structural technique. The speaker's idealised memory is placed directly against the brutal present reality, highlighting the gulf between personal experience and political truth. This makes the reader feel the emotional whiplash of exile.",
       lineRef: 6,
     },
     {
       device: 'Possessive language',
-      example: 'my memory... my city... my eyes',
+      example:
+        'Repeated possessive phrasing such as "my memory", "my city" and "my eyes" (paraphrase)',
       effect:
         'The repeated possessive pronoun "my" asserts ownership and belonging. Despite being exiled and undocumented, the speaker claims the city as her own through memory. This language of possession is an act of defiance against the political forces that have separated her from her homeland.',
       lineRef: 9,
     },
     {
       device: 'Semantic field of politics / conflict',
-      example: 'tyrants, massacre, bulldozers, frontiers, passport, deporting',
+      example:
+        'Scattered political/conflict vocabulary (tyrants, massacre, bulldozers, frontiers, passport, deporting)',
       effect:
         "The vocabulary of political oppression runs throughout the poem, grounding the personal experience of memory in a wider context of conflict and displacement. These words remind the reader that the speaker's nostalgia is not mere sentimentality but a response to genuine political violence.",
       lineRef: 2,
     },
     {
       device: 'Subverted language',
-      example: 'I am deporting myself to sunlight',
+      example: 'The reflexive "deporting myself to sunlight" idea in the final line (paraphrase)',
       effect:
         '"Deporting" is typically an act of state violence -- forced removal. By making it reflexive ("deporting myself"), the speaker reclaims agency over her displacement. The act of exile becomes voluntary and positive, a daily choice to return to the light of memory rather than submit to the darkness of her present situation.',
       lineRef: 19,
@@ -378,7 +398,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker left her country as a child and remembers it as "sunlight-clear". Despite knowing it may now be at war or under tyranny, her memory remains positive and she refuses to let reality destroy it.',
+      'The speaker left her country as a child and remembers it as bright and clear as sunlight. Despite knowing it may now be at war or under tyranny, her memory remains positive and she refuses to let reality destroy it.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -400,7 +420,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'emi-3',
-    question: 'What does "branded by an impression of sunlight" suggest?',
+    question: 'What does the recurring "branded by an impression of sunlight" idea suggest?',
     type: 'multiple-choice',
     options: [
       'She has a sunburn',
@@ -416,7 +436,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'emi-4',
-    question: 'What does "My memory is a passport" mean?',
+    question: 'What does the "memory is a passport" metaphor mean?',
     type: 'multiple-choice',
     options: [
       'She carries a real passport from her old country',
@@ -432,7 +452,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'emi-5',
-    question: 'What do the "frontiers" that "rise between us" represent?',
+    question: 'What do the rising frontiers separating speaker and city represent?',
     type: 'multiple-choice',
     options: [
       'Mountain ranges',
@@ -464,7 +484,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'emi-7',
-    question: 'What does the metaphor "frontiers rise between us" suggest?',
+    question: 'What does the metaphor of frontiers rising between speaker and homeland suggest?',
     type: 'multiple-choice',
     options: [
       'Mountains have grown taller',
@@ -501,7 +521,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It shows memory fading over time',
-      'Despite war, massacres, and frontiers, the speaker\'s childhood memory remains "sunlight-clear" — personal truth resists political propaganda',
+      "Despite war, massacres, and frontiers, the speaker's childhood memory stays as bright as sunlight — personal truth resists political propaganda",
       'Memory and reality are the same in the poem',
       'The speaker accepts that her memory is false',
     ],
@@ -549,7 +569,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Sunlight-clear" — memory presented as luminous and pure',
       '"Branded" — memory is permanent, painful, and identity-defining',
-      '"My memory is a passport" — memory as freedom and identity document',
+      'The "memory is a passport" metaphor — memory as freedom and identity document',
       '"Frontiers rise between us" — borders personified as aggressive barriers',
     ],
   },
@@ -582,7 +602,7 @@ const COMPARISONS = [
     points: [
       "Both poems present cities shaped by political power -- Blake's London is oppressed from within; the émigrée's city is destroyed from without.",
       "Blake's speaker walks through a present-day city witnessing suffering; the émigrée's speaker can only access her city through memory.",
-      'Both use imagery of confinement -- Blake\'s "mind-forg\'d manacles" vs. the émigrée\'s "frontiers rise between us."',
+      "Both use imagery of confinement -- Blake's psychological manacles vs. the émigrée's rising frontiers that separate her from her city.",
       'Tone differs significantly: Blake is angry and despairing, while the émigrée is defiant and nostalgic.',
     ],
   },
@@ -733,10 +753,15 @@ export default function TheEmigreePage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from "The Émigrée" by Carol Rumens (from{' '}
-        <em>Thinking of Skins: New & Selected Poems</em>) reproduced by permission of Bloodaxe Books
-        under the fair dealing provision of the CDPA 1988 for criticism and review. Full text
-        available in your AQA Power and Conflict anthology.
+        &ldquo;The Émigrée&rdquo; by Carol Rumens (from{' '}
+        <em>Thinking of Skins: New &amp; Selected Poems</em>, Bloodaxe Books, 1993) remains in
+        copyright. To respect the rights holder, this study guide{' '}
+        <strong>paraphrases and describes the poem rather than reproducing it verbatim</strong>. The
+        wording of every paraphrase is approximate and has{' '}
+        <strong>not been verified against a primary edition</strong>. Students and teachers must
+        check all wording against the official AQA Power &amp; Conflict anthology or the named
+        Bloodaxe edition before quoting in an exam answer. Flagged for human verification (audit
+        item I5-extended / quote-risk-register).
       </p>
     </div>
   )

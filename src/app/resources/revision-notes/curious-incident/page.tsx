@@ -824,9 +824,9 @@ export default function CuriousIncidentPage() {
                   as a documentary or to flatten Christopher into a diagnostic label. Recent
                   autistic writers and critics have engaged with the novel variously &mdash; some
                   celebrating, some critiquing it &mdash; and a sophisticated response will
-                  acknowledge this ongoing conversation. <strong>[VERIFY]</strong> when citing
-                  specific Haddon comments, refer to his blog post &ldquo;Asperger&apos;s &amp;
-                  Autism&rdquo; (2009) which is the canonical source for these clarifications.
+                  acknowledge this ongoing conversation. When citing specific Haddon comments, refer
+                  to his blog post &ldquo;Asperger&apos;s &amp; Autism&rdquo; and always check the
+                  exact wording against the original source before quoting.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -1383,7 +1383,8 @@ export default function CuriousIncidentPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Haddon has stated he did no specific research on autism and prefers not to
                       treat the novel as documentary. Discuss the implications for reading practice.{' '}
-                      <strong>[VERIFY]</strong> citation precision when quoting Haddon&apos;s blog.
+                      Always check the exact wording against a verified copy of the source when
+                      quoting Haddon&apos;s blog.
                     </p>
                   </div>
                   <div>
@@ -1597,10 +1598,11 @@ export default function CuriousIncidentPage() {
                 worked solution to an A-Level Maths question, Haddon makes a claim about
                 Christopher&apos;s relationship to the world: it is a place where mathematical
                 reasoning offers refuge, demonstrable competence, and joy. The appendix is also
-                self-evidence: Christopher, the narrator, proves on the page that he is the maths
-                prodigy he has claimed to be. <strong>[VERIFY]</strong>
-                this appendix is a feature of the novel and is not present in the same form in the
-                Stephens stage adaptation.
+                self-evidence: Christopher, the narrator, demonstrates on the page the mathematical
+                competence he describes. His abilities are exceptional in some areas, though the
+                novel resists reducing him to a single label. Note too that this appendix is a
+                feature of the novel and is not present in the same form in the Stephens stage
+                adaptation.
               </p>
             </div>
           </div>

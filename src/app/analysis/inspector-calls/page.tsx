@@ -63,8 +63,9 @@ const QUOTE_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/i-wasnt-in-any-way-responsible',
-    title: "I wasn't in any way responsible",
-    blurb: "Mrs Birling's denial of guilt and moral evasion.",
+    title: 'Mrs Birling and denied responsibility',
+    blurb:
+      "Mrs Birling's stance is one of denied responsibility — her guilt and moral evasion analysed.",
   },
   {
     href: '/analysis/inspector-calls/public-men-have-responsibilities',
@@ -73,8 +74,8 @@ const QUOTE_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/she-asked-for-the-earth',
-    title: 'She asked for the earth',
-    blurb: "Mrs Birling's contempt for Eva Smith, unpacked.",
+    title: "Mrs Birling's contempt for Eva Smith",
+    blurb: "How Mrs Birling frames Eva Smith's appeal as excessive — her class contempt unpacked.",
   },
   {
     href: '/analysis/inspector-calls/its-better-to-ask-for-the-earth',

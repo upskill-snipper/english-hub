@@ -14,274 +14,85 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const singhSongPoem: PoemData = {
   title: 'Singh Song!',
   poet: 'Daljit Nagra',
+  // NOTE: "Singh Song!" is in copyright and its exact wording cannot be
+  // verified here, so the poem is NOT reproduced. The entries below are a
+  // paraphrased reading guide written in our own words: each item summarises
+  // a movement of the poem and its devices for study. No verbatim Nagra line
+  // is presented. Verify all wording against the named primary edition before
+  // quoting in an exam answer.
   lines: [
     {
-      text: 'I run just one ov my daddy\u2019s shops',
+      text: 'Movement 1 \u2014 The speaker introduces himself (paraphrase, not the poem text).',
       annotations: [
         {
           type: 'Voice',
-          note: 'The phonetic spelling ("ov" for "of") establishes the speaker\'s British-Indian accent from the first line. Nagra celebrates this voice rather than standardising it.',
+          note: 'From the opening, Nagra writes the speaker in a phonetic, Punjabi-inflected English rather than Standard English. This is a deliberate artistic and political choice that treats the British-Indian voice as fully poetic and worth celebrating.',
           color: '#3b82f6',
         },
         {
           type: 'Context',
-          note: '"My daddy\'s shops" (plural) suggests a family business empire. The speaker runs just one \u2014 the least ambitious son, perhaps, more interested in love than commerce.',
+          note: 'The speaker explains that he runs one of his father\u2019s shops, working very long hours. The family-business framing introduces the theme of duty and the expectations of the older generation.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'from 9 o\u2019clock to 9 o\u2019clock',
+      text: 'Movement 2 \u2014 The newly-wed bride is introduced (paraphrase).',
       annotations: [
         {
-          type: 'Repetition',
-          note: 'The twelve-hour shift "9 to 9" emphasises the monotonous, relentless grind of running the shop. The speaker\'s life is dominated by duty and routine.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    {
-      text: 'and di whole Indian road is all mine.',
-      annotations: [
-        {
-          type: 'Pride',
-          note: '"All mine" expresses ownership and pride, but "di whole Indian road" also hints at cultural segregation \u2014 this is an Indian community within Britain, a world within a world.',
-          color: '#10b981',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    {
-      text: 'My bride',
-      annotations: [
-        {
-          type: 'Introduction',
-          note: 'The "bride" is introduced abruptly and simply. She is the centre of the speaker\'s world, but the brevity also reflects the arranged marriage context \u2014 she arrived as a "bride", a role before a person.',
+          type: 'Characterisation',
+          note: 'The speaker presents his new wife as confident, irreverent and disruptive \u2014 the opposite of the demure, dutiful daughter-in-law a traditional household might expect. Her rebelliousness is described affectionately and comically.',
           color: '#ec4899',
         },
-      ],
-    },
-    {
-      text: 'she effing at my mum',
-      annotations: [
         {
-          type: 'Humour',
-          note: '"Effing" is a euphemism that creates comedy through its bluntness. The bride is foul-mouthed and confrontational \u2014 nothing like the demure wife the parents expected.',
-          color: '#f59e0b',
-        },
-        {
-          type: 'Rebellion',
-          note: 'The bride swears at her mother-in-law, subverting expectations of a dutiful daughter-in-law in a traditional Sikh household. She refuses to conform.',
+          type: 'Humour & rebellion',
+          note: 'The bride\u2019s clashes with the older generation and her chaotic energy generate the poem\u2019s comedy while also celebrating a woman who refuses to conform.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'in all di colours of Punjabi',
+      text: 'Movement 3 \u2014 The customers complain about the neglected shop (paraphrase).',
       annotations: [
         {
-          type: 'Metaphor',
-          note: '"Colours of Punjabi" transforms swearing into something vivid and beautiful. Language is celebrated as colourful, expressive, and culturally rich \u2014 even profanity has aesthetic value.',
-          color: '#ef4444',
-        },
-      ],
-    },
-    {
-      text: 'den stumble like a drunk',
-      annotations: [
-        {
-          type: 'Simile',
-          note: '"Stumble like a drunk" makes the bride clumsy and chaotic \u2014 endearingly imperfect. She disrupts the orderly household with her wild energy.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'making everyone\u2019s teeth ache',
-      annotations: [
-        {
-          type: 'Imagery',
-          note: '"Teeth ache" suggests she is so sweet (to the speaker) that she causes a physical reaction, like eating too much sugar. To the customers, she may cause discomfort.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'on behalf ov my daddy on di ground floor.',
-      annotations: [
-        {
-          type: 'Comic structure',
-          note: 'The stanza cycles back to "my daddy" and the shop, grounding the romantic chaos in the reality of family business. The refrain creates a comic, cyclical rhythm.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    // Customers section
-    {
-      text: 'Customers dey say,',
-      annotations: [
-        {
-          type: 'Dialogue',
-          note: "The poem shifts to the customers' voice. Their complaints about the shop's decline create a comic chorus \u2014 they are outraged while the speaker is oblivious, absorbed in love.",
-          color: '#3b82f6',
-        },
-      ],
-    },
-    {
-      text: 'Hey Singh, ver is your milk? Vere is your bread?',
-      annotations: [
-        {
-          type: 'Phonetic spelling',
-          note: '"Ver" and "Vere" phonetically render another accent, possibly older-generation Indian English. Nagra gives voice to the community, not just the speaker.',
+          type: 'Dialogue & comic chorus',
+          note: 'A second voice enters: frustrated customers who find the shop run down and badly stocked because the love-struck speaker keeps slipping away from it. Their grumbling recurs as a comic counter-refrain.',
           color: '#3b82f6',
         },
         {
-          type: 'Humour',
-          note: "The customers' outraged questions about missing stock are funny because the reader knows the speaker is upstairs with his wife instead of minding the shop.",
+          type: 'Duty vs desire',
+          note: 'The customers\u2019 indignation is funny because the reader knows the speaker has chosen private love over public duty \u2014 the central tension of the poem.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Hey Singh, ver is your little barley? Vere is your wheat?',
-      annotations: [
-        {
-          type: 'Refrain',
-          note: "The customers' complaints form a refrain that recurs throughout the poem, creating a comic rhythm. Their indignation grows as the shop deteriorates.",
-          color: '#f59e0b',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    {
-      text: 'My bride',
-      annotations: [
-        {
-          type: 'Repetition',
-          note: '"My bride" begins multiple stanzas, becoming an affectionate refrain. Each time, it introduces another aspect of the bride\'s rebellious, lovable character.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    {
-      text: 'she\u2019s in the back',
-      annotations: [
-        {
-          type: 'Setting',
-          note: 'The bride is always "in the back" or upstairs \u2014 in the private, domestic space above the public shop. The contrast between shopfront duty and private love drives the poem\'s comedy.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    {
-      text: 'making up di new leg of di shopkeeper stockin',
-      annotations: [
-        {
-          type: 'Double meaning',
-          note: '"Making up di new leg of di shopkeeper stockin" suggests she is either mending stockings or \u2014 more likely \u2014 this is a playful sexual innuendo about what the couple do behind closed doors.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    // Night section
-    {
-      text: 'Vee share di chutney',
+      text: 'Movement 4 \u2014 The couple\u2019s private, domestic intimacy (paraphrase).',
       annotations: [
         {
           type: 'Cultural detail',
-          note: '"Chutney" is a specifically Indian food, grounding the love scene in cultural specificity. Sharing food is intimate \u2014 a domestic, sensual act.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'after vee made luv',
-      annotations: [
-        {
-          type: 'Phonetic spelling',
-          note: '"Luv" is a phonetic, affectionate spelling. The frank, unembarrassed reference to sex is refreshing \u2014 physical love is celebrated as natural and joyful.',
-          color: '#3b82f6',
-        },
-      ],
-    },
-    {
-      text: 'like vee share in di chutney',
-      annotations: [
-        {
-          type: 'Simile',
-          note: 'Lovemaking is compared to sharing chutney \u2014 both are spicy, warm, and communal. The simile is deliberately unromantic in a traditional Western sense, celebrating a different cultural register of intimacy.',
-          color: '#ef4444',
-        },
-      ],
-    },
-    {
-      text: 'of an evening ven she says,',
-      annotations: [
-        {
-          type: 'Transition',
-          note: 'The poem shifts to the intimate evening scene. The day\'s chaos gives way to quiet togetherness. "Ven she says" introduces the bride\'s own voice directly.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    // The bride speaks
-    {
-      text: 'for di moon in your eyes is a priceless ting',
-      annotations: [
-        {
-          type: 'Romantic imagery',
-          note: '"The moon in your eyes" is a traditional romantic image, but spoken in the bride\'s distinctive phonetic voice ("ting"), it becomes fresh and genuine rather than clich\u00e9d.',
+          note: 'The love scenes are grounded in culturally specific, domestic imagery (shared food, the warmth of cooking) rather than conventional Western romantic clich\u00e9. Intimacy is presented as natural, joyful and unembarrassed.',
           color: '#10b981',
         },
         {
-          type: 'Contrast',
-          note: '"Priceless" contrasts with the commercial world of the shop. Love is valued above money, trade, and family duty.',
+          type: 'Imagery & simile',
+          note: 'Nagra builds original similes that fuse romantic intensity with Indian cultural identity, so the couple\u2019s love is expressed through their heritage rather than in spite of it.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'and our eyes lock like di doors ov di tandoori oven,',
+      text: 'Movement 5 \u2014 The bride speaks; the poem\u2019s tender close (paraphrase).',
       annotations: [
         {
-          type: 'Simile',
-          note: 'Their eyes "lock like di doors ov di tandoori oven" \u2014 a brilliantly original simile that is both romantic (locked gazes) and culturally specific (tandoori oven). Heat, passion, and Indian identity fuse.',
-          color: '#ef4444',
+          type: 'Refrain & structure',
+          note: 'A short affectionate refrain naming the bride recurs to introduce each new picture of her, giving the poem a song-like, cyclical shape that mirrors the title\u2019s pun on \u201csing-song\u201d.',
+          color: '#f59e0b',
         },
-      ],
-    },
-    {
-      text: 'sharing di same hot sigh at di same time.',
-      annotations: [
         {
-          type: 'Unity',
-          note: '"Di same hot sigh at di same time" emphasises perfect synchronicity. The couple are in complete harmony \u2014 breathing together, feeling together. This is true intimacy.',
+          type: 'Contentment & defiance',
+          note: 'The bride\u2019s closing declaration of happiness values their love above commerce and family expectation. Her phonetic voice is kept to the very end \u2014 Nagra refuses to standardise it, asserting its beauty and validity.',
           color: '#ec4899',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    {
-      text: 'My bride she say dis is di life.',
-      annotations: [
-        {
-          type: 'Contentment',
-          note: 'The bride\'s final statement is simple and profound. "Dis is di life" expresses total satisfaction with their love, their world, their defiance of expectation. Happiness needs no complexity.',
-          color: '#ec4899',
-        },
-        {
-          type: 'Phonetic voice',
-          note: "The phonetic spelling is maintained to the last line, celebrating the bride's authentic voice. Nagra refuses to translate or standardise \u2014 this is how she speaks, and it is beautiful.",
-          color: '#3b82f6',
         },
       ],
     },
@@ -304,214 +115,43 @@ const singhSongPoem: PoemData = {
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0645\u0627\u0646 \u062a\u0644\u0627\u0645\u0633 <strong>\u0627\u0644\u062a\u0648\u0642\u0651\u0639\u0627\u062a \u0628\u064a\u0646 \u0627\u0644\u0623\u062c\u064a\u0627\u0644 \u0648\u0627\u0644\u062a\u0648\u0642\u0651\u0639\u0627\u062a \u0627\u0644\u062b\u0642\u0627\u0641\u064a\u0629</strong>: \u0627\u0644\u0623\u0647\u0644 \u064a\u0646\u062a\u0638\u0631\u0648\u0646 \u0648\u0644\u062f \u0645\u0637\u064a\u0639 \u0648\u0643\u0646\u0651\u0629 (\u0632\u0648\u062c\u0629 \u0627\u0628\u0646) \u062e\u0627\u0636\u0639\u0629\u061b \u0628\u0633 \u0627\u0644\u0644\u064a \u064a\u062d\u0635\u0644\u060c \u064a\u062d\u0635\u0644\u0648\u0646 \u0635\u0627\u062d\u0628 \u062f\u0643\u0651\u0627\u0646 \u0639\u0627\u0634\u0642 \u0648\u0639\u0631\u0648\u0633 \u0645\u062a\u0645\u0631\u0651\u062f\u0629 \u062a\u0633\u0628\u0651 \u0628\u0627\u0644\u0640Punjabi.</p>',
 
   summary:
-    'Opening (lines 1\u20133): The speaker introduces himself as the runner of one of his father\'s shops, working twelve-hour days. He takes pride in "di whole Indian road".\n\n' +
-    'The bride (lines 5\u201310): His new wife is introduced \u2014 she swears at his mother, stumbles around, and disrupts the household. She is nothing like the obedient daughter-in-law expected.\n\n' +
-    'Customer complaints (lines 12\u201314): The customers complain that the shop is neglected \u2014 no milk, no bread. The speaker is clearly upstairs with his wife instead of working.\n\n' +
-    'Intimacy (lines 19\u201327): The couple share chutney after lovemaking. The bride speaks romantically about the moon in his eyes and their gazes locking "like di doors ov di tandoori oven". She declares "dis is di life".',
+    'Opening: The speaker introduces himself as the runner of one of his father\u2019s shops, working very long hours, and takes evident pride in his place on the Indian high street. (Paraphrased \u2014 the poem is not reproduced.)\n\n' +
+    'The bride: His new wife is introduced as confident, irreverent and disruptive, clashing comically with the older generation \u2014 nothing like the obedient daughter-in-law a traditional household expects.\n\n' +
+    'Customer complaints: Frustrated customers grumble that the shop is neglected and badly stocked, because the love-struck speaker keeps slipping away from it.\n\n' +
+    'Intimacy and close: The poem turns to the couple\u2019s private, culturally specific domestic intimacy. The bride speaks tenderly, valuing their love above money and duty, and the poem ends on her contented, defiant declaration of happiness.',
 
   summaryAr:
-    '\u0627\u0644\u0627\u0641\u062a\u062a\u0627\u062d\u064a\u0629 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 1\u20133): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u062f\u0651\u0645 \u0646\u0641\u0633\u0647 \u0639\u0644\u0649 \u0625\u0646\u0647 \u064a\u062f\u064a\u0631 \u062f\u0643\u0651\u0627\u0646 \u0648\u0627\u062d\u062f \u0645\u0646 \u062f\u0643\u0627\u0643\u064a\u0646 \u0623\u0628\u0648\u0647\u060c \u0648\u064a\u0634\u062a\u063a\u0644 \u062f\u0648\u0627\u0645 \u0627\u062b\u0646\u0627 \u0639\u0634\u0631 \u0633\u0627\u0639\u0629. \u0648\u064a\u0641\u062a\u062e\u0631 \u0628\u0625\u0646 "di whole Indian road" (\u0627\u0644\u0634\u0627\u0631\u0639 \u0627\u0644\u0647\u0646\u062f\u064a \u0643\u0644\u0647) \u0645\u0627\u0644\u0647.\n\n' +
-    '\u0627\u0644\u0639\u0631\u0648\u0633 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 5\u201310): \u0627\u0644\u0639\u0631\u0648\u0633 \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u062a\u0646\u0642\u062f\u0645 \u2014 \u062a\u0633\u0628\u0651 \u0639\u0644\u0649 \u0623\u0645\u0651\u0647\u060c \u0648\u062a\u062a\u0631\u0646\u0651\u062d\u060c \u0648\u062a\u0634\u0648\u0651\u0634 \u0627\u0644\u0628\u064a\u062a. \u0647\u064a \u0628\u0627\u0644\u0636\u062f \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u0646 \u0627\u0644\u0643\u0646\u0651\u0629 \u0627\u0644\u0645\u0637\u064a\u0639\u0629 \u0627\u0644\u0644\u064a \u0643\u0627\u0646\u0648\u0627 \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0647\u0627.\n\n' +
-    '\u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 12\u201314): \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u064a\u0634\u062a\u0643\u0648\u0646 \u0625\u0646 \u0627\u0644\u062f\u0643\u0651\u0627\u0646 \u0645\u0647\u0645\u0644 \u2014 \u0645\u0627 \u0641\u064a\u0647 \u062d\u0644\u064a\u0628\u060c \u0645\u0627 \u0641\u064a\u0647 \u062e\u0628\u0632. \u0648\u0627\u0636\u062d \u0625\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0641\u0648\u0642 \u0645\u0639 \u0639\u0631\u0648\u0633\u0647 \u0628\u062f\u0644 \u0645\u0627 \u064a\u0634\u062a\u063a\u0644.\n\n' +
-    '\u0644\u062d\u0638\u0629 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 19\u201327): \u0627\u0644\u062b\u0646\u064a\u0646 \u064a\u062a\u0634\u0627\u0631\u0643\u0648\u0646 \u0627\u0644\u0640chutney \u0628\u0639\u062f \u0645\u0627 "made luv". \u0627\u0644\u0639\u0631\u0648\u0633 \u062a\u062a\u0643\u0644\u0651\u0645 \u0628\u0634\u0643\u0644 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u0639\u0646 \u0627\u0644\u0642\u0645\u0631 \u0641\u064a \u0639\u064a\u0648\u0646\u0647\u060c \u0648\u0646\u0638\u0631\u0627\u062a\u0647\u0645 \u0627\u0644\u0644\u064a \u062a\u0646\u063a\u0644\u0642 "like di doors ov di tandoori oven". \u0648\u062a\u0642\u0648\u0644 "dis is di life".',
+    '\u0627\u0644\u0627\u0641\u062a\u062a\u0627\u062d\u064a\u0629: \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u062f\u0651\u0645 \u0646\u0641\u0633\u0647 \u0639\u0644\u0649 \u0625\u0646\u0647 \u064a\u062f\u064a\u0631 \u062f\u0643\u0651\u0627\u0646\u0627\u064b \u0645\u0646 \u062f\u0643\u0627\u0643\u064a\u0646 \u0623\u0628\u0648\u0647\u060c \u0648\u064a\u0634\u062a\u063a\u0644 \u0633\u0627\u0639\u0627\u062a \u0637\u0648\u064a\u0644\u0629\u060c \u0648\u064a\u0641\u062e\u0631 \u0628\u0645\u0643\u0627\u0646\u0647 \u0641\u064a \u0627\u0644\u062d\u064a. (\u0625\u0639\u0627\u062f\u0629 \u0635\u064a\u0627\u063a\u0629 \u2014 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u063a\u064a\u0631 \u0645\u0633\u062a\u0646\u0633\u062e\u0629.)\n\n' +
+    '\u0627\u0644\u0639\u0631\u0648\u0633: \u062a\u064f\u0642\u062f\u0651\u0645 \u0627\u0644\u0632\u0648\u062c\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0648\u0627\u062b\u0642\u0629 \u0648\u062c\u0631\u064a\u0626\u0629 \u0648\u0645\u0634\u0627\u063a\u0628\u0629\u060c \u062a\u0635\u0637\u062f\u0645 \u0628\u0634\u0643\u0644 \u0643\u0648\u0645\u064a\u062f\u064a \u0628\u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u0623\u0643\u0628\u0631 \u2014 \u0628\u0639\u0643\u0633 \u0627\u0644\u0643\u0646\u0651\u0629 \u0627\u0644\u0645\u0637\u064a\u0639\u0629 \u0627\u0644\u0644\u064a \u064a\u0646\u062a\u0638\u0631\u0647\u0627 \u0628\u064a\u062a \u062a\u0642\u0644\u064a\u062f\u064a.\n\n' +
+    '\u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646: \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0627\u0644\u063a\u0627\u0636\u0628\u0648\u0646 \u064a\u062a\u0630\u0645\u0651\u0631\u0648\u0646 \u0625\u0646 \u0627\u0644\u062f\u0643\u0651\u0627\u0646 \u0645\u0647\u0645\u0644 \u0648\u0633\u064a\u0626 \u0627\u0644\u062a\u062c\u0647\u064a\u0632\u060c \u0644\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0627\u0644\u0639\u0627\u0634\u0642 \u064a\u062a\u0631\u0643\u0647 \u0637\u0648\u0644 \u0627\u0644\u0648\u0642\u062a.\n\n' +
+    '\u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0648\u0627\u0644\u062e\u062a\u0627\u0645: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0642\u0644 \u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u062b\u0646\u0627\u0626\u064a \u0627\u0644\u0645\u0646\u0632\u0644\u064a\u0629 \u0630\u0627\u062a \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u0629 \u0627\u0644\u062b\u0642\u0627\u0641\u064a\u0629. \u0627\u0644\u0639\u0631\u0648\u0633 \u062a\u062a\u0643\u0644\u0651\u0645 \u0628\u062d\u0646\u0648\u0651 \u0648\u062a\u0636\u0639 \u062d\u0628\u0651\u0647\u0645\u0627 \u0641\u0648\u0642 \u0627\u0644\u0645\u0627\u0644 \u0648\u0627\u0644\u0648\u0627\u062c\u0628\u060c \u0648\u062a\u0646\u062a\u0647\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0644\u0649 \u0625\u0639\u0644\u0627\u0646\u0647\u0627 \u0627\u0644\u0631\u0627\u0636\u064a \u0627\u0644\u0645\u062a\u062d\u062f\u0651\u064a \u0628\u0627\u0644\u0633\u0639\u0627\u062f\u0629.',
 
   formAndStructure:
     'Form: Irregular stanzas of varying length, reflecting the chaotic, playful energy of the relationship. The poem resists neat containment, just like the couple resists convention.\n\n' +
-    'Refrain: "My bride" recurs as an affectionate refrain, introducing each new description of the wife. The customer complaints ("Hey Singh, ver is your milk?") form a comic counter-refrain.\n\n' +
+    'Refrain: A short affectionate phrase naming the bride recurs to introduce each new picture of her, while the customers\u2019 repeated complaints form a comic counter-refrain. (Wording paraphrased, not quoted.)\n\n' +
     "Dialogue: The poem weaves together three voices \u2014 the speaker's narration, the customers' complaints, and the bride's romantic declarations. This polyphony creates a lively, dramatic texture.\n\n" +
-    'Phonetic spelling: Throughout the poem, Nagra uses phonetic representations ("ov", "di", "vee", "ven", "ting") to capture the speaker\'s British-Indian accent. This is a political and artistic choice that validates non-standard English as poetic language.\n\n' +
+    'Phonetic spelling: Throughout the poem, Nagra spells words to capture a Punjabi-inflected British-Indian accent rather than using Standard English. This is a political and artistic choice that validates non-standard English as poetic language.\n\n' +
     "Movement from public to private: The poem moves from the public shop floor to the private upstairs, from duty to love, from day to night. This structural journey reflects the speaker's priorities \u2014 love over commerce.\n\n" +
     'Tone: The poem is predominantly humorous and celebratory, but beneath the comedy lies a serious point about cultural identity, belonging, and the right to define your own happiness.',
 
   formAndStructureAr:
     '\u0627\u0644\u0634\u0643\u0644: \u0645\u0642\u0627\u0637\u0639 \u063a\u064a\u0631 \u0645\u0646\u062a\u0638\u0645\u0629 \u0628\u0623\u0637\u0648\u0627\u0644 \u0645\u062e\u062a\u0644\u0641\u0629\u060c \u062a\u0639\u0643\u0633 \u0637\u0627\u0642\u0629 \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0627\u0644\u0641\u0648\u0636\u0648\u064a\u0629 \u0627\u0644\u0645\u0631\u062d\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0631\u0641\u0636 \u0625\u0646\u0647\u0627 \u062a\u062a\u0642\u0648\u0644\u0628 \u0628\u0634\u0643\u0644 \u0645\u0646\u0638\u0651\u0645\u060c \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u062b\u0644 \u0627\u0644\u062b\u0646\u0627\u0626\u064a \u0627\u0644\u0644\u064a \u064a\u0631\u0641\u0636 \u0627\u0644\u0623\u0639\u0631\u0627\u0641.\n\n' +
-    '\u0627\u0644\u0644\u0627\u0632\u0645\u0629 (refrain): "My bride" \u062a\u062a\u0643\u0631\u0651\u0631 \u0643\u0644\u0627\u0632\u0645\u0629 \u0645\u062d\u0628\u0651\u0628\u0629\u060c \u062a\u0642\u062f\u0651\u0645 \u0643\u0644 \u0648\u0635\u0641 \u062c\u062f\u064a\u062f \u0644\u0644\u0632\u0648\u062c\u0629. \u0648\u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646 ("Hey Singh, ver is your milk?") \u062a\u0634\u0643\u0651\u0644 \u0644\u0627\u0632\u0645\u0629 \u0643\u0648\u0645\u064a\u062f\u064a\u0629 \u0645\u0636\u0627\u062f\u0629.\n\n' +
+    '\u0627\u0644\u0644\u0627\u0632\u0645\u0629 (refrain): \u0639\u0628\u0627\u0631\u0629 \u0642\u0635\u064a\u0631\u0629 \u0645\u062d\u0628\u0651\u0628\u0629 \u062a\u0633\u0645\u0651\u064a \u0627\u0644\u0639\u0631\u0648\u0633 \u062a\u062a\u0643\u0631\u0651\u0631 \u0644\u062a\u0642\u062f\u0651\u0645 \u0643\u0644 \u0635\u0648\u0631\u0629 \u062c\u062f\u064a\u062f\u0629 \u0644\u0647\u0627\u060c \u0648\u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0627\u0644\u0645\u062a\u0643\u0631\u0651\u0631\u0629 \u062a\u0634\u0643\u0651\u0644 \u0644\u0627\u0632\u0645\u0629 \u0643\u0648\u0645\u064a\u062f\u064a\u0629 \u0645\u0636\u0627\u062f\u0629. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0645\u0639\u0627\u062f \u0635\u064a\u0627\u063a\u062a\u0647\u0627\u060c \u063a\u064a\u0631 \u0645\u0642\u062a\u0628\u0633\u0629.)\n\n' +
     '\u0627\u0644\u062d\u0648\u0627\u0631: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u0633\u062c \u062b\u0644\u0627\u062b\u0629 \u0623\u0635\u0648\u0627\u062a \u2014 \u0633\u0631\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u060c \u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646\u060c \u0648\u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0627\u0644\u0639\u0631\u0648\u0633 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629. \u0647\u0630\u0627 \u0627\u0644\u062a\u0639\u062f\u0651\u062f \u0627\u0644\u0635\u0648\u062a\u064a \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0646\u0633\u064a\u062c \u062d\u064a\u0648\u064a \u0648\u062f\u0631\u0627\u0645\u064a.\n\n' +
-    '\u0627\u0644\u062a\u0647\u062c\u0626\u0629 \u0627\u0644\u0635\u0648\u062a\u064a\u0629: \u0639\u0644\u0649 \u0637\u0648\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c Nagra \u064a\u0633\u062a\u062e\u062f\u0645 \u062a\u0645\u062b\u064a\u0644\u0627\u062a \u0635\u0648\u062a\u064a\u0629 ("ov"\u060c "di"\u060c "vee"\u060c "ven"\u060c "ting") \u0639\u0634\u0627\u0646 \u064a\u0644\u062a\u0642\u0637 \u0644\u0643\u0646\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0627\u0644\u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0629-\u0627\u0644\u0647\u0646\u062f\u064a\u0629. \u0647\u0630\u0627 \u062e\u064a\u0627\u0631 \u0633\u064a\u0627\u0633\u064a \u0648\u0641\u0646\u0651\u064a \u064a\u062b\u0628\u0651\u062a \u0634\u0631\u0639\u064a\u0629 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629 \u063a\u064a\u0631 \u0627\u0644\u0645\u0639\u064a\u0627\u0631\u064a\u0629 \u0643\u0644\u063a\u0629 \u0634\u0639\u0631\u064a\u0629.\n\n' +
+    '\u0627\u0644\u062a\u0647\u062c\u0626\u0629 \u0627\u0644\u0635\u0648\u062a\u064a\u0629: \u0639\u0644\u0649 \u0637\u0648\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c Nagra \u064a\u0643\u062a\u0628 \u0627\u0644\u0643\u0644\u0645\u0627\u062a \u0628\u0637\u0631\u064a\u0642\u0629 \u062a\u0644\u062a\u0642\u0637 \u0644\u0643\u0646\u0629 \u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0629-\u0647\u0646\u062f\u064a\u0629 \u0645\u062a\u0623\u062b\u0651\u0631\u0629 \u0628\u0627\u0644\u0628\u0646\u062c\u0627\u0628\u064a\u0629 \u0628\u062f\u0644 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629 \u0627\u0644\u0645\u0639\u064a\u0627\u0631\u064a\u0629. \u0647\u0630\u0627 \u062e\u064a\u0627\u0631 \u0633\u064a\u0627\u0633\u064a \u0648\u0641\u0646\u0651\u064a \u064a\u062b\u0628\u0651\u062a \u0634\u0631\u0639\u064a\u0629 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629 \u063a\u064a\u0631 \u0627\u0644\u0645\u0639\u064a\u0627\u0631\u064a\u0629 \u0643\u0644\u063a\u0629 \u0634\u0639\u0631\u064a\u0629.\n\n' +
     '\u0627\u0644\u062a\u062d\u0648\u0651\u0644 \u0645\u0646 \u0627\u0644\u0641\u0636\u0627\u0621 \u0627\u0644\u0639\u0627\u0645 \u0644\u0644\u062e\u0627\u0635: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u0645\u0646 \u0623\u0631\u0636 \u0627\u0644\u062f\u0643\u0651\u0627\u0646 \u0627\u0644\u0639\u0627\u0645\u0629 \u0625\u0644\u0649 \u0627\u0644\u0637\u0627\u0628\u0642 \u0627\u0644\u0639\u0644\u0648\u064a \u0627\u0644\u062e\u0627\u0635\u060c \u0645\u0646 \u0627\u0644\u0648\u0627\u062c\u0628 \u0644\u0644\u062d\u0628\u060c \u0645\u0646 \u0627\u0644\u0646\u0647\u0627\u0631 \u0644\u0644\u064a\u0644. \u0647\u0627\u0644\u0631\u062d\u0644\u0629 \u0627\u0644\u0628\u0646\u064a\u0648\u064a\u0629 \u062a\u0639\u0643\u0633 \u0623\u0648\u0644\u0648\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u2014 \u0627\u0644\u062d\u0628 \u0641\u0648\u0642 \u0627\u0644\u062a\u062c\u0627\u0631\u0629.\n\n' +
     '\u0627\u0644\u0646\u0628\u0631\u0629: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0627\u0644\u063a\u0627\u0644\u0628 \u0641\u0643\u0627\u0647\u064a\u0629 \u0648\u0627\u062d\u062a\u0641\u0627\u0626\u064a\u0629\u060c \u0628\u0633 \u062a\u062d\u062a \u0627\u0644\u0633\u0637\u062d \u0641\u064a\u0647 \u0646\u0642\u0637\u0629 \u062c\u062f\u0651\u064a\u0629 \u0639\u0646 \u0627\u0644\u0647\u0648\u064a\u0629 \u0627\u0644\u062b\u0642\u0627\u0641\u064a\u0629 \u0648\u0627\u0644\u0627\u0646\u062a\u0645\u0627\u0621 \u0648\u062d\u0642 \u0627\u0644\u0648\u0627\u062d\u062f \u0625\u0646\u0647 \u064a\u0639\u0631\u0651\u0641 \u0633\u0639\u0627\u062f\u062a\u0647 \u0628\u0646\u0641\u0633\u0647.',
 
-  keyQuotes: [
-    {
-      quote: 'I run just one ov my daddy\u2019s shops',
-      analysis:
-        '"Just one" suggests the speaker is the underachiever of the family. "My daddy\'s" emphasises the patriarchal ownership \u2014 the shop belongs to the father, and the son is merely managing it. Duty, not ambition, drives him.',
-      themes: ['Duty', 'Family', 'Identity'],
-      analysisAr:
-        '\u0639\u0628\u0627\u0631\u0629 "just one" \u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0647\u0648 \u0627\u0644\u0627\u0628\u0646 \u0627\u0644\u0623\u0642\u0644 \u0637\u0645\u0648\u062d \u0641\u064a \u0627\u0644\u0639\u064a\u0644\u0629. \u0648\u0639\u0628\u0627\u0631\u0629 "my daddy\'s" \u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0627\u0644\u062a\u0645\u0644\u0651\u0643 \u0627\u0644\u0623\u0628\u0648\u064a \u2014 \u0627\u0644\u062f\u0643\u0651\u0627\u0646 \u0645\u0627\u0644 \u0627\u0644\u0623\u0628\u060c \u0648\u0627\u0644\u0627\u0628\u0646 \u0645\u062c\u0631\u0651\u062f \u064a\u062f\u064a\u0631 \u0627\u0644\u062f\u0643\u0651\u0627\u0646. \u0627\u0644\u0644\u064a \u064a\u062d\u0631\u0651\u0643\u0647 \u0648\u0627\u062c\u0628\u060c \u0645\u0648 \u0637\u0645\u0648\u062d.',
-      themesAr: [
-        '\u0627\u0644\u0648\u0627\u062c\u0628',
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0647\u0648\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'she effing at my mum / in all di colours of Punjabi',
-      analysis:
-        'The bride swears at her mother-in-law in Punjabi \u2014 a shocking breach of family decorum. But "colours of Punjabi" transforms profanity into art. Language is celebrated as vibrant and expressive, not shameful.',
-      themes: ['Rebellion', 'Culture', 'Language'],
-      analysisAr:
-        '\u0627\u0644\u0639\u0631\u0648\u0633 \u062a\u0633\u0628\u0651 \u0639\u0644\u0649 \u062d\u0645\u0627\u062a\u0647\u0627 \u0628\u0627\u0644\u0640Punjabi \u2014 \u062e\u0631\u0642 \u0635\u0627\u062f\u0645 \u0644\u0627\u062d\u062a\u0631\u0627\u0645 \u0627\u0644\u0639\u064a\u0644\u0629. \u0628\u0633 \u0639\u0628\u0627\u0631\u0629 "colours of Punjabi" \u062a\u062d\u0648\u0651\u0644 \u0627\u0644\u0633\u0628\u0651 \u0625\u0644\u0649 \u0641\u0646. \u0627\u0644\u0644\u063a\u0629 \u062a\u064f\u062d\u062a\u0641\u0649 \u0628\u0647\u0627 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0646\u0627\u0628\u0636\u0629 \u0628\u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0645\u0639\u0628\u0651\u0631\u0629\u060c \u0645\u0648 \u0634\u064a \u064a\u0633\u062a\u062d\u064a \u0645\u0646\u0647.',
-      themesAr: [
-        '\u0627\u0644\u062a\u0645\u0631\u0651\u062f',
-        '\u0627\u0644\u062b\u0642\u0627\u0641\u0629',
-        '\u0627\u0644\u0644\u063a\u0629',
-      ],
-    },
-    {
-      quote: 'Hey Singh, ver is your milk? Vere is your bread?',
-      analysis:
-        "The customers' outraged complaints create a comic chorus. The shop is failing because the speaker neglects it for love. The phonetic spelling gives the customers their own distinctive voice.",
-      themes: ['Duty', 'Humour', 'Community'],
-      analysisAr:
-        '\u0634\u0643\u0627\u0648\u0649 \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0627\u0644\u063a\u0627\u0636\u0628\u0629 \u062a\u062e\u0644\u0642 \u062c\u0648\u0642\u0629 \u0643\u0648\u0645\u064a\u062f\u064a\u0629. \u0627\u0644\u062f\u0643\u0651\u0627\u0646 \u0641\u0627\u0634\u0644 \u0644\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0647\u0645\u0644\u0647 \u0639\u0634\u0627\u0646 \u0627\u0644\u062d\u0628. \u0648\u0627\u0644\u062a\u0647\u062c\u0626\u0629 \u0627\u0644\u0635\u0648\u062a\u064a\u0629 \u062a\u0639\u0637\u064a \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0635\u0648\u062a\u0647\u0645 \u0627\u0644\u0645\u0645\u064a\u0651\u0632.',
-      themesAr: [
-        '\u0627\u0644\u0648\u0627\u062c\u0628',
-        '\u0627\u0644\u0641\u0643\u0627\u0647\u0629',
-        '\u0627\u0644\u0645\u062c\u062a\u0645\u0639',
-      ],
-    },
-    {
-      quote: 'Vee share di chutney / after vee made luv',
-      analysis:
-        'A beautifully unconventional love scene. Sharing chutney after sex is intimate, domestic, and culturally specific. Nagra refuses to use Western romantic conventions, celebrating Indian culture as equally romantic.',
-      themes: ['Love', 'Culture', 'Intimacy'],
-      analysisAr:
-        '\u0645\u0634\u0647\u062f \u062d\u0628 \u062c\u0645\u064a\u0644 \u0648\u063a\u064a\u0631 \u062a\u0642\u0644\u064a\u062f\u064a. \u0645\u0634\u0627\u0631\u0643\u0629 \u0627\u0644\u0640chutney \u0628\u0639\u062f \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0627\u0644\u062d\u0645\u064a\u0645\u0629 \u0634\u064a \u0635\u0645\u064a\u0645\u064a \u0648\u0645\u0646\u0632\u0644\u064a \u0648\u0630\u0648 \u062e\u0635\u0648\u0635\u064a\u0629 \u062b\u0642\u0627\u0641\u064a\u0629. Nagra \u064a\u0631\u0641\u0636 \u0627\u0644\u0623\u0639\u0631\u0627\u0641 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0627\u0644\u063a\u0631\u0628\u064a\u0629\u060c \u0648\u064a\u062d\u062a\u0641\u064a \u0628\u0627\u0644\u062b\u0642\u0627\u0641\u0629 \u0627\u0644\u0647\u0646\u062f\u064a\u0629 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0628\u0646\u0641\u0633 \u0627\u0644\u0642\u062f\u0631.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u062b\u0642\u0627\u0641\u0629',
-        '\u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'for di moon in your eyes is a priceless ting',
-      analysis:
-        '"Priceless" stands in deliberate contrast to the commercial world of the shop. Love cannot be bought or sold. The moon imagery is traditional romance, made fresh by the phonetic voice.',
-      themes: ['Love', 'Value', 'Romance'],
-      analysisAr:
-        '\u0643\u0644\u0645\u0629 "priceless" \u0645\u062a\u0639\u0645\u0651\u062f\u0629 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u062a\u0643\u0648\u0646 \u0646\u0642\u064a\u0636 \u0644\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u062a\u062c\u0627\u0631\u064a \u0645\u0627\u0644 \u0627\u0644\u062f\u0643\u0651\u0627\u0646. \u0627\u0644\u062d\u0628 \u0645\u0627 \u064a\u0646\u0628\u0627\u0639 \u0648\u0645\u0627 \u064a\u0646\u0634\u0631\u0649. \u0648\u0635\u0648\u0631\u0629 \u0627\u0644\u0642\u0645\u0631 \u0635\u0648\u0631\u0629 \u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u062a\u0642\u0644\u064a\u062f\u064a\u0629\u060c \u064a\u062c\u062f\u0651\u062f\u0647\u0627 \u0627\u0644\u0635\u0648\u062a \u0627\u0644\u0635\u0648\u062a\u064a \u0644\u0644\u0639\u0631\u0648\u0633.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0642\u064a\u0645\u0629',
-        '\u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'our eyes lock like di doors ov di tandoori oven',
-      analysis:
-        'A brilliantly original simile. The tandoori oven is hot, sealed, and culturally Indian. The comparison fuses romantic intensity with cultural identity \u2014 their love is expressed through their heritage, not despite it.',
-      themes: ['Love', 'Culture', 'Identity'],
-      analysisAr:
-        'simile (\u062a\u0634\u0628\u064a\u0647) \u0623\u0635\u0644\u064a \u0648\u0639\u0628\u0642\u0631\u064a. \u062a\u0646\u0651\u0648\u0631 \u0627\u0644\u0640tandoori \u062d\u0627\u0631\u060c \u0645\u063a\u0644\u0642\u060c \u0648\u0647\u0646\u062f\u064a \u062b\u0642\u0627\u0641\u064a\u0627\u064b. \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629 \u062a\u062f\u0645\u062c \u0627\u0644\u0634\u062f\u0651\u0629 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0645\u0639 \u0627\u0644\u0647\u0648\u064a\u0629 \u0627\u0644\u062b\u0642\u0627\u0641\u064a\u0629 \u2014 \u062d\u0628\u0651\u0647\u0645 \u064a\u062a\u0639\u0628\u0651\u0631 \u0639\u0646\u0647 \u0628\u062a\u0631\u0627\u062b\u0647\u0645\u060c \u0645\u0648 \u0631\u063a\u0645 \u062a\u0631\u0627\u062b\u0647\u0645.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u062b\u0642\u0627\u0641\u0629',
-        '\u0627\u0644\u0647\u0648\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'sharing di same hot sigh at di same time',
-      analysis:
-        'Perfect synchronicity between the lovers. "Hot" connects to the tandoori oven simile. "Di same... di same" emphasises their unity \u2014 they breathe, feel, and exist as one.',
-      themes: ['Love', 'Unity', 'Intimacy'],
-      analysisAr:
-        '\u062a\u0632\u0627\u0645\u0646 \u062a\u0627\u0645 \u0628\u064a\u0646 \u0627\u0644\u0639\u0627\u0634\u0642\u064a\u0646. \u0643\u0644\u0645\u0629 "hot" \u062a\u0631\u0628\u0637 \u0628\u062a\u0634\u0628\u064a\u0647 \u062a\u0646\u0651\u0648\u0631 \u0627\u0644\u0640tandoori. \u062a\u0643\u0631\u0627\u0631 "di same... di same" \u064a\u0623\u0643\u0651\u062f \u0648\u062d\u062f\u062a\u0647\u0645 \u2014 \u064a\u062a\u0646\u0641\u0651\u0633\u0648\u0646 \u0648\u064a\u062d\u0633\u0651\u0648\u0646 \u0648\u0645\u0648\u062c\u0648\u062f\u064a\u0646 \u0643\u0634\u062e\u0635 \u0648\u0627\u062d\u062f.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0648\u062d\u062f\u0629',
-        '\u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'My bride she say dis is di life',
-      analysis:
-        'The bride\'s final declaration is simple but profound. "Dis is di life" rejects external judgement and celebrates the couple\'s happiness on their own terms. It is an assertion of contentment and defiance.',
-      themes: ['Love', 'Happiness', 'Defiance'],
-      analysisAr:
-        '\u0625\u0639\u0644\u0627\u0646 \u0627\u0644\u0639\u0631\u0648\u0633 \u0627\u0644\u062e\u062a\u0627\u0645\u064a \u0628\u0633\u064a\u0637 \u0628\u0633 \u0639\u0645\u064a\u0642. \u0639\u0628\u0627\u0631\u0629 "dis is di life" \u062a\u0631\u0641\u0636 \u0627\u0644\u062d\u0643\u0645 \u0627\u0644\u062e\u0627\u0631\u062c\u064a \u0648\u062a\u062d\u062a\u0641\u064a \u0628\u0633\u0639\u0627\u062f\u0629 \u0627\u0644\u062b\u0646\u0627\u0626\u064a \u0628\u0634\u0631\u0648\u0637\u0647\u0645 \u0647\u0645. \u0647\u064a \u062a\u0623\u0643\u064a\u062f \u0639\u0644\u0649 \u0627\u0644\u0631\u0636\u0627 \u0648\u0627\u0644\u062a\u062d\u062f\u0651\u064a \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0633\u0639\u0627\u062f\u0629',
-        '\u0627\u0644\u062a\u062d\u062f\u0651\u064a',
-      ],
-    },
-  ],
+  // Quotes and language-device panels are intentionally EMPTY. The shared
+  // InteractivePoemViewer always wraps keyQuotes[].quote and
+  // languageDevices[].example in quotation marks, which would present
+  // unverifiable in-copyright Nagra text as verbatim quotation. Until the
+  // wording is checked against the named primary edition, the teaching
+  // value lives in the paraphrased line-guide annotations, summary and
+  // formAndStructure prose above instead.
+  keyQuotes: [],
 
-  languageDevices: [
-    {
-      device: 'Phonetic spelling',
-      example: 'ov / di / vee / ven / ting / luv',
-      effect:
-        "Nagra uses phonetic spelling throughout to represent a British-Indian accent. This is a deliberate artistic and political choice: it asserts that this voice is poetic, valid, and worth celebrating, challenging Standard English's monopoly on literature.",
-      lineRef: 0,
-      effectAr:
-        'Nagra \u064a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u062a\u0647\u062c\u0626\u0629 \u0627\u0644\u0635\u0648\u062a\u064a\u0629 \u0641\u064a \u0643\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0634\u0627\u0646 \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u0644\u0643\u0646\u0629 \u0627\u0644\u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0629-\u0627\u0644\u0647\u0646\u062f\u064a\u0629. \u0647\u0630\u0627 \u062e\u064a\u0627\u0631 \u0641\u0646\u0651\u064a \u0648\u0633\u064a\u0627\u0633\u064a \u0645\u062a\u0639\u0645\u0651\u062f: \u064a\u0624\u0643\u0651\u062f \u0625\u0646 \u0647\u0627\u0644\u0635\u0648\u062a \u0634\u0639\u0631\u064a \u0648\u0645\u0634\u0631\u0648\u0639 \u0648\u064a\u0633\u062a\u0627\u0647\u0644 \u0627\u0644\u0627\u062d\u062a\u0641\u0627\u0621\u060c \u0648\u064a\u062a\u062d\u062f\u0651\u0649 \u0627\u062d\u062a\u0643\u0627\u0631 \u0627\u0644\u0640Standard English \u0644\u0644\u0623\u062f\u0628.',
-    },
-    {
-      device: 'Refrain',
-      example: 'My bride',
-      effect:
-        'The repeated "My bride" functions as a loving refrain that structures the poem. Each occurrence introduces a new aspect of the bride\'s character, building a portrait of someone who is chaotic, rebellious, and deeply loved.',
-      lineRef: 4,
-      effectAr:
-        '\u062a\u0643\u0631\u0627\u0631 "My bride" \u064a\u0634\u062a\u063a\u0644 \u0643\u0644\u0627\u0632\u0645\u0629 \u0645\u062d\u0628\u0651\u0629 \u062a\u0628\u0646\u064a \u0647\u064a\u0643\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644 \u0638\u0647\u0648\u0631 \u064a\u0642\u062f\u0651\u0645 \u062c\u0627\u0646\u0628 \u062c\u062f\u064a\u062f \u0645\u0646 \u0634\u062e\u0635\u064a\u0629 \u0627\u0644\u0639\u0631\u0648\u0633\u060c \u0648\u064a\u0631\u0633\u0645 \u062a\u062f\u0631\u064a\u062c\u064a\u0627\u064b \u0635\u0648\u0631\u0629 \u0644\u0634\u062e\u0635 \u0641\u0648\u0636\u0648\u064a \u0648\u0645\u062a\u0645\u0631\u0651\u062f \u0648\u0645\u062d\u0628\u0648\u0628 \u0628\u0639\u0645\u0642.',
-    },
-    {
-      device: 'Simile',
-      example: 'our eyes lock like di doors ov di tandoori oven',
-      effect:
-        "This culturally specific simile fuses romantic intensity with Indian identity. The tandoori oven is hot, sealed, and central to Indian cuisine \u2014 the couple's love is expressed through their cultural heritage.",
-      lineRef: 24,
-      effectAr:
-        'simile (\u062a\u0634\u0628\u064a\u0647) \u0630\u0648 \u062e\u0635\u0648\u0635\u064a\u0629 \u062b\u0642\u0627\u0641\u064a\u0629 \u064a\u062f\u0645\u062c \u0627\u0644\u0634\u062f\u0651\u0629 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0645\u0639 \u0627\u0644\u0647\u0648\u064a\u0629 \u0627\u0644\u0647\u0646\u062f\u064a\u0629. \u062a\u0646\u0651\u0648\u0631 \u0627\u0644\u0640tandoori \u062d\u0627\u0631 \u0648\u0645\u063a\u0644\u0642 \u0648\u0645\u062d\u0648\u0631\u064a \u0641\u064a \u0627\u0644\u0645\u0637\u0628\u062e \u0627\u0644\u0647\u0646\u062f\u064a \u2014 \u062d\u0628 \u0627\u0644\u062b\u0646\u0627\u0626\u064a \u064a\u062a\u0639\u0628\u0651\u0631 \u0639\u0646\u0647 \u0645\u0646 \u062e\u0644\u0627\u0644 \u062a\u0631\u0627\u062b\u0647\u0645 \u0627\u0644\u062b\u0642\u0627\u0641\u064a.',
-    },
-    {
-      device: 'Humour',
-      example: 'Hey Singh, ver is your milk? Vere is your bread?',
-      effect:
-        "The customers' indignant questions create comedy. The speaker's neglect of the shop for love is a running joke that also makes a serious point: love matters more than commerce.",
-      lineRef: 12,
-      effectAr:
-        '\u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0627\u0644\u0645\u0633\u062a\u0646\u0643\u0631\u0629 \u062a\u062e\u0644\u0642 \u0643\u0648\u0645\u064a\u062f\u064a\u0627. \u0625\u0647\u0645\u0627\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0644\u0644\u062f\u0643\u0651\u0627\u0646 \u0639\u0634\u0627\u0646 \u0627\u0644\u062d\u0628 \u0646\u0643\u062a\u0629 \u0645\u062a\u0648\u0627\u0635\u0644\u0629\u060c \u0628\u0633 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u062a\u0648\u0635\u0651\u0644 \u0641\u0643\u0631\u0629 \u062c\u062f\u0651\u064a\u0629: \u0627\u0644\u062d\u0628 \u0623\u0647\u0645 \u0645\u0646 \u0627\u0644\u062a\u062c\u0627\u0631\u0629.',
-    },
-    {
-      device: 'Dialogue',
-      example: 'Customers dey say / she says',
-      effect:
-        'Multiple voices create a dramatic, polyphonic texture. The poem becomes almost theatrical, with the speaker, customers, and bride each contributing their perspective.',
-      lineRef: 11,
-      effectAr:
-        '\u0627\u0644\u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0645\u062a\u0639\u062f\u0651\u062f\u0629 \u062a\u062e\u0644\u0642 \u0646\u0633\u064a\u062c \u062f\u0631\u0627\u0645\u064a \u0648\u0645\u062a\u0639\u062f\u0651\u062f \u0627\u0644\u0646\u063a\u0645\u0627\u062a. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u064a\u0631 \u0634\u0628\u0647 \u0645\u0633\u0631\u062d\u064a\u0629\u060c \u0641\u064a\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0648\u0627\u0644\u0632\u0628\u0627\u064a\u0646 \u0648\u0627\u0644\u0639\u0631\u0648\u0633\u060c \u0643\u0644 \u0648\u0627\u062d\u062f \u064a\u0633\u0627\u0647\u0645 \u0628\u0645\u0646\u0638\u0648\u0631\u0647.',
-    },
-    {
-      device: 'Contrast',
-      example: 'from 9 o\u2019clock to 9 o\u2019clock / dis is di life',
-      effect:
-        'The monotonous duty of the shop (9 to 9) contrasts with the joyful declaration "dis is di life". The poem\'s structure moves from obligation to freedom, from duty to love.',
-      lineRef: 1,
-      effectAr:
-        '\u0627\u0644\u0648\u0627\u062c\u0628 \u0627\u0644\u0631\u062a\u064a\u0628 \u0645\u0627\u0644 \u0627\u0644\u062f\u0643\u0651\u0627\u0646 (9 to 9) \u064a\u0642\u0641 \u0628\u0627\u0644\u0636\u062f \u0645\u0646 \u0627\u0644\u0625\u0639\u0644\u0627\u0646 \u0627\u0644\u0641\u0631\u062d "dis is di life". \u0628\u0646\u064a\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0642\u0644 \u0645\u0646 \u0627\u0644\u0627\u0644\u062a\u0632\u0627\u0645 \u0625\u0644\u0649 \u0627\u0644\u062d\u0631\u064a\u0629\u060c \u0645\u0646 \u0627\u0644\u0648\u0627\u062c\u0628 \u0625\u0644\u0649 \u0627\u0644\u062d\u0628.',
-    },
-    {
-      device: 'Double entendre',
-      example: 'making up di new leg of di shopkeeper stockin',
-      effect:
-        'The phrase operates on two levels: literally mending stockings, and as a playful sexual innuendo. The ambiguity adds humour and intimacy without being crude.',
-      lineRef: 17,
-      effectAr:
-        '\u0627\u0644\u0639\u0628\u0627\u0631\u0629 \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 \u0645\u0633\u062a\u0648\u064a\u064a\u0646: \u062d\u0631\u0641\u064a\u0627\u064b \u062a\u0631\u0642\u064a\u0639 \u062c\u0648\u0627\u0631\u0628\u060c \u0648\u0645\u062c\u0627\u0632\u0627\u064b \u062a\u0644\u0645\u064a\u062d \u062c\u0646\u0633\u064a \u0645\u0631\u062d. \u0627\u0644\u063a\u0645\u0648\u0636 \u064a\u0636\u064a\u0641 \u0641\u0643\u0627\u0647\u0629 \u0648\u062d\u0645\u064a\u0645\u064a\u0629 \u0628\u062f\u0648\u0646 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0641\u0627\u0636\u062d.',
-    },
-    {
-      device: 'Metaphor',
-      example: 'in all di colours of Punjabi',
-      effect:
-        'Swearing in Punjabi is described as "colours" \u2014 vivid, various, and beautiful. Language becomes a palette. Even profanity is celebrated as culturally rich and expressive.',
-      lineRef: 6,
-      effectAr:
-        '\u0627\u0644\u0633\u0628\u0651 \u0628\u0627\u0644\u0640Punjabi \u064a\u0648\u0635\u0641 \u0639\u0644\u0649 \u0625\u0646\u0647 "colours" \u2014 \u0646\u0627\u0628\u0636 \u0648\u0645\u062a\u0646\u0648\u0651\u0639 \u0648\u062c\u0645\u064a\u0644. \u0627\u0644\u0644\u063a\u0629 \u062a\u0635\u064a\u0631 \u0644\u0648\u062d\u0629 \u0623\u0644\u0648\u0627\u0646. \u062d\u062a\u0649 \u0627\u0644\u0643\u0644\u0627\u0645 \u0627\u0644\u0628\u0630\u064a\u0621 \u064a\u064f\u062d\u062a\u0641\u0649 \u0628\u0647 \u0639\u0644\u0649 \u0625\u0646\u0647 \u062b\u0631\u064a \u062b\u0642\u0627\u0641\u064a\u0627\u064b \u0648\u0645\u0639\u0628\u0651\u0631.',
-    },
-  ],
+  languageDevices: [],
 }
 
 /* ── Compare-with poems ────────────────────────────────────────────── */
@@ -561,7 +201,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The wife is described as unconventional and rebellious — she puts her "red crew-cut" in the mirror, challenges traditional roles, and is playfully disruptive. She defies expectations.',
+      'The wife is presented as unconventional and rebellious — striking in appearance, irreverent towards traditional roles, and playfully disruptive. She defies expectations. (Description paraphrased; verify wording against the primary edition.)',
     topic: 'Meaning',
     difficulty: 'higher',
   },
@@ -811,22 +451,26 @@ export default function SinghSongPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice — Singh Song! is in copyright (Faber & Faber on behalf of Daljit Nagra).
-          The displayed text below mixes verified short extracts with paraphrased summaries; students
-          should consult the authoritative anthology text for the full poem. */}
+      {/* Copyright / verification notice — Singh Song! is in copyright (Faber & Faber on behalf of
+          Daljit Nagra) and its exact wording cannot be verified here, so the poem is NOT reproduced.
+          The study guide below is paraphrase only. */}
       <aside
         role="note"
-        aria-label="Copyright and fair-dealing notice"
+        aria-label="Copyright and verification notice"
         className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
       >
         <p>
-          <strong>Note on the poem text below:</strong> &ldquo;Singh Song!&rdquo; is in copyright
-          (Faber &amp; Faber on behalf of Daljit Nagra). The displayed text uses short fair-dealing
-          extracts and paraphrased summaries; some spellings and line orderings may differ slightly
-          from the authoritative anthology version. Students should refer to Nagra&rsquo;s{' '}
-          <em>Look We Have Coming to Dover!</em> (Faber, 2007) or the board-licensed AQA Love &amp;
-          Relationships anthology for the complete text. Quoted material is restricted to short
-          extracts used for analytical purposes under CDPA 1988 s.30.
+          <strong>Important — not the poem text:</strong> &ldquo;Singh Song!&rdquo; is in copyright
+          (Faber &amp; Faber on behalf of Daljit Nagra) and its exact wording could not be verified
+          for this guide, so the poem is <strong>not reproduced here</strong>. The reading guide
+          below is a <strong>paraphrase in our own words</strong> describing the poem&rsquo;s
+          content, voice, structure and devices for study. It contains no verbatim quotation. Before
+          quoting in an exam answer, students{' '}
+          <strong>
+            must check all wording against the board-licensed AQA Love &amp; Relationships anthology
+          </strong>{' '}
+          or Nagra&rsquo;s named primary edition, <em>Look We Have Coming to Dover!</em> (Faber,
+          2007).
         </p>
       </aside>
 

@@ -47,15 +47,17 @@ function QuoteCard({
   quote,
   speaker,
   analysis,
+  paraphrase,
 }: {
   quote: string
   speaker?: string
   analysis: string
+  paraphrase?: boolean
 }) {
   return (
     <div className="rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
-        &ldquo;{quote}&rdquo;
+        {paraphrase ? quote : <>&ldquo;{quote}&rdquo;</>}
       </p>
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
@@ -399,51 +401,58 @@ export default function AnitaAndMePage() {
 
             <h4 className="font-bold text-foreground mt-4 mb-2">{tr(`On Identity and Lying`)}</h4>
             <QuoteCard
-              quote="I'm really not a liar, I just learned very early on that those of us deprived of history sometimes need to turn to mythology to feel complete, to belong."
-              speaker="Meena (narrator, opening)"
-              analysis="The novel's opening salvo. Meena reframes her childhood lies as a survival strategy — the daughter of immigrants without an inherited British history must invent stories to feel she belongs. Syal collapses the line between 'lying' and 'mythology,' suggesting that all communities tell themselves stories. The phrase 'deprived of history' is politically loaded: it implicates the British host culture for not making space for Punjabi history within the national story. [VERIFY against own copy: paraphrase if uncertain.]"
+              paraphrase
+              quote="Meena, the narrator, opens by insisting she is not really a liar — explaining that people deprived of an inherited history sometimes turn to mythology in order to feel complete and to belong."
+              speaker="Meena (narrator, opening) — paraphrased reference"
+              analysis="The novel's opening salvo. Meena reframes her childhood lies as a survival strategy — the daughter of immigrants without an inherited British history must invent stories to feel she belongs. Syal collapses the line between lying and mythology, suggesting that all communities tell themselves stories. The idea of being deprived of history is politically loaded: it implicates the British host culture for not making space for Punjabi history within the national story."
             />
             <QuoteCard
-              quote="The fact that I am not really a liar I will leave to your discretion."
-              speaker="Meena (narrator, opening pages)"
-              analysis="The narrator immediately destabilises her own authority, inviting the reader to read her cautiously. This is a self-aware coming-of-age narrator who knows that childhood memory is unreliable. The ironic adult voice frames the entire novel: Meena's lies are also Syal's storytelling craft. [VERIFY.]"
+              paraphrase
+              quote="In the opening pages Meena leaves it to the reader's discretion whether she is really a liar."
+              speaker="Meena (narrator, opening pages) — paraphrased reference"
+              analysis="The narrator immediately destabilises her own authority, inviting the reader to read her cautiously. This is a self-aware coming-of-age narrator who knows that childhood memory is unreliable. The ironic adult voice frames the entire novel: Meena's lies are also Syal's storytelling craft."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Tollington`)}</h4>
             <QuoteCard
-              quote="I cannot pretend I did not enjoy being the only dark-skinned child in Tollington, although I did not always enjoy the attention it brought me."
-              speaker="Meena (narrator)"
-              analysis="The doubled feeling — pleasure in distinctiveness, pain in scrutiny — is at the heart of the novel's identity politics. Syal refuses easy victimhood: Meena enjoys her uniqueness even as it isolates her. The careful adult phrasing (the qualifying clause) shows the older narrator weighing the contradictions of childhood feeling honestly. [VERIFY.]"
+              paraphrase
+              quote="Meena admits she enjoyed being the only dark-skinned child in Tollington, even though she did not always welcome the attention it drew."
+              speaker="Meena (narrator) — paraphrased reference"
+              analysis="The doubled feeling — pleasure in distinctiveness, pain in scrutiny — is at the heart of the novel's identity politics. Syal refuses easy victimhood: Meena enjoys her uniqueness even as it isolates her. The careful adult phrasing, with its qualifying clause, shows the older narrator weighing the contradictions of childhood feeling honestly."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">On Anita</h4>
             <QuoteCard
-              quote="Anita Rutter was the cock of our yard."
-              speaker="Meena (narrator, on first meeting Anita)"
-              analysis="The Black Country slang ('cock' = leader, dominant one) places the narrator inside the local working-class lexicon. Meena absorbs Anita's language even as she observes her power. The image positions Anita as masculine, predatory, in charge — and Meena, by extension, as dazzled subordinate. Syal shows the friendship as a hierarchy from the outset. [VERIFY.]"
+              paraphrase
+              quote="When Meena first describes Anita Rutter, she presents her as the dominant figure — the leader — of their yard."
+              speaker="Meena (narrator, on first meeting Anita) — paraphrased reference"
+              analysis="The Black Country slang for a dominant leader places the narrator inside the local working-class lexicon. Meena absorbs Anita's language even as she observes her power. The image positions Anita as masculine, predatory, in charge — and Meena, by extension, as dazzled subordinate. Syal shows the friendship as a hierarchy from the outset."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Race and Belonging`)}</h4>
             <QuoteCard
-              quote="If you can't respect what we believe in, then you don't respect us, and if you don't respect us, you can't love us."
-              speaker="Mama, to Meena"
-              analysis="Mama articulates the moral logic of cultural identity: respect for heritage is not optional or decorative but a precondition of love. Syal uses Mama as the family's ethical voice. The cumulative if-then structure has the rhythm of an argument she has already had with herself, and which Meena will eventually understand. [VERIFY.]"
+              paraphrase
+              quote="Mama tells Meena that failing to respect what the family believes in means failing to respect them — and that without respect there can be no love."
+              speaker="Mama, to Meena — paraphrased reference"
+              analysis="Mama articulates the moral logic of cultural identity: respect for heritage is not optional or decorative but a precondition of love. Syal uses Mama as the family's ethical voice. The cumulative if-then logic has the rhythm of an argument she has already had with herself, and which Meena will eventually understand."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Sam Lowbridge`)}</h4>
             <QuoteCard
-              quote="We don't want them no more, none of them, sponging off us..."
-              speaker="Sam Lowbridge, at the f&ecirc;te"
-              analysis="Sam's outburst echoes the language of post-Powell anti-immigrant politics: the rhetoric of 'them,' the accusation of 'sponging,' the implied national 'us.' Syal places this language in the mouth of a damaged village boy to show how far-right rhetoric travels through ordinary people who cannot articulate where their resentment comes from. The community's embarrassed silence after Sam speaks is, for Meena, almost as devastating as the words themselves. [VERIFY exact wording — Sam's outburst is widely paraphrased; if unsure, summarise.]"
+              paraphrase
+              quote="At the fête, Sam Lowbridge declares that the village does not want immigrants any more and accuses them of sponging off the community."
+              speaker="Sam Lowbridge, at the fête — paraphrased reference"
+              analysis="Sam's outburst echoes the language of post-Powell anti-immigrant politics: the rhetoric of them, the accusation of sponging, the implied national us. Syal places this language in the mouth of a damaged village boy to show how far-right rhetoric travels through ordinary people who cannot articulate where their resentment comes from. The community's embarrassed silence after Sam speaks is, for Meena, almost as devastating as the words themselves."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">
               On Mr Ormerod and the Charity Tin
             </h4>
             <QuoteCard
-              quote="darkest Africa"
-              speaker="Phrasing associated with the chapel collection in Mr Ormerod's shop"
-              analysis="The phrase ('darkest Africa') is colonial-era missionary language preserved into 1972. Syal weaponises the cliché: a community that congratulates itself on 'saving' distant black children proves unwilling to welcome the brown family living down the street. The charity tin sits on the counter as a visible monument to the village's moral self-image — an image the novel takes apart. [VERIFY exact phrasing in your edition.]"
+              paraphrase
+              quote="The chapel charity collection in Mr Ormerod's shop is associated with old colonial missionary language about saving children in distant Africa."
+              speaker="The chapel collection in Mr Ormerod's shop — paraphrased reference"
+              analysis="That kind of colonial-era missionary phrasing survives into 1972. Syal weaponises the cliché: a community that congratulates itself on saving distant black children proves unwilling to welcome the brown family living down the street. The charity tin sits on the counter as a visible monument to the village's moral self-image — an image the novel takes apart."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">
@@ -466,16 +475,18 @@ export default function AnitaAndMePage() {
 
             <h4 className="font-bold text-foreground mt-6 mb-2">On Storytelling</h4>
             <QuoteCard
-              quote="mythology... to feel complete, to belong"
-              speaker="Meena (narrator)"
-              analysis="A keyword from the opening passage. Syal links storytelling to the deepest psychic needs of the immigrant child: completeness, belonging. The argument runs through the novel — Papa's ghazals, Nanima's tales, Meena's own lies all function as 'mythology' in this expanded sense. The novel itself, as adult Meena's act of narration, is the most complete of these myths. [VERIFY.]"
+              paraphrase
+              quote="The opening passage links mythology to the child's need to feel complete and to belong."
+              speaker="Meena (narrator) — paraphrased reference"
+              analysis="A key idea from the opening passage. Syal links storytelling to the deepest psychic needs of the immigrant child: completeness, belonging. The argument runs through the novel — Papa's ghazals, Nanima's tales and Meena's own lies all function as mythology in this expanded sense. The novel itself, as adult Meena's act of narration, is the most complete of these myths."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Dual Identity`)}</h4>
             <QuoteCard
-              quote="too mouthy, clumsy and scabby to be a real Indian girl, too Indian to be a real Tollington wench"
-              speaker="Meena (narrator)"
-              analysis="The double exclusion — too much for one community, too Indian for the other — is Syal's most concise statement of the dual-identity predicament. The vocabulary itself is split: 'real Indian girl' uses standard English; 'Tollington wench' uses Black Country dialect. The sentence performs the bilingual splitting it describes. The harsh self-description ('mouthy,' 'scabby') captures childhood self-loathing without indulging it: the adult narrator sees the cruelty of the binary that produced these feelings. [VERIFY exact wording.]"
+              paraphrase
+              quote="Meena describes herself as too mouthy, clumsy and scabby to count as a real Indian girl, yet too Indian to count as a real Tollington girl."
+              speaker="Meena (narrator) — paraphrased reference"
+              analysis="The double exclusion — too much for one community, too Indian for the other — is Syal's most concise statement of the dual-identity predicament. The vocabulary itself is split: the Indian half uses standard English, while the Tollington half reaches for Black Country dialect. The phrasing performs the bilingual splitting it describes. The harsh self-description captures childhood self-loathing without indulging it: the adult narrator sees the cruelty of the binary that produced these feelings."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Tollington as Place`)}</h4>
@@ -495,9 +506,11 @@ export default function AnitaAndMePage() {
                 or Dickens. For the exam, you do not need long verbatim quotations &mdash; short,
                 embedded phrases are usually more effective. If you cannot remember the exact
                 wording, use a clear paraphrase: &ldquo;Meena describes herself as too Indian for
-                Tollington and not Indian enough to be a 'real' Indian girl.&rdquo; Examiners credit
-                accurate reference even without verbatim quotation. Items marked [VERIFY] above
-                should be cross-checked against your own copy of the novel before exam use.
+                Tollington and not Indian enough to be a &lsquo;real&rsquo; Indian girl.&rdquo;
+                Examiners credit accurate reference even without verbatim quotation. The cards above
+                marked as paraphrased references summarise the novel rather than quote it; if you
+                want to use any of these as a direct quotation, cross-check the exact wording
+                against your own copy of the novel first.
               </p>
             </div>
           </Section>

@@ -40,7 +40,7 @@ const quoteAnalyses = [
       'Religious imagery, moral physiognomy and the Victorian idea that evil can be read on the body.',
   },
   {
-    title: '"The polite fiction of the law"',
+    title: 'Utterson and the law as polite fiction',
     slug: 'the-polite-fiction-of-the-law',
     blurb: 'Utterson, hypocrisy and the Victorian obsession with reputation over reality.',
   },
@@ -67,7 +67,7 @@ const quoteAnalyses = [
     blurb: 'The "blistered and distained" door, secrecy, repression and the Gothic threshold.',
   },
   {
-    title: '"With the sea of liberty before me"',
+    title: 'Jekyll describes his first transformation as exhilarating freedom',
     slug: 'with-the-sea-of-liberty-before-me',
     blurb: "Jekyll's euphoric first transformation — freedom, repression and the hedonistic id.",
   },
@@ -112,7 +112,7 @@ const characterTheme = [
     title: 'Good and evil theme analysis',
     slug: 'good-and-evil-theme-analysis',
     blurb:
-      'Stevenson\'s refusal of simple moral binaries and why Hyde is not "pure evil" but pure selfishness.',
+      'How to read Hyde is genuinely debated — as pure evil, as the unrestrained id, or as pure selfishness; a strong answer weighs more than one.',
     group: 'Theme',
   },
   {

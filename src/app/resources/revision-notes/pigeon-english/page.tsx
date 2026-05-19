@@ -47,16 +47,27 @@ function QuoteCard({
   quote,
   speaker,
   analysis,
+  paraphrase,
 }: {
   quote: string
   speaker?: string
   analysis: string
+  paraphrase?: boolean
 }) {
   return (
     <div className="rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
-      <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
-        &ldquo;{quote}&rdquo;
-      </p>
+      {paraphrase ? (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+          <span className="mr-2 rounded bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-600">
+            Paraphrase
+          </span>
+          {quote}
+        </p>
+      ) : (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
+          &ldquo;{quote}&rdquo;
+        </p>
+      )}
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -409,10 +420,11 @@ export default function PigeonEnglishPage() {
         <div id="key-quotations">
           <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Verbatim quotations from <em>{tr(`Pigeon English`)}</em> (Stephen Kelman, Bloomsbury
-              2011), grouped by theme and character. Items flagged <strong>[VERIFY]</strong> are
-              paraphrases or commonly-cited lines whose exact wording you should confirm against
-              your edition before using in an exam.
+              Quotations and references from <em>{tr(`Pigeon English`)}</em> (Stephen Kelman,
+              Bloomsbury 2011), grouped by theme and character. Cards marked{' '}
+              <strong>Paraphrase</strong> summarise events or passages in our own words rather than
+              quoting Kelman directly; always confirm any exact wording against your own edition
+              before using a verbatim quotation in an exam.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -436,59 +448,70 @@ export default function PigeonEnglishPage() {
                 analysis="Another item of estate slang meaning roughly 'best style' or 'cool'. Harri uses it to praise trainers, hair, moves. Like 'hutless', it shows Harri performing membership in London street culture. The slang is glamour — the surface he can copy. The deeper structure of the gang world (loyalty, violence, silence) is what he cannot copy and ultimately cannot survive."
               />
               <QuoteCard
-                quote="[VERIFY] The dead boy's blood is just sitting there in the street."
-                speaker="Harri (paraphrased opening image)"
-                analysis="Confirm the exact wording in your edition. The novel famously opens on the static image of the murdered boy's blood, which Harri studies with appalled curiosity. The flat, present-tense observation, free of adult euphemism, sets the novel's whole project: a child's eye on adult violence. The blood does not move; the world does not move; the only thing that moves is Harri's quiet decision to investigate. Treat this as paraphrase unless verified."
+                paraphrase
+                quote="The novel opens at the scene where a local boy has been stabbed to death; Harri lingers on the blood left in the street."
+                speaker="Harri (opening sequence)"
+                analysis="The novel opens on the static image of the murdered boy's blood, which Harri studies with appalled curiosity. The flat, present-tense observation, free of adult euphemism, sets the novel's whole project: a child's eye on adult violence. The blood does not move; the world does not move; the only thing that moves is Harri's quiet decision to investigate."
               />
               <QuoteCard
-                quote="[VERIFY] You have to swear, on your life."
-                speaker="Harri / Dean (detective-game oath)"
-                analysis="A line of the kind the boys exchange when sealing their detective pact. Verify the wording in your edition before quoting verbatim. Whatever the exact phrasing, the structural point is: the children swear on their lives in play, and one of them will lose his life in earnest. The childish ritual prefigures the adult violence. Use this as a thematic reference even if you cannot lock the exact words."
+                paraphrase
+                quote="When Harri and Dean form their amateur detective pact to find the killer, they seal it with a solemn life-or-death oath."
+                speaker="Harri and Dean (detective-game oath)"
+                analysis="The boys seal their detective pact with a childish but solemn oath. The structural point is that the children swear on their lives in play, and one of them will lose his life in earnest. The childish ritual prefigures the adult violence. Use this as a thematic reference to the gap between the boys' game and its real-world stakes."
               />
               <QuoteCard
-                quote="[VERIFY] Auntie Sonia burned her fingerprints off with the iron."
+                paraphrase
+                quote="Auntie Sonia deliberately burns her own fingertips so the immigration authorities cannot take her fingerprints, and Harri reports it without judgement."
                 speaker="Harri (describing Sonia)"
-                analysis="One of the novel's most-discussed images. Confirm Kelman's exact phrasing. The detail — reported by Harri without judgement — is appalling: a woman burns her own fingertips smooth so that the immigration authorities cannot identify her. It compresses a whole politics of borders, fear, and self-erasure into a single domestic object. Sonia is willing to mutilate her own body to remain in Britain; Britain's reward is that she is then beaten by Julius."
+                analysis="One of the novel's most-discussed images. The detail — reported by Harri without judgement — is appalling: a woman burns her own fingertips smooth so that the immigration authorities cannot identify her. It compresses a whole politics of borders, fear, and self-erasure into a single domestic object. Sonia is willing to mutilate her own body to remain in Britain; Britain's reward is that she is then beaten by Julius."
               />
               <QuoteCard
-                quote="[VERIFY] Lydia said leave it alone."
-                speaker="Harri (paraphrasing Lydia)"
-                analysis="Lydia repeatedly warns Harri off the investigation. Verify exact wording in your edition. The structural function of her warnings is dramatic irony: the reader (and Lydia) sense the danger Harri does not, and her unheeded protective voice deepens the tragedy of the ending. Quote a verified Lydia warning if you can find one in your text; otherwise paraphrase."
+                paraphrase
+                quote="Harri's older sister Lydia repeatedly tells him to drop the investigation and stop drawing attention to himself."
+                speaker="Lydia (reported by Harri)"
+                analysis="Lydia repeatedly warns Harri off the investigation. The structural function of her warnings is dramatic irony: the reader (and Lydia) sense the danger Harri does not, and her unheeded protective voice deepens the tragedy of the ending."
               />
               <QuoteCard
-                quote="[VERIFY] Pigeon's eye view: poetic interlude on London"
-                speaker="The pigeon (italicised)"
-                analysis="The pigeon's italicised sections offer a poetic, aerial perspective on the estate, on Harri, on the city. They are short, lyrical, often rhythmic — more prose-poem than prose. Pull a verified passage from your edition for direct quotation. Analytically, the pigeon's voice serves several functions: (i) it gives the reader information Harri cannot access; (ii) it lifts the novel into a register of myth and prayer; (iii) it provides the closing voice of the book when Harri is silenced."
+                paraphrase
+                quote="At intervals the narrative breaks into short italicised passages spoken by a pigeon, giving an aerial, lyrical view of Harri, the estate and the city."
+                speaker="The pigeon (italicised interludes)"
+                analysis="The pigeon's italicised sections offer a poetic, aerial perspective on the estate, on Harri, on the city. They are short, lyrical, often rhythmic — more prose-poem than prose. Analytically, the pigeon's voice serves several functions: (i) it gives the reader information Harri cannot access; (ii) it lifts the novel into a register of myth and prayer; (iii) it provides the closing voice of the book when Harri is silenced."
               />
               <QuoteCard
-                quote="[VERIFY] Harri describes a Dell Farm Crew member with awe and fear."
+                paraphrase
+                quote="Harri describes members of the Dell Farm Crew with a mix of awe and fear, admiring their power, money and clothes even as he dreads them."
                 speaker="Harri"
-                analysis="Find a verified description in your edition. Harri's adjective choices reveal that the gang is glamorised in his eyes — they have power, money, the right trainers, the right walk. Kelman lets this glamour be felt, which is what makes his critique of gang culture far more unsettling than a simple denunciation."
+                analysis="Harri's narration reveals that the gang is glamorised in his eyes — they have power, money, the right trainers, the right walk. Kelman lets this glamour be felt, which is what makes his critique of gang culture far more unsettling than a simple denunciation."
               />
               <QuoteCard
-                quote="[VERIFY] Mamma prayed for the family."
+                paraphrase
+                quote="Harri's mother prays for the family's safety and for the relatives still in Ghana, and Harri reports her faith with respect."
                 speaker="Harri (describing Mamma)"
-                analysis="Confirm the exact phrasing in your edition. Prayer functions as both genuine comfort and tragic insufficiency — the novel respects the prayer while showing its failure to prevent the final violence. Kelman avoids easy mockery and easy salvation alike."
+                analysis="Prayer functions as both genuine comfort and tragic insufficiency — the novel respects the prayer while showing its failure to prevent the final violence. Kelman avoids easy mockery and easy salvation alike."
               />
               <QuoteCard
-                quote="[VERIFY] Harri imagines Poppy Morgan."
+                paraphrase
+                quote="Harri daydreams tenderly about his classmate Poppy Morgan, his first crush, in some of the novel's gentlest passages."
                 speaker="Harri"
-                analysis="Harri's crush on Poppy is the novel's most unguarded moment of hope. Verify a passage of his daydreaming about her. The Poppy episodes preserve pure adolescent tenderness inside an otherwise frightening narrative — proof that Harri is still a child capable of pure feeling."
+                analysis="Harri's crush on Poppy is the novel's most unguarded moment of hope. The Poppy episodes preserve pure adolescent tenderness inside an otherwise frightening narrative — proof that Harri is still a child capable of pure feeling."
               />
               <QuoteCard
-                quote="[VERIFY] Closing pigeon passage as Harri lies bleeding."
-                speaker="The pigeon"
-                analysis="The novel's final passages shift to the pigeon's voice as Harri is dying. Confirm the exact wording in your edition; this is the most quoted passage in critical work on the novel. Analytically: the bird becomes Harri's elegist. Where Harri's voice has anchored the whole book, the pigeon now lifts it skyward. The shift is a formal mourning. Once you have verified the wording, use it as the spine of any answer on Kelman's structural / tonal choices."
+                paraphrase
+                quote="In the closing pages the narration leaves Harri, who has been fatally stabbed, and passes to the pigeon's voice as he lies bleeding."
+                speaker="The pigeon (closing passage)"
+                analysis="The novel's final passages shift to the pigeon's voice as Harri is dying. Analytically: the bird becomes Harri's elegist. Where Harri's voice has anchored the whole book, the pigeon now lifts it skyward. The shift is a formal mourning. Use this structural turn as the spine of any answer on Kelman's structural and tonal choices."
               />
               <QuoteCard
-                quote="[VERIFY] Harri thinks about Papa and Agnes back in Ghana."
+                paraphrase
+                quote="Throughout the novel Harri thinks about his father and baby sister Agnes, still in Ghana, and looks forward to the family being reunited."
                 speaker="Harri"
-                analysis="Throughout the novel Harri returns to Papa and Agnes in his mind. Verify a specific line in your edition. Analytically these passages keep alive the alternative London where the family is whole. That Harri is killed before the family can be reunited is, structurally, one of the cruellest decisions in the novel."
+                analysis="Harri repeatedly returns to Papa and Agnes in his mind. Analytically these passages keep alive the alternative future where the family is whole. That Harri is killed before the family can be reunited is, structurally, one of the cruellest decisions in the novel."
               />
               <QuoteCard
-                quote="[VERIFY] It's only pretend."
-                speaker="Harri / Dean"
-                analysis="The boys repeatedly remind themselves their detective work is a game. Verify the exact phrasing. The reassurance becomes evidence that the game is, in fact, dangerous — a child's protective magic that the novel's ending dismantles."
+                paraphrase
+                quote="The boys repeatedly reassure themselves that their detective work is only a game and not really dangerous."
+                speaker="Harri and Dean"
+                analysis="The boys repeatedly remind themselves their detective work is only pretend. The reassurance becomes evidence that the game is, in fact, dangerous — a child's protective magic that the novel's ending dismantles."
               />
             </div>
           </Section>
@@ -1221,8 +1244,9 @@ export default function PigeonEnglishPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Verify quotations.`)}</strong> Always confirm wording against your
-              edition before committing quotes to memory. Where this revision page flags{' '}
-              <strong>[VERIFY]</strong>, treat the line as paraphrase until you have checked it.
+              edition before committing quotes to memory. Where this revision page marks a card{' '}
+              <strong>Paraphrase</strong>, it summarises the novel in our own words — find and check
+              a verbatim line in your text before quoting it.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1250,8 +1274,8 @@ export default function PigeonEnglishPage() {
           <em>{tr(`Pigeon English`)}</em> by Stephen Kelman was first published by Bloomsbury in
           2011 and shortlisted for the Man Booker Prize the same year. The novel is in copyright.
           Quotations on this page are used for educational analysis under fair-dealing provisions
-          for criticism and review; items flagged
-          <strong> [VERIFY]</strong> should be confirmed against your edition before use in an exam.
+          for criticism and review; cards marked <strong>Paraphrase</strong> summarise the novel in
+          our own words and should not be quoted verbatim without checking your own edition.
         </p>
       </footer>
     </>

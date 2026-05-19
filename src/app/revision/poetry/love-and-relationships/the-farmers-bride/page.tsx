@@ -14,115 +14,116 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const farmersBridePoem: PoemData = {
   title: "The Farmer's Bride",
   poet: 'Charlotte Mew',
+  // NOTE (audit remediation, item I5): The previously displayed line-by-line
+  // text was flagged as not matching the canonical poem and has been removed.
+  // The lines below are PARAPHRASED descriptions of each section in our own
+  // words (no verbatim quotation). Charlotte Mew (d. 1928) is public domain,
+  // so accurate quotations may be restored ONLY after checking against a named
+  // primary edition (e.g. The Farmer's Bride, The Poetry Bookshop, 1916).
+  // Until then, no original line is shown in quotation marks.
   lines: [
-    // Stanza 1
+    // Stanza 1 (paraphrase)
     {
-      text: 'Three Summers since I chose a maid,',
+      text: 'Section 1 \u2014 The farmer recalls choosing a young woman as his wife three summers ago.',
       annotations: [
         {
           type: 'Possessive language',
-          note: '"Chose" implies ownership \u2014 she had no agency in the marriage. The farmer speaks of selecting her like livestock.',
+          note: 'The verb of selection the farmer uses implies ownership rather than mutual love; he frames marriage as something he decided, with no agency on her part.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: "Too young maybe \u2014 but more's to do" },
-    { text: 'At harvest-time than bide and woo.' },
+    { text: 'He admits she was perhaps too young, but says farm work left no time for courtship.' },
     {
-      text: 'When us was wed she turned afraid',
+      text: 'He recounts that once they were married she became afraid of him, of love, and of all human contact.',
       annotations: [
         {
           type: 'Dialect',
-          note: '"Us was wed" is non-standard grammar, establishing the farmer\'s rural, uneducated voice and grounding the poem in a specific social class.',
+          note: 'The farmer narrates in non-standard rural grammar throughout, establishing his working-class voice and limited education.',
           color: '#8b5cf6',
         },
-      ],
-    },
-    {
-      text: 'Of love and me and all things human;',
-      annotations: [
         {
-          type: 'List of three',
-          note: 'The tricolon escalates from the specific ("love") to the universal ("all things human"), suggesting her fear is existential, not merely of the farmer.',
+          type: 'Escalation',
+          note: 'Her fear is described as widening from the specific (the farmer, love) to the universal (everything human), suggesting an existential rather than merely personal dread.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: "Like the shut of a winter's day",
+      text: 'He compares the sudden vanishing of her warmth to the abrupt close of a winter day, and says she seemed less a woman than a small, frightened fairy-like creature.',
       annotations: [
         {
-          type: 'Simile',
-          note: 'Compares her emotional withdrawal to the abrupt closing of a winter day \u2014 sudden, cold, and final.',
+          type: 'Simile / dehumanisation',
+          note: 'A winter-day comparison renders her withdrawal as sudden, cold and final; likening her to a fairy creature both idealises and strips her of full humanity.',
           color: '#3b82f6',
         },
       ],
     },
-    { text: "Her smile went out, and 'twasn't a woman \u2014" },
-    { text: '' },
-    { text: 'More like a little frightened fay.' },
     {
-      text: 'One night, in the Fall, she runned away.',
+      text: 'One autumn night, he says, she ran away.',
       annotations: [
         {
-          type: 'Dialect',
-          note: '"Runned" is non-standard past tense, reinforcing the farmer\'s rural voice. "Fall" (autumn) adds seasonal decay imagery.',
+          type: 'Dialect / season',
+          note: 'Non-standard past-tense verbs reinforce the rural voice, while the autumn setting begins the seasonal framework that tracks time passing without resolution.',
           color: '#8b5cf6',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Stanza 2
-    { text: '"We caught her, fetched her home again.' },
+    // Stanza 2 (paraphrase)
     {
-      text: 'Not we, not any one of us.',
+      text: 'Section 2 \u2014 The men of the village pursued her and brought her back to the house.',
       annotations: [
         {
           type: 'Self-correction',
-          note: 'The farmer corrects himself from "We" to "Not we," revealing guilt and awareness that the recapture was violent. The community acted as one oppressive force.',
+          note: 'The farmer revises his account of who recaptured her, a slip that exposes guilt and an awareness that the community acted as a single coercive force.',
           color: '#ef4444',
         },
       ],
     },
-    { text: "Too many men; and all she'd do was stare" },
     {
-      text: "And shake and cower and cry. She'd not been used,",
+      text: 'Surrounded by too many men, she could only stare, shake, cower and cry; the farmer insists she had never been treated so roughly.',
       annotations: [
         {
           type: 'Listing',
-          note: 'The accumulation of frightened verbs ("shake," "cower," "cry") conveys her terror at being surrounded by men who forcibly returned her.',
+          note: 'The piling-up of frightened actions conveys her terror at being forcibly returned by a crowd of men.',
           color: '#10b981',
         },
       ],
     },
-    { text: "Not her \u2014 she'd never been so rough;" },
     // Stanza break
     { text: '' },
-    // Stanza 3
-    { text: 'She does the work about the house' },
+    // Stanza 3 (paraphrase)
     {
-      text: 'As well as most, but like a mouse:',
+      text: 'Section 3 \u2014 Now she does the housework competently but silently, as timid as a mouse.',
       annotations: [
         {
           type: 'Simile',
-          note: 'Reduces her to a small, frightened creature. The couplet rhyme (house/mouse) formally enacts her confinement within domestic space.',
+          note: 'Reducing her to a small, frightened creature, the mouse comparison and the surrounding domestic detail enact her confinement within the home.',
           color: '#3b82f6',
         },
       ],
     },
-    { text: 'Too many stairs to climb, too many rooms' },
-    { text: 'And nothing, nothing in the house at night.' },
-    // Stanza break
-    { text: '' },
-    // Stanza 4
-    { text: 'But the young things need it \u2014 not me. Oh!' },
     {
-      text: 'The brown of her \u2014 her eyes, her hair, her hair!',
+      text: 'The farmer dwells on the empty, silent house at night, hinting at the unconsummated marriage and his frustration.',
       annotations: [
         {
-          type: 'Repetition',
-          note: 'The obsessive repetition of "her hair" reveals the farmer\'s fixation spiralling out of control. The exclamation "Oh!" marks a complete loss of composure.',
+          type: 'Repetition / emptiness',
+          note: 'A repeated emphasis on nothingness at night conveys the void at the centre of the marriage and the farmer\u2019s suppressed sexual frustration.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    // Stanza break
+    { text: '' },
+    // Stanza 4 (paraphrase)
+    {
+      text: 'Final section \u2014 The farmer\u2019s control breaks down into an exclamatory, obsessive fixation on the young woman\u2019s appearance \u2014 her colouring, her eyes and especially her hair.',
+      annotations: [
+        {
+          type: 'Repetition / climax',
+          note: 'The obsessive, repeated focus on her physical features and the broken exclamations mark a loss of composure, ending the poem on an ominous, threatening note.',
           color: '#ef4444',
         },
       ],
@@ -133,21 +134,27 @@ const farmersBridePoem: PoemData = {
   contextAr:
     '<p><strong>Charlotte Mew</strong> (1869\u20131928) \u0634\u0627\u0639\u0631\u0629 \u062d\u062f\u0627\u062b\u064a\u0629 \u0639\u0627\u0634\u062a \u0645\u0622\u0633\u064a \u0634\u062e\u0635\u064a\u0629\u060c \u0645\u0646\u0647\u0627 \u0625\u064a\u062f\u0627\u0639 \u0627\u062b\u0646\u064a\u0646 \u0645\u0646 \u0625\u062e\u0648\u062a\u0647\u0627 \u0641\u064a \u0645\u0635\u062d\u0651\u0627\u062a \u0646\u0641\u0633\u064a\u0629\u060c \u0648\u0627\u0644\u0641\u0642\u0631 \u0637\u0648\u0644 \u062d\u064a\u0627\u062a\u0647\u0627. \u0648\u0646\u0634\u0631\u062a \u0647\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0633\u0646\u0629 1916.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 <strong>dramatic monologue</strong> (\u0645\u0648\u0646\u0648\u0644\u0648\u062c \u062f\u0631\u0627\u0645\u064a) \u064a\u062a\u0643\u0644\u0651\u0645 \u0628\u0647\u0627 \u0645\u0632\u0627\u0631\u0639\u060c \u0639\u0631\u0648\u0633\u0647 \u0627\u0644\u0635\u063a\u064a\u0631\u0629 \u0645\u0631\u0639\u0648\u0628\u0629 \u0645\u0646\u0647 \u0648\u0645\u0646 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u062c\u0633\u062f\u064a\u0629. \u0648\u062a\u0633\u062a\u0643\u0634\u0641 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0648\u0627\u0636\u064a\u0639 <strong>\u0627\u0644\u0632\u0648\u0627\u062c \u0643\u0641\u062e\u0651</strong>\u060c \u0648<strong>\u0627\u0644\u0642\u0645\u0639 \u0627\u0644\u0623\u0646\u062b\u0648\u064a</strong>\u060c \u0648<strong>\u0627\u0644\u0631\u063a\u0628\u0629 \u0627\u0644\u0630\u0643\u0648\u0631\u064a\u0629</strong> \u0641\u064a \u0628\u064a\u0626\u0629 \u0631\u064a\u0641\u064a\u0629 \u0643\u0627\u0646 \u0641\u064a\u0647\u0627 \u0644\u0644\u0646\u0633\u0627\u0621 \u0641\u0627\u0639\u0644\u064a\u0629 \u0636\u0639\u064a\u0641\u0629 \u062c\u062f\u0627\u064b.</p><p>\u0627\u0644\u0639\u0631\u0648\u0633 \u062a\u064f\u0642\u062f\u064e\u0651\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0645\u062e\u0644\u0648\u0642 \u0645\u0646 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u2014 \u062a\u062a\u0634\u0628\u0651\u0647 \u0628\u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0648\u0627\u0644\u0643\u0627\u0626\u0646\u0627\u062a \u0627\u0644\u062e\u0631\u0627\u0641\u064a\u0629 \u2014 \u0628\u064a\u0646\u0645\u0627 \u0644\u063a\u0629 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u062a\u0643\u0634\u0641 \u0645\u0632\u064a\u062c \u0645\u0642\u0644\u0642 \u0645\u0646 <strong>\u0627\u0644\u062d\u0646\u0627\u0646 \u0648\u0627\u0644\u062a\u0645\u0644\u0651\u0643</strong>. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0645\u0643\u0646 \u062a\u062a\u0642\u0631\u0623 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0646\u0642\u062f \u0644\u0644\u0632\u0648\u0627\u062c \u0627\u0644\u0641\u064a\u0643\u062a\u0648\u0631\u064a \u0648\u0627\u0644\u0625\u062f\u0648\u0627\u0631\u062f\u064a\u060c \u0627\u0644\u0644\u064a \u0643\u0627\u0646\u062a \u0641\u064a\u0647 \u0627\u0644\u0645\u0631\u0623\u0629 \u0641\u064a \u0627\u0644\u0648\u0627\u0642\u0639 <strong>\u0645\u0644\u0643\u064a\u0629</strong>\u060c \u0648\u0645\u0627 \u0644\u0647\u0627 \u062d\u0642 \u0642\u0627\u0646\u0648\u0646\u064a \u062a\u0631\u0641\u0636 \u0632\u0648\u062c\u0647\u0627.</p><p>\u062a\u062c\u0631\u0628\u0629 Mew \u0627\u0644\u0634\u062e\u0635\u064a\u0629 \u0643\u0627\u0645\u0631\u0623\u0629 \u0645\u062b\u0644\u064a\u0629 \u0641\u064a \u0645\u062c\u062a\u0645\u0639 \u0642\u0645\u0639\u064a \u064a\u062d\u062a\u0645\u0644 \u0625\u0646\u0647\u0627 \u063a\u0630\u0651\u062a \u062a\u0639\u0627\u0637\u0641\u0647\u0627 \u0645\u0639 \u0627\u0644\u0639\u0631\u0648\u0633 \u0627\u0644\u0645\u062d\u0627\u0635\u0631\u0629\u060c \u0648\u0641\u0647\u0645\u0647\u0627 \u0644\u0644\u0631\u063a\u0628\u0629 \u0627\u0644\u0644\u064a \u0645\u0627 \u062a\u0642\u062f\u0631 \u062a\u062a\u062d\u0642\u0651\u0642.</p>',
   summary:
-    'A farmer narrates the story of his young bride who, from the moment of their wedding, was terrified of intimacy and "all things human." She ran away one night but was caught and brought back by the men of the village. Now she lives in the house, doing domestic work silently like a mouse, but the marriage remains unconsummated. The farmer\'s monologue shifts from matter-of-fact narration to increasingly desperate desire, ending with an obsessive fixation on her physical appearance that suggests the situation may become dangerous.',
+    "A farmer narrates the story of his young bride who, from the moment of their wedding, was terrified of intimacy and of all human contact. She ran away one night but was caught and brought back by the men of the village. Now she lives in the house, doing domestic work silently and as timidly as a mouse, but the marriage remains unconsummated. The farmer's monologue shifts from matter-of-fact narration to increasingly desperate desire, ending with an obsessive fixation on her physical appearance that suggests the situation may become dangerous.",
   summaryAr:
-    '\u0645\u0632\u0627\u0631\u0639 \u064a\u0633\u0631\u062f \u0642\u0635\u0651\u0629 \u0639\u0631\u0648\u0633\u0647 \u0627\u0644\u0635\u063a\u064a\u0631\u0629\u060c \u0627\u0644\u0644\u064a \u0645\u0646 \u0644\u062d\u0638\u0629 \u0632\u0648\u0627\u062c\u0647\u0645 \u0643\u0627\u0646\u062a \u0645\u0631\u0639\u0648\u0628\u0629 \u0645\u0646 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0648\u0645\u0646 "all things human" (\u0643\u0644 \u0634\u064a \u0628\u0634\u0631\u064a). \u0647\u0631\u0628\u062a \u0644\u064a\u0644\u0629 \u0645\u0646 \u0627\u0644\u0644\u064a\u0627\u0644\u064a\u060c \u0628\u0633 \u0631\u062c\u0627\u0644 \u0627\u0644\u0642\u0631\u064a\u0629 \u0623\u0645\u0633\u0643\u0648\u0647\u0627 \u0648\u0631\u062c\u0651\u0639\u0648\u0647\u0627 \u0628\u0627\u0644\u0642\u0648\u0651\u0629. \u0627\u0644\u062d\u064a\u0646 \u0647\u064a \u062a\u0639\u064a\u0634 \u0641\u064a \u0627\u0644\u0628\u064a\u062a\u060c \u062a\u0633\u0648\u0651\u064a \u0634\u063a\u0644 \u0627\u0644\u0628\u064a\u062a \u0628\u0635\u0645\u062a \u0645\u062b\u0644 \u0627\u0644\u0641\u0627\u0631\u060c \u0628\u0633 \u0627\u0644\u0632\u0648\u0627\u062c \u0645\u0627 \u062a\u0645\u0651 \u0648\u0644\u0627 \u0645\u0631\u0651\u0629. \u0627\u0644\u0645\u0648\u0646\u0648\u0644\u0648\u062c \u0645\u0627\u0644 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u064a\u062a\u062d\u0648\u0651\u0644 \u0645\u0646 \u0633\u0631\u062f \u0639\u0627\u062f\u064a \u0644\u0644\u0623\u062d\u062f\u0627\u062b \u0625\u0644\u0649 \u0631\u063a\u0628\u0629 \u0645\u062d\u0628\u064e\u0637\u0629 \u0648\u0623\u0643\u062b\u0631 \u064a\u0623\u0633\u0627\u064b\u060c \u0648\u064a\u0646\u062a\u0647\u064a \u0628\u0647\u0648\u0633 \u0645\u062e\u064a\u0641 \u0628\u0645\u0638\u0647\u0631\u0647\u0627 \u0627\u0644\u062c\u0633\u062f\u064a \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0648\u0636\u0639 \u0645\u0645\u0643\u0646 \u064a\u062a\u0637\u0648\u0651\u0631 \u0644\u0634\u064a \u062e\u0637\u064a\u0631.',
+    '\u0645\u0632\u0627\u0631\u0639 \u064a\u0633\u0631\u062f \u0642\u0635\u0651\u0629 \u0639\u0631\u0648\u0633\u0647 \u0627\u0644\u0635\u063a\u064a\u0631\u0629\u060c \u0627\u0644\u0644\u064a \u0645\u0646 \u0644\u062d\u0638\u0629 \u0632\u0648\u0627\u062c\u0647\u0645 \u0643\u0627\u0646\u062a \u0645\u0631\u0639\u0648\u0628\u0629 \u0645\u0646 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0648\u0645\u0646 \u0643\u0644 \u0634\u064a \u0628\u0634\u0631\u064a. \u0647\u0631\u0628\u062a \u0644\u064a\u0644\u0629 \u0645\u0646 \u0627\u0644\u0644\u064a\u0627\u0644\u064a\u060c \u0628\u0633 \u0631\u062c\u0627\u0644 \u0627\u0644\u0642\u0631\u064a\u0629 \u0623\u0645\u0633\u0643\u0648\u0647\u0627 \u0648\u0631\u062c\u0651\u0639\u0648\u0647\u0627 \u0628\u0627\u0644\u0642\u0648\u0651\u0629. \u0627\u0644\u062d\u064a\u0646 \u0647\u064a \u062a\u0639\u064a\u0634 \u0641\u064a \u0627\u0644\u0628\u064a\u062a\u060c \u062a\u0633\u0648\u0651\u064a \u0634\u063a\u0644 \u0627\u0644\u0628\u064a\u062a \u0628\u0635\u0645\u062a \u0645\u062b\u0644 \u0627\u0644\u0641\u0627\u0631\u060c \u0628\u0633 \u0627\u0644\u0632\u0648\u0627\u062c \u0645\u0627 \u062a\u0645\u0651 \u0648\u0644\u0627 \u0645\u0631\u0651\u0629. \u0627\u0644\u0645\u0648\u0646\u0648\u0644\u0648\u062c \u0645\u0627\u0644 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u064a\u062a\u062d\u0648\u0651\u0644 \u0645\u0646 \u0633\u0631\u062f \u0639\u0627\u062f\u064a \u0644\u0644\u0623\u062d\u062f\u0627\u062b \u0625\u0644\u0649 \u0631\u063a\u0628\u0629 \u0645\u062d\u0628\u064e\u0637\u0629 \u0648\u0623\u0643\u062b\u0631 \u064a\u0623\u0633\u0627\u064b\u060c \u0648\u064a\u0646\u062a\u0647\u064a \u0628\u0647\u0648\u0633 \u0645\u062e\u064a\u0641 \u0628\u0645\u0638\u0647\u0631\u0647\u0627 \u0627\u0644\u062c\u0633\u062f\u064a \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0648\u0636\u0639 \u0645\u0645\u0643\u0646 \u064a\u062a\u0637\u0648\u0651\u0631 \u0644\u0634\u064a \u062e\u0637\u064a\u0631.',
   formAndStructure:
-    'Form: Dramatic monologue \u2014 the farmer is the sole speaker, giving us only his perspective. The bride is entirely voiceless.\n\nStructure: Irregular stanza lengths and line lengths mirror the farmer\'s unstable emotional state. The poem grows more fragmented as his composure breaks down.\n\nRhyme: Irregular rhyme scheme with frequent couplets (maid/afraid, house/mouse) that create a sense of confinement and entrapment.\n\nDialect: Non-standard grammar ("us was wed," "runned away") establishes the rural, working-class setting and the farmer\'s limited education.\n\nCaesura: Frequent dashes and mid-line pauses reflect the farmer\'s hesitation and self-correction, suggesting he is aware his behaviour is troubling.\n\nProgression: The poem moves from past narration to present description to desperate exclamation, tracking the farmer\'s escalating obsession.',
+    "Form: Dramatic monologue \u2014 the farmer is the sole speaker, giving us only his perspective. The bride is entirely voiceless.\n\nStructure: Irregular stanza lengths and line lengths mirror the farmer's unstable emotional state. The poem grows more fragmented as his composure breaks down.\n\nRhyme: An irregular rhyme scheme with frequent rhyming couplets creates a sense of confinement and entrapment.\n\nDialect: Non-standard rural grammar establishes the working-class setting and the farmer's limited education.\n\nCaesura: Frequent dashes and mid-line pauses reflect the farmer's hesitation and self-correction, suggesting he is aware his behaviour is troubling.\n\nProgression: The poem moves from past narration to present description to desperate exclamation, tracking the farmer's escalating obsession.\n\nNote: Mew is public domain; exact rhyme-word and dialect examples should be cited only after checking a named primary edition (The Farmer's Bride, The Poetry Bookshop, 1916).",
   formAndStructureAr:
-    '\u0627\u0644\u0634\u0643\u0644: DRAMATIC MONOLOGUE (\u0645\u0648\u0646\u0648\u0644\u0648\u062c \u062f\u0631\u0627\u0645\u064a) \u2014 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0647\u0648 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0627\u0644\u0648\u062d\u064a\u062f\u060c \u0648\u0645\u0627 \u064a\u0648\u0635\u0644\u0646\u0627 \u0625\u0644\u0627 \u0645\u0646\u0638\u0648\u0631\u0647. \u0627\u0644\u0639\u0631\u0648\u0633 \u0628\u062f\u0648\u0646 \u0635\u0648\u062a \u0628\u0627\u0644\u0645\u0631\u0651\u0629.\n\n\u0627\u0644\u0628\u0646\u064a\u0629: \u0645\u0642\u0627\u0637\u0639 \u0648\u0623\u0628\u064a\u0627\u062a \u0628\u0623\u0637\u0648\u0627\u0644 \u063a\u064a\u0631 \u0645\u0646\u062a\u0638\u0645\u0629 \u062a\u0639\u0643\u0633 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0637\u0641\u064a\u0629 \u0627\u0644\u0645\u0636\u0637\u0631\u0628\u0629 \u0639\u0646\u062f \u0627\u0644\u0645\u0632\u0627\u0631\u0639. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u064a\u0631 \u0623\u0643\u062b\u0631 \u062a\u0634\u0638\u0651\u064a\u0627\u064b \u0643\u0644 \u0645\u0627 \u0631\u0632\u0627\u0646\u062a\u0647 \u062a\u0646\u0647\u0627\u0631.\n\n\u0627\u0644\u0642\u0627\u0641\u064a\u0629: \u0646\u0645\u0637 \u0642\u0627\u0641\u064a\u0629 \u063a\u064a\u0631 \u0645\u0646\u062a\u0638\u0645 \u0645\u0639 couplets \u0645\u062a\u0643\u0631\u0651\u0631\u0629 (maid/afraid\u060c house/mouse) \u062a\u062e\u0644\u0642 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u062d\u0628\u0633 \u0648\u0627\u0644\u062d\u0635\u0627\u0631.\n\n\u0627\u0644\u0644\u0647\u062c\u0629: \u0642\u0648\u0627\u0639\u062f \u063a\u064a\u0631 \u0645\u0639\u064a\u0627\u0631\u064a\u0629 ("us was wed"\u060c "runned away") \u062a\u062b\u0628\u0651\u062a \u0627\u0644\u0628\u064a\u0626\u0629 \u0627\u0644\u0631\u064a\u0641\u064a\u0629 \u0627\u0644\u0637\u0628\u0642\u0629 \u0627\u0644\u0639\u0627\u0645\u0644\u0629\u060c \u0648\u062a\u0644\u0645\u064a\u062d \u0625\u0646 \u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0645\u062d\u062f\u0648\u062f.\n\nCAESURA: \u0627\u0644\u0640dashes \u0648\u0627\u0644\u062a\u0648\u0642\u0651\u0641\u0627\u062a \u0641\u064a \u0646\u0635 \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0643\u062b\u064a\u0631\u0629\u060c \u0648\u062a\u0639\u0643\u0633 \u062a\u0631\u062f\u0651\u062f \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0648\u062a\u0635\u062d\u064a\u062d\u0647 \u0644\u0646\u0641\u0633\u0647\u060c \u0648\u062a\u0644\u0645\u0651\u062d \u0625\u0646\u0647 \u0648\u0627\u0639\u064a \u0625\u0646 \u0633\u0644\u0648\u0643\u0647 \u0641\u064a\u0647 \u0634\u064a \u0645\u0632\u0639\u062c.\n\n\u0627\u0644\u062a\u062f\u0631\u0651\u062c: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u0645\u0646 \u0633\u0631\u062f \u0645\u0627\u0636\u064a \u0625\u0644\u0649 \u0648\u0635\u0641 \u0645\u0636\u0627\u0631\u0639 \u0625\u0644\u0649 \u0635\u0631\u062e\u0629 \u064a\u0627\u0626\u0633\u0629\u060c \u0648\u062a\u062a\u062a\u0628\u0651\u0639 \u062a\u0635\u0627\u0639\u062f \u0647\u0648\u0633 \u0627\u0644\u0645\u0632\u0627\u0631\u0639.',
+    '\u0627\u0644\u0634\u0643\u0644: DRAMATIC MONOLOGUE (\u0645\u0648\u0646\u0648\u0644\u0648\u062c \u062f\u0631\u0627\u0645\u064a) \u2014 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0647\u0648 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0627\u0644\u0648\u062d\u064a\u062f\u060c \u0648\u0645\u0627 \u064a\u0648\u0635\u0644\u0646\u0627 \u0625\u0644\u0627 \u0645\u0646\u0638\u0648\u0631\u0647. \u0627\u0644\u0639\u0631\u0648\u0633 \u0628\u062f\u0648\u0646 \u0635\u0648\u062a \u0628\u0627\u0644\u0645\u0631\u0651\u0629.\n\n\u0627\u0644\u0628\u0646\u064a\u0629: \u0645\u0642\u0627\u0637\u0639 \u0648\u0623\u0628\u064a\u0627\u062a \u0628\u0623\u0637\u0648\u0627\u0644 \u063a\u064a\u0631 \u0645\u0646\u062a\u0638\u0645\u0629 \u062a\u0639\u0643\u0633 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0637\u0641\u064a\u0629 \u0627\u0644\u0645\u0636\u0637\u0631\u0628\u0629 \u0639\u0646\u062f \u0627\u0644\u0645\u0632\u0627\u0631\u0639. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u064a\u0631 \u0623\u0643\u062b\u0631 \u062a\u0634\u0638\u0651\u064a\u0627\u064b \u0643\u0644 \u0645\u0627 \u0631\u0632\u0627\u0646\u062a\u0647 \u062a\u0646\u0647\u0627\u0631.\n\n\u0627\u0644\u0642\u0627\u0641\u064a\u0629: \u0646\u0645\u0637 \u0642\u0627\u0641\u064a\u0629 \u063a\u064a\u0631 \u0645\u0646\u062a\u0638\u0645 \u0645\u0639 couplets \u0645\u062a\u0643\u0631\u0651\u0631\u0629 \u062a\u062e\u0644\u0642 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u062d\u0628\u0633 \u0648\u0627\u0644\u062d\u0635\u0627\u0631.\n\n\u0627\u0644\u0644\u0647\u062c\u0629: \u0642\u0648\u0627\u0639\u062f \u063a\u064a\u0631 \u0645\u0639\u064a\u0627\u0631\u064a\u0629 \u0631\u064a\u0641\u064a\u0629 \u062a\u062b\u0628\u0651\u062a \u0627\u0644\u0628\u064a\u0626\u0629 \u0627\u0644\u0631\u064a\u0641\u064a\u0629 \u0627\u0644\u0637\u0628\u0642\u0629 \u0627\u0644\u0639\u0627\u0645\u0644\u0629\u060c \u0648\u062a\u0644\u0645\u064a\u062d \u0625\u0646 \u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0645\u062d\u062f\u0648\u062f.\n\nCAESURA: \u0627\u0644\u0640dashes \u0648\u0627\u0644\u062a\u0648\u0642\u0651\u0641\u0627\u062a \u0641\u064a \u0646\u0635 \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0643\u062b\u064a\u0631\u0629\u060c \u0648\u062a\u0639\u0643\u0633 \u062a\u0631\u062f\u0651\u062f \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0648\u062a\u0635\u062d\u064a\u062d\u0647 \u0644\u0646\u0641\u0633\u0647\u060c \u0648\u062a\u0644\u0645\u0651\u062d \u0625\u0646\u0647 \u0648\u0627\u0639\u064a \u0625\u0646 \u0633\u0644\u0648\u0643\u0647 \u0641\u064a\u0647 \u0634\u064a \u0645\u0632\u0639\u062c.\n\n\u0627\u0644\u062a\u062f\u0631\u0651\u062c: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u0645\u0646 \u0633\u0631\u062f \u0645\u0627\u0636\u064a \u0625\u0644\u0649 \u0648\u0635\u0641 \u0645\u0636\u0627\u0631\u0639 \u0625\u0644\u0649 \u0635\u0631\u062e\u0629 \u064a\u0627\u0626\u0633\u0629\u060c \u0648\u062a\u062a\u062a\u0628\u0651\u0639 \u062a\u0635\u0627\u0639\u062f \u0647\u0648\u0633 \u0627\u0644\u0645\u0632\u0627\u0631\u0639.',
+  // NOTE (audit remediation, item I5): Verbatim "key quotes" previously shown
+  // here were flagged as not matching the canonical poem. They have been
+  // replaced with paraphrased descriptions of each key moment and its devices
+  // (no quotation marks around original wording). Mew is public domain, so
+  // exact quotations should be restored ONLY after verification against a
+  // named primary edition (The Farmer's Bride, The Poetry Bookshop, 1916).
   keyQuotes: [
     {
-      quote: 'Three Summers since I chose a maid',
+      quote: 'Opening \u2014 the farmer recalls choosing a young bride (paraphrase)',
       analysis:
-        '"Chose" implies ownership and selection rather than mutual love. "Maid" emphasises her youth and virginity as commodities.',
+        'The farmer\u2019s verb of selection implies ownership rather than mutual love, and his stress on her youth frames her as a commodity. (Original wording pending primary-edition verification.)',
       themes: ['Power', 'Ownership', 'Marriage'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "chose" \u062a\u0644\u0645\u0651\u062d \u0644\u0644\u062a\u0645\u0644\u0651\u0643 \u0648\u0627\u0644\u0627\u062e\u062a\u064a\u0627\u0631\u060c \u0645\u0648 \u0627\u0644\u062d\u0628 \u0627\u0644\u0645\u062a\u0628\u0627\u062f\u0644. \u0648\u0643\u0644\u0645\u0629 "maid" \u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0635\u063a\u0631 \u0633\u0646\u0651\u0647\u0627 \u0648\u0639\u0630\u0631\u064a\u0651\u062a\u0647\u0627 \u0643\u0623\u0646\u0647\u0645 \u0633\u0644\u0639.',
+        '\u0641\u0639\u0644 \u0627\u0644\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0644\u064a \u064a\u0633\u062a\u062e\u062f\u0645\u0647 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u064a\u0644\u0645\u0651\u062d \u0644\u0644\u062a\u0645\u0644\u0651\u0643 \u0645\u0648 \u0627\u0644\u062d\u0628 \u0627\u0644\u0645\u062a\u0628\u0627\u062f\u0644\u060c \u0648\u062a\u0631\u0643\u064a\u0632\u0647 \u0639\u0644\u0649 \u0635\u063a\u0631 \u0633\u0646\u0651\u0647\u0627 \u064a\u0623\u0637\u0651\u0631\u0647\u0627 \u0643\u0623\u0646\u0647\u0627 \u0633\u0644\u0639\u0629. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u062a\u0645\u0644\u0651\u0643',
@@ -155,12 +162,13 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: 'she turned afraid / Of love and me and all things human',
+      quote:
+        'Her fear after the wedding \u2014 of the farmer, of love, of all humanity (paraphrase)',
       analysis:
-        'Her fear extends beyond the farmer to humanity itself. The enjambment across the line break enacts the turning away.',
+        'Her dread is described as widening from the personal to the universal; the line break enacts a turning away. (Original wording pending primary-edition verification.)',
       themes: ['Fear', 'Isolation', 'Humanity'],
       analysisAr:
-        '\u062e\u0648\u0641\u0647\u0627 \u064a\u062a\u062c\u0627\u0648\u0632 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0644\u064a\u0635\u064a\u0631 \u062e\u0648\u0641 \u0645\u0646 \u0627\u0644\u0628\u0634\u0631\u064a\u0629 \u0646\u0641\u0633\u0647\u0627. \u0627\u0644\u0640enjambment \u0639\u0628\u0631 \u0641\u0627\u0635\u0644 \u0627\u0644\u0628\u064a\u062a \u064a\u062c\u0633\u0651\u062f \u0644\u062d\u0638\u0629 \u0627\u0644\u0627\u0646\u0643\u0641\u0627\u0621.',
+        '\u062e\u0648\u0641\u0647\u0627 \u064a\u064f\u0648\u0635\u0641 \u0648\u0647\u0648 \u064a\u062a\u0651\u0633\u0639 \u0645\u0646 \u0627\u0644\u0634\u062e\u0635\u064a \u0625\u0644\u0649 \u0627\u0644\u0643\u0648\u0646\u064a\u060c \u0648\u0641\u0627\u0635\u0644 \u0627\u0644\u0628\u064a\u062a \u064a\u062c\u0633\u0651\u062f \u0644\u062d\u0638\u0629 \u0627\u0644\u0627\u0646\u0643\u0641\u0627\u0621. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u062e\u0648\u0641',
         '\u0627\u0644\u0639\u0632\u0644\u0629',
@@ -168,12 +176,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: "Like the shut of a winter's day",
+      quote: 'Winter-day simile for her vanished warmth (paraphrase)',
       analysis:
-        'The simile captures the sudden, cold finality of her emotional withdrawal. Winter connotes death and barrenness.',
+        'A comparison to the close of a winter day captures the sudden, cold finality of her withdrawal; winter connotes death and barrenness. (Original wording pending primary-edition verification.)',
       themes: ['Loss', 'Coldness', 'Nature'],
       analysisAr:
-        '\u0627\u0644\u0640simile \u064a\u0644\u062a\u0642\u0637 \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0645\u0641\u0627\u062c\u0626\u0629 \u0648\u0627\u0644\u0628\u0627\u0631\u062f\u0629 \u0644\u0627\u0646\u0633\u062d\u0627\u0628\u0647\u0627 \u0627\u0644\u0639\u0627\u0637\u0641\u064a. \u0648\u0627\u0644\u0634\u062a\u0627\u0621 \u064a\u0648\u062d\u064a \u0628\u0627\u0644\u0645\u0648\u062a \u0648\u0627\u0644\u0639\u0642\u0645.',
+        '\u062a\u0634\u0628\u064a\u0647 \u0628\u0646\u0647\u0627\u064a\u0629 \u064a\u0648\u0645 \u0634\u062a\u0648\u064a \u064a\u0644\u062a\u0642\u0637 \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0645\u0641\u0627\u062c\u0626\u0629 \u0648\u0627\u0644\u0628\u0627\u0631\u062f\u0629 \u0644\u0627\u0646\u0633\u062d\u0627\u0628\u0647\u0627\u061b \u0648\u0627\u0644\u0634\u062a\u0627\u0621 \u064a\u0648\u062d\u064a \u0628\u0627\u0644\u0645\u0648\u062a \u0648\u0627\u0644\u0639\u0642\u0645. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0641\u0642\u062f',
         '\u0627\u0644\u0628\u0631\u0648\u062f\u0629',
@@ -181,12 +189,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: "'twasn't a woman \u2014 / More like a little frightened fay",
+      quote: 'She seems a frightened fairy-creature rather than a woman (paraphrase)',
       analysis:
-        'He dehumanises her by comparing her to a fairy creature, both idealising and objectifying her. She becomes something other than human in his eyes.',
+        'By likening her to a fairy-like creature he both idealises and dehumanises her, making her something other than human in his eyes. (Original wording pending primary-edition verification.)',
       themes: ['Dehumanisation', 'Fantasy', 'Othering'],
       analysisAr:
-        '\u0647\u0648 \u064a\u062c\u0631\u0651\u062f\u0647\u0627 \u0645\u0646 \u0625\u0646\u0633\u0627\u0646\u064a\u062a\u0647\u0627 \u0644\u0645\u0651\u0627 \u064a\u0634\u0628\u0651\u0647\u0647\u0627 \u0628\u0643\u0627\u0626\u0646 \u062e\u0631\u0627\u0641\u064a\u060c \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u064a\u0645\u062b\u0651\u0644\u0647\u0627 \u0645\u062b\u0627\u0644\u064a\u0627\u064b \u0648\u064a\u0634\u064a\u0651\u0626\u0647\u0627. \u0647\u064a \u062a\u0635\u064a\u0631 \u0634\u064a \u0645\u0648 \u0628\u0634\u0631\u064a \u0641\u064a \u0639\u064a\u0648\u0646\u0647.',
+        '\u0628\u062a\u0634\u0628\u064a\u0647\u0647\u0627 \u0628\u0643\u0627\u0626\u0646 \u062e\u0631\u0627\u0641\u064a \u064a\u0645\u062b\u0651\u0644\u0647\u0627 \u0645\u062b\u0627\u0644\u064a\u0627\u064b \u0648\u064a\u062c\u0631\u0651\u062f\u0647\u0627 \u0645\u0646 \u0625\u0646\u0633\u0627\u0646\u064a\u062a\u0647\u0627 \u0641\u064a \u0622\u0646\u060c \u0641\u062a\u0635\u064a\u0631 \u0634\u064a\u0626\u0627\u064b \u063a\u064a\u0631 \u0628\u0634\u0631\u064a \u0641\u064a \u0639\u064a\u0646\u064a\u0647. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u062a\u062c\u0631\u064a\u062f \u0645\u0646 \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629',
         '\u0627\u0644\u062e\u064a\u0627\u0644',
@@ -194,12 +202,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: 'We caught her, fetched her home again',
+      quote: 'The village men pursue and bring her back (paraphrase)',
       analysis:
-        'The language of capture \u2014 "caught," "fetched" \u2014 treats her like an escaped animal, revealing the violent power dynamics of the marriage.',
+        'The farmer\u2019s language of capture treats her like an escaped animal, revealing the violent power dynamics of the marriage and community. (Original wording pending primary-edition verification.)',
       themes: ['Power', 'Entrapment', 'Violence'],
       analysisAr:
-        '\u0644\u063a\u0629 \u0627\u0644\u0627\u0635\u0637\u064a\u0627\u062f \u2014 "caught"\u060c "fetched" \u2014 \u062a\u0639\u0627\u0645\u0644\u0647\u0627 \u0645\u062b\u0644 \u062d\u064a\u0648\u0627\u0646 \u0647\u0627\u0631\u0628\u060c \u0648\u062a\u0643\u0634\u0641 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0627\u062a \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0639\u0646\u064a\u0641\u0629 \u0641\u064a \u0627\u0644\u0632\u0648\u0627\u062c.',
+        '\u0644\u063a\u0629 \u0627\u0644\u0627\u0635\u0637\u064a\u0627\u062f \u0639\u0646\u062f \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u062a\u0639\u0627\u0645\u0644\u0647\u0627 \u0645\u062b\u0644 \u062d\u064a\u0648\u0627\u0646 \u0647\u0627\u0631\u0628\u060c \u0648\u062a\u0643\u0634\u0641 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0627\u062a \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0639\u0646\u064a\u0641\u0629 \u0641\u064a \u0627\u0644\u0632\u0648\u0627\u062c \u0648\u0627\u0644\u0645\u062c\u062a\u0645\u0639. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u062d\u0635\u0627\u0631',
@@ -207,12 +215,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: 'She does the work about the house / As well as most, but like a mouse',
+      quote: 'She works the house silently, as timid as a mouse (paraphrase)',
       analysis:
-        'The simile reduces her to a small, frightened creature. The couplet rhyme (house/mouse) formally enacts her confinement within domestic space.',
+        'The mouse comparison reduces her to a small, frightened creature, and the surrounding domestic detail enacts her confinement. (Original wording pending primary-edition verification.)',
       themes: ['Domesticity', 'Entrapment', 'Silence'],
       analysisAr:
-        '\u0627\u0644\u0640simile \u064a\u062e\u062a\u0632\u0644\u0647\u0627 \u0625\u0644\u0649 \u0645\u062e\u0644\u0648\u0642 \u0635\u063a\u064a\u0631 \u0648\u0645\u0631\u0639\u0648\u0628. \u0648\u0642\u0627\u0641\u064a\u0629 \u0627\u0644\u0640couplet (house/mouse) \u062a\u062c\u0633\u0651\u062f \u0628\u0646\u064a\u0648\u064a\u0627\u064b \u062d\u0635\u0627\u0631\u0647\u0627 \u062f\u0627\u062e\u0644 \u0627\u0644\u0641\u0636\u0627\u0621 \u0627\u0644\u0645\u0646\u0632\u0644\u064a.',
+        '\u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u0641\u0623\u0631 \u064a\u062e\u062a\u0632\u0644\u0647\u0627 \u0625\u0644\u0649 \u0645\u062e\u0644\u0648\u0642 \u0635\u063a\u064a\u0631 \u0648\u0645\u0631\u0639\u0648\u0628\u060c \u0648\u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0645\u0646\u0632\u0644\u064a\u0629 \u0627\u0644\u0645\u062d\u064a\u0637\u0629 \u062a\u062c\u0633\u0651\u062f \u062d\u0635\u0627\u0631\u0647\u0627. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0645\u0646\u0632\u0644\u064a\u0629',
         '\u0627\u0644\u062d\u0635\u0627\u0631',
@@ -220,12 +228,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: 'nothing, nothing in the house at night',
+      quote: 'The empty, silent house at night (paraphrase)',
       analysis:
-        'The repetition of "nothing" conveys the emptiness of their marriage and the farmer\'s sexual frustration. Night-time implies the absent intimacy.',
+        'A repeated emphasis on nothingness conveys the emptiness of the marriage and the farmer\u2019s sexual frustration; night-time implies the absent intimacy. (Original wording pending primary-edition verification.)',
       themes: ['Desire', 'Emptiness', 'Frustration'],
       analysisAr:
-        '\u062a\u0643\u0631\u0627\u0631 \u0643\u0644\u0645\u0629 "nothing" \u064a\u0648\u0635\u0644 \u0641\u0631\u0627\u063a \u0627\u0644\u0632\u0648\u0627\u062c \u0648\u0625\u062d\u0628\u0627\u0637 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0627\u0644\u062c\u0646\u0633\u064a. \u0648\u0648\u0642\u062a \u0627\u0644\u0644\u064a\u0644 \u064a\u0644\u0645\u0651\u062d \u0644\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u063a\u0627\u064a\u0628\u0629.',
+        '\u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u062a\u0634\u062f\u064a\u062f \u0639\u0644\u0649 \u0627\u0644\u0639\u062f\u0645 \u064a\u0648\u0635\u0644 \u0641\u0631\u0627\u063a \u0627\u0644\u0632\u0648\u0627\u062c \u0648\u0625\u062d\u0628\u0627\u0637 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0627\u0644\u062c\u0646\u0633\u064a\u061b \u0648\u0627\u0644\u0644\u064a\u0644 \u064a\u0644\u0645\u0651\u062d \u0644\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u063a\u0627\u064a\u0628\u0629. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0631\u063a\u0628\u0629',
         '\u0627\u0644\u0641\u0631\u0627\u063a',
@@ -233,12 +241,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
     {
-      quote: 'her eyes, her hair, her hair!',
+      quote: 'The closing fixation on her colouring, eyes and hair (paraphrase)',
       analysis:
-        'The obsessive repetition and exclamation mark signal the farmer losing control. His gaze fragments her into body parts, objectifying her completely.',
+        'The obsessive, repeated focus and broken exclamations signal the farmer losing control; his gaze fragments her into body parts and objectifies her. (Original wording pending primary-edition verification.)',
       themes: ['Obsession', 'Objectification', 'Desire'],
       analysisAr:
-        '\u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0647\u0648\u0633\u064a \u0648\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u062a\u0639\u062c\u0651\u0628 \u062a\u0623\u0634\u0651\u0631 \u0641\u0642\u062f\u0627\u0646 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0644\u0644\u0633\u064a\u0637\u0631\u0629. \u0648\u0646\u0638\u0631\u062a\u0647 \u062a\u062c\u0632\u0651\u0626\u0647\u0627 \u0625\u0644\u0649 \u0623\u0639\u0636\u0627\u0621 \u062c\u0633\u062f\u064a\u0629\u060c \u0648\u062a\u0634\u064a\u0651\u0626\u0647\u0627 \u0628\u0627\u0644\u0643\u0627\u0645\u0644.',
+        '\u0627\u0644\u062a\u0631\u0643\u064a\u0632 \u0627\u0644\u0647\u0648\u0633\u064a \u0627\u0644\u0645\u062a\u0643\u0631\u0651\u0631 \u0648\u0627\u0644\u0635\u064a\u062d\u0627\u062a \u0627\u0644\u0645\u062a\u0642\u0637\u0651\u0639\u0629 \u062a\u0624\u0634\u0651\u0631 \u0641\u0642\u062f\u0627\u0646 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0644\u0644\u0633\u064a\u0637\u0631\u0629\u061b \u0648\u0646\u0638\u0631\u062a\u0647 \u062a\u062c\u0632\u0651\u0626\u0647\u0627 \u0625\u0644\u0649 \u0623\u0639\u0636\u0627\u0621 \u0648\u062a\u0634\u064a\u0651\u0626\u0647\u0627. (\u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0627\u0644\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0633\u0627\u0633\u064a\u0629.)',
       themesAr: [
         '\u0627\u0644\u0647\u0648\u0633',
         '\u062a\u0634\u064a\u064a\u0621 \u0627\u0644\u0645\u0631\u0623\u0629',
@@ -249,7 +257,7 @@ const farmersBridePoem: PoemData = {
   languageDevices: [
     {
       device: 'Dramatic monologue',
-      example: 'Three Summers since I chose a maid',
+      example: 'The farmer’s opening recollection of choosing his bride (paraphrase)',
       effect:
         'The farmer is the sole narrator, so we only get his perspective. The bride is voiceless, which itself enacts the power imbalance the poem critiques.',
       lineRef: 0,
@@ -258,7 +266,7 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Animal imagery',
-      example: 'like a mouse / like a frightened fay',
+      example: 'The bride likened to a mouse and to a frightened fairy-creature (paraphrase)',
       effect:
         'Repeated animal and fairy comparisons dehumanise the bride, reducing her to a creature to be caught and kept rather than a person with agency.',
       lineRef: 18,
@@ -267,7 +275,8 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Dialect',
-      example: 'us was wed / she runned away',
+      example:
+        'Non-standard rural grammar in the farmer’s narration of the wedding and her flight (paraphrase)',
       effect:
         "Non-standard grammar establishes the farmer's rural working-class voice and creates authenticity, but also suggests limited self-awareness.",
       lineRef: 3,
@@ -276,7 +285,7 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Possessive language',
-      example: 'I chose / we caught her / fetched her home',
+      example: 'The farmer’s verbs of choosing, catching and bringing her home (paraphrase)',
       effect:
         'Verbs of ownership and control reveal the patriarchal power structures underlying the marriage. She is acted upon, never acting.',
       lineRef: 11,
@@ -285,7 +294,7 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Repetition',
-      example: 'her hair, her hair!',
+      example: 'The farmer’s repeated, exclamatory fixation on her hair at the climax (paraphrase)',
       effect:
         "The obsessive repetition at the poem's climax reveals the farmer's desire overwhelming his restraint, creating an ominous, unsettling ending.",
       lineRef: 22,
@@ -294,7 +303,7 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Simile',
-      example: "Like the shut of a winter's day",
+      example: 'Her vanished warmth compared to the close of a winter day (paraphrase)',
       effect:
         'Captures the sudden, cold withdrawal of the bride\'s warmth. "Shut" is abrupt and final, while winter connotes death and emotional barrenness.',
       lineRef: 5,
@@ -303,7 +312,7 @@ const farmersBridePoem: PoemData = {
     },
     {
       device: 'Caesura / self-correction',
-      example: 'We caught her... Not we, not any one of us',
+      example: 'The farmer revising his account of who recaptured her (paraphrase)',
       effect:
         "The farmer's self-correction reveals guilt and awareness that the recapture was violent, even as he tries to distance himself from it.",
       lineRef: 12,
@@ -338,13 +347,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She wants adventure',
-      'She is terrified of the farmer and of physical intimacy — "afraid of all things human"',
+      'She is terrified of the farmer and of physical intimacy — afraid of all human contact',
       'She is homesick',
       'She found another lover',
     ],
     correctIndex: 1,
     explanation:
-      'The bride is "afraid of all things human", especially men and physical intimacy. She flees the marriage but is caught and brought back by the farmer and other men.',
+      'The bride is afraid of all human contact, especially men and physical intimacy. She flees the marriage but is caught and brought back by the farmer and other men.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -370,13 +379,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is content with the situation',
-      'His desire becomes increasingly possessive and disturbing — "her eyes, her hair, her hair!" suggests barely contained obsession',
+      'His desire becomes increasingly possessive and disturbing — a repeated, exclamatory fixation on her appearance suggests barely contained obsession',
       'He decides to let her go',
       'He is angry at her',
     ],
     correctIndex: 1,
     explanation:
-      'The final stanza\'s repetition of "her hair!" reveals the farmer\'s desire becoming obsessive and predatory. The exclamation marks suggest barely controlled passion that edges toward threat.',
+      "The final stanza's repeated, exclamatory focus on the bride's appearance reveals the farmer's desire becoming obsessive and predatory. The broken exclamations suggest barely controlled passion that edges toward threat.",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -491,7 +500,7 @@ const REVISION_TOPICS = [
       "Mew uses animal comparisons, seasonal imagery, and an increasingly agitated voice to reveal the farmer's desire and the bride's fear.",
     keyPoints: [
       'Animal imagery — hare, mouse, leveret — the bride as wild creature',
-      '"Her eyes, her hair, her hair!" — obsessive repetition',
+      'The closing fixation on her eyes and hair — obsessive repetition',
       'Seasonal change — time passes but nothing resolves',
       'The bride compared to nature — she belongs outside, not in marriage',
     ],

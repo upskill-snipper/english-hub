@@ -212,26 +212,28 @@ const keyQuotes = [
       "Curley's wife's confession mirrors Crooks's earlier admission. The double negative ('never... nobody') is grammatically emphatic. 'Awful lonely' is plain, understated, and devastating. Her loneliness drives her into the barn where she encounters Lennie, making it a direct cause of her death. Steinbeck shows that loneliness is not merely sad but dangerous — it creates the conditions for tragedy.",
   },
   {
-    quote: 'Tell me — like you done before... Tell me about the rabbits.',
+    paraphrase:
+      'At the riverbank, Lennie asks George to tell the story of the farm and the rabbits one more time, the way he has told it many times before.',
     chapter: 'Chapter 6',
-    speaker: 'Lennie',
+    speaker: 'Lennie (paraphrased — scene description)',
     analysis:
-      "Lennie's last request is to hear the dream one final time. 'Like you done before' reveals that the dream is a ritual, a bedtime story that provides comfort and security. The rabbits represent everything Lennie desires: softness, ownership, safety, and George's continued presence. The repetition of this request at the end creates the novel's circular structure and makes the dream a kind of prayer that George fulfils even as he ends Lennie's life.",
+      "Lennie's last wish is to hear the dream one final time. That he asks for it 'like before' reveals that the dream functions as a ritual, a bedtime story that provides comfort and security. The rabbits represent everything Lennie desires: softness, ownership, safety, and George's continued presence. The recurrence of this request at the end creates the novel's circular structure and makes the dream a kind of prayer that George fulfils even as he ends Lennie's life.",
   },
   {
-    quote: 'You hadda, George. I swear you hadda.',
+    paraphrase:
+      'After the shooting, Slim leads George away, reassuring him that he had to do what he did and that he was right to do it.',
     chapter: 'Chapter 6',
-    speaker: 'Slim',
+    speaker: 'Slim (paraphrased — scene description)',
     analysis:
-      "Slim's final words validate George's decision and offer the only consolation available. 'Hadda' (had to) implies moral necessity. Slim alone understands that the killing was an act of love, not violence. His repetition ('I swear you hadda') is an oath, a moral absolution. This moment distinguishes Slim from Carlson and Curley, who cannot comprehend George's grief, underlining the difference between those who understand human connection and those who do not.",
+      "Slim's final reassurance validates George's decision and offers the only consolation available. His insistence that George 'had to' implies moral necessity. Slim alone understands that the killing was an act of love, not violence, and his repeated reassurance functions as a kind of moral absolution. This moment distinguishes Slim from Carlson and Curley, who cannot comprehend George's grief, underlining the difference between those who understand human connection and those who do not.",
   },
   {
-    quote:
-      'As happens sometimes, a moment settled and hovered and remained for much more than a moment. And sound stopped and movement stopped for much, much more than a moment.',
+    paraphrase:
+      'As George fires, Steinbeck slows the narrative almost to a standstill: for an instant sound and movement seem suspended, stretching the moment far beyond its real duration.',
     chapter: 'Chapter 6',
-    speaker: 'Narrator',
+    speaker: 'Narrator (paraphrased — scene description)',
     analysis:
-      "Steinbeck suspends time at the moment of Lennie's death. The repetition of 'moment' and 'stopped' creates a rhythmic, almost ceremonial prose style that elevates the scene beyond naturalism. The passage turns a violent act into something sacred, demanding that the reader pause and feel the weight of what has happened. It is Steinbeck's prose at its most lyrical and controlled.",
+      "Steinbeck suspends time at the moment of Lennie's death. The slowing of sound and movement creates a rhythmic, almost ceremonial prose effect that elevates the scene beyond naturalism. The passage turns a violent act into something sacred, demanding that the reader pause and feel the weight of what has happened. It is Steinbeck's prose at its most lyrical and controlled.",
   },
   {
     quote: 'I could live so easy and maybe have a girl.',
@@ -335,7 +337,7 @@ const essayQuestions = [
   {
     question: 'How does Steinbeck use the dream farm to explore the American Dream?',
     points: [
-      "The dream as a ritual: 'Tell me — like you done before' — it provides comfort and purpose",
+      'The dream as a ritual: Lennie repeatedly asks George to retell it — it provides comfort and purpose',
       "Candy's $350 makes the dream briefly achievable — the only moment it seems real",
       "Crooks's speech: 'never a God damn one of 'em ever gets it' — the dream as mass delusion",
       "The dream's destruction after Lennie kills Curley's wife — it cannot survive contact with reality",
@@ -451,9 +453,13 @@ export default function OfMiceAndMenStudyGuide() {
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
             <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
-              <blockquote className="text-base font-medium italic text-foreground">
-                &ldquo;{q.quote}&rdquo;
-              </blockquote>
+              {'quote' in q ? (
+                <blockquote className="text-base font-medium italic text-foreground">
+                  &ldquo;{q.quote}&rdquo;
+                </blockquote>
+              ) : (
+                <p className="text-base font-medium text-foreground">{q.paraphrase}</p>
+              )}
               <p className="mt-1 text-xs font-semibold text-primary">
                 {q.speaker ? `${q.speaker} — ` : ''}
                 {q.chapter}
@@ -561,7 +567,7 @@ export default function OfMiceAndMenStudyGuide() {
             "Crooks's momentary desire to join the dream — and his immediate withdrawal when threatened by Curley's wife — demonstrates that racial prejudice does not merely exclude but actively destroys hope. His retraction ('I didn' mean it. Jus' foolin'') is the most psychologically devastating moment in the novel: he has learned to pre-emptively crush his own aspirations before the white world can do it for him.",
             "The setting near Soledad (Spanish for 'solitude') is not merely symbolic but deterministic. Steinbeck suggests that loneliness is not a personal failing but a structural condition created by the economic system: itinerant workers are kept mobile, rootless, and disconnected precisely because isolation makes them easier to exploit. Loneliness is a feature of the system, not a bug.",
             "Steinbeck's decision to suspend time at the moment of Lennie's death — 'a moment settled and hovered and remained for much more than a moment' — transforms a violent act into something almost sacred. The lyrical prose elevates the killing above naturalism into a register of tragic ritual, demanding that the reader honour the weight of what has happened rather than simply moving past it.",
-            "Slim's final line — 'You hadda, George. I swear you hadda' — functions as the novel's moral verdict, but its authority is compromised by the fact that only Slim understands. Carlson's bewildered 'Now what the hell ya suppose is eatin' them two guys?' is the novel's real ending: a world in which genuine moral understanding is the exception, not the rule.",
+            "Slim's closing reassurance to George — that he had no choice — functions as the novel's moral verdict, but its authority is compromised by the fact that only Slim understands. Carlson's bewildered closing question about what is troubling the two men is the novel's real ending: a world in which genuine moral understanding is the exception, not the rule.",
             "The parallel between Candy's dog and Lennie is not merely structural but philosophical: both deaths raise the question of who has the right to decide when a life is no longer worth living. Candy's regret at not shooting his own dog provides George with a moral framework, but Steinbeck leaves the ethical question unresolved. The novel asks whether mercy killing is ever truly merciful, or whether it merely makes the unbearable easier for those who survive.",
           ].map((point, i) => (
             <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
@@ -596,9 +602,9 @@ export default function OfMiceAndMenStudyGuide() {
               outline: [
                 "Introduction: The ending — George shooting Lennie — is the novel's most morally complex moment, simultaneously an act of murder and an act of love. Steinbeck uses it to argue that friendship in a hostile world is both humanity's greatest resource and its greatest source of pain.",
                 "Para 1 -- The return to the clearing: The circular structure returns to the river where the novel began. George sends Lennie here for safety. The return to their place of peace gives Lennie's death a gentleness the lynch mob would not.",
-                "Para 2 -- The final recitation of the dream: George tells the dream one last time: 'Tell me — like you done before.' The dream is no longer a plan but a farewell — a last act of tenderness. Steinbeck transforms the ritual into an elegy.",
+                "Para 2 -- The final recitation of the dream: at Lennie's request George tells the dream one last time. The dream is no longer a plan but a farewell — a last act of tenderness. Steinbeck transforms the ritual into an elegy.",
                 "Para 3 -- The mercy killing: George shoots Lennie in the back of the head, mirroring how Carlson shot Candy's dog. Candy's regret ('I shouldn't ought to of let no stranger shoot my dog') provides the moral logic: it is better to do it yourself, with love, than to let strangers do it with cruelty.",
-                "Para 4 -- Slim's understanding: 'You hadda, George. I swear you hadda.' Only Slim understands. Carlson's inability to comprehend George's grief ('Now what the hell ya suppose is eatin' them two guys?') underlines the depth of George and Lennie's bond: it is invisible to those who have never experienced such connection.",
+                "Para 4 -- Slim's understanding: he leads George away, reassuring him that he had no choice. Only Slim understands. Carlson's inability to comprehend George's grief — bewildered that the two men are upset at all — underlines the depth of George and Lennie's bond: it is invisible to those who have never experienced such connection.",
                 "Conclusion: Steinbeck argues that true friendship can demand impossible sacrifices. George's act destroys the only meaningful relationship in his life but saves Lennie from a worse fate. The tragedy is not that George kills Lennie but that the world gives him no other option.",
               ],
             },

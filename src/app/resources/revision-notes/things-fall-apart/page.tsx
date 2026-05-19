@@ -409,9 +409,9 @@ export default function ThingsFallApartPage() {
             <p className="mb-4 text-sm text-muted-foreground">
               The quotations below are drawn from the standard Heinemann African Writers Series
               edition (1958, reissued 1962 onwards). Page numbers vary between editions; chapter
-              references are given. A small number are tagged <strong>[VERIFY]</strong> &mdash; the
-              wording is widely cited in this form but you should check it against your school
-              edition before using in an exam.
+              references are given. A few items appear as paraphrase rather than direct quotation
+              where exact wording could not be confirmed &mdash; always check against your school
+              edition before using a line in an exam.
             </p>
 
             <QuoteCard
@@ -438,11 +438,18 @@ export default function ThingsFallApartPage() {
               analysis="The boy&rsquo;s last words as he runs to Okonkwo for protection. The address &lsquo;my father&rsquo; is the moral weight: Okonkwo has been Ikemefuna&rsquo;s father for three years. The killing that follows is, in the boy&rsquo;s own words, a parricide in reverse. The phrase fixes the act ethically."
             />
 
-            <QuoteCard
-              quote="When did you become a shivering old woman, Okonkwo, you, who are known in all the nine villages for your valour in war?"
-              speaker="Okonkwo, in interior monologue, chapter 7"
-              analysis="Okonkwo asks himself this immediately before striking Ikemefuna. The internal voice uses the language of the clan&rsquo;s gendered insult (&lsquo;old woman&rsquo;) to override his own grief. Achebe shows fear of being seen as weak winning over moral conscience in a single sentence. [VERIFY] exact wording against your edition."
-            />
+            <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
+              <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+                Okonkwo before the killing of Ikemefuna (chapter 7) &mdash; paraphrase
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                In the moments before he strikes Ikemefuna, Achebe&rsquo;s narration turns on
+                Okonkwo&rsquo;s fear of being thought weak. The clan&rsquo;s gendered insult
+                (&lsquo;old woman&rsquo;) is the language his own mind reaches for to override his
+                grief: fear of looking weak defeats moral conscience. This is given as paraphrase,
+                not direct quotation &mdash; check the exact wording against your edition.
+              </p>
+            </div>
 
             <QuoteCard
               quote="That boy calls you father. Do not bear a hand in his death."
@@ -462,11 +469,19 @@ export default function ThingsFallApartPage() {
               analysis="The most quotable diagnosis in the novel and the source of the title&rsquo;s explicit echo (&lsquo;fallen apart&rsquo;). Notice the rhetorical move: Obierika does not blame the colonisers&rsquo; force, but their patience and their wedge. The clan&rsquo;s undoing is internal &mdash; converts, the osu admission, the unmasking &mdash; once the wedge is in."
             />
 
-            <QuoteCard
-              quote="An abominable religion has settled among you. A man can now leave his father and his brothers."
-              speaker="Uchendu (in Mbanta) on the missionaries, chapter 17"
-              analysis="The grievance is not theological in the abstract; it is the dissolution of kinship. Achebe is precise: the church&rsquo;s offence to Igbo culture is that it lets a son walk away from his father&rsquo;s compound. Nwoye is the immediate example. [VERIFY] wording."
-            />
+            <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
+              <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+                The clan&rsquo;s reaction to the new religion (chapter 17) &mdash; paraphrase
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                After Nwoye joins the missionaries, the kinsmen in Mbanta condemn the new faith as
+                an abomination that lets a man abandon his father and his brothers. The grievance is
+                not theological in the abstract; it is the dissolution of kinship &mdash; the
+                church&rsquo;s offence to Igbo culture is that it lets a son walk away from his
+                father&rsquo;s compound, with Nwoye the immediate example. Given as paraphrase, not
+                direct quotation &mdash; check the wording against your edition.
+              </p>
+            </div>
 
             <QuoteCard
               quote="Living fire begets cold, impotent ash."
@@ -474,11 +489,19 @@ export default function ThingsFallApartPage() {
               analysis="Okonkwo&rsquo;s lament for his son. The metaphor is precise: he is the fire, Nwoye the ash. Note the gendered word &lsquo;impotent&rsquo;: the son&rsquo;s gentleness is read as failed manhood. The sentence is also self-condemning &mdash; a fire that produces only ash has produced nothing."
             />
 
-            <QuoteCard
-              quote="The story should not be told."
-              speaker="Narrator, on Okonkwo&rsquo;s suicide, chapter 25"
-              analysis="The clan refuses to handle the body: suicide is an offence to the Earth. The understatement is Achebe&rsquo;s. Compare it with the District Commissioner&rsquo;s contemporaneous reflection that the same death might make &lsquo;a reasonable paragraph&rsquo;. Two ways of telling the same end &mdash; one silent and ritual, one bureaucratic and dismissive. [VERIFY] exact phrasing."
-            />
+            <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
+              <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+                The clan and Okonkwo&rsquo;s body (chapter 25) &mdash; paraphrase
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                The clan will not touch or bury Okonkwo&rsquo;s body: suicide is an offence against
+                the Earth, and only strangers may handle him. Set this ritual refusal beside the
+                District Commissioner&rsquo;s contemporaneous thought that the same death might make
+                a reasonable paragraph &mdash; two ways of telling one end, one silent and ritual,
+                one bureaucratic and dismissive. Given as paraphrase, not direct quotation &mdash;
+                check the exact phrasing against your edition.
+              </p>
+            </div>
 
             <QuoteCard
               quote="The story of this man who had killed a messenger and hanged himself would make interesting reading. One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph, at any rate."
@@ -910,10 +933,10 @@ export default function ThingsFallApartPage() {
             Modern Classics; or your school&rsquo;s set edition).
           </p>
           <p className="mt-2">
-            <strong>[VERIFY] tags</strong> in the quotation list flag wording widely cited in this
-            form but worth checking against your school edition before quoting in an exam. Page
-            numbers are not given here because they vary between editions; chapter numbers are
-            stable across all Heinemann and Penguin printings since 1962.
+            <strong>Paraphrased items</strong> in the quotation list mark passages whose exact
+            wording could not be confirmed; check them against your school edition before quoting in
+            an exam. Page numbers are not given here because they vary between editions; chapter
+            numbers are stable across all Heinemann and Penguin printings since 1962.
           </p>
         </div>
       </div>

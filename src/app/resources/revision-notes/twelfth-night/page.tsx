@@ -374,8 +374,7 @@ export default function TwelfthNightPage() {
                       queer/devotional pain
                     </li>
                     <li>
-                      &bull; The twins meet &mdash; &ldquo;An apple cleft in two&rdquo; (Orsino)
-                      [VERIFY]
+                      &bull; The twins meet &mdash; &ldquo;An apple cleft in two&rdquo; (Antonio)
                     </li>
                     <li>
                       &bull; &ldquo;I am all the daughters of my father&apos;s house, And all the

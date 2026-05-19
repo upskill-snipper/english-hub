@@ -14,10 +14,14 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const beforeYouWereMinePOem: PoemData = {
   title: 'Before You Were Mine',
   poet: 'Carol Ann Duffy',
+  // NOTE: To avoid reproducing in-copyright text that could not be
+  // verified here, each line below is a paraphrased DESCRIPTION of what
+  // the poem does at that point, not the poem's wording. Restore exact
+  // lines only from a verified primary edition (see context note).
   lines: [
     // Stanza 1
     {
-      text: 'I\u2019m ten years away from the corner you laugh on',
+      text: 'Stanza 1, line 1 \u2014 the speaker places herself ten years before her own birth, picturing her mother laughing on a street corner.',
       annotations: [
         {
           type: 'Time shift',
@@ -27,17 +31,17 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'with your pals, Maggie McGeeney and Jean Duff.',
+      text: 'Line 2 \u2014 the mother is named alongside two friends, real young women from her own life.',
       annotations: [
         {
           type: 'Detail',
-          note: "Naming real friends grounds the poem in autobiographical specificity. These are real people from Duffy's mother's life, giving the poem documentary authenticity.",
+          note: "Naming real friends grounds the poem in autobiographical specificity. These are real people from the poet's mother's life, giving the poem documentary authenticity.",
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'The three of you bend from the waist, holding',
+      text: 'Line 3 \u2014 the three young women are pictured doubled over, helpless with laughter.',
       annotations: [
         {
           type: 'Visual imagery',
@@ -47,26 +51,26 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'each other, or your knees, and shriek at the pavement.',
+      text: 'Line 4 \u2014 their loud, unrestrained laughter is emphasised by a sharp verb of shrieking.',
       annotations: [
         {
           type: 'Verb choice',
-          note: '"Shriek" conveys uninhibited, wild laughter. The mother was loud, free, and unself-conscious \u2014 qualities the speaker associates with her pre-motherhood identity.',
+          note: 'The chosen verb conveys uninhibited, wild laughter. The mother was loud, free, and unself-conscious \u2014 qualities the speaker associates with her pre-motherhood identity.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'Your polka-dot dress blows round your legs. Marilyn.',
+      text: 'Line 5 \u2014 the mother\u2019s patterned dress lifts in the wind, and a one-word Marilyn Monroe allusion lands after a full stop.',
       annotations: [
         {
           type: 'Allusion',
-          note: '"Marilyn" references Marilyn Monroe\'s iconic scene of her dress blowing up. The mother is glamorous and sexy \u2014 an image that clashes with her later identity as "Mum".',
+          note: 'The Marilyn Monroe allusion recalls Monroe\u2019s iconic dress-blowing scene. The mother is glamorous and sexy \u2014 an image that clashes with her later identity as a parent.',
           color: '#ef4444',
         },
         {
           type: 'Caesura',
-          note: 'The full stop before "Marilyn" isolates the word, making it land with dramatic impact \u2014 a single-word sentence that transforms the mother into a movie star.',
+          note: 'The full stop isolates the single-word allusion, making it land with dramatic impact \u2014 a one-word sentence that transforms the mother into a movie star.',
           color: '#8b5cf6',
         },
       ],
@@ -75,56 +79,56 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 2
     {
-      text: 'I\u2019m not here yet. The thought of me doesn\u2019t occur',
+      text: 'Line 6 \u2014 the speaker notes she does not yet exist; the idea of her has not even crossed the mother\u2019s mind.',
       annotations: [
         {
           type: 'Possessive tone',
-          note: 'The speaker is almost jealous of this time when her mother existed without her. "The thought of me doesn\'t occur" emphasises the mother\'s total freedom from parental responsibility.',
+          note: 'The speaker is almost jealous of this time when her mother existed without her. The line stresses the mother\u2019s total freedom from parental responsibility.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'in the ballroom with the thousand eyes, the fizzy, movie tomorrows',
+      text: 'Line 7 \u2014 a crowded, glittering dancehall is evoked, with the mother\u2019s future imagined as bright and effervescent.',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Thousand eyes" evokes a glittering dancehall \u2014 disco balls, admiring gazes. "Fizzy" suggests excitement, champagne, effervescence. The mother\'s youth is intoxicating.',
+          note: 'The dancehall imagery evokes admiring gazes and a glittering room; the effervescent description suggests excitement and champagne-like energy. The mother\u2019s youth is intoxicating.',
           color: '#10b981',
         },
         {
           type: 'Metaphor',
-          note: '"Movie tomorrows" suggests her future seemed glamorous and full of possibility, like a film. Motherhood was not the script she imagined.',
+          note: 'The cinematic image of her future suggests it seemed glamorous and full of possibility, like a film. Motherhood was not the script she imagined.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'the right walk home could bring. I\u2019m the spark',
+      text: 'Line 8 \u2014 the sentence enjambs into an image of the speaker as the catalyst of conception.',
       annotations: [
         {
           type: 'Enjambment',
-          note: "\"I'm the spark\" runs across the stanza, connecting the mother's romantic youth to the speaker's own conception. The line break creates a momentary shock.",
+          note: 'The clause runs across the stanza, connecting the mother\u2019s romantic youth to the speaker\u2019s own conception. The line break creates a momentary shock.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'that changed your life. Not the angel you\u2019d think of',
+      text: 'Line 9 \u2014 the speaker says she changed the mother\u2019s life, while rejecting the sentimental idea of a baby as an angel.',
       annotations: [
         {
           type: 'Self-awareness',
-          note: 'The speaker acknowledges she "changed" her mother\'s life \u2014 not necessarily for the better. She rejects the sentimental image of a baby as an "angel".',
+          note: 'The speaker acknowledges she changed her mother\u2019s life \u2014 not necessarily for the better. She rejects the sentimental image of a baby as an angel.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'if you\u2019d looked up from your arms\u2019 content.',
+      text: 'Line 10 \u2014 the mother is pictured looking down at a child in her arms rather than outward at the world.',
       annotations: [
         {
           type: 'Ambiguity',
-          note: '"Arms\' content" could mean the content of her arms (a baby) or the contentment her arms feel. Either way, the mother is absorbed in caring for the child, looking down rather than outward.',
+          note: 'The phrase about her arms is doubled in sense \u2014 both the child held in them and the contentment she feels. Either way, the mother is absorbed in caring for the child, looking down rather than outward.',
           color: '#f59e0b',
         },
       ],
@@ -133,41 +137,41 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 3
     {
-      text: 'Even then I wanted the bold girl winking in Portobello,',
+      text: 'Line 11 \u2014 the speaker says that even before her birth she wanted this bold, flirtatious version of her mother.',
       annotations: [
         {
           type: 'Possessive language',
-          note: '"I wanted" is controlling and acquisitive. The speaker claims desire for a version of her mother that existed before her \u2014 as though the mother belongs to her in every era.',
+          note: 'The verb of wanting is controlling and acquisitive. The speaker claims desire for a version of her mother that existed before her \u2014 as though the mother belongs to her in every era.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'somewhere in Italy, with a handful of paper roses.',
+      text: 'Line 12 \u2014 the mother is placed in a glamorous setting holding artificial paper roses.',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Paper roses" are artificial \u2014 beautiful but not real. This hints that the speaker\'s vision of her mother\'s past may be romanticised and constructed from imagination rather than memory.',
+          note: 'The paper roses are artificial \u2014 beautiful but not real. This hints that the speaker\u2019s vision of her mother\u2019s past may be romanticised and constructed from imagination rather than memory.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'The street you\u2019re walking with the confidence of a woman',
+      text: 'Line 13 \u2014 the mother is described walking with the self-assurance of a grown, independent woman.',
       annotations: [
         {
           type: 'Characterisation',
-          note: 'The mother walks with "confidence" \u2014 she is self-assured, independent, and free. This is a woman who has not yet been defined by motherhood.',
+          note: 'The mother walks with confidence \u2014 she is self-assured, independent, and free. This is a woman who has not yet been defined by motherhood.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'should be under my feet. I\u2019d like to be there.',
+      text: 'Line 14 \u2014 the speaker insists that street should belong to her and wishes she could be present in it.',
       annotations: [
         {
           type: 'Possessive language',
-          note: '"Under my feet" and "I\'d like to be there" express a desire to own, occupy, and control her mother\'s past. The speaker wants to be present in every moment of her mother\'s life.',
+          note: 'The desire to have her mother\u2019s past under her own feet, and to be there, expresses a wish to own, occupy, and control it. The speaker wants to be present in every moment of her mother\u2019s life.',
           color: '#ec4899',
         },
       ],
@@ -176,17 +180,17 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 4
     {
-      text: 'You reckon it\u2019s the dress, after a late night,',
+      text: 'Line 16 \u2014 the voice shifts to a remembered mother-daughter exchange about the dress, in a casual, conversational register.',
       annotations: [
         {
           type: 'Colloquial tone',
-          note: '"Reckon" is informal and conversational, suggesting a real mother-daughter exchange. The tone shifts to warmth and intimacy.',
+          note: 'The informal, conversational diction suggests a real mother-daughter exchange. The tone shifts to warmth and intimacy.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'you\u2019d dress up in for the walk from the station.',
+      text: 'Line 17 \u2014 the mother dresses up specially even for the short walk from the station.',
       annotations: [
         {
           type: 'Detail',
@@ -196,56 +200,56 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'I\u2019m her. I\u2019m the cha-cha-cha on the marble stair.',
+      text: 'Line 18 \u2014 the speaker identifies completely with her mother and recalls being taught to dance on a marble stair.',
       annotations: [
         {
           type: 'Identification',
-          note: '"I\'m her" \u2014 the speaker identifies completely with her mother, claiming her identity. The cha-cha-cha is a dance of joy and freedom that the mother taught the speaker.',
+          note: 'The speaker states she IS her mother, identifying completely and claiming her identity. The dance is one of joy and freedom that the mother taught the speaker.',
           color: '#ec4899',
         },
         {
           type: 'Sound',
-          note: '"Cha-cha-cha" is onomatopoeic and rhythmic, evoking the sound of heels on marble stairs. It brings the memory alive through sound.',
+          note: 'The name of the dance is onomatopoeic and rhythmic, evoking the sound of heels on marble stairs. It brings the memory alive through sound.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'You sparkle and waltz and laugh and clatter and blow.',
+      text: 'Line 19 \u2014 a breathless run of five linked verbs captures the mother sparkling, dancing, laughing and moving.',
       annotations: [
         {
           type: 'Polysyndeton',
-          note: 'The repeated "and" creates a breathless, excited list. Each verb captures a different facet of the mother\'s vitality \u2014 she is dazzling, joyful, and alive.',
+          note: 'The repeated conjunction creates a breathless, excited list. Each verb captures a different facet of the mother\u2019s vitality \u2014 she is dazzling, joyful, and alive.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'I stamped my feet on that glamorous street.',
+      text: 'Line 20 \u2014 the speaker, as a demanding child, stamps her feet on the street she romanticises as glamorous.',
       annotations: [
         {
           type: 'Possessive language',
-          note: '"Stamped my feet" suggests a child\'s tantrum \u2014 demanding attention, demanding ownership. The speaker claims her mother\'s glamorous past as her own territory.',
+          note: 'The stamping-feet image suggests a child\u2019s tantrum \u2014 demanding attention, demanding ownership. The speaker claims her mother\u2019s glamorous past as her own territory.',
           color: '#ec4899',
         },
         {
           type: 'Rhyme',
-          note: '"Feet" and "street" create an internal rhyme that ties the speaker physically to her mother\'s world, anchoring her in the glamorous past.',
+          note: 'The internal rhyme on this line ties the speaker physically to her mother\u2019s world, anchoring her in the romanticised past.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'I\u2019m her. Your ghost. The one who changed your life.',
+      text: 'Line 21 \u2014 the speaker calls herself her mother\u2019s ghost and again the one who changed her life, closing the poem.',
       annotations: [
         {
           type: 'Role reversal',
-          note: "The speaker calls herself her mother's \"ghost\" \u2014 reversing expectations. Usually it is the dead who haunt the living, but here the unborn child haunts the mother's past. Motherhood is framed as a kind of death of the mother's former self.",
+          note: 'The speaker calls herself her mother\u2019s ghost \u2014 reversing expectations. Usually it is the dead who haunt the living, but here the unborn child haunts the mother\u2019s past. Motherhood is framed as a kind of death of the mother\u2019s former self.',
           color: '#ef4444',
         },
         {
           type: 'Repetition',
-          note: '"I\'m her" and "changed your life" are repeated from earlier, creating a cyclical structure. The poem ends where it conceptually began \u2014 with possession and transformation.',
+          note: 'The self-identification and the idea of changing the mother\u2019s life are repeated from earlier, creating a cyclical structure. The poem ends where it conceptually began \u2014 with possession and transformation.',
           color: '#f59e0b',
         },
       ],
@@ -254,56 +258,63 @@ const beforeYouWereMinePOem: PoemData = {
 
   context:
     '<p><strong>Carol Ann Duffy (b. 1955)</strong> is a Scottish poet who served as Poet Laureate of the United Kingdom from 2009 to 2019 \u2014 the first woman and first openly LGBTQ+ person to hold the role. Her poetry often explores themes of identity, love, and the lives of women.</p>' +
-    '<p><strong>"Before You Were Mine"</strong> was published in <em>Mean Time</em> (1993). The poem is addressed to Duffy\'s mother, imagining her life as a young, glamorous woman in 1950s Glasgow before she became a parent.</p>' +
+    "<p><strong>Before You Were Mine</strong> was published in <em>Mean Time</em> (1993). The poem is addressed to Duffy's mother, imagining her life as a young, glamorous woman in 1950s Glasgow before she became a parent.</p>" +
     "<p>The poem is inspired by <strong>a photograph</strong> of Duffy's mother as a young woman, laughing with friends. Duffy has said the photo made her realise her mother had a whole life and identity before motherhood.</p>" +
-    '<p>The title <strong>"Before You Were Mine"</strong> reverses the expected parent-child dynamic. Usually a parent might say "before you were born"; instead, Duffy says "before you were <em>mine</em>" \u2014 possessively claiming ownership of her mother.</p>' +
-    '<p>The poem raises questions about <strong>how motherhood changes identity</strong>, whether children have the right to claim their parents, and how we romanticise the past through photographs and imagination.</p>',
+    '<p>The title reverses the expected parent-child dynamic: rather than a parent saying a child was born, the daughter possessively frames a time before her mother was <em>hers</em> \u2014 claiming ownership of her mother.</p>' +
+    '<p>The poem raises questions about <strong>how motherhood changes identity</strong>, whether children have the right to claim their parents, and how we romanticise the past through photographs and imagination.</p>' +
+    "<p><em>Editorial note: the poem's wording is described here in paraphrase rather than quoted. The exact lines could not be verified in this environment and Duffy's work is in copyright \u2014 check all quotations against the AQA Love &amp; Relationships anthology or a named primary edition (Carol Ann Duffy, <em>Mean Time</em>, Anvil Press, 1993) before using them in teaching or assessment.</em></p>",
 
   contextAr:
     '<p><strong>Carol Ann Duffy (\u0645\u0648\u0627\u0644\u064a\u062f 1955)</strong> \u0634\u0627\u0639\u0631\u0629 \u0627\u0633\u0643\u062a\u0644\u0646\u062f\u064a\u0629\u060c \u0634\u063a\u0644\u062a \u0645\u0646\u0635\u0628 Poet Laureate \u0641\u064a \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u0645\u0646 2009 \u0644\u064a\u0646 2019 \u2014 \u0648\u0643\u0627\u0646\u062a \u0623\u0648\u0644 \u0627\u0645\u0631\u0623\u0629 \u0648\u0623\u0648\u0644 \u0634\u062e\u0635 \u0645\u0639\u0644\u0646 \u0625\u0646\u0647 LGBTQ+ \u064a\u062d\u0645\u0644 \u0627\u0644\u0644\u0642\u0628. \u0634\u0639\u0631\u0647\u0627 \u0639\u0627\u062f\u0629 \u064a\u0641\u062a\u062d \u0645\u0648\u0627\u0636\u064a\u0639 \u0627\u0644\u0647\u0648\u064a\u0629\u060c \u0648\u0627\u0644\u062d\u0628\u060c \u0648\u062d\u064a\u0627\u0629 \u0627\u0644\u0646\u0633\u0627\u0621.</p>' +
-    '<p>\u0642\u0635\u064a\u062f\u0629 <strong>"Before You Were Mine"</strong> \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u0645\u062c\u0645\u0648\u0639\u0629 <em>Mean Time</em> (1993). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0623\u0645 Duffy\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062a\u062e\u064a\u0651\u0644 \u062d\u064a\u0627\u062a\u0647\u0627 \u0648\u0647\u064a \u0634\u0627\u0628\u0629 \u0628\u0631\u0627\u0642\u0629 \u0641\u064a Glasgow \u0641\u064a \u0627\u0644\u062e\u0645\u0633\u064a\u0646\u0627\u062a\u060c \u0642\u0628\u0644 \u0645\u0627 \u062a\u0635\u064a\u0631 \u0623\u0645.</p>' +
+    '<p>\u0642\u0635\u064a\u062f\u0629 <strong>Before You Were Mine</strong> \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u0645\u062c\u0645\u0648\u0639\u0629 <em>Mean Time</em> (1993). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0623\u0645 Duffy\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062a\u062e\u064a\u0651\u0644 \u062d\u064a\u0627\u062a\u0647\u0627 \u0648\u0647\u064a \u0634\u0627\u0628\u0629 \u0628\u0631\u0627\u0642\u0629 \u0641\u064a Glasgow \u0641\u064a \u0627\u0644\u062e\u0645\u0633\u064a\u0646\u0627\u062a\u060c \u0642\u0628\u0644 \u0645\u0627 \u062a\u0635\u064a\u0631 \u0623\u0645.</p>' +
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0633\u062a\u0648\u062d\u0627\u0629 \u0645\u0646 <strong>\u0635\u0648\u0631\u0629 \u0641\u0648\u062a\u0648\u063a\u0631\u0627\u0641\u064a\u0629</strong> \u0644\u0623\u0645 Duffy \u0648\u0647\u064a \u0634\u0627\u0628\u0629 \u062a\u0636\u062d\u0643 \u0645\u0639 \u0635\u062f\u064a\u0642\u0627\u062a\u0647\u0627. Duffy \u0642\u0627\u0644\u062a \u0625\u0646 \u0627\u0644\u0635\u0648\u0631\u0629 \u0647\u064a \u0627\u0644\u0644\u064a \u062e\u0644\u0651\u062a\u0647\u0627 \u062a\u0646\u062a\u0628\u0647 \u0625\u0646 \u0623\u0645\u0647\u0627 \u0639\u0627\u0634\u062a \u062d\u064a\u0627\u0629 \u0643\u0627\u0645\u0644\u0629 \u0648\u0643\u0627\u0646\u062a \u0644\u0647\u0627 \u0647\u0648\u064a\u0629 \u0645\u0633\u062a\u0642\u0644\u0651\u0629 \u0642\u0628\u0644 \u0627\u0644\u0623\u0645\u0648\u0645\u0629.</p>' +
-    '<p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 <strong>"Before You Were Mine"</strong> \u064a\u0642\u0644\u0628 \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0645\u062a\u0648\u0642\u0651\u0639\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0628\u0646\u062a\u0647\u0627. \u0639\u0627\u062f\u0629 \u0627\u0644\u0623\u0645 \u0627\u0644\u0644\u064a \u062a\u0642\u0648\u0644 "\u0642\u0628\u0644 \u0645\u0627 \u062a\u0648\u0644\u062f\u064a\u0646"\u061b \u0628\u0633 \u0647\u0646\u0627 Duffy \u062a\u0642\u0648\u0644 "\u0642\u0628\u0644 \u0645\u0627 \u062a\u0643\u0648\u0646\u064a\u0646 <em>\u0644\u064a</em>" \u2014 \u0648\u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0623\u0645\u0647\u0627 \u0628\u0646\u0628\u0631\u0629 \u0645\u0633\u062a\u062d\u0648\u0630\u0629.</p>' +
-    '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0637\u0631\u062d \u0623\u0633\u0626\u0644\u0629 \u0639\u0646 <strong>\u0643\u064a\u0641 \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u062a\u063a\u064a\u0651\u0631 \u0627\u0644\u0647\u0648\u064a\u0629</strong>\u060c \u0648\u0647\u0644 \u0645\u0646 \u062d\u0642 \u0627\u0644\u0623\u0628\u0646\u0627\u0621 \u064a\u062f\u0651\u0639\u0648\u0646 \u0645\u0644\u0643\u064a\u0629 \u0648\u0627\u0644\u062f\u064a\u0647\u0645\u060c \u0648\u0643\u064a\u0641 \u0646\u062d\u0646 \u0646\u0631\u0648\u0645\u0646\u0633 \u0627\u0644\u0645\u0627\u0636\u064a \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u0635\u0648\u0631 \u0648\u0627\u0644\u062e\u064a\u0627\u0644.</p>',
+    '<p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0642\u0644\u0628 \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0645\u062a\u0648\u0642\u0651\u0639\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0628\u0646\u062a\u0647\u0627: \u0628\u062f\u0644 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0643\u0644\u0627\u0645 \u0623\u0645 \u0639\u0646 \u0648\u0644\u0627\u062f\u0629 \u0637\u0641\u0644\u0647\u0627\u060c \u0627\u0644\u0628\u0646\u062a \u0628\u0646\u0628\u0631\u0629 \u0645\u0633\u062a\u062d\u0648\u0630\u0629 \u062a\u062a\u0635\u0648\u0651\u0631 \u0632\u0645\u0646 \u0642\u0628\u0644 \u0645\u0627 \u062a\u0643\u0648\u0646 \u0623\u0645\u0647\u0627 <em>\u0644\u0647\u0627</em> \u2014 \u0648\u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0623\u0645\u0647\u0627.</p>' +
+    '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0637\u0631\u062d \u0623\u0633\u0626\u0644\u0629 \u0639\u0646 <strong>\u0643\u064a\u0641 \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u062a\u063a\u064a\u0651\u0631 \u0627\u0644\u0647\u0648\u064a\u0629</strong>\u060c \u0648\u0647\u0644 \u0645\u0646 \u062d\u0642 \u0627\u0644\u0623\u0628\u0646\u0627\u0621 \u064a\u062f\u0651\u0639\u0648\u0646 \u0645\u0644\u0643\u064a\u0629 \u0648\u0627\u0644\u062f\u064a\u0647\u0645\u060c \u0648\u0643\u064a\u0641 \u0646\u062d\u0646 \u0646\u0631\u0648\u0645\u0646\u0633 \u0627\u0644\u0645\u0627\u0636\u064a \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u0635\u0648\u0631 \u0648\u0627\u0644\u062e\u064a\u0627\u0644.</p>' +
+    '<p><em>\u0645\u0644\u0627\u062d\u0638\u0629 \u062a\u062d\u0631\u064a\u0631\u064a\u0629: \u0646\u0635 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0647\u0646\u0627 \u0645\u0648\u0635\u0648\u0641 \u0628\u0625\u0639\u0627\u062f\u0629 \u0635\u064a\u0627\u063a\u0629 \u0648\u0644\u064a\u0633 \u0645\u0642\u062a\u0628\u0633 \u062d\u0631\u0641\u064a\u0627\u064b. \u0645\u0627 \u0623\u0645\u0643\u0646 \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0627\u0644\u0623\u0635\u0644\u064a\u0629 \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u0628\u064a\u0626\u0629\u060c \u0648\u0623\u0639\u0645\u0627\u0644 Duffy \u0645\u062d\u0645\u064a\u0629 \u0628\u062d\u0642\u0648\u0642 \u0646\u0634\u0631 \u2014 \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0643\u0644 \u0627\u0642\u062a\u0628\u0627\u0633 \u0645\u0642\u0627\u0628\u0644 \u0623\u0646\u062b\u0648\u0644\u0648\u062c\u064a\u0627 AQA \u0644\u0645\u062d\u0648\u0631 \u0627\u0644\u062d\u0628 \u0648\u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0623\u0648 \u0637\u0628\u0639\u0629 \u0623\u0635\u0644\u064a\u0629 \u0645\u062d\u062f\u062f\u0629 (Carol Ann Duffy, <em>Mean Time</em>, Anvil Press, 1993) \u0642\u0628\u0644 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647 \u0641\u064a \u0627\u0644\u062a\u062f\u0631\u064a\u0633 \u0623\u0648 \u0627\u0644\u062a\u0642\u064a\u064a\u0645.</em></p>',
 
   summary:
     "Stanza 1 (lines 1\u20135): The speaker imagines her mother ten years before she was born, laughing with friends on a street corner. Her dress blows like Marilyn Monroe's \u2014 she is young, glamorous, and free.\n\n" +
-    'Stanza 2 (lines 6\u201310): The mother dances in ballrooms with "fizzy, movie tomorrows" ahead of her. The speaker acknowledges she is "the spark that changed your life" \u2014 she is aware that her birth ended her mother\'s carefree youth.\n\n' +
+    "Stanza 2 (lines 6\u201310): The mother dances in ballrooms with an effervescent, cinematic future imagined ahead of her. The speaker acknowledges she was the catalyst that changed her mother's life \u2014 she is aware that her birth ended her mother's carefree youth.\n\n" +
     "Stanza 3 (lines 11\u201315): The speaker expresses desire to occupy her mother's past \u2014 to walk those same streets, to claim that confidence. The possessive language intensifies.\n\n" +
-    'Stanza 4 (lines 16\u201320): The poem shifts to childhood memories: the mother\'s dress, teaching the speaker to dance. The final line \u2014 "Your ghost. The one who changed your life" \u2014 frames the speaker as haunting her mother\'s former self.',
+    "Stanza 4 (lines 16\u201320): The poem shifts to childhood memories: the mother's dress, teaching the speaker to dance. The final line frames the speaker as her mother's ghost, haunting her former self.",
 
   summaryAr:
     '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0623\u0648\u0644 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 1\u20135): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062a\u062e\u064a\u0651\u0644 \u0623\u0645\u0647\u0627 \u0642\u0628\u0644 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0628\u0639\u0634\u0631 \u0633\u0646\u064a\u0646\u060c \u0648\u0647\u064a \u062a\u0636\u062d\u0643 \u0645\u0639 \u0635\u062f\u064a\u0642\u0627\u062a\u0647\u0627 \u0639\u0644\u0649 \u0631\u0643\u0646 \u0634\u0627\u0631\u0639. \u0641\u0633\u062a\u0627\u0646 \u0623\u0645\u0647\u0627 \u064a\u0637\u064a\u0631 \u0645\u062b\u0644 \u0641\u0633\u062a\u0627\u0646 Marilyn Monroe \u2014 \u0647\u064a \u0634\u0627\u0628\u0629\u060c \u0628\u0631\u0627\u0642\u0629\u060c \u0648\u062d\u0631\u0651\u0629.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 6\u201310): \u0627\u0644\u0623\u0645 \u062a\u0631\u0642\u0635 \u0641\u064a \u0642\u0627\u0639\u0627\u062a \u0627\u0644\u0631\u0642\u0635 \u0648"fizzy, movie tomorrows" \u0642\u062f\u0651\u0627\u0645\u0647\u0627. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0639\u062a\u0631\u0641 \u0625\u0646\u0647\u0627 \u0647\u064a "the spark that changed your life" \u2014 \u062a\u0639\u0631\u0641 \u0625\u0646 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0647\u064a \u0627\u0644\u0644\u064a \u0623\u0646\u0647\u062a \u0634\u0628\u0627\u0628 \u0623\u0645\u0647\u0627 \u0627\u0644\u062e\u0627\u0644\u064a \u0645\u0646 \u0627\u0644\u0647\u0645\u0648\u0645.\n\n' +
+    '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 6\u201310): \u0627\u0644\u0623\u0645 \u062a\u0631\u0642\u0635 \u0641\u064a \u0642\u0627\u0639\u0627\u062a \u0627\u0644\u0631\u0642\u0635 \u0648\u0645\u0633\u062a\u0642\u0628\u0644 \u0641\u0642\u0651\u0627\u0639\u064a \u0633\u064a\u0646\u0645\u0627\u0626\u064a \u0645\u062a\u062e\u064a\u064e\u0651\u0644 \u0642\u062f\u0651\u0627\u0645\u0647\u0627. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0639\u062a\u0631\u0641 \u0625\u0646\u0647\u0627 \u0643\u0627\u0646\u062a \u0627\u0644\u0645\u062d\u0641\u0651\u0632 \u0627\u0644\u0644\u064a \u063a\u064a\u0651\u0631 \u062d\u064a\u0627\u0629 \u0623\u0645\u0647\u0627 \u2014 \u062a\u0639\u0631\u0641 \u0625\u0646 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0647\u064a \u0627\u0644\u0644\u064a \u0623\u0646\u0647\u062a \u0634\u0628\u0627\u0628 \u0623\u0645\u0647\u0627 \u0627\u0644\u062e\u0627\u0644\u064a \u0645\u0646 \u0627\u0644\u0647\u0645\u0648\u0645.\n\n' +
     '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0644\u062b (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 11\u201315): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0639\u0628\u0651\u0631 \u0639\u0646 \u0631\u063a\u0628\u0629 \u062a\u062d\u062a\u0644 \u0645\u0627\u0636\u064a \u0623\u0645\u0647\u0627 \u2014 \u062a\u0645\u0634\u064a \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0634\u0648\u0627\u0631\u0639\u060c \u0648\u062a\u062f\u0651\u0639\u064a \u0646\u0641\u0633 \u0627\u0644\u062b\u0642\u0629. \u0644\u063a\u0629 \u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u062a\u0634\u062a\u062f \u0641\u064a \u0647\u0627\u0644\u0645\u0642\u0637\u0639.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0631\u0627\u0628\u0639 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 16\u201320): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0642\u0644 \u0644\u0630\u0643\u0631\u064a\u0627\u062a \u0627\u0644\u0637\u0641\u0648\u0644\u0629: \u0641\u0633\u062a\u0627\u0646 \u0627\u0644\u0623\u0645\u060c \u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0627\u0644\u0631\u0642\u0635. \u0648\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u2014 "Your ghost. The one who changed your life" \u2014 \u064a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0643\u0623\u0646\u0647\u0627 \u0634\u0628\u062d \u064a\u0637\u0627\u0631\u062f \u0630\u0627\u062a \u0623\u0645\u0647\u0627 \u0627\u0644\u0633\u0627\u0628\u0642\u0629.',
+    '\u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0631\u0627\u0628\u0639 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 16\u201320): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0642\u0644 \u0644\u0630\u0643\u0631\u064a\u0627\u062a \u0627\u0644\u0637\u0641\u0648\u0644\u0629: \u0641\u0633\u062a\u0627\u0646 \u0627\u0644\u0623\u0645\u060c \u062a\u0639\u0644\u064a\u0645 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0627\u0644\u0631\u0642\u0635. \u0648\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u064a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0643\u0623\u0646\u0647\u0627 \u0634\u0628\u062d \u0623\u0645\u0647\u0627 \u064a\u0637\u0627\u0631\u062f \u0630\u0627\u062a\u0647\u0627 \u0627\u0644\u0633\u0627\u0628\u0642\u0629.',
 
   formAndStructure:
     'Form: Four quintains (five-line stanzas), giving the poem a regular, balanced structure that contrasts with the messy emotional content of nostalgia and possession.\n\n' +
-    'Present tense about the past: Duffy uses present tense ("I\'m ten years away", "your polka-dot dress blows") to describe events that happened before she was born. This makes the past feel vivid and immediate, as though the speaker is actually there \u2014 an act of imaginative possession.\n\n' +
-    'Possessive language: The title itself ("Before You Were Mine") establishes a possessive dynamic. "Mine" recurs implicitly throughout \u2014 "I wanted", "I\'d like to be there", "I stamped my feet". The mother is treated as belonging to the speaker.\n\n' +
-    'Direct address: The poem is addressed to "you" (the mother) throughout, creating an intimate, confrontational tone \u2014 almost like an accusation of having had a life before the speaker existed.\n\n' +
-    'Cyclical structure: "I\'m her" and "the one who changed your life" appear in the second stanza and return in the final line, creating a circular structure that traps the mother in the speaker\'s possessive gaze.\n\n' +
+    'Present tense about the past: Duffy uses the present tense to describe events that happened before she was born. This makes the past feel vivid and immediate, as though the speaker is actually there \u2014 an act of imaginative possession.\n\n' +
+    "Possessive language: The title itself establishes a possessive dynamic. The idea of the mother as the speaker's own recurs implicitly throughout \u2014 in verbs of wanting, wishing to be present, and a child's demanding gestures. The mother is treated as belonging to the speaker.\n\n" +
+    'Direct address: The poem is addressed to the mother throughout, creating an intimate, confrontational tone \u2014 almost like an accusation of having had a life before the speaker existed.\n\n' +
+    "Cyclical structure: The speaker's self-identification with her mother and the idea of having changed her life appear in the second stanza and return in the final line, creating a circular structure that traps the mother in the speaker's possessive gaze.\n\n" +
     'Enjambment: Lines flow into each other, particularly between stanzas, reflecting the blurring of past and present, memory and imagination.\n\n' +
     'Contrast: The poem constantly contrasts the mother\'s glamorous youth with the implied domesticity of motherhood. The "before" is dazzling; the "after" is largely absent.',
 
   formAndStructureAr:
     '\u0627\u0644\u0634\u0643\u0644 (Form): \u0623\u0631\u0628\u0639\u0629 quintain (\u0645\u0642\u0627\u0637\u0639 \u0645\u0646 \u062e\u0645\u0633\u0629 \u0623\u0628\u064a\u0627\u062a)\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0646\u064a\u0629 \u0645\u0646\u062a\u0638\u0645\u0629 \u0648\u0645\u062a\u0648\u0627\u0632\u0646\u0629\u060c \u062a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0627\u0644\u0641\u0648\u0636\u0649 \u0627\u0644\u0639\u0627\u0637\u0641\u064a\u0629 \u0644\u0644\u062d\u0646\u064a\u0646 \u0648\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630.\n\n' +
-    '\u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u0644\u0644\u062d\u062f\u064a\u062b \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a: Duffy \u062a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 ("I\'m ten years away"\u060c "your polka-dot dress blows") \u0639\u0634\u0627\u0646 \u062a\u0648\u0635\u0641 \u0623\u062d\u062f\u0627\u062b \u0635\u0627\u0631\u062a \u0642\u0628\u0644 \u0648\u0644\u0627\u062f\u062a\u0647\u0627. \u0647\u0627\u0644\u0634\u064a \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0645\u0627\u0636\u064a \u064a\u062d\u0633 \u0628\u0647 \u0627\u0644\u0642\u0627\u0631\u0626 \u0643\u0623\u0646\u0647 \u062d\u064a\u0651 \u0648\u0645\u0628\u0627\u0634\u0631\u060c \u0643\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0641\u0639\u0644\u0627\u064b \u0645\u0648\u062c\u0648\u062f\u0629 \u0647\u0646\u0627\u0643 \u2014 \u0648\u0647\u0630\u0627 \u0641\u0639\u0644 \u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u0628\u0627\u0644\u062e\u064a\u0627\u0644.\n\n' +
-    '\u0644\u063a\u0629 \u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 (Possessive language): \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0646\u0641\u0633\u0647 ("Before You Were Mine") \u064a\u0623\u0633\u0651\u0633 \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062d\u0648\u0630\u0629. \u0643\u0644\u0645\u0629 "Mine" \u062a\u062a\u0643\u0631\u0631 \u0636\u0645\u0646\u064a\u0627\u064b \u0641\u064a \u0643\u0644 \u0645\u0643\u0627\u0646 \u2014 "I wanted"\u060c "I\'d like to be there"\u060c "I stamped my feet". \u0627\u0644\u0623\u0645 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0643\u0623\u0646\u0647\u0627 \u0645\u0644\u0643 \u0644\u0647\u0627.\n\n' +
-    '\u0627\u0644\u062e\u0637\u0627\u0628 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 (Direct address): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0640"you" (\u0627\u0644\u0623\u0645)\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0646\u0628\u0631\u0629 \u062d\u0645\u064a\u0645\u0629 \u0648\u0645\u0648\u0627\u062c\u0647\u0629 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u2014 \u062a\u0642\u0631\u064a\u0628\u0627\u064b \u0645\u062b\u0644 \u0627\u062a\u0647\u0627\u0645 \u0644\u0623\u0645\u0647\u0627 \u0625\u0646\u0647\u0627 \u0639\u0627\u0634\u062a \u062d\u064a\u0627\u0629 \u0642\u0628\u0644 \u0645\u0627 \u062a\u0648\u062c\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629.\n\n' +
-    '\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062f\u0627\u0626\u0631\u064a\u0629 (Cyclical structure): \u0639\u0628\u0627\u0631\u0629 "I\'m her" \u0648\u0639\u0628\u0627\u0631\u0629 "the one who changed your life" \u062a\u0637\u0644\u0639 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u062a\u0631\u062c\u0639 \u0641\u064a \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0628\u0646\u064a\u0629 \u062f\u0627\u0626\u0631\u064a\u0629 \u062a\u062d\u0628\u0633 \u0627\u0644\u0623\u0645 \u0641\u064a \u0646\u0638\u0631\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0627\u0644\u0645\u0633\u062a\u062d\u0648\u0630\u0629.\n\n' +
+    '\u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u0644\u0644\u062d\u062f\u064a\u062b \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a: Duffy \u062a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u0639\u0634\u0627\u0646 \u062a\u0648\u0635\u0641 \u0623\u062d\u062f\u0627\u062b \u0635\u0627\u0631\u062a \u0642\u0628\u0644 \u0648\u0644\u0627\u062f\u062a\u0647\u0627. \u0647\u0627\u0644\u0634\u064a \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0645\u0627\u0636\u064a \u064a\u062d\u0633 \u0628\u0647 \u0627\u0644\u0642\u0627\u0631\u0626 \u0643\u0623\u0646\u0647 \u062d\u064a\u0651 \u0648\u0645\u0628\u0627\u0634\u0631\u060c \u0643\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0641\u0639\u0644\u0627\u064b \u0645\u0648\u062c\u0648\u062f\u0629 \u0647\u0646\u0627\u0643 \u2014 \u0648\u0647\u0630\u0627 \u0641\u0639\u0644 \u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u0628\u0627\u0644\u062e\u064a\u0627\u0644.\n\n' +
+    '\u0644\u063a\u0629 \u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 (Possessive language): \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0646\u0641\u0633\u0647 \u064a\u0623\u0633\u0651\u0633 \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u062d\u0648\u0630\u0629. \u0641\u0643\u0631\u0629 \u0625\u0646 \u0627\u0644\u0623\u0645 \u0645\u0644\u0643 \u0644\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062a\u0643\u0631\u0631 \u0636\u0645\u0646\u064a\u0627\u064b \u0641\u064a \u0643\u0644 \u0645\u0643\u0627\u0646 \u2014 \u0641\u064a \u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u0631\u063a\u0628\u0629\u060c \u0648\u062a\u0645\u0646\u0651\u064a \u0627\u0644\u062d\u0636\u0648\u0631\u060c \u0648\u062d\u0631\u0643\u0627\u062a \u0627\u0644\u0637\u0641\u0644\u0629 \u0627\u0644\u0645\u0637\u0627\u0644\u0650\u0628\u0629. \u0627\u0644\u0623\u0645 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0643\u0623\u0646\u0647\u0627 \u0645\u0644\u0643 \u0644\u0647\u0627.\n\n' +
+    '\u0627\u0644\u062e\u0637\u0627\u0628 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 (Direct address): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0644\u0623\u0645\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0646\u0628\u0631\u0629 \u062d\u0645\u064a\u0645\u0629 \u0648\u0645\u0648\u0627\u062c\u0647\u0629 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u2014 \u062a\u0642\u0631\u064a\u0628\u0627\u064b \u0645\u062b\u0644 \u0627\u062a\u0647\u0627\u0645 \u0644\u0623\u0645\u0647\u0627 \u0625\u0646\u0647\u0627 \u0639\u0627\u0634\u062a \u062d\u064a\u0627\u0629 \u0642\u0628\u0644 \u0645\u0627 \u062a\u0648\u062c\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629.\n\n' +
+    '\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062f\u0627\u0626\u0631\u064a\u0629 (Cyclical structure): \u062a\u0645\u0627\u0647\u064a \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0645\u0639 \u0623\u0645\u0647\u0627 \u0648\u0641\u0643\u0631\u0629 \u0625\u0646\u0647\u0627 \u063a\u064a\u0651\u0631\u062a \u062d\u064a\u0627\u062a\u0647\u0627 \u064a\u0637\u0644\u0639\u0648\u0646 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a \u0648\u064a\u0631\u062c\u0639\u0648\u0646 \u0641\u064a \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0628\u0646\u064a\u0629 \u062f\u0627\u0626\u0631\u064a\u0629 \u062a\u062d\u0628\u0633 \u0627\u0644\u0623\u0645 \u0641\u064a \u0646\u0638\u0631\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0627\u0644\u0645\u0633\u062a\u062d\u0648\u0630\u0629.\n\n' +
     'Enjambment: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0645\u0646 \u0648\u0627\u062d\u062f \u0644\u0644\u062b\u0627\u0646\u064a\u060c \u062e\u0635\u0648\u0635\u0627\u064b \u0628\u064a\u0646 \u0627\u0644\u0645\u0642\u0627\u0637\u0639\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0643\u0633 \u0627\u0644\u062a\u062f\u0627\u062e\u0644 \u0628\u064a\u0646 \u0627\u0644\u0645\u0627\u0636\u064a \u0648\u0627\u0644\u062d\u0627\u0636\u0631\u060c \u0648\u0628\u064a\u0646 \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0648\u0627\u0644\u062e\u064a\u0627\u0644.\n\n' +
     '\u0627\u0644\u062a\u0636\u0627\u062f (Contrast): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0637\u0648\u0644 \u0627\u0644\u0648\u0642\u062a \u062a\u0636\u0639 \u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0645 \u0627\u0644\u0628\u0631\u0651\u0627\u0642 \u0645\u0642\u0627\u0628\u0644 \u0627\u0644\u062c\u0648 \u0627\u0644\u0645\u0646\u0632\u0644\u064a \u0627\u0644\u0636\u0645\u0646\u064a \u0644\u0644\u0623\u0645\u0648\u0645\u0629. \u0627\u0644\u0640"before" (\u0642\u0628\u0644) \u0645\u062a\u0644\u0623\u0644\u0626\u061b \u0623\u0645\u0627 \u0627\u0644\u0640"after" (\u0628\u0639\u062f) \u0641\u064a\u0643\u0627\u062f \u064a\u0643\u0648\u0646 \u063a\u0627\u064a\u0628 \u062a\u0645\u0627\u0645\u0627\u064b.',
 
+  // NOTE: the `quote` field is rendered by the viewer wrapped in
+  // quotation marks. Because Duffy's exact wording could not be
+  // verified here, each entry references the poem's MOMENT/feature in
+  // paraphrase (not its words). Replace with verified quotations from a
+  // primary edition before relying on these for assessment.
   keyQuotes: [
     {
-      quote: 'Before You Were Mine',
+      quote: 'The title (possessive framing of the mother)',
       analysis:
-        'The title reverses parental possession. Instead of "before you were born", Duffy says "before you were mine" \u2014 claiming ownership of her mother. It frames the mother-daughter relationship as one of belonging and control.',
+        'The title reverses parental possession: rather than a parent marking a child\u2019s birth, the daughter claims a time before her mother belonged to her \u2014 asserting ownership. It frames the mother-daughter relationship as one of belonging and control. Check the exact title and wording against a primary edition.',
       themes: ['Love', 'Possession', 'Family'],
       analysisAr:
-        '\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0642\u0644\u0628 \u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u0627\u0644\u0623\u0628\u0648\u064a. \u0628\u062f\u0644 \u0645\u0627 \u062a\u0642\u0648\u0644 "\u0642\u0628\u0644 \u0645\u0627 \u062a\u0648\u0644\u062f\u064a\u0646"\u060c Duffy \u062a\u0642\u0648\u0644 "before you were mine" \u2014 \u0648\u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0623\u0645\u0647\u0627. \u0648\u0647\u0630\u0627 \u064a\u0635\u0646\u0651\u0641 \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0628\u0646\u062a\u0647\u0627 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0639\u0644\u0627\u0642\u0629 \u0627\u0646\u062a\u0645\u0627\u0621 \u0648\u0633\u064a\u0637\u0631\u0629.',
+        '\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0642\u0644\u0628 \u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630 \u0627\u0644\u0623\u0628\u0648\u064a: \u0628\u062f\u0644 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0643\u0644\u0627\u0645 \u0623\u0645 \u0639\u0646 \u0648\u0644\u0627\u062f\u0629 \u0637\u0641\u0644\u0647\u0627\u060c \u0627\u0644\u0628\u0646\u062a \u062a\u062f\u0651\u0639\u064a \u0632\u0645\u0646 \u0642\u0628\u0644 \u0645\u0627 \u062a\u0643\u0648\u0646 \u0623\u0645\u0647\u0627 \u0644\u0647\u0627 \u2014 \u0648\u062a\u062b\u0628\u0651\u062a \u0627\u0644\u0645\u0644\u0643\u064a\u0629. \u0648\u0647\u0630\u0627 \u064a\u0635\u0646\u0651\u0641 \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0627\u0646\u062a\u0645\u0627\u0621 \u0648\u0633\u064a\u0637\u0631\u0629. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0627\u0644\u0646\u0635 \u0627\u0644\u0623\u0635\u0644\u064a \u0645\u0646 \u0637\u0628\u0639\u0629 \u0645\u0648\u062b\u0648\u0642\u0629.',
       themesAr: [
         '\u0627\u0644\u062d\u0628',
         '\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630',
@@ -311,12 +322,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'Your polka-dot dress blows round your legs. Marilyn.',
+      quote: 'Stanza 1 \u2014 the dress and the Marilyn Monroe allusion',
       analysis:
-        'The allusion to Marilyn Monroe transforms the mother into a glamorous icon. The caesura before "Marilyn" makes the comparison land with dramatic force. The mother is sexy, confident, and admired.',
+        'The Marilyn Monroe allusion transforms the mother into a glamorous icon, and a full stop isolates it for dramatic force. The mother is presented as confident, attractive, and admired. Verify the exact line before quoting.',
       themes: ['Youth', 'Glamour', 'Identity'],
       analysisAr:
-        '\u0627\u0644\u0640allusion \u0625\u0644\u0649 Marilyn Monroe \u062a\u062d\u0648\u0651\u0644 \u0627\u0644\u0623\u0645 \u0625\u0644\u0649 \u0623\u064a\u0642\u0648\u0646\u0629 \u0628\u0631\u0651\u0627\u0642\u0629. \u0648\u0627\u0644\u0640caesura \u0642\u0628\u0644 \u0643\u0644\u0645\u0629 "Marilyn" \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629 \u062a\u0646\u0632\u0644 \u0628\u062b\u0642\u0644 \u062f\u0631\u0627\u0645\u064a. \u0627\u0644\u0623\u0645 \u0645\u063a\u0631\u064a\u0629\u060c \u0648\u0627\u062b\u0642\u0629\u060c \u0648\u0645\u062b\u0627\u0631 \u0625\u0639\u062c\u0627\u0628.',
+        '\u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 Marilyn Monroe \u062a\u062d\u0648\u0651\u0644 \u0627\u0644\u0623\u0645 \u0625\u0644\u0649 \u0623\u064a\u0642\u0648\u0646\u0629 \u0628\u0631\u0651\u0627\u0642\u0629\u060c \u0648\u0646\u0642\u0637\u0629 \u062a\u0639\u0632\u0644\u0647\u0627 \u0628\u062b\u0642\u0644 \u062f\u0631\u0627\u0645\u064a. \u0627\u0644\u0623\u0645 \u0645\u0639\u0631\u0648\u0636\u0629 \u0643\u0648\u0627\u062b\u0642\u0629\u060c \u062c\u0630\u0651\u0627\u0628\u0629\u060c \u0648\u0645\u062b\u0627\u0631 \u0625\u0639\u062c\u0627\u0628. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0627\u0644\u0628\u064a\u062a \u0642\u0628\u0644 \u0627\u0642\u062a\u0628\u0627\u0633\u0647.',
       themesAr: [
         '\u0627\u0644\u0634\u0628\u0627\u0628',
         '\u0627\u0644\u0628\u0631\u064a\u0642',
@@ -324,12 +335,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'the fizzy, movie tomorrows',
+      quote: 'Stanza 2 \u2014 the effervescent, cinematic future',
       analysis:
-        '"Fizzy" suggests champagne, excitement, and effervescence. "Movie tomorrows" implies a future that seemed glamorous and cinematic. Motherhood was not the script the mother imagined for herself.',
+        'The mother\u2019s future is imagined as effervescent (champagne-like excitement) and cinematic (glamorous, like a film). Motherhood was not the script the mother imagined for herself. Confirm wording against a primary edition.',
       themes: ['Youth', 'Nostalgia', 'Lost Potential'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "fizzy" \u062a\u0648\u062d\u064a \u0628\u0640champagne\u060c \u0627\u0644\u062d\u0645\u0627\u0633\u060c \u0648\u0627\u0644\u0641\u0642\u0627\u0639\u0627\u062a. \u0648\u0639\u0628\u0627\u0631\u0629 "movie tomorrows" \u062a\u0644\u0645\u0651\u062d \u0644\u0645\u0633\u062a\u0642\u0628\u0644 \u0643\u0627\u0646 \u0634\u0643\u0644\u0647 \u0628\u0631\u0651\u0627\u0642 \u0648\u0633\u064a\u0646\u0645\u0627\u0626\u064a. \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u0645\u0627 \u0643\u0627\u0646\u062a \u0627\u0644\u0633\u064a\u0646\u0627\u0631\u064a\u0648 \u0627\u0644\u0644\u064a \u062a\u062e\u064a\u0651\u0644\u062a\u0647 \u0627\u0644\u0623\u0645 \u0644\u0646\u0641\u0633\u0647\u0627.',
+        '\u0645\u0633\u062a\u0642\u0628\u0644 \u0627\u0644\u0623\u0645 \u0645\u062a\u062e\u064a\u064e\u0651\u0644 \u0643\u0641\u0642\u0651\u0627\u0639\u064a (\u062d\u0645\u0627\u0633 \u0634\u0628\u0647 champagne) \u0648\u0633\u064a\u0646\u0645\u0627\u0626\u064a (\u0628\u0631\u0651\u0627\u0642 \u0645\u062b\u0644 \u0641\u064a\u0644\u0645). \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u0645\u0627 \u0643\u0627\u0646\u062a \u0627\u0644\u0633\u064a\u0646\u0627\u0631\u064a\u0648 \u0627\u0644\u0644\u064a \u062a\u062e\u064a\u0651\u0644\u062a\u0647 \u0644\u0646\u0641\u0633\u0647\u0627. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u0623\u0643\u0651\u062f \u0645\u0646 \u0627\u0644\u0646\u0635 \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0635\u0644\u064a\u0629.',
       themesAr: [
         '\u0627\u0644\u0634\u0628\u0627\u0628',
         '\u0627\u0644\u062d\u0646\u064a\u0646',
@@ -337,12 +348,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'I\u2019m the spark that changed your life',
+      quote: 'Stanza 2 \u2014 the speaker as the catalyst that changed the mother',
       analysis:
-        '"Spark" could mean a small flame (conception) or a catalyst for transformation. "Changed" is deliberately ambiguous \u2014 it does not say "improved". The speaker acknowledges that her birth was a turning point that ended her mother\'s freedom.',
+        'The speaker describes herself as a spark/catalyst, and the verb of change is deliberately ambiguous \u2014 it does not say improved. The speaker acknowledges her birth was a turning point that ended her mother\u2019s freedom. Quote only from a verified text.',
       themes: ['Family', 'Change', 'Guilt'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "spark" \u062a\u062d\u062a\u0645\u0644 \u0645\u0639\u0646\u064a\u064a\u0646: \u0634\u0639\u0644\u0629 \u0635\u063a\u064a\u0631\u0629 (\u0644\u062d\u0638\u0629 \u0627\u0644\u062d\u0645\u0644) \u0623\u0648 \u0645\u062d\u0641\u0651\u0632 \u0644\u0644\u062a\u062d\u0648\u0651\u0644. \u0648\u0643\u0644\u0645\u0629 "changed" \u063a\u0627\u0645\u0636\u0629 \u0639\u0646 \u0642\u0635\u062f \u2014 \u0647\u064a \u0645\u0627 \u0642\u0627\u0644\u062a "improved" (\u062d\u0633\u0651\u0646\u062a). \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0639\u062a\u0631\u0641 \u0625\u0646 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0643\u0627\u0646\u062a \u0646\u0642\u0637\u0629 \u062a\u062d\u0648\u0651\u0644 \u0623\u0646\u0647\u062a \u062d\u0631\u0651\u064a\u0629 \u0623\u0645\u0647\u0627.',
+        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0635\u0641 \u0646\u0641\u0633\u0647\u0627 \u0643\u0634\u0631\u0627\u0631\u0629/\u0645\u062d\u0641\u0651\u0632\u060c \u0648\u0641\u0639\u0644 \u0627\u0644\u062a\u063a\u064a\u064a\u0631 \u063a\u0627\u0645\u0636 \u0639\u0646 \u0642\u0635\u062f \u2014 \u0645\u0627 \u0642\u0627\u0644 \u00ab\u062a\u062d\u0633\u0651\u0646\u00bb. \u062a\u0639\u062a\u0631\u0641 \u0625\u0646 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0646\u0642\u0637\u0629 \u062a\u062d\u0648\u0651\u0644 \u0623\u0646\u0647\u062a \u062d\u0631\u0651\u064a\u0629 \u0623\u0645\u0647\u0627. \u0644\u0627 \u062a\u064f\u0642\u062a\u0628\u0633 \u0625\u0644\u0627 \u0645\u0646 \u0646\u0635 \u0645\u0648\u062b\u0651\u0642.',
       themesAr: [
         '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
         '\u0627\u0644\u062a\u063a\u064a\u064a\u0631',
@@ -350,12 +361,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'Even then I wanted the bold girl winking in Portobello',
+      quote: 'Stanza 3 \u2014 wanting the bold, flirtatious mother',
       analysis:
-        '"Even then" stretches the speaker\'s desire impossibly back before her own birth. "Bold" and "winking" characterise the mother as confident and flirtatious \u2014 a woman the speaker admires and envies.',
+        'The speaker stretches her desire impossibly back to before her own birth, characterising the young mother as confident and flirtatious \u2014 a woman she both admires and envies. Verify the exact phrasing before use.',
       themes: ['Possession', 'Nostalgia', 'Admiration'],
       analysisAr:
-        '\u0639\u0628\u0627\u0631\u0629 "even then" \u062a\u0645\u062f\u0651 \u0631\u063a\u0628\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0644\u0648\u0631\u0627 \u0628\u0634\u0643\u0644 \u0645\u0633\u062a\u062d\u064a\u0644\u060c \u0644\u064a\u0646 \u0642\u0628\u0644 \u0648\u0644\u0627\u062f\u062a\u0647\u0627 \u0647\u064a \u0646\u0641\u0633\u0647\u0627. \u0648\u0643\u0644\u0645\u062a\u064a "bold" \u0648"winking" \u064a\u0635\u0648\u0651\u0631\u0648\u0646 \u0627\u0644\u0623\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0648\u0627\u062b\u0642\u0629 \u0648\u063a\u0646\u062f\u0648\u0631\u0629 \u2014 \u0627\u0645\u0631\u0623\u0629 \u062a\u0639\u062c\u0628 \u0641\u064a\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u062a\u062d\u0633\u062f\u0647\u0627.',
+        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0645\u062f\u0651 \u0631\u063a\u0628\u062a\u0647\u0627 \u0644\u0648\u0631\u0627 \u0628\u0634\u0643\u0644 \u0645\u0633\u062a\u062d\u064a\u0644 \u0644\u064a\u0646 \u0642\u0628\u0644 \u0648\u0644\u0627\u062f\u062a\u0647\u0627\u060c \u0648\u062a\u0635\u0648\u0651\u0631 \u0627\u0644\u0623\u0645 \u0627\u0644\u0634\u0627\u0628\u0629 \u0643\u0648\u0627\u062b\u0642\u0629 \u0648\u063a\u0646\u062f\u0648\u0631\u0629 \u2014 \u0627\u0645\u0631\u0623\u0629 \u062a\u0639\u062c\u0628 \u0641\u064a\u0647\u0627 \u0648\u062a\u062d\u0633\u062f\u0647\u0627. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0627\u0644\u0635\u064a\u0627\u063a\u0629 \u0642\u0628\u0644 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645.',
       themesAr: [
         '\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630',
         '\u0627\u0644\u062d\u0646\u064a\u0646',
@@ -363,12 +374,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'I stamped my feet on that glamorous street',
+      quote: 'Stanza 4 \u2014 the child stamping on the romanticised street',
       analysis:
-        'A child stamping her feet demands attention and claims territory. The speaker asserts her presence in her mother\'s past, refusing to let it exist without her. "Glamorous" shows she romanticises this world.',
+        'A child stamping her feet demands attention and claims territory. The speaker asserts her presence in her mother\u2019s past, refusing to let it exist without her, and romanticises that world as glamorous. Check the line against a primary edition.',
       themes: ['Possession', 'Childhood', 'Nostalgia'],
       analysisAr:
-        '\u0627\u0644\u0628\u0646\u062a \u0627\u0644\u0644\u064a \u062a\u062f\u0642\u0651 \u0628\u0631\u062c\u0648\u0644\u0647\u0627 \u062a\u0637\u0627\u0644\u0628 \u0628\u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647 \u0648\u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0644\u0644\u0645\u0643\u0627\u0646. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062b\u0628\u0651\u062a \u062d\u0636\u0648\u0631\u0647\u0627 \u0641\u064a \u0645\u0627\u0636\u064a \u0623\u0645\u0647\u0627\u060c \u0648\u062a\u0631\u0641\u0636 \u0625\u0646 \u0647\u0627\u0644\u0645\u0627\u0636\u064a \u064a\u0643\u0648\u0646 \u0645\u0648\u062c\u0648\u062f \u0628\u062f\u0648\u0646\u0647\u0627. \u0648\u0643\u0644\u0645\u0629 "glamorous" \u062a\u0628\u064a\u0651\u0646 \u0625\u0646\u0647\u0627 \u062a\u0631\u0648\u0645\u0646\u0633 \u0647\u0627\u0644\u0639\u0627\u0644\u0645.',
+        '\u0627\u0644\u0637\u0641\u0644\u0629 \u0627\u0644\u0644\u064a \u062a\u062f\u0642\u0651 \u0628\u0631\u062c\u0648\u0644\u0647\u0627 \u062a\u0637\u0627\u0644\u0628 \u0628\u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647 \u0648\u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0627\u0644\u0645\u0643\u0627\u0646. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062b\u0628\u0651\u062a \u062d\u0636\u0648\u0631\u0647\u0627 \u0641\u064a \u0645\u0627\u0636\u064a \u0623\u0645\u0647\u0627 \u0648\u062a\u0631\u0641\u0636 \u0648\u062c\u0648\u062f\u0647 \u0628\u062f\u0648\u0646\u0647\u0627\u060c \u0648\u062a\u0631\u0648\u0645\u0646\u0633 \u0647\u0627\u0644\u0639\u0627\u0644\u0645 \u0643\u0623\u0646\u0647 \u0628\u0631\u0651\u0627\u0642. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0627\u0644\u0628\u064a\u062a \u0645\u0646 \u0637\u0628\u0639\u0629 \u0623\u0635\u0644\u064a\u0629.',
       themesAr: [
         '\u0627\u0644\u0627\u0633\u062a\u062d\u0648\u0627\u0630',
         '\u0627\u0644\u0637\u0641\u0648\u0644\u0629',
@@ -376,12 +387,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'You sparkle and waltz and laugh and clatter and blow',
+      quote: 'Stanza 4 \u2014 the breathless run of five verbs',
       analysis:
-        'Five verbs connected by "and" create a breathless, energetic list. Each verb captures a different quality: light, grace, joy, noise, movement. The mother is overwhelmingly alive.',
+        'A list of five verbs joined by repeated conjunctions creates a breathless, energetic rhythm, each capturing a different quality: light, grace, joy, noise, movement. The mother is overwhelmingly alive. Confirm the verbs against a verified text.',
       themes: ['Youth', 'Vitality', 'Joy'],
       analysisAr:
-        '\u062e\u0645\u0633 \u0623\u0641\u0639\u0627\u0644 \u0645\u0648\u0635\u0648\u0644\u0627\u062a \u0628\u0640"and" \u064a\u0635\u0646\u0639\u0648\u0646 \u0642\u0627\u0626\u0645\u0629 \u0644\u0627\u0647\u062b\u0629 \u0648\u0645\u062a\u062d\u0645\u0651\u0633\u0629. \u0643\u0644 \u0641\u0639\u0644 \u064a\u0644\u062a\u0642\u0637 \u0635\u0641\u0629 \u0645\u062e\u062a\u0644\u0641\u0629: \u0636\u0648\u0621\u060c \u0631\u0634\u0627\u0642\u0629\u060c \u0641\u0631\u062d\u060c \u0636\u062c\u064a\u062c\u060c \u062d\u0631\u0643\u0629. \u0627\u0644\u0623\u0645 \u062d\u064a\u0651\u0629 \u0644\u062f\u0631\u062c\u0629 \u0637\u0627\u063a\u064a\u0629.',
+        '\u0642\u0627\u0626\u0645\u0629 \u0645\u0646 \u062e\u0645\u0633 \u0623\u0641\u0639\u0627\u0644 \u0645\u0648\u0635\u0648\u0644\u0629 \u0628\u0623\u062f\u0648\u0627\u062a \u0631\u0628\u0637 \u0645\u062a\u0643\u0631\u0651\u0631\u0629 \u062a\u0635\u0646\u0639 \u0625\u064a\u0642\u0627\u0639\u0627\u064b \u0644\u0627\u0647\u062b\u0627\u064b \u0645\u062a\u062d\u0645\u0651\u0633\u0627\u064b\u060c \u0643\u0644 \u0641\u0639\u0644 \u064a\u0644\u062a\u0642\u0637 \u0635\u0641\u0629: \u0636\u0648\u0621\u060c \u0631\u0634\u0627\u0642\u0629\u060c \u0641\u0631\u062d\u060c \u0636\u062c\u064a\u062c\u060c \u062d\u0631\u0643\u0629. \u0627\u0644\u0623\u0645 \u062d\u064a\u0651\u0629 \u0644\u062f\u0631\u062c\u0629 \u0637\u0627\u063a\u064a\u0629. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u0623\u0643\u0651\u062f \u0645\u0646 \u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0645\u0646 \u0646\u0635 \u0645\u0648\u062b\u0651\u0642.',
       themesAr: [
         '\u0627\u0644\u0634\u0628\u0627\u0628',
         '\u0627\u0644\u062d\u064a\u0648\u064a\u0629',
@@ -389,12 +400,12 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      quote: 'Your ghost. The one who changed your life.',
+      quote: 'Stanza 4 \u2014 the closing ghost image',
       analysis:
-        'The speaker calls herself her mother\'s "ghost", inverting the haunting metaphor. The unborn child haunts the mother\'s past, suggesting motherhood killed the mother\'s former identity. "Changed your life" is repeated from stanza 2, closing the cycle.',
+        'The speaker calls herself her mother\u2019s ghost, inverting the haunting metaphor: the unborn child haunts the mother\u2019s past, suggesting motherhood ended the mother\u2019s former identity. The idea of having changed the mother\u2019s life recurs from stanza 2, closing the cycle. Verify the final line before quoting.',
       themes: ['Loss', 'Identity', 'Family'],
       analysisAr:
-        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0633\u0645\u0651\u064a \u0646\u0641\u0633\u0647\u0627 "\u0634\u0628\u062d" \u0623\u0645\u0647\u0627\u060c \u0648\u062a\u0642\u0644\u0628 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0640haunting. \u0627\u0644\u0637\u0641\u0644\u0629 \u0627\u0644\u0644\u064a \u0645\u0627 \u0648\u0644\u062f\u062a \u0628\u0639\u062f \u062a\u0637\u0627\u0631\u062f \u0645\u0627\u0636\u064a \u0623\u0645\u0647\u0627\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u0642\u062a\u0644\u062a \u0647\u0648\u064a\u0629 \u0627\u0644\u0623\u0645 \u0627\u0644\u0633\u0627\u0628\u0642\u0629. \u0648\u0639\u0628\u0627\u0631\u0629 "changed your life" \u062a\u062a\u0643\u0631\u0631 \u0645\u0646 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0639\u0634\u0627\u0646 \u062a\u0642\u0641\u0644 \u0627\u0644\u062f\u0627\u0626\u0631\u0629.',
+        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u0633\u0645\u0651\u064a \u0646\u0641\u0633\u0647\u0627 \u0634\u0628\u062d \u0623\u0645\u0647\u0627\u060c \u0648\u062a\u0642\u0644\u0628 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0645\u0637\u0627\u0631\u062f\u0629: \u0627\u0644\u0637\u0641\u0644\u0629 \u0627\u0644\u0644\u064a \u0645\u0627 \u0648\u0644\u062f\u062a \u0628\u0639\u062f \u062a\u0637\u0627\u0631\u062f \u0645\u0627\u0636\u064a \u0623\u0645\u0647\u0627\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0623\u0645\u0648\u0645\u0629 \u0623\u0646\u0647\u062a \u0647\u0648\u064a\u0629 \u0627\u0644\u0623\u0645 \u0627\u0644\u0633\u0627\u0628\u0642\u0629. \u0641\u0643\u0631\u0629 \u062a\u063a\u064a\u064a\u0631 \u062d\u064a\u0627\u0629 \u0627\u0644\u0623\u0645 \u062a\u0631\u062c\u0639 \u0645\u0646 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0639\u0634\u0627\u0646 \u062a\u0642\u0641\u0644 \u0627\u0644\u062f\u0627\u0626\u0631\u0629. \u0644\u0627\u0632\u0645 \u064a\u064f\u062a\u062d\u0642\u0651\u0642 \u0645\u0646 \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u0642\u0628\u0644 \u0627\u0642\u062a\u0628\u0627\u0633\u0647.',
       themesAr: [
         '\u0627\u0644\u0641\u0642\u062f',
         '\u0627\u0644\u0647\u0648\u064a\u0629',
@@ -403,28 +414,32 @@ const beforeYouWereMinePOem: PoemData = {
     },
   ],
 
+  // NOTE: the `example` field is rendered wrapped in quotation marks
+  // by the viewer. To avoid presenting unverified Duffy wording as a
+  // verbatim quotation, `example` names the FEATURE/location, not the
+  // poem's words. Substitute verified quotations from a primary edition.
   languageDevices: [
     {
       device: 'Allusion',
-      example: 'Marilyn',
+      example: 'Marilyn Monroe reference, stanza 1',
       effect:
-        'The reference to Marilyn Monroe casts the mother as a glamorous, desirable icon. It elevates her from an ordinary woman to a cultural figure, emphasising what was lost when she became "just" a mother.',
+        'The reference to Marilyn Monroe casts the mother as a glamorous, desirable icon. It elevates her from an ordinary woman to a cultural figure, emphasising what was lost when she became a mother.',
       lineRef: 4,
       effectAr:
-        '\u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 Marilyn Monroe \u062a\u0631\u0633\u0645 \u0627\u0644\u0623\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0623\u064a\u0642\u0648\u0646\u0629 \u0628\u0631\u0651\u0627\u0642\u0629 \u0648\u0645\u0631\u063a\u0648\u0628\u0629. \u0648\u062a\u0631\u0641\u0639\u0647\u0627 \u0645\u0646 \u0627\u0645\u0631\u0623\u0629 \u0639\u0627\u062f\u064a\u0629 \u0625\u0644\u0649 \u0634\u062e\u0635\u064a\u0629 \u062b\u0642\u0627\u0641\u064a\u0629\u060c \u0639\u0634\u0627\u0646 \u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0627\u0644\u0644\u064a \u0641\u064f\u0642\u062f \u0644\u0645\u0646 \u0635\u0627\u0631\u062a "\u0645\u062c\u0631\u0651\u062f" \u0623\u0645.',
+        '\u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 Marilyn Monroe \u062a\u0631\u0633\u0645 \u0627\u0644\u0623\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0623\u064a\u0642\u0648\u0646\u0629 \u0628\u0631\u0651\u0627\u0642\u0629 \u0648\u0645\u0631\u063a\u0648\u0628\u0629. \u0648\u062a\u0631\u0641\u0639\u0647\u0627 \u0645\u0646 \u0627\u0645\u0631\u0623\u0629 \u0639\u0627\u062f\u064a\u0629 \u0625\u0644\u0649 \u0634\u062e\u0635\u064a\u0629 \u062b\u0642\u0627\u0641\u064a\u0629\u060c \u0639\u0634\u0627\u0646 \u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0627\u0644\u0644\u064a \u0641\u064f\u0642\u062f \u0644\u0645\u0646 \u0635\u0627\u0631\u062a \u0623\u0645.',
     },
     {
       device: 'Possessive language',
-      example: 'Before You Were Mine / I wanted / I stamped my feet',
+      example: 'title and recurring verbs of wanting/claiming',
       effect:
-        'The speaker repeatedly claims ownership of her mother. "Mine" in the title sets the tone for a poem that treats the mother as the speaker\'s possession \u2014 subverting the usual parent-child power dynamic.',
+        'The speaker repeatedly claims ownership of her mother. The possessive in the title sets the tone for a poem that treats the mother as the speaker\u2019s possession \u2014 subverting the usual parent-child power dynamic.',
       lineRef: 12,
       effectAr:
-        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0623\u0645\u0647\u0627 \u0645\u0631\u0651\u0629 \u0628\u0639\u062f \u0645\u0631\u0651\u0629. \u0643\u0644\u0645\u0629 "Mine" \u0641\u064a \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u062a\u0636\u0628\u0637 \u0646\u0628\u0631\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627: \u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639 \u0627\u0644\u0623\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0645\u0644\u0643 \u0644\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u2014 \u0648\u0647\u0630\u0627 \u064a\u0642\u0644\u0628 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u0639\u062a\u0627\u062f\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0628\u0646\u062a\u0647\u0627.',
+        '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062a\u062f\u0651\u0639\u064a \u0645\u0644\u0643\u064a\u0629 \u0623\u0645\u0647\u0627 \u0645\u0631\u0651\u0629 \u0628\u0639\u062f \u0645\u0631\u0651\u0629. \u0627\u0644\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u064f\u0644\u0643\u064a \u0641\u064a \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0636\u0628\u0637 \u0646\u0628\u0631\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627: \u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639 \u0627\u0644\u0623\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0645\u0644\u0643 \u0644\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u2014 \u0648\u0647\u0630\u0627 \u064a\u0642\u0644\u0628 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u0639\u062a\u0627\u062f\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0628\u0646\u062a\u0647\u0627.',
     },
     {
       device: 'Present tense',
-      example: 'your polka-dot dress blows / you sparkle and waltz',
+      example: 'present-tense verbs describing past events',
       effect:
         "Using present tense for past events makes the mother's youth feel vivid, immediate, and ongoing. The speaker imaginatively inserts herself into a past she never witnessed.",
       lineRef: 4,
@@ -433,25 +448,25 @@ const beforeYouWereMinePOem: PoemData = {
     },
     {
       device: 'Polysyndeton',
-      example: 'sparkle and waltz and laugh and clatter and blow',
+      example: 'the five linked verbs in stanza 4',
       effect:
-        'The repeated "and" creates a breathless, accelerating rhythm. The mother\'s energy seems unstoppable, each verb piling on another facet of her vitality.',
+        'The repeated conjunction creates a breathless, accelerating rhythm. The mother\u2019s energy seems unstoppable, each verb piling on another facet of her vitality.',
       lineRef: 19,
       effectAr:
-        '\u062a\u0643\u0631\u0627\u0631 "and" \u064a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u0644\u0627\u0647\u062b \u0648\u0645\u062a\u0633\u0627\u0631\u0639. \u0637\u0627\u0642\u0629 \u0627\u0644\u0623\u0645 \u062a\u0628\u0627\u0646 \u0643\u0623\u0646\u0647\u0627 \u0645\u0627 \u062a\u062a\u0648\u0642\u0651\u0641\u060c \u0648\u0643\u0644 \u0641\u0639\u0644 \u064a\u0636\u064a\u0641 \u0648\u062c\u0647 \u062b\u0627\u0646\u064a \u0645\u0646 \u062d\u064a\u0648\u064a\u062a\u0647\u0627.',
+        '\u062a\u0643\u0631\u0627\u0631 \u0623\u062f\u0627\u0629 \u0627\u0644\u0631\u0628\u0637 \u064a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u0644\u0627\u0647\u062b \u0648\u0645\u062a\u0633\u0627\u0631\u0639. \u0637\u0627\u0642\u0629 \u0627\u0644\u0623\u0645 \u062a\u0628\u0627\u0646 \u0643\u0623\u0646\u0647\u0627 \u0645\u0627 \u062a\u062a\u0648\u0642\u0651\u0641\u060c \u0648\u0643\u0644 \u0641\u0639\u0644 \u064a\u0636\u064a\u0641 \u0648\u062c\u0647 \u062b\u0627\u0646\u064a \u0645\u0646 \u062d\u064a\u0648\u064a\u062a\u0647\u0627.',
     },
     {
       device: 'Metaphor',
-      example: 'the fizzy, movie tomorrows',
+      example: 'the effervescent, cinematic future (stanza 2)',
       effect:
-        "The mother's future is described as fizzy (effervescent, intoxicating) and cinematic. This romanticised vision contrasts with the implied reality of domestic motherhood.",
+        "The mother's future is described as effervescent (intoxicating) and cinematic. This romanticised vision contrasts with the implied reality of domestic motherhood.",
       lineRef: 7,
       effectAr:
-        '\u0645\u0633\u062a\u0642\u0628\u0644 \u0627\u0644\u0623\u0645 \u0645\u0648\u0635\u0648\u0641 \u0639\u0644\u0649 \u0625\u0646\u0647 fizzy (\u0641\u0642\u0627\u0639\u064a \u0648\u0645\u064f\u0633\u0643\u0650\u0631) \u0648\u0633\u064a\u0646\u0645\u0627\u0626\u064a. \u0647\u0627\u0644\u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u0631\u0648\u0645\u0646\u0633\u0629 \u062a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0627\u0644\u0648\u0627\u0642\u0639 \u0627\u0644\u0636\u0645\u0646\u064a \u0644\u0644\u0623\u0645\u0648\u0645\u0629 \u0627\u0644\u0645\u0646\u0632\u0644\u064a\u0629.',
+        '\u0645\u0633\u062a\u0642\u0628\u0644 \u0627\u0644\u0623\u0645 \u0645\u0648\u0635\u0648\u0641 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0641\u0642\u0651\u0627\u0639\u064a (\u0645\u064f\u0633\u0643\u0650\u0631) \u0648\u0633\u064a\u0646\u0645\u0627\u0626\u064a. \u0647\u0627\u0644\u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u0631\u0648\u0645\u0646\u0633\u0629 \u062a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0627\u0644\u0648\u0627\u0642\u0639 \u0627\u0644\u0636\u0645\u0646\u064a \u0644\u0644\u0623\u0645\u0648\u0645\u0629 \u0627\u0644\u0645\u0646\u0632\u0644\u064a\u0629.',
     },
     {
       device: 'Role reversal',
-      example: 'Your ghost. The one who changed your life.',
+      example: 'the closing ghost image (stanza 4)',
       effect:
         "The speaker becomes the ghost, haunting her mother's past. This inverts the expected dynamic where the dead haunt the living, suggesting the unborn child's future existence cast a shadow backwards over the mother's youth.",
       lineRef: 21,
@@ -460,21 +475,21 @@ const beforeYouWereMinePOem: PoemData = {
     },
     {
       device: 'Caesura',
-      example: 'Your polka-dot dress blows round your legs. Marilyn.',
+      example: 'the full stop before the one-word allusion (stanza 1)',
       effect:
-        'The full stop isolates "Marilyn" as a one-word sentence, giving it cinematic impact. The pause forces the reader to linger on the comparison, transforming an ordinary detail into a glamorous allusion.',
+        'The full stop isolates the single-word allusion as a one-word sentence, giving it cinematic impact. The pause forces the reader to linger on the comparison, transforming an ordinary detail into a glamorous allusion.',
       lineRef: 4,
       effectAr:
-        '\u0627\u0644\u0646\u0642\u0637\u0629 \u062a\u0639\u0632\u0644 \u0643\u0644\u0645\u0629 "Marilyn" \u0643\u062c\u0645\u0644\u0629 \u0645\u0646 \u0643\u0644\u0645\u0629 \u0648\u0627\u062d\u062f\u0629\u060c \u0648\u062a\u0639\u0637\u064a\u0647\u0627 \u0623\u062b\u0631 \u0633\u064a\u0646\u0645\u0627\u0626\u064a. \u0627\u0644\u062a\u0648\u0642\u0651\u0641 \u064a\u062c\u0628\u0631 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0642\u0641 \u0639\u0646\u062f \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629\u060c \u0648\u064a\u062d\u0648\u0651\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u0639\u0627\u062f\u064a\u0629 \u0625\u0644\u0649 allusion \u0628\u0631\u0651\u0627\u0642\u0629.',
+        '\u0627\u0644\u0646\u0642\u0637\u0629 \u062a\u0639\u0632\u0644 \u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0627\u0644\u0645\u0643\u0648\u0651\u0646\u0629 \u0645\u0646 \u0643\u0644\u0645\u0629 \u0648\u0627\u062d\u062f\u0629 \u0643\u062c\u0645\u0644\u0629 \u0645\u0633\u062a\u0642\u0644\u0651\u0629\u060c \u0648\u062a\u0639\u0637\u064a\u0647\u0627 \u0623\u062b\u0631 \u0633\u064a\u0646\u0645\u0627\u0626\u064a. \u0627\u0644\u062a\u0648\u0642\u0651\u0641 \u064a\u062c\u0628\u0631 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0642\u0641 \u0639\u0646\u062f \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629\u060c \u0648\u064a\u062d\u0648\u0651\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u0639\u0627\u062f\u064a\u0629 \u0625\u0644\u0649 allusion \u0628\u0631\u0651\u0627\u0642\u0629.',
     },
     {
       device: 'Internal rhyme',
-      example: 'I stamped my feet on that glamorous street',
+      example: 'the feet/street rhyme in stanza 4',
       effect:
-        '"Feet" and "street" create a satisfying internal rhyme that ties the speaker physically to her mother\'s world. The rhyme also echoes the rhythm of stamping feet, reinforcing the childish demand for attention.',
+        'An internal rhyme on this line ties the speaker physically to her mother\u2019s world. The rhyme also echoes the rhythm of stamping feet, reinforcing the childish demand for attention.',
       lineRef: 20,
       effectAr:
-        '"Feet" \u0648"street" \u064a\u0635\u0646\u0639\u0648\u0646 internal rhyme \u0645\u0631\u0636\u064a\u060c \u064a\u0631\u0628\u0637 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062c\u0633\u062f\u064a\u0627\u064b \u0628\u0639\u0627\u0644\u0645 \u0623\u0645\u0647\u0627. \u0648\u0627\u0644\u0642\u0627\u0641\u064a\u0629 \u062a\u0635\u062f\u0651\u0649 \u0644\u0625\u064a\u0642\u0627\u0639 \u062f\u0642 \u0627\u0644\u0631\u062c\u0648\u0644\u064a\u0646 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u060c \u0641\u062a\u0642\u0648\u0651\u064a \u0645\u0637\u0627\u0644\u0628\u0629 \u0627\u0644\u0637\u0641\u0644\u0629 \u0628\u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647.',
+        '\u0642\u0627\u0641\u064a\u0629 \u062f\u0627\u062e\u0644\u064a\u0629 \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u0628\u064a\u062a \u062a\u0631\u0628\u0637 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 \u062c\u0633\u062f\u064a\u0627\u064b \u0628\u0639\u0627\u0644\u0645 \u0623\u0645\u0647\u0627. \u0648\u0627\u0644\u0642\u0627\u0641\u064a\u0629 \u062a\u0635\u062f\u0651\u0649 \u0644\u0625\u064a\u0642\u0627\u0639 \u062f\u0642 \u0627\u0644\u0631\u062c\u0648\u0644\u064a\u0646 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u060c \u0641\u062a\u0642\u0648\u0651\u064a \u0645\u0637\u0627\u0644\u0628\u0629 \u0627\u0644\u0637\u0641\u0644\u0629 \u0628\u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647.',
     },
   ],
 }
@@ -564,7 +579,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'bywm-6',
-    question: 'What does "even then I wanted the bold girl" suggest?',
+    question:
+      'In stanza 3 the speaker says she wanted the bold version of her mother even before her own birth. What does this suggest?',
     type: 'multiple-choice',
     options: [
       'The speaker wanted a sister',
@@ -662,9 +678,9 @@ const REVISION_TOPICS = [
       "Duffy uses glamorous imagery, pop culture references, sensory detail, and possessive language to recreate her mother's youth.",
     keyPoints: [
       'Marilyn Monroe comparison — the mother as glamorous icon',
-      '"Before you were mine" — possessive claim on the mother',
+      'The possessive title — a claim of ownership over the mother',
       'Dancing and laughing imagery — freedom and joy before motherhood',
-      '"Even then I wanted the bold girl" — love that transcends time',
+      'Wanting the bold young mother even before birth — love that transcends time',
     ],
   },
   {
