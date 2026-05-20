@@ -914,7 +914,7 @@ export default function FreeResourcesPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button render={<Link href="/auth/teacher-register" />} size="lg">
-              Start Your Free Month
+              Start Your Free Week
             </Button>
             <Button render={<Link href="/for-teachers" />} variant="outline" size="lg">
               See All Plans

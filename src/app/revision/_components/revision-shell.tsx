@@ -293,16 +293,40 @@ function NavLink({
     <Link
       href={item.href}
       onClick={onNavigate}
+      aria-current={isActive ? 'page' : undefined}
       className={cn(
-        'group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150',
+        'group relative flex items-center gap-2.5 rounded-lg pl-2.5 pr-2 py-1.5 text-sm font-medium transition-all duration-150',
         isActive
-          ? 'bg-primary/10 text-primary'
-          : 'text-muted-foreground hover:bg-accent hover:text-foreground',
+          ? 'bg-primary/10 text-foreground ring-1 ring-primary/20 shadow-sm shadow-primary/5'
+          : 'text-muted-foreground hover:bg-accent/60 hover:text-foreground',
       )}
     >
-      <item.icon className={cn('size-4 shrink-0', isActive ? 'text-primary' : item.colour)} />
-      <span className="flex-1">{navLabel(item, t)}</span>
-      {isActive && <ChevronRight className="size-3.5 text-primary" />}
+      {/* Active left-edge accent bar — subtler than a full background flood
+          and helps the eye scan-locate the current page in a long list. */}
+      {isActive && (
+        <span
+          aria-hidden="true"
+          className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
+        />
+      )}
+      {/* Icon tile — lifts every link into a uniform two-part composition
+          (tile + label) so the long list reads as a single column instead
+          of icon-text-icon-text noise. */}
+      <span
+        className={cn(
+          'flex size-7 shrink-0 items-center justify-center rounded-md transition-colors',
+          isActive ? 'bg-primary/15 ring-1 ring-primary/20' : 'bg-muted/30 group-hover:bg-accent',
+        )}
+      >
+        <item.icon
+          className={cn('size-3.5', isActive ? 'text-primary' : item.colour)}
+          aria-hidden="true"
+        />
+      </span>
+      <span className="flex-1 truncate">{navLabel(item, t)}</span>
+      {isActive && (
+        <ChevronRight aria-hidden="true" className="size-3.5 shrink-0 text-primary opacity-70" />
+      )}
     </Link>
   )
 }
@@ -367,46 +391,53 @@ function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-1">
-      {/* Board badge */}
-      {boardName && (
-        <div className="mb-3 flex items-center justify-between rounded-xl border border-primary/20 bg-primary/[0.05] px-3 py-2">
-          <span className="text-caption font-medium text-muted-foreground">
-            {t('revision.shell.exam_board_label')}
-          </span>
-          <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-            {boardName}
-          </Badge>
-        </div>
-      )}
+      {/* Status card — exam board + target-grade progress merged into a
+          single richer panel. Visually anchors the top of the sidebar so
+          the long nav list below feels organised rather than open-ended. */}
+      <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-primary/[0.07] blur-2xl"
+        />
+        <div className="relative">
+          {boardName && (
+            <div className="mb-3 flex items-center justify-between">
+              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {t('revision.shell.exam_board_label')}
+              </span>
+              <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
+                {boardName}
+              </Badge>
+            </div>
+          )}
 
-      {/* Grade progress bar — target grade + two grades below. The fill is
-          the student's weighted performance score (quiz_responses correct
-          rate + AIFeedback overallScore, server-aggregated at
-          /api/profile/grade-progress) mapped onto the target-grade
-          threshold. Until there's real data we fall back to a coverage
-          proxy (sections visited / total visible sections).  */}
-      <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
-        <div className="mb-2 flex items-center justify-between">
-          <span className="text-caption font-medium text-muted-foreground">
-            {t('revision.shell.target_grade_label')}
-          </span>
-          <span className="text-caption font-semibold text-primary">{labelRight}</span>
+          {/* Target-grade progress. Fill = student's weighted performance
+              score (quiz_responses correct rate + AIFeedback overallScore,
+              server-aggregated at /api/profile/grade-progress) mapped onto
+              the target-grade threshold. Falls back to a coverage proxy
+              (sections visited / total visible) until there's real data. */}
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+              {t('revision.shell.target_grade_label')}
+            </span>
+            <span className="font-heading text-base font-semibold text-primary">{labelRight}</span>
+          </div>
+          <Progress value={progress} className="mt-2">
+            <ProgressTrack className="h-2 bg-border/40">
+              <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
+            </ProgressTrack>
+          </Progress>
+          <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
+            <span>{labelLeft}</span>
+            <span>{labelMid}</span>
+            <span className="text-primary">{labelRight}</span>
+          </div>
+          {!hasData && (
+            <p className="mt-2 text-[10px] italic text-muted-foreground/70">
+              {t('revision.shell.progress_hint')}
+            </p>
+          )}
         </div>
-        <Progress value={progress}>
-          <ProgressTrack className="h-2 bg-border/40">
-            <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
-          </ProgressTrack>
-        </Progress>
-        <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
-          <span>{labelLeft}</span>
-          <span>{labelMid}</span>
-          <span className="text-primary">{labelRight}</span>
-        </div>
-        {!hasData && (
-          <p className="mt-2 text-[10px] text-muted-foreground/70 italic">
-            {t('revision.shell.progress_hint')}
-          </p>
-        )}
       </div>
 
       {/* Top-tier nav — always-visible essentials (Your Hub, Full Dashboard,
@@ -429,17 +460,27 @@ function SidebarNav({
       {GROUPS.map(({ key, label }) => {
         const items = groupedItems[key]
         if (items.length === 0) return null
+        const open = groupIsActive(key)
         return (
           <details
             key={key}
-            open={groupIsActive(key)}
-            className="mt-3 [&[open]>summary>svg.group-chevron]:rotate-90"
+            open={open}
+            className="mt-2.5 [&[open]>summary>svg.group-chevron]:rotate-90"
           >
-            <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 font-mono text-[10px] tracking-[0.14em] text-muted-foreground uppercase transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-              <ChevronRight className="group-chevron size-3 shrink-0 transition-transform duration-150" />
+            <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
+              <ChevronRight
+                aria-hidden="true"
+                className="group-chevron size-3 shrink-0 transition-transform duration-150"
+              />
               <span className="flex-1">{label}</span>
+              <span
+                aria-hidden="true"
+                className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground/80"
+              >
+                {items.length}
+              </span>
             </summary>
-            <div className="mt-1 ml-1 flex flex-col gap-0.5">
+            <div className="mt-1 flex flex-col gap-0.5">
               {items.map((item) => (
                 <NavLink
                   key={item.href}
@@ -535,10 +576,22 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <div className="flex gap-8">
         {/* ── Desktop sidebar ──────────────────────────────────────── */}
-        <aside className="hidden w-56 shrink-0 lg:block">
-          <div className="sticky top-24">
-            <div className="mb-4 flex items-center gap-2">
-              <GraduationCap className="size-5 text-primary" />
+        {/* Widened from w-56 to w-64 to give the polished status card +
+            grouped nav comfortable breathing room. The sticky inner
+            container has its own scroll: `max-h-[calc(100vh-7rem)]` +
+            `overflow-y-auto` so a long nav can scroll independently of
+            the page (which the founder asked for) and a thin
+            scrollbar-gutter keeps the layout stable rather than jumping
+            by ~14px the moment the scrollbar appears. */}
+        <aside className="hidden w-64 shrink-0 lg:block">
+          <div
+            className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pb-6 pr-1"
+            style={{ scrollbarWidth: 'thin', scrollbarGutter: 'stable' }}
+          >
+            <div className="mb-4 flex items-center gap-2 px-1">
+              <span className="flex size-7 items-center justify-center rounded-lg bg-primary/15 ring-1 ring-primary/20">
+                <GraduationCap className="size-4 text-primary" aria-hidden="true" />
+              </span>
               <span className="text-heading-md font-heading text-foreground">
                 {t('revision.shell.hub_title')}
               </span>
