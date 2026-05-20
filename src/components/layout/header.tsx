@@ -4,16 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
-import {
-  Menu,
-  LogOut,
-  School,
-  Sparkles,
-  BookOpen,
-  ChevronDown,
-  RefreshCw,
-  Handshake,
-} from 'lucide-react'
+import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown, RefreshCw } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -230,13 +221,6 @@ export function Header() {
                   >
                     {t('header.nav.dashboard')}
                   </Link>
-                  <Link
-                    href="/affiliates/dashboard"
-                    className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
-                  >
-                    <Handshake className="mr-1 h-3.5 w-3.5" />
-                    {t('header.nav.affiliates')}
-                  </Link>
                 </>
               ) : (
                 <>
@@ -245,13 +229,6 @@ export function Header() {
                     className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                   >
                     {t('header.nav.dashboard')}
-                  </Link>
-                  <Link
-                    href="/affiliates/dashboard"
-                    className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
-                  >
-                    <Handshake className="mr-1 h-3.5 w-3.5" />
-                    {t('header.nav.affiliates')}
                   </Link>
                   <Link
                     href="/pricing"
@@ -415,14 +392,6 @@ export function Header() {
                       >
                         {t('header.nav.dashboard')}
                       </Link>
-                      <Link
-                        href="/affiliates/dashboard"
-                        onClick={() => setMobileOpen(false)}
-                        className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
-                      >
-                        <Handshake className="mr-1.5 h-4 w-4" />
-                        {t('header.nav.affiliates')}
-                      </Link>
                     </>
                   ) : (
                     <>
@@ -432,14 +401,6 @@ export function Header() {
                         className="w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                       >
                         {t('header.nav.dashboard')}
-                      </Link>
-                      <Link
-                        href="/affiliates/dashboard"
-                        onClick={() => setMobileOpen(false)}
-                        className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
-                      >
-                        <Handshake className="mr-1.5 h-4 w-4" />
-                        {t('header.nav.affiliates')}
                       </Link>
                       <Link
                         href="/pricing"
@@ -479,14 +440,6 @@ export function Header() {
                   >
                     <Sparkles className="mr-1.5 h-4 w-4" />
                     {t('header.nav.try_demo')}
-                  </Link>
-                  <Link
-                    href="/affiliates"
-                    onClick={() => setMobileOpen(false)}
-                    className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
-                  >
-                    <Handshake className="mr-1.5 h-4 w-4" />
-                    {t('header.nav.affiliates')}
                   </Link>
                   <Link
                     href="/auth/login"
