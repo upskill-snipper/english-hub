@@ -116,3 +116,38 @@ existing i18n keys / pages noted. Ordered blocking → non-blocking.
 _Once B1–B8 are decided, the values drop into the noted i18n keys/pages
 with no structural change. The I1 gate guarantees no placeholder token
 can regress to a live page in the meantime._
+
+---
+
+## 2026-05-20 — Decisions returned by the founder + on-disk status
+
+The founder returned answers on 2026-05-20. The propagation pass that
+followed was **partially reverted** in a subsequent local revert wave
+(intentional per file-change notices). Authoritative current on-disk
+state is recorded in `REMEDIATION-LOG.md` under the
+"Horizon-1.5 — partial application of business decisions" section.
+
+Quick index of what was decided + what still ships in production today:
+
+| #   | Founder answer                                                                                      | Currently on disk                                                                                                                                                                                                                                                |
+| --- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| B1  | Lauren Johnson, safeguarding@theenglishhub.app, +974 5187 9582, 24h SLA, no Deputy                  | **Applied** on /safeguarding, /safeguarding/report, /legal/privacy                                                                                                                                                                                               |
+| B2  | "You decide" — Vercel (front end) + Supabase EU + Microsoft Azure UK South + Anthropic US under DPA | **Partial** — applied in `dictionary-legal-long.ts` (privacy s4); for-schools and faqs propagation reverted                                                                                                                                                      |
+| B3  | Confirmed statutory 14-day only                                                                     | Already correct                                                                                                                                                                                                                                                  |
+| B4  | 10 working days                                                                                     | **Applied** in `dictionary-legal-long.ts`                                                                                                                                                                                                                        |
+| B5  | Lower to 11; 11–15 parent consent; UK GDPR Art. 8 verifiable parental consent for 11–12             | **Partial** — validate-age endpoint and most user-facing copy now say 11; `lib/auth.ts` / `api/auth/register/route.ts` / parent-reports gates still enforce 13. **Net effect:** an 11–12 year-old hits the age gate but cannot complete signup; reconcile in H2. |
+| B6  | 7-day confirmed                                                                                     | Already correct                                                                                                                                                                                                                                                  |
+| B7  | £4,000 founding (already matches)                                                                   | Already correct                                                                                                                                                                                                                                                  |
+| B8  | "Ok do that" (consolidate)                                                                          | Not yet applied — H2                                                                                                                                                                                                                                             |
+| B9  | Left out (home address)                                                                             | No change needed                                                                                                                                                                                                                                                 |
+| B10 | "Combined" — interpreted as separate DPO (Calum) + DSL (Lauren) for audit clarity                   | **Applied** on /legal/privacy M5 block                                                                                                                                                                                                                           |
+| B11 | "Check; if none, create"                                                                            | Three DPIAs already exist at `business-docs/compliance/childrens-code/03-dpias/` — v0.9 draft. Promote-to-v1.0 with B5/B1/B10/B2 change log was reverted; still v0.9 draft.                                                                                      |
+| B12 | Route via info@upskillenergy.com                                                                    | No change                                                                                                                                                                                                                                                        |
+| B13 | "Do it" — robots.txt H2 template                                                                    | **Reverted** — robots.ts is back at the pre-edit content. Outstanding for H2.                                                                                                                                                                                    |
+| B14 | "Do it" — Horizon-3, schedule separately                                                            | Scheduled in REMEDIATION-LOG.md as a multi-week H3 content workstream                                                                                                                                                                                            |
+| B15 | Dated disclaimer fine for now                                                                       | No change                                                                                                                                                                                                                                                        |
+
+**Additional H1.5 work that did survive the revert wave:** the merge of
+DBS / Prevent / whistleblowing / legal-framework / safer-recruitment
+content from `/legal/safeguarding` into the authoritative `/safeguarding`
+page, with `/legal/safeguarding` reduced to a redirect-only shim.
