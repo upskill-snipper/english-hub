@@ -1,0 +1,12 @@
+# Local exception to the repo-wide rules that ignore dist/ and *.pdf.
+# We DO commit the built PDFs here so the founder can grab them from
+# any device (phone, hotel laptop) without re-running the builder.
+!dist/
+!dist/*.pdf
+!*.pdf
+
+# But still ignore temp build files if a run is killed mid-way.
+__build_*
+node_modules/
+package-lock.json
+package.json
