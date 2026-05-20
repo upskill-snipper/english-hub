@@ -54,24 +54,47 @@ function getNavForBoardType(
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
       { href: '/schools', labelKey: 'header.nav.schools' },
-      { href: '/teachers', labelKey: 'header.nav.teachers' },
       { href: '/demo', labelKey: 'header.nav.demo' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
   }
 
-  // Institutional-first ordering. Demo is surfaced as a primary nav item
-  // so school leaders can sample dashboards in one click — previously
-  // demos were buried under the logged-out "Try demo" CTA only.
+  // 2026-05-20: trimmed from 7 to 5 items. The previous list (Schools,
+  // Teachers, Students, EAL, Demo, School Pilot, Pricing) overflowed
+  // the centre grid column at common laptop widths (1280-1440px) once
+  // the right-hand auth section + theme/lang toggles + brand +
+  // BoardSwitcher were all rendered after hydration — caused the
+  // "flashes ok then reverts to overlapping" header bug. EAL is still
+  // discoverable as a tile on every board card + on /schools + in the
+  // footer "Try it" section; School Pilot is the primary CTA on
+  // /schools and reachable from the footer.
   return [
     { href: '/schools', labelKey: 'header.nav.schools' },
     { href: '/teachers', labelKey: 'header.nav.teachers' },
     { href: '/students', labelKey: 'header.nav.students' },
-    { href: '/eal', labelKey: 'header.nav.eal' },
     { href: '/demo', labelKey: 'header.nav.demo' },
-    { href: '/school-pilot', labelKey: 'header.nav.school_pilot' },
     { href: '/pricing', labelKey: 'header.nav.pricing' },
   ]
+}
+
+// Routes where the board context actually drives the rendered content
+// (revision hub, board-filtered practice etc.). The BoardSwitcher only
+// renders on these — on marketing/legal/demo/general routes it just
+// adds clutter and contributes to the header-overflow bug.
+const BOARD_CONTEXT_ROUTES = [
+  '/revision',
+  '/assessment',
+  '/practice',
+  '/games',
+  '/mock-exams',
+  '/courses',
+  '/analysis',
+  '/learn',
+  '/marking',
+] as const
+
+function isBoardContextRoute(pathname: string): boolean {
+  return BOARD_CONTEXT_ROUTES.some((p) => pathname === p || pathname.startsWith(p + '/'))
 }
 
 export function Header() {
@@ -151,10 +174,15 @@ export function Header() {
               The <em className="italic text-[#E8A382]">English</em> Hub
             </span>
           </Link>
-          {/* Board switcher (desktop only — mobile has it inside the sheet) */}
-          <div className="hidden lg:flex">
-            <BoardSwitcher board={board} isHydrated={isBoardHydrated} />
-          </div>
+          {/* Board switcher — desktop only, AND only on routes whose
+              content is filtered by the board context. On marketing /
+              legal / demo / general pages the switcher just adds
+              clutter (and contributes to the header-overflow bug). */}
+          {isBoardContextRoute(pathname) ? (
+            <div className="hidden lg:flex">
+              <BoardSwitcher board={board} isHydrated={isBoardHydrated} />
+            </div>
+          ) : null}
         </div>
 
         {/* Desktop nav */}
@@ -252,21 +280,12 @@ export function Header() {
               <SignOutButton />
             </>
           ) : (
+            // 2026-05-20: trimmed inline "Try demo" + "Affiliates" links
+            // from the desktop signed-out auth section — Demo is now in
+            // the main nav and Affiliates lives in the footer. Removing
+            // them stops the right-hand cluster from ballooning after
+            // hydration and squeezing the centre nav.
             <>
-              <Link
-                href="/demo/school"
-                className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
-              >
-                <Sparkles className="me-1 h-3.5 w-3.5" />
-                {t('header.nav.try_demo')}
-              </Link>
-              <Link
-                href="/affiliates"
-                className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
-              >
-                <Handshake className="me-1 h-3.5 w-3.5" />
-                {t('header.nav.affiliates')}
-              </Link>
               <Link
                 href="/auth/login"
                 className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
@@ -510,9 +529,11 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
   const router = useRouter()
   const { clearBoard } = useBoard()
 
-  // Avoid hydration mismatch — render a placeholder until the persisted store is ready.
+  // Avoid hydration mismatch — render a placeholder until the persisted
+  // store is ready. Width tuned to the typical loaded width so the
+  // hydration swap does not visibly shift the surrounding layout.
   if (!isHydrated) {
-    return <div className="h-8 w-20" aria-hidden="true" />
+    return <div className="h-7 w-[120px]" aria-hidden="true" />
   }
 
   // 2026-05-20: when the user is ON /board-select, the BoardSwitcher
