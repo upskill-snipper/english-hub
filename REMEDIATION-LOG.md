@@ -233,7 +233,59 @@ current on-disk state per decision:
   see code comments in the merged file).
 - **Audit-trail bookkeeping** — this section.
 
-### H2 / H3 schedule (set 2026-05-20)
+---
+
+## Horizon-1.6 (2026-05-20) — PDPPL gap-analysis full execution
+
+After the partial-application revert wave above, the user requested a full
+execution of the Qatar PDPPL gap analysis. This section records what
+landed this time.
+
+### What shipped
+
+| Action                                                                                                         | Status                                                                                                                                          | Evidence                                                                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **G1** — Article 16 permit application dossier (children's data)                                               | ✅ Drafted, ready for Qatari legal sign-off                                                                                                     | `business-docs/compliance/qatar-pdppl/01-article-16-permit/application-dossier.md`                                                                                                                                |
+| **G2** — Merge `/legal/privacy-qatar` and `/legal/privacy-qatar-supplement` into one authoritative page (v2.0) | ✅ Done                                                                                                                                         | `src/app/legal/privacy-qatar/page.tsx`; supplement is now a 308 redirect-only shim; edge 308 added in `next.config.js`                                                                                            |
+| **G3** — Downgrade the "Arabic prevails" clause until a sworn translation exists                               | ✅ Done                                                                                                                                         | `src/app/legal/privacy-qatar/page.tsx` — language disclaimer now says "Arabic translation is provided for information only; English controls" pending the sworn translation                                       |
+| **G4** — Promote DPIAs to v1.0 FINAL with B5 / B1 / B10 / B2 change log                                        | ✅ Done for all three                                                                                                                           | `dpia-processing-children-data.md` (1.0), `dpia-analytics.md` (1.0), `dpia-ai-features-v1.md` (re-reviewed, placeholder removed); v0.9 stubs marked SUPERSEDED                                                    |
+| **G5** — Provision DPO + DSL mailboxes                                                                         | ✅ Inbound live since 2026-04-21 (Cloudflare); outbound "Send Mail As" runbook added                                                            | `business-docs/CLOUDFLARE-EMAIL-SETUP.md` + new `business-docs/compliance/qatar-pdppl/03-pdms/dpo-mailbox-send-as-runbook.md`                                                                                     |
+| **G6** — Pre-fill NCGAA breach notification template + runbook                                                 | ✅ Done                                                                                                                                         | `business-docs/compliance/qatar-pdppl/02-breach-response/ncgaa-notification-template.md` + `runbook.md`                                                                                                           |
+| **G7** — Surface the Qatar Article 17 cross-border consent gate in the signup flow                             | ✅ Done                                                                                                                                         | `src/app/auth/register/page.tsx` — country-of-residence select + named-destination consent panel (visible when country=QA) + validation + persistence to `profiles.country` / `profiles.data_transfer_consent_qa` |
+| **G8** — Audit Arabic marketing templates                                                                      | ✅ Assessed — no Arabic marketing templates currently exist; transactional templates carry sender ID + unsubscribe and are out of Art. 22 scope | (no code change required today)                                                                                                                                                                                   |
+| **G9** — PDMS index document                                                                                   | ✅ Done                                                                                                                                         | `business-docs/compliance/qatar-pdppl/00-pdms-index.md`                                                                                                                                                           |
+| **G10** — NIA certification readiness note (optional path)                                                     | ✅ Done — recommendation: defer                                                                                                                 | `business-docs/compliance/qatar-pdppl/03-pdms/nia-certification-readiness-note.md`                                                                                                                                |
+
+### What still needs a human / external party
+
+- **Qatari legal opinion** — engage Clyde & Co Doha / DLA Piper Doha /
+  Eversheds Doha for a one-time PDPPL sign-off; budget USD 8k–25k. Drop
+  the opinion letter in as Exhibit G of the Article 16 dossier before
+  submitting to NCGAA.
+- **Article 16 permit submission** — submit the dossier to NCGAA via
+  <https://ncsa.gov.qa/en/pages/personal-data-privacy-stakeholders-services>
+  after legal sign-off.
+- **DPO mailbox send-as** — 10–15 minutes of Google Workspace Admin
+  config per alias to flip the DPO + DSL mailboxes from receive-only to
+  full send-and-receive at their published addresses. Runbook is
+  ready.
+- **Sworn Arabic translation of the Qatar privacy notice** — commission
+  a Qatari-licensed legal translator. Once received, flip the language
+  disclaimer back to "Arabic prevails" (the policy text already
+  anticipates this).
+- **Reconcile the B5 floor across the Prisma signup row creation** — the
+  validate-age endpoint accepts 11+ but `lib/auth.ts` and
+  `api/auth/register/route.ts` still gate at 13+. This remains out of
+  scope for the PDPPL gap and is held over for the next H2 pass.
+
+### Verification (this commit)
+
+- `node scripts/check-placeholders.mjs` → **PASS** (0 tokens in published content)
+- `npx tsc --noEmit` → 0 errors
+
+---
+
+## H2 / H3 schedule (set 2026-05-20)
 
 - **H2 (next):** robots.txt H2 template (B13); reconcile B5 floor across
   Prisma/Supabase signup + child-defaults tests + parent-reports gates

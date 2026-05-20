@@ -82,6 +82,17 @@ function RegisterForm() {
   const [yearGroup, setYearGroup] = useState('')
   const [examBoard, setExamBoard] = useState('')
   const [schoolName, setSchoolName] = useState('')
+  // PDPPL gap-analysis remediation (G7, 2026-05-20). The Qatar privacy
+  // notice (v2.0) and supplement promise an explicit Article 17
+  // cross-border consent gate that names each destination jurisdiction.
+  // Until this state existed the signup flow only carried a generic
+  // "Terms" consent, which silently breached our own published Article 17
+  // posture. The Zod registration schema in src/lib/auth.ts has long
+  // required consentDataTransfer when country === 'QA' — this UI now
+  // surfaces both. Country values are constrained to the same set the
+  // Prisma schema + lib/auth.ts already accept: UK / QA / OTHER.
+  const [country, setCountry] = useState<'UK' | 'QA' | 'OTHER' | ''>('')
+  const [consentDataTransferQa, setConsentDataTransferQa] = useState(false)
 
   const calculateAge = (day: string, month: string, year: string): number | null => {
     if (!day || !month || !year) return null
@@ -135,6 +146,17 @@ function RegisterForm() {
       if (isUnder16 && !parentGuardianEmail) {
         errors.parentGuardianEmail = t('form.guardian_email_required')
       }
+    }
+
+    // PDPPL Article 17 — explicit cross-border consent required for QA
+    // residents before the account can be created. The signup flow now
+    // collects country of residence; if QA, a named-destination consent
+    // panel must be ticked. Mirrors the requirement in the Zod schema in
+    // src/lib/auth.ts and in /legal/privacy-qatar §6.
+    if (!country) errors.country = 'Please select your country of residence.'
+    if (country === 'QA' && !consentDataTransferQa) {
+      errors.consentDataTransferQa =
+        'You must consent to cross-border data transfer to use the service from Qatar (PDPPL Article 17).'
     }
 
     if (Object.keys(errors).length > 0) {
@@ -243,6 +265,19 @@ function RegisterForm() {
           analytics_opt_in: false,
           marketing_opt_in: false,
         }),
+        // PDPPL G7 (2026-05-20): persist declared country of residence and
+        // — for QA — the explicit Article 17 cross-border consent grant.
+        // Column names match the Supabase profiles schema; if the columns
+        // don't exist yet a non-blocking error is logged (see the
+        // diagnostic console.error below) and the signup still proceeds.
+        // A follow-up migration creates these columns formally; an
+        // additional follow-up writes the same consent into the Prisma
+        // Consent ledger via /api/auth/register so the append-only audit
+        // trail is preserved end-to-end.
+        country: country || null,
+        data_transfer_consent_qa: country === 'QA' ? consentDataTransferQa : null,
+        data_transfer_consent_qa_at:
+          country === 'QA' && consentDataTransferQa ? new Date().toISOString() : null,
         utm_source: utmParams?.utm_source ?? null,
         utm_medium: utmParams?.utm_medium ?? null,
         utm_campaign: utmParams?.utm_campaign ?? null,
@@ -806,6 +841,107 @@ function RegisterForm() {
                   </select>
                 </div>
               </div>
+
+              {/* PDPPL G7 (2026-05-20): country of residence + Qatar
+                  Article 17 cross-border consent panel. The privacy
+                  notice promises this; the signup form must collect it. */}
+              <div className="space-y-1.5">
+                <Label htmlFor="country">
+                  Country of residence <span className="text-destructive">*</span>
+                </Label>
+                <select
+                  id="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value as 'UK' | 'QA' | 'OTHER' | '')}
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm appearance-none"
+                  aria-invalid={!!fieldErrors.country}
+                  aria-describedby={fieldErrors.country ? 'country-error' : undefined}
+                  required
+                >
+                  <option value="">Select your country</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="QA">Qatar</option>
+                  <option value="OTHER">Other</option>
+                </select>
+                {fieldErrors.country && (
+                  <p id="country-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.country}
+                  </p>
+                )}
+              </div>
+
+              {country === 'QA' && (
+                <div className="rounded-md border border-amber-300/50 bg-amber-50 dark:bg-amber-950/20 p-4 space-y-2 text-sm">
+                  <p className="font-semibold">
+                    Qatar — explicit cross-border consent (PDPPL Article 17)
+                  </p>
+                  <p>
+                    Because you are signing up from Qatar, we need your explicit consent to transfer
+                    your personal data outside Qatar to the following named destinations, in order
+                    to deliver the service:
+                  </p>
+                  <ul className="list-disc pl-5 text-sm">
+                    <li>
+                      <strong>European Union (Frankfurt, Germany)</strong> — Supabase (account,
+                      essays, marking results); PostHog (analytics, consented only); Sentry (error
+                      monitoring)
+                    </li>
+                    <li>
+                      <strong>United States</strong> — Anthropic (AI essay marking, contractually
+                      prohibited from training on your submissions); Postmark / Resend
+                      (transactional email); Vercel (front end); Google Analytics 4 / Rewardful /
+                      Trustpilot (consented only)
+                    </li>
+                    <li>
+                      <strong>United Kingdom</strong> — Microsoft Azure UK South (backend API);
+                      controller seat (Upskill Energy Limited)
+                    </li>
+                    <li>
+                      <strong>Ireland</strong> — Stripe (primary payment processor for European
+                      customers)
+                    </li>
+                    <li>
+                      <strong>Global edge</strong> — Cloudflare (CDN + WAF, ephemeral; no personal
+                      data stored at the edge)
+                    </li>
+                  </ul>
+                  <p className="text-xs text-muted-foreground">
+                    Each destination is bound by a Data Processing Agreement with Standard
+                    Contractual Clauses (or analogues) and technical safeguards (TLS 1.3, AES-256 at
+                    rest, opaque identifiers at the AI boundary). Full detail is in our{' '}
+                    <Link href="/legal/privacy-qatar" className="underline">
+                      Qatar Privacy Notice
+                    </Link>
+                    . You can withdraw this consent at any time from{' '}
+                    <em>Settings → Privacy &amp; Data</em>; withdrawing it stops the corresponding
+                    feature.
+                  </p>
+                  <label className="flex items-start gap-2 pt-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={consentDataTransferQa}
+                      onChange={(e) => setConsentDataTransferQa(e.target.checked)}
+                      className="mt-1"
+                      aria-invalid={!!fieldErrors.consentDataTransferQa}
+                      aria-describedby={
+                        fieldErrors.consentDataTransferQa
+                          ? 'consent-data-transfer-error'
+                          : undefined
+                      }
+                    />
+                    <span>
+                      <strong>I consent</strong> to the cross-border transfer of my personal data to
+                      the destinations named above, under PDPPL Article 17, for the purpose of
+                      delivering the service.
+                    </span>
+                  </label>
+                  {fieldErrors.consentDataTransferQa && (
+                    <p id="consent-data-transfer-error" className="text-sm text-destructive mt-1">
+                      {fieldErrors.consentDataTransferQa}
+                    </p>
+                  )}
+                </div>
+              )}
 
               <p className="text-xs text-muted-foreground">
                 {t('auth.register.terms_agreement_before')}{' '}

@@ -26,16 +26,32 @@ export default async function QatarPrivacyNoticePage() {
     <>
       <h1 className="text-3xl font-bold mb-2">{tr(`Privacy Notice — State of Qatar`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        Effective Date: 22 March 2026
+        Effective Date: 22 March 2026 · Last reviewed: 20 May 2026
         <br />
         Applicable Law: Qatar Personal Data Privacy Protection Law (Law No. 13 of 2016 — PDPPL)
+        <br />
+        Version 2.0 — supersedes v1.0 (22 March 2026) and the corrected Qatar Privacy Notice
+        Supplement v1.0 (12 May 2026), both of which are merged into this notice.
       </p>
 
-      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8 text-sm">
+      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-4 text-sm">
         <p>
-          This notice is provided in English. An Arabic translation shall be made available and, in
-          the event of any discrepancy, the Arabic version shall prevail in accordance with Qatari
-          legal requirements.
+          <strong>Language.</strong> This notice is published in English. A Modern Standard Arabic
+          translation is provided for information only. Pending a sworn Arabic translation prepared
+          by a Qatari‑ licensed legal translator (in commissioning), the English version is the
+          controlling text in the event of any discrepancy. Once the sworn translation is published,
+          the Arabic version will become equally authentic in accordance with Qatari practice and
+          this paragraph will be updated.
+        </p>
+      </div>
+
+      <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-300/40 rounded-lg p-4 mb-8 text-sm">
+        <p>
+          <strong>Data Subject Response Time.</strong> We respond to all PDPPL rights requests
+          within <strong>30 calendar days</strong> of receipt and identity verification, in line
+          with the NCGAA Individuals' Rights Guidelines (PDPPL‑02050219E). Complex requests may be
+          extended by one further 30‑day period with written notice to you before the original
+          deadline expires.
         </p>
       </div>
 
@@ -187,32 +203,100 @@ export default async function QatarPrivacyNoticePage() {
         </div>
       </section>
 
-      {/* Section 6 */}
+      {/* Section 6 — corrected data-flow narrative.
+          Earlier versions of this page described data as flowing into the
+          United Kingdom under a UK International Data Transfer Agreement
+          (IDTA). That description was inaccurate; the actual subprocessor
+          architecture is documented below and was first corrected in the
+          Qatar Privacy Notice Supplement v1.0 (12 May 2026). That
+          supplement is now folded into this notice. */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">6. Cross-Border Data Transfers</h2>
         <p className="mb-3">
-          Your personal data collected in Qatar{' '}
-          <strong>will be transferred to and stored on servers in the United Kingdom</strong>. This
-          is necessary for platform operation and service delivery.
+          Personal data of Qatar residents is processed across infrastructure located in{' '}
+          <strong>the European Union (Frankfurt), the United Kingdom, and the United States</strong>
+          , depending on the activity. The controller seat is the United Kingdom, but the United
+          Kingdom is
+          <strong> not the operational data store</strong> for your account data — that sits in
+          Supabase in the European Union.
+        </p>
+        <p className="my-3 font-mono text-xs bg-muted p-3 rounded overflow-x-auto">
+          Qatar → Supabase EU (Frankfurt) → Anthropic US → Sentry EU (Frankfurt) → Vercel (front
+          end) → Microsoft Azure UK South (backend API) → Google Analytics 4 US (with consent) →
+          Rewardful US (with consent)
         </p>
         <p className="mb-3">
-          In accordance with the PDPPL, we require your <strong>explicit consent</strong> before
-          transferring data outside Qatar.
+          In accordance with PDPPL Article 17, we obtain your{' '}
+          <strong>explicit, separate consent</strong> for cross‑border transfer at the moment it is
+          needed, naming the destination jurisdictions. Qatar‑resident users see a Qatar‑specific
+          consent panel at sign‑up and again in the dashboard at <em>Settings → Privacy & Data</em>.
+          You may withhold or withdraw this consent at any time — withdrawing it stops the
+          corresponding feature.
         </p>
-        <h3 className="text-lg font-semibold mb-2">{tr(`Safeguards in Place`)}</h3>
+
+        <h3 className="text-lg font-semibold mt-4 mb-2">By jurisdiction</h3>
+        <ul className="list-disc pl-6 space-y-2 text-sm">
+          <li>
+            <strong>European Union (Frankfurt, Germany).</strong> Supabase (Postgres + object
+            storage — primary store for your account, essay submissions, marking results, consent
+            ledger), PostHog (analytics when consented), Sentry (error monitoring). The bulk of your
+            data sits here at rest, encrypted with AES‑256.
+          </li>
+          <li>
+            <strong>United States.</strong> Anthropic (AI essay marking), Postmark / Resend
+            (transactional email), Google Analytics 4 (when consented), Rewardful (when consented),
+            RevenueCat (mobile IAP), Trustpilot (when consented), Vercel (web hosting), Stripe
+            (payment failover; primary is in Ireland). Not covered by a Qatar adequacy decision; we
+            rely on subprocessor‑specific DPAs containing Standard Contractual Clauses analogues
+            plus your explicit cross‑border consent under PDPPL Article 17.
+          </li>
+          <li>
+            <strong>United Kingdom.</strong> Seat of the controller (Upskill Energy Limited) and the
+            Data Protection Officer. Microsoft Azure UK South hosts our backend API. Administrative
+            records (rights‑request files, audit logs of staff access) may be reviewed in the UK.
+          </li>
+          <li>
+            <strong>Ireland.</strong> Stripe's primary payment‑processing entity for European
+            customers. Failover to Stripe US.
+          </li>
+          <li>
+            <strong>Global edge.</strong> Cloudflare anycast edge for CDN + WAF. No personal data
+            stored at the edge; only ephemeral request/response metadata.
+          </li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-5 mb-2">{tr(`Safeguards in Place`)}</h3>
         <ul className="list-disc pl-6 space-y-1">
           <li>
-            <strong>{tr(`UK International Data Transfer Agreement (IDTA)`)}</strong> providing a
-            recognised legal framework
+            <strong>Subprocessor‑specific Data Processing Agreements</strong> incorporating SCCs (or
+            analogues) for every destination outside the EU/UK
           </li>
-          <li>Encryption in transit (TLS 1.2+) and at rest (AES-256)</li>
+          <li>
+            <strong>Explicit PDPPL Article 17 cross‑border consent</strong> captured at sign‑up for
+            Qatar‑resident users, named per destination jurisdiction
+          </li>
+          <li>Encryption in transit (TLS 1.3) and at rest (AES-256)</li>
+          <li>
+            <strong>Opaque identifiers</strong> at the AI inference boundary (Anthropic) — essay
+            text is sent with no directly identifying account fields
+          </li>
+          <li>
+            <strong>Contractual zero‑retention</strong> for AI inference: our DPA with Anthropic
+            prohibits use of your submissions to train their models
+          </li>
           <li>{tr(`Strict role-based access controls`)}</li>
           <li>{tr(`Binding contractual obligations with all sub-processors`)}</li>
           <li>{tr(`Periodic security and compliance audits`)}</li>
         </ul>
         <p className="mt-3 text-sm">
-          You have the right to withhold or withdraw consent for cross-border transfer. This may
-          limit our ability to provide certain services.
+          Copies of any sub‑processor DPA referenced above are available to school DPOs and
+          procurement reviewers on written request to{' '}
+          <a href="mailto:dpo@theenglishhub.app" className="underline">
+            dpo@theenglishhub.app
+          </a>
+          . We do not rely on a "legitimate interest" basis to override a refusal of consent by a
+          Qatar resident; where consent is withdrawn, we either rely on contractual necessity (and
+          inform you) or we stop the activity.
         </p>
       </section>
 
@@ -335,24 +419,89 @@ export default async function QatarPrivacyNoticePage() {
       {/* Section 14 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">10. Children&apos;s Data Protection</h2>
+        <p className="mb-3">
+          Under PDPPL Article 16, personal data of individuals under 18 is treated as{' '}
+          <strong>personal data of a special nature</strong> and attracts heightened protection. The
+          English Hub's primary user base is GCSE/IGCSE students, the majority of whom are under 18
+          — this section is therefore the most important on this page.
+        </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>{tr(`Users under 18 are considered minors under Qatari law`)}</li>
           <li>
-            We do not knowingly collect data from children under 13 without verified parental
-            consent
+            Our minimum age is <strong>11</strong> (lowered from 13 in May 2026 to accept Year 7 /
+            KS3 students). UK GDPR Article 8 sets the digital age of consent at 13, so for users
+            aged 11–12 we rely on
+            <strong> verifiable parental or guardian consent</strong> captured via the parent‑link
+            email at sign‑up, not the child's own consent.
+          </li>
+          <li>
+            <strong>Article 16 permit posture.</strong> Because processing of children's data is a
+            special category, we are preparing a formal permit application to NCGAA for
+            authorisation to process minors' data under Article 16. The application dossier (RoPA +
+            DPIA + safeguards) is held internally and is available to NCGAA on request via{' '}
+            <a href="mailto:dpo@theenglishhub.app" className="underline">
+              dpo@theenglishhub.app
+            </a>
+            .
           </li>
           <li>{tr(`For users aged 13-17, we require explicit parental or guardian consent`)}</li>
           <li>
             Parents and guardians can access, review, and request deletion of their child&apos;s
-            data at any time
+            data at any time. Under‑18 accounts <strong>cannot enter payment details</strong> — the
+            paying party is always an adult.
           </li>
           <li>{tr(`No targeted advertising served to minors`)}</li>
           <li>
             AI features used by minors are subject to additional safeguards including human
-            oversight
+            oversight. Our DPA with Anthropic contractually prohibits use of minors' submissions for
+            model training, and essays are transmitted under opaque identifiers with no directly
+            identifying account fields.
           </li>
           <li>{tr(`No behavioural profiles of minors for commercial purposes`)}</li>
+          <li>
+            <strong>Consent ledger.</strong> Each guardian consent is recorded with a cryptographic
+            hash and timestamp for evidentiary needs; withdrawal is as easy as the original consent.
+          </li>
         </ul>
+      </section>
+
+      {/* Section 10A — NCGAA registration posture.
+          Added 2026-05-20 as part of the PDPPL gap-analysis remediation.
+          Honest statement: PDPPL does not require general controller
+          registration with NCGAA (DLA Piper country guide confirms). The
+          one formal NCGAA interaction we owe is the Article 16 permit
+          application for processing children's data — see Section 10. */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">10A. NCGAA Registration and Notifications</h2>
+        <p className="mb-3">
+          PDPPL does not impose a general controller‑registration requirement with the National
+          Cyber Governance and Assurance Authority (NCGAA); we therefore do not hold a "general
+          PDPPL registration" because none exists to obtain. The specific NCGAA interactions we owe
+          and maintain are:
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-sm">
+          <li>
+            <strong>Article 16 permit application</strong> for processing personal data of minors
+            (in preparation — see Section 10).
+          </li>
+          <li>
+            <strong>72‑hour breach notification</strong> to NCGAA for any personal‑data breach
+            likely to result in serious harm to data subjects, plus notification to affected
+            subjects where the risk warrants (see Section 9).
+          </li>
+          <li>
+            <strong>Personal Data Management System (PDMS)</strong> — internal documentation
+            (Records of Processing Activities, Data Protection Impact Assessments, breach response
+            plan, consent ledger) that NCGAA may inspect on notice and that we provide to school
+            DPOs during procurement on request.
+          </li>
+        </ul>
+        <p className="mt-3 text-sm">
+          A Qatari‑licensed legal opinion confirming our PDPPL compliance posture is available to
+          procurement reviewers on request; this is the customary form of evidence used in Qatari
+          school procurement, because NCGAA does not issue a "PDPPL compliance certificate" for
+          controllers.
+        </p>
       </section>
 
       {/* Section 15 */}

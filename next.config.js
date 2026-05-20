@@ -146,6 +146,15 @@ const nextConfig = {
         destination: '/safeguarding',
         permanent: true,
       },
+      // PDPPL gap-analysis remediation (G2, 2026-05-20): the Qatar
+      // Privacy Notice Supplement v1.0 is merged into the authoritative
+      // Qatar Privacy Notice v2.0 at /legal/privacy-qatar. Edge 308
+      // fires before the server-component redirect shim renders.
+      {
+        source: '/legal/privacy-qatar-supplement',
+        destination: '/legal/privacy-qatar',
+        permanent: true,
+      },
     ]
   },
   async headers() {

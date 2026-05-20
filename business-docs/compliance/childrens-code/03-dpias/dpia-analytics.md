@@ -3,10 +3,20 @@
 **Reference:** DPIA-2026-CC-02
 **Service:** The English Hub
 **Scope:** Product analytics / telemetry as applied to users under 18
-**DPIA version:** 0.9 (draft)
-**Owner:** Data Protection Lead
+**DPIA version:** 1.0 (FINAL — supersedes v0.9 draft of 2026-04-10)
+**Owner:** Calum Johnston — Data Protection Officer (DPO), dpo@theenglishhub.app
 **Date prepared:** 2026-04-10
-**Related:** `dpia-processing-children-data.md` (parent DPIA)
+**Last reviewed:** 2026-05-20
+**Next review:** 2026-11-20 (or on material change)
+**Related:** `dpia-processing-children-data.md` (parent DPIA, v1.0 FINAL)
+
+## Change log
+
+- **2026-05-20 (v1.0 FINAL)** — Promoted from v0.9 draft. Material changes:
+  - The "child" cohort covered now spans ages 11–17 following business decision B5 (minimum age lowered from 13 to 11). Standard 8 high-privacy defaults are unchanged and already extend to the wider cohort — see `src/lib/privacy/child-defaults.ts` and `src/__tests__/child-defaults-strict.test.ts`.
+  - Qatar PDPPL: analytics on children's data falls inside the "personal data of a special nature" definition under PDPPL Article 16. This DPIA, in conjunction with the parent DPIA, supports the Article 16 permit application (`business-docs/compliance/qatar-pdppl/01-article-16-permit/`).
+  - PostHog (EU/Frankfurt) and Google Analytics 4 (US) sub-processor details cross-referenced against the canonical hosting topology in the parent DPIA and the RoPA (`business-docs/compliance/rfc/ropa-v1.md`).
+- **2026-04-10 (v0.9 DRAFT)** — Initial draft.
 
 ---
 

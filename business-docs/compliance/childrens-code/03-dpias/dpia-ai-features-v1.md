@@ -1,9 +1,13 @@
 # DPIA — AI Content Pipeline (Children's Code + UK GDPR + Qatar PDPPL)
 
-Version: **1.0 (FINAL)** · supersedes v0.9 (DRAFT)
-Date: 2026-05-12
-Owner: Calum Jardine (Founder), cj@upskillenergy.com
-DPO: _[DPO_NAME]_ — see Section 6 sign-off
+Version: **1.0 (FINAL)** · supersedes v0.9 (DRAFT) · re-reviewed 2026-05-20 (no material processing changes — metadata refresh to reflect B1/B5/B10 only)
+Date prepared: 2026-05-12
+Last reviewed: 2026-05-20
+Next review: 2026-11-20 (or on material change)
+Owner: Calum Johnston (Founder) — Data Protection Officer (DPO), dpo@theenglishhub.app
+DPO: Calum Johnston — see Section 6 sign-off
+DSL (separate role, B1): Lauren Johnson — safeguarding@theenglishhub.app, +974 5187 9582, 24-hour acknowledgement SLA
+Scope cohort: AI processing of personal data of users aged 11–17 (lowered from 13 by business decision B5, 2026-05-20)
 
 ## 1. Scope
 
