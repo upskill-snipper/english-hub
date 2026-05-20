@@ -20,6 +20,7 @@ import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { BenefitGrid } from '@/components/schools/BenefitCard'
+import { DemoShowcase } from '@/components/schools/DemoShowcase'
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
 import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { PRICING_DISPLAY } from '@/constants/pricing'
@@ -103,6 +104,9 @@ export default async function Home() {
 
       {/* 7. EAL support */}
       <EalSection />
+
+      {/* 7.5 Demo showcase */}
+      <DemoShowcase />
 
       {/* 8. Founder school pilot CTA */}
       <PilotCtaSection />

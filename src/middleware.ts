@@ -49,6 +49,16 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/for-schools',
   '/for-teachers',
   '/for-parents',
+  // 2026-05-20: new canonical marketing routes (institutional repositioning).
+  // The /for-* routes 308-redirect to these in next.config.js. All five
+  // MUST be guest-accessible — they are the primary public conversion
+  // surface, and gating them behind a board cookie or auth wall sends
+  // school leaders to /board-select before they can read a single line.
+  '/schools',
+  '/school-pilot',
+  '/teachers',
+  '/students',
+  '/eal',
   '/affiliates',
   '/creators',
   '/resources',

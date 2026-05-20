@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
+import { DemoShowcase } from '@/components/schools/DemoShowcase'
 import { SchoolPricingCards } from '@/components/schools/SchoolPricingCards'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
@@ -1038,6 +1039,9 @@ function PricingContent() {
           </p>
         </div>
       </section>
+
+      {/* ───────── Demo showcase ───────── */}
+      <DemoShowcase />
 
       {/* ───────── How Free Access Works ───────── */}
       <section className="relative py-24 sm:py-32 border-t border-border/40">

@@ -19,6 +19,9 @@ import {
   Target,
   Filter,
   BookOpenCheck,
+  Info,
+  Sparkles,
+  Mail,
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -27,6 +30,8 @@ import { DEMO_SCHOOL, DEMO_STUDENTS, DEMO_CLASSES, DEMO_YEAR_GROUPS } from '@/da
 import { GradeDistributionChart } from '@/components/analytics/GradeDistributionChart'
 import { gcseGradeColor, gcseGradeBg } from '@/lib/grades'
 import { RadialScore, RankBars } from '@/components/dataviz'
+import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
+import { InterventionInsightsPanel } from '@/components/school/InterventionInsightsPanel'
 
 // ── Computed student-level data ─────────────────────────────────────────────
 
@@ -130,6 +135,12 @@ export default function DemoSchoolDashboardPage() {
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
+      {/* Chip-style "sample demo" alert */}
+      <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
+        <Info className="h-3.5 w-3.5" />
+        You&rsquo;re viewing synthetic data for demo purposes.
+      </div>
+
       {/* Demo banner */}
       <div className="mb-6 rounded-lg border border-blue-500/30 bg-teal-800/10 px-5 py-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -375,6 +386,11 @@ export default function DemoSchoolDashboardPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* ── Intervention Insights ────────────────────────────────────────── */}
+      <div className="mb-8">
+        <InterventionInsightsPanel />
       </div>
 
       {/* ── Two-column body ──────────────────────────────────────────────── */}
@@ -821,6 +837,40 @@ export default function DemoSchoolDashboardPage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* ── Final CTA: ready to use real data ───────────────────────────── */}
+      <div className="mt-12">
+        <GlassPanel accent="primary" className="p-8 sm:p-10">
+          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/15">
+                <Sparkles className="h-5 w-5 text-primary" aria-hidden="true" />
+              </span>
+              <div>
+                <PanelEyebrow>Get started</PanelEyebrow>
+                <h3 className="mt-1 font-heading text-2xl font-bold tracking-tight text-foreground">
+                  Ready to see it with your school&rsquo;s data?
+                </h3>
+                <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+                  Run a free pilot with English Hub for a half-term. We&rsquo;ll import your
+                  classes, students and exam targets — and you&rsquo;ll see real analytics in this
+                  same dashboard within a week.
+                </p>
+              </div>
+            </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Button variant="default" size="lg" render={<Link href="/school-pilot" />}>
+                Start a free school pilot
+                <ArrowRight className="ml-1.5 h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="lg" render={<Link href="/contact" />}>
+                <Mail className="mr-1.5 h-4 w-4" />
+                Talk to us
+              </Button>
+            </div>
+          </div>
+        </GlassPanel>
       </div>
     </div>
   )

@@ -55,21 +55,22 @@ function getNavForBoardType(
       { href: '/revision', labelKey: 'header.nav.your_hub' },
       { href: '/schools', labelKey: 'header.nav.schools' },
       { href: '/teachers', labelKey: 'header.nav.teachers' },
+      { href: '/demo', labelKey: 'header.nav.demo' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
   }
 
-  // Institutional-first ordering: Schools leads, then the supporting
-  // audiences, then the conversion routes. /school-pilot is the primary
-  // institutional CTA so it sits alongside Pricing + Contact.
+  // Institutional-first ordering. Demo is surfaced as a primary nav item
+  // so school leaders can sample dashboards in one click — previously
+  // demos were buried under the logged-out "Try demo" CTA only.
   return [
     { href: '/schools', labelKey: 'header.nav.schools' },
     { href: '/teachers', labelKey: 'header.nav.teachers' },
     { href: '/students', labelKey: 'header.nav.students' },
     { href: '/eal', labelKey: 'header.nav.eal' },
+    { href: '/demo', labelKey: 'header.nav.demo' },
     { href: '/school-pilot', labelKey: 'header.nav.school_pilot' },
     { href: '/pricing', labelKey: 'header.nav.pricing' },
-    { href: '/contact', labelKey: 'header.nav.contact' },
   ]
 }
 
@@ -531,13 +532,13 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
           <button
             type="button"
             aria-label={`Current exam board: ${config.fullName}. Click to change.`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-[#B5B8B3] hover:text-[#FBF7F0] hover:border-white/30 transition-colors duration-200"
+            className="inline-flex max-w-[160px] items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-[#B5B8B3] hover:text-[#FBF7F0] hover:border-white/30 transition-colors duration-200"
           />
         }
       >
-        <BookOpen className="h-3.5 w-3.5 text-[#B5B8B3]" aria-hidden="true" />
-        <span className="text-[#FBF7F0]">{config.shortName}</span>
-        <ChevronDown className="h-3 w-3 text-[#B5B8B3]" aria-hidden="true" />
+        <BookOpen className="h-3.5 w-3.5 shrink-0 text-[#B5B8B3]" aria-hidden="true" />
+        <span className="truncate text-[#FBF7F0]">{config.shortName}</span>
+        <ChevronDown className="h-3 w-3 shrink-0 text-[#B5B8B3]" aria-hidden="true" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" sideOffset={6} className="w-72">
         <DropdownMenuGroup>

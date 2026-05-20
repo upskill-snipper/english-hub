@@ -36,10 +36,14 @@ import {
   Mic,
   Headphones,
   BookText,
+  Globe,
+  Eye,
+  LineChart,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 import { EAL } from '@/lib/eal/curriculum'
 import {
@@ -145,6 +149,118 @@ export default function EALHubPage() {
 
   return (
     <div className="space-y-10 pb-16" dir={dir}>
+      {/* ── Institutional hero: school-grade EAL framing ─────────────── */}
+      <section
+        aria-labelledby="eal-institutional-heading"
+        className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-teal-500/[0.04] p-6 sm:p-8 lg:p-10"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal-500/[0.05] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-teal-500/[0.05] blur-3xl"
+        />
+
+        <div className="relative">
+          <Badge variant="secondary" className="mb-4">
+            <GraduationCap className="mr-1 size-3" aria-hidden="true" />
+            <span>For schools</span>
+          </Badge>
+          <h1
+            id="eal-institutional-heading"
+            className="text-display-sm font-heading text-foreground sm:text-display"
+          >
+            Structured English support for EAL learners
+          </h1>
+          <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
+            Designed to help international and GCC schools support EAL learners across vocabulary,
+            reading fluency, comprehension, grammar and writing confidence — with teacher visibility
+            and progress reporting.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button variant="default" size="lg" render={<Link href="/schools" />}>
+              <span>For schools</span>
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Button>
+            <Button variant="outline" size="lg" render={<Link href="#cefr-test" />}>
+              <span>Take the CEFR placement test</span>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3 benefit cards row ──────────────────────────────────────── */}
+      <section aria-label="EAL benefits for schools">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Card>
+            <CardHeader>
+              <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-teal-500/10">
+                <BookA className="size-5 text-teal-400" aria-hidden="true" />
+              </div>
+              <CardTitle>Vocabulary, reading and writing — structured</CardTitle>
+              <CardDescription>
+                A coherent progression across vocabulary breadth, reading fluency, comprehension,
+                grammar accuracy and writing confidence — graded across CEFR levels so learners
+                always know the next step.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
+                <Globe className="size-5 text-primary" aria-hidden="true" />
+              </div>
+              <CardTitle>Designed for international schools</CardTitle>
+              <CardDescription>
+                Built with Qatar, the wider GCC and IGCSE/GCSE classrooms in mind — content
+                addresses the specific language gaps Arabic-L1 learners face when working through a
+                UK-aligned curriculum.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
+                <Eye className="size-5 text-violet-400" aria-hidden="true" />
+              </div>
+              <CardTitle>Teacher visibility and progress reporting</CardTitle>
+              <CardDescription>
+                Leadership and EAL coordinators get the oversight they need: where learners are,
+                where they're stuck, and where targeted support will move the needle the most.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+      </section>
+
+      {/* ── What teachers see ────────────────────────────────────────── */}
+      <section aria-label="What teachers see">
+        <Card>
+          <CardHeader>
+            <div className="flex items-start gap-4">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-teal-500/10">
+                <LineChart className="size-6 text-teal-400" aria-hidden="true" />
+              </div>
+              <div>
+                <CardTitle className="text-heading-md">What teachers see</CardTitle>
+                <CardDescription className="mt-2 max-w-3xl text-body-sm">
+                  Teacher view: progress by learner, by skill, and by year group, so departments can
+                  plan targeted EAL support.
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+      </section>
+
+      {/* ── Separator between institutional framing and learner content ─ */}
+      <div className="border-t border-border/60 my-12" />
+
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         aria-labelledby="eal-hero-heading"
@@ -200,7 +316,10 @@ export default function EALHubPage() {
       </section>
 
       {/* ── Primary CTA: CEFR placement test ─────────────────────────── */}
-      <section className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-6 sm:p-8">
+      <section
+        id="cefr-test"
+        className="scroll-mt-24 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-6 sm:p-8"
+      >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">

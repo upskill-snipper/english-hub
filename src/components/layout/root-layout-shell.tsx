@@ -12,6 +12,13 @@ import { useT } from '@/lib/i18n/use-t'
  * (sidebar navigation, mobile header, etc.), so the root Header and Footer
  * are hidden to avoid double navigation bars and to let the school layout
  * occupy the full viewport.
+ *
+ * 2026-05-20: bug fix — the previous `startsWith('/school')` check also
+ * matched the public marketing routes `/schools` and `/school-pilot`,
+ * which hid the root Header (and its theme + language toggles) on those
+ * pages. We now match either the EXACT prefix (`/school`, `/demo/school`)
+ * or the prefix followed by a slash (`/school/`, `/demo/school/`) so
+ * `/schools`, `/school-pilot`, `/schools-anything` are NOT swallowed.
  */
 
 const FULL_LAYOUT_PREFIXES = ['/school', '/demo/school']
@@ -19,7 +26,9 @@ const FULL_LAYOUT_PREFIXES = ['/school', '/demo/school']
 export function RootLayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const t = useT()
-  const isSchoolRoute = FULL_LAYOUT_PREFIXES.some((p) => pathname.startsWith(p))
+  const isSchoolRoute = FULL_LAYOUT_PREFIXES.some(
+    (p) => pathname === p || pathname.startsWith(p + '/'),
+  )
 
   if (isSchoolRoute) {
     return <>{children}</>

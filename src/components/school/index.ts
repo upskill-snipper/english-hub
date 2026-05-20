@@ -6,7 +6,12 @@ export { ClassResultsAnalysis } from './ClassResultsAnalysis'
 export { LessonRecommendations } from './LessonRecommendations'
 export type { ClassAnalyticsInput, RecommendedLesson } from './LessonRecommendations'
 export { PrintableWorksheet } from './PrintableWorksheet'
-export type { WorksheetQuestion, WorksheetSection, PrintableWorksheetProps, DifficultyBadge } from './PrintableWorksheet'
+export type {
+  WorksheetQuestion,
+  WorksheetSection,
+  PrintableWorksheetProps,
+  DifficultyBadge,
+} from './PrintableWorksheet'
 export { RecommendationCard } from './RecommendationCard'
 export { SchoolSidebar } from './SchoolSidebar'
 export { StatCard } from './StatCard'
@@ -69,6 +74,7 @@ export { SchoolTestimonials } from './SchoolTestimonials'
 export { SchoolStats } from './SchoolStats'
 export { ContentCreationDemo } from './ContentCreationDemo'
 export { AnalyticsDashboardDemo } from './AnalyticsDashboardDemo'
+export { InterventionInsightsPanel } from './InterventionInsightsPanel'
 
 export { LessonBuilderPreview } from './LessonBuilderPreview'
 export { StudentProgressPreview } from './StudentProgressPreview'

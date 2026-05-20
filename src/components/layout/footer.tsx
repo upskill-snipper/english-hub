@@ -109,6 +109,16 @@ const FOOTER_SECTIONS: FooterSection[] = [
     ],
   },
   {
+    titleKey: 'footer.section.demos',
+    generic: true,
+    links: [
+      { href: '/demo', labelKey: 'footer.link.demo_hub' },
+      { href: '/demo/school', labelKey: 'footer.link.demo_school' },
+      { href: '/demo/teacher', labelKey: 'footer.link.demo_teacher' },
+      { href: '/demo/student', labelKey: 'footer.link.demo_student' },
+    ],
+  },
+  {
     titleKey: 'footer.section.company',
     generic: true,
     links: [

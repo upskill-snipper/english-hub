@@ -50,6 +50,13 @@ const ALLOWLISTED_PATHS = [
   '/for-teachers/*',
   '/for-parents',
   '/for-parents/*',
+  // 2026-05-20: institutional repositioning canonical URLs.
+  '/schools',
+  '/school-pilot',
+  '/teachers',
+  '/students',
+  '/eal',
+  '/eal/*',
   '/affiliates',
   '/affiliates/*',
   '/creators',
