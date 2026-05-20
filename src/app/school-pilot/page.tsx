@@ -29,60 +29,69 @@ import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { SchoolCTAForm } from '@/components/schools/SchoolCTAForm'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { PRICING_DISPLAY } from '@/constants/pricing'
+import { tMany } from '@/lib/i18n/t'
 
 const OG = '/api/og?title=90-Day+Founder+School+Pilot&subtitle=Prove+value+before+wider+rollout'
 
-export const metadata: Metadata = {
-  title: 'Founder School Pilot — The English Hub for Schools',
-  description:
-    'A structured one-term English pilot for schools: onboarding, usage, intervention insights and an end-of-pilot impact report with a rollout recommendation.',
-  alternates: { canonical: 'https://theenglishhub.app/school-pilot' },
-  keywords: [
-    'English school pilot',
-    'English department pilot programme',
-    'AI English platform pilot',
-    'school English intervention pilot',
-  ],
-  openGraph: {
-    title: '90-Day Founder School Pilot — The English Hub',
-    description: 'A structured one-term pilot designed to prove value before wider rollout.',
-    url: 'https://theenglishhub.app/school-pilot',
-    images: [{ url: OG, width: 1200, height: 630, alt: 'Founder School Pilot' }],
-  },
-  twitter: { card: 'summary_large_image', images: [OG] },
+export async function generateMetadata(): Promise<Metadata> {
+  const [metaTitle, metaDescription, ogTitle, ogDescription, ogAlt] = await tMany([
+    'mkt.pilot.meta.title',
+    'mkt.pilot.meta.description',
+    'mkt.pilot.meta.og_title',
+    'mkt.pilot.meta.og_description',
+    'mkt.pilot.meta.og_alt',
+  ])
+  return {
+    title: metaTitle,
+    description: metaDescription,
+    alternates: { canonical: 'https://theenglishhub.app/school-pilot' },
+    keywords: [
+      'English school pilot',
+      'English department pilot programme',
+      'AI English platform pilot',
+      'school English intervention pilot',
+    ],
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: 'https://theenglishhub.app/school-pilot',
+      images: [{ url: OG, width: 1200, height: 630, alt: ogAlt }],
+    },
+    twitter: { card: 'summary_large_image', images: [OG] },
+  }
 }
 
-const INCLUDED = [
-  'Onboarding session with the English team',
-  'Teacher setup and student access',
-  'Baseline usage review',
-  'Weekly adoption check-ins',
-  'Class and year-group analytics review',
-  'Intervention insight report',
-  'End-of-pilot impact report',
-  'Recommended rollout plan for wider deployment',
+const INCLUDED_KEYS = [
+  'mkt.pilot.included.onboarding',
+  'mkt.pilot.included.teacher_setup',
+  'mkt.pilot.included.baseline',
+  'mkt.pilot.included.weekly_checkins',
+  'mkt.pilot.included.analytics_review',
+  'mkt.pilot.included.intervention_report',
+  'mkt.pilot.included.impact_report',
+  'mkt.pilot.included.rollout_plan',
 ]
 
 const SCOPES = [
   {
     icon: Users2,
-    name: 'Single year group',
+    nameKey: 'mkt.pilot.scopes.year_group.name',
     price: PRICING_DISPLAY.pilotYearGroupFrom,
-    body: 'Focus the pilot on one year group to prove value with minimal change management.',
+    bodyKey: 'mkt.pilot.scopes.year_group.body',
     highlight: false,
   },
   {
     icon: Building2,
-    name: 'English department',
+    nameKey: 'mkt.pilot.scopes.department.name',
     price: PRICING_DISPLAY.pilotDepartmentFrom,
-    body: 'A whole-department pilot across KS3–KS4 English Language and Literature.',
+    bodyKey: 'mkt.pilot.scopes.department.body',
     highlight: true,
   },
   {
     icon: Languages,
-    name: 'Multi-campus / group',
+    nameKey: 'mkt.pilot.scopes.multi_campus.name',
     price: PRICING_DISPLAY.pilotMultiCampus,
-    body: 'For school groups and multi-campus trusts. Scope and pricing tailored.',
+    bodyKey: 'mkt.pilot.scopes.multi_campus.body',
     highlight: false,
   },
 ]
@@ -90,48 +99,140 @@ const SCOPES = [
 const AUDIENCES = [
   {
     icon: Users,
-    text: 'Heads of English and Heads of Department evaluating department-wide tools',
+    textKey: 'mkt.pilot.audiences.hods',
     border: 'border-l-4 border-l-teal-500/60',
   },
   {
     icon: Briefcase,
-    text: 'Senior leaders looking to reduce marking workload and strengthen outcomes',
+    textKey: 'mkt.pilot.audiences.senior_leaders',
     border: 'border-l-4 border-l-clay-500/60',
   },
   {
     icon: Languages,
-    text: 'Schools with significant EAL cohorts needing structured support',
+    textKey: 'mkt.pilot.audiences.eal',
     border: 'border-l-4 border-l-ochre-500/60',
   },
   {
     icon: Globe,
-    text: 'International and IGCSE schools planning English improvement',
+    textKey: 'mkt.pilot.audiences.international',
     border: 'border-l-4 border-l-sage-500/60',
   },
 ]
 
 const PILOT_OUTCOMES = [
-  { icon: Sparkles, label: 'Setup in week 1' },
-  { icon: Calendar, label: 'Adoption check-ins' },
-  { icon: BarChart3, label: 'End-of-pilot report' },
+  { icon: Sparkles, labelKey: 'mkt.pilot.outcomes.setup' },
+  { icon: Calendar, labelKey: 'mkt.pilot.outcomes.checkins' },
+  { icon: BarChart3, labelKey: 'mkt.pilot.outcomes.report' },
 ]
 
 const END_DELIVERABLES = [
-  { icon: FileText, text: 'Usage summary' },
-  { icon: MessageSquare, text: 'Teacher feedback summary' },
-  { icon: BarChart3, text: 'Student engagement summary' },
-  { icon: Lightbulb, text: 'Intervention insight report' },
-  { icon: Map, text: 'Recommended rollout plan' },
-  { icon: FileSpreadsheet, text: 'Pricing proposal for annual deployment' },
+  { icon: FileText, textKey: 'mkt.pilot.end.usage_summary' },
+  { icon: MessageSquare, textKey: 'mkt.pilot.end.teacher_feedback' },
+  { icon: BarChart3, textKey: 'mkt.pilot.end.student_engagement' },
+  { icon: Lightbulb, textKey: 'mkt.pilot.end.intervention_report' },
+  { icon: Map, textKey: 'mkt.pilot.end.rollout_plan' },
+  { icon: FileSpreadsheet, textKey: 'mkt.pilot.end.pricing_proposal' },
 ]
 
-const HERO_PILLS = [
-  'One term · 8-12 weeks',
-  'Single year group or full department',
-  'Impact report on completion',
+const HERO_PILL_KEYS = [
+  'mkt.pilot.hero.pill_length',
+  'mkt.pilot.hero.pill_scope',
+  'mkt.pilot.hero.pill_report',
 ]
 
-export default function SchoolPilotPage() {
+export default async function SchoolPilotPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroLede,
+    heroCtaPrimary,
+    heroCtaSecondary,
+    heroDemoPrompt,
+    heroDemoLink,
+    aboutHeading,
+    aboutBodyPrefix,
+    aboutBodySuffix,
+    audienceEyebrow,
+    audienceHeading,
+    scopeEyebrow,
+    includedHeading,
+    pilotDeliverablesEyebrow,
+  ] = await tMany([
+    'mkt.pilot.hero.eyebrow',
+    'mkt.pilot.hero.title',
+    'mkt.pilot.hero.lede',
+    'mkt.pilot.hero.cta_primary',
+    'mkt.pilot.hero.cta_secondary',
+    'mkt.pilot.hero.demo_prompt',
+    'mkt.pilot.hero.demo_link',
+    'mkt.pilot.about.heading',
+    'mkt.pilot.about.body_prefix',
+    'mkt.pilot.about.body_suffix',
+    'mkt.pilot.audience.eyebrow',
+    'mkt.pilot.audience.heading',
+    'mkt.pilot.scope.eyebrow',
+    'mkt.pilot.included.heading',
+    'mkt.pilot.included.panel_eyebrow',
+  ])
+
+  const heroPills = await tMany(HERO_PILL_KEYS)
+  const audiences = await tMany(AUDIENCES.map((a) => a.textKey))
+  const outcomes = await tMany(PILOT_OUTCOMES.map((o) => o.labelKey))
+  const included = await tMany(INCLUDED_KEYS)
+  const scopeNames = await tMany(SCOPES.map((s) => s.nameKey))
+  const scopeBodies = await tMany(SCOPES.map((s) => s.bodyKey))
+  const endDeliverables = await tMany(END_DELIVERABLES.map((d) => d.textKey))
+
+  const [
+    suggestedScopesEyebrow,
+    suggestedScopesHeading,
+    suggestedScopesLede,
+    suggestedScopesBadge,
+    timelineEyebrow,
+    timelineHeading,
+    timelineLede,
+    timelinePanelEyebrow,
+    pricingEyebrow,
+    pricingHeading,
+    pricingLede,
+    pricingPanelEyebrow,
+    pricingCtaLabel,
+    endEyebrow,
+    endHeading,
+    bookEyebrow,
+    bookHeading,
+    bookLede,
+    bookImpactNote,
+    bookTrustPill,
+    bookFormHeading,
+    faqEyebrow,
+    faqHeading,
+  ] = await tMany([
+    'mkt.pilot.suggested_scopes.eyebrow',
+    'mkt.pilot.suggested_scopes.heading',
+    'mkt.pilot.suggested_scopes.lede',
+    'mkt.pilot.suggested_scopes.badge',
+    'mkt.pilot.timeline.eyebrow',
+    'mkt.pilot.timeline.heading',
+    'mkt.pilot.timeline.lede',
+    'mkt.pilot.timeline.panel_eyebrow',
+    'mkt.pilot.pricing.eyebrow',
+    'mkt.pilot.pricing.heading',
+    'mkt.pilot.pricing.lede',
+    'mkt.pilot.pricing.panel_eyebrow',
+    'mkt.pilot.pricing.cta_label',
+    'mkt.pilot.end.eyebrow',
+    'mkt.pilot.end.heading',
+    'mkt.pilot.book.eyebrow',
+    'mkt.pilot.hero.cta_primary',
+    'mkt.pilot.book.lede',
+    'mkt.pilot.book.impact_note',
+    'mkt.pilot.book.trust_pill',
+    'mkt.pilot.book.form_heading',
+    'mkt.pilot.faq.eyebrow',
+    'mkt.pilot.faq.heading',
+  ])
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -154,18 +255,17 @@ export default function SchoolPilotPage() {
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            Founder School Programme
+            {heroEyebrow}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            90-Day Founder School Pilot
+            {heroTitle}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A structured one-term pilot designed to prove value before wider rollout — focused on
-            one year group or the English department.
+            {heroLede}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button size="lg" className="h-12 px-7 text-base" render={<Link href="#book" />}>
-              Book a School Pilot
+              {heroCtaPrimary}
             </Button>
             <Button
               variant="outline"
@@ -173,15 +273,15 @@ export default function SchoolPilotPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/schools" />}
             >
-              Explore the platform
+              {heroCtaSecondary}
             </Button>
           </div>
 
           {/* Mini-pill strip */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {HERO_PILLS.map((pill) => (
+            {heroPills.map((pill, i) => (
               <span
-                key={pill}
+                key={HERO_PILL_KEYS[i]}
                 className="inline-flex items-center rounded-full border border-border/60 bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm"
               >
                 {pill}
@@ -191,9 +291,9 @@ export default function SchoolPilotPage() {
 
           {/* Demo first link */}
           <p className="mt-6 text-sm text-muted-foreground">
-            Want to look around before booking?{' '}
+            {heroDemoPrompt}{' '}
             <Link className="font-medium text-primary hover:underline" href="/demo">
-              Open the demo
+              {heroDemoLink}
             </Link>
           </p>
         </div>
@@ -202,17 +302,16 @@ export default function SchoolPilotPage() {
       {/* 1. What the pilot is */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
         <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          What the pilot is
+          {aboutHeading}
         </h2>
         <Card className="mt-6 border-primary/20 bg-primary/[0.02] p-6 sm:p-8">
           <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
             <Compass className="h-5 w-5" />
           </div>
           <p className="leading-relaxed text-foreground">
-            The Founder School Pilot is a structured engagement over{' '}
-            {PRICING_DISPLAY.schoolPilotLength}. It is designed to embed The English Hub into how
-            your department works, gather real adoption and usage signals, and produce an evidence
-            base for a wider rollout decision — without committing to a full year up front.
+            {aboutBodyPrefix}
+            {PRICING_DISPLAY.schoolPilotLength}
+            {aboutBodySuffix}
           </p>
         </Card>
       </section>
@@ -220,18 +319,20 @@ export default function SchoolPilotPage() {
       {/* 2. Who it is for */}
       <section className="border-y border-border/60 bg-muted/30">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">Audience</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
+            {audienceEyebrow}
+          </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Who it is for
+            {audienceHeading}
           </h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {AUDIENCES.map(({ icon: Icon, text, border }) => (
+            {AUDIENCES.map(({ icon: Icon, textKey, border }, i) => (
               <div
-                key={text}
+                key={textKey}
                 className={`flex items-start gap-3 rounded-xl border border-border/60 bg-card p-5 ${border}`}
               >
                 <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <p className="text-sm leading-relaxed text-foreground">{text}</p>
+                <p className="text-sm leading-relaxed text-foreground">{audiences[i]}</p>
               </div>
             ))}
           </div>
@@ -241,30 +342,30 @@ export default function SchoolPilotPage() {
       {/* 3. What is included */}
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-          Programme scope
+          {scopeEyebrow}
         </p>
         <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          What is included
+          {includedHeading}
         </h2>
 
         {/* Outcome row */}
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
-          {PILOT_OUTCOMES.map(({ icon: Icon, label }) => (
-            <Card key={label} className="flex items-center gap-3 border-border/50 bg-card p-4">
+          {PILOT_OUTCOMES.map(({ icon: Icon, labelKey }, i) => (
+            <Card key={labelKey} className="flex items-center gap-3 border-border/50 bg-card p-4">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <Icon className="h-4 w-4" />
               </span>
-              <span className="text-sm font-medium text-foreground">{label}</span>
+              <span className="text-sm font-medium text-foreground">{outcomes[i]}</span>
             </Card>
           ))}
         </div>
 
         <GlassPanel accent="primary" className="mt-6 p-6 sm:p-8">
-          <PanelEyebrow>Pilot deliverables</PanelEyebrow>
+          <PanelEyebrow>{pilotDeliverablesEyebrow}</PanelEyebrow>
           <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {INCLUDED.map((item) => (
+            {included.map((item, i) => (
               <li
-                key={item}
+                key={INCLUDED_KEYS[i]}
                 className="flex items-start gap-3 rounded-lg border border-border/40 bg-card/60 p-4 backdrop-blur-sm"
               >
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -281,18 +382,16 @@ export default function SchoolPilotPage() {
       <section className="border-y border-border/60 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-            Pilot scopes
+            {suggestedScopesEyebrow}
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Suggested pilot scopes
+            {suggestedScopesHeading}
           </h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Start small and expand. Most schools begin with a single year group.
-          </p>
+          <p className="mt-3 max-w-2xl text-muted-foreground">{suggestedScopesLede}</p>
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {SCOPES.map(({ icon: Icon, name, price, body, highlight }) => (
+            {SCOPES.map(({ icon: Icon, nameKey, price, highlight }, i) => (
               <Card
-                key={name}
+                key={nameKey}
                 className={
                   highlight
                     ? 'relative flex h-full flex-col border-border/50 bg-gradient-to-b from-primary/[0.04] to-transparent p-6 ring-2 ring-primary/30'
@@ -301,7 +400,7 @@ export default function SchoolPilotPage() {
               >
                 {highlight && (
                   <Badge variant="default" className="absolute -top-2.5 left-1/2 -translate-x-1/2">
-                    Most schools start here
+                    {suggestedScopesBadge}
                   </Badge>
                 )}
                 <div
@@ -312,10 +411,12 @@ export default function SchoolPilotPage() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                  {name}
+                  {scopeNames[i]}
                 </p>
                 <p className="mt-2 font-serif text-2xl font-semibold text-foreground">{price}</p>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {scopeBodies[i]}
+                </p>
               </Card>
             ))}
           </div>
@@ -328,19 +429,17 @@ export default function SchoolPilotPage() {
       {/* 5. Timeline */}
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-          Programme cadence
+          {timelineEyebrow}
         </p>
         <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Pilot timeline
+          {timelineHeading}
         </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          A typical 90-day pilot runs in four phases.
-        </p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">{timelineLede}</p>
         <GlassPanel accent="clay" className="mt-10 p-6 sm:p-8">
           <PanelEyebrow>
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="h-3 w-3" />
-              <span>Four-phase rollout</span>
+              <span>{timelinePanelEyebrow}</span>
             </span>
           </PanelEyebrow>
           <div className="mt-5">
@@ -353,19 +452,16 @@ export default function SchoolPilotPage() {
       <section className="border-y border-border/60 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-            Investment
+            {pricingEyebrow}
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Pilot &amp; deployment pricing
+            {pricingHeading}
           </h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Indicative founder pricing. Final pricing depends on school size, scope and rollout
-            requirements.
-          </p>
+          <p className="mt-3 max-w-2xl text-muted-foreground">{pricingLede}</p>
           <GlassPanel accent="ochre" className="mt-10 p-6 sm:p-8">
-            <PanelEyebrow>Pilot &amp; annual pricing</PanelEyebrow>
+            <PanelEyebrow>{pricingPanelEyebrow}</PanelEyebrow>
             <div className="mt-5">
-              <SchoolPricingCards ctaHref="#book" ctaLabel="Request a pilot proposal" />
+              <SchoolPricingCards ctaHref="#book" ctaLabel={pricingCtaLabel} />
             </div>
           </GlassPanel>
         </div>
@@ -374,23 +470,23 @@ export default function SchoolPilotPage() {
       {/* 7. What the school receives at the end */}
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-          Final handover
+          {endEyebrow}
         </p>
         <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          What your school receives at the end
+          {endHeading}
         </h2>
         <Card className="mt-8 border-border/50 bg-muted/40 p-6 sm:p-8">
           <ul className="grid gap-3 sm:grid-cols-2">
-            {END_DELIVERABLES.map(({ icon: Icon, text }) => (
+            {END_DELIVERABLES.map(({ icon: Icon, textKey }, i) => (
               <li
-                key={text}
+                key={textKey}
                 className="flex items-start gap-3 rounded-xl border border-border/50 bg-card p-4"
               >
                 <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon className="h-4 w-4" />
                 </span>
                 <span className="self-center text-sm font-medium leading-relaxed text-foreground">
-                  {text}
+                  {endDeliverables[i]}
                 </span>
               </li>
             ))}
@@ -403,32 +499,26 @@ export default function SchoolPilotPage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Next step
+              {bookEyebrow}
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Book a School Pilot
+              {bookHeading}
             </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Tell us about your school and the challenge you most want to address. We will reply
-              within one UK working day with a pilot scoped to your department.
-            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">{bookLede}</p>
             <div className="mt-6 flex items-start gap-3 rounded-xl border border-border/60 bg-card p-5">
               <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Impact reporting is available during the pilot. We do not publish improvement
-                figures we cannot evidence — your pilot generates your own.
-              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{bookImpactNote}</p>
             </div>
           </div>
           <div>
             {/* Trust pill */}
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-3 py-1.5 text-xs font-medium text-primary">
               <ShieldCheck className="h-3.5 w-3.5" />
-              <span>Reply within one UK working day</span>
+              <span>{bookTrustPill}</span>
             </div>
             <GlassPanel accent="primary" className="p-2 sm:p-3">
               <Card className="border-border/50 p-6 sm:p-8">
-                <SchoolCTAForm heading="Request a Founder School Pilot" />
+                <SchoolCTAForm heading={bookFormHeading} />
               </Card>
             </GlassPanel>
           </div>
@@ -438,10 +528,10 @@ export default function SchoolPilotPage() {
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
         <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-          Common questions
+          {faqEyebrow}
         </p>
         <h2 className="mt-3 mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Pilot questions
+          {faqHeading}
         </h2>
         <SchoolFAQ />
       </section>

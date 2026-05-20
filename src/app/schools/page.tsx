@@ -30,125 +30,221 @@ import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { SchoolCTAForm } from '@/components/schools/SchoolCTAForm'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { PRICING_DISPLAY } from '@/constants/pricing'
+import { t } from '@/lib/i18n/t'
 
 const OG =
   '/api/og?title=English+department+intelligence,+assessment+and+intervention&subtitle=A+school-ready+platform+for+modern+English+departments'
 
-export const metadata: Metadata = {
-  title: 'The English Hub for Schools — assessment, intervention & reporting',
-  description:
-    'A school-ready English platform helping teachers save time, students improve faster and leaders understand where support is needed across English Language, Literature and EAL.',
-  alternates: { canonical: 'https://theenglishhub.app/schools' },
-  keywords: [
-    'AI English platform for schools',
-    'English intervention platform',
-    'English department analytics',
-    'school English assessment platform',
-    'AI marking for English teachers',
-    'IGCSE English support',
-  ],
-  openGraph: {
-    title: 'The English Hub for Schools',
-    description: 'English department intelligence, assessment and intervention in one platform.',
-    url: 'https://theenglishhub.app/schools',
-    images: [{ url: OG, width: 1200, height: 630, alt: 'The English Hub for Schools' }],
-  },
-  twitter: { card: 'summary_large_image', images: [OG] },
+export async function generateMetadata(): Promise<Metadata> {
+  const title = await t('mkt.schools.meta.title')
+  const description = await t('mkt.schools.meta.description')
+  const ogTitle = await t('mkt.schools.meta.og_title')
+  const ogDescription = await t('mkt.schools.meta.og_description')
+  const ogAlt = await t('mkt.schools.meta.og_alt')
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/schools' },
+    keywords: [
+      'AI English platform for schools',
+      'English intervention platform',
+      'English department analytics',
+      'school English assessment platform',
+      'AI marking for English teachers',
+      'IGCSE English support',
+    ],
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: 'https://theenglishhub.app/schools',
+      images: [{ url: OG, width: 1200, height: 630, alt: ogAlt }],
+    },
+    twitter: { card: 'summary_large_image', images: [OG] },
+  }
 }
 
-/* Problem cards — each is a distinct concern, given its own accent border
-   and icon to break the monotony of identical bullets. */
-const PROBLEMS = [
-  {
-    icon: Clock,
-    accent: 'border-l-clay-500/50',
-    body: 'Marking workload is heavy and repetitive, eating into planning and teaching time.',
-  },
-  {
-    icon: Eye,
-    accent: 'border-l-ochre-500/50',
-    body: 'Student practice is inconsistent and hard to monitor across classes.',
-  },
-  {
-    icon: LineChart,
-    accent: 'border-l-sage-500/50',
-    body: 'Leaders have limited visibility of progress across year groups.',
-  },
-  {
-    icon: AlertTriangle,
-    accent: 'border-l-clay-500/50',
-    body: 'Students who need support are often identified too late.',
-  },
-  {
-    icon: Languages,
-    accent: 'border-l-teal-500/50',
-    body: 'EAL learners need structured support that is hard to resource at scale.',
-  },
-  {
-    icon: FileText,
-    accent: 'border-l-ochre-500/50',
-    body: 'Reporting is time-consuming and pulls from scattered sources.',
-  },
-]
+export default async function SchoolsPage() {
+  /* Problem cards — each is a distinct concern, given its own accent border
+     and icon to break the monotony of identical bullets. */
+  const PROBLEMS = [
+    {
+      icon: Clock,
+      accent: 'border-l-clay-500/50',
+      body: await t('mkt.schools.problem.card.marking_workload'),
+    },
+    {
+      icon: Eye,
+      accent: 'border-l-ochre-500/50',
+      body: await t('mkt.schools.problem.card.practice_inconsistent'),
+    },
+    {
+      icon: LineChart,
+      accent: 'border-l-sage-500/50',
+      body: await t('mkt.schools.problem.card.limited_visibility'),
+    },
+    {
+      icon: AlertTriangle,
+      accent: 'border-l-clay-500/50',
+      body: await t('mkt.schools.problem.card.late_identification'),
+    },
+    {
+      icon: Languages,
+      accent: 'border-l-teal-500/50',
+      body: await t('mkt.schools.problem.card.eal_support'),
+    },
+    {
+      icon: FileText,
+      accent: 'border-l-ochre-500/50',
+      body: await t('mkt.schools.problem.card.reporting_scattered'),
+    },
+  ]
 
-/* Aspirational/forward-looking lozenges for the hero stat strip. Qualitative
-   only — no fabricated user numbers (brand-voice §9). */
-const HERO_LOZENGES = [
-  'English Language & Literature',
-  'KS3 · GCSE · IGCSE · A-Level',
-  'Designed for English departments',
-]
+  /* Aspirational/forward-looking lozenges for the hero stat strip. Qualitative
+     only — no fabricated user numbers (brand-voice §9). */
+  const HERO_LOZENGES = [
+    await t('mkt.schools.hero.lozenge.language_literature'),
+    await t('mkt.schools.hero.lozenge.levels'),
+    await t('mkt.schools.hero.lozenge.designed_for_departments'),
+  ]
 
-/* Forward-looking, qualitative tiles. Real numbers stay out (brand-voice §9). */
-const VALUE_TILES = [
-  {
-    label: 'All boards',
-    headline: 'Multi-spec',
-    body: 'AQA · Edexcel · OCR · Eduqas · Cambridge',
-    icon: Layers,
-    accent: 'teal' as const,
-  },
-  {
-    label: 'EAL ready',
-    headline: 'Differentiated',
-    body: 'Differentiated practice for EAL learners',
-    icon: Languages,
-    accent: 'sage' as const,
-  },
-  {
-    label: 'School-grade',
-    headline: 'Institutional',
-    body: 'Designed for English departments',
-    icon: Building2,
-    accent: 'ochre' as const,
-  },
-]
+  /* Forward-looking, qualitative tiles. Real numbers stay out (brand-voice §9). */
+  const VALUE_TILES = [
+    {
+      label: await t('mkt.schools.value.tile.all_boards.label'),
+      headline: await t('mkt.schools.value.tile.all_boards.headline'),
+      body: await t('mkt.schools.value.tile.all_boards.body'),
+      icon: Layers,
+      accent: 'teal' as const,
+    },
+    {
+      label: await t('mkt.schools.value.tile.eal.label'),
+      headline: await t('mkt.schools.value.tile.eal.headline'),
+      body: await t('mkt.schools.value.tile.eal.body'),
+      icon: Languages,
+      accent: 'sage' as const,
+    },
+    {
+      label: await t('mkt.schools.value.tile.institutional.label'),
+      headline: await t('mkt.schools.value.tile.institutional.headline'),
+      body: await t('mkt.schools.value.tile.institutional.body'),
+      icon: Building2,
+      accent: 'ochre' as const,
+    },
+  ]
 
-const DEMO_CARDS = [
-  {
-    href: '/demo/school',
-    icon: LayoutDashboard,
-    accent: 'border-l-teal-500/60',
-    title: 'School dashboard',
-    body: 'A leadership view of practice activity, intervention insights and department reporting.',
-  },
-  {
-    href: '/demo/teacher',
-    icon: ClipboardCheck,
-    accent: 'border-l-sage-500/60',
-    title: 'Teacher workspace',
-    body: 'How a head of English sets practice, reviews marking and tracks class progress.',
-  },
-  {
-    href: '/demo/student',
-    icon: GraduationCap,
-    accent: 'border-l-clay-500/60',
-    title: 'Student experience',
-    body: 'The practice, comprehension and feedback flow students see in the platform.',
-  },
-]
+  const DEMO_CARDS = [
+    {
+      href: '/demo/school',
+      icon: LayoutDashboard,
+      accent: 'border-l-teal-500/60',
+      title: await t('mkt.schools.demo.card.school.title'),
+      body: await t('mkt.schools.demo.card.school.body'),
+    },
+    {
+      href: '/demo/teacher',
+      icon: ClipboardCheck,
+      accent: 'border-l-sage-500/60',
+      title: await t('mkt.schools.demo.card.teacher.title'),
+      body: await t('mkt.schools.demo.card.teacher.body'),
+    },
+    {
+      href: '/demo/student',
+      icon: GraduationCap,
+      accent: 'border-l-clay-500/60',
+      title: await t('mkt.schools.demo.card.student.title'),
+      body: await t('mkt.schools.demo.card.student.body'),
+    },
+  ]
 
-export default function SchoolsPage() {
+  const demoOpenLabel = await t('mkt.schools.demo.card.cta_open')
+
+  const ctaBullets = [
+    await t('mkt.schools.cta.bullet.scope'),
+    await t('mkt.schools.cta.bullet.onboarding'),
+    await t('mkt.schools.cta.bullet.impact_report'),
+  ]
+
+  const featureItems = [
+    {
+      icon: Brain,
+      title: await t('mkt.schools.solution.feature.marking.title'),
+      body: await t('mkt.schools.solution.feature.marking.body'),
+    },
+    {
+      icon: BookOpen,
+      title: await t('mkt.schools.solution.feature.practice.title'),
+      body: await t('mkt.schools.solution.feature.practice.body'),
+    },
+    {
+      icon: Layers,
+      title: await t('mkt.schools.solution.feature.comprehension.title'),
+      body: await t('mkt.schools.solution.feature.comprehension.body'),
+    },
+    {
+      icon: Languages,
+      title: await t('mkt.schools.solution.feature.eal.title'),
+      body: await t('mkt.schools.solution.feature.eal.body'),
+    },
+    {
+      icon: LineChart,
+      title: await t('mkt.schools.solution.feature.analytics.title'),
+      body: await t('mkt.schools.solution.feature.analytics.body'),
+    },
+    {
+      icon: Eye,
+      title: await t('mkt.schools.solution.feature.intervention.title'),
+      body: await t('mkt.schools.solution.feature.intervention.body'),
+    },
+    {
+      icon: ClipboardCheck,
+      title: await t('mkt.schools.solution.feature.homework.title'),
+      body: await t('mkt.schools.solution.feature.homework.body'),
+    },
+    {
+      icon: FileText,
+      title: await t('mkt.schools.solution.feature.reports.title'),
+      body: await t('mkt.schools.solution.feature.reports.body'),
+    },
+    {
+      icon: ScrollText,
+      title: await t('mkt.schools.solution.feature.resource_gen.title'),
+      body: await t('mkt.schools.solution.feature.resource_gen.body'),
+    },
+  ]
+
+  const benefitItems = [
+    {
+      icon: Clock,
+      title: await t('mkt.schools.benefit.workload.title'),
+      body: await t('mkt.schools.benefit.workload.body'),
+    },
+    {
+      icon: Eye,
+      title: await t('mkt.schools.benefit.intervention.title'),
+      body: await t('mkt.schools.benefit.intervention.body'),
+    },
+    {
+      icon: Languages,
+      title: await t('mkt.schools.benefit.eal.title'),
+      body: await t('mkt.schools.benefit.eal.body'),
+    },
+    {
+      icon: Target,
+      title: await t('mkt.schools.benefit.exam_readiness.title'),
+      body: await t('mkt.schools.benefit.exam_readiness.body'),
+    },
+    {
+      icon: FileText,
+      title: await t('mkt.schools.benefit.reports.title'),
+      body: await t('mkt.schools.benefit.reports.body'),
+    },
+    {
+      icon: LineChart,
+      title: await t('mkt.schools.benefit.cohorts.title'),
+      body: await t('mkt.schools.benefit.cohorts.body'),
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -170,14 +266,13 @@ export default function SchoolsPage() {
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            The English Hub for Schools
+            {await t('mkt.schools.hero.eyebrow')}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            English department intelligence, assessment and intervention in one platform
+            {await t('mkt.schools.hero.title')}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A school-ready platform helping teachers save time, students improve faster and leaders
-            understand where support is needed.
+            {await t('mkt.schools.hero.lede')}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
@@ -185,7 +280,7 @@ export default function SchoolsPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/school-pilot" />}
             >
-              Start a 90-Day School Pilot
+              {await t('mkt.schools.hero.cta_primary')}
             </Button>
             <Button
               variant="outline"
@@ -193,7 +288,7 @@ export default function SchoolsPage() {
               className="h-12 px-7 text-base"
               render={<Link href="#pilot" />}
             >
-              See how the pilot works
+              {await t('mkt.schools.hero.cta_secondary')}
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
@@ -218,17 +313,16 @@ export default function SchoolsPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              The challenge
+              {await t('mkt.schools.problem.eyebrow')}
             </p>
             <h2
               id="problem-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              English departments are under pressure
+              {await t('mkt.schools.problem.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              The work is growing faster than the time available to do it. Most departments tell us
-              the same things.
+              {await t('mkt.schools.problem.lede')}
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -255,67 +349,18 @@ export default function SchoolsPage() {
               id="solution-heading"
               className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              One platform for the whole English department
+              {await t('mkt.schools.solution.title')}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-              Designed to support teacher judgement and make department-wide work visible and
-              manageable.
+              {await t('mkt.schools.solution.lede')}
             </p>
           </div>
           <div className="mt-10">
             <GlassPanel accent="primary" className="p-2 sm:p-3">
               <div className="mb-3 px-3 pt-2 sm:mb-4 sm:px-4 sm:pt-3">
-                <PanelEyebrow>The platform</PanelEyebrow>
+                <PanelEyebrow>{await t('mkt.schools.solution.panel_eyebrow')}</PanelEyebrow>
               </div>
-              <FeatureGrid
-                items={[
-                  {
-                    icon: Brain,
-                    title: 'AI-assisted marking & feedback',
-                    body: 'Structured, criteria-referenced feedback teachers can review and build on.',
-                  },
-                  {
-                    icon: BookOpen,
-                    title: 'Student practice & revision',
-                    body: 'Specification-aligned practice across English Language and Literature.',
-                  },
-                  {
-                    icon: Layers,
-                    title: 'Comprehension & reading support',
-                    body: 'Structured reading and comprehension practice across key stages.',
-                  },
-                  {
-                    icon: Languages,
-                    title: 'EAL learning support',
-                    body: 'Differentiated practice built to support EAL learners.',
-                  },
-                  {
-                    icon: LineChart,
-                    title: 'Class & year-group analytics',
-                    body: 'Turn student activity into actionable insight for the department.',
-                  },
-                  {
-                    icon: Eye,
-                    title: 'Intervention insights',
-                    body: 'Surface students who may need support earlier in the term.',
-                  },
-                  {
-                    icon: ClipboardCheck,
-                    title: 'Homework & worksheet support',
-                    body: 'Set practice and generate teacher resources quickly.',
-                  },
-                  {
-                    icon: FileText,
-                    title: 'Student reports',
-                    body: 'Clearer progress summaries for parents, reviews and leadership.',
-                  },
-                  {
-                    icon: ScrollText,
-                    title: 'Teacher resource generation',
-                    body: 'Draft worksheets and practice material aligned to the specification.',
-                  },
-                ]}
-              />
+              <FeatureGrid items={featureItems} />
             </GlassPanel>
           </div>
         </div>
@@ -328,13 +373,13 @@ export default function SchoolsPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            For departments and leaders
+            {await t('mkt.schools.value.eyebrow')}
           </p>
           <h2
             id="value-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            What schools get from it
+            {await t('mkt.schools.value.title')}
           </h2>
         </div>
 
@@ -357,40 +402,7 @@ export default function SchoolsPage() {
         </div>
 
         <div className="mt-10">
-          <BenefitGrid
-            items={[
-              {
-                icon: Clock,
-                title: 'Reduce teacher workload',
-                body: 'Reduce repetitive marking so teachers can focus more time on teaching.',
-              },
-              {
-                icon: Eye,
-                title: 'Improve intervention visibility',
-                body: 'Identify students who need support earlier, before gaps widen.',
-              },
-              {
-                icon: Languages,
-                title: 'Support EAL learners',
-                body: 'Structured, differentiated practice for EAL cohorts.',
-              },
-              {
-                icon: Target,
-                title: 'Strengthen exam readiness',
-                body: 'Specification-aligned practice and feedback across the department.',
-              },
-              {
-                icon: FileText,
-                title: 'Generate clearer student reports',
-                body: 'Turn activity into shareable, leadership-ready summaries.',
-              },
-              {
-                icon: LineChart,
-                title: 'Track progress across cohorts',
-                body: 'Clearer visibility across classes and year groups.',
-              },
-            ]}
-          />
+          <BenefitGrid items={benefitItems} />
         </div>
       </section>
 
@@ -410,17 +422,16 @@ export default function SchoolsPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Interactive walk-through
+              {await t('mkt.schools.demo.eyebrow')}
             </p>
             <h2
               id="demo-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              See it in action
+              {await t('mkt.schools.demo.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Browse the school dashboard, the teacher workspace and the student experience as a
-              guest — no sign-up.
+              {await t('mkt.schools.demo.lede')}
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -443,7 +454,7 @@ export default function SchoolsPage() {
                     className="gap-1.5"
                     render={<Link href={href} />}
                   >
-                    Open the demo
+                    {demoOpenLabel}
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
                 </div>
@@ -458,22 +469,21 @@ export default function SchoolsPage() {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Founder School Programme
+              {await t('mkt.schools.pilot.eyebrow')}
             </p>
             <h2
               id="pilot-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              90-Day Founder School Pilot
+              {await t('mkt.schools.pilot.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Most schools begin with a structured one-term pilot focused on one year group or the
-              English department. The pilot is designed to prove value before wider rollout.
+              {await t('mkt.schools.pilot.lede')}
             </p>
           </div>
           <div className="mx-auto mt-12 max-w-3xl">
             <GlassPanel accent="clay" className="p-6 sm:p-8">
-              <PanelEyebrow>How the pilot runs</PanelEyebrow>
+              <PanelEyebrow>{await t('mkt.schools.pilot.panel_eyebrow')}</PanelEyebrow>
               <div className="mt-5">
                 <PilotTimeline />
               </div>
@@ -481,7 +491,7 @@ export default function SchoolsPage() {
           </div>
           <div className="mt-10 text-center">
             <Button size="lg" className="h-12 px-7" render={<Link href="/school-pilot" />}>
-              Start a 90-Day School Pilot
+              {await t('mkt.schools.pilot.cta')}
             </Button>
           </div>
         </div>
@@ -492,17 +502,16 @@ export default function SchoolsPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Pricing
+              {await t('mkt.schools.pricing.eyebrow')}
             </p>
             <h2
               id="pricing-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Founder pricing
+              {await t('mkt.schools.pricing.title')}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-              Founder pilots are available for early school partners. Pricing depends on school
-              size, scope and rollout requirements.
+              {await t('mkt.schools.pricing.lede')}
             </p>
           </div>
           <div className="mt-10">
@@ -522,24 +531,19 @@ export default function SchoolsPage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Talk to us
+              {await t('mkt.schools.cta.eyebrow')}
             </p>
             <h2
               id="cta-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Book a School Pilot
+              {await t('mkt.schools.cta.title')}
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Tell us about your department and the challenge you most want to address. We will
-              reply within one UK working day to discuss a pilot scoped to your school.
+              {await t('mkt.schools.cta.lede')}
             </p>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-              {[
-                'Start with one year group or the whole department',
-                'Structured onboarding and weekly adoption check-ins',
-                'End-of-pilot impact report and rollout recommendation',
-              ].map((p) => (
+              {ctaBullets.map((p) => (
                 <li key={p} className="flex items-start gap-2.5">
                   <Users2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   {p}
@@ -551,7 +555,7 @@ export default function SchoolsPage() {
             </p>
           </div>
           <GlassPanel accent="primary" className="p-6 sm:p-8">
-            <SchoolCTAForm heading="Request Founder School pricing" />
+            <SchoolCTAForm heading={await t('mkt.schools.cta.form_heading')} />
           </GlassPanel>
         </div>
       </section>
@@ -565,7 +569,7 @@ export default function SchoolsPage() {
           id="faq-heading"
           className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
-          School leader questions
+          {await t('mkt.schools.faq.title')}
         </h2>
         <SchoolFAQ />
       </section>

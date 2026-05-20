@@ -17,104 +17,235 @@ import { Card } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { BenefitGrid } from '@/components/schools/BenefitCard'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
+import { t } from '@/lib/i18n/t'
 
 const OG =
   '/api/og?title=Practise,+improve+and+understand+English&subtitle=Clearer+feedback,+aligned+to+your+exam'
 
-export const metadata: Metadata = {
-  title: 'For Students — practise, improve and understand English',
-  description:
-    'Revision, essay practice, comprehension and clearer feedback aligned to the exam board your school teaches, with progress tracking across English Language and Literature.',
-  alternates: { canonical: 'https://theenglishhub.app/students' },
-  keywords: [
-    'GCSE English revision platform',
-    'IGCSE English support',
-    'English essay practice feedback',
-    'English revision platform for schools',
-  ],
-  openGraph: {
-    title: 'For Students — The English Hub',
-    description: 'Practise, improve and understand English with clearer feedback.',
-    url: 'https://theenglishhub.app/students',
-    images: [{ url: OG, width: 1200, height: 630, alt: 'The English Hub for Students' }],
-  },
-  twitter: { card: 'summary_large_image', images: [OG] },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle, ogDescription, ogImageAlt] = await Promise.all([
+    t('mkt.students.meta.title'),
+    t('mkt.students.meta.description'),
+    t('mkt.students.meta.og_title'),
+    t('mkt.students.meta.og_description'),
+    t('mkt.students.meta.og_image_alt'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/students' },
+    keywords: [
+      'GCSE English revision platform',
+      'IGCSE English support',
+      'English essay practice feedback',
+      'English revision platform for schools',
+    ],
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: 'https://theenglishhub.app/students',
+      images: [{ url: OG, width: 1200, height: 630, alt: ogImageAlt }],
+    },
+    twitter: { card: 'summary_large_image', images: [OG] },
+  }
 }
 
-const JOURNEY_STEPS = [
-  {
-    icon: Compass,
-    title: 'Pick your board',
-    body: 'Tell us your exam — AQA, Edexcel, OCR, Eduqas or IGCSE.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Revise set texts and topics',
-    body: 'Specification-aligned revision, not generic notes.',
-  },
-  {
-    icon: PenLine,
-    title: 'Practise exam-style answers',
-    body: 'Real question formats with model structures.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Get clearer feedback',
-    body: 'AI feedback in plain English — what to fix, and why.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Track your progress',
-    body: 'See what is improving and where to focus next.',
-  },
-]
+export default async function StudentsPage() {
+  // Resolve every visible string once per render. headers() inside t()
+  // is per-request cached so this is effectively a single locale read.
+  const [
+    breadcrumbHome,
+    breadcrumbStudents,
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    heroCtaPrimary,
+    heroCtaSecondary,
+    heroPillBoards,
+    heroPillAiFeedback,
+    heroPillLevels,
+    journeyEyebrow,
+    journeyTitle,
+    journeySubtitle,
+    journeyStepLabel,
+    journeyStep1Title,
+    journeyStep1Body,
+    journeyStep2Title,
+    journeyStep2Body,
+    journeyStep3Title,
+    journeyStep3Body,
+    journeyStep4Title,
+    journeyStep4Body,
+    journeyStep5Title,
+    journeyStep5Body,
+    insideEyebrow,
+    insideTitle,
+    insideSubtitle,
+    insideBoardEyebrow,
+    benefitRevisionTitle,
+    benefitRevisionBody,
+    benefitEssayTitle,
+    benefitEssayBody,
+    benefitFeedbackTitle,
+    benefitFeedbackBody,
+    benefitLitLangTitle,
+    benefitLitLangBody,
+    benefitEalTitle,
+    benefitEalBody,
+    benefitProgressTitle,
+    benefitProgressBody,
+    subjectsEyebrow,
+    subjectsTitle,
+    subjectsSubtitle,
+    subjectKs3Title,
+    subjectKs3Body,
+    subjectLangTitle,
+    subjectLangBody,
+    subjectLitTitle,
+    subjectLitBody,
+    subjectIgcseAlevelTitle,
+    subjectIgcseAlevelBody,
+    demoEyebrow,
+    demoTitle,
+    demoSubtitle,
+    demoCtaPrimary,
+    demoCtaSecondary,
+    noteTitle,
+    noteBody,
+  ] = await Promise.all([
+    t('mkt.students.breadcrumb.home'),
+    t('mkt.students.breadcrumb.students'),
+    t('mkt.students.hero.eyebrow'),
+    t('mkt.students.hero.title'),
+    t('mkt.students.hero.subtitle'),
+    t('mkt.students.hero.cta_primary'),
+    t('mkt.students.hero.cta_secondary'),
+    t('mkt.students.hero.pill_boards'),
+    t('mkt.students.hero.pill_ai_feedback'),
+    t('mkt.students.hero.pill_levels'),
+    t('mkt.students.journey.eyebrow'),
+    t('mkt.students.journey.title'),
+    t('mkt.students.journey.subtitle'),
+    t('mkt.students.journey.step_label'),
+    t('mkt.students.journey.step1.title'),
+    t('mkt.students.journey.step1.body'),
+    t('mkt.students.journey.step2.title'),
+    t('mkt.students.journey.step2.body'),
+    t('mkt.students.journey.step3.title'),
+    t('mkt.students.journey.step3.body'),
+    t('mkt.students.journey.step4.title'),
+    t('mkt.students.journey.step4.body'),
+    t('mkt.students.journey.step5.title'),
+    t('mkt.students.journey.step5.body'),
+    t('mkt.students.inside.eyebrow'),
+    t('mkt.students.inside.title'),
+    t('mkt.students.inside.subtitle'),
+    t('mkt.students.inside.board_eyebrow'),
+    t('mkt.students.inside.benefit.revision.title'),
+    t('mkt.students.inside.benefit.revision.body'),
+    t('mkt.students.inside.benefit.essay.title'),
+    t('mkt.students.inside.benefit.essay.body'),
+    t('mkt.students.inside.benefit.feedback.title'),
+    t('mkt.students.inside.benefit.feedback.body'),
+    t('mkt.students.inside.benefit.lit_lang.title'),
+    t('mkt.students.inside.benefit.lit_lang.body'),
+    t('mkt.students.inside.benefit.eal.title'),
+    t('mkt.students.inside.benefit.eal.body'),
+    t('mkt.students.inside.benefit.progress.title'),
+    t('mkt.students.inside.benefit.progress.body'),
+    t('mkt.students.subjects.eyebrow'),
+    t('mkt.students.subjects.title'),
+    t('mkt.students.subjects.subtitle'),
+    t('mkt.students.subjects.ks3.title'),
+    t('mkt.students.subjects.ks3.body'),
+    t('mkt.students.subjects.lang.title'),
+    t('mkt.students.subjects.lang.body'),
+    t('mkt.students.subjects.lit.title'),
+    t('mkt.students.subjects.lit.body'),
+    t('mkt.students.subjects.igcse_alevel.title'),
+    t('mkt.students.subjects.igcse_alevel.body'),
+    t('mkt.students.demo.eyebrow'),
+    t('mkt.students.demo.title'),
+    t('mkt.students.demo.subtitle'),
+    t('mkt.students.demo.cta_primary'),
+    t('mkt.students.demo.cta_secondary'),
+    t('mkt.students.note.title'),
+    t('mkt.students.note.body'),
+  ])
 
-const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'Eduqas / Cambridge IGCSE']
+  const JOURNEY_STEPS = [
+    {
+      icon: Compass,
+      title: journeyStep1Title,
+      body: journeyStep1Body,
+    },
+    {
+      icon: BookOpen,
+      title: journeyStep2Title,
+      body: journeyStep2Body,
+    },
+    {
+      icon: PenLine,
+      title: journeyStep3Title,
+      body: journeyStep3Body,
+    },
+    {
+      icon: MessageSquare,
+      title: journeyStep4Title,
+      body: journeyStep4Body,
+    },
+    {
+      icon: BarChart3,
+      title: journeyStep5Title,
+      body: journeyStep5Body,
+    },
+  ]
 
-const SUBJECTS: Array<{
-  icon: typeof BookA
-  title: string
-  body: string
-  iconClass: string
-  ringClass: string
-}> = [
-  {
-    icon: BookA,
-    title: 'KS3 English',
-    body: 'Build the foundations — reading, writing and vocabulary practice across Years 7 to 9.',
-    iconClass: 'bg-violet-500/10 text-violet-600 dark:text-violet-300',
-    ringClass: 'hover:border-violet-500/40',
-  },
-  {
-    icon: PenLine,
-    title: 'GCSE English Language',
-    body: 'Reading comprehension, descriptive and persuasive writing aligned to your board.',
-    iconClass: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-300',
-    ringClass: 'hover:border-emerald-500/40',
-  },
-  {
-    icon: BookOpen,
-    title: 'GCSE English Literature',
-    body: 'Set texts, themes, characters and exam-style essay practice with model paragraphs.',
-    iconClass: 'bg-clay-500/10 text-clay-600 dark:text-clay-500',
-    ringClass: 'hover:border-clay-500/40',
-  },
-  {
-    icon: GraduationCap,
-    title: 'IGCSE + A-Level',
-    body: 'Cambridge and Edexcel IGCSE plus extended A-Level practice and feedback.',
-    iconClass: 'bg-ochre-500/10 text-ochre-600 dark:text-ochre-400',
-    ringClass: 'hover:border-ochre-500/40',
-  },
-]
+  const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'Eduqas / Cambridge IGCSE']
 
-export default function StudentsPage() {
+  const SUBJECTS: Array<{
+    icon: typeof BookA
+    title: string
+    body: string
+    iconClass: string
+    ringClass: string
+  }> = [
+    {
+      icon: BookA,
+      title: subjectKs3Title,
+      body: subjectKs3Body,
+      iconClass: 'bg-violet-500/10 text-violet-600 dark:text-violet-300',
+      ringClass: 'hover:border-violet-500/40',
+    },
+    {
+      icon: PenLine,
+      title: subjectLangTitle,
+      body: subjectLangBody,
+      iconClass: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-300',
+      ringClass: 'hover:border-emerald-500/40',
+    },
+    {
+      icon: BookOpen,
+      title: subjectLitTitle,
+      body: subjectLitBody,
+      iconClass: 'bg-clay-500/10 text-clay-600 dark:text-clay-500',
+      ringClass: 'hover:border-clay-500/40',
+    },
+    {
+      icon: GraduationCap,
+      title: subjectIgcseAlevelTitle,
+      body: subjectIgcseAlevelBody,
+      iconClass: 'bg-ochre-500/10 text-ochre-600 dark:text-ochre-400',
+      ringClass: 'hover:border-ochre-500/40',
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Students', url: 'https://theenglishhub.app/students' },
+          { name: breadcrumbHome, url: 'https://theenglishhub.app' },
+          { name: breadcrumbStudents, url: 'https://theenglishhub.app/students' },
         ]}
       />
 
@@ -130,14 +261,13 @@ export default function StudentsPage() {
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            For students
+            {heroEyebrow}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            Practise, improve and understand English with clearer feedback
+            {heroTitle}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Revise the texts you study, practise exam-style questions and get structured feedback
-            aligned to the exam board your school teaches.
+            {heroSubtitle}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
@@ -145,7 +275,7 @@ export default function StudentsPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/board-select" />}
             >
-              Choose your exam board
+              {heroCtaPrimary}
             </Button>
             <Button
               variant="outline"
@@ -153,20 +283,18 @@ export default function StudentsPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/pricing" />}
             >
-              See student pricing
+              {heroCtaSecondary}
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {['All major boards', 'AI feedback in plain English', 'KS3, GCSE, IGCSE, A-Level'].map(
-              (pill) => (
-                <span
-                  key={pill}
-                  className="inline-flex items-center rounded-full border border-border/60 bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm"
-                >
-                  {pill}
-                </span>
-              ),
-            )}
+            {[heroPillBoards, heroPillAiFeedback, heroPillLevels].map((pill) => (
+              <span
+                key={pill}
+                className="inline-flex items-center rounded-full border border-border/60 bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm"
+              >
+                {pill}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -176,16 +304,16 @@ export default function StudentsPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              How it works
+              {journeyEyebrow}
             </p>
             <h2
               id="journey-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              How studying with The English Hub works
+              {journeyTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Five small steps from picking your board to tracking your own progress.
+              {journeySubtitle}
             </p>
           </div>
 
@@ -212,7 +340,7 @@ export default function StudentsPage() {
                           <Icon className="h-5 w-5" aria-hidden />
                         </span>
                         <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                          Step {i + 1}
+                          {journeyStepLabel} {i + 1}
                         </span>
                       </div>
                       <h3 className="mt-2 font-serif text-base font-semibold leading-snug text-foreground">
@@ -252,16 +380,14 @@ export default function StudentsPage() {
         <GlassPanel accent="teal" className="p-2 sm:p-3">
           <div className="rounded-xl bg-background/30 p-6 sm:p-8">
             <div className="text-center">
-              <PanelEyebrow>What&rsquo;s inside</PanelEyebrow>
+              <PanelEyebrow>{insideEyebrow}</PanelEyebrow>
               <h2
                 id="inside-heading"
                 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
               >
-                Everything you need to revise and improve
+                {insideTitle}
               </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-                Built around the boards UK and international schools actually teach.
-              </p>
+              <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">{insideSubtitle}</p>
             </div>
 
             {/* Exam board strip */}
@@ -272,7 +398,7 @@ export default function StudentsPage() {
                   className="rounded-xl border border-border/60 bg-card/80 p-4 text-center shadow-sm backdrop-blur-sm"
                 >
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                    Exam board
+                    {insideBoardEyebrow}
                   </p>
                   <p className="mt-1 font-serif text-lg font-semibold tracking-tight text-foreground">
                     {board}
@@ -286,33 +412,33 @@ export default function StudentsPage() {
                 items={[
                   {
                     icon: BookOpen,
-                    title: 'Revision',
-                    body: 'Revise set texts and key topics aligned to your specification.',
+                    title: benefitRevisionTitle,
+                    body: benefitRevisionBody,
                   },
                   {
                     icon: PenLine,
-                    title: 'Essay practice',
-                    body: 'Practise exam-style essays and improve before the real thing.',
+                    title: benefitEssayTitle,
+                    body: benefitEssayBody,
                   },
                   {
                     icon: MessageSquare,
-                    title: 'Clearer feedback',
-                    body: 'Structured, criteria-referenced feedback that explains how to improve.',
+                    title: benefitFeedbackTitle,
+                    body: benefitFeedbackBody,
                   },
                   {
                     icon: GraduationCap,
-                    title: 'Literature & language support',
-                    body: 'Support across English Literature and English Language.',
+                    title: benefitLitLangTitle,
+                    body: benefitLitLangBody,
                   },
                   {
                     icon: Languages,
-                    title: 'EAL support',
-                    body: 'Structured practice if English is an additional language.',
+                    title: benefitEalTitle,
+                    body: benefitEalBody,
                   },
                   {
                     icon: BarChart3,
-                    title: 'Progress tracking',
-                    body: 'See how you are progressing and where to focus next.',
+                    title: benefitProgressTitle,
+                    body: benefitProgressBody,
                   },
                 ]}
               />
@@ -326,16 +452,16 @@ export default function StudentsPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              Subjects we cover
+              {subjectsEyebrow}
             </p>
             <h2
               id="subjects-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              English Language and Literature, across every key stage
+              {subjectsTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              From KS3 foundations to A-Level analysis — all in one place.
+              {subjectsSubtitle}
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -369,16 +495,15 @@ export default function StudentsPage() {
       >
         <GlassPanel accent="clay" className="p-8 sm:p-12">
           <div className="text-center">
-            <PanelEyebrow>Try before you sign up</PanelEyebrow>
+            <PanelEyebrow>{demoEyebrow}</PanelEyebrow>
             <h2
               id="demo-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Want to look around first?
+              {demoTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Open the student demo to see how revision, feedback and progress tracking work — no
-              sign-up needed.
+              {demoSubtitle}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -386,7 +511,7 @@ export default function StudentsPage() {
                 className="h-12 px-7 text-base"
                 render={<Link href="/demo/student" />}
               >
-                Open the student demo
+                {demoCtaPrimary}
               </Button>
               <Button
                 variant="outline"
@@ -394,7 +519,7 @@ export default function StudentsPage() {
                 className="h-12 px-7 text-base"
                 render={<Link href="/board-select" />}
               >
-                Pick your exam board
+                {demoCtaSecondary}
               </Button>
             </div>
           </div>
@@ -409,12 +534,9 @@ export default function StudentsPage() {
           </span>
           <div className="min-w-0">
             <p className="font-serif text-sm font-semibold tracking-tight text-foreground">
-              A quick note
+              {noteTitle}
             </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Your school may already use The English Hub. If so, ask your English teacher how to
-              get started.
-            </p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{noteBody}</p>
           </div>
         </Card>
       </section>

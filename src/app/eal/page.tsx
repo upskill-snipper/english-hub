@@ -52,7 +52,9 @@ import {
   type EALCategory,
   loc,
 } from '@/lib/eal/types'
+import { MKT_EAL_DICTIONARY } from '@/lib/i18n/dictionary-mkt-eal'
 import { useLocale } from '@/lib/i18n/use-locale'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Category presentation ─────────────────────────────────────────────────
 // Order + per-category lucide icon and colour tile, matching the
@@ -110,6 +112,18 @@ export default function EALHubPage() {
   const dir = isAr ? 'rtl' : 'ltr'
   const t = (s: { en: string; ar?: string }) => loc(s, locale)
 
+  // Key-based bilingual lookup for MKT_EAL_DICTIONARY (the page-local
+  // shard for this marketing hub). Aliased to `tx` because `t` above is
+  // already the local LocalizedString shape-resolver used for curriculum
+  // data. Prefers the page-local shard; falls back to the master
+  // dictionary via `useT()` for any future master-wired key.
+  const baseT = useT()
+  const tx = (key: string): string => {
+    const entry = MKT_EAL_DICTIONARY[key]
+    if (entry) return locale === 'ar' && entry.ar ? entry.ar : entry.en
+    return baseT(key)
+  }
+
   // ── Group topics by category, preserving curriculum order ──────────────
   const groups: Record<EALCategory, typeof EAL.topics> = {
     sentence: [],
@@ -128,22 +142,22 @@ export default function EALHubPage() {
     {
       icon: BookOpen,
       value: String(topicCount),
-      label: isAr ? 'دروس' : 'lessons',
+      label: tx('mkt.eal.hero_stat.lessons'),
     },
     {
       icon: Layers,
       value: 'A2–C1',
-      label: isAr ? 'مستويات CEFR' : 'CEFR levels',
+      label: tx('mkt.eal.hero_stat.cefr_levels'),
     },
     {
       icon: Target,
       value: `${totalExercises}+`,
-      label: isAr ? 'تمارين' : 'exercises',
+      label: tx('mkt.eal.hero_stat.exercises'),
     },
     {
       icon: ClipboardCheck,
-      value: isAr ? 'مجاني' : 'Free',
-      label: isAr ? 'اختبار تحديد المستوى' : 'placement test',
+      value: tx('mkt.eal.hero_stat.free_value'),
+      label: tx('mkt.eal.hero_stat.placement_test_label'),
     },
   ]
 
@@ -166,27 +180,26 @@ export default function EALHubPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <GraduationCap className="mr-1 size-3" aria-hidden="true" />
-            <span>For schools</span>
+            <span dir="auto">{tx('mkt.eal.inst.badge')}</span>
           </Badge>
           <h1
             id="eal-institutional-heading"
             className="text-display-sm font-heading text-foreground sm:text-display"
+            dir="auto"
           >
-            Structured English support for EAL learners
+            {tx('mkt.eal.inst.heading')}
           </h1>
-          <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Designed to help international and GCC schools support EAL learners across vocabulary,
-            reading fluency, comprehension, grammar and writing confidence — with teacher visibility
-            and progress reporting.
+          <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground" dir="auto">
+            {tx('mkt.eal.inst.lead')}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button variant="default" size="lg" render={<Link href="/schools" />}>
-              <span>For schools</span>
+              <span dir="auto">{tx('mkt.eal.inst.cta_schools')}</span>
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
             <Button variant="outline" size="lg" render={<Link href="#cefr-test" />}>
-              <span>Take the CEFR placement test</span>
+              <span dir="auto">{tx('mkt.eal.inst.cta_test')}</span>
             </Button>
           </div>
         </div>
@@ -200,12 +213,8 @@ export default function EALHubPage() {
               <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-teal-500/10">
                 <BookA className="size-5 text-teal-400" aria-hidden="true" />
               </div>
-              <CardTitle>Vocabulary, reading and writing — structured</CardTitle>
-              <CardDescription>
-                A coherent progression across vocabulary breadth, reading fluency, comprehension,
-                grammar accuracy and writing confidence — graded across CEFR levels so learners
-                always know the next step.
-              </CardDescription>
+              <CardTitle dir="auto">{tx('mkt.eal.benefit.curriculum.title')}</CardTitle>
+              <CardDescription dir="auto">{tx('mkt.eal.benefit.curriculum.desc')}</CardDescription>
             </CardHeader>
           </Card>
 
@@ -214,12 +223,8 @@ export default function EALHubPage() {
               <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                 <Globe className="size-5 text-primary" aria-hidden="true" />
               </div>
-              <CardTitle>Designed for international schools</CardTitle>
-              <CardDescription>
-                Built with Qatar, the wider GCC and IGCSE/GCSE classrooms in mind — content
-                addresses the specific language gaps Arabic-L1 learners face when working through a
-                UK-aligned curriculum.
-              </CardDescription>
+              <CardTitle dir="auto">{tx('mkt.eal.benefit.intl.title')}</CardTitle>
+              <CardDescription dir="auto">{tx('mkt.eal.benefit.intl.desc')}</CardDescription>
             </CardHeader>
           </Card>
 
@@ -228,11 +233,8 @@ export default function EALHubPage() {
               <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
                 <Eye className="size-5 text-violet-400" aria-hidden="true" />
               </div>
-              <CardTitle>Teacher visibility and progress reporting</CardTitle>
-              <CardDescription>
-                Leadership and EAL coordinators get the oversight they need: where learners are,
-                where they're stuck, and where targeted support will move the needle the most.
-              </CardDescription>
+              <CardTitle dir="auto">{tx('mkt.eal.benefit.teacher.title')}</CardTitle>
+              <CardDescription dir="auto">{tx('mkt.eal.benefit.teacher.desc')}</CardDescription>
             </CardHeader>
           </Card>
         </div>
@@ -247,10 +249,11 @@ export default function EALHubPage() {
                 <LineChart className="size-6 text-teal-400" aria-hidden="true" />
               </div>
               <div>
-                <CardTitle className="text-heading-md">What teachers see</CardTitle>
-                <CardDescription className="mt-2 max-w-3xl text-body-sm">
-                  Teacher view: progress by learner, by skill, and by year group, so departments can
-                  plan targeted EAL support.
+                <CardTitle className="text-heading-md" dir="auto">
+                  {tx('mkt.eal.teacher_view.title')}
+                </CardTitle>
+                <CardDescription className="mt-2 max-w-3xl text-body-sm" dir="auto">
+                  {tx('mkt.eal.teacher_view.desc')}
                 </CardDescription>
               </div>
             </div>
@@ -278,23 +281,17 @@ export default function EALHubPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
-            <span dir="auto">
-              {isAr ? 'الإنجليزية للناطقين بالعربية' : 'English for Arabic Speakers'}
-            </span>
+            <span dir="auto">{tx('mkt.eal.hero.badge')}</span>
           </Badge>
           <h1
             id="eal-hero-heading"
             className="text-display-sm font-heading text-foreground sm:text-display"
             dir="auto"
           >
-            {isAr
-              ? 'تعلّم الإنجليزية: المهارات الأساسية للناطقين بالعربية'
-              : 'English Skills for Arabic Speakers'}
+            {tx('mkt.eal.hero.heading')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground" dir="auto">
-            {isAr
-              ? 'دروس ثنائية اللغة مركّزة على النقاط اللي يتعثّر فيها متحدّث العربي وقت دراسة الإنجليزي لامتحانات GCSE / IGCSE البريطانية: أخطاء النقل من العربي (ترتيب الكلمات، الأزمنة، أدوات التعريف، حروف الجر)، ومدرّجة على مستويات CEFR من A2 إلى C1. ابدأ باختبار تحديد المستوى المجاني عشان تعرف من وين تبدأ.'
-              : 'Bilingual lessons targeting exactly where Arabic L1 students stumble when studying English for UK GCSE/IGCSE: first-language transfer errors (word order, tenses, articles, prepositions), graded across CEFR levels A2 to C1. Start with the free placement test to find your level.'}
+            {tx('mkt.eal.hero.lead')}
           </p>
 
           {/* Quick stats */}
@@ -328,20 +325,18 @@ export default function EALHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'ابدأ من هنا' : 'Start here'}</span>
+                <span dir="auto">{tx('mkt.eal.cta.start_here_badge')}</span>
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground" dir="auto">
-                {isAr ? 'اختبار تحديد المستوى (CEFR)' : 'CEFR Placement Test'}
+                {tx('mkt.eal.cta.heading')}
               </h2>
               <p className="mt-1 max-w-xl text-body-sm text-muted-foreground" dir="auto">
-                {isAr
-                  ? 'اختبار قصير ومجاني يحدّد مستواك من A2 إلى C1، ويوجّهك مباشرة للدروس اللي تحتاجها أكثر — مصمّم على نقاط الضعف الشائعة عند متحدّث العربي.'
-                  : 'A short, free test that pinpoints your level from A2 to C1 and routes you straight to the lessons you most need — built around the weak points common to Arabic speakers.'}
+                {tx('mkt.eal.cta.lead')}
               </p>
             </div>
           </div>
           <Button variant="default" size="lg" render={<Link href="/eal/diagnostic" />}>
-            <span dir="auto">{isAr ? 'ابدأ الاختبار' : 'Start the test'}</span>
+            <span dir="auto">{tx('mkt.eal.cta.button')}</span>
             <ArrowRight className="size-4" aria-hidden="true" />
           </Button>
         </div>
@@ -356,7 +351,7 @@ export default function EALHubPage() {
             className="text-heading-lg font-heading text-foreground"
             dir="auto"
           >
-            {isAr ? 'الدروس حسب المهارة' : 'Lessons by skill'}
+            {tx('mkt.eal.topics.heading')}
           </h2>
         </div>
 
@@ -411,9 +406,9 @@ export default function EALHubPage() {
                             {t(topic.title)}
                           </h4>
                           <span className="text-caption text-muted-foreground" dir="auto">
-                            {topic.examples.length} {isAr ? 'مثال' : 'examples'}
+                            {topic.examples.length} {tx('mkt.eal.topics.examples_label')}
                             {' · '}
-                            {topic.exercises.length} {isAr ? 'تمرين' : 'exercises'}
+                            {topic.exercises.length} {tx('mkt.eal.topics.exercises_label')}
                           </span>
                         </div>
                       </div>
@@ -426,7 +421,7 @@ export default function EALHubPage() {
                       </p>
 
                       <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                        <span dir="auto">{isAr ? 'افتح الدرس' : 'Open lesson'}</span>
+                        <span dir="auto">{tx('mkt.eal.topics.open_lesson')}</span>
                         <ArrowRight className="size-3.5" aria-hidden="true" />
                       </div>
                     </Link>
@@ -447,7 +442,7 @@ export default function EALHubPage() {
             className="text-heading-lg font-heading text-foreground"
             dir="auto"
           >
-            {isAr ? 'التدريب والتقييم' : 'Practice & assessment'}
+            {tx('mkt.eal.practice.heading')}
           </h2>
         </div>
 
@@ -468,20 +463,18 @@ export default function EALHubPage() {
                     className="text-heading-md font-heading text-foreground transition-colors group-hover:text-primary"
                     dir="auto"
                   >
-                    {isAr ? `امتحان تجريبي ${b.label}` : `${b.label} Mock Exam`}
+                    {tx('mkt.eal.practice.mock_exam_title').replace('{level}', b.label)}
                   </h3>
                   <span className="text-caption text-muted-foreground" dir="auto">
-                    {isAr ? `مستوى ${b.label} · CEFR` : `${b.label} band · CEFR`}
+                    {tx('mkt.eal.practice.mock_exam_subtitle').replace('{level}', b.label)}
                   </span>
                 </div>
               </div>
               <p className="flex-1 text-body-sm leading-relaxed text-muted-foreground" dir="auto">
-                {isAr
-                  ? `امتحان تدريبي كامل بمستوى ${b.label} بأسئلة بأسلوب الامتحان وتصحيح فوري.`
-                  : `A full ${b.label}-level practice exam with exam-style questions and instant marking.`}
+                {tx('mkt.eal.practice.mock_exam_body').replace('{level}', b.label)}
               </p>
               <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                <span dir="auto">{isAr ? 'ابدأ التدريب' : 'Start practice'}</span>
+                <span dir="auto">{tx('mkt.eal.practice.start_practice')}</span>
                 <ArrowRight className="size-3.5" aria-hidden="true" />
               </div>
             </Link>
@@ -496,7 +489,7 @@ export default function EALHubPage() {
               variant="default"
               className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
             >
-              <span dir="auto">{isAr ? 'ذكاء اصطناعي' : 'AI'}</span>
+              <span dir="auto">{tx('mkt.eal.practice.ai_badge')}</span>
             </Badge>
             <div className="mb-3 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/10">
@@ -507,38 +500,36 @@ export default function EALHubPage() {
                   className="text-heading-md font-heading text-foreground transition-colors group-hover:text-primary"
                   dir="auto"
                 >
-                  {isAr ? 'تقييم الكتابة والمحادثة بالذكاء الاصطناعي' : 'AI writing & speaking'}
+                  {tx('mkt.eal.practice.ai_title')}
                 </h3>
                 <span className="text-caption text-muted-foreground" dir="auto">
-                  {isAr ? 'داخل كل درس' : 'inside every lesson'}
+                  {tx('mkt.eal.practice.ai_subtitle')}
                 </span>
               </div>
             </div>
             <p className="flex-1 text-body-sm leading-relaxed text-muted-foreground" dir="auto">
-              {isAr
-                ? 'كل درس فيه تدريب على القراءة والاستماع والكتابة والمحادثة — والكتابة والمحادثة يصحّحها الذكاء الاصطناعي مع ملاحظات مخصّصة لمتحدّث العربي.'
-                : 'Every lesson includes reading, listening, writing and speaking practice — writing and speaking are AI-assessed with feedback tailored to Arabic speakers.'}
+              {tx('mkt.eal.practice.ai_body')}
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 text-caption text-muted-foreground">
               <span className="inline-flex items-center gap-1">
                 <BookText className="size-3.5" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'قراءة' : 'Reading'}</span>
+                <span dir="auto">{tx('mkt.eal.practice.skill_reading')}</span>
               </span>
               <span className="inline-flex items-center gap-1">
                 <Headphones className="size-3.5" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'استماع' : 'Listening'}</span>
+                <span dir="auto">{tx('mkt.eal.practice.skill_listening')}</span>
               </span>
               <span className="inline-flex items-center gap-1">
                 <PenTool className="size-3.5" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'كتابة' : 'Writing'}</span>
+                <span dir="auto">{tx('mkt.eal.practice.skill_writing')}</span>
               </span>
               <span className="inline-flex items-center gap-1">
                 <Mic className="size-3.5" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'محادثة' : 'Speaking'}</span>
+                <span dir="auto">{tx('mkt.eal.practice.skill_speaking')}</span>
               </span>
             </div>
             <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              <span dir="auto">{isAr ? 'جرّب الآن' : 'Try it now'}</span>
+              <span dir="auto">{tx('mkt.eal.practice.try_it_now')}</span>
               <ArrowRight className="size-3.5" aria-hidden="true" />
             </div>
           </Link>
@@ -558,24 +549,22 @@ export default function EALHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                <span dir="auto">{isAr ? 'تعلّم باللعب' : 'Learn through play'}</span>
+                <span dir="auto">{tx('mkt.eal.games.badge')}</span>
               </Badge>
               <h2
                 id="eal-games-heading"
                 className="text-heading-md font-heading text-foreground transition-colors group-hover:text-primary"
                 dir="auto"
               >
-                {isAr ? 'العاب الإنجليزية للمبتدئين' : 'English games for beginners'}
+                {tx('mkt.eal.games.heading')}
               </h2>
               <p className="mt-1 max-w-xl text-body-sm text-muted-foreground" dir="auto">
-                {isAr
-                  ? 'أكثر من ١٨ لعبة سهلة وممتعة: مطابقة الصور بالكلمات، أدوات التعريف، فعل to be، الأزمنة، حروف الجر، الأرقام والوقت، والمزيد — مع تصحيح فوري ونقاط.'
-                  : '18+ friendly games: picture–word match, articles, the verb “to be”, tenses, prepositions, numbers & time, phrasal verbs and more — with instant feedback and scores.'}
+                {tx('mkt.eal.games.lead')}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-1 text-sm font-medium text-primary">
-            <span dir="auto">{isAr ? 'العب الآن' : 'Play now'}</span>
+            <span dir="auto">{tx('mkt.eal.games.play_now')}</span>
             <ArrowRight
               className="size-4 transition-transform group-hover:translate-x-0.5"
               aria-hidden="true"
@@ -589,45 +578,29 @@ export default function EALHubPage() {
         <div className="mb-4 flex items-center gap-3">
           <Languages className="size-5 text-primary" aria-hidden="true" />
           <h2 className="text-heading-md font-heading text-foreground" dir="auto">
-            {isAr ? 'كيف تستخدم هذا القسم' : 'How to use this section'}
+            {tx('mkt.eal.howto.heading')}
           </h2>
         </div>
         <ol className="space-y-2 text-body-sm text-muted-foreground" dir="auto">
           <li>
-            <strong className="text-foreground">
-              {isAr ? 'ابدأ باختبار تحديد المستوى' : 'Start with the placement test'}
-            </strong>
+            <strong className="text-foreground">{tx('mkt.eal.howto.step1.bold')}</strong>
             {' — '}
-            {isAr
-              ? 'عشان تعرف مستواك من A2 إلى C1 وتروح للدروس المناسبة لك مباشرة.'
-              : 'so you know your A2–C1 level and go straight to the right lessons.'}
+            {tx('mkt.eal.howto.step1.body')}
           </li>
           <li>
-            <strong className="text-foreground">
-              {isAr ? 'ثم انتقل إلى «بناء الجملة»' : 'Then move to “Sentence Structure”'}
-            </strong>
+            <strong className="text-foreground">{tx('mkt.eal.howto.step2.bold')}</strong>
             {' — '}
-            {isAr
-              ? 'أكبر فرق بين العربي والإنجليزي. أصلح ترتيب الكلمات أولاً.'
-              : 'the biggest gap between Arabic and English. Fix word order first.'}
+            {tx('mkt.eal.howto.step2.body')}
           </li>
           <li>
-            <strong className="text-foreground">
-              {isAr ? 'بعدها «القواعد»' : 'Next, “Grammar”'}
-            </strong>
+            <strong className="text-foreground">{tx('mkt.eal.howto.step3.bold')}</strong>
             {' — '}
-            {isAr
-              ? 'أدوات التعريف، الأزمنة، مطابقة الفاعل للفعل — تحدّد جزء كبير من درجة SPaG.'
-              : 'articles, tenses, subject–verb agreement — these decide a big chunk of the SPaG grade.'}
+            {tx('mkt.eal.howto.step3.body')}
           </li>
           <li>
-            <strong className="text-foreground">
-              {isAr ? 'استخدم «الأخطاء الشائعة» كقائمة فحص' : 'Use “Common Errors” as a checklist'}
-            </strong>
+            <strong className="text-foreground">{tx('mkt.eal.howto.step4.bold')}</strong>
             {' — '}
-            {isAr
-              ? 'راجعها قبل تسليم أي مقالة، وسوّ التمارين والتقييم بالذكاء الاصطناعي في كل درس.'
-              : 'run through it before submitting any essay, and do the exercises and AI assessment in each lesson.'}
+            {tx('mkt.eal.howto.step4.body')}
           </li>
         </ol>
       </section>

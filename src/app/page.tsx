@@ -78,6 +78,9 @@ export default async function Home() {
     gcseKicker: await t('homepage.gcse.kicker'),
     gcseHeading: await t('homepage.gcse.heading'),
     gcseSubheading: await t('homepage.gcse.subheading'),
+    ks3Kicker: await t('homepage.ks3.kicker'),
+    ks3Heading: await t('homepage.ks3.heading'),
+    ks3Subheading: await t('homepage.ks3.subheading'),
     igcseHeading: await t('homepage.igcse.heading'),
     igcseSubheading: await t('homepage.igcse.subheading'),
     faqHeading: await t('homepage.faq.heading'),
@@ -154,6 +157,17 @@ export default async function Home() {
         </div>
       </section>
       {await FeatureRail()}
+      <BoardPickerSection
+        level="ks3"
+        boards={KS3_BOARDS}
+        sectionId="ks3-boards"
+        kicker={copy.ks3Kicker}
+        heading={copy.ks3Heading}
+        subheading={copy.ks3Subheading}
+        showHelpLink={false}
+        headingLevel="h2"
+        showDivider
+      />
       <BoardPickerSection
         level="gcse"
         boards={GCSE_BOARDS}
@@ -742,10 +756,20 @@ const GCSE_BOARDS: Board[] = [
   },
 ]
 
-// KS3 surfaced through the <FeatureRail /> at the top of the page now —
-// see above. We keep the `?setBoard=ks3` middleware pathway live so the
-// cookie is written authoritatively and the user lands on /revision
-// with KS3 content unlocked.
+// 2026-05-20: KS3 is now ALSO surfaced as its own board picker section
+// (in addition to the FeatureRail entry above). Younger learners and
+// parents were missing KS3 in the main "Choose your board" grid; the
+// rail entry alone was not discoverable enough below the fold.
+const KS3_BOARDS: Board[] = [
+  {
+    name: 'KS3 English (Years 7–9)',
+    initials: 'KS3',
+    href: '/revision?setBoard=ks3',
+    blurbKey: 'homepage.board.ks3.blurb',
+    level: 'ks3',
+    discClass: 'bg-violet-500/15 text-violet-600 dark:text-violet-300 ring-violet-500/30',
+  },
+]
 
 const IGCSE_BOARDS: Board[] = [
   {
@@ -809,6 +833,11 @@ async function BoardPickerSection({
   const ctaBoard = await t('homepage.board.cta.board')
   const helpText = await t('homepage.board.help.text')
   const helpLink = await t('homepage.board.help.link')
+  // EAL is a cross-cutting concern: every board picker card shows that
+  // EAL learner support is included so EAL learners do not feel they
+  // have to choose between "their board" and "an EAL track".
+  const ealSupportedText = await t('homepage.board.eal_supported')
+  const ealSupportedAria = await t('homepage.board.eal_supported.aria')
   // Per-level palette. KS3 picks violet to keep visual separation from
   // GCSE (emerald) and IGCSE (clay → orange). Each accent uses the
   // light/dark dual shade so the tint is legible on the cream :root
@@ -883,6 +912,17 @@ async function BoardPickerSection({
                   </h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{blurbs[i]}</p>
+                {/* EAL support indicator — every board includes it. */}
+                <span
+                  aria-label={ealSupportedAria}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground"
+                >
+                  <Languages
+                    aria-hidden="true"
+                    className="h-3.5 w-3.5 text-teal-600 dark:text-teal-300"
+                  />
+                  {ealSupportedText}
+                </span>
                 <span
                   className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                     b.level === 'gcse'

@@ -73,6 +73,12 @@ import { B15_DEMO_DICTIONARY } from './dictionary-b15-demo'
 import { AI_ACT_DICTIONARY } from './dictionary-ai-act'
 import { ADMIN_AI_MARKING_DICTIONARY } from './dictionary-admin-ai-marking'
 import { MARKER_DRIVE_DICTIONARY } from './dictionary-marker-drive'
+// 2026-05-20: new institutional marketing pages (Qatar Expo run-up).
+import { MKT_SCHOOLS_DICTIONARY } from './dictionary-mkt-schools'
+import { MKT_SCHOOL_PILOT_DICTIONARY } from './dictionary-mkt-school-pilot'
+import { MKT_TEACHERS_DICTIONARY } from './dictionary-mkt-teachers'
+import { MKT_STUDENTS_DICTIONARY } from './dictionary-mkt-students'
+import { MKT_EAL_DICTIONARY } from './dictionary-mkt-eal'
 
 export type Locale = 'en' | 'ar'
 
@@ -1806,6 +1812,10 @@ export const DICTIONARY: Dictionary = {
     en: 'Pick the level your school sits, then the board. You can change this later in Settings.',
     ar: 'اختر المرحلة اللي مدرستك تدرّسها، بعدين اختر الهيئة. تقدر تغيّرها بعدين من الإعدادات.',
   },
+  'board.select.ks3_subtitle': {
+    en: 'Years 7–9, ages 11–14 — the curriculum before GCSE',
+    ar: 'السنوات 7–9، أعمار 11–14 — المنهج قبل الـ GCSE',
+  },
   'board.select.gcse_subtitle': {
     en: 'Years 10–11, UK GCSE 9–1',
     ar: 'السنة العاشرة والحادية عشرة — UK GCSE 9–1',
@@ -1813,6 +1823,22 @@ export const DICTIONARY: Dictionary = {
   'board.select.igcse_subtitle': {
     en: 'International — Cambridge & Pearson Edexcel specifications',
     ar: 'دولي — مواصفات Cambridge و Pearson Edexcel',
+  },
+  'board.select.eal_subtitle': {
+    en: 'English as an Additional Language — runs alongside every board',
+    ar: 'الإنجليزي كلغة إضافية — يمشي جنب كل البوردات',
+  },
+  'board.desc.ks3': {
+    en: 'Year 7, 8 and 9 schemes of work — weekly lessons, set texts and assessments to prime students for GCSE English.',
+    ar: 'خطط دراسية للسنوات 7 و 8 و 9 — دروس أسبوعية ونصوص مقرّرة وتقييمات تجهّز الطالب لإنجليزي الـ GCSE.',
+  },
+  'board.desc.eal': {
+    en: 'Structured English support for EAL learners — vocabulary, reading fluency, comprehension and writing. Pairs with any board you study.',
+    ar: 'دعم منظم بالإنجليزي لمتعلّمي EAL — المفردات، طلاقة القراءة، الفهم والكتابة. يمشي جنب أي بورد تدرسه.',
+  },
+  'board.select.eal_supported': {
+    en: 'EAL support included',
+    ar: 'يشمل دعم EAL',
   },
   'board.select.back_home': { en: 'Back to the homepage', ar: 'روح للصفحة الرئيسية' },
   'board.select.open_board': { en: 'Open board', ar: 'افتح الهيئة' },
@@ -14816,6 +14842,15 @@ export function lookup(key: string, locale: Locale): string {
     // Paid-marker-drive surfaces (/admin/marker-drive, /marker,
     // /admin/marker-pay, /admin/marker-qa). Curated tier.
     MARKER_DRIVE_DICTIONARY[key] ??
+    // Marketing pages (institutional repositioning, 2026-05-20):
+    // /schools · /school-pilot · /teachers · /students · /eal —
+    // curated EN + Khaleeji Gulf Arabic. Curated tier so genuine
+    // bilingual copy wins over any placeholder/audit supplement.
+    MKT_SCHOOLS_DICTIONARY[key] ??
+    MKT_SCHOOL_PILOT_DICTIONARY[key] ??
+    MKT_TEACHERS_DICTIONARY[key] ??
+    MKT_STUDENTS_DICTIONARY[key] ??
+    MKT_EAL_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

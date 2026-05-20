@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Languages } from 'lucide-react'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Choose your exam board',
+  title: 'Choose your level or exam board',
   description:
-    'Pick the level your school sits — GCSE or IGCSE — then the board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
+    'Pick the level you study — KS3, GCSE or IGCSE — then the board so we can show you the right texts, poems, and past paper walkthroughs. EAL support is included alongside every board.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },
   openGraph: {
-    title: 'Choose your exam board — The English Hub',
-    description: 'Pick the level your school sits, then the board. GCSE and IGCSE supported.',
+    title: 'Choose your level or exam board — The English Hub',
+    description:
+      'Pick the level you study, then the board. KS3, GCSE and IGCSE supported, with EAL learner support alongside every board.',
   },
   robots: { index: false, follow: true },
 }
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
  * whether they enter via the homepage card grid or via this page.
  * ──────────────────────────────────────────────────────────────────────────── */
 
-type Level = 'GCSE' | 'IGCSE'
+type Level = 'KS3' | 'GCSE' | 'IGCSE' | 'EAL'
 
 type Board = {
   name: string
@@ -33,6 +35,20 @@ type Board = {
 // 02 May 2026 — hrefs use the canonical `/revision?setBoard=<id>` mechanism.
 // Middleware reads ?setBoard=, validates, sets cookie, redirects to clean
 // /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
+
+// 2026-05-20: KS3 was missing from the picker entirely — added so younger
+// learners (Years 7–9) can find their starting point. EAL is added as its
+// own section because it's a cross-cutting learner profile that runs
+// alongside any board — not a board itself.
+const KS3_BOARDS: readonly Board[] = [
+  {
+    name: 'KS3 English (Years 7–9)',
+    href: '/revision?setBoard=ks3',
+    descriptionKey: 'board.desc.ks3',
+    level: 'KS3',
+  },
+] as const
+
 const GCSE_BOARDS: readonly Board[] = [
   {
     name: 'AQA',
@@ -81,6 +97,19 @@ const IGCSE_BOARDS: readonly Board[] = [
   },
 ] as const
 
+// EAL is a cross-cutting learner profile (not an exam board). It pairs
+// with any board the student is studying. Linking it as its own section
+// lets EAL learners discover it without forcing them out of the board
+// picker. The href routes to /eal rather than setting a board cookie.
+const EAL_BOARDS: readonly Board[] = [
+  {
+    name: 'EAL — English for Additional-Language Learners',
+    href: '/eal',
+    descriptionKey: 'board.desc.eal',
+    level: 'EAL',
+  },
+] as const
+
 /* ────────────────────────────────────────────────────────────────────────────
  * Page
  * ──────────────────────────────────────────────────────────────────────────── */
@@ -89,17 +118,22 @@ export default async function BoardSelectPage() {
   // Pre-resolve all visible strings on the server (one locale read for the
   // whole page). Order matches the keys array exactly.
   const descKeys = [
+    ...KS3_BOARDS.map((b) => b.descriptionKey),
     ...GCSE_BOARDS.map((b) => b.descriptionKey),
     ...IGCSE_BOARDS.map((b) => b.descriptionKey),
+    ...EAL_BOARDS.map((b) => b.descriptionKey),
   ]
   const staticKeys = [
     'board.select.eyebrow',
     'board.choose',
     'board.select.intro',
+    'board.select.ks3_subtitle',
     'board.select.gcse_subtitle',
     'board.select.igcse_subtitle',
+    'board.select.eal_subtitle',
     'board.select.back_home',
     'board.select.open_board',
+    'board.select.eal_supported',
   ]
   const allKeys = [...staticKeys, ...descKeys]
   const resolved = await tMany(allKeys)
@@ -108,21 +142,31 @@ export default async function BoardSelectPage() {
     tEyebrow,
     tChoose,
     tIntro,
+    tKs3Subtitle,
     tGcseSubtitle,
     tIgcseSubtitle,
+    tEalSubtitle,
     tBackHome,
     tOpenBoard,
+    tEalSupported,
     ...descResolved
   ] = resolved
 
-  const gcseDescriptions = descResolved.slice(0, GCSE_BOARDS.length)
-  const igcseDescriptions = descResolved.slice(GCSE_BOARDS.length)
+  const ks3End = KS3_BOARDS.length
+  const gcseEnd = ks3End + GCSE_BOARDS.length
+  const igcseEnd = gcseEnd + IGCSE_BOARDS.length
+  const ks3Descriptions = descResolved.slice(0, ks3End)
+  const gcseDescriptions = descResolved.slice(ks3End, gcseEnd)
+  const igcseDescriptions = descResolved.slice(gcseEnd, igcseEnd)
+  const ealDescriptions = descResolved.slice(igcseEnd)
 
+  const ks3Boards = KS3_BOARDS.map((b, i) => ({ ...b, description: ks3Descriptions[i] ?? '' }))
   const gcseBoards = GCSE_BOARDS.map((b, i) => ({ ...b, description: gcseDescriptions[i] ?? '' }))
   const igcseBoards = IGCSE_BOARDS.map((b, i) => ({
     ...b,
     description: igcseDescriptions[i] ?? '',
   }))
+  const ealBoards = EAL_BOARDS.map((b, i) => ({ ...b, description: ealDescriptions[i] ?? '' }))
 
   return (
     <main className="min-h-screen bg-background">
@@ -146,14 +190,27 @@ export default async function BoardSelectPage() {
           </p>
         </header>
 
-        {/* GCSE section */}
+        {/* KS3 section — Years 7–9, the curriculum before GCSE. */}
         <BoardSection
-          id="gcse"
-          level="GCSE"
-          subtitle={tGcseSubtitle}
-          boards={gcseBoards}
+          id="ks3"
+          level="KS3"
+          subtitle={tKs3Subtitle}
+          boards={ks3Boards}
           openBoardLabel={tOpenBoard}
+          ealSupportedLabel={tEalSupported}
         />
+
+        {/* GCSE section */}
+        <div className="mt-14 sm:mt-20">
+          <BoardSection
+            id="gcse"
+            level="GCSE"
+            subtitle={tGcseSubtitle}
+            boards={gcseBoards}
+            openBoardLabel={tOpenBoard}
+            ealSupportedLabel={tEalSupported}
+          />
+        </div>
 
         {/* IGCSE section */}
         <div className="mt-14 sm:mt-20">
@@ -163,6 +220,21 @@ export default async function BoardSelectPage() {
             subtitle={tIgcseSubtitle}
             boards={igcseBoards}
             openBoardLabel={tOpenBoard}
+            ealSupportedLabel={tEalSupported}
+          />
+        </div>
+
+        {/* EAL section — cross-cutting learner profile that pairs with
+            any board. Sits LAST so it reads as "and also" rather than
+            replacing a board choice. */}
+        <div className="mt-14 sm:mt-20">
+          <BoardSection
+            id="eal"
+            level="EAL"
+            subtitle={tEalSubtitle}
+            boards={ealBoards}
+            openBoardLabel={tOpenBoard}
+            ealSupportedLabel={null}
           />
         </div>
 
@@ -192,15 +264,20 @@ function BoardSection({
   subtitle,
   boards,
   openBoardLabel,
+  ealSupportedLabel,
 }: {
   id: string
   level: Level
   subtitle: string
   boards: readonly ResolvedBoard[]
   openBoardLabel: string
+  /** Label for the "EAL support included" line. Pass null to hide
+   *  (e.g. on the EAL section itself, where the indicator is redundant). */
+  ealSupportedLabel: string | null
 }) {
   const headingId = `${id}-heading`
-  const isIgcse = level === 'IGCSE'
+  const highlight: 'ks3' | 'gcse' | 'igcse' | 'eal' =
+    level === 'KS3' ? 'ks3' : level === 'IGCSE' ? 'igcse' : level === 'EAL' ? 'eal' : 'gcse'
   return (
     <section aria-labelledby={headingId} className="border-t border-border/60 pt-10 sm:pt-12">
       <div className="mb-6 sm:mb-8 flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -218,8 +295,9 @@ function BoardSection({
           <li key={b.href}>
             <BoardCard
               board={b}
-              highlight={isIgcse ? 'igcse' : 'gcse'}
+              highlight={highlight}
               openBoardLabel={openBoardLabel}
+              ealSupportedLabel={ealSupportedLabel}
             />
           </li>
         ))}
@@ -236,30 +314,42 @@ function BoardCard({
   board,
   highlight,
   openBoardLabel,
+  ealSupportedLabel,
 }: {
   board: ResolvedBoard
-  highlight: 'gcse' | 'igcse'
+  highlight: 'ks3' | 'gcse' | 'igcse' | 'eal'
   openBoardLabel: string
+  ealSupportedLabel: string | null
 }) {
-  // GCSE = emerald accent, IGCSE = clay accent. Mirrors the homepage palette
-  // without importing its component — the spirit, not the literal markup.
-  // Accent tints stay translucent so they read on both themes; the text /
-  // ring shades use the dual light/dark pattern so a single shade is never
-  // illegible against the cream (light) or ink (dark) surface.
+  // KS3 = violet, GCSE = emerald, IGCSE = clay, EAL = teal.
+  // Accent tints stay translucent so they read on both themes; the text
+  // and ring shades use the dual light/dark pattern.
   const pillClass =
-    highlight === 'gcse'
-      ? 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300'
-      : 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300'
+    highlight === 'ks3'
+      ? 'bg-violet-500/15 text-violet-700 ring-violet-500/30 dark:text-violet-300'
+      : highlight === 'gcse'
+        ? 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300'
+        : highlight === 'igcse'
+          ? 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300'
+          : 'bg-teal-500/15 text-teal-700 ring-teal-500/30 dark:text-teal-300'
 
   const hoverClass =
-    highlight === 'gcse'
-      ? 'hover:border-emerald-500/40 focus-visible:ring-emerald-500'
-      : 'hover:border-clay-500/40 focus-visible:ring-clay-500'
+    highlight === 'ks3'
+      ? 'hover:border-violet-500/40 focus-visible:ring-violet-500'
+      : highlight === 'gcse'
+        ? 'hover:border-emerald-500/40 focus-visible:ring-emerald-500'
+        : highlight === 'igcse'
+          ? 'hover:border-clay-500/40 focus-visible:ring-clay-500'
+          : 'hover:border-teal-500/40 focus-visible:ring-teal-500'
 
   const ctaClass =
-    highlight === 'gcse'
-      ? 'text-emerald-700 group-hover:text-emerald-600 dark:text-emerald-300 dark:group-hover:text-emerald-200'
-      : 'text-clay-700 group-hover:text-clay-600 dark:text-clay-300 dark:group-hover:text-clay-200'
+    highlight === 'ks3'
+      ? 'text-violet-700 group-hover:text-violet-600 dark:text-violet-300 dark:group-hover:text-violet-200'
+      : highlight === 'gcse'
+        ? 'text-emerald-700 group-hover:text-emerald-600 dark:text-emerald-300 dark:group-hover:text-emerald-200'
+        : highlight === 'igcse'
+          ? 'text-clay-700 group-hover:text-clay-600 dark:text-clay-300 dark:group-hover:text-clay-200'
+          : 'text-teal-700 group-hover:text-teal-600 dark:text-teal-300 dark:group-hover:text-teal-200'
 
   return (
     <Link
@@ -279,6 +369,13 @@ function BoardCard({
       </h3>
 
       <p className="text-sm text-muted-foreground leading-relaxed">{board.description}</p>
+
+      {ealSupportedLabel ? (
+        <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground">
+          <Languages aria-hidden="true" className="h-3.5 w-3.5 text-teal-600 dark:text-teal-300" />
+          {ealSupportedLabel}
+        </span>
+      ) : null}
 
       <span
         className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${ctaClass}`}

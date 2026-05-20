@@ -32,78 +32,158 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
 import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
+import { t } from '@/lib/i18n/t'
 
 const OG =
   '/api/og?title=Support+every+student+without+adding+to+your+workload&subtitle=AI-assisted+feedback+for+English+teachers'
 
-export const metadata: Metadata = {
-  title: 'For Teachers — reduce workload, support every student',
-  description:
-    'AI-assisted feedback, homework setting, worksheet building and clearer student insight — designed to support teacher judgement and reduce repetitive workload.',
-  alternates: { canonical: 'https://theenglishhub.app/teachers' },
-  keywords: [
-    'AI marking for English teachers',
-    'teacher workload reduction EdTech',
-    'English teacher feedback tool',
-    'English homework setting',
-  ],
-  openGraph: {
-    title: 'For Teachers — The English Hub',
-    description: 'Support every student without adding to your workload.',
-    url: 'https://theenglishhub.app/teachers',
-    images: [{ url: OG, width: 1200, height: 630, alt: 'The English Hub for Teachers' }],
-  },
-  twitter: { card: 'summary_large_image', images: [OG] },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle, ogDescription, ogImageAlt] = await Promise.all([
+    t('mkt.teachers.meta.title'),
+    t('mkt.teachers.meta.description'),
+    t('mkt.teachers.meta.og_title'),
+    t('mkt.teachers.meta.og_description'),
+    t('mkt.teachers.meta.og_image_alt'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/teachers' },
+    keywords: [
+      'AI marking for English teachers',
+      'teacher workload reduction EdTech',
+      'English teacher feedback tool',
+      'English homework setting',
+    ],
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: 'https://theenglishhub.app/teachers',
+      images: [{ url: OG, width: 1200, height: 630, alt: ogImageAlt }],
+    },
+    twitter: { card: 'summary_large_image', images: [OG] },
+  }
 }
 
-const HERO_PILLS = [
-  'Reduce repetitive marking',
-  'Class-level insight',
-  'Specification-aligned',
-] as const
-
-const WITHOUT_POINTS: { icon: typeof X; label: string }[] = [
-  { icon: Clock, label: 'Long marking nights that eat into planning and family time' },
-  { icon: X, label: 'Feedback scattered across exercise books, docs and emails' },
-  { icon: Frown, label: 'Struggling students identified late, after the gap has widened' },
-  { icon: AlertCircle, label: 'Class-wide patterns invisible until exam season' },
+const WITHOUT_ICONS: (typeof X)[] = [Clock, X, Frown, AlertCircle]
+const WITH_ICONS: (typeof Check)[] = [Zap, Check, Eye, TrendingUp]
+const WEEK_ICONS: (typeof Calendar)[] = [Calendar, PenTool, MessageSquare, BarChart3]
+const FEATURE_ICONS: (typeof Brain)[] = [
+  Brain,
+  LineChart,
+  ClipboardCheck,
+  ScrollText,
+  FileText,
+  BookOpen,
+  Languages,
+  Target,
 ]
 
-const WITH_POINTS: { icon: typeof Check; label: string }[] = [
-  { icon: Zap, label: 'Faster feedback turnaround on routine written work' },
-  { icon: Check, label: 'Structured commentary aligned to assessment objectives' },
-  { icon: Eye, label: 'Earlier surfacing of students who may need intervention' },
-  { icon: TrendingUp, label: 'Class-wide pattern insight you can act on next lesson' },
-]
+export default async function TeachersPage() {
+  const heroPills = [
+    await t('mkt.teachers.hero.pill_reduce_marking'),
+    await t('mkt.teachers.hero.pill_class_insight'),
+    await t('mkt.teachers.hero.pill_spec_aligned'),
+  ] as const
 
-const WEEK_STEPS: {
-  icon: typeof Calendar
-  day: string
-  body: string
-}[] = [
-  {
-    icon: Calendar,
-    day: 'Monday',
-    body: 'Set homework aligned to your specification',
-  },
-  {
-    icon: PenTool,
-    day: 'Tue – Thu',
-    body: 'Students practise; AI drafts first-pass feedback',
-  },
-  {
-    icon: MessageSquare,
-    day: 'Friday',
-    body: 'Review feedback, focus class time where it matters',
-  },
-  {
-    icon: BarChart3,
-    day: 'End of half-term',
-    body: 'Share progress with parents and leadership',
-  },
-]
+  const withoutPoints: { icon: typeof X; label: string }[] = [
+    { icon: WITHOUT_ICONS[0], label: await t('mkt.teachers.shift.without.point_late_nights') },
+    {
+      icon: WITHOUT_ICONS[1],
+      label: await t('mkt.teachers.shift.without.point_scattered_feedback'),
+    },
+    {
+      icon: WITHOUT_ICONS[2],
+      label: await t('mkt.teachers.shift.without.point_late_identification'),
+    },
+    {
+      icon: WITHOUT_ICONS[3],
+      label: await t('mkt.teachers.shift.without.point_invisible_patterns'),
+    },
+  ]
 
-export default function TeachersPage() {
+  const withPoints: { icon: typeof Check; label: string }[] = [
+    { icon: WITH_ICONS[0], label: await t('mkt.teachers.shift.with.point_faster_turnaround') },
+    {
+      icon: WITH_ICONS[1],
+      label: await t('mkt.teachers.shift.with.point_structured_commentary'),
+    },
+    { icon: WITH_ICONS[2], label: await t('mkt.teachers.shift.with.point_earlier_surfacing') },
+    { icon: WITH_ICONS[3], label: await t('mkt.teachers.shift.with.point_class_patterns') },
+  ]
+
+  const weekSteps: {
+    icon: typeof Calendar
+    day: string
+    body: string
+  }[] = [
+    {
+      icon: WEEK_ICONS[0],
+      day: await t('mkt.teachers.week.monday.day'),
+      body: await t('mkt.teachers.week.monday.body'),
+    },
+    {
+      icon: WEEK_ICONS[1],
+      day: await t('mkt.teachers.week.tue_thu.day'),
+      body: await t('mkt.teachers.week.tue_thu.body'),
+    },
+    {
+      icon: WEEK_ICONS[2],
+      day: await t('mkt.teachers.week.friday.day'),
+      body: await t('mkt.teachers.week.friday.body'),
+    },
+    {
+      icon: WEEK_ICONS[3],
+      day: await t('mkt.teachers.week.half_term.day'),
+      body: await t('mkt.teachers.week.half_term.body'),
+    },
+  ]
+
+  const featureItems = [
+    {
+      icon: FEATURE_ICONS[0],
+      title: await t('mkt.teachers.features.ai_feedback.title'),
+      body: await t('mkt.teachers.features.ai_feedback.body'),
+    },
+    {
+      icon: FEATURE_ICONS[1],
+      title: await t('mkt.teachers.features.class_weaknesses.title'),
+      body: await t('mkt.teachers.features.class_weaknesses.body'),
+    },
+    {
+      icon: FEATURE_ICONS[2],
+      title: await t('mkt.teachers.features.homework_setting.title'),
+      body: await t('mkt.teachers.features.homework_setting.body'),
+    },
+    {
+      icon: FEATURE_ICONS[3],
+      title: await t('mkt.teachers.features.worksheet_builder.title'),
+      body: await t('mkt.teachers.features.worksheet_builder.body'),
+    },
+    {
+      icon: FEATURE_ICONS[4],
+      title: await t('mkt.teachers.features.student_reports.title'),
+      body: await t('mkt.teachers.features.student_reports.body'),
+    },
+    {
+      icon: FEATURE_ICONS[5],
+      title: await t('mkt.teachers.features.reading_support.title'),
+      body: await t('mkt.teachers.features.reading_support.body'),
+    },
+    {
+      icon: FEATURE_ICONS[6],
+      title: await t('mkt.teachers.features.eal_support.title'),
+      body: await t('mkt.teachers.features.eal_support.body'),
+    },
+    {
+      icon: FEATURE_ICONS[7],
+      title: await t('mkt.teachers.features.targeted_revision.title'),
+      body: await t('mkt.teachers.features.targeted_revision.body'),
+    },
+  ]
+
+  const stepLabel = await t('mkt.teachers.week.step_label')
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -125,19 +205,17 @@ export default function TeachersPage() {
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            For teachers
+            {await t('mkt.teachers.hero.eyebrow')}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            Support every student without adding to your workload
+            {await t('mkt.teachers.hero.title')}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            The English Hub is designed to reduce repetitive marking, give you clearer insight into
-            class weaknesses, and help you focus more time on teaching. It supports your judgement —
-            it does not replace it.
+            {await t('mkt.teachers.hero.subtitle')}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/pricing" />}>
-              See teacher pricing
+              {await t('mkt.teachers.hero.cta_primary')}
             </Button>
             <Button
               variant="outline"
@@ -145,11 +223,11 @@ export default function TeachersPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/schools" />}
             >
-              Bring it to your school
+              {await t('mkt.teachers.hero.cta_secondary')}
             </Button>
           </div>
           <ul className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {HERO_PILLS.map((pill) => (
+            {heroPills.map((pill) => (
               <li
                 key={pill}
                 className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
@@ -169,17 +247,16 @@ export default function TeachersPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            The shift
+            {await t('mkt.teachers.shift.eyebrow')}
           </p>
           <h2
             id="change-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            What changes when teachers use The English Hub
+            {await t('mkt.teachers.shift.title')}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            A qualitative shift in where teacher time goes — fewer evenings on repetitive marking,
-            more class hours spent on what actually moves the dial.
+            {await t('mkt.teachers.shift.lead')}
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -192,15 +269,15 @@ export default function TeachersPage() {
             <div className="relative">
               <div className="flex items-center gap-2">
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  Without
+                  {await t('mkt.teachers.shift.without.eyebrow')}
                 </p>
                 <span className="h-px flex-1 bg-border/60" />
               </div>
               <h3 className="mt-2 font-serif text-xl font-semibold tracking-tight text-foreground">
-                The familiar grind
+                {await t('mkt.teachers.shift.without.title')}
               </h3>
               <ul className="mt-5 space-y-3.5">
-                {WITHOUT_POINTS.map(({ icon: Icon, label }) => (
+                {withoutPoints.map(({ icon: Icon, label }) => (
                   <li key={label} className="flex items-start gap-3">
                     <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
                       <Icon className="h-3.5 w-3.5" />
@@ -221,15 +298,15 @@ export default function TeachersPage() {
             <div className="relative">
               <div className="flex items-center gap-2">
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-teal-600 dark:text-teal-400">
-                  With The English Hub
+                  {await t('mkt.teachers.shift.with.eyebrow')}
                 </p>
                 <span className="h-px flex-1 bg-border/60" />
               </div>
               <h3 className="mt-2 font-serif text-xl font-semibold tracking-tight text-foreground">
-                Time back, signal up
+                {await t('mkt.teachers.shift.with.title')}
               </h3>
               <ul className="mt-5 space-y-3.5">
-                {WITH_POINTS.map(({ icon: Icon, label }) => (
+                {withPoints.map(({ icon: Icon, label }) => (
                   <li key={label} className="flex items-start gap-3">
                     <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-500/15 text-teal-600 dark:text-teal-400">
                       <Icon className="h-3.5 w-3.5" />
@@ -251,69 +328,25 @@ export default function TeachersPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-              Workflow surfaces
+              {await t('mkt.teachers.features.eyebrow')}
             </p>
             <h2
               id="what-it-does-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              What it does for you
+              {await t('mkt.teachers.features.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Eight workflow surfaces designed around the day-to-day reality of an English
-              department.
+              {await t('mkt.teachers.features.lead')}
             </p>
           </div>
           <div className="mt-10">
             <GlassPanel accent="primary" className="p-2 sm:p-3">
               <div className="px-4 pt-4 sm:px-5 sm:pt-5">
-                <PanelEyebrow>What it does for teachers</PanelEyebrow>
+                <PanelEyebrow>{await t('mkt.teachers.features.panel_eyebrow')}</PanelEyebrow>
               </div>
               <div className="p-2 sm:p-3">
-                <FeatureGrid
-                  items={[
-                    {
-                      icon: Brain,
-                      title: 'AI-assisted feedback',
-                      body: 'Structured, criteria-referenced feedback you can review, adjust and build on.',
-                    },
-                    {
-                      icon: LineChart,
-                      title: 'Class weaknesses',
-                      body: 'See where a class is struggling so you can target the next lesson.',
-                    },
-                    {
-                      icon: ClipboardCheck,
-                      title: 'Homework setting',
-                      body: 'Set specification-aligned practice in a few clicks.',
-                    },
-                    {
-                      icon: ScrollText,
-                      title: 'Worksheet & revision builder',
-                      body: 'Draft worksheets and revision material aligned to the specification.',
-                    },
-                    {
-                      icon: FileText,
-                      title: 'Student reports',
-                      body: 'Clearer progress summaries for parents’ evenings and reviews.',
-                    },
-                    {
-                      icon: BookOpen,
-                      title: 'Reading & comprehension support',
-                      body: 'Structured comprehension practice across key stages.',
-                    },
-                    {
-                      icon: Languages,
-                      title: 'EAL support',
-                      body: 'Differentiated practice to support EAL learners in your class.',
-                    },
-                    {
-                      icon: Target,
-                      title: 'Targeted revision',
-                      body: 'Point students at the practice that will move their grade.',
-                    },
-                  ]}
-                />
+                <FeatureGrid items={featureItems} />
               </div>
             </GlassPanel>
           </div>
@@ -326,12 +359,10 @@ export default function TeachersPage() {
               </span>
               <div>
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-primary">
-                  Designed to support, not replace
+                  {await t('mkt.teachers.features.trust.eyebrow')}
                 </p>
                 <p className="mt-1.5 text-sm leading-relaxed text-foreground">
-                  AI-assisted feedback is designed to support your professional judgement and reduce
-                  repetitive workload — not to replace marking or teaching. Teachers stay in control
-                  of every decision.
+                  {await t('mkt.teachers.features.trust.body')}
                 </p>
               </div>
             </div>
@@ -346,21 +377,20 @@ export default function TeachersPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            The rhythm
+            {await t('mkt.teachers.week.eyebrow')}
           </p>
           <h2
             id="week-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            A typical week
+            {await t('mkt.teachers.week.title')}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            How the platform fits the cadence of a real English teaching week — from Monday setup
-            through to half-term reporting.
+            {await t('mkt.teachers.week.lead')}
           </p>
         </div>
         <ol className="mt-12 grid items-stretch gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
-          {WEEK_STEPS.map(({ icon: Icon, day, body }, i) => (
+          {weekSteps.map(({ icon: Icon, day, body }, i) => (
             <li key={day} className="contents">
               <Card className="relative h-full p-5">
                 <div className="flex items-center gap-3">
@@ -369,7 +399,7 @@ export default function TeachersPage() {
                   </span>
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                      Step {i + 1}
+                      {stepLabel} {i + 1}
                     </span>
                   </div>
                 </div>
@@ -378,7 +408,7 @@ export default function TeachersPage() {
                 </p>
                 <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{body}</p>
               </Card>
-              {i < WEEK_STEPS.length - 1 && (
+              {i < weekSteps.length - 1 && (
                 <div
                   aria-hidden
                   className="hidden items-center justify-center text-muted-foreground/50 md:flex"
@@ -396,17 +426,16 @@ export default function TeachersPage() {
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
           <GlassPanel accent="teal" className="p-8 sm:p-12">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-              Live walkthrough
+              {await t('mkt.teachers.demo.eyebrow')}
             </p>
             <h2
               id="demo-heading"
               className="mx-auto mt-3 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              See the teacher workspace
+              {await t('mkt.teachers.demo.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Browse a sample teacher dashboard with mark queue, class analytics and student insight
-              — no sign-up needed.
+              {await t('mkt.teachers.demo.lead')}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3">
               <Button
@@ -415,13 +444,13 @@ export default function TeachersPage() {
                 render={<Link href="/demo/teacher" />}
               >
                 <Sparkles className="mr-1 h-4 w-4" />
-                Open the teacher demo
+                {await t('mkt.teachers.demo.cta_primary')}
               </Button>
               <Link
                 href="/demo/school"
                 className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
-                Or see the school dashboard view
+                {await t('mkt.teachers.demo.cta_secondary')}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
@@ -436,17 +465,17 @@ export default function TeachersPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Answers
+            {await t('mkt.teachers.faq.eyebrow')}
           </p>
           <h2
             id="faq-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Common questions
+            {await t('mkt.teachers.faq.title')}
           </h2>
         </div>
         <GlassPanel accent="sage" className="mt-10 p-5 sm:p-7">
-          <PanelEyebrow className="mb-5">Teacher FAQ</PanelEyebrow>
+          <PanelEyebrow className="mb-5">{await t('mkt.teachers.faq.panel_eyebrow')}</PanelEyebrow>
           <SchoolFAQ />
         </GlassPanel>
       </section>
@@ -462,10 +491,10 @@ export default function TeachersPage() {
               id="final-cta-heading"
               className="font-serif text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
             >
-              Ready to take a closer look?
+              {await t('mkt.teachers.final.title')}
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-              Start with teacher pricing or bring The English Hub to your whole department.
+              {await t('mkt.teachers.final.body')}
             </p>
           </div>
           <div className="flex flex-col items-center gap-3 sm:flex-row">
@@ -473,7 +502,7 @@ export default function TeachersPage() {
               href="/pricing"
               className="group inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary"
             >
-              See teacher pricing
+              {await t('mkt.teachers.final.cta_pricing')}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <span aria-hidden className="hidden h-4 w-px bg-border sm:block" />
@@ -481,7 +510,7 @@ export default function TeachersPage() {
               href="/schools"
               className="group inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary"
             >
-              Bring it to your school
+              {await t('mkt.teachers.final.cta_school')}
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>

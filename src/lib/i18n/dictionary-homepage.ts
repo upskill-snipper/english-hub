@@ -33,6 +33,24 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'سنة 10–11، أعمار 14–16. اضغط على البورد حقّك وبتوصل عالمنهج اللي تمتحن فيه بالضبط.',
   },
 
+  /* ── KS3 board picker section (Years 7–9, pre-GCSE) ── */
+  'homepage.ks3.kicker': {
+    en: 'Younger learners (Years 7–9)',
+    ar: 'الطلاب الأصغر (السنوات 7–9)',
+  },
+  'homepage.ks3.heading': {
+    en: 'KS3 English — the curriculum before GCSE',
+    ar: 'إنجليزي KS3 — المنهج اللي قبل الـ GCSE',
+  },
+  'homepage.ks3.subheading': {
+    en: 'Ages 11–14. Reading comprehension, creative writing, grammar foundations and year-by-year schemes of work that prime students for GCSE English.',
+    ar: 'أعمار 11–14. فهم المقروء، الكتابة الإبداعية، أساسيات القواعد، وخطط دراسية سنة بسنة تجهّز الطالب لإنجليزي الـ GCSE.',
+  },
+  'homepage.board.ks3.blurb': {
+    en: 'Years 7, 8 and 9 schemes of work — weekly lessons, set texts and assessments.',
+    ar: 'خطط دراسية للسنوات 7 و 8 و 9 — دروس أسبوعية ونصوص مقرّرة وتقييمات.',
+  },
+
   /* ── IGCSE board picker section ── */
   'homepage.igcse.heading': {
     en: 'IGCSE boards (international)',
@@ -128,6 +146,17 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'homepage.board.help.link': {
     en: 'Choose by level instead.',
     ar: 'اختر حسب المستوى بدال كذا.',
+  },
+
+  /* ── EAL companion line shown on every board card so EAL learners
+       see they are supported regardless of which board they pick. ── */
+  'homepage.board.eal_supported': {
+    en: 'EAL support included',
+    ar: 'يشمل دعم EAL',
+  },
+  'homepage.board.eal_supported.aria': {
+    en: 'EAL learner support is available for this board',
+    ar: 'دعم متعلّمي EAL متوفّر مع هذا البورد',
   },
 
   /* GCSE board blurbs */
