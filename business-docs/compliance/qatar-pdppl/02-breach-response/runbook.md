@@ -2,7 +2,7 @@
 
 > **Trigger:** any event that could constitute a personal-data breach affecting users whose declared country of residence is Qatar, or where Qatar-resident data is implicated as part of a wider breach.
 > **Hard deadline:** notify NCGAA within **72 hours** of the controller becoming aware of the breach where the breach is likely to cause **serious harm** to data subjects (PDPPL). Notify the UK ICO within 72 hours where the breach is likely to result in risk to rights and freedoms (UK GDPR Art. 33). These run concurrently — start both clocks together.
-> **Owner:** Calum Johnston (DPO), dpo@theenglishhub.app
+> **Owner:** Calum Johnson (DPO), dpo@theenglishhub.app
 > **Last reviewed:** 2026-05-20
 
 ---
@@ -11,7 +11,7 @@
 
 1. **Open the incident ticket** — `INC-YYYY-MM-DD-<short-slug>` — in the internal tracker.
 2. **Start two 72-hour clocks** — one for NCGAA, one for UK ICO. Record `awareness_datetime_utc`.
-3. **Page the DPO** (Calum Johnston) regardless of detection channel.
+3. **Page the DPO** (Calum Johnson) regardless of detection channel.
 4. **Page the on-call engineer** for containment.
 5. **Snapshot the affected systems** (database point-in-time, S3 bucket inventory, recent logs) before any remediation overwrites evidence.
 

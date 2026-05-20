@@ -436,13 +436,18 @@ export default async function QatarPrivacyNoticePage() {
           </li>
           <li>
             <strong>Article 16 permit posture.</strong> Because processing of children's data is a
-            special category, we are preparing a formal permit application to NCGAA for
-            authorisation to process minors' data under Article 16. The application dossier (RoPA +
-            DPIA + safeguards) is held internally and is available to NCGAA on request via{' '}
+            special category, we maintain a complete Article 16 permit application dossier (RoPA,
+            DPIAs, named sub‑processors, cross‑border consent posture, and safeguards) shelf‑ready
+            for submission to NCGAA. Formal submission is currently held pending a Qatari‑licensed
+            legal opinion and will be made when commercial commitment to Qatar warrants the spend or
+            a Qatari customer contractually requires it. The dossier is available to NCGAA on
+            request at{' '}
             <a href="mailto:dpo@theenglishhub.app" className="underline">
               dpo@theenglishhub.app
             </a>
-            .
+            ; the substantive compliance posture (Article 17 cross‑border consent, DPIAs, consent
+            ledger, 30‑day rights SLA, 72‑hour breach plan) is independent of the permit being
+            formally on file.
           </li>
           <li>{tr(`For users aged 13-17, we require explicit parental or guardian consent`)}</li>
           <li>

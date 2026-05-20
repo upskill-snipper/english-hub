@@ -1,7 +1,7 @@
 # DPO mailbox — "Send Mail As" follow-up runbook
 
 > **Why this exists:** Cloudflare Email Routing is **receive-only**. Today, when someone emails `dpo@theenglishhub.app`, it lands in `info@upskillenergy.com` (verified live since 2026-04-21 — see `business-docs/CLOUDFLARE-EMAIL-SETUP.md`). When the DPO replies, the reply currently goes out as `info@upskillenergy.com` rather than `dpo@theenglishhub.app`. For PDPPL / UK GDPR procurement and for any correspondence with NCGAA, the reply-from address matters. This runbook configures Google Workspace's "Send Mail As" so DPO replies actually originate from `dpo@theenglishhub.app`.
-> **Owner:** Calum Johnston (DPO)
+> **Owner:** Calum Johnson (DPO)
 > **Estimated time:** 10–15 minutes per alias
 > **Last reviewed:** 2026-05-20
 

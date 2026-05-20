@@ -19,7 +19,7 @@
 | ICO registration (UK) | ZC016690 |
 | Lead supervisory authority (UK) | UK Information Commissioner's Office (ICO) |
 | Qatar contact point | dpo@theenglishhub.app (monitored, 24-hour acknowledgement) |
-| DPO | Calum Johnston, dpo@theenglishhub.app, mobile +44 _[on file with NCGAA, not published]_ |
+| DPO | Calum Johnson, dpo@theenglishhub.app, mobile +44 _[on file with NCGAA, not published]_ |
 | DSL | Lauren Johnson, safeguarding@theenglishhub.app, +974 5187 9582 |
 | Registered office | Available to NCGAA on written request (not published) |
 
@@ -27,7 +27,7 @@
 
 | Field | Value |
 |---|---|
-| Name | Calum Johnston |
+| Name | Calum Johnson |
 | Role | Data Protection Officer |
 | Email | dpo@theenglishhub.app |
 | Phone | _[on file with NCGAA — confirm at submission]_ |

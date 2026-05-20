@@ -4,7 +4,7 @@
 **Service:** theenglishhub.app — GCSE/IGCSE English revision SaaS, serving learners and schools in the United Kingdom and the State of Qatar
 **Regulator (Qatar):** National Cyber Governance and Assurance Authority (NCGAA), Qatar
 **Date of this index:** 2026-05-20
-**Maintainer:** Calum Johnston — Data Protection Officer (dpo@theenglishhub.app)
+**Maintainer:** Calum Johnson — Data Protection Officer (dpo@theenglishhub.app)
 **Review cadence:** Six-monthly, plus any time a material change is made to processing, sub-processors, or product scope
 **Purpose of this document:** to satisfy the NCGAA Compliance and Data Protection Department's PDMS expectation (PDPPL Guidelines) — a single index that maps each PDPPL obligation to the internal artefact that evidences our compliance with it. This is the one-page document we hand to a school DPO during procurement, or to NCGAA on inspection.
 
@@ -25,7 +25,7 @@
 | Art. 22 | Electronic direct marketing — prior opt-in, sender ID, opt-out | Marketing emails wired through Resend with unsubscribe in every message; signup captures `MARKETING` consent separately; opt-out audit trail in `Consent` table |
 | Art. 23–25 | Breach notification within 72 hours | `business-docs/compliance/qatar-pdppl/02-breach-response/ncgaa-notification-template.md` (pre-filled controller details); breach response runbook at `business-docs/compliance/qatar-pdppl/02-breach-response/runbook.md` |
 | DPIA | Required for new processing / material change | `business-docs/compliance/childrens-code/03-dpias/` — parent DPIA + analytics DPIA + AI features DPIA (all v1.0 FINAL as of 2026-05-20) |
-| DPO | Not mandatory under mainland PDPPL; voluntarily appointed | Calum Johnston, dpo@theenglishhub.app — mailbox live since 2026-04-21 (Cloudflare Email Routing, `business-docs/CLOUDFLARE-EMAIL-SETUP.md`) |
+| DPO | Not mandatory under mainland PDPPL; voluntarily appointed | Calum Johnson, dpo@theenglishhub.app — mailbox live since 2026-04-21 (Cloudflare Email Routing, `business-docs/CLOUDFLARE-EMAIL-SETUP.md`) |
 
 ## 2. Other governance artefacts in the PDMS
 
@@ -49,7 +49,7 @@
 
 | Interaction | Status | When |
 |---|---|---|
-| Article 16 permit application (processing minors' data) | **In preparation** — see `01-article-16-permit/application-dossier.md` | Submit within 30 days of Qatari legal review sign-off |
+| Article 16 permit application (processing minors' data) | **Dossier drafted; submission deferred** by founder decision (2026-05-20) — see `01-article-16-permit/application-dossier.md`. Submission requires prior Qatari legal sign-off, which is parked until budget is allocated (see §4). | Submit once a Qatar customer commitment or own decision triggers the legal-opinion spend; the dossier is shelf-ready in the meantime |
 | 72-hour breach notification | **Standing readiness** — pre-filled template at `02-breach-response/ncgaa-notification-template.md` | Within 72 hours of becoming aware of any breach likely to cause serious harm |
 | General controller registration | **Not required** — PDPPL imposes no general registration obligation (confirmed by DLA Piper country guide) | n/a |
 | Annual / periodic NCGAA filings | **None required** by the law as drafted | n/a — monitor NCGAA guidance for change |
@@ -59,9 +59,15 @@
 
 | Date | Reviewer | Scope | Outcome / opinion ref. |
 |---|---|---|---|
-| _Pending_ | TBD (Clyde & Co Doha / DLA Piper Doha / Eversheds Doha — to be commissioned) | Full PDPPL gap analysis + sign-off on the Article 16 permit dossier before submission to NCGAA | _Awaiting engagement_ |
+| **Deferred (founder decision, 2026-05-20)** | TBD (Clyde & Co Doha / DLA Piper Doha / Eversheds Doha — to be commissioned in future) | Full PDPPL gap analysis + sign-off on the Article 16 permit dossier before submission to NCGAA | _Not engaged; budget parked_ |
 
-A standing Qatari-licensed legal opinion is the customary procurement evidence used by Qatari schools, because NCGAA does not issue a "PDPPL compliance certificate" for controllers. Budget USD 8k–25k for the first opinion; reissue on material change.
+**Status note.** A standing Qatari-licensed legal opinion is the customary procurement evidence used by Qatari schools, because NCGAA does not issue a "PDPPL compliance certificate" for controllers. The first opinion typically costs USD 8k–25k. The founder has explicitly decided not to allocate this budget at the current stage; it will be commissioned later. The trigger to revisit is one of:
+
+- The first Qatar school customer that requires a Qatari legal opinion as a contractual condition before signing
+- A change in our level of commercial commitment to Qatar (e.g. opening a Qatar entity, hiring a Qatar-resident representative, or a material spike in Qatar-resident user count)
+- A material change to PDPPL itself, or to the way NCGAA interprets it
+
+The substantive PDPPL compliance posture (this PDMS, the RoPA, the three DPIAs, the breach plan, the Article 17 cross-border consent in signup, the public privacy notice, the separately appointed DPO + DSL, the consent ledger) is maintained on disk and is independent of the legal-opinion engagement.
 
 ## 5. Procurement-pack — what we hand a Qatar school DPO on request
 
@@ -78,6 +84,6 @@ A standing Qatari-licensed legal opinion is the customary procurement evidence u
 
 | Role | Name | Date |
 |---|---|---|
-| Author | Calum Johnston (DPO) | 2026-05-20 |
+| Author | Calum Johnson (DPO) | 2026-05-20 |
 | DSL review | Lauren Johnson | _Pending — review on next safeguarding review cycle_ |
 | External legal sign-off | _Pending — Qatari counsel TBD_ | _Pending_ |

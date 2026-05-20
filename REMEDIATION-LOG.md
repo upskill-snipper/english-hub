@@ -258,21 +258,35 @@ landed this time.
 
 ### What still needs a human / external party
 
-- **Qatari legal opinion** — engage Clyde & Co Doha / DLA Piper Doha /
-  Eversheds Doha for a one-time PDPPL sign-off; budget USD 8k–25k. Drop
-  the opinion letter in as Exhibit G of the Article 16 dossier before
-  submitting to NCGAA.
-- **Article 16 permit submission** — submit the dossier to NCGAA via
-  <https://ncsa.gov.qa/en/pages/personal-data-privacy-stakeholders-services>
-  after legal sign-off.
+**Deferred by founder decision (2026-05-20) — parked until trigger:**
+
+- **Qatari legal opinion** — engaging Clyde & Co Doha / DLA Piper Doha /
+  Eversheds Doha would cost USD 8k–25k. Founder decision (2026-05-20):
+  not at this stage; commission later. The trigger to revisit is one of
+  (a) the first Qatar school customer that contractually requires it,
+  (b) a material change in our commercial commitment to Qatar (a Qatar
+  entity, hire, or material Qatar user-count spike), or (c) a material
+  change to PDPPL itself. Tracked in
+  `business-docs/compliance/qatar-pdppl/00-pdms-index.md` §4.
+- **Article 16 permit submission** — the dossier is shelf-ready at
+  `business-docs/compliance/qatar-pdppl/01-article-16-permit/`. Held
+  pending the legal opinion above; we do not want to submit without
+  Qatari counsel sign-off. The substantive compliance posture (Article
+  17 cross-border consent, DPIAs, 72-hour breach plan, 30-day rights
+  SLA, consent ledger) is in place independent of whether the permit is
+  formally filed.
+
+**Operational follow-ups (no external spend; founder/admin time only):**
+
 - **DPO mailbox send-as** — 10–15 minutes of Google Workspace Admin
   config per alias to flip the DPO + DSL mailboxes from receive-only to
-  full send-and-receive at their published addresses. Runbook is
-  ready.
-- **Sworn Arabic translation of the Qatar privacy notice** — commission
-  a Qatari-licensed legal translator. Once received, flip the language
-  disclaimer back to "Arabic prevails" (the policy text already
-  anticipates this).
+  full send-and-receive at their published addresses. Runbook is at
+  `business-docs/compliance/qatar-pdppl/03-pdms/dpo-mailbox-send-as-runbook.md`.
+- **Sworn Arabic translation of the Qatar privacy notice** — would be
+  commissioned alongside the Qatari legal opinion. Until then the
+  privacy notice correctly says "English controls; Arabic is for
+  information only." The text already anticipates flipping back to
+  "Arabic prevails" once a sworn translation is published.
 - **Reconcile the B5 floor across the Prisma signup row creation** — the
   validate-age endpoint accepts 11+ but `lib/auth.ts` and
   `api/auth/register/route.ts` still gate at 13+. This remains out of

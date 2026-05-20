@@ -712,7 +712,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     en: 'Data Protection Officer (DPO)',
     ar: 'مسؤول حماية البيانات (DPO)',
   },
-  'legal_long.privacy.s1.dpo_name': { en: 'Calum Johnston', ar: 'Calum Johnston' },
+  'legal_long.privacy.s1.dpo_name': { en: 'Calum Johnson', ar: 'Calum Johnson' },
   'legal_long.privacy.s1.h3_dsl': {
     en: 'Designated Safeguarding Lead (DSL)',
     ar: 'مسؤول الحماية المُعيَّن (DSL)',

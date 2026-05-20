@@ -1,9 +1,10 @@
 # PDPPL Article 16 permit application — dossier
 
-> **Status:** Draft v1.0 — ready for Qatari legal review and signature.
+> **Status:** Draft v1.0 — **shelf-ready, submission deferred** by founder decision (2026-05-20). The dossier itself is complete and can be lifted into a formal submission at short notice. What is deferred is the **submission to NCGAA**, which we do not want to make without prior written sign-off from a Qatari-licensed legal adviser, and the legal-opinion engagement is parked until budget is allocated (see `00-pdms-index.md` §4 for the trigger conditions to revisit).
 > **Submission:** **Do not submit** without prior written sign-off from a Qatari-licensed legal adviser. Once the Qatari legal opinion is received, attach it as Exhibit G and submit to NCGAA via the stakeholder services portal at <https://ncsa.gov.qa/en/pages/personal-data-privacy-stakeholders-services>.
-> **Owner:** Calum Johnston, Data Protection Officer (dpo@theenglishhub.app)
+> **Owner:** Calum Johnson, Data Protection Officer (dpo@theenglishhub.app)
 > **Date drafted:** 2026-05-20
+> **Next review of the deferral:** trigger-based — see PDMS §4. Default annual review on 2027-05-20 if no trigger fires.
 
 ---
 
@@ -34,7 +35,7 @@ Note: there is no general controller-registration regime under PDPPL; this is th
 | Registered office | Available to NCGAA on written request via dpo@theenglishhub.app (not published) |
 | Service URL | https://theenglishhub.app |
 | ICO registration (UK) | ZC016690 |
-| Data Protection Officer | Calum Johnston — dpo@theenglishhub.app |
+| Data Protection Officer | Calum Johnson — dpo@theenglishhub.app |
 | Designated Safeguarding Lead | Lauren Johnson — safeguarding@theenglishhub.app, +974 5187 9582 (Qatar mobile), 24-hour acknowledgement SLA |
 | Local representative in Qatar | None at the date of this application (PDPPL does not require one for online services). NCGAA correspondence routed via the DPO. Will appoint a local representative if NCGAA requires one as a condition of grant. |
 
@@ -213,8 +214,8 @@ The undersigned declares that:
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Data Protection Officer | Calum Johnston | _Pending — wet signature on the printed pack_ | _Pending submission_ |
-| Director (Upskill Energy Limited) | Calum Johnston | _Pending_ | _Pending submission_ |
+| Data Protection Officer | Calum Johnson | _Pending — wet signature on the printed pack_ | _Pending submission_ |
+| Director (Upskill Energy Limited) | Calum Johnson | _Pending_ | _Pending submission_ |
 
 ---
 

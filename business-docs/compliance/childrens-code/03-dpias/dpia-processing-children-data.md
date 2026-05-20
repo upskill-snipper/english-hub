@@ -4,7 +4,7 @@
 **Service:** The English Hub
 **Scope:** All processing of personal data of users under 18, within the core product
 **DPIA version:** 1.0 (FINAL — supersedes v0.9 draft of 2026-04-10)
-**Owner:** Calum Johnston — Data Protection Officer (DPO), dpo@theenglishhub.app
+**Owner:** Calum Johnson — Data Protection Officer (DPO), dpo@theenglishhub.app
 **Designated Safeguarding Lead (separate role, B1):** Lauren Johnson — safeguarding@theenglishhub.app, +974 5187 9582, 24-hour acknowledgement SLA
 **Date prepared:** 2026-04-10
 **Last reviewed:** 2026-05-20
@@ -21,7 +21,7 @@ This DPIA follows the ICO template structure (Step 1 through Step 7) and is inte
 
 - **2026-05-20 (v1.0 FINAL)** — Promoted from v0.9 draft as part of the PDPPL gap-analysis remediation. Material changes since v0.9:
   - **B5 (minimum age lowered from 13 to 11):** scope now expressly covers 11–17 year-olds. For 11–12 year-olds, who fall below UK GDPR Article 8's digital age of consent, processing relies on **verifiable parental/guardian consent** captured via the parent-link email at sign-up rather than the child's own consent. Standard 8 high-privacy defaults already extended to under-18s under v0.9 and continue to apply to the wider cohort unchanged.
-  - **B1 / B10 (separate DPO / DSL):** Lauren Johnson appointed as Designated Safeguarding Lead, separate from the Data Protection Officer (Calum Johnston). All references to "DPO and DSL" elsewhere in this DPIA should be read as two distinct individuals with distinct contact channels.
+  - **B1 / B10 (separate DPO / DSL):** Lauren Johnson appointed as Designated Safeguarding Lead, separate from the Data Protection Officer (Calum Johnson). All references to "DPO and DSL" elsewhere in this DPIA should be read as two distinct individuals with distinct contact channels.
   - **B2 (hosting topology):** §4.5 sub-processor list and §2 data-flow narrative updated to make the canonical hosting topology explicit — Vercel (front end), Supabase (auth + primary DB, EU/Frankfurt), Microsoft Azure UK South (backend API), Anthropic Claude API (US, DPA prohibits training on submissions).
   - **B4 (response SLA):** general acknowledgement service-level commitment set to 10 working days; PDPPL/UK GDPR statutory deadline (30 calendar days / 1 month) for substantive data-subject-rights responses remains unchanged.
   - **Qatar PDPPL coverage:** Section added confirming this DPIA is the supporting document for the Article 16 permit application for processing minors' data (children's data being "personal data of a special nature" under PDPPL).

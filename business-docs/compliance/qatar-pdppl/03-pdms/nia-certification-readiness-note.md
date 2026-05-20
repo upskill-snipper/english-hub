@@ -1,7 +1,7 @@
 # NIA certification — readiness note
 
 > **Status:** OPTIONAL — not on the critical path for PDPPL compliance, but the only NCSA-issued certificate available that schools can independently verify.
-> **Owner:** Calum Johnston (DPO)
+> **Owner:** Calum Johnson (DPO)
 > **Last reviewed:** 2026-05-20
 > **Decision required:** whether to pursue it as a procurement asset for Qatar schools.
 

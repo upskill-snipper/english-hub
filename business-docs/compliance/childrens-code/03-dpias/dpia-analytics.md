@@ -4,7 +4,7 @@
 **Service:** The English Hub
 **Scope:** Product analytics / telemetry as applied to users under 18
 **DPIA version:** 1.0 (FINAL — supersedes v0.9 draft of 2026-04-10)
-**Owner:** Calum Johnston — Data Protection Officer (DPO), dpo@theenglishhub.app
+**Owner:** Calum Johnson — Data Protection Officer (DPO), dpo@theenglishhub.app
 **Date prepared:** 2026-04-10
 **Last reviewed:** 2026-05-20
 **Next review:** 2026-11-20 (or on material change)

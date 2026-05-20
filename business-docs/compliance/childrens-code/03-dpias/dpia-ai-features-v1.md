@@ -4,8 +4,8 @@ Version: **1.0 (FINAL)** · supersedes v0.9 (DRAFT) · re-reviewed 2026-05-20 (n
 Date prepared: 2026-05-12
 Last reviewed: 2026-05-20
 Next review: 2026-11-20 (or on material change)
-Owner: Calum Johnston (Founder) — Data Protection Officer (DPO), dpo@theenglishhub.app
-DPO: Calum Johnston — see Section 6 sign-off
+Owner: Calum Johnson (Founder) — Data Protection Officer (DPO), dpo@theenglishhub.app
+DPO: Calum Johnson — see Section 6 sign-off
 DSL (separate role, B1): Lauren Johnson — safeguarding@theenglishhub.app, +974 5187 9582, 24-hour acknowledgement SLA
 Scope cohort: AI processing of personal data of users aged 11–17 (lowered from 13 by business decision B5, 2026-05-20)
 

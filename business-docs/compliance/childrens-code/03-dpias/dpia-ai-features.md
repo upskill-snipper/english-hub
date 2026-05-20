@@ -8,7 +8,7 @@ This v0.9 draft is retained for audit-trail continuity. The current canonical AI
 
 Material changes in v1.0:
 - Scope cohort expanded from 13–17 to 11–17 (business decision B5, 2026-05-20)
-- DPO (Calum Johnston) and DSL (Lauren Johnson) confirmed as separate roles (B1 / B10)
+- DPO (Calum Johnson) and DSL (Lauren Johnson) confirmed as separate roles (B1 / B10)
 - Hosting topology aligned with B2 canonical statement (Vercel / Supabase EU / Azure UK / Anthropic US)
 - Qatar PDPPL Article 16 permit application cross-reference added
 
