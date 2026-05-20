@@ -35,6 +35,7 @@ import {
   Edit3,
   StickyNote,
   ShieldAlert,
+  Languages,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -411,6 +412,10 @@ export default async function RevisionHubPage() {
     analyticsBody: await t('revision_page.analytics.body'),
     analyticsCta: await t('revision_page.analytics.cta'),
     featuredBadge: (await t('revision_page.featured.badge')).replace('{board}', boardName),
+    ealEyebrow: await t('revision_page.eal_companion.eyebrow'),
+    ealTitle: (await t('revision_page.eal_companion.title')).replace('{board}', boardName),
+    ealBody: await t('revision_page.eal_companion.body'),
+    ealCta: await t('revision_page.eal_companion.cta'),
     motivationTitle: await t('revision_page.motivation.title'),
     motivationBody: await t('revision_page.motivation.body'),
     motivationCta: await t('revision_page.motivation.cta'),
@@ -811,6 +816,48 @@ export default async function RevisionHubPage() {
           </div>
         </section>
       )}
+
+      {/* ── EAL learner companion ────────────────────────────────────
+          Cross-cutting profile: pairs with any board the student is
+          studying. Shows on every /revision render so EAL learners
+          studying KS3 / GCSE / IGCSE can reach the EAL practice in
+          one click without leaving their board hub. */}
+      <section
+        aria-labelledby="eal-companion-heading"
+        className="rounded-2xl border border-teal-500/30 bg-gradient-to-r from-teal-500/[0.06] via-card to-teal-500/[0.04] p-6 sm:p-8"
+      >
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <span
+              aria-hidden="true"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-500/15 text-teal-700 ring-1 ring-teal-500/30 dark:text-teal-300"
+            >
+              <Languages className="size-5" />
+            </span>
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-teal-700 dark:text-teal-300">
+                {i18n.ealEyebrow}
+              </p>
+              <h2
+                id="eal-companion-heading"
+                className="mt-1 text-heading-md font-heading text-foreground"
+              >
+                {i18n.ealTitle}
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">{i18n.ealBody}</p>
+            </div>
+          </div>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-teal-500/40 text-teal-700 hover:bg-teal-500/10 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200"
+            render={<Link href="/eal" />}
+          >
+            {i18n.ealCta}
+            <ArrowRight className="size-4" />
+          </Button>
+        </div>
+      </section>
 
       {/* ── Motivational banner ──────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">

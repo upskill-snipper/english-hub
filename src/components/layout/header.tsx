@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
 import {
   Menu,
@@ -506,9 +506,23 @@ export function Header() {
 
 function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydrated: boolean }) {
   const t = useT()
+  const pathname = usePathname()
+  const router = useRouter()
+  const { clearBoard } = useBoard()
+
   // Avoid hydration mismatch — render a placeholder until the persisted store is ready.
   if (!isHydrated) {
     return <div className="h-8 w-20" aria-hidden="true" />
+  }
+
+  // 2026-05-20: when the user is ON /board-select, the BoardSwitcher
+  // would render its dropdown alongside the picker grid; the dropdown
+  // popper portal then visually overlaps the picker, leaving phantom
+  // UI in front of and behind page content the user wants to click.
+  // The switcher exists to NAVIGATE to the picker, so hiding it on
+  // the picker page is both correct and removes the overlap entirely.
+  if (pathname === '/board-select' || pathname.startsWith('/board-select/')) {
+    return null
   }
 
   const config = getBoardConfig(board)
@@ -523,6 +537,23 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         {t('header.board.select_short')}
       </Link>
     )
+  }
+
+  // 2026-05-20: Change vs Reset previously both linked to the same
+  // `/board-select?change=1` URL, so Reset never actually cleared
+  // anything. Reset now calls clearBoard() (which clears BOTH the
+  // cookie AND the persisted localStorage value — required because
+  // the board store's onRehydrateStorage repairs the cookie from
+  // localStorage if only the cookie were cleared) before navigating.
+  // Both items use onClick handlers instead of render={<Link>} so the
+  // menu primitive closes the popper synchronously before navigation,
+  // avoiding the orphaned-portal overlap the user reported.
+  const handleChange = () => {
+    router.push('/board-select')
+  }
+  const handleReset = () => {
+    clearBoard()
+    router.push('/board-select')
   }
 
   return (
@@ -549,13 +580,8 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
           </div>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem render={<Link href="/board-select?change=1" />}>
-          {t('header.board.change')}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          render={<Link href="/board-select?change=1" />}
-          className="text-destructive focus:text-destructive"
-        >
+        <DropdownMenuItem onClick={handleChange}>{t('header.board.change')}</DropdownMenuItem>
+        <DropdownMenuItem onClick={handleReset} className="text-destructive focus:text-destructive">
           <RefreshCw className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
           {t('header.board.reset')}
         </DropdownMenuItem>

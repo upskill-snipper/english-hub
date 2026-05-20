@@ -429,6 +429,31 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(cleanUrl)
   }
 
+  // ── Reset board via `?resetBoard=1` ────────────────────────────────
+  //
+  // 2026-05-20 — the header BoardSwitcher's "Reset" item now points at
+  // `/board-select?resetBoard=1`. Previously Reset and Change both linked
+  // to the same `?change=1` URL, so Reset did nothing different from
+  // Change and the cookie was never actually cleared — users complained
+  // the header dropdown "got stuck" because the same board kept showing
+  // after they thought they had cleared it. This handler honours the
+  // intent: it expires the board cookie, strips the param, and returns a
+  // clean URL. The destination page (typically /board-select) then loads
+  // without a board cookie and the BoardSwitcher renders the "Choose
+  // board" empty-state link instead of the dropdown.
+  const resetBoardParam = request.nextUrl.searchParams.get('resetBoard')
+  if (resetBoardParam === '1') {
+    const cleanUrl = new URL(request.nextUrl)
+    cleanUrl.searchParams.delete('resetBoard')
+    const response = NextResponse.redirect(cleanUrl)
+    response.cookies.set('english-hub-board', '', {
+      path: '/',
+      maxAge: 0, // expire immediately
+      sameSite: 'lax',
+    })
+    return response
+  }
+
   // ── Retired-page redirect (e.g. /toolkit → /revision) ──────────────
   const retiredTarget = RETIRED_PAGE_REDIRECTS[pathname]
   if (retiredTarget) {

@@ -8183,6 +8183,26 @@ export const DICTIONARY: Dictionary = {
     ar: 'بقلم {author}. من أكثر النصوص اللي يدرسونها في المنهج مالك.',
   },
   'revision_page.featured.cta': { en: 'Open study guide', ar: 'افتح دليل الدراسة' },
+  // 2026-05-20: EAL companion panel — cross-cutting learner profile
+  // surfaced inside the board-aware hub so EAL learners studying any
+  // board can reach the dedicated EAL practice in one click.
+  'revision_page.eal_companion.eyebrow': {
+    en: 'EAL learner support',
+    ar: 'دعم متعلّمي EAL',
+  },
+  'revision_page.eal_companion.title': {
+    en: 'Studying {board} as an additional-language learner?',
+    ar: 'تدرس {board} كمتعلّم لغة إضافية؟',
+  },
+  'revision_page.eal_companion.body': {
+    en: 'EAL practice pairs with whichever board you are studying — vocabulary, reading fluency, comprehension, grammar and writing confidence, with Khaleeji-Arabic explanations for common transfer errors.',
+    ar: 'تدريب EAL يمشي جنب أي بورد تدرسه — المفردات، طلاقة القراءة، الفهم، القواعد، والثقة بالكتابة، مع شرح باللهجة الخليجية للأخطاء الشائعة في النقل بين اللغتين.',
+  },
+  'revision_page.eal_companion.cta': {
+    en: 'Open EAL practice',
+    ar: 'افتح تدريب EAL',
+  },
+
   'revision_page.motivation.title': {
     en: 'Consistent revision beats cramming every time',
     ar: 'المراجعة المنتظمة تتغلّب على الحشو دايماً',
