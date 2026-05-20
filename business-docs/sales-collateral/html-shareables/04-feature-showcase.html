@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Inside the Platform</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    /* Document-specific: screenshot placeholders */
+    .screenshot {
+      width: 100%;
+      min-height: 280px;
+      background: var(--cream-100);
+      border: 1px dashed var(--cream-300);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      margin: 16px 0 24px;
+      padding: 32px;
+      text-align: center;
+      color: var(--ink-500);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .screenshot strong {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--ink-700);
+      font-weight: 500;
+    }
+    .screenshot a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--teal-700);
+      word-break: break-all;
+    }
+    .screenshot.has-image { background: none; border: 1px solid var(--cream-200); padding: 0; min-height: 0; }
+    .screenshot img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+  </style>
+</head>
+<body>
+<div class="shell shell--wide">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">For school leadership</div>
+    <h1 class="doc-title">Inside the platform</h1>
+    <p class="doc-subtitle">
+      What students, teachers, parents, and leadership actually see. Every
+      screen below is from the live site at theenglishhub.app.
+    </p>
+    <p class="doc-meta">Captured from the live application — not from a design mockup.</p>
+  </header>
+
+  <p class="lead">
+    The platform is structured around four audiences: students, teachers,
+    leadership, and parents. Each audience sees only the views that matter to
+    their role, with high-privacy defaults enforced in code for any under-18
+    account.
+  </p>
+
+  <hr>
+
+  <div class="eyebrow">Student experience</div>
+  <h2>1. Student dashboard</h2>
+
+  <div class="screenshot">
+    <strong>Student dashboard</strong>
+    <span>Place screenshot at <code>./screenshots/01-student-dashboard.png</code></span>
+    <a href="https://theenglishhub.app/demo/student">https://theenglishhub.app/demo/student</a>
+  </div>
+
+  <p>
+    The student's home view on first login. Recent essays with AI-marked bands,
+    AO heat-map of weakness areas, recommended practice for today, mock exam
+    history, and a working-at grade banner shown low-key (never as the headline
+    number).
+  </p>
+
+  <div class="callout callout--sage">
+    <div class="callout-title">What's deliberately absent</div>
+    <p>
+      No streak counters. No leaderboards. No "you're falling behind" nudges.
+      These are off by default for any minor account, enforced in code under
+      ICO Children's Code Standards 6 and 8.
+    </p>
+  </div>
+
+  <h2>2. AI essay marking — student view</h2>
+
+  <div class="screenshot">
+    <strong>AI marking output</strong>
+    <span>Place screenshot at <code>./screenshots/02-ai-marking-output.png</code></span>
+    <a href="https://theenglishhub.app/demo/student/practice">https://theenglishhub.app/demo/student/practice</a>
+  </div>
+
+  <p>
+    What a student sees within seconds of submitting a 600-word essay: a
+    suggested band labelled clearly as a <em>suggestion</em>, paragraph-level
+    annotations referencing the assessment objectives by name ("AO2 — methods
+    analysis: the metaphor in para 3 is identified but not analysed"),
+    strengths and next steps, and a "request human review" button that
+    escalates any AI-marked essay to a qualified English teacher. <strong>Human
+    review is the final word.</strong>
+  </p>
+
+  <hr>
+
+  <div class="eyebrow">Teacher experience</div>
+  <h2>3. Teacher dashboard — class view</h2>
+
+  <div class="screenshot">
+    <strong>Teacher class dashboard</strong>
+    <span>Place screenshot at <code>./screenshots/03-teacher-class-view.png</code></span>
+    <a href="https://theenglishhub.app/demo/teacher">https://theenglishhub.app/demo/teacher</a>
+  </div>
+
+  <p>
+    Every class the teacher owns or contributes to, per-class adoption rate,
+    the marking queue (essays awaiting optional teacher review — most go
+    straight through), and a weak-area heatmap so the next lesson can target
+    the actual gap.
+  </p>
+
+  <h2>4. Teacher essay-marking workflow</h2>
+
+  <div class="screenshot">
+    <strong>Side-by-side teacher review</strong>
+    <span>Place screenshot at <code>./screenshots/04-teacher-essay-marking.png</code></span>
+    <a href="https://theenglishhub.app/demo/teacher/essays">https://theenglishhub.app/demo/teacher/essays</a>
+  </div>
+
+  <p>
+    The screen splits three ways: student essay with AI annotations inline,
+    AI-suggested AO breakdown, and a teacher override panel. The teacher's
+    decision is the final word and is what appears on the student's record.
+    Teacher time per essay in this workflow is typically 1–3 minutes — the
+    teacher is editing the AI's output, not generating fresh marking.
+  </p>
+
+  <hr>
+
+  <div class="eyebrow">Leadership view</div>
+  <h2>5. School analytics</h2>
+
+  <div class="screenshot">
+    <strong>Department-wide leadership analytics</strong>
+    <span>Place screenshot at <code>./screenshots/05-school-analytics.png</code></span>
+    <a href="https://theenglishhub.app/demo/school/analytics">https://theenglishhub.app/demo/school/analytics</a>
+  </div>
+
+  <p>
+    Department-wide adoption, marking-turnaround trend over time, cohort
+    progress (Y10 / Y11 / Y12 / Y13 grade-band distribution), mock exam
+    comparison across classes with statistical-significance flagging, and an
+    EAL cohort surfaced as its own segment so progress is measured fairly.
+  </p>
+
+  <h2>6. School engagement and benchmarking</h2>
+
+  <div class="screenshot">
+    <strong>Engagement and cohort benchmarking</strong>
+    <span>Place screenshot at <code>./screenshots/07-school-engagement.png</code></span>
+    <a href="https://theenglishhub.app/demo/school/engagement">https://theenglishhub.app/demo/school/engagement</a>
+  </div>
+
+  <p>
+    Engagement-by-week, year-on-year benchmark (this cohort vs last year's same
+    cohort at the same point in the academic year), cross-class comparison,
+    and an intervention queue surfacing students whose engagement has dropped
+    in the past two weeks — flagged for the form tutor or Head of Year.
+  </p>
+
+  <hr>
+
+  <div class="eyebrow">Parent view</div>
+  <h2>7. Weekly parent progress email</h2>
+
+  <div class="screenshot">
+    <strong>Parent weekly email</strong>
+    <span>Place screenshot at <code>./screenshots/06-parent-weekly-email.png</code></span>
+    <a href="https://theenglishhub.app/dashboard/parent">https://theenglishhub.app/dashboard/parent</a>
+  </div>
+
+  <p>
+    The consent-gated weekly email sent to the parent or guardian of any
+    linked under-18 account. Includes the child's name, week date range,
+    essays completed, time on platform, working-at grade (with the "platform's
+    internal estimate" caveat), 1–3 strengths, 1–3 areas to grow, one
+    suggested action.
+  </p>
+
+  <div class="callout callout--ochre">
+    <div class="callout-title">What the parent does NOT see</div>
+    <p>
+      The text of any essay the child wrote. Any disclosure the child made in
+      essay content. Anything not directly relevant to the child's English
+      learning progress.
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="eyebrow">Content surfaces</div>
+  <h2>8. Mock exam library</h2>
+
+  <div class="screenshot">
+    <strong>Mock exam library</strong>
+    <span>Place screenshot at <code>./screenshots/08-mock-exam-library.png</code></span>
+    <a href="https://theenglishhub.app/mock-exams">https://theenglishhub.app/mock-exams</a>
+  </div>
+
+  <p>
+    Every paper of every board — AQA, Pearson Edexcel, OCR, Eduqas, WJEC,
+    Cambridge IGCSE. Timed mode runs the paper under actual exam conditions
+    with on-screen countdown; mark-scheme-aligned AI marking at the end of
+    each paper.
+  </p>
+
+  <h2>9. KS3 hub — Year 7 to Year 9</h2>
+
+  <div class="screenshot">
+    <strong>KS3 hub</strong>
+    <span>Place screenshot at <code>./screenshots/09-ks3-hub.png</code></span>
+    <a href="https://theenglishhub.app/ks3">https://theenglishhub.app/ks3</a>
+  </div>
+
+  <p>
+    Pearson Edexcel iLowerSecondary English coverage end-to-end — weekly
+    lesson plans, half-term assessments, key vocabulary, skill codes mapped
+    to GCSE/IGCSE assessment objectives.
+  </p>
+
+  <h2>10. EAL track</h2>
+
+  <div class="screenshot">
+    <strong>EAL hub</strong>
+    <span>Place screenshot at <code>./screenshots/10-eal-hub.png</code></span>
+    <a href="https://theenglishhub.app/eal">https://theenglishhub.app/eal</a>
+  </div>
+
+  <p>
+    Ten grammar topics — word order, articles, verb tenses, modal verbs,
+    prepositions, conjunctions, punctuation, cohesion, vocabulary academic
+    and descriptive. A2 and B1 native bands live; B2 and C1 in content
+    authoring with non-A2 routes currently noindexed pending genuine
+    level-differentiated material.
+  </p>
+
+  <hr>
+
+  <div class="eyebrow">Compliance UI — visible to your users</div>
+  <h2>11. Qatar-specific cross-border consent panel</h2>
+
+  <div class="screenshot">
+    <strong>PDPPL Article 17 consent panel</strong>
+    <span>Place screenshot at <code>./screenshots/11-pdppl-consent-banner.png</code></span>
+    <a href="https://theenglishhub.app/auth/register">https://theenglishhub.app/auth/register</a>
+  </div>
+
+  <p>
+    What a Qatar-resident user sees in the signup flow before account creation.
+    Named destinations (EU, US, UK, Ireland, global edge), what's at each
+    destination, the safeguards in place, a required checkbox, and the
+    withdrawal route in plain text. <strong>Live as of 20 May 2026.</strong>
+    Most EdTech platforms have not shipped this.
+  </p>
+
+  <h2>12. Privacy dashboard</h2>
+
+  <div class="screenshot">
+    <strong>Privacy and consent dashboard</strong>
+    <span>Place screenshot at <code>./screenshots/12-privacy-dashboard.png</code></span>
+    <a href="https://theenglishhub.app/dashboard/consent">https://theenglishhub.app/dashboard/consent</a>
+  </div>
+
+  <p>
+    Every consent the user has granted or withdrawn, with timestamp and
+    version. Per-consent toggle to withdraw any optional consent immediately.
+    Full data export in one click. Account deletion in one click. Parent-account
+    view for linked parent accounts lets them see their child's consent ledger
+    and act on the child's behalf.
+  </p>
+
+  <hr>
+
+  <div class="card card-primary">
+    <h3 style="margin-top:0">See it live</h3>
+    <p>
+      A 20-minute live screen-share walkthrough — with your students' year
+      group and exam board pre-loaded — is the fastest way to make these
+      screens real. Email
+      <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a> with
+      subject <strong>"Demo walkthrough — [your school name]"</strong>.
+    </p>
+  </div>
+
+  <footer class="doc-footer">
+    <p>
+      <strong>The English Hub</strong> — Upskill Energy Limited<br>
+      Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+      <a href="https://theenglishhub.app">theenglishhub.app</a> · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
