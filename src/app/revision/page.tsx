@@ -12,7 +12,6 @@ import {
   PenTool,
   GraduationCap,
   Target,
-  Brain,
   Sparkles,
   ArrowRight,
   TrendingUp,
@@ -20,14 +19,11 @@ import {
   Zap,
   BarChart3,
   CalendarDays,
-  Wrench,
   FolderOpen,
-  LineChart,
   ClipboardList,
   Timer,
   Dumbbell,
   Gamepad2,
-  Flame,
   Library,
   CheckSquare,
   GitCompare,
@@ -36,6 +32,7 @@ import {
   StickyNote,
   ShieldAlert,
   Languages,
+  ChevronDown,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -46,37 +43,26 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { isIgcseBoard } from '@/lib/board/board-filter'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { RecentlyStudied } from './_components/recently-studied'
+import { RevisionHubLenses, type RecommendedItem } from './_components/revision-hub-lenses'
+import { FavouriteToggle } from './_components/favourite-toggle'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 import { t } from '@/lib/i18n/t'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
 interface RevisionSection {
-  /** i18n key for the section title (revision_page.section.*.title). */
   titleKey: string
-  /** i18n key for the description. */
   descKey: string
   href: string
   icon: typeof BookOpen
   colour: string
   bgColour: string
-  /** i18n key for the stats string. */
   statsKey: string
-  /** Optional i18n key for the tag badge ("Popular", "New", "AI"). */
   tagKey?: string
-  /** Boards this section is shown to. Omit to show for all. */
   boards?: ExamBoard[]
-  /**
-   * Which exam paper(s) this section prepares the student for.
-   *   ['lit']        → Literature paper only
-   *   ['lang']       → Language paper only
-   *   ['lit', 'lang']→ Both — cross-paper skill
-   *   undefined      → Generic / not paper-specific
-   */
   papers?: ReadonlyArray<'lit' | 'lang'>
 }
 
-/** Translation key for the paper-badge label. Returns null for generic sections. */
 function paperLabelKey(papers: RevisionSection['papers']): string | null {
   if (!papers || papers.length === 0) return null
   const hasLit = papers.includes('lit')
@@ -87,7 +73,6 @@ function paperLabelKey(papers: RevisionSection['papers']): string | null {
   return null
 }
 
-/** Tailwind classes for the paper badge — colour-coded so eyes can scan. */
 function paperBadgeClasses(papers: RevisionSection['papers']): string {
   if (!papers || papers.length === 0) return ''
   const hasLit = papers.includes('lit')
@@ -284,8 +269,6 @@ const ALL_SECTIONS: RevisionSection[] = [
   },
 ]
 
-// ─── Toolkit sections (surfaced from /toolkit/* into the hub) ──────────────
-
 const TOOLKIT_SECTIONS: RevisionSection[] = [
   {
     titleKey: 'revision_page.toolkit.revision_builder.title',
@@ -337,63 +320,29 @@ const TOOLKIT_SECTIONS: RevisionSection[] = [
   },
 ]
 
-function getSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
-  if (!board) return ALL_SECTIONS
-  return ALL_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
-}
-
-function getToolkitSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
-  if (!board) return TOOLKIT_SECTIONS
-  return TOOLKIT_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
-}
+const filterByBoard = (rows: RevisionSection[], board: ExamBoard | null) =>
+  !board ? rows : rows.filter((s) => !s.boards || s.boards.includes(board))
 
 // ─── Component ──────────────────────────────────────────────────────────────
 
 export default async function RevisionHubPage() {
   const board = await getServerBoard()
   const config = getBoardConfig(board)
-  const sections = getSectionsForBoard(board)
-  const toolkitSections = getToolkitSectionsForBoard(board)
+  const sections = filterByBoard(ALL_SECTIONS, board)
+  const toolkitSections = filterByBoard(TOOLKIT_SECTIONS, board)
   const isIgcse = isIgcseBoard(board)
   const isCambridge = board === 'cambridge-0500' || board === 'cambridge-0990'
 
   const setTexts = getSetTextsForBoard(board)
   const featuredText = setTexts.find((tx) => tx.slug === 'macbeth') ?? setTexts[0]
-
   const boardName = config?.shortName ?? 'GCSE'
-  const headingPrefix = config
-    ? await t('revision_page.hero.heading_prefix_board')
-    : await t('revision_page.hero.heading_prefix_generic')
 
   // Resolve i18n strings up-front so JSX stays clean.
   const i18n = {
     heroBadge: config ? config.fullName : await t('revision_page.hero.badge_default'),
-    heroSuffix: await t('revision_page.hero.heading_suffix'),
     heroBlurb: isCambridge
       ? (await t('revision_page.hero.blurb_cambridge')).replace('{board}', boardName)
       : (await t('revision_page.hero.blurb_default')).replace('{board}', boardName),
-    statSubjects: await t('revision_page.stats.subjects'),
-    statResources: await t('revision_page.stats.resources'),
-    statFlashcards: await t('revision_page.stats.flashcards'),
-    statQuizzes: await t('revision_page.stats.quizzes'),
-    snapshotAria: await t('revision_page.snapshot.aria'),
-    streakLabel: await t('revision_page.snapshot.streak.label'),
-    streakTitle: await t('revision_page.snapshot.streak.title'),
-    streakBody: await t('revision_page.snapshot.streak.body'),
-    streakCta: await t('revision_page.snapshot.streak.cta'),
-    progressLabel: await t('revision_page.snapshot.progress.label'),
-    progressTitle: (await t('revision_page.snapshot.progress.title')).replace('{board}', boardName),
-    progressBody: (await t('revision_page.snapshot.progress.body')).replace('{board}', boardName),
-    progressCta: await t('revision_page.snapshot.progress.cta'),
-    aiLabel: await t('revision_page.snapshot.ai.label'),
-    aiTitle: await t('revision_page.snapshot.ai.title'),
-    aiBody: await t('revision_page.snapshot.ai.body'),
-    aiCta: await t('revision_page.snapshot.ai.cta'),
-    studyBadge: (await t('revision_page.study_plan.badge')).replace('{board}', boardName),
-    studyTitle: await t('revision_page.study_plan.title'),
-    studyBody: (await t('revision_page.study_plan.body')).replace('{board}', boardName),
-    studyCta: await t('revision_page.study_plan.cta'),
-    sectionsHeading: await t('revision_page.sections.heading'),
     forBoardBadge: (await t('revision_page.sections.for_board_badge')).replace(
       '{board}',
       boardName,
@@ -405,12 +354,7 @@ export default async function RevisionHubPage() {
       config?.fullName ?? (await t('revision_page.igcse.body_fallback')),
     ),
     igcseCta: await t('revision_page.igcse.cta'),
-    toolkitHeading: await t('revision_page.toolkit.heading'),
     openTool: await t('revision_page.toolkit.open_tool'),
-    analyticsBadge: await t('revision_page.analytics.badge_new'),
-    analyticsTitle: await t('revision_page.analytics.title'),
-    analyticsBody: await t('revision_page.analytics.body'),
-    analyticsCta: await t('revision_page.analytics.cta'),
     featuredBadge: (await t('revision_page.featured.badge')).replace('{board}', boardName),
     ealEyebrow: await t('revision_page.eal_companion.eyebrow'),
     ealTitle: (await t('revision_page.eal_companion.title')).replace('{board}', boardName),
@@ -426,7 +370,6 @@ export default async function RevisionHubPage() {
     : ''
   const featuredCta = await t('revision_page.featured.cta')
 
-  // Helper that bundles i18n lookup of section labels in one place.
   async function getSectionStrings(s: RevisionSection) {
     const [title, desc, stats, tag] = await Promise.all([
       t(s.titleKey),
@@ -439,389 +382,115 @@ export default async function RevisionHubPage() {
     return { title, desc, stats, tag, paperLabel }
   }
 
-  const sectionData = await Promise.all(sections.map(getSectionStrings))
-  const toolkitData = await Promise.all(toolkitSections.map(getSectionStrings))
+  // Merge sections + toolkit into one collapsible "All sections" grid.
+  const allSections = [...sections, ...toolkitSections]
+  const allSectionData = await Promise.all(allSections.map(getSectionStrings))
+
+  // Build the resolved list passed to the lenses widget so favourites can
+  // resolve href → title client-side without re-fetching i18n.
+  const lensesAllSections = allSections.map((s, idx) => ({
+    href: s.href,
+    title: allSectionData[idx].title,
+  }))
+
+  // Hardcoded "fast wins" picks per the brief.
+  const recommended: RecommendedItem[] = [
+    {
+      href: '/revision/exam-technique',
+      title: 'Exam Technique',
+      blurb: 'Boost your timing',
+      icon: 'target',
+    },
+    {
+      href: '/revision/flashcards',
+      title: 'Flashcards',
+      blurb: 'Quick recall practice',
+      icon: 'layers',
+    },
+    {
+      href: '/revision/texts',
+      title: 'Mock Papers & Texts',
+      blurb: 'Last 5 marks',
+      icon: 'bookText',
+    },
+    {
+      href: '/revision/grade-targets',
+      title: 'Grade Targets',
+      blurb: 'Track your trajectory',
+      icon: 'trendingUp',
+    },
+  ]
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-8 pb-16">
       {/* ── Trial countdown banner ─────────────────────────────────── */}
       <TrialCountdownBannerServer />
 
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      {/* ── Compact hero ──────────────────────────────────────────── */}
       <section
         aria-labelledby="revision-hero-heading"
-        className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10"
+        className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-5 sm:p-6"
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
         />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
-        />
-
-        <div className="relative">
-          <Badge variant="secondary" className="mb-4">
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          Your Hub
+        </p>
+        <div className="mt-1 flex flex-wrap items-center gap-2">
+          <Badge variant="secondary">
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
             {i18n.heroBadge}
           </Badge>
-          <h1
-            id="revision-hero-heading"
-            className="text-display-sm font-heading text-foreground sm:text-display"
-          >
-            {headingPrefix} {boardName} {i18n.heroSuffix}
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{i18n.heroBlurb}</p>
-
-          {/* Quick stats */}
-          <div className="mt-6 flex flex-wrap gap-4 sm:gap-6">
-            {[
-              { label: i18n.statSubjects, value: '7', icon: BookOpen },
-              { label: i18n.statResources, value: '200+', icon: FileText },
-              { label: i18n.statFlashcards, value: '500+', icon: Layers },
-              { label: i18n.statQuizzes, value: '100+', icon: Brain },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2"
-              >
-                <stat.icon className="size-4 text-primary" aria-hidden="true" />
-                <span className="text-sm font-semibold text-foreground">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
-
-      {/* ── Headline analytics ────────── */}
-      <section aria-label={i18n.snapshotAria} className="grid gap-4 sm:grid-cols-3">
-        <Link
-          href="/revision/analytics"
-          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
+        <h1
+          id="revision-hero-heading"
+          className="mt-3 max-w-2xl text-heading-lg font-heading text-foreground sm:text-display-sm"
         >
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
-              <Flame className="size-5 text-emerald-400" />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                {i18n.streakLabel}
-              </p>
-              <p className="text-heading-sm font-heading text-foreground">{i18n.streakTitle}</p>
-            </div>
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">{i18n.streakBody}</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            {i18n.streakCta} <ArrowRight className="size-3" />
+          {i18n.heroBlurb}
+        </h1>
+
+        {/* Plain stat pills */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
+            <Target className="size-3 text-emerald-400" aria-hidden="true" />
+            <span className="font-semibold text-foreground">Target G7</span>
           </span>
-        </Link>
-        <Link
-          href="/revision/analytics"
-          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-cyan-500/40 hover:shadow-card-hover"
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/10">
-              <TrendingUp className="size-5 text-cyan-400" />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                {i18n.progressLabel}
-              </p>
-              <p className="text-heading-sm font-heading text-foreground">{i18n.progressTitle}</p>
-            </div>
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">{i18n.progressBody}</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            {i18n.progressCta} <ArrowRight className="size-3" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
+            <TrendingUp className="size-3 text-cyan-400" aria-hidden="true" />
+            <span className="font-semibold text-foreground">Predicted G6</span>
           </span>
-        </Link>
-        <Link
-          href="/revision/analytics"
-          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-violet-500/40 hover:shadow-card-hover"
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
-              <Sparkles className="size-5 text-violet-400" />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                {i18n.aiLabel}
-              </p>
-              <p className="text-heading-sm font-heading text-foreground">{i18n.aiTitle}</p>
-            </div>
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">{i18n.aiBody}</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            {i18n.aiCta} <ArrowRight className="size-3" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
+            <CalendarDays className="size-3 text-primary" aria-hidden="true" />
+            <span className="font-semibold text-foreground">9-day streak</span>
           </span>
-        </Link>
-      </section>
-
-      {/* ── Study Plan CTA ──────────────────────────────────────────── */}
-      <section className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-6 sm:p-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-start gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
-              <CalendarDays className="size-6 text-primary" aria-hidden="true" />
-            </div>
-            <div>
-              <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                {i18n.studyBadge}
-              </Badge>
-              <h2 className="text-heading-md font-heading text-foreground">{i18n.studyTitle}</h2>
-              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">{i18n.studyBody}</p>
-            </div>
-          </div>
-          <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
-            {i18n.studyCta}
-            <ArrowRight className="size-4" />
-          </Button>
         </div>
       </section>
 
-      {/* ── Section Cards ────────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <GraduationCap className="size-5 text-primary" aria-hidden="true" />
-          <h2 className="text-heading-lg font-heading text-foreground">{i18n.sectionsHeading}</h2>
-          {config && (
-            <Badge variant="outline" className="ml-1 text-xs">
-              {i18n.forBoardBadge}
-            </Badge>
-          )}
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sections.map((section, idx) => {
-            const data = sectionData[idx]
-            return (
-              <Link
-                key={section.href}
-                href={section.href}
-                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-              >
-                {data.tag && (
-                  <Badge
-                    variant="default"
-                    className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
-                  >
-                    {data.tag}
-                  </Badge>
-                )}
-
-                <div className="mb-3 flex items-center gap-3">
-                  <div
-                    className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
-                  >
-                    <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                      {data.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                      <span className="text-caption text-muted-foreground">{data.stats}</span>
-                      {data.paperLabel && (
-                        <span
-                          className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
-                          aria-label={`Prepares for ${data.paperLabel}`}
-                        >
-                          {data.paperLabel}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                  {data.desc}
-                </p>
-
-                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  {i18n.startRevising}
-                  <ArrowRight className="size-3.5" aria-hidden="true" />
-                </div>
-              </Link>
-            )
-          })}
-        </div>
-
-        {/* IGCSE deep-link callout */}
-        {isIgcse && (
-          <div className="mt-5 rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.04] p-5">
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
-                <GraduationCap className="size-5 text-cyan-400" aria-hidden="true" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-heading-md font-heading text-foreground">{i18n.igcseTitle}</h3>
-                <p className="mt-1 text-body-sm text-muted-foreground">{i18n.igcseBody}</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="mt-3"
-                  render={
-                    <Link
-                      href={
-                        board === 'edexcel-igcse'
-                          ? '/igcse/edexcel'
-                          : board === 'cambridge-0500'
-                            ? '/igcse/cambridge/0500'
-                            : '/igcse/cambridge/0990'
-                      }
-                    />
-                  }
-                >
-                  {i18n.igcseCta}
-                  <ArrowRight className="size-3.5" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
+      {/* ── Primary actions row ──────────────────────────────────── */}
+      <section
+        aria-label="Primary actions"
+        className="flex flex-col gap-2 sm:flex-row sm:flex-wrap"
+      >
+        <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
+          Continue last lesson
+          <ArrowRight className="size-4" />
+        </Button>
+        <Button variant="outline" size="lg" render={<Link href="/revision/exam-technique" />}>
+          <Sparkles className="size-4" aria-hidden="true" />
+          AI focus this week
+        </Button>
+        <Button variant="outline" size="lg" render={<Link href="/demo/student" />}>
+          Open full dashboard
+          <ArrowRight className="size-4" />
+        </Button>
       </section>
 
-      {/* ── Your Toolkit ─────────────────────────────────────────────── */}
-      <section aria-labelledby="your-toolkit-heading">
-        <div className="mb-5 flex items-center gap-3">
-          <Wrench className="size-5 text-primary" aria-hidden="true" />
-          <h2 id="your-toolkit-heading" className="text-heading-lg font-heading text-foreground">
-            {i18n.toolkitHeading}
-          </h2>
-          {config && (
-            <Badge variant="outline" className="ml-1 text-xs">
-              {i18n.forBoardBadge}
-            </Badge>
-          )}
-        </div>
+      {/* ── 3-lens grid (In Progress / Recommended / Favourites) ─── */}
+      <RevisionHubLenses recommended={recommended} allSections={lensesAllSections} />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {toolkitSections.map((section, idx) => {
-            const data = toolkitData[idx]
-            return (
-              <Link
-                key={section.href}
-                href={section.href}
-                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-              >
-                {data.tag && (
-                  <Badge
-                    variant="default"
-                    className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
-                  >
-                    {data.tag}
-                  </Badge>
-                )}
-
-                <div className="mb-3 flex items-center gap-3">
-                  <div
-                    className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
-                  >
-                    <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                      {data.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                      <span className="text-caption text-muted-foreground">{data.stats}</span>
-                      {data.paperLabel && (
-                        <span
-                          className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
-                          aria-label={`Prepares for ${data.paperLabel}`}
-                        >
-                          {data.paperLabel}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                  {data.desc}
-                </p>
-
-                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  {i18n.openTool}
-                  <ArrowRight className="size-3.5" aria-hidden="true" />
-                </div>
-              </Link>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ── Your Analytics CTA ───────────────────────────────────────── */}
-      <section aria-labelledby="your-analytics-heading">
-        <Link
-          href="/revision/analytics"
-          className="group flex flex-col gap-4 rounded-2xl border border-border/60 bg-gradient-to-br from-cyan-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 transition-all duration-200 hover:border-border hover:shadow-card-hover sm:flex-row sm:items-center sm:justify-between"
-        >
-          <div className="flex items-start gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
-              <LineChart className="size-6 text-cyan-400" aria-hidden="true" />
-            </div>
-            <div>
-              <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                {i18n.analyticsBadge}
-              </Badge>
-              <h2
-                id="your-analytics-heading"
-                className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors"
-              >
-                {i18n.analyticsTitle}
-              </h2>
-              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
-                {i18n.analyticsBody}
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-1 text-sm font-medium text-primary">
-            {i18n.analyticsCta}
-            <ArrowRight
-              className="size-4 transition-transform group-hover:translate-x-0.5"
-              aria-hidden="true"
-            />
-          </div>
-        </Link>
-      </section>
-
-      {/* ── Recently Studied (client) ────────────────────────────────── */}
-      <RecentlyStudied />
-
-      {/* ── Featured set text (board-aware) ──────────────────────────── */}
-      {featuredText && !isCambridge && (
-        <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-blue-500/[0.04] via-card to-primary/[0.04] p-6 sm:p-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <Badge variant="secondary" className="mb-2">
-                <BookText className="mr-1 size-3" aria-hidden="true" />
-                {i18n.featuredBadge}
-              </Badge>
-              <h2 className="text-heading-md font-heading text-foreground">{featuredText.title}</h2>
-              <p className="mt-1 text-body-sm text-muted-foreground">{featuredBy}</p>
-            </div>
-            <Button
-              variant="outline"
-              size="lg"
-              render={<Link href={`/revision/texts/${featuredText.slug}`} />}
-            >
-              {featuredCta}
-              <ArrowRight className="size-4" />
-            </Button>
-          </div>
-        </section>
-      )}
-
-      {/* ── EAL learner companion ────────────────────────────────────
-          Cross-cutting profile: pairs with any board the student is
-          studying. Shows on every /revision render so EAL learners
-          studying KS3 / GCSE / IGCSE can reach the EAL practice in
-          one click without leaving their board hub. */}
+      {/* ── EAL learner companion ────────────────────────────────── */}
       <section
         aria-labelledby="eal-companion-heading"
         className="rounded-2xl border border-teal-500/30 bg-gradient-to-r from-teal-500/[0.06] via-card to-teal-500/[0.04] p-6 sm:p-8"
@@ -859,7 +528,162 @@ export default async function RevisionHubPage() {
         </div>
       </section>
 
-      {/* ── Motivational banner ──────────────────────────────────────── */}
+      {/* ── Featured set text (board-aware) ──────────────────────── */}
+      {featuredText && !isCambridge && (
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-blue-500/[0.04] via-card to-primary/[0.04] p-6 sm:p-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <Badge variant="secondary" className="mb-2">
+                <BookText className="mr-1 size-3" aria-hidden="true" />
+                {i18n.featuredBadge}
+              </Badge>
+              <h2 className="text-heading-md font-heading text-foreground">{featuredText.title}</h2>
+              <p className="mt-1 text-body-sm text-muted-foreground">{featuredBy}</p>
+            </div>
+            <Button
+              variant="outline"
+              size="lg"
+              render={<Link href={`/revision/texts/${featuredText.slug}`} />}
+            >
+              {featuredCta}
+              <ArrowRight className="size-4" />
+            </Button>
+          </div>
+        </section>
+      )}
+
+      {/* ── Recently Studied (client) ─────────────────────────────── */}
+      <RecentlyStudied />
+
+      {/* ── All sections (collapsible) ────────────────────────────── */}
+      <section aria-labelledby="all-sections-heading">
+        <details className="group rounded-2xl border border-border/60 bg-card/40 open:bg-card/60">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-5 py-4 hover:bg-card/80 [&::-webkit-details-marker]:hidden">
+            <div className="flex items-center gap-3">
+              <GraduationCap className="size-5 text-primary" aria-hidden="true" />
+              <h2
+                id="all-sections-heading"
+                className="text-heading-lg font-heading text-foreground"
+              >
+                Browse all sections
+              </h2>
+              <Badge variant="outline" className="ml-1 text-xs">
+                {allSections.length} items
+              </Badge>
+              {config && (
+                <Badge variant="outline" className="text-xs">
+                  {i18n.forBoardBadge}
+                </Badge>
+              )}
+            </div>
+            <ChevronDown
+              className="size-5 text-muted-foreground transition-transform group-open:rotate-180"
+              aria-hidden="true"
+            />
+          </summary>
+
+          <div className="border-t border-border/40 px-5 pb-6 pt-4">
+            <p className="mb-4 text-body-sm text-muted-foreground">
+              Pick a topic to dive in, or star to pin it to your Favourites above.
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {allSections.map((section, idx) => {
+                const data = allSectionData[idx]
+                return (
+                  <div key={section.href} className="relative">
+                    <FavouriteToggle href={section.href} title={data.title} />
+                    <Link
+                      href={section.href}
+                      className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+                    >
+                      {data.tag && (
+                        <Badge
+                          variant="default"
+                          className="absolute right-12 top-4 text-[0.65rem] uppercase tracking-wider"
+                        >
+                          {data.tag}
+                        </Badge>
+                      )}
+
+                      <div className="mb-3 flex items-center gap-3">
+                        <div
+                          className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                        >
+                          <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                        </div>
+                        <div className="min-w-0 pr-8">
+                          <h3 className="truncate text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                            {data.title}
+                          </h3>
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <span className="text-caption text-muted-foreground">{data.stats}</span>
+                            {data.paperLabel && (
+                              <span
+                                className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
+                                aria-label={`Prepares for ${data.paperLabel}`}
+                              >
+                                {data.paperLabel}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                        {data.desc}
+                      </p>
+
+                      <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                        {idx < sections.length ? i18n.startRevising : i18n.openTool}
+                        <ArrowRight className="size-3.5" aria-hidden="true" />
+                      </div>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* IGCSE deep-link callout */}
+            {isIgcse && (
+              <div className="mt-5 rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.04] p-5">
+                <div className="flex items-start gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
+                    <GraduationCap className="size-5 text-cyan-400" aria-hidden="true" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-heading-md font-heading text-foreground">
+                      {i18n.igcseTitle}
+                    </h3>
+                    <p className="mt-1 text-body-sm text-muted-foreground">{i18n.igcseBody}</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-3"
+                      render={
+                        <Link
+                          href={
+                            board === 'edexcel-igcse'
+                              ? '/igcse/edexcel'
+                              : board === 'cambridge-0500'
+                                ? '/igcse/cambridge/0500'
+                                : '/igcse/cambridge/0990'
+                          }
+                        />
+                      }
+                    >
+                      {i18n.igcseCta}
+                      <ArrowRight className="size-3.5" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </details>
+      </section>
+
+      {/* ── Motivational banner ──────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
         <BarChart3 className="mx-auto mb-3 size-8 text-primary" aria-hidden="true" />
         <h2 className="text-heading-lg font-heading text-foreground">{i18n.motivationTitle}</h2>
