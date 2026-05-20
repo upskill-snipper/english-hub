@@ -12,38 +12,67 @@ Five markdown files designed to be exported to PDF and shared on WhatsApp during
 | 04 | **`04-feature-showcase.md`** | Visual. Send to anyone who wants to "see what it actually looks like" before committing. |
 | 05 | **`05-roi-calculator-illustrative.md`** | Send to the Finance Director / Bursar / Business Manager who'll need to defend the spend internally. |
 
-## How to export each to PDF
+## How to export — one command builds all 5 PDFs
 
-Pick whichever you find fastest. All produce A4 PDFs.
+A Node script (`build-pdfs.mjs`) uses the locally-installed Chrome's
+headless print-to-PDF to render all 5 markdown files into nicely-styled
+A4 PDFs, named with WhatsApp-friendly filenames, written to `./dist/`.
 
-### Option A — VS Code Markdown PDF extension (recommended, free, 2 minutes)
+**Prerequisites:** Node 18+ (you have it — it's the same Node the main
+app uses) and Google Chrome (already installed on the dev machine).
 
-1. Install the extension **"Markdown PDF"** by yzane
-2. Open the .md file
-3. Right-click → **Markdown PDF: Export (pdf)**
-4. The PDF appears in the same folder
+### One-line build
 
-### Option B — Pandoc (CLI, if you have it)
+From this folder:
 
 ```bash
-pandoc 01-solutions-benefits-value.md \
-  --pdf-engine=wkhtmltopdf \
-  --css print.css \
-  -V geometry:a4paper \
-  -V geometry:margin=15mm \
-  -o 01-solutions-benefits-value.pdf
+node build-pdfs.mjs
 ```
 
-### Option C — Browser print (zero install, works everywhere)
+Or use the platform wrapper:
 
-1. Open the .md file in any markdown previewer (GitHub web, VS Code preview, etc.)
-2. Browser **File → Print → Save as PDF**
-3. Layout: A4, Portrait, Margins: Default
+- **Windows PowerShell:** `powershell -ExecutionPolicy Bypass -File .\build-pdfs.ps1`
+- **macOS / Linux:** `./build-pdfs.sh`
 
-### Option D — Online (if you're on a phone in Doha)
+### What happens
+
+1. The script verifies Chrome and `marked` are available (auto-installs
+   `marked` on first run via `npm install --no-save`).
+2. For each markdown file:
+   - Auto-substitutes `[SCREENSHOT: name.png]` placeholders where the
+     actual file exists in `./screenshots/`. Missing screenshots stay
+     as bold `[SCREENSHOT MISSING: ...]` text so it's obvious the PDF
+     is incomplete.
+   - Renders MD → HTML with `marked`, wraps in `pdf-style.css`.
+   - Calls Chrome in headless mode with `--print-to-pdf` to produce
+     the PDF.
+   - Renames to the WhatsApp-friendly filename in `./dist/`.
+3. Reports each PDF's size and warns on any over 5 MB.
+
+### Last build output
+
+All 5 PDFs ship pre-built in `./dist/` so you can grab them directly
+without re-running the script. Re-build whenever you edit any markdown
+source or add screenshots:
+
+```
+dist/
+├── The English Hub - Solutions and Value.pdf       (~110 KB)
+├── The English Hub - Pricing and Pilot.pdf         (~150 KB)
+├── The English Hub - Getting Started.pdf           (~125 KB)
+├── The English Hub - Feature Showcase.pdf          (~220 KB without screenshots; will grow once added)
+└── The English Hub - Illustrative ROI.pdf          (~150 KB)
+```
+
+All well under the 5 MB WhatsApp-fast-share target.
+
+### Fallback options if Node isn't available
+
+If you're on a phone in Doha and can't run Node:
 
 - https://md-to-pdf.fly.dev/ — paste markdown, click "Download PDF"
 - https://www.markdowntopdf.com/ — upload .md, download .pdf
+- VS Code "Markdown PDF" extension if you have VS Code open
 
 ## Where to insert screenshots
 

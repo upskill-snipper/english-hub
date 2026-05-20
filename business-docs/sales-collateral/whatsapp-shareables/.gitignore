@@ -1,0 +1,17 @@
+# Local exception to the repo-wide .gitignore.
+#
+# Root .gitignore excludes dist/ and *.pdf globally (sensible for app
+# build artefacts). For the WhatsApp shareables, we DO want the built
+# PDFs committed so the founder can grab them on any device (phone in
+# Doha, hotel laptop, etc.) without needing to re-build.
+#
+# This re-allows dist/ and PDFs within THIS folder only.
+!dist/
+!dist/*.pdf
+!*.pdf
+
+# Still ignore temp build files that leak if a build is killed mid-run.
+__build_*
+node_modules/
+package-lock.json
+package.json
