@@ -30,6 +30,7 @@ import {
   Quote,
   Edit3,
   StickyNote,
+  LayoutDashboard,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -45,6 +46,8 @@ import { useT } from '@/lib/i18n/use-t'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
+type NavGroup = 'top' | 'content' | 'practice' | 'skills' | 'resources' | 'board'
+
 interface NavItem {
   /** i18n key for the nav label. Resolved at render time via useT(). */
   labelKey: string
@@ -57,182 +60,56 @@ interface NavItem {
   gcseOnly?: boolean
   /** Hide for any GCSE board. */
   igcseOnly?: boolean
+  /** Sidebar grouping — controls which collapsible bucket the item lands in.
+   *  Items without an explicit group are treated as `top` (always visible). */
+  group?: NavGroup
 }
 
+// Boards that see literature (poetry, set texts, comparison essays). Cambridge
+// 0500/0990 are language-only so they get filtered out for those entries.
+const LIT_BOARDS: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
+
+// Dense one-line-per-entry table. The `// prettier-ignore` block keeps prettier
+// from wrapping each entry across 6+ lines — readable for editors as a flat
+// register of routes, and keeps the file roughly the size of pre-grouping.
+// `labelKey` for the Full Dashboard entry is a sentinel — navLabel() special-
+// cases it so we can ship without expanding the i18n catalogue.
+// prettier-ignore
 const NAV_ITEMS: NavItem[] = [
-  {
-    labelKey: 'revision.shell.nav.your_hub',
-    href: '/revision',
-    icon: Home,
-    colour: 'text-primary',
-  },
-  {
-    labelKey: 'revision.shell.nav.analytics',
-    href: '/revision/analytics',
-    icon: BarChart3,
-    colour: 'text-primary',
-  },
-  {
-    labelKey: 'revision.shell.nav.my_papers',
-    href: '/dashboard/papers',
-    icon: Files,
-    colour: 'text-primary',
-  },
-  {
-    labelKey: 'revision.shell.nav.study_tools',
-    href: '/revision#toolkit',
-    icon: Wrench,
-    colour: 'text-primary',
-  },
-  {
-    labelKey: 'revision.shell.nav.study_plan',
-    href: '/revision/study-plan',
-    icon: CalendarDays,
-    colour: 'text-primary',
-  },
-  {
-    labelKey: 'revision.shell.nav.reading_assessment',
-    href: '/assessment/reading',
-    icon: ClipboardList,
-    colour: 'text-blue-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.mock_exams',
-    href: '/mock-exams',
-    icon: Timer,
-    colour: 'text-emerald-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.practice',
-    href: '/practice',
-    icon: Dumbbell,
-    colour: 'text-violet-400',
-  },
-  { labelKey: 'revision.shell.nav.games', href: '/games', icon: Gamepad2, colour: 'text-clay-600' },
-  {
-    labelKey: 'revision.shell.nav.poetry',
-    href: '/revision/poetry',
-    icon: FileText,
-    colour: 'text-rose-400',
-    // Cambridge 0500/0990 are language only — no poetry
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
-  },
-  {
-    labelKey: 'revision.shell.nav.set_texts',
-    href: '/revision/texts',
-    icon: BookText,
-    colour: 'text-blue-400',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
-  },
-  {
-    labelKey: 'revision.shell.nav.language_skills',
-    href: '/revision/language',
-    icon: PenTool,
-    colour: 'text-violet-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.flashcards',
-    href: '/revision/flashcards',
-    icon: Layers,
-    colour: 'text-clay-600',
-  },
-  {
-    labelKey: 'revision.shell.nav.exam_technique',
-    href: '/revision/exam-technique',
-    icon: Target,
-    colour: 'text-emerald-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.grade_targets',
-    href: '/revision/grade-targets',
-    icon: TrendingUp,
-    colour: 'text-cyan-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.quick_quizzes',
-    href: '/revision/quiz',
-    icon: Zap,
-    colour: 'text-clay-600',
-  },
-  // Curated content libraries — surface the resources hub and its
-  // most-loved sections so students never have to dig through nav
-  // dropdowns to find revision notes, model answers, vocabulary
-  // banks, writing-skills guides or the comparison-essay walkthrough.
-  {
-    labelKey: 'revision.shell.nav.resources_hub',
-    href: '/resources',
-    icon: Library,
-    colour: 'text-amber-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.revision_notes',
-    href: '/resources/revision-notes',
-    icon: StickyNote,
-    colour: 'text-blue-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.model_answers',
-    href: '/resources/model-answers',
-    icon: CheckSquare,
-    colour: 'text-emerald-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.comparison_essays',
-    href: '/revision/poetry/love-and-relationships/comparison-guide',
-    icon: GitCompare,
-    colour: 'text-violet-400',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
-  },
-  {
-    labelKey: 'revision.shell.nav.vocabulary',
-    href: '/resources/vocabulary',
-    icon: Quote,
-    colour: 'text-rose-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.writing_skills',
-    href: '/resources/writing-skills',
-    icon: Edit3,
-    colour: 'text-cyan-400',
-  },
-  {
-    labelKey: 'revision.shell.nav.toolkit',
-    href: '/toolkit',
-    icon: Wrench,
-    colour: 'text-primary',
-  },
-  // Board-specific deep-link entries
-  {
-    labelKey: 'revision.shell.nav.ial_guide',
-    href: '/revision/ial',
-    icon: GraduationCap,
-    colour: 'text-primary',
-    boards: ['ial-edexcel'],
-  },
-  {
-    labelKey: 'revision.shell.nav.edexcel_igcse_hub',
-    href: '/igcse/edexcel',
-    icon: GraduationCap,
-    colour: 'text-cyan-400',
-    boards: ['edexcel-igcse'],
-    igcseOnly: true,
-  },
-  {
-    labelKey: 'revision.shell.nav.cambridge_hub',
-    href: '/igcse/cambridge/0500',
-    icon: GraduationCap,
-    colour: 'text-cyan-400',
-    boards: ['cambridge-0500'],
-    igcseOnly: true,
-  },
-  {
-    labelKey: 'revision.shell.nav.cambridge_91_hub',
-    href: '/igcse/cambridge/0990',
-    icon: GraduationCap,
-    colour: 'text-cyan-400',
-    boards: ['cambridge-0990'],
-    igcseOnly: true,
-  },
+  // Top tier — always visible above the collapsible groups.
+  { labelKey: 'revision.shell.nav.your_hub',           href: '/revision',                                            icon: Home,           colour: 'text-primary',     group: 'top' },
+  { labelKey: 'revision.shell.nav.full_dashboard',     href: '/demo/student',                                        icon: LayoutDashboard, colour: 'text-primary',    group: 'top' },
+  { labelKey: 'revision.shell.nav.analytics',          href: '/revision/analytics',                                  icon: BarChart3,      colour: 'text-primary',     group: 'top' },
+  { labelKey: 'revision.shell.nav.study_plan',         href: '/revision/study-plan',                                 icon: CalendarDays,   colour: 'text-primary',     group: 'top' },
+  // Content & texts.
+  { labelKey: 'revision.shell.nav.poetry',             href: '/revision/poetry',                                     icon: FileText,       colour: 'text-rose-400',    boards: LIT_BOARDS,                  group: 'content' },
+  { labelKey: 'revision.shell.nav.set_texts',          href: '/revision/texts',                                      icon: BookText,       colour: 'text-blue-400',    boards: LIT_BOARDS,                  group: 'content' },
+  { labelKey: 'revision.shell.nav.language_skills',    href: '/revision/language',                                   icon: PenTool,        colour: 'text-violet-400',                                       group: 'content' },
+  { labelKey: 'revision.shell.nav.comparison_essays',  href: '/revision/poetry/love-and-relationships/comparison-guide', icon: GitCompare, colour: 'text-violet-400',  boards: LIT_BOARDS,                  group: 'content' },
+  // Practice & assess.
+  { labelKey: 'revision.shell.nav.mock_exams',         href: '/mock-exams',                                          icon: Timer,          colour: 'text-emerald-400',                                       group: 'practice' },
+  { labelKey: 'revision.shell.nav.practice',           href: '/practice',                                            icon: Dumbbell,       colour: 'text-violet-400',                                       group: 'practice' },
+  { labelKey: 'revision.shell.nav.quick_quizzes',      href: '/revision/quiz',                                       icon: Zap,            colour: 'text-clay-600',                                         group: 'practice' },
+  { labelKey: 'revision.shell.nav.reading_assessment', href: '/assessment/reading',                                  icon: ClipboardList,  colour: 'text-blue-400',                                         group: 'practice' },
+  { labelKey: 'revision.shell.nav.games',              href: '/games',                                               icon: Gamepad2,       colour: 'text-clay-600',                                         group: 'practice' },
+  // Skills & technique.
+  { labelKey: 'revision.shell.nav.exam_technique',     href: '/revision/exam-technique',                             icon: Target,         colour: 'text-emerald-400',                                       group: 'skills' },
+  { labelKey: 'revision.shell.nav.grade_targets',      href: '/revision/grade-targets',                              icon: TrendingUp,     colour: 'text-cyan-400',                                         group: 'skills' },
+  { labelKey: 'revision.shell.nav.writing_skills',     href: '/resources/writing-skills',                            icon: Edit3,          colour: 'text-cyan-400',                                         group: 'skills' },
+  { labelKey: 'revision.shell.nav.vocabulary',         href: '/resources/vocabulary',                                icon: Quote,          colour: 'text-rose-400',                                         group: 'skills' },
+  { labelKey: 'revision.shell.nav.flashcards',         href: '/revision/flashcards',                                 icon: Layers,         colour: 'text-clay-600',                                         group: 'skills' },
+  // Resources — curated libraries + dashboard tooling.
+  { labelKey: 'revision.shell.nav.resources_hub',      href: '/resources',                                           icon: Library,        colour: 'text-amber-400',                                        group: 'resources' },
+  { labelKey: 'revision.shell.nav.revision_notes',     href: '/resources/revision-notes',                            icon: StickyNote,     colour: 'text-blue-400',                                         group: 'resources' },
+  { labelKey: 'revision.shell.nav.model_answers',      href: '/resources/model-answers',                             icon: CheckSquare,    colour: 'text-emerald-400',                                       group: 'resources' },
+  { labelKey: 'revision.shell.nav.my_papers',          href: '/dashboard/papers',                                    icon: Files,          colour: 'text-primary',                                          group: 'resources' },
+  { labelKey: 'revision.shell.nav.study_tools',        href: '/revision#toolkit',                                    icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
+  { labelKey: 'revision.shell.nav.toolkit',            href: '/toolkit',                                             icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
+  // Your board — board-specific deep-links.
+  { labelKey: 'revision.shell.nav.ial_guide',          href: '/revision/ial',                                        icon: GraduationCap,  colour: 'text-primary',     boards: ['ial-edexcel'],             group: 'board' },
+  { labelKey: 'revision.shell.nav.edexcel_igcse_hub',  href: '/igcse/edexcel',                                       icon: GraduationCap,  colour: 'text-cyan-400',    boards: ['edexcel-igcse'],   igcseOnly: true, group: 'board' },
+  { labelKey: 'revision.shell.nav.cambridge_hub',      href: '/igcse/cambridge/0500',                                icon: GraduationCap,  colour: 'text-cyan-400',    boards: ['cambridge-0500'],  igcseOnly: true, group: 'board' },
+  { labelKey: 'revision.shell.nav.cambridge_91_hub',   href: '/igcse/cambridge/0990',                                icon: GraduationCap,  colour: 'text-cyan-400',    boards: ['cambridge-0990'],  igcseOnly: true, group: 'board' },
 ]
 
 function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
@@ -247,6 +124,18 @@ function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
     return true
   })
 }
+
+// Ordered list of collapsible group sections shown beneath the top-tier nav.
+// English-literal labels — intentionally bypass useT() to avoid expanding the
+// dictionary surface for a pure UI re-organisation; can be promoted to keys
+// later if i18n needs them.
+const GROUPS: { key: Exclude<NavGroup, 'top'>; label: string }[] = [
+  { key: 'content', label: 'Content & texts' },
+  { key: 'practice', label: 'Practice & assess' },
+  { key: 'skills', label: 'Skills & technique' },
+  { key: 'resources', label: 'Resources' },
+  { key: 'board', label: 'Your board' },
+]
 
 // ─── Progress from localStorage ─────────────────────────────────────────────
 
@@ -380,6 +269,44 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
 
 // ─── Sidebar content (shared between desktop & mobile) ──────────────────────
 
+// Resolve a nav-item label, special-casing the Full Dashboard entry which
+// has no dictionary key (avoids growing the i18n catalogue for one item).
+function navLabel(item: NavItem, t: ReturnType<typeof useT>): string {
+  if (item.labelKey === 'revision.shell.nav.full_dashboard') return 'Full Dashboard'
+  return t(item.labelKey)
+}
+
+// Single nav-link row — shared between the top-tier list and the grouped
+// `<details>` lists so active styling stays in lockstep.
+function NavLink({
+  item,
+  isActive,
+  onNavigate,
+  t,
+}: {
+  item: NavItem
+  isActive: boolean
+  onNavigate?: () => void
+  t: ReturnType<typeof useT>
+}) {
+  return (
+    <Link
+      href={item.href}
+      onClick={onNavigate}
+      className={cn(
+        'group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150',
+        isActive
+          ? 'bg-primary/10 text-primary'
+          : 'text-muted-foreground hover:bg-accent hover:text-foreground',
+      )}
+    >
+      <item.icon className={cn('size-4 shrink-0', isActive ? 'text-primary' : item.colour)} />
+      <span className="flex-1">{navLabel(item, t)}</span>
+      {isActive && <ChevronRight className="size-3.5 text-primary" />}
+    </Link>
+  )
+}
+
 function SidebarNav({
   onNavigate,
   navItems,
@@ -416,6 +343,27 @@ function SidebarNav({
     String(gradeRight) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
     board,
   )
+
+  // Partition nav items by group — items without an explicit group fall back
+  // to the top tier (defensive default keeps newly-added entries visible).
+  const topItems = navItems.filter((i) => !i.group || i.group === 'top')
+  const groupedItems: Record<Exclude<NavGroup, 'top'>, NavItem[]> = {
+    content: [],
+    practice: [],
+    skills: [],
+    resources: [],
+    board: [],
+  }
+  for (const item of navItems) {
+    if (item.group && item.group !== 'top') groupedItems[item.group].push(item)
+  }
+
+  // A group is "active" (and therefore expanded by default) when the
+  // current route matches any of its items. Native <details open=...>
+  // lets the user collapse it again without React state.
+  const isItemActive = (href: string) => pathname === href || pathname.startsWith(href + '/')
+  const groupIsActive = (key: Exclude<NavGroup, 'top'>) =>
+    groupedItems[key].some((i) => isItemActive(i.href))
 
   return (
     <nav className="flex flex-col gap-1">
@@ -461,28 +409,48 @@ function SidebarNav({
         )}
       </div>
 
-      {/* Nav links */}
-      {navItems.map((item) => {
-        const isActive = pathname === item.href
-        const isHub = item.href === '/revision'
+      {/* Top-tier nav — always-visible essentials (Your Hub, Full Dashboard,
+          Analytics, Study Plan). Rendered flat above the collapsible groups
+          so they read as the primary surface of the sidebar. */}
+      {topItems.map((item) => (
+        <NavLink
+          key={item.href}
+          item={item}
+          isActive={pathname === item.href}
+          onNavigate={onNavigate}
+          t={t}
+        />
+      ))}
 
+      {/* Collapsible group sections. Each is a native <details> so SSR/CSR
+          stays clean — no React state, no hydration mismatch risk. The
+          group whose href the user is currently inside opens by default;
+          everything else stays tucked away. */}
+      {GROUPS.map(({ key, label }) => {
+        const items = groupedItems[key]
+        if (items.length === 0) return null
         return (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={onNavigate}
-            className={cn(
-              'group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150',
-              isActive
-                ? 'bg-primary/10 text-primary'
-                : 'text-muted-foreground hover:bg-accent hover:text-foreground',
-              isHub && 'mb-1',
-            )}
+          <details
+            key={key}
+            open={groupIsActive(key)}
+            className="mt-3 [&[open]>summary>svg.group-chevron]:rotate-90"
           >
-            <item.icon className={cn('size-4 shrink-0', isActive ? 'text-primary' : item.colour)} />
-            <span className="flex-1">{t(item.labelKey)}</span>
-            {isActive && <ChevronRight className="size-3.5 text-primary" />}
-          </Link>
+            <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-3 py-1.5 font-mono text-[10px] tracking-[0.14em] text-muted-foreground uppercase transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
+              <ChevronRight className="group-chevron size-3 shrink-0 transition-transform duration-150" />
+              <span className="flex-1">{label}</span>
+            </summary>
+            <div className="mt-1 ml-1 flex flex-col gap-0.5">
+              {items.map((item) => (
+                <NavLink
+                  key={item.href}
+                  item={item}
+                  isActive={pathname === item.href}
+                  onNavigate={onNavigate}
+                  t={t}
+                />
+              ))}
+            </div>
+          </details>
         )
       })}
     </nav>
@@ -493,9 +461,9 @@ function SidebarNav({
 //
 // Horizontal, scrollable pill-rail that surfaces the same nav items as the
 // desktop sidebar on small screens. Complements the hamburger Sheet — both
-// are visible on mobile and click through to the same routes. Keeping this
-// additive avoids a full mobile-nav redesign while still giving the new
-// "Your Analytics" entry one-tap discoverability on phones.
+// are visible on mobile and click through to the same routes. Grouping
+// would actively hurt here (a horizontal rail wants flat pills), so we
+// intentionally render the items un-grouped.
 function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
   const pathname = usePathname()
   const t = useT()
@@ -522,7 +490,7 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
               <item.icon
                 className={cn('size-3.5 shrink-0', isActive ? 'text-primary' : item.colour)}
               />
-              {t(item.labelKey)}
+              {navLabel(item, t)}
             </Link>
           )
         })}
