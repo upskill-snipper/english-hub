@@ -288,9 +288,19 @@ export default function RevisionPlannerPage() {
 
   if (!mounted) {
     return (
-      <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-      </div>
+      <>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            {t('resources.study_tools.planner.title')}
+          </h1>
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
+            {t('resources.study_tools.planner.subtitle')}
+          </p>
+        </div>
+        <div className="flex min-h-[400px] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      </>
     )
   }
 

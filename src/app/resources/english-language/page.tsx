@@ -316,12 +316,6 @@ export default function EnglishLanguagePage() {
   const boardConfig = getBoardConfig(board)
   const t = useT()
 
-  // Render nothing while the client board store is rehydrating so we don't
-  // briefly flash content for a different board.
-  if (!isHydrated) {
-    return null
-  }
-
   // STRICT filter: if the user has selected an exam board, only show the
   // resources/sections that belong to that board.
   const visibleBoards = board ? BOARDS.filter((b) => b.examBoards.includes(board)) : BOARDS
@@ -389,306 +383,322 @@ export default function EnglishLanguagePage() {
         </div>
       </section>
 
-      {/* ─── What English Language Covers ─────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">
-            {t('resources.eng_lang.what_covers.h2')}
-          </h2>
-          <p className="mt-3 leading-relaxed text-muted-foreground">
-            {t('resources.eng_lang.what_covers.p1')}
-          </p>
-          <p className="mt-3 leading-relaxed text-muted-foreground">
-            {t('resources.eng_lang.what_covers.p2')}
-          </p>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {[
-              'Reading comprehension and analysis',
-              'Language techniques and their effects',
-              'Creative and descriptive writing',
-              'Persuasive, argumentative, and writing for real purposes',
-              "Comparing writers' perspectives",
-              'Spoken language endorsement',
-            ].map((topic) => (
-              <li key={topic} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <CheckIcon />
-                {topic}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ─── Board Selection Cards ────────────────────────────── */}
-      {visibleBoards.length > 0 && (
-        <section id="boards" className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">
-            {board ? t('resources.eng_lang.your_board') : t('resources.eng_lang.choose_board')}
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            {board ? (
-              t('resources.eng_lang.viewing_your_board')
-            ) : (
-              <>
-                {t('resources.eng_lang.board_intro')}{' '}
-                <a
-                  href="#board-finder"
-                  className="font-medium text-primary underline underline-offset-2 hover:text-foreground"
-                >
-                  {t('resources.eng_lang.board_finder_link')}
-                </a>{' '}
-                {t('resources.eng_lang.board_intro_suffix')}
-              </>
-            )}
-          </p>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visibleBoards.map((board) => (
-              <Link
-                key={board.slug}
-                href={`/resources/english-language/${board.slug}`}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-lg hover:border-primary/30 hover:-translate-y-0.5"
-              >
-                <div>
-                  <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                    {board.name}
-                  </h3>
-                  <span className="text-xs font-medium text-muted-foreground">{board.spec}</span>
-                </div>
-
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {board.description}
-                </p>
-
-                <div className="mt-4 space-y-1 border-t border-border pt-3">
-                  {board.papers.map((paper) => (
-                    <p key={paper} className="text-xs text-muted-foreground">
-                      {paper}
-                    </p>
-                  ))}
-                </div>
-
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">
-                    {board.totalMarks} {t('resources.eng_lang.marks_total')}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                    {t('resources.eng_lang.view_resources')} <ArrowRight />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ─── Board Finder Helper ──────────────────────────────── */}
-      {!board && (
-        <section id="board-finder" className="bg-muted px-4 py-12">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex items-center gap-3">
-              <AcademicCapIcon />
-              <h2 className="text-2xl font-bold text-foreground">
-                {t('resources.eng_lang.which_board')}
+      {/* Board-dependent content waits for the client board store to
+          rehydrate so we don't briefly flash content for a different
+          board. The hero <h1> above renders unconditionally so it is
+          present in the server-rendered HTML for crawlers. */}
+      {!isHydrated ? null : (
+        <>
+          {/* ─── What English Language Covers ─────────────────────── */}
+          <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-foreground">
+                {t('resources.eng_lang.what_covers.h2')}
               </h2>
-            </div>
-            <p className="mt-3 text-muted-foreground">{t('resources.eng_lang.not_sure')}</p>
-
-            {/* Tips */}
-            <div className="mt-6 rounded-xl border border-border bg-card p-6">
-              <h3 className="font-semibold text-foreground">
-                {t('resources.eng_lang.how_to_check')}
-              </h3>
-              <ul className="mt-3 space-y-2">
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                {t('resources.eng_lang.what_covers.p1')}
+              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                {t('resources.eng_lang.what_covers.p2')}
+              </p>
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {[
-                  'Check the front cover of your English Language textbook or workbook for the board name and logo.',
-                  'Ask your English teacher or Head of English - they will know immediately.',
-                  'Look at past papers your teacher has given you - the board name appears on every page.',
-                  "Check your school's website under curriculum or exam information.",
-                  "Log in to your school's exam entries portal if available.",
-                ].map((tip, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                      {i + 1}
-                    </span>
-                    {tip}
+                  'Reading comprehension and analysis',
+                  'Language techniques and their effects',
+                  'Creative and descriptive writing',
+                  'Persuasive, argumentative, and writing for real purposes',
+                  "Comparing writers' perspectives",
+                  'Spoken language endorsement',
+                ].map((topic) => (
+                  <li key={topic} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckIcon />
+                    {topic}
                   </li>
                 ))}
               </ul>
             </div>
+          </section>
 
-            {/* Interactive finder */}
-            <div className="mt-6 rounded-xl border border-primary/30 bg-primary/5 p-6">
-              <h3 className="font-semibold text-foreground">
-                {t('resources.eng_lang.quick_finder')}
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t('resources.eng_lang.quick_finder_sub')}
+          {/* ─── Board Selection Cards ────────────────────────────── */}
+          {visibleBoards.length > 0 && (
+            <section id="boards" className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
+              <h2 className="text-2xl font-bold text-foreground">
+                {board ? t('resources.eng_lang.your_board') : t('resources.eng_lang.choose_board')}
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                {board ? (
+                  t('resources.eng_lang.viewing_your_board')
+                ) : (
+                  <>
+                    {t('resources.eng_lang.board_intro')}{' '}
+                    <a
+                      href="#board-finder"
+                      className="font-medium text-primary underline underline-offset-2 hover:text-foreground"
+                    >
+                      {t('resources.eng_lang.board_finder_link')}
+                    </a>{' '}
+                    {t('resources.eng_lang.board_intro_suffix')}
+                  </>
+                )}
               </p>
 
-              {finderStep === null && (
-                <div className="mt-4">
-                  <p className="text-sm font-medium text-foreground">
-                    {BOARD_FINDER_QUESTIONS[0].question}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {BOARD_FINDER_QUESTIONS[0].options.map((option) => (
-                      <button
-                        key={option.label}
-                        onClick={() => handleFinderOption(option.boards)}
-                        className="rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:bg-primary/10"
-                      >
-                        {option.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {finderResult && (
-                <div className="mt-4">
-                  <p className="text-sm font-medium text-foreground">
-                    {t('resources.eng_lang.likely_boards')}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {BOARDS.filter((b) => finderResult.includes(b.slug)).map((board) => (
-                      <Link
-                        key={board.slug}
-                        href={`/resources/english-language/${board.slug}`}
-                        className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
-                      >
-                        {board.name}
-                      </Link>
-                    ))}
-                  </div>
-                  <button
-                    onClick={resetFinder}
-                    className="mt-3 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {visibleBoards.map((board) => (
+                  <Link
+                    key={board.slug}
+                    href={`/resources/english-language/${board.slug}`}
+                    className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-lg hover:border-primary/30 hover:-translate-y-0.5"
                   >
-                    {t('resources.eng_lang.start_again')}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                        {board.name}
+                      </h3>
+                      <span className="text-xs font-medium text-muted-foreground">
+                        {board.spec}
+                      </span>
+                    </div>
 
-      {/* ─── Common Skills Across All Boards ─────────────────── */}
-      <section className="bg-muted px-4 py-12">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">
-            {t('resources.eng_lang.core_skills.h2')}
-          </h2>
-          <p className="mt-2 text-muted-foreground">{t('resources.eng_lang.core_skills.sub')}</p>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {board.description}
+                    </p>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CORE_SKILLS.map((skill) => (
-              <div
-                key={skill.title}
-                className="rounded-xl border border-border bg-card p-5 shadow-md"
-              >
+                    <div className="mt-4 space-y-1 border-t border-border pt-3">
+                      {board.papers.map((paper) => (
+                        <p key={paper} className="text-xs text-muted-foreground">
+                          {paper}
+                        </p>
+                      ))}
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">
+                        {board.totalMarks} {t('resources.eng_lang.marks_total')}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                        {t('resources.eng_lang.view_resources')} <ArrowRight />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* ─── Board Finder Helper ──────────────────────────────── */}
+          {!board && (
+            <section id="board-finder" className="bg-muted px-4 py-12">
+              <div className="mx-auto max-w-3xl">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <SkillIcon icon={skill.icon} />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{skill.title}</h3>
+                  <AcademicCapIcon />
+                  <h2 className="text-2xl font-bold text-foreground">
+                    {t('resources.eng_lang.which_board')}
+                  </h2>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {skill.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+                <p className="mt-3 text-muted-foreground">{t('resources.eng_lang.not_sure')}</p>
 
-      {/* ─── AI Feedback Callout ──────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 to-orange-500/10 shadow-md">
-          <div className="flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:p-8">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-500/15">
-              <SparklesIcon />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-xl font-bold text-foreground">{t('resources.eng_lang.ai.h2')}</h2>
-              <p className="mt-2 leading-relaxed text-muted-foreground">
-                {t('resources.eng_lang.ai.sub')}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                <Link
-                  href="/practice"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90 hover:shadow-md"
-                >
-                  {t('resources.eng_lang.ai.cta_try')}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/practice"
-                  className="inline-flex items-center gap-2 rounded-lg border border-primary/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5"
-                >
-                  {t('resources.eng_lang.ai.cta_how')}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Resource Links ───────────────────────────────────── */}
-      <section className="bg-muted px-4 py-12">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">{t('resources.eng_lang.more.h2')}</h2>
-          <p className="mt-2 text-muted-foreground">{t('resources.eng_lang.more.sub')}</p>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {RESOURCE_LINKS.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="group overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
-              >
-                <div className={`h-2 bg-gradient-to-r ${link.color}`} />
-                <div className="p-5">
-                  <h3 className="font-semibold text-foreground transition-colors group-hover:text-foreground">
-                    {link.title}
+                {/* Tips */}
+                <div className="mt-6 rounded-xl border border-border bg-card p-6">
+                  <h3 className="font-semibold text-foreground">
+                    {t('resources.eng_lang.how_to_check')}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {link.description}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                    {t('resources.eng_lang.more.explore')} <ArrowRight />
-                  </span>
+                  <ul className="mt-3 space-y-2">
+                    {[
+                      'Check the front cover of your English Language textbook or workbook for the board name and logo.',
+                      'Ask your English teacher or Head of English - they will know immediately.',
+                      'Look at past papers your teacher has given you - the board name appears on every page.',
+                      "Check your school's website under curriculum or exam information.",
+                      "Log in to your school's exam entries portal if available.",
+                    ].map((tip, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                          {i + 1}
+                        </span>
+                        {tip}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ─── Quick Board Links Bar ────────────────────────────── */}
-      {visibleBoards.length > 0 && (
-        <section className="border-t border-border bg-card px-4 py-8">
-          <div className="mx-auto max-w-5xl">
-            <h2 className="text-center text-lg font-bold text-foreground">
-              {board ? t('resources.eng_lang.your_board') : t('resources.eng_lang.jump_board')}
-            </h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              {visibleBoards.map((board) => (
-                <Link
-                  key={board.slug}
-                  href={`/resources/english-language/${board.slug}`}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md hover:-translate-y-0.5"
-                >
-                  {board.name}
-                </Link>
-              ))}
+                {/* Interactive finder */}
+                <div className="mt-6 rounded-xl border border-primary/30 bg-primary/5 p-6">
+                  <h3 className="font-semibold text-foreground">
+                    {t('resources.eng_lang.quick_finder')}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {t('resources.eng_lang.quick_finder_sub')}
+                  </p>
+
+                  {finderStep === null && (
+                    <div className="mt-4">
+                      <p className="text-sm font-medium text-foreground">
+                        {BOARD_FINDER_QUESTIONS[0].question}
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {BOARD_FINDER_QUESTIONS[0].options.map((option) => (
+                          <button
+                            key={option.label}
+                            onClick={() => handleFinderOption(option.boards)}
+                            className="rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:bg-primary/10"
+                          >
+                            {option.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {finderResult && (
+                    <div className="mt-4">
+                      <p className="text-sm font-medium text-foreground">
+                        {t('resources.eng_lang.likely_boards')}
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {BOARDS.filter((b) => finderResult.includes(b.slug)).map((board) => (
+                          <Link
+                            key={board.slug}
+                            href={`/resources/english-language/${board.slug}`}
+                            className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+                          >
+                            {board.name}
+                          </Link>
+                        ))}
+                      </div>
+                      <button
+                        onClick={resetFinder}
+                        className="mt-3 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
+                      >
+                        {t('resources.eng_lang.start_again')}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ─── Common Skills Across All Boards ─────────────────── */}
+          <section className="bg-muted px-4 py-12">
+            <div className="mx-auto max-w-5xl">
+              <h2 className="text-2xl font-bold text-foreground">
+                {t('resources.eng_lang.core_skills.h2')}
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                {t('resources.eng_lang.core_skills.sub')}
+              </p>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {CORE_SKILLS.map((skill) => (
+                  <div
+                    key={skill.title}
+                    className="rounded-xl border border-border bg-card p-5 shadow-md"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                        <SkillIcon icon={skill.icon} />
+                      </div>
+                      <h3 className="font-semibold text-foreground">{skill.title}</h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
 
-      <ExamBoardDisclaimer />
+          {/* ─── AI Feedback Callout ──────────────────────────────── */}
+          <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+            <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 to-orange-500/10 shadow-md">
+              <div className="flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-500/15">
+                  <SparklesIcon />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-xl font-bold text-foreground">
+                    {t('resources.eng_lang.ai.h2')}
+                  </h2>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">
+                    {t('resources.eng_lang.ai.sub')}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <Link
+                      href="/practice"
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90 hover:shadow-md"
+                    >
+                      {t('resources.eng_lang.ai.cta_try')}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      href="/practice"
+                      className="inline-flex items-center gap-2 rounded-lg border border-primary/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5"
+                    >
+                      {t('resources.eng_lang.ai.cta_how')}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ─── Resource Links ───────────────────────────────────── */}
+          <section className="bg-muted px-4 py-12">
+            <div className="mx-auto max-w-5xl">
+              <h2 className="text-2xl font-bold text-foreground">
+                {t('resources.eng_lang.more.h2')}
+              </h2>
+              <p className="mt-2 text-muted-foreground">{t('resources.eng_lang.more.sub')}</p>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-3">
+                {RESOURCE_LINKS.map((link) => (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className="group overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    <div className={`h-2 bg-gradient-to-r ${link.color}`} />
+                    <div className="p-5">
+                      <h3 className="font-semibold text-foreground transition-colors group-hover:text-foreground">
+                        {link.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {link.description}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                        {t('resources.eng_lang.more.explore')} <ArrowRight />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ─── Quick Board Links Bar ────────────────────────────── */}
+          {visibleBoards.length > 0 && (
+            <section className="border-t border-border bg-card px-4 py-8">
+              <div className="mx-auto max-w-5xl">
+                <h2 className="text-center text-lg font-bold text-foreground">
+                  {board ? t('resources.eng_lang.your_board') : t('resources.eng_lang.jump_board')}
+                </h2>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                  {visibleBoards.map((board) => (
+                    <Link
+                      key={board.slug}
+                      href={`/resources/english-language/${board.slug}`}
+                      className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md hover:-translate-y-0.5"
+                    >
+                      {board.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          <ExamBoardDisclaimer />
+        </>
+      )}
     </>
   )
 }

@@ -20,6 +20,7 @@
  */
 
 import type { Metadata } from 'next'
+import type { ComponentPropsWithoutRef } from 'react'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -141,13 +142,20 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   const ogImage = buildOgImage(post)
 
   // `compileMDX` runs server-side and returns a React element ready to
-  // render. We do not pass any custom component overrides yet — Tailwind
-  // typography handles the default elements. Sibling content authors can
-  // ship richer experiences in a follow-up by extending the `components`
-  // map here (e.g. callouts, embeds).
+  // render. Tailwind typography handles the default elements; the only
+  // override is demoting a leading `# Heading` in the MDX body from `<h1>`
+  // to `<h2>`. The article title at L194 below is the page's single,
+  // canonical `<h1>` — without this demotion every post shipped two `<h1>`s
+  // (flagged by the live SEO audit as "Multiple H1s — 2 H1s"). Mapping the
+  // content `h1 → h2` keeps the document outline well-formed (title is h1,
+  // in-body section headings start at h2). Sibling content authors can ship
+  // richer experiences by extending this `components` map (e.g. callouts).
   const { content } = await compileMDX<Record<string, unknown>>({
     source: post.content,
     options: { parseFrontmatter: false },
+    components: {
+      h1: (props: ComponentPropsWithoutRef<'h2'>) => <h2 {...props} />,
+    },
   })
 
   // Localised chrome — synchronous lookups using the locale we already

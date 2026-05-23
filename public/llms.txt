@@ -2,7 +2,7 @@
 
 > The English Hub is an independent GCSE, IGCSE, KS3 and EAL English learning platform for students, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback, exam-style practice, mock exams, teacher tools and school-level analytics. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
 
-Last generated: 2026-05-16. Canonical host: https://theenglishhub.app
+Last generated: 2026-05-23. Canonical host: https://theenglishhub.app
 
 This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
 
@@ -42,6 +42,35 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Igcse › Cambridge › 0990 › Grade Conversion](https://theenglishhub.app/igcse/cambridge/0990/grade-conversion)
 - [Igcse › Cambridge › 0990 › Paper 1](https://theenglishhub.app/igcse/cambridge/0990/paper-1)
 - …and 131 more under this section (see /llms-full.txt)
+
+## KS3 (Years 7-9)
+
+- [Ks3](https://theenglishhub.app/ks3)
+- [Ks3 › End Of Ks3](https://theenglishhub.app/ks3/end-of-ks3)
+- [Ks3 › Ilowersecondary](https://theenglishhub.app/ks3/ilowersecondary)
+- [Ks3 › Ilowersecondary › About](https://theenglishhub.app/ks3/ilowersecondary/about)
+- [Ks3 › Ilowersecondary › Exam Format](https://theenglishhub.app/ks3/ilowersecondary/exam-format)
+- [Ks3 › Ilowersecondary › Fiction](https://theenglishhub.app/ks3/ilowersecondary/fiction)
+- [Ks3 › Ilowersecondary › Fiction › Genres](https://theenglishhub.app/ks3/ilowersecondary/fiction/genres)
+- [Ks3 › Ilowersecondary › Fiction › Narrative Perspective](https://theenglishhub.app/ks3/ilowersecondary/fiction/narrative-perspective)
+- [Ks3 › Ilowersecondary › Fiction › Reading Fiction](https://theenglishhub.app/ks3/ilowersecondary/fiction/reading-fiction)
+- [Ks3 › Ilowersecondary › For Parents Teachers](https://theenglishhub.app/ks3/ilowersecondary/for-parents-teachers)
+- [Ks3 › Ilowersecondary › Grade Targets](https://theenglishhub.app/ks3/ilowersecondary/grade-targets)
+- [Ks3 › Ilowersecondary › Grammar Lab](https://theenglishhub.app/ks3/ilowersecondary/grammar-lab)
+- [Ks3 › Ilowersecondary › Mark Scheme](https://theenglishhub.app/ks3/ilowersecondary/mark-scheme)
+- [Ks3 › Ilowersecondary › Model Answers](https://theenglishhub.app/ks3/ilowersecondary/model-answers)
+- [Ks3 › Ilowersecondary › Practice](https://theenglishhub.app/ks3/ilowersecondary/practice)
+- [Ks3 › Ilowersecondary › Practice › Paper 1](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-1)
+- [Ks3 › Ilowersecondary › Practice › Paper 2](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-2)
+- [Ks3 › Ilowersecondary › Practice › Paper 3](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-3)
+- [Ks3 › Ilowersecondary › Practice › Paper 4](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-4)
+- [Ks3 › Ilowersecondary › Practice › Paper 5](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-5)
+- [Ks3 › Ilowersecondary › Practice › Paper 6](https://theenglishhub.app/ks3/ilowersecondary/practice/paper-6)
+- [Ks3 › Ilowersecondary › Practice › Writing Tasks](https://theenglishhub.app/ks3/ilowersecondary/practice/writing-tasks)
+- [Ks3 › Ilowersecondary › Progression](https://theenglishhub.app/ks3/ilowersecondary/progression)
+- [Ks3 › Ilowersecondary › Question Types](https://theenglishhub.app/ks3/ilowersecondary/question-types)
+- [Ks3 › Ilowersecondary › Question Types › Extended Comparison](https://theenglishhub.app/ks3/ilowersecondary/question-types/extended-comparison)
+- …and 44 more under this section (see /llms-full.txt)
 
 ## Set texts & poetry
 
@@ -116,6 +145,35 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Resources › English Language › Edexcel › Writing Skills](https://theenglishhub.app/resources/english-language/edexcel/writing-skills)
 - …and 139 more under this section (see /llms-full.txt)
 
+## EAL / Arabic-speaking learners
+
+- [Eal](https://theenglishhub.app/eal)
+- [Eal › Articles](https://theenglishhub.app/eal/articles)
+- [Eal › Articles › Level › A2](https://theenglishhub.app/eal/articles/level/a2)
+- [Eal › Capitals Punctuation](https://theenglishhub.app/eal/capitals-punctuation)
+- [Eal › Capitals Punctuation › Level › A2](https://theenglishhub.app/eal/capitals-punctuation/level/a2)
+- [Eal › Common Arabic Errors](https://theenglishhub.app/eal/common-arabic-errors)
+- [Eal › Common Arabic Errors › Level › A2](https://theenglishhub.app/eal/common-arabic-errors/level/a2)
+- [Eal › Diagnostic](https://theenglishhub.app/eal/diagnostic)
+- [Eal › Past Tenses](https://theenglishhub.app/eal/past-tenses)
+- [Eal › Past Tenses › Level › A2](https://theenglishhub.app/eal/past-tenses/level/a2)
+- [Eal › Phrasal Verbs](https://theenglishhub.app/eal/phrasal-verbs)
+- [Eal › Phrasal Verbs › Level › A2](https://theenglishhub.app/eal/phrasal-verbs/level/a2)
+- [Eal › Plurals Uncountable](https://theenglishhub.app/eal/plurals-uncountable)
+- [Eal › Plurals Uncountable › Level › A2](https://theenglishhub.app/eal/plurals-uncountable/level/a2)
+- [Eal › Practice › Mock Exam A2](https://theenglishhub.app/eal/practice/mock-exam-a2)
+- [Eal › Practice › Mock Exam B1](https://theenglishhub.app/eal/practice/mock-exam-b1)
+- [Eal › Practice › Mock Exam B2](https://theenglishhub.app/eal/practice/mock-exam-b2)
+- [Eal › Practice › Mock Exam C1](https://theenglishhub.app/eal/practice/mock-exam-c1)
+- [Eal › Prepositions](https://theenglishhub.app/eal/prepositions)
+- [Eal › Prepositions › Level › A2](https://theenglishhub.app/eal/prepositions/level/a2)
+- [Eal › Present Perfect](https://theenglishhub.app/eal/present-perfect)
+- [Eal › Present Perfect › Level › A2](https://theenglishhub.app/eal/present-perfect/level/a2)
+- [Eal › Subject Verb Agreement](https://theenglishhub.app/eal/subject-verb-agreement)
+- [Eal › Subject Verb Agreement › Level › A2](https://theenglishhub.app/eal/subject-verb-agreement/level/a2)
+- [Eal › Word Order](https://theenglishhub.app/eal/word-order)
+- …and 1 more under this section (see /llms-full.txt)
+
 ## For teachers
 
 - [For Teachers](https://theenglishhub.app/for-teachers)
@@ -176,7 +234,6 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Legal › Disclaimer](https://theenglishhub.app/legal/disclaimer)
 - [Legal › Privacy Qatar](https://theenglishhub.app/legal/privacy-qatar)
 - [Legal › Rights](https://theenglishhub.app/legal/rights)
-- [Legal › Safeguarding](https://theenglishhub.app/legal/safeguarding)
 - [Privacy Policy](https://theenglishhub.app/privacy-policy)
 - [Refund Policy](https://theenglishhub.app/refund-policy)
 - [Terms](https://theenglishhub.app/terms)
@@ -208,4 +265,4 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Courses › Edexcel Igcse Lang B](https://theenglishhub.app/courses/edexcel-igcse-lang-b)
 - [Courses › Edexcel Lang Paper1](https://theenglishhub.app/courses/edexcel-lang-paper1)
 - [Courses › Edexcel Lang Paper2](https://theenglishhub.app/courses/edexcel-lang-paper2)
-- …and 95 more under this section (see /llms-full.txt)
+- …and 132 more under this section (see /llms-full.txt)

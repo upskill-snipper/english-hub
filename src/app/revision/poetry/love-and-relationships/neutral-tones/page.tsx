@@ -592,6 +592,7 @@ export default function NeutralTonesPage() {
           Back to Poetry
         </Button>
         <div className="flex items-center gap-3 mb-1">
+          <h1 className="text-heading-lg font-heading text-foreground">Neutral Tones</h1>
           <Badge className="bg-rose-500/10 text-rose-400 border-rose-500/20">
             Love &amp; Relationships
           </Badge>

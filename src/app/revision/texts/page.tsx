@@ -19,9 +19,9 @@ export default async function TextsRevisionPage() {
     <>
       {!board && (
         <section className="mx-auto max-w-5xl px-4 pt-8 pb-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             {await t('texts.boardless.h2')}
-          </h2>
+          </h1>
           <p className="mt-2 text-slate-600">{await t('texts.boardless.intro')}</p>
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.shakespeare')}</h3>

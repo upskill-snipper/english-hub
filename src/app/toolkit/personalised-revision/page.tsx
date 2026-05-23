@@ -61,14 +61,18 @@ export default function PersonalisedRevisionPage() {
     () => (profile ? getModelParagraph(profile.predictedGrade) : null),
     [profile],
   )
-  const studyPlan = useMemo(
-    () => (profile ? generateStudyPlan(profile) : []),
-    [profile],
-  )
+  const studyPlan = useMemo(() => (profile ? generateStudyPlan(profile) : []), [profile])
 
   if (!loaded) {
     return (
       <main className="min-h-screen bg-background">
+        <div className="border-b border-border bg-card">
+          <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+            <h1 className="font-serif text-3xl font-medium tracking-tight">
+              Personalised Revision
+            </h1>
+          </div>
+        </div>
         <div className="mx-auto max-w-4xl px-4 py-16 text-center">
           <div className="animate-pulse space-y-4">
             <div className="mx-auto h-8 w-64 rounded bg-muted" />
@@ -101,13 +105,10 @@ export default function PersonalisedRevisionPage() {
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-muted/50 mb-6">
             <Brain className="h-10 w-10 text-muted-foreground" />
           </div>
-          <h2 className="font-serif text-2xl font-medium mb-3">
-            We need your data first
-          </h2>
+          <h2 className="font-serif text-2xl font-medium mb-3">We need your data first</h2>
           <p className="text-muted-foreground max-w-md mx-auto mb-8 leading-relaxed">
-            Take some quizzes, study some poems, or submit an essay for marking.
-            Once we have data on your performance, we can build a revision guide
-            tailored specifically to you.
+            Take some quizzes, study some poems, or submit an essay for marking. Once we have data
+            on your performance, we can build a revision guide tailored specifically to you.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button render={<Link href="/revision/quiz" />}>
@@ -149,7 +150,8 @@ export default function PersonalisedRevisionPage() {
                 </h1>
               </div>
               <p className="text-muted-foreground text-lg max-w-2xl">
-                Built from your quiz scores, essays, and study history. Updated every time you learn.
+                Built from your quiz scores, essays, and study history. Updated every time you
+                learn.
               </p>
             </div>
           </div>
@@ -203,25 +205,31 @@ export default function PersonalisedRevisionPage() {
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <p className="text-base leading-relaxed">
               Based on your{' '}
-              <strong className="font-semibold">{profile.totalQuizzes} quiz{profile.totalQuizzes !== 1 ? ' attempts' : ' attempt'}</strong>
+              <strong className="font-semibold">
+                {profile.totalQuizzes} quiz{profile.totalQuizzes !== 1 ? ' attempts' : ' attempt'}
+              </strong>
               {profile.totalEssays > 0 && (
                 <>
-                  , <strong className="font-semibold">{profile.totalEssays} essay{profile.totalEssays !== 1 ? 's' : ''} marked</strong>
+                  ,{' '}
+                  <strong className="font-semibold">
+                    {profile.totalEssays} essay{profile.totalEssays !== 1 ? 's' : ''} marked
+                  </strong>
                 </>
               )}
               {profile.totalPoems > 0 && (
                 <>
-                  , and <strong className="font-semibold">{profile.totalPoems} poem{profile.totalPoems !== 1 ? 's' : ''} studied</strong>
+                  , and{' '}
+                  <strong className="font-semibold">
+                    {profile.totalPoems} poem{profile.totalPoems !== 1 ? 's' : ''} studied
+                  </strong>
                 </>
               )}
               , your current predicted grade is{' '}
               <span className={`font-bold ${gradeColourClass(profile.predictedGrade)}`}>
                 Grade {profile.predictedGrade}
               </span>
-              {profile.boardName !== 'Unknown' && (
-                <> on the {profile.boardName} specification</>
-              )}
-              . Here is what the data tells us:
+              {profile.boardName !== 'Unknown' && <> on the {profile.boardName} specification</>}.
+              Here is what the data tells us:
             </p>
 
             {/* Data insights */}
@@ -244,8 +252,7 @@ export default function PersonalisedRevisionPage() {
                       across {weak.attempts} attempt{weak.attempts !== 1 ? 's' : ''}.{' '}
                       {weak.score < 40
                         ? 'This is significantly pulling your grade down.'
-                        : 'Improving this would have the biggest impact on your grade.'}
-                      {' '}
+                        : 'Improving this would have the biggest impact on your grade.'}{' '}
                       If you can lift this to 65%, your predicted grade could move from a{' '}
                       {profile.predictedGrade} to a {Math.min(9, profile.predictedGrade + 1)}.
                     </p>
@@ -260,10 +267,15 @@ export default function PersonalisedRevisionPage() {
                 <div className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-3 dark:border-amber-900/50 dark:bg-amber-950/30">
                   <BarChart3 className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
                   <p className="text-sm leading-relaxed">
-                    Your <span className="font-semibold text-amber-700 dark:text-clay-600">{profile.aoGaps[0].ao}</span>{' '}
+                    Your{' '}
+                    <span className="font-semibold text-amber-700 dark:text-clay-600">
+                      {profile.aoGaps[0].ao}
+                    </span>{' '}
                     ({profile.aoGaps[0].label}) is consistently your weakest assessment objective at{' '}
-                    <span className="font-mono font-semibold text-amber-700 dark:text-clay-600">{profile.aoGaps[0].percentage}%</span>.
-                    This affects every essay you write.
+                    <span className="font-mono font-semibold text-amber-700 dark:text-clay-600">
+                      {profile.aoGaps[0].percentage}%
+                    </span>
+                    . This affects every essay you write.
                   </p>
                 </div>
               </div>
@@ -287,9 +299,7 @@ export default function PersonalisedRevisionPage() {
           <section>
             <div className="flex items-center gap-2 mb-6">
               <AlertTriangle className="h-5 w-5 text-red-500" />
-              <h2 className="font-serif text-2xl font-medium tracking-tight">
-                Close the Gaps
-              </h2>
+              <h2 className="font-serif text-2xl font-medium tracking-tight">Close the Gaps</h2>
               <Badge className="bg-red-100 text-red-700 border-red-200 dark:bg-red-950 dark:text-red-400 dark:border-red-900 text-xs font-mono ml-2">
                 Priority 1
               </Badge>
@@ -297,7 +307,11 @@ export default function PersonalisedRevisionPage() {
 
             <div className="space-y-6">
               {profile.weakTopics.map((weak) => {
-                const content = getTopicRevisionContent(weak.topic, profile.predictedGrade, profile.board)
+                const content = getTopicRevisionContent(
+                  weak.topic,
+                  profile.predictedGrade,
+                  profile.board,
+                )
                 return (
                   <GapRevisionCard
                     key={weak.topic}
@@ -309,27 +323,29 @@ export default function PersonalisedRevisionPage() {
               })}
 
               {/* AO-specific gap advice */}
-              {profile.aoGaps.filter((g) => g.percentage < 65).map((gap) => (
-                <div
-                  key={gap.ao}
-                  className="rounded-xl border border-amber-200 bg-amber-50/50 p-5 sm:p-6 dark:border-amber-900/50 dark:bg-amber-950/20"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/50">
-                      <BarChart3 className="h-4 w-4 text-amber-600 dark:text-clay-600" />
+              {profile.aoGaps
+                .filter((g) => g.percentage < 65)
+                .map((gap) => (
+                  <div
+                    key={gap.ao}
+                    className="rounded-xl border border-amber-200 bg-amber-50/50 p-5 sm:p-6 dark:border-amber-900/50 dark:bg-amber-950/20"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/50">
+                        <BarChart3 className="h-4 w-4 text-amber-600 dark:text-clay-600" />
+                      </div>
+                      <h3 className="font-serif text-lg font-medium">
+                        {gap.ao}: {gap.label}
+                      </h3>
+                      <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-clay-600 dark:border-amber-800 font-mono text-xs ml-auto">
+                        {gap.percentage}%
+                      </Badge>
                     </div>
-                    <h3 className="font-serif text-lg font-medium">
-                      {gap.ao}: {gap.label}
-                    </h3>
-                    <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-clay-600 dark:border-amber-800 font-mono text-xs ml-auto">
-                      {gap.percentage}%
-                    </Badge>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {getAOAdvice(gap.ao, gap.percentage)}
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {getAOAdvice(gap.ao, gap.percentage)}
-                  </p>
-                </div>
-              ))}
+                ))}
             </div>
           </section>
         )}
@@ -361,9 +377,7 @@ export default function PersonalisedRevisionPage() {
 
             {/* 5 key revision points */}
             <div>
-              <h3 className="font-serif text-lg font-medium mb-3">
-                5 Key Revision Points
-              </h3>
+              <h3 className="font-serif text-lg font-medium mb-3">5 Key Revision Points</h3>
               <ol className="space-y-2">
                 {getGradeTips(profile.predictedGrade).map((tip, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -422,22 +436,18 @@ export default function PersonalisedRevisionPage() {
               <h3 className="font-serif text-lg font-medium mb-2">
                 What you need to reach Grade {nextGrade}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {gradeAdvice?.next}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{gradeAdvice?.next}</p>
             </div>
 
             {/* Stretch Questions */}
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <Star className="h-4 w-4 text-yellow-500" />
-                <h3 className="font-serif text-lg font-medium">
-                  Challenge Questions
-                </h3>
+                <h3 className="font-serif text-lg font-medium">Challenge Questions</h3>
               </div>
               <p className="text-xs text-muted-foreground mb-4">
-                These are designed to make you think beyond surface-level analysis. Do not look for a
-                &ldquo;right answer&rdquo; — the thinking process is what matters.
+                These are designed to make you think beyond surface-level analysis. Do not look for
+                a &ldquo;right answer&rdquo; — the thinking process is what matters.
               </p>
               <div className="space-y-3">
                 {gradeAdvice?.stretch.map((q, i) => (
@@ -448,9 +458,7 @@ export default function PersonalisedRevisionPage() {
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold dark:bg-yellow-900">
                       {i + 1}
                     </span>
-                    <p className="text-sm leading-relaxed font-medium">
-                      {q}
-                    </p>
+                    <p className="text-sm leading-relaxed font-medium">{q}</p>
                   </div>
                 ))}
               </div>
@@ -463,11 +471,11 @@ export default function PersonalisedRevisionPage() {
                   Grade 9 Tip: Conceptualised Responses
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A conceptualised response is one where every paragraph connects to a central thesis.
-                  Instead of writing about the text chronologically, organise your response around an
-                  argument. For example, rather than &ldquo;In Act 1, Macbeth...&rdquo;, try
-                  &ldquo;Shakespeare constructs ambition as a force that operates simultaneously on the
-                  political, psychological, and supernatural planes...&rdquo;
+                  A conceptualised response is one where every paragraph connects to a central
+                  thesis. Instead of writing about the text chronologically, organise your response
+                  around an argument. For example, rather than &ldquo;In Act 1, Macbeth...&rdquo;,
+                  try &ldquo;Shakespeare constructs ambition as a force that operates simultaneously
+                  on the political, psychological, and supernatural planes...&rdquo;
                 </p>
               </div>
             )}
@@ -569,9 +577,7 @@ function GapRevisionCard({
       </div>
 
       {/* Explanation */}
-      <p className="text-sm leading-relaxed mb-4">
-        {content.explanation}
-      </p>
+      <p className="text-sm leading-relaxed mb-4">{content.explanation}</p>
 
       {/* Expand/collapse for detail */}
       <button
@@ -593,10 +599,7 @@ function GapRevisionCard({
             </p>
             <div className="space-y-2">
               {content.examples.map((ex, i) => (
-                <div
-                  key={i}
-                  className="rounded-lg border border-border bg-muted/30 p-3"
-                >
+                <div key={i} className="rounded-lg border border-border bg-muted/30 p-3">
                   <p className="text-sm leading-relaxed">{ex}</p>
                 </div>
               ))}
@@ -610,10 +613,7 @@ function GapRevisionCard({
             </p>
             <div className="space-y-2">
               {content.quickTest.map((q, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 rounded-lg border border-border p-3"
-                >
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-border p-3">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-bold">
                     {i + 1}
                   </span>
@@ -657,9 +657,7 @@ function StudyPlanCard({ item }: { item: StudyPlanItem }) {
             <Clock className="h-3 w-3 mr-1" />
             {item.timeEstimate}
           </Badge>
-          <Badge className={`text-xs font-mono border ${impactColour}`}>
-            {item.impact} impact
-          </Badge>
+          <Badge className={`text-xs font-mono border ${impactColour}`}>{item.impact} impact</Badge>
         </div>
       </div>
       <Link
@@ -673,15 +671,7 @@ function StudyPlanCard({ item }: { item: StudyPlanItem }) {
   )
 }
 
-function QuickLink({
-  href,
-  icon: Icon,
-  label,
-}: {
-  href: string
-  icon: typeof Zap
-  label: string
-}) {
+function QuickLink({ href, icon: Icon, label }: { href: string; icon: typeof Zap; label: string }) {
   return (
     <Link
       href={href}
@@ -730,7 +720,7 @@ function getAOAdvice(ao: string, percentage: number): string {
         : 'Your AO3 is developing. Focus on integrating context naturally — instead of "In Victorian times...", try "Dickens, writing in a society where..." This shows understanding rather than just knowledge.'
     case 'AO4':
       return percentage < 50
-        ? 'Your AO4 (spelling, punctuation, and grammar) is holding you back. Read your work aloud to catch errors. Focus on the most common mistakes: there/their/they\'re, affect/effect, and comma splices.'
+        ? "Your AO4 (spelling, punctuation, and grammar) is holding you back. Read your work aloud to catch errors. Focus on the most common mistakes: there/their/they're, affect/effect, and comma splices."
         : 'Your AO4 is reasonable but could be improved. Focus on using a range of punctuation (semicolons, colons, dashes) and vary your sentence structures for a more sophisticated style.'
     default:
       return 'Focus on improving this assessment objective by reviewing the marking criteria and practising targeted exercises.'
@@ -760,7 +750,7 @@ function getGradeTips(grade: number): string[] {
     return [
       'Structure your response around a clear thesis — an argument that runs through every paragraph.',
       'Explore alternative interpretations: "While this could suggest X, it might also imply Y..."',
-      'Analyse structure and form alongside language — how does the writer\'s structure reinforce their themes?',
+      "Analyse structure and form alongside language — how does the writer's structure reinforce their themes?",
       'Use precise academic vocabulary and subject terminology naturally, not forced.',
       'Integrate context as an analytical tool: explain how context shapes meaning, not just what the context is.',
     ]

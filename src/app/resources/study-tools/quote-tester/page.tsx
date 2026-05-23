@@ -896,9 +896,19 @@ export default function QuoteTesterPage() {
 
   if (!mounted) {
     return (
-      <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-      </div>
+      <>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            {t('resources.study_tools.qtester.title')}
+          </h1>
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            {t('resources.study_tools.qtester.subtitle')}
+          </p>
+        </div>
+        <div className="flex min-h-[400px] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      </>
     )
   }
 

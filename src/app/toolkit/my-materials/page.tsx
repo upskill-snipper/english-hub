@@ -98,7 +98,12 @@ export default function MyMaterialsPage() {
       <main className="min-h-screen bg-background">
         <section className="border-b border-border bg-card">
           <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-            <div className="h-8 w-48 bg-muted animate-pulse rounded" />
+            <h1 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight">
+              My Materials
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Your saved tests, revision notes, and quote banks
+            </p>
           </div>
         </section>
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">

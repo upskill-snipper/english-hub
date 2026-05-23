@@ -49,10 +49,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/mock-exams`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/games`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
 
-    // Audience pages
-    { url: `${base}/for-teachers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/for-schools`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/for-parents`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    // Audience / institutional pages — the canonical marketing surface as of
+    // 2026-05-20. The legacy /for-teachers · /for-schools · /for-parents now
+    // 308-redirect to these, so the redirecting URLs are intentionally
+    // EXCLUDED from the sitemap (listing a 3xx URL is an SEO anti-pattern;
+    // same convention as the /legal/safeguarding note below).
+    { url: `${base}/schools`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/school-pilot`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/teachers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/students`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/creators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
 
