@@ -201,7 +201,7 @@ function PostCard({ post, locale }: { post: BlogPost; locale: Locale }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={post.cover}
-            alt=""
+            alt={post.title}
             width={1200}
             height={630}
             className="aspect-[1200/630] w-full object-cover"
