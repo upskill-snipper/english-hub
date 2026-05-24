@@ -49,6 +49,7 @@ const MAPPING = [
   { html: '03-getting-started.html',   pdf: 'The English Hub - 03 Getting Started.pdf' },
   { html: '04-feature-showcase.html',  pdf: 'The English Hub - 04 Feature Showcase.pdf' },
   { html: '05-roi-illustrative.html',  pdf: 'The English Hub - 05 Illustrative ROI.pdf' },
+  { html: '06-pilot-rollout-onepage.html', pdf: 'The English Hub - 06 Pilot Rollout (One Page).pdf' },
 ]
 
 function findChrome() {
