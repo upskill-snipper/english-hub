@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The English Hub — Pilot Rollout (One Page)</title>
   <style>
-    /* Self-contained Anthology theme — single portable file. */
+    /* Self-contained Anthology theme — tuned to fit a single A4 page. */
     @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Geist:wght@400;500;600;700&display=swap');
 
     :root {
@@ -19,72 +19,72 @@
     * { box-sizing:border-box; margin:0; padding:0; }
     body {
       font-family:var(--sans); background:var(--cream-50); color:var(--ink-950);
-      font-size:13px; line-height:1.45; -webkit-font-smoothing:antialiased;
+      font-size:11.5px; line-height:1.38; -webkit-font-smoothing:antialiased;
     }
-    .page { max-width:900px; margin:0 auto; padding:28px 32px 36px; }
+    .page { max-width:900px; margin:0 auto; padding:18px 28px 20px; }
 
     /* Header */
-    .top { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--cream-200); padding-bottom:14px; margin-bottom:18px; }
-    .brand { display:flex; align-items:center; gap:9px; }
-    .mark { width:30px; height:30px; border-radius:7px; background:var(--teal-800); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:16px; font-weight:500; }
-    .brand-name { font-family:var(--serif); font-size:17px; font-weight:500; }
-    .top-meta { font-size:11px; color:var(--ink-500); text-align:right; }
+    .top { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--cream-200); padding-bottom:9px; margin-bottom:11px; }
+    .brand { display:flex; align-items:center; gap:8px; }
+    .mark { width:26px; height:26px; border-radius:6px; background:var(--teal-800); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:14px; font-weight:500; }
+    .brand-name { font-family:var(--serif); font-size:15px; font-weight:500; }
+    .top-meta { font-size:10px; color:var(--ink-500); text-align:right; line-height:1.3; }
     .top-meta a { color:var(--teal-700); text-decoration:none; }
 
-    h1 { font-family:var(--serif); font-size:30px; font-weight:500; letter-spacing:-0.02em; line-height:1.1; margin-bottom:4px; }
-    .sub { font-family:var(--serif); font-style:italic; font-size:15px; color:var(--ink-600); margin-bottom:18px; }
+    h1 { font-family:var(--serif); font-size:25px; font-weight:500; letter-spacing:-0.02em; line-height:1.08; margin-bottom:2px; }
+    .sub { font-family:var(--serif); font-style:italic; font-size:13px; color:var(--ink-600); margin-bottom:11px; }
 
     /* Role legend */
-    .legend { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:18px; font-size:11px; font-weight:600; }
-    .legend span { display:inline-flex; align-items:center; gap:6px; color:var(--ink-700); }
-    .dot { width:11px; height:11px; border-radius:50%; display:inline-block; }
+    .legend { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:12px; font-size:10px; font-weight:600; }
+    .legend span { display:inline-flex; align-items:center; gap:5px; color:var(--ink-700); }
+    .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
     .dot.school { background:var(--clay-500); }
     .dot.hub { background:var(--teal-700); }
     .dot.shared { background:var(--ochre-500); }
 
     /* Phase timeline */
-    .phases { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px; }
-    .phase { background:#fff; border:1px solid var(--cream-200); border-radius:10px; padding:13px 14px; border-top:3px solid var(--teal-700); }
+    .phases { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:12px; }
+    .phase { background:#fff; border:1px solid var(--cream-200); border-radius:9px; padding:10px 11px; border-top:3px solid var(--teal-700); }
     .phase:nth-child(2){ border-top-color:var(--clay-500); }
     .phase:nth-child(3){ border-top-color:var(--ochre-500); }
     .phase:nth-child(4){ border-top-color:var(--sage-500); }
-    .phase .when { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--clay-600); margin-bottom:4px; }
-    .phase .pname { font-family:var(--serif); font-size:16px; font-weight:500; margin-bottom:7px; line-height:1.15; }
+    .phase .when { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--clay-600); margin-bottom:3px; }
+    .phase .pname { font-family:var(--serif); font-size:14px; font-weight:500; margin-bottom:5px; line-height:1.1; }
     .phase ul { list-style:none; }
-    .phase li { position:relative; padding-left:15px; margin:5px 0; font-size:11.5px; color:var(--ink-700); line-height:1.35; }
-    .phase li::before { content:''; position:absolute; left:0; top:6px; width:6px; height:6px; border-radius:50%; }
+    .phase li { position:relative; padding-left:13px; margin:3px 0; font-size:10px; color:var(--ink-700); line-height:1.28; }
+    .phase li::before { content:''; position:absolute; left:0; top:5px; width:5px; height:5px; border-radius:50%; }
     .phase li.s::before { background:var(--clay-500); }
     .phase li.h::before { background:var(--teal-700); }
     .phase li.sh::before { background:var(--ochre-500); }
 
     /* Who + how row */
-    .row2 { display:grid; grid-template-columns:1.15fr 1fr; gap:16px; margin-bottom:18px; }
-    .block { background:#fff; border:1px solid var(--cream-200); border-radius:10px; padding:16px 18px; }
-    .block h2 { font-family:var(--serif); font-size:17px; font-weight:500; margin-bottom:10px; color:var(--teal-800); }
-    .who-item { display:flex; gap:9px; margin:8px 0; align-items:flex-start; }
-    .who-role { font-weight:600; font-size:11.5px; min-width:118px; color:var(--ink-950); }
-    .who-task { font-size:11.5px; color:var(--ink-600); }
+    .row2 { display:grid; grid-template-columns:1.15fr 1fr; gap:12px; margin-bottom:12px; }
+    .block { background:#fff; border:1px solid var(--cream-200); border-radius:9px; padding:12px 14px; }
+    .block h2 { font-family:var(--serif); font-size:15px; font-weight:500; margin-bottom:7px; color:var(--teal-800); }
+    .who-item { display:flex; gap:8px; margin:6px 0; align-items:flex-start; }
+    .who-role { font-weight:600; font-size:10.5px; min-width:110px; color:var(--ink-950); line-height:1.25; }
+    .who-task { font-size:10.5px; color:var(--ink-600); line-height:1.32; }
     .how-list { list-style:none; }
-    .how-list li { position:relative; padding-left:17px; margin:7px 0; font-size:11.5px; color:var(--ink-700); }
-    .how-list li::before { content:''; position:absolute; left:0; top:6px; width:6px; height:6px; border-radius:50%; background:var(--teal-700); }
+    .how-list li { position:relative; padding-left:15px; margin:5px 0; font-size:10.5px; color:var(--ink-700); line-height:1.32; }
+    .how-list li::before { content:''; position:absolute; left:0; top:5px; width:5px; height:5px; border-radius:50%; background:var(--teal-700); }
 
     /* Commitment strip */
-    .strip { background:var(--teal-800); color:var(--cream-50); border-radius:10px; padding:15px 20px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:16px; }
-    .strip .s-val { font-family:var(--serif); font-size:24px; font-weight:500; line-height:1; }
-    .strip .s-lab { font-size:10.5px; color:var(--cream-200); margin-top:4px; line-height:1.3; }
+    .strip { background:var(--teal-800); color:var(--cream-50); border-radius:9px; padding:12px 18px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:11px; }
+    .strip .s-val { font-family:var(--serif); font-size:21px; font-weight:500; line-height:1; }
+    .strip .s-lab { font-size:9.5px; color:var(--cream-200); margin-top:3px; line-height:1.28; }
 
     /* Footer / CTA */
-    .cta { display:flex; align-items:center; justify-content:space-between; gap:16px; border:1px solid var(--cream-200); background:var(--cream-100); border-radius:10px; padding:14px 18px; }
-    .cta .ctitle { font-family:var(--serif); font-size:15px; font-weight:500; }
-    .cta .cmeta { font-size:11.5px; color:var(--ink-600); margin-top:3px; }
+    .cta { display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--cream-200); background:var(--cream-100); border-radius:9px; padding:11px 16px; }
+    .cta .ctitle { font-family:var(--serif); font-size:14px; font-weight:500; }
+    .cta .cmeta { font-size:10.5px; color:var(--ink-600); margin-top:2px; line-height:1.35; }
     .cta .cmeta a { color:var(--teal-700); text-decoration:none; font-weight:600; }
-    .cta-mail { font-family:var(--sans); font-weight:600; font-size:12px; background:var(--teal-800); color:var(--cream-50); padding:10px 16px; border-radius:8px; white-space:nowrap; text-decoration:none; }
+    .cta-mail { font-family:var(--sans); font-weight:600; font-size:11px; background:var(--teal-800); color:var(--cream-50); padding:9px 14px; border-radius:7px; white-space:nowrap; text-decoration:none; }
 
-    .foot { text-align:center; font-size:10px; color:var(--ink-500); margin-top:14px; line-height:1.5; }
+    .foot { text-align:center; font-size:9px; color:var(--ink-500); margin-top:10px; line-height:1.45; }
 
     @media print {
-      @page { size:A4 portrait; margin:10mm; }
-      body { background:#fff; font-size:11.5px; }
+      @page { size:A4 portrait; margin:8mm; }
+      html, body { background:#fff; }
       .page { padding:0; max-width:none; }
       .phase, .block, .strip, .cta { break-inside:avoid; }
       .cta-mail { display:none; }
@@ -92,7 +92,7 @@
     @media (max-width:760px) {
       .phases { grid-template-columns:1fr 1fr; }
       .row2 { grid-template-columns:1fr; }
-      .strip { grid-template-columns:1fr; gap:10px; }
+      .strip { grid-template-columns:1fr; gap:8px; }
     }
   </style>
 </head>
@@ -135,7 +135,7 @@
       <div class="when">Day 4–7 · Launch</div>
       <div class="pname">Kickoff &amp; go live</div>
       <ul>
-        <li class="sh">30-min academic kickoff: upload roster, create classes, agree success criteria</li>
+        <li class="sh">30-min kickoff: upload roster, create classes, set success criteria</li>
         <li class="sh">30-min DPO call: walk the compliance pack</li>
         <li class="h">Accounts activate; first essay marked in &lt; 1 min</li>
       </ul>
@@ -145,9 +145,9 @@
       <div class="when">Weeks 2–10 · Run</div>
       <div class="pname">Use &amp; review</div>
       <ul>
-        <li class="s">Department uses the platform; ~30 min/week project-owner check-in</li>
+        <li class="s">Department uses the platform; ~30 min/week check-in</li>
         <li class="h">Bi-weekly updates; 24h support</li>
-        <li class="sh">Week 4–6 mid-review against the agreed metrics</li>
+        <li class="sh">Week 4–6 mid-review vs the agreed metrics</li>
       </ul>
     </div>
 
@@ -167,8 +167,8 @@
     <div class="block">
       <h2>Who needs to do what</h2>
       <div class="who-item">
-        <span class="who-role">Project owner<br><span style="font-weight:400;color:var(--ink-500)">(Head of English / Deputy Head)</span></span>
-        <span class="who-task">Owns the pilot. ~60 min/week. Joins the 3 calls (kickoff, mid-review, close-out), uploads the student roster, briefs the department, gives honest feedback.</span>
+        <span class="who-role">Project owner<br><span style="font-weight:400;color:var(--ink-500)">(Head of English / Deputy)</span></span>
+        <span class="who-task">Owns the pilot. ~60 min/week. Joins the 3 calls (kickoff, mid-review, close-out), uploads the roster, briefs the department, gives honest feedback.</span>
       </div>
       <div class="who-item">
         <span class="who-role">Data-protection lead<br><span style="font-weight:400;color:var(--ink-500)">(DPO / IT)</span></span>
@@ -190,7 +190,7 @@
         <li>Web app — students sign in with school email; no install, no IT project</li>
         <li>Roster uploaded by CSV (or MIS export: iSAMS, Engage, Bromcom, Arbor)</li>
         <li>Classes set up by exam board, teacher and year group in ~10 min</li>
-        <li>Success criteria agreed in writing before launch — typically marking turnaround, adoption, and teacher NPS</li>
+        <li>Success criteria agreed in writing before launch — marking turnaround, adoption, teacher NPS</li>
         <li>One-page agreement; standard DPA fitting UK GDPR + PDPPL; no lock-in</li>
       </ul>
     </div>
