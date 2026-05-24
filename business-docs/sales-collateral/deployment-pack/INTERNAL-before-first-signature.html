@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INTERNAL — Before First Signature Checklist</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&family=Geist:wght@400;500;600;700&display=swap');
+    :root{--cream-50:#FBF7F0;--cream-100:#F5EFE4;--cream-200:#ECE2CF;--ink-500:#6C736D;--ink-600:#4A524C;--ink-700:#303832;--ink-950:#0F1411;--teal-700:#1D524E;--teal-800:#163F3C;--clay-500:#C65A33;--clay-600:#AD4A28;--ochre-500:#D4A021;--sage-500:#6B8A6B;--serif:'Newsreader',Georgia,serif;--sans:'Geist',-apple-system,'Segoe UI',sans-serif;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--sans);background:var(--cream-50);color:var(--ink-950);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+    .shell{max-width:780px;margin:0 auto;padding:36px 36px 64px;}
+    .ribbon{background:var(--clay-600);color:#fff;text-align:center;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:8px;border-radius:8px;margin-bottom:24px;}
+    .brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+    .mark{width:32px;height:32px;border-radius:7px;background:var(--teal-800);color:var(--cream-50);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;font-weight:500;}
+    .brand-name{font-family:var(--serif);font-size:18px;font-weight:500;}
+    h1{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:6px;}
+    .sub{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-600);margin-bottom:8px;}
+    .meta{font-size:12px;color:var(--ink-500);border-bottom:1px solid var(--cream-200);padding-bottom:18px;margin-bottom:26px;}
+    h2{font-family:var(--serif);font-size:23px;font-weight:500;margin:30px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--cream-200);}
+    h2 .tag{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:3px 9px;border-radius:20px;vertical-align:middle;margin-left:8px;}
+    .tag.block{background:#FBEAE3;color:var(--clay-600);}
+    .tag.qatar{background:#FBF6E5;color:#9a7400;}
+    .tag.rec{background:#EEF2EC;color:var(--sage-500);}
+    .item{background:#fff;border:1px solid var(--cream-200);border-radius:10px;padding:14px 16px;margin:10px 0;display:flex;gap:12px;}
+    .box{width:18px;height:18px;min-width:18px;border:1.5px solid var(--teal-700);border-radius:4px;margin-top:1px;}
+    .item h4{font-family:var(--sans);font-size:13.5px;font-weight:600;margin-bottom:3px;}
+    .item p{font-size:12px;color:var(--ink-600);margin:3px 0;}
+    .item .ref{font-size:11px;color:var(--ink-500);font-style:italic;}
+    .who{display:inline-block;font-size:10.5px;font-weight:600;color:var(--teal-700);background:var(--cream-100);padding:2px 8px;border-radius:12px;margin-top:4px;}
+    code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;background:var(--cream-100);padding:1px 5px;border-radius:4px;color:var(--clay-600);}
+    .foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--cream-200);font-size:11px;color:var(--ink-500);text-align:center;}
+    @media print{@page{size:A4 portrait;margin:12mm;}body{background:#fff;}.shell{padding:0;max-width:none;}.item{break-inside:avoid;}}
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="ribbon">Internal — founder use only · not for schools</div>
+
+  <div class="brand"><span class="mark">EH</span><span class="brand-name">The English Hub</span></div>
+
+  <h1>Before the first signature</h1>
+  <p class="sub">What must be closed before a school actually signs a pilot — so nothing in the deployment pack is contradicted in due diligence.</p>
+  <p class="meta">Owner: Calum Johnson · Last updated 2026-05-24 · Review before sending Document 01/02 to any school for signature</p>
+
+  <h2>Blocking — close before ANY school signs <span class="tag block">Blocking</span></h2>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>1. Anthropic AI DPA + written no-training / zero-retention confirmation</h4>
+      <p>The deployment pack (Docs 02, 03, 06, 07) states "no training on submissions" as our <em>contractual position being finalised</em>. Get the counter-signed Anthropic commercial DPA and a written ZDR / no-training confirmation in hand. Until then, do not upgrade the wording to "confirmed".</p>
+      <p class="ref">Ref: src/config/subprocessors.ts (Anthropic dpaStatus 'unconfirmed') · Doc 03 "AI sub-processor"</p>
+      <span class="who">Calum + counsel · Anthropic</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>2. UK solicitor review of the Pilot Agreement (01) + DPA (02) templates</h4>
+      <p>These are drafted templates, not lawyer-settled contracts. Get a UK solicitor to review both once — especially the liability cap, termination, and the controller/processor clauses — before a school's counsel marks them up. One review covers all future pilots.</p>
+      <p class="ref">Ref: Doc 01, Doc 02</p>
+      <span class="who">Calum + UK solicitor</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>3. Confirm the transactional email provider + get its DPA</h4>
+      <p>The register lists the email provider as "Resend / Postmark — unconfirmed" because neither package is in <code>package.json</code>. Confirm which is actually live, then secure its DPA and fix Doc 03 + the public sub-processor list.</p>
+      <p class="ref">Ref: src/config/subprocessors.ts (email provider 'unconfirmed') · Doc 03</p>
+      <span class="who">Calum / dev</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>4. Counter-sign the core infrastructure DPAs</h4>
+      <p>Supabase, Microsoft Azure, Vercel, Cloudflare, Stripe, Sentry are all "pending counter-signature". Execute the clickwrap/standard DPAs and keep copies on file so you can hand them to a DPO on request. These touch student data, so they're in scope before a school signs.</p>
+      <p class="ref">Ref: src/config/subprocessors.ts (dpaStatus 'pending') · Doc 03</p>
+      <span class="who">Calum</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>5. Reconcile the retention periods (live inconsistency)</h4>
+      <p>The public Qatar privacy page §7 says account data is kept <strong>"Account duration + 3 years"</strong>; the RoPA and Doc 05 say <strong>"active + 24 months"</strong>. Pick one, fix the other. A DPO who reads both will flag the contradiction.</p>
+      <p class="ref">Ref: /legal/privacy-qatar §7 vs RoPA v1 vs Doc 05</p>
+      <span class="who">Calum + DPO hat</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>6. DSL operational readiness for the 24-hour SLA</h4>
+      <p>Docs 06 + 08 commit Lauren Johnson to a 24-hour safeguarding-acknowledgement SLA. Confirm she is genuinely monitoring <code>safeguarding@theenglishhub.app</code> + the phone, and that the in-product safeguarding-disclosure routing actually fires to her. Don't promise an SLA you can't staff.</p>
+      <p class="ref">Ref: Doc 06, Doc 08</p>
+      <span class="who">Calum + Lauren</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>7. DPO / DSL mailbox "send-as" configured</h4>
+      <p>Cloudflare routing receives mail at <code>dpo@</code> / <code>safeguarding@</code> but replies still leave as <code>info@upskillenergy.com</code>. Finish the Google Workspace send-as so DPO/DSL correspondence (incl. with a school's counsel) comes from the right address. ~15 min.</p>
+      <p class="ref">Ref: business-docs/compliance/qatar-pdppl/03-pdms/dpo-mailbox-send-as-runbook.md</p>
+      <span class="who">Calum</span>
+    </div>
+  </div>
+
+  <h2>Blocking for a Qatar school specifically <span class="tag qatar">Qatar</span></h2>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>8. Decide the Article 16 permit timing</h4>
+      <p>The permit dossier is shelf-ready but not submitted (founder decision: hold until a Qatar school commits, to time the legal-opinion spend). When a Qatar school is about to sign, decide: submit the permit + commission the Qatari legal opinion now, or proceed on the documented "substantive posture in place" basis. A government / Qatar-Foundation school is more likely to require the permit reference than a private British school.</p>
+      <p class="ref">Ref: business-docs/compliance/qatar-pdppl/01-article-16-permit/ · Doc 06</p>
+      <span class="who">Calum + Qatari counsel</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>9. Qatari legal opinion (only if the school requires it)</h4>
+      <p>USD 8k–25k, deferred by founder decision. Trigger: the first Qatar school that makes it a contractual condition. If triggered, commission it as a condition of contract closure and attach to the Article 16 dossier as Exhibit G.</p>
+      <p class="ref">Ref: PDMS index §4</p>
+      <span class="who">Calum + Qatari counsel</span>
+    </div>
+  </div>
+
+  <h2>Recommended — strengthens the position, not strictly blocking <span class="tag rec">Recommended</span></h2>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>10. Confirm cyber insurance + have the certificate ready</h4>
+      <p>Doc 07 §E says cyber insurance is "available to confirm on request". Make sure a policy is actually in place and the certificate is to hand — procurement teams often ask for it.</p>
+      <span class="who">Calum</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>11. Registered-office disclosure ready</h4>
+      <p>Docs 01/07 say the registered office is "available on request, not published". Have the exact wording ready to give procurement so it's not a scramble mid-deal.</p>
+      <span class="who">Calum</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>12. Confirm PostHog live/retired + fix the register</h4>
+      <p>PostHog is flagged "unconfirmed — being confirmed live". Confirm whether it's actually running; if retired, set it inactive and remove from the public list. Minor, but a sharp DPO will ask.</p>
+      <p class="ref">Ref: src/config/subprocessors.ts (PostHog) · Doc 03</p>
+      <span class="who">Calum / dev</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="box"></div>
+    <div>
+      <h4>13. Secure roster-upload link ready</h4>
+      <p>Doc 12 tells schools not to email a student roster and promises "a secure upload link". Make sure that link/mechanism actually exists before the first kickoff, or upload together on the kickoff screen-share.</p>
+      <span class="who">Calum / dev</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <strong>Internal working document — do not send to schools.</strong><br>
+    The English Hub · Upskill Energy Limited · Co. 16511479 · dpo@theenglishhub.app
+  </div>
+
+</div>
+</body>
+</html>
