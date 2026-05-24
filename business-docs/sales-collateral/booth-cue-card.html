@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booth Cue Card — The English Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&family=Geist:wght@400;500;600;700&display=swap');
+    :root{--cream-50:#FBF7F0;--cream-100:#F5EFE4;--cream-200:#ECE2CF;--ink-500:#6C736D;--ink-600:#4A524C;--ink-700:#303832;--ink-950:#0F1411;--teal-500:#357D77;--teal-700:#1D524E;--teal-800:#163F3C;--clay-500:#C65A33;--clay-600:#AD4A28;--ochre-500:#D4A021;--sage-500:#6B8A6B;--serif:'Newsreader',Georgia,serif;--sans:'Geist',-apple-system,'Segoe UI',sans-serif;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--sans);background:var(--cream-50);color:var(--ink-950);font-size:11px;line-height:1.36;-webkit-font-smoothing:antialiased;}
+    .page{max-width:880px;margin:0 auto;padding:16px 26px 18px;}
+
+    .top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--cream-200);padding-bottom:8px;margin-bottom:11px;}
+    .brand{display:flex;align-items:center;gap:8px;}
+    .mark{width:26px;height:26px;border-radius:6px;background:var(--teal-800);color:var(--cream-50);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;font-weight:500;}
+    .brand-name{font-family:var(--serif);font-size:15px;font-weight:500;}
+    .tagi{font-size:9.5px;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+    h1{font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:9px;}
+
+    /* The opener block */
+    .opener{background:var(--teal-800);color:var(--cream-50);border-radius:10px;padding:13px 16px;margin-bottom:12px;}
+    .opener .lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ochre-500);margin-bottom:5px;}
+    .opener .line{font-family:var(--serif);font-size:16px;line-height:1.3;font-style:italic;}
+    .opener .note{font-size:9.5px;color:var(--cream-200);margin-top:6px;}
+
+    /* Section label */
+    .seclbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--clay-600);margin:14px 0 6px;}
+
+    /* Role branch — 3 cards */
+    .branch{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:6px;}
+    .rcard{background:#fff;border:1px solid var(--cream-200);border-radius:9px;padding:11px 12px;border-top:3px solid var(--clay-500);}
+    .rcard:nth-child(2){border-top-color:var(--teal-700);}
+    .rcard:nth-child(3){border-top-color:var(--ochre-500);}
+    .rcard .role{font-weight:700;font-size:11px;margin-bottom:2px;}
+    .rcard .roled{font-size:9px;color:var(--ink-500);margin-bottom:7px;}
+    .rcard .q{font-family:var(--serif);font-style:italic;font-size:12px;line-height:1.3;color:var(--ink-950);}
+    .rcard .why{font-size:9px;color:var(--ink-600);margin-top:6px;}
+
+    /* Appetite table */
+    table{width:100%;border-collapse:collapse;margin-top:5px;font-size:10px;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--cream-200);}
+    thead{background:var(--teal-800);color:var(--cream-50);}
+    th{text-align:left;padding:6px 9px;font-size:9px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;}
+    td{padding:6px 9px;border-top:1px solid var(--cream-200);vertical-align:top;}
+    tbody tr:nth-child(odd){background:var(--cream-50);}
+    .pill{display:inline-block;font-weight:700;font-size:9px;padding:1px 7px;border-radius:10px;}
+    .hot{background:#FBEAE3;color:var(--clay-600);}
+    .warm{background:#FBF6E5;color:#9a7400;}
+    .qual{background:#EAF0F0;color:var(--teal-700);}
+    .cold{background:#EEF0EE;color:var(--ink-600);}
+
+    .rules{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px;}
+    .rule{background:var(--cream-100);border-left:3px solid var(--teal-700);border-radius:7px;padding:9px 12px;}
+    .rule.acc{border-left-color:var(--clay-500);}
+    .rule .rh{font-weight:700;font-size:10px;margin-bottom:2px;}
+    .rule p{font-size:9.5px;color:var(--ink-600);}
+
+    .foot{margin-top:12px;padding-top:9px;border-top:1px solid var(--cream-200);font-size:9px;color:var(--ink-500);text-align:center;}
+    .foot strong{color:var(--ink-700);}
+
+    @media print{@page{size:A4 portrait;margin:9mm;}body{background:#fff;font-size:10.5px;}.page{padding:0;max-width:none;}.opener,.rcard,table,.rule{break-inside:avoid;}}
+    @media (max-width:720px){.branch{grid-template-columns:1fr;}.rules{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="brand"><span class="mark">EH</span><span class="brand-name">The English Hub</span></div>
+    <div class="tagi">Booth cue card · founder use</div>
+  </div>
+
+  <h1>Working the stand — opener &amp; appetite read</h1>
+
+  <div class="opener">
+    <div class="lbl">Say this as they slow down (4 seconds — anchor + qualifier)</div>
+    <div class="line">"We do AI marking for GCSE and IGCSE English — against the actual mark schemes. Are you here for a school, or in another role?"</div>
+    <div class="note">It tells them what you do AND hands you the qualifier. Their answer decides which question you ask next ↓</div>
+  </div>
+
+  <div class="seclbl">Then branch the appetite question by who they are</div>
+  <div class="branch">
+    <div class="rcard">
+      <div class="role">Head of English / HoD</div>
+      <div class="roled">Your best buyer — lead with the pain they feel daily</div>
+      <div class="q">"What's marking turnaround actually like in your department — from a student handing in a practice essay to getting it back?"</div>
+      <div class="why">The number + the sigh tells you everything. 10+ days &amp; a grimace = hot.</div>
+    </div>
+    <div class="rcard">
+      <div class="role">Principal / Deputy Head</div>
+      <div class="roled">Lead with visibility — the data/analytics door</div>
+      <div class="q">"How much visibility do you actually have into how each English cohort is progressing between data drops?"</div>
+      <div class="why">Leadership feels the visibility gap; HoDs feel the workload. Same product, different door.</div>
+    </div>
+    <div class="rcard">
+      <div class="role">Education consultant</div>
+      <div class="roled">Sell the multiplier — they advise many schools</div>
+      <div class="q">"Which of the schools you work with are furthest along on AI in the English department — and what's holding the others back?"</div>
+      <div class="why">One good consultant relationship = several schools.</div>
+    </div>
+  </div>
+
+  <div class="seclbl">Read appetite from their answer</div>
+  <table>
+    <thead><tr><th style="width:30%">Signal</th><th style="width:14%">Read</th><th>What you do next</th></tr></thead>
+    <tbody>
+      <tr><td>Gives a real number + a sigh / "it's a problem"</td><td><span class="pill hot">Hot</span></td><td>Go to the pilot conversation. Get the email written down + on the back of their card.</td></tr>
+      <tr><td>Curious — "how does it work?"</td><td><span class="pill warm">Warm</span></td><td>60-second demo on the iPad, then book a 30-min call.</td></tr>
+      <tr><td>"We already use [tool]"</td><td><span class="pill qual">Qualify</span></td><td>"Good — what's it doing well, where are the edges?" Don't bash it. Find the gap you fill.</td></tr>
+      <tr><td>Vague, no pain, collecting swag</td><td><span class="pill cold">Cold</span></td><td>Hand the one-pager, 60 seconds, move on. Don't over-invest.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="rules">
+    <div class="rule acc">
+      <div class="rh">After the appetite question — SHUT UP.</div>
+      <p>The 90 seconds of silence after "what's marking turnaround like?" is where they tell you if they're a buyer. Don't fill it.</p>
+    </div>
+    <div class="rule">
+      <div class="rh">Exit line for every conversation</div>
+      <p>"Grab the one-pager — and easiest way to talk further is dpo@theenglishhub.app, straight to me. Thanks for stopping."</p>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="rule">
+      <div class="rh">Don't say</div>
+      <p>No exam-board endorsement. No "trusted by X schools". No grade guarantees. No "AI never gets it wrong" — teachers stay the final word.</p>
+    </div>
+    <div class="rule acc">
+      <div class="rh">Numbers you can quote</div>
+      <p>6 exam boards · pilot from £2,500 / £4,000 / custom · marking &lt; 1 min · PDPPL Art. 17 live in signup · EU-region data.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <strong>Don't burn the day on students/parents</strong> — the floor is wall-to-wall universities recruiting them. Spend your hours on HoDs, deputies, principals, consultants.<br>
+    The English Hub · dpo@theenglishhub.app · Lauren (DSL) +974 5187 9582
+  </div>
+
+</div>
+</body>
+</html>
