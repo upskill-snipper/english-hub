@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Compliance Summary</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 06</div>
+    <h1 class="doc-title">Compliance Summary</h1>
+    <p class="doc-subtitle">UK GDPR · Data Protection Act 2018 · ICO Children's Code · Qatar PDPPL — at a glance.</p>
+    <p class="doc-meta">Last reviewed 2026-05-24</p>
+  </header>
+
+  <h2>Qatar — PDPPL (Law No. 13 of 2016)</h2>
+  <table>
+    <thead><tr><th>Obligation</th><th>Our position</th></tr></thead>
+    <tbody>
+      <tr><td>Art. 4 — explicit consent</td><td>Captured at sign-up; recorded in an append-only consent ledger</td></tr>
+      <tr><td>Art. 13 — data-subject rights + 30-day response</td><td>30 calendar days, per NCGAA Individuals' Rights Guideline PDPPL-02050219E; self-service in-product</td></tr>
+      <tr><td>Art. 16 — prior NCGAA permission for special-category data (incl. minors)</td><td>Permit application dossier drafted and shelf-ready; submission held pending Qatari legal sign-off. Substantive posture in place regardless.</td></tr>
+      <tr><td>Art. 17 — cross-border transfer with explicit consent</td><td><strong>Live in the signup flow as of 20 May 2026</strong> — Qatar-resident users see a named-destination consent panel before account creation</td></tr>
+      <tr><td>Art. 22 — direct marketing opt-in + opt-out</td><td>All marketing consent-gated; every marketing email carries sender ID + unsubscribe</td></tr>
+      <tr><td>72-hour breach notification</td><td>Standing readiness — runbook + pre-filled NCGAA template</td></tr>
+      <tr><td>General controller registration</td><td>Not required under PDPPL (no general registration regime)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>United Kingdom — UK GDPR + DPA 2018</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Our position</th></tr></thead>
+    <tbody>
+      <tr><td>ICO registration</td><td><strong>ZC016690</strong> — verifiable on the ICO public register</td></tr>
+      <tr><td>Lawful basis</td><td>Contract for service delivery; explicit consent for AI processing of essay text; legitimate interest for security telemetry (LIA on file)</td></tr>
+      <tr><td>Records of Processing (Art. 30)</td><td>RoPA maintained — 12 documented activities</td></tr>
+      <tr><td>DPIAs (Art. 35)</td><td>Three on file: children's data, AI features, analytics</td></tr>
+      <tr><td>Breach notification (Art. 33–34)</td><td>72 hours to ICO + affected subjects where risk warrants</td></tr>
+      <tr><td>International transfers</td><td>Provider SCCs / UK addendum for transfers outside the UK/EU</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Children — ICO Age Appropriate Design Code</h2>
+  <p>Every under-18 account is treated under the Code's standards. Standard 8
+  high-privacy defaults are enforced <strong>in code</strong> and asserted by a
+  strict test suite covering ages 11–17 — personalised recommendations, streak
+  gamification, behavioural nudges, non-essential analytics, marketing,
+  social-share nudges, public leaderboards and geolocation are all off by
+  default.</p>
+  <ul class="bare">
+    <li><strong>Minimum age 11</strong>, with verifiable parental consent for ages 11–15 captured via a parent-link email at sign-up. UK GDPR Article 8 sets the digital age of consent at 13; for users aged 11–12 we rely on verifiable parental consent.</li>
+    <li><strong>Data minimisation:</strong> age bracket stored, not full DOB shown anywhere; opaque identifiers at the AI boundary.</li>
+    <li><strong>No behavioural profiling of minors</strong> for commercial purposes; no targeted advertising to minors.</li>
+  </ul>
+
+  <h2>Where the data lives</h2>
+  <pre>Qatar user -> Vercel front end (global edge, ephemeral)
+           -> Supabase EU / Frankfurt    (account, essays, marking, consent ledger - primary store)
+           -> Microsoft Azure UK South   (backend API)
+           -> Anthropic US               (AI marking only - no name/email/DOB/school sent)
+           -> Sentry EU / Frankfurt      (error monitoring, scrubbed)
+           -> Email provider US          (transactional email)
+           -> Stripe Ireland (UK failover)  (payments - under-18 cannot enter payment data)</pre>
+
+  <h2>What we do NOT claim</h2>
+  <ul class="bare">
+    <li>We are <strong>not</strong> NCSA NIA-certified (separate cybersecurity scheme; deferred).</li>
+    <li>We do <strong>not</strong> yet hold an Article 16 permit reference (dossier shelf-ready; submission held).</li>
+    <li>We are <strong>not</strong> ISO/IEC 27001 certified (roadmap, late 2026) or Cyber Essentials Plus certified.</li>
+    <li>We are <strong>not</strong> endorsed by AQA, Pearson Edexcel, OCR, WJEC, Eduqas or Cambridge — we cover their specifications; endorsement claims would be false.</li>
+    <li>Counter-signed sub-processor DPAs — most are pending counter-signature; the AI DPA + zero-retention confirmation are being finalised with counsel (Document 03).</li>
+  </ul>
+
+  <h2>Procurement pack on request</h2>
+  <p>Email <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a>
+  (subject "PDPPL diligence — [school name]") and within 5 working days we
+  provide: the Personal Data Management System index, the RoPA, all three
+  DPIAs, the sub-processor register with current DPA statuses, the breach
+  runbook + NCGAA template, and the cross-border consent specification.</p>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 06 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

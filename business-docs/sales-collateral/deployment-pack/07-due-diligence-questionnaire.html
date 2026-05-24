@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Vendor Due-Diligence Questionnaire (pre-answered)</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 07</div>
+    <h1 class="doc-title">Vendor Due-Diligence Questionnaire</h1>
+    <p class="doc-subtitle">The questions a school's procurement and IT/data-protection teams usually ask — answered in advance.</p>
+    <p class="doc-meta">Pre-completed 2026-05-24 · ask anything not covered to dpo@theenglishhub.app</p>
+  </header>
+
+  <h2>A. Company</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Legal entity</td><td>Upskill Energy Limited, trading as The English Hub</td></tr>
+      <tr><td>Company number</td><td>16511479 (England &amp; Wales)</td></tr>
+      <tr><td>ICO registration</td><td>ZC016690</td></tr>
+      <tr><td>Registered office</td><td>Available to your procurement team on request (not published)</td></tr>
+      <tr><td>Primary contact</td><td>Calum Johnson, Founder &amp; DPO — dpo@theenglishhub.app</td></tr>
+      <tr><td>Years trading / stage</td><td>Launch stage; founder-led</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B. Data protection</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Are you a controller or processor for school data?</td><td>Processor; the school is the controller. DPA provided (Document 02).</td></tr>
+      <tr><td>Is a DPO appointed?</td><td>Yes — Calum Johnson, dpo@theenglishhub.app (voluntary appointment; not mandatory under PDPPL)</td></tr>
+      <tr><td>Do you maintain a RoPA?</td><td>Yes (UK GDPR Article 30) — available on request</td></tr>
+      <tr><td>Have you completed DPIAs?</td><td>Yes — three: children's data, AI features, analytics</td></tr>
+      <tr><td>Lawful basis for processing student data?</td><td>Contract (service delivery) + explicit consent (AI processing) + verifiable parental consent for under-13s</td></tr>
+      <tr><td>Where is data stored?</td><td>Primary database in the EU (Supabase, Frankfurt); backend on Microsoft Azure UK South; AI inference in the US (Anthropic). Full topology in Document 06.</td></tr>
+      <tr><td>International transfer mechanism?</td><td>Provider SCCs / UK addendum; for Qatar residents, explicit PDPPL Article 17 consent at sign-up naming each destination</td></tr>
+      <tr><td>Data-subject-rights response time?</td><td>30 calendar days; self-service export / deletion / consent withdrawal in-product</td></tr>
+      <tr><td>Retention &amp; deletion policy?</td><td>Document 05; 48-hour exit pack on request</td></tr>
+    </tbody>
+  </table>
+
+  <h2>C. Children's data</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Do you comply with the ICO Children's Code?</td><td>Yes — high-privacy defaults enforced in code for all under-18s; strict test coverage ages 11–17</td></tr>
+      <tr><td>Minimum age?</td><td>11. Ages 11–15 require a parent/guardian email; under-13s require verifiable parental consent (UK GDPR Art. 8)</td></tr>
+      <tr><td>Targeted advertising to minors?</td><td>None. No behavioural profiling of minors for commercial purposes.</td></tr>
+      <tr><td>Can a parent see their child's essays?</td><td>No — parents see progress summaries (modules, time, working-at grade), never essay text</td></tr>
+      <tr><td>Safeguarding process?</td><td>Designated Safeguarding Lead appointed; disclosures in essay content routed to the DSL within 24h. Document 08.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>D. AI</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Which AI provider do you use?</td><td>Anthropic (Claude) — the only LLM provider; code-verified. No OpenAI or other model.</td></tr>
+      <tr><td>What data is sent to the AI?</td><td>Essay free-text, question text, exam board + year. <strong>No name, email, date of birth or school.</strong></td></tr>
+      <tr><td>Is student data used to train AI models?</td><td>No — our contractual position prohibits training on submissions. The counter-signed AI DPA + written zero-retention confirmation are being finalised with counsel (Document 03).</td></tr>
+      <tr><td>Is AI marking the final grade?</td><td>No — AI marking is formative; teachers remain the final authority. Any AI-marked essay can be escalated to human review.</td></tr>
+      <tr><td>Is there human oversight?</td><td>Yes — teacher override on every essay; safeguarding-relevant content routed to a human within 24h.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>E. Information security</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Encryption in transit / at rest?</td><td>TLS 1.3 in transit; AES-256 at rest; Argon2id password hashing</td></tr>
+      <tr><td>Access control?</td><td>Row-level security; least-privilege staff access with SSO + MFA; quarterly access review; audit logging</td></tr>
+      <tr><td>SSO for schools?</td><td>Google Workspace / Microsoft 365 SSO supported on annual deployment</td></tr>
+      <tr><td>Penetration testing?</td><td>Not yet independently pen-tested; on the security roadmap alongside ISO 27001</td></tr>
+      <tr><td>Certifications held?</td><td>ICO registered. <strong>Not</strong> yet ISO 27001 / Cyber Essentials Plus / NIA certified (honest status; roadmap in Document 04)</td></tr>
+      <tr><td>Breach notification?</td><td>Within 72 hours to the school; runbook + pre-filled regulator templates held</td></tr>
+      <tr><td>Cyber insurance?</td><td>Available to confirm to procurement on request</td></tr>
+    </tbody>
+  </table>
+
+  <h2>F. Service &amp; commercial</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:46%">Uptime / hosting?</td><td>Hosted on Vercel + Supabase + Microsoft Azure — enterprise-grade providers with their own SLAs</td></tr>
+      <tr><td>Support model?</td><td>Founder-level support within 24 working hours during a pilot</td></tr>
+      <tr><td>Contract length / lock-in?</td><td>Pilot is one term, no auto-renew, no minimum term, no clawback</td></tr>
+      <tr><td>Exit / data portability?</td><td>48-hour exit pack: full export + deletion confirmation + audit certificate</td></tr>
+      <tr><td>Pricing?</td><td>Pilot from £2,500 (year group) / £4,000 (department) / custom. Annual from £6,000 / £12,000 / custom from £25,000.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Anything not covered?</div>
+    <p>If your questionnaire asks something not answered here, email
+    <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a> and we will
+    answer in writing within 5 working days. We would rather tell you "we don't
+    have that yet" than overstate our position.</p>
+  </div>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 07 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

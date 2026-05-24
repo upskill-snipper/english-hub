@@ -1,0 +1,10 @@
+# Commit the built PDFs (override repo-wide dist/ + *.pdf ignores) so the
+# founder can grab the full pack from any device without re-building.
+!dist/
+!dist/*.pdf
+!*.pdf
+# But ignore temp build artefacts.
+__build_*
+node_modules/
+package-lock.json
+package.json

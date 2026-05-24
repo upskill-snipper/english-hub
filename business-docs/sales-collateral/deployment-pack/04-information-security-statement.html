@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Information Security Statement</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 04</div>
+    <h1 class="doc-title">Information Security Statement</h1>
+    <p class="doc-subtitle">The technical and organisational measures protecting student and school data.</p>
+    <p class="doc-meta">Last reviewed 2026-05-24</p>
+  </header>
+
+  <div class="callout callout--ochre">
+    <div class="callout-title">What we hold and what we don't</div>
+    <p>We are honest about certification status. We are <strong>not</strong> yet
+    ISO/IEC 27001 certified (on roadmap, targeted late 2026) and we do
+    <strong>not</strong> hold Cyber Essentials Plus or the NCSA NIA certification.
+    The measures below are real and in force; the formal certifications that
+    independently attest to them are a separate, in-progress workstream. We say
+    so plainly so your security team knows exactly what they are buying.</p>
+  </div>
+
+  <h2>Data in transit and at rest</h2>
+  <ul class="bare">
+    <li><strong>In transit:</strong> TLS 1.3 across all connections.</li>
+    <li><strong>At rest:</strong> AES-256 encryption in the primary database and object storage.</li>
+    <li><strong>Passwords:</strong> hashed with Argon2id (memory-hard); never stored or logged in plaintext.</li>
+  </ul>
+
+  <h2>Access control</h2>
+  <ul class="bare">
+    <li>Row-level security in the database scopes every record to its owning user / school.</li>
+    <li>Least-privilege staff access via SSO with multi-factor authentication; access reviewed quarterly.</li>
+    <li>Multi-factor authentication available to all users; SSO (Google Workspace / Microsoft 365) supported for annual school deployments.</li>
+    <li>Administrative actions are written to an append-only audit log.</li>
+  </ul>
+
+  <h2>Application security</h2>
+  <ul class="bare">
+    <li>Per-request Content-Security-Policy with a fresh nonce; HSTS; X-Frame-Options DENY; X-Content-Type-Options nosniff; strict Referrer-Policy; Cross-Origin-Opener-Policy and Cross-Origin-Resource-Policy set to same-origin.</li>
+    <li>Rate limiting on authentication and sensitive endpoints (via Upstash Redis in the serverless runtime).</li>
+    <li>Account-enumeration defences on signup and login.</li>
+    <li>Cloudflare WAF + protective network layer at the edge.</li>
+    <li>Session tokens are high-entropy, rotated, and expire.</li>
+  </ul>
+
+  <h2>AI boundary controls</h2>
+  <ul class="bare">
+    <li>Essay text is sent to the AI sub-processor under <strong>opaque identifiers</strong> — no name, email, date of birth or school crosses the AI boundary.</li>
+    <li>Outbound payloads are minimised to the essay free-text, the question, and the exam board + year.</li>
+    <li>API keys are scoped and rotatable; every AI request is logged for audit.</li>
+    <li>Contractual position: no training on submissions (counter-signed AI DPA + written zero-retention confirmation being finalised with counsel — see Document 03).</li>
+  </ul>
+
+  <h2>Monitoring and resilience</h2>
+  <ul class="bare">
+    <li>Error and performance monitoring via Sentry with PII scrubbed from payloads before send.</li>
+    <li>Managed database with point-in-time recovery; object storage redundancy at the provider level.</li>
+    <li>Infrastructure hosted on Supabase (EU primary database), Microsoft Azure UK South (backend), and Vercel (front end) — all enterprise-grade providers with their own SOC 2 / ISO posture.</li>
+  </ul>
+
+  <h2>Organisational measures</h2>
+  <ul class="bare">
+    <li>Data Protection Officer appointed (Calum Johnson, dpo@theenglishhub.app).</li>
+    <li>Designated Safeguarding Lead appointed separately (Lauren Johnson, safeguarding@theenglishhub.app).</li>
+    <li>Records of Processing Activities maintained (UK GDPR Article 30).</li>
+    <li>Three Data Protection Impact Assessments on file (children's data, AI features, analytics).</li>
+    <li>Documented breach-response runbook with a 72-hour notification target.</li>
+    <li>Sub-processor register reviewed quarterly and on any material change.</li>
+  </ul>
+
+  <h2>Breach response</h2>
+  <p>On becoming aware of a personal data breach affecting a school's data, we
+  notify the school without undue delay and within <strong>72 hours</strong>,
+  with the information needed for the school's own notifications to the ICO and
+  (for Qatar-resident data) the NCGAA. The full runbook and a pre-filled NCGAA
+  notification template are held internally and available to your DPO on
+  request.</p>
+
+  <h2>Certification roadmap (honest status)</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>ICO registration (UK)</td><td><strong>Held</strong> — ZC016690, verifiable on the ICO public register</td></tr>
+      <tr><td>UK GDPR / DPA 2018 compliance posture</td><td><strong>In force</strong> — RoPA, DPIAs, DPO appointed</td></tr>
+      <tr><td>ICO Children's Code high-privacy defaults</td><td><strong>In force</strong> — enforced in code, strict test coverage</td></tr>
+      <tr><td>ISO/IEC 27001</td><td>Not certified — targeted late 2026</td></tr>
+      <tr><td>Cyber Essentials / Cyber Essentials Plus</td><td>Baseline in preparation — not yet certified</td></tr>
+      <tr><td>NCSA NIA certification (Qatar)</td><td>Not pursued — deferred until commercially warranted</td></tr>
+    </tbody>
+  </table>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 04 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Sub-processor Register</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell shell--wide">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 03</div>
+    <h1 class="doc-title">Sub-processor Register</h1>
+    <p class="doc-subtitle">The single source of truth — every third party that may process personal data, what they do, where, and the status of their data-processing agreement.</p>
+    <p class="doc-meta">Reconciled against the codebase 2026-05-17 · status shown honestly</p>
+  </header>
+
+  <p class="lead">
+    This register is the reconciled union of every provider referenced anywhere
+    on the platform. The DPA-status column is deliberately honest: "pending"
+    means a standard or clickwrap DPA exists and counter-signature is being
+    formalised; "in finalisation" means the written agreement is being closed
+    with counsel and is not yet evidenced. We do not upgrade a status without
+    the paperwork in hand.
+  </p>
+
+  <h2>Infrastructure (always active)</h2>
+  <table>
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Data</th><th>Region</th><th>DPA status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Supabase</strong></td><td>Authentication, primary database, row-level-secured storage</td><td>Account identifiers, authentication data, learning progress, essay submissions at rest</td><td>EU / UK</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Microsoft Azure</strong></td><td>Backend API processing</td><td>Request payloads in transit, technical metadata</td><td>UK South</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Vercel</strong></td><td>Application hosting + edge delivery</td><td>IP address, request logs, technical metadata</td><td>US / global edge</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Cloudflare</strong></td><td>Global edge, DNS, protective network layer</td><td>IP address, request metadata (ephemeral; no PII stored)</td><td>Global edge</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Stripe</strong></td><td>Payment processing + subscription billing</td><td>Billing identifiers, card data (sent directly to Stripe). Under-18 accounts cannot enter payment data.</td><td>EU / US</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Sentry</strong></td><td>Error and performance monitoring</td><td>Error context, technical metadata, IP address (scrubbed payloads)</td><td>EU / US</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Transactional email provider</strong> (Resend / Postmark)</td><td>Transactional email delivery</td><td>Email address, transactional email content</td><td>US</td><td>In finalisation — provider being confirmed</td></tr>
+    </tbody>
+  </table>
+
+  <h2>AI sub-processor (the high-risk entry)</h2>
+  <table>
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Data sent</th><th>Region</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Anthropic (Claude)</strong><br><span class="small">model claude-sonnet-4</span></td>
+        <td>AI-assisted essay marking, predicted-grade estimate, essay feedback, CEFR assessment, study-material generation</td>
+        <td>Learner essay free-text, question text, exam board + year. <strong>No name, email, date of birth or school is sent.</strong></td>
+        <td>US</td>
+        <td>DPA + written no-training / zero-retention confirmation <strong>in finalisation with counsel</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--accent">
+    <div class="callout-title">Honest note on the AI sub-processor</div>
+    <p>Anthropic is the only LLM provider the platform calls (code-verified —
+    there is no OpenAI or other model integration). Our contractual position is
+    that submissions are <strong>not</strong> used to train models, and we apply
+    strong data-minimisation at the AI boundary (no directly identifying fields
+    are sent). The counter-signed AI data-processing agreement and the written
+    zero-retention confirmation are being finalised with counsel; until those
+    are in hand we describe this as "in finalisation" rather than claiming more.
+    We will share both with your DPO once closed.</p>
+  </div>
+
+  <h2>Analytics &amp; growth (consent-gated — only active if the user opts in)</h2>
+  <table>
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Data</th><th>Region</th><th>DPA status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Vercel Analytics &amp; Speed Insights</strong></td><td>Aggregate web performance / Core Web Vitals</td><td>Aggregate page performance, coarse device/route metadata</td><td>US</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>PostHog</strong></td><td>Product analytics (event-level)</td><td>Product events, pseudonymous distinct id</td><td>EU / US</td><td>In finalisation — being confirmed live</td></tr>
+      <tr><td><strong>Google Analytics 4</strong></td><td>Aggregate usage analytics</td><td>Usage events, pseudonymous client id (IP truncated)</td><td>US</td><td>Pending counter-signature</td></tr>
+      <tr><td><strong>Rewardful</strong></td><td>Affiliate referral attribution</td><td>Referral attribution metadata</td><td>US</td><td>Pending counter-signature</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--sage">
+    <div class="callout-title">For schools specifically</div>
+    <p>The consent-gated analytics and growth tools above are <strong>off by
+    default for every under-18 account</strong> under the Children's Code
+    high-privacy defaults. In a school deployment, the providers that touch
+    student data are the infrastructure set (Supabase, Azure, Vercel, Cloudflare,
+    Sentry, the email provider) plus the AI sub-processor (Anthropic) — all
+    under data minimisation. Stripe is engaged only where an adult makes a
+    payment; under-18 accounts cannot enter payment data.</p>
+  </div>
+
+  <h2>Change notification</h2>
+  <p>We notify controllers of any intended addition or replacement of a
+  sub-processor before it goes live, giving the opportunity to object. The
+  current live register is also published at
+  <a href="https://theenglishhub.app/data-processing">theenglishhub.app/data-processing</a>
+  and is updated within 30 days of any material change.</p>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 03 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

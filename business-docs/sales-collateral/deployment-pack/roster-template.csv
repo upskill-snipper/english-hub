@@ -1,0 +1,4 @@
+first_name,last_name,email,year_group,exam_board,date_of_birth,parent_guardian_email,class
+Aisha,Al-Thani,aisha.althani@school.edu.qa,Year 11,Edexcel,2010-09-14,parent1@example.com,11-Set-1
+James,Okoro,james.okoro@school.edu.qa,Year 11,Edexcel,2010-04-02,parent2@example.com,11-Set-1
+Lena,Hoffmann,lena.hoffmann@school.edu.qa,Year 10,AQA,2011-11-20,parent3@example.com,10-Set-2

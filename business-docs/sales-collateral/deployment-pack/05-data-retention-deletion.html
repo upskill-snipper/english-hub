@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Data Retention &amp; Deletion Schedule</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 05</div>
+    <h1 class="doc-title">Data Retention &amp; Deletion Schedule</h1>
+    <p class="doc-subtitle">How long each category of data is kept, and what happens at the end of an engagement.</p>
+  </header>
+
+  <h2>Retention by data category</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Retention</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Account &amp; identity (name, email, year group, DOB/age)</td><td>Active account + 24 months from last login, then anonymised</td><td>Contract; dormancy purge</td></tr>
+      <tr><td>Essay submissions &amp; marking feedback</td><td>Active enrolment + 24 months; per-essay delete from the dashboard at any time</td><td>Contract; service delivery</td></tr>
+      <tr><td>Parental consent records (consent ledger)</td><td>Lifetime of the child account + 7 years (evidentiary), then deletion</td><td>Legal obligation; safeguarding evidence</td></tr>
+      <tr><td>Payment &amp; billing records</td><td>7 years from transaction</td><td>Legal obligation (tax)</td></tr>
+      <tr><td>Technical / usage data</td><td>12 months from collection</td><td>Legitimate interest; minimised</td></tr>
+      <tr><td>AI interaction data (our side)</td><td>Stored alongside the essay for the essay's retention period; anonymised thereafter</td><td>Service delivery</td></tr>
+      <tr><td>Error-monitoring data (Sentry)</td><td>90 days</td><td>Legitimate interest (debugging)</td></tr>
+      <tr><td>Transactional email metadata</td><td>~45 days at the provider; body not retained beyond delivery</td><td>Service delivery</td></tr>
+      <tr><td>Data-subject-rights request files</td><td>3 years from closure</td><td>Legal obligation (accountability)</td></tr>
+      <tr><td>Communication records (support)</td><td>3 years from last interaction</td><td>Legitimate interest</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">AI sub-processor side</div>
+    <p>Essay text sent to the AI sub-processor carries no directly identifying
+    fields. Our contractual position is zero retention and no training on
+    submissions; the written confirmation is being finalised with counsel (see
+    Document 03). When closed, this row will state the confirmed AI-side
+    retention explicitly.</p>
+  </div>
+
+  <h2>Deletion on request</h2>
+  <ul class="bare">
+    <li>A student or parent can delete the account in one click from the privacy dashboard.</li>
+    <li>Deletion removes personal data within <strong>30 days</strong>, with backup eviction completing within <strong>90 days</strong>.</li>
+    <li>For children's accounts, deletion includes consent-ledger entries beyond the evidentiary minimum, on guardian request.</li>
+  </ul>
+
+  <h2>End of a school engagement — the exit pack</h2>
+  <p>On termination or expiry of a pilot or annual deployment, at the school's
+  choice we will either return or delete the school's student personal data.
+  On request, we provide a <strong>48-hour exit pack</strong>:</p>
+  <ul class="bare">
+    <li>A full export of the school's student data in a structured, machine-readable format.</li>
+    <li>Written confirmation of deletion once the school confirms it has its export.</li>
+    <li>An audit certificate recording what was deleted and when.</li>
+  </ul>
+
+  <h2>Backups</h2>
+  <p>Operational backups are retained on a rolling short window for disaster
+  recovery and are evicted on the 90-day cycle above. Backups are encrypted at
+  rest and are not used for any purpose other than recovery.</p>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 05 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

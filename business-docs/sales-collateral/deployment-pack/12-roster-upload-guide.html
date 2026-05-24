@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — Student Roster Upload Guide</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand">
+    <span class="brand-mark">EH</span>
+    <span class="brand-name">The English Hub</span>
+  </div>
+
+  <header class="doc-header">
+    <div class="doc-eyebrow">Deployment pack · Document 12</div>
+    <h1 class="doc-title">Student Roster Upload Guide</h1>
+    <p class="doc-subtitle">How to prepare and upload your pilot cohort — about 10 minutes.</p>
+    <p class="doc-meta">Use the template file <code>roster-template.csv</code> in this pack</p>
+  </header>
+
+  <h2>What we need (and what we don't)</h2>
+  <p>The platform follows data-minimisation: we ask only for what is needed to
+  create accounts and route students to the right content. <strong>Do not</strong>
+  include home addresses, medical information, SEND flags, or any data beyond the
+  columns below.</p>
+
+  <h2>The columns</h2>
+  <table>
+    <thead><tr><th>Column</th><th>Required?</th><th>Example</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><code>first_name</code></td><td>Yes</td><td>Aisha</td><td>—</td></tr>
+      <tr><td><code>last_name</code></td><td>Yes</td><td>Al-Thani</td><td>—</td></tr>
+      <tr><td><code>email</code></td><td>Yes</td><td>aisha.althani@school.edu.qa</td><td>School email preferred</td></tr>
+      <tr><td><code>year_group</code></td><td>Yes</td><td>Year 11</td><td>Year 7–13</td></tr>
+      <tr><td><code>exam_board</code></td><td>Recommended</td><td>Edexcel</td><td>AQA / Edexcel / OCR / Eduqas / WJEC / Cambridge</td></tr>
+      <tr><td><code>date_of_birth</code></td><td>For under-16s</td><td>2010-09-14</td><td>YYYY-MM-DD; drives the age-gate &amp; parental-consent flow</td></tr>
+      <tr><td><code>parent_guardian_email</code></td><td>For under-16s</td><td>parent@example.com</td><td>Used for the consent loop + weekly progress email</td></tr>
+      <tr><td><code>class</code></td><td>Optional</td><td>11-Set-1</td><td>If provided, we auto-create class groupings</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Example rows</h2>
+  <pre>first_name,last_name,email,year_group,exam_board,date_of_birth,parent_guardian_email,class
+Aisha,Al-Thani,aisha.althani@school.edu.qa,Year 11,Edexcel,2010-09-14,parent1@example.com,11-Set-1
+James,Okoro,james.okoro@school.edu.qa,Year 11,Edexcel,2010-04-02,parent2@example.com,11-Set-1
+Lena,Hoffmann,lena.hoffmann@school.edu.qa,Year 10,AQA,2011-11-20,parent3@example.com,10-Set-2</pre>
+
+  <h2>How to upload</h2>
+  <ol>
+    <li>Open <code>roster-template.csv</code> from this pack in Excel or Google Sheets.</li>
+    <li>Fill one row per student. Keep the header row exactly as provided.</li>
+    <li>Save as CSV (UTF-8).</li>
+    <li>At the Week-1 kickoff, we upload it together — or send it ahead via the secure link we provide (do not email a student roster as a plain attachment).</li>
+    <li>Accounts activate automatically; under-16 accounts wait for the parental-consent loop to complete before going live.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">Already have a Management Information System?</div>
+    <p>For annual deployments above ~500 students we can take a one-way export
+    from iSAMS, Engage, Bromcom or Arbor instead of a manual CSV. For a pilot,
+    the CSV is simplest and avoids an integration dependency.</p>
+  </div>
+
+  <div class="callout callout--accent">
+    <div class="callout-title">Sending the roster securely</div>
+    <p>A student roster is personal data. Please don't email it as a plain
+    attachment. We provide a secure upload link, or we upload it together on the
+    kickoff screen-share. The file is processed under the DPA (Document 02) and
+    retained per the schedule (Document 05).</p>
+  </div>
+
+  <footer class="doc-footer">
+    <p><strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    Document 12 of the deployment pack · <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
