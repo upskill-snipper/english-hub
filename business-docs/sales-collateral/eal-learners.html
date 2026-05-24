@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The English Hub — English for EAL Learners</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600&family=Geist:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap');
+    :root{--cream-50:#FBF7F0;--cream-100:#F5EFE4;--cream-200:#ECE2CF;--cream-300:#DECEB0;--ink-500:#6C736D;--ink-600:#4A524C;--ink-700:#303832;--ink-950:#0F1411;--teal-500:#357D77;--teal-700:#1D524E;--teal-800:#163F3C;--clay-500:#C65A33;--clay-600:#AD4A28;--ochre-500:#D4A021;--sage-500:#6B8A6B;--serif:'Newsreader',Georgia,serif;--sans:'Geist',-apple-system,'Segoe UI',sans-serif;--ar:'Noto Naskh Arabic',serif;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--sans);background:var(--cream-50);color:var(--ink-950);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    .shell{max-width:760px;margin:0 auto;padding:48px 36px 72px;}
+    .brand{display:flex;align-items:center;gap:10px;margin-bottom:28px;}
+    .mark{width:34px;height:34px;border-radius:8px;background:var(--teal-800);color:var(--cream-50);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:19px;font-weight:500;}
+    .brand-name{font-family:var(--serif);font-size:19px;font-weight:500;}
+
+    .hero{text-align:center;border-bottom:1px solid var(--cream-200);padding-bottom:32px;margin-bottom:40px;}
+    .eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal-700);margin-bottom:14px;}
+    h1{font-family:var(--serif);font-size:46px;font-weight:500;letter-spacing:-0.02em;line-height:1.08;margin-bottom:10px;}
+    .ar-sub{font-family:var(--ar);font-size:20px;color:var(--clay-600);margin-bottom:16px;direction:rtl;}
+    .hero p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink-600);max-width:560px;margin:0 auto;line-height:1.45;}
+
+    h2{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-0.015em;margin:44px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--cream-200);}
+    h3{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--teal-800);margin:28px 0 8px;}
+    p{margin:0 0 16px;}
+    p.lead{font-family:var(--serif);font-size:18px;color:var(--ink-700);line-height:1.55;margin-bottom:28px;}
+    strong{color:var(--ink-950);font-weight:600;}
+
+    ul.bare{list-style:none;padding:0;}
+    ul.bare li{position:relative;padding-left:24px;margin:10px 0;}
+    ul.bare li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--clay-500);}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0;}
+    .card{background:#fff;border:1px solid var(--cream-200);border-radius:12px;padding:22px;box-shadow:0 2px 8px rgba(15,20,17,0.04);}
+    .card.accent{border-left:3px solid var(--clay-500);}
+    .card h4{font-family:var(--sans);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-600);margin-bottom:8px;}
+    .card p{font-size:13.5px;margin:0;color:var(--ink-700);}
+
+    .example{background:var(--cream-100);border-radius:10px;padding:18px 22px;margin:18px 0;}
+    .example .x{color:var(--clay-600);font-weight:600;}
+    .example .y{color:var(--sage-600);font-weight:600;}
+    .example .row{margin:6px 0;font-size:15px;}
+    .example .ar{font-family:var(--ar);direction:rtl;color:var(--ink-600);font-size:14px;}
+
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;}
+    .stat{background:#fff;border:1px solid var(--cream-200);border-radius:12px;padding:18px;text-align:center;}
+    .stat .v{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--teal-800);line-height:1;}
+    .stat .l{font-size:12px;color:var(--ink-600);margin-top:8px;line-height:1.35;}
+
+    .levels{display:flex;gap:10px;margin:22px 0;flex-wrap:wrap;}
+    .lvl{flex:1;min-width:120px;background:#fff;border:1px solid var(--cream-200);border-top:3px solid var(--teal-700);border-radius:10px;padding:14px;}
+    .lvl:nth-child(2){border-top-color:var(--sage-500);}
+    .lvl:nth-child(3){border-top-color:var(--ochre-500);}
+    .lvl:nth-child(4){border-top-color:var(--clay-500);}
+    .lvl .code{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink-950);}
+    .lvl .d{font-size:11.5px;color:var(--ink-600);margin-top:4px;line-height:1.35;}
+
+    .callout{background:var(--cream-100);border-left:3px solid var(--teal-700);border-radius:8px;padding:18px 22px;margin:24px 0;font-size:14px;}
+    .callout.ochre{border-left-color:var(--ochre-500);background:#FBF6E5;}
+    .ctitle{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-600);margin-bottom:6px;}
+
+    .cta{background:var(--teal-800);color:var(--cream-50);border-radius:12px;padding:26px;margin-top:36px;}
+    .cta h3{color:var(--cream-50);margin-top:0;}
+    .cta a{color:var(--ochre-500);text-decoration:none;font-weight:600;}
+    .cta ul{color:var(--cream-50);}
+
+    .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--cream-200);text-align:center;font-size:12px;color:var(--ink-500);line-height:1.6;}
+
+    a{color:var(--teal-700);text-decoration:none;font-weight:600;}
+
+    @media print{@page{size:A4 portrait;margin:14mm;}body{background:#fff;}.shell{padding:0;max-width:none;}.card,.example,.callout,.stat,.lvl,.cta{break-inside:avoid;}h2,h3{break-after:avoid;}}
+    @media (max-width:720px){.grid2,.stat-row{grid-template-columns:1fr;}.shell{padding:32px 20px;}h1{font-size:34px;}}
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="brand"><span class="mark">EH</span><span class="brand-name">The English Hub</span></div>
+
+  <div class="hero">
+    <div class="eyebrow">English as an Additional Language</div>
+    <h1>English that makes sense when your first language is Arabic</h1>
+    <div class="ar-sub">دعم منظَّم لمتعلّمي الإنجليزية كلغة إضافية</div>
+    <p>Structured English support for EAL learners — built especially for
+    Arabic-L1 students in GCC and international schools, within the UK
+    GCSE / IGCSE framework.</p>
+  </div>
+
+  <p class="lead">
+    When your first language is Arabic, English is hard in <em>specific</em>,
+    predictable ways — and almost none of them are about ability. Arabic has no
+    "a/an". It uses ال differently from "the". Word order, tenses and
+    prepositions map across differently. The English Hub teaches around exactly
+    those patterns, in English and Arabic, so the language finally clicks.
+  </p>
+
+  <h2>Why English trips up Arabic speakers</h2>
+  <p>These are the most common transfer points — the places where Arabic and
+  English work differently. They are learnable rules, not mistakes about
+  intelligence:</p>
+
+  <div class="example">
+    <div class="row"><span class="x">✗ "I bought book yesterday."</span> &nbsp; <span class="y">✓ "I bought <strong>a</strong> book yesterday."</span></div>
+    <div class="ar">العربي ما عنده أداة تنكير — في الإنجليزي كل اسم مفرد معدود يحتاج a / an / the.</div>
+  </div>
+
+  <ul class="bare">
+    <li><strong>Articles (a / an / the):</strong> the single biggest grammar gap for Arabic speakers — Arabic has no indefinite article and uses ال differently from English "the".</li>
+    <li><strong>Word order:</strong> moving comfortably to English subject–verb–object patterns.</li>
+    <li><strong>Tenses:</strong> present perfect and the past simple / continuous / perfect, which don't map one-to-one from Arabic.</li>
+    <li><strong>Prepositions</strong> (in / on / at), <strong>subject–verb agreement</strong>, <strong>plurals and uncountable nouns</strong>, and <strong>phrasal verbs</strong> (get up, look after, give in).</li>
+  </ul>
+
+  <h2>What the platform does for you</h2>
+
+  <div class="grid2">
+    <div class="card accent">
+      <h4>Find your level — free</h4>
+      <p>A free CEFR placement test works out where you are and routes you to the
+      right lessons, from A2 up to C1. No guessing where to start.</p>
+    </div>
+    <div class="card accent">
+      <h4>Lessons in English and Arabic</h4>
+      <p>Every concept is explained in clear English with an Arabic explanation
+      alongside it — so a tricky rule like articles or tenses is explained in the
+      language you think in.</p>
+    </div>
+    <div class="card accent">
+      <h4>Built around Arabic-L1 errors</h4>
+      <p>Lessons name the exact transfer errors Arabic speakers make and show how
+      to fix them — instead of generic "English for everyone" content.</p>
+    </div>
+    <div class="card accent">
+      <h4>Feedback that understands you</h4>
+      <p>AI writing and speaking feedback is tuned to Arabic speakers, so you
+      learn from genuine errors rather than being marked down unfairly for the way
+      Arabic structures sentences. It supports teacher judgement — it doesn't
+      replace it.</p>
+    </div>
+    <div class="card accent">
+      <h4>Practice that doesn't feel like a textbook</h4>
+      <p>18+ interactive games with instant feedback turn vocabulary, tenses and
+      word order into something you actually want to keep doing.</p>
+    </div>
+    <div class="card accent">
+      <h4>Mock exams at every level</h4>
+      <p>Timed mock exams at A2, B1, B2 and C1 let you measure real progress and
+      build exam confidence under proper conditions.</p>
+    </div>
+  </div>
+
+  <h2>The levels — from A2 to C1</h2>
+  <p>Lessons and mock exams are organised on the international CEFR scale. The
+  placement test puts you in the right place; you move up as you improve.</p>
+
+  <div class="levels">
+    <div class="lvl"><div class="code">A2</div><div class="d">Elementary — everyday English, building the foundations</div></div>
+    <div class="lvl"><div class="code">B1</div><div class="d">Intermediate — handling familiar topics with growing confidence</div></div>
+    <div class="lvl"><div class="code">B2</div><div class="d">Upper-intermediate — the level most IGCSE work expects</div></div>
+    <div class="lvl"><div class="code">C1</div><div class="d">Advanced — fluent, precise, exam-ready English</div></div>
+  </div>
+
+  <h2>What you can work on</h2>
+  <div class="stat-row">
+    <div class="stat"><div class="v">10</div><div class="l">Core grammar &amp; vocabulary topics built for Arabic L1</div></div>
+    <div class="stat"><div class="v">18+</div><div class="l">Interactive games with instant feedback</div></div>
+    <div class="stat"><div class="v">A2–C1</div><div class="l">Placement test + mock exams across four levels</div></div>
+  </div>
+
+  <p>Topics span sentence structure (word order, capitals and punctuation),
+  grammar (articles, present perfect, past tenses, subject–verb agreement,
+  plurals and uncountable nouns, prepositions), vocabulary (phrasal verbs), and
+  a dedicated focus on common Arabic-speaker transfer errors — all inside the UK
+  GCSE / IGCSE framework, so EAL work builds directly towards exam readiness.</p>
+
+  <div class="callout ochre">
+    <div class="ctitle">For parents</div>
+    <p>Your child gets structured support that meets them at their real level,
+    explains English in Arabic where it helps, and builds towards their GCSE /
+    IGCSE. You receive a weekly progress summary — and we never share the text of
+    your child's work. The platform follows the UK Children's Code: high-privacy
+    settings on by default, no advertising to children.</p>
+  </div>
+
+  <div class="callout">
+    <div class="ctitle">For schools</div>
+    <p>Give your EAL cohort — particularly Arabic-L1 students — targeted support
+    that fits alongside mainstream English teaching. Teachers see where students
+    are on the CEFR scale, what they're struggling with, and how they're
+    progressing, while AI feedback handles the volume of practice marking. Ask us
+    about a school pilot.</p>
+  </div>
+
+  <div class="cta">
+    <h3>Start where you are</h3>
+    <p>Take the free placement test, get your level, and open your first lesson
+    in minutes.</p>
+    <ul class="bare" style="margin-top:8px">
+      <li style="color:var(--cream-50)">Visit <a href="https://theenglishhub.app/eal">theenglishhub.app/eal</a> and start the free test</li>
+      <li style="color:var(--cream-50)">Schools &amp; parents: <a href="mailto:dpo@theenglishhub.app">dpo@theenglishhub.app</a></li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <strong>The English Hub</strong> — Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England &amp; Wales<br>
+    AI feedback supports learning and teacher judgement; it does not replace professional assessment. · theenglishhub.app
+  </div>
+
+</div>
+</body>
+</html>
