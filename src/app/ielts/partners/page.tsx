@@ -21,6 +21,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 // ─── /ielts/partners — partnerships & institutional overview ────────────────
 // SEO landing page for schools, exam centres and education agencies considering
@@ -37,45 +38,45 @@ import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 
 const CONTACT_HREF = '/contact'
 
-// What partnering with us puts in front of learners. Original copy — these
-// describe the existing IELTS platform (the Wave 1 learning loop) packaged for
-// institutional delivery.
+// Static, non-textual config for each section. Visible copy is resolved from
+// the dictionary (ielts.partners.overview.*) at render time so it is bilingual.
+// Icons + accents stay here; titleKey/bodyKey point at dictionary entries.
 const OFFERINGS = [
   {
     icon: Users2,
     accent: 'border-l-teal-500/60',
-    title: 'Bulk learner access',
-    body: 'Onboard a cohort in one step and assign the full IELTS Academic learning loop — diagnostic, study plan, four-skill practice and mock tests — to every learner under one agreement.',
+    titleKey: 'ielts.partners.overview.offer.bulk.title',
+    bodyKey: 'ielts.partners.overview.offer.bulk.body',
   },
   {
     icon: LayoutDashboard,
     accent: 'border-l-sage-500/60',
-    title: 'A centre dashboard',
-    body: 'Track starting bands, practice volume and predicted overall bands across your cohort, so coordinators can see who is on track and who needs a nudge before test day.',
+    titleKey: 'ielts.partners.overview.offer.dashboard.title',
+    bodyKey: 'ielts.partners.overview.offer.dashboard.body',
   },
   {
     icon: Languages,
     accent: 'border-l-ochre-500/60',
-    title: 'Bilingual English / Arabic',
-    body: 'Every learner-facing screen works in English or Arabic, so instructions never get in the way of the practice for Gulf students building towards an English-medium future.',
+    titleKey: 'ielts.partners.overview.offer.bilingual.title',
+    bodyKey: 'ielts.partners.overview.offer.bilingual.body',
   },
   {
     icon: Sparkles,
     accent: 'border-l-clay-500/60',
-    title: 'Instant AI band feedback',
-    body: 'Writing and Speaking responses are scored against the official band descriptors in seconds, with targeted next steps — extending your teachers rather than replacing them.',
+    titleKey: 'ielts.partners.overview.offer.feedback.title',
+    bodyKey: 'ielts.partners.overview.offer.feedback.body',
   },
   {
     icon: LineChart,
     accent: 'border-l-teal-500/60',
-    title: 'Progress you can report on',
-    body: 'Per-skill bands and trend lines give you the evidence to show learners, parents and stakeholders how preparation is translating into measurable gains.',
+    titleKey: 'ielts.partners.overview.offer.progress.title',
+    bodyKey: 'ielts.partners.overview.offer.progress.body',
   },
   {
     icon: ClipboardCheck,
     accent: 'border-l-sage-500/60',
-    title: 'Full, timed mock tests',
-    body: 'Learners sit complete Academic mocks under exam conditions, so the jump to the real test feels familiar — and your centre gets a defensible predicted band.',
+    titleKey: 'ielts.partners.overview.offer.mocks.title',
+    bodyKey: 'ielts.partners.overview.offer.mocks.body',
   },
 ]
 
@@ -85,29 +86,29 @@ const AUDIENCES = [
   {
     icon: Building2,
     accent: 'teal' as const,
-    label: 'Schools & colleges',
-    headline: 'IELTS for sixth forms and international schools',
-    body: 'Add a structured, AI-marked IELTS pathway alongside your existing English provision — ideal for GCC schools preparing students for English-medium universities.',
+    labelKey: 'ielts.partners.overview.audience.schools.label',
+    headlineKey: 'ielts.partners.overview.audience.schools.headline',
+    bodyKey: 'ielts.partners.overview.audience.schools.body',
     href: '/ielts/partners/for-schools',
-    cta: 'For schools',
+    ctaKey: 'ielts.partners.overview.audience.schools.cta',
   },
   {
     icon: GraduationCap,
     accent: 'ochre' as const,
-    label: 'Exam-prep centres',
-    headline: 'A platform behind your tutors',
-    body: 'Give your teaching team automatic marking, ready-made practice and cohort analytics so they can spend their hours on teaching, not admin.',
+    labelKey: 'ielts.partners.overview.audience.centres.label',
+    headlineKey: 'ielts.partners.overview.audience.centres.headline',
+    bodyKey: 'ielts.partners.overview.audience.centres.body',
     href: '/ielts/partners/for-schools',
-    cta: 'For centres',
+    ctaKey: 'ielts.partners.overview.audience.centres.cta',
   },
   {
     icon: Briefcase,
     accent: 'sage' as const,
-    label: 'Education agencies',
-    headline: 'Get applicants test-ready',
-    body: 'Help the students you place reach the band their destination requires, and show universities the evidence behind every application.',
+    labelKey: 'ielts.partners.overview.audience.agencies.label',
+    headlineKey: 'ielts.partners.overview.audience.agencies.headline',
+    bodyKey: 'ielts.partners.overview.audience.agencies.body',
     href: '/ielts/partners/for-agencies',
-    cta: 'For agencies',
+    ctaKey: 'ielts.partners.overview.audience.agencies.cta',
   },
 ]
 
@@ -116,18 +117,18 @@ const AUDIENCES = [
 const ROADMAP = [
   {
     icon: ShieldCheck,
-    title: 'British Council UK Agent Hub',
-    body: 'We are working towards the standards set out by the British Council UK Agent Hub and intend to pursue certification, so partner agencies can have confidence in how we operate.',
+    titleKey: 'ielts.partners.overview.roadmap.bc.title',
+    bodyKey: 'ielts.partners.overview.roadmap.bc.body',
   },
   {
     icon: Compass,
-    title: 'IELTS Partnership Programme',
-    body: 'We are aligning our preparation content and assessment practice with official IELTS criteria and intend to apply to the IELTS Partnership Programme as the platform matures.',
+    titleKey: 'ielts.partners.overview.roadmap.ipp.title',
+    bodyKey: 'ielts.partners.overview.roadmap.ipp.body',
   },
   {
     icon: GraduationCap,
-    title: 'UK university recruitment relationships',
-    body: 'We are pursuing relationships with UK universities and their recruitment teams, with the goal of supporting applicants through a recognised, standards-aligned preparation route.',
+    titleKey: 'ielts.partners.overview.roadmap.uni.title',
+    bodyKey: 'ielts.partners.overview.roadmap.uni.body',
   },
 ]
 
@@ -135,21 +136,24 @@ const ROADMAP = [
 const WHY = [
   {
     icon: Sparkles,
-    title: 'Feedback that used to need a tutor',
-    body: 'AI band scoring on every Writing and Speaking attempt means learners improve between lessons, not only during them.',
+    titleKey: 'ielts.partners.overview.why.feedback.title',
+    bodyKey: 'ielts.partners.overview.why.feedback.body',
   },
   {
     icon: Languages,
-    title: 'Built bilingual for Gulf learners',
-    body: 'English / Arabic throughout — purpose-built for the schools, centres and agencies we work with across the Gulf.',
+    titleKey: 'ielts.partners.overview.why.bilingual.title',
+    bodyKey: 'ielts.partners.overview.why.bilingual.body',
   },
   {
     icon: Layers,
-    title: 'A complete, repeatable loop',
-    body: 'Diagnose, plan, practise, get feedback, mock, predict — one loop your learners run until they hit their target band.',
+    titleKey: 'ielts.partners.overview.why.loop.title',
+    bodyKey: 'ielts.partners.overview.why.loop.body',
   },
 ]
 
+// JSON-LD source — kept English (structured data, not visible UI). This page
+// has no visible FAQ accordion; the bilingual ielts.partners.overview.faq.*
+// keys exist in the dictionary for parity with the per-audience pages.
 const FAQS = [
   {
     question: 'Is The English Hub an official British Council or IELTS partner?',
@@ -183,7 +187,45 @@ const FAQS = [
   },
 ]
 
-export default function IeltsPartnersPage() {
+export default async function IeltsPartnersPage() {
+  // Resolve every visible string up front (locale read once per t()).
+  const offerings = await Promise.all(
+    OFFERINGS.map(async (o) => ({
+      icon: o.icon,
+      accent: o.accent,
+      title: await t(o.titleKey),
+      body: await t(o.bodyKey),
+    })),
+  )
+  const audiences = await Promise.all(
+    AUDIENCES.map(async (a) => ({
+      icon: a.icon,
+      accent: a.accent,
+      href: a.href,
+      label: await t(a.labelKey),
+      headline: await t(a.headlineKey),
+      body: await t(a.bodyKey),
+      cta: await t(a.ctaKey),
+    })),
+  )
+  const why = await Promise.all(
+    WHY.map(async (w) => ({
+      icon: w.icon,
+      title: await t(w.titleKey),
+      body: await t(w.bodyKey),
+    })),
+  )
+  const roadmap = await Promise.all(
+    ROADMAP.map(async (r) => ({
+      icon: r.icon,
+      title: await t(r.titleKey),
+      body: await t(r.bodyKey),
+    })),
+  )
+  // Resolved once — same "Pursuing" badge on every roadmap row (can't await
+  // inside the .map() callback below).
+  const roadmapBadge = await t('ielts.partners.overview.roadmap.badge')
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -207,15 +249,13 @@ export default function IeltsPartnersPage() {
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-clay-500">
-            Partnerships
+            {await t('ielts.partners.overview.hero.eyebrow')}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            Bring AI-marked IELTS preparation to your learners
+            {await t('ielts.partners.overview.hero.h1')}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            The English Hub is an IELTS Academic preparation platform built for schools, exam-prep
-            centres and education agencies — with bulk access, a centre dashboard, bilingual English
-            / Arabic delivery and instant AI band feedback.
+            {await t('ielts.partners.overview.hero.lede')}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
@@ -223,7 +263,7 @@ export default function IeltsPartnersPage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href={CONTACT_HREF} />}
             >
-              Talk to us about partnering
+              {await t('ielts.partners.overview.hero.cta_primary')}
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
@@ -232,15 +272,15 @@ export default function IeltsPartnersPage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href="/ielts" />}
             >
-              Explore the IELTS platform
+              {await t('ielts.partners.overview.hero.cta_secondary')}
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {[
-              'Schools & colleges',
-              'Exam-prep centres',
-              'Education agencies',
-              'English / العربية',
+              await t('ielts.partners.overview.hero.pill_schools'),
+              await t('ielts.partners.overview.hero.pill_centres'),
+              await t('ielts.partners.overview.hero.pill_agencies'),
+              await t('ielts.partners.overview.hero.pill_bilingual'),
             ].map((l) => (
               <span
                 key={l}
@@ -258,21 +298,20 @@ export default function IeltsPartnersPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              What partners get
+              {await t('ielts.partners.overview.offer.eyebrow')}
             </p>
             <h2
               id="offer-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              A complete IELTS preparation platform, ready for your cohort
+              {await t('ielts.partners.overview.offer.heading')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Everything in the Wave 1 learning loop, packaged for institutional delivery — so your
-              learners practise the whole Academic test and you can see how they are progressing.
+              {await t('ielts.partners.overview.offer.lede')}
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {OFFERINGS.map(({ icon: Icon, accent, title, body }) => (
+            {offerings.map(({ icon: Icon, accent, title, body }) => (
               <Card
                 key={title}
                 className={`flex flex-col gap-4 border-l-4 ${accent} border-border/50 bg-card p-6`}
@@ -295,17 +334,17 @@ export default function IeltsPartnersPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-              Who we work with
+              {await t('ielts.partners.overview.audience.eyebrow')}
             </p>
             <h2
               id="audience-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Built for the institutions preparing IELTS candidates
+              {await t('ielts.partners.overview.audience.heading')}
             </h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {AUDIENCES.map(({ icon: Icon, accent, label, headline, body, href, cta }) => (
+            {audiences.map(({ icon: Icon, accent, label, headline, body, href, cta }) => (
               <GlassPanel key={headline} accent={accent} className="flex flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   <PanelEyebrow>{label}</PanelEyebrow>
@@ -341,17 +380,17 @@ export default function IeltsPartnersPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Why The English Hub
+            {await t('ielts.partners.overview.why.eyebrow')}
           </p>
           <h2
             id="why-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            A preparation partner that extends your team
+            {await t('ielts.partners.overview.why.heading')}
           </h2>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-3">
-          {WHY.map(({ icon: Icon, title, body }) => (
+          {why.map(({ icon: Icon, title, body }) => (
             <div
               key={title}
               className="rounded-2xl border border-border/60 bg-card p-6 shadow-soft"
@@ -371,26 +410,26 @@ export default function IeltsPartnersPage() {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-              Our roadmap
+              {await t('ielts.partners.overview.roadmap.eyebrow')}
             </p>
             <h2
               id="roadmap-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              The standards we are building towards
+              {await t('ielts.partners.overview.roadmap.heading')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              We hold ourselves to recognised standards as we grow. The accreditations and
-              relationships below are routes we are actively pursuing — not affiliations we
-              currently hold.
+              {await t('ielts.partners.overview.roadmap.lede')}
             </p>
           </div>
 
           <div className="mt-10">
             <GlassPanel accent="primary" className="p-6 sm:p-8">
-              <PanelEyebrow>Pursuing &amp; aligning to</PanelEyebrow>
+              <PanelEyebrow>
+                {await t('ielts.partners.overview.roadmap.panel_eyebrow')}
+              </PanelEyebrow>
               <ul className="mt-5 space-y-5">
-                {ROADMAP.map(({ icon: Icon, title, body }) => (
+                {roadmap.map(({ icon: Icon, title, body }) => (
                   <li key={title} className="flex items-start gap-4">
                     <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       <Icon className="h-5 w-5" aria-hidden />
@@ -404,7 +443,7 @@ export default function IeltsPartnersPage() {
                           variant="outline"
                           className="font-mono text-[10px] uppercase tracking-wide"
                         >
-                          Pursuing
+                          {roadmapBadge}
                         </Badge>
                       </div>
                       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{body}</p>
@@ -415,14 +454,10 @@ export default function IeltsPartnersPage() {
             </GlassPanel>
           </div>
 
-          {/* Explicit compliance caveat — required. */}
+          {/* Explicit compliance caveat — required. Translated in full (AR keeps
+              every "not currently…" disclaimer; see dictionary-ielts-partners.ts). */}
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
-            The English Hub is an independent IELTS preparation provider. We are not currently an
-            official British Council or IELTS partner, and we are not an accredited UCAS or
-            university recruitment agent. References to the British Council UK Agent Hub, the IELTS
-            Partnership Programme and university recruitment relationships describe standards we
-            align to and routes we are pursuing, and do not imply any existing affiliation,
-            accreditation or endorsement.
+            {await t('ielts.partners.overview.roadmap.caveat')}
           </p>
         </div>
       </section>
@@ -437,18 +472,16 @@ export default function IeltsPartnersPage() {
             id="cta-heading"
             className="mt-5 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Let&rsquo;s scope a pilot for your learners
+            {await t('ielts.partners.overview.cta.heading')}
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
-            Tell us about your school, centre or agency and the cohort you have in mind. We will
-            follow up to talk through access, the centre dashboard and a pilot that fits your
-            timeline.
+            {await t('ielts.partners.overview.cta.lede')}
           </p>
           <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-left text-sm text-muted-foreground">
             {[
-              'A walkthrough of the platform and centre dashboard',
-              'Bulk access and bilingual delivery for your cohort',
-              'A pilot scoped to your test-prep calendar',
+              await t('ielts.partners.overview.cta.bullet_walkthrough'),
+              await t('ielts.partners.overview.cta.bullet_bulk'),
+              await t('ielts.partners.overview.cta.bullet_pilot'),
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
@@ -462,7 +495,7 @@ export default function IeltsPartnersPage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href={CONTACT_HREF} />}
             >
-              Talk to us about partnering
+              {await t('ielts.partners.overview.cta.button')}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>

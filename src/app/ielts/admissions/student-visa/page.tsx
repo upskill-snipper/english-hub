@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 // ─── UK Student-visa basics — admissions sub-page (SEO) ──────────────────────
 // A focused, original overview of the UK Student visa for Gulf students who
@@ -19,86 +20,132 @@ import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 // information only — explicitly NOT immigration advice, and not affiliated with
 // UK Visas and Immigration. Every section points the reader to GOV.UK for the
 // authoritative, current rules.
+//
+// Bilingual (English + Khaleeji Arabic) via `await t('ielts.admissions.*')`;
+// keys live in src/lib/i18n/dictionary-ielts-admissions.ts. Strings are
+// resolved up-front so the visible UI and the FAQ/Breadcrumb JSON-LD carry the
+// active locale.
 // ────────────────────────────────────────────────────────────────────────────
 
-const STEPS: { title: string; body: string }[] = [
-  {
-    title: 'Accept an unconditional offer',
-    body: 'Your university confirms your place is secure — your grades and English-language condition (e.g. an IELTS band) are met. Until an offer is unconditional, you cannot get the document the visa needs.',
-  },
-  {
-    title: 'Receive your CAS',
-    body: 'The university issues a Confirmation of Acceptance for Studies (CAS): a reference number that links your visa application to your course. You usually request it once you are unconditional and have met the university’s own checks.',
-  },
-  {
-    title: 'Prepare your documents',
-    body: 'Gather your passport, the CAS, evidence of funds, and your English-language evidence. Some applicants also need a tuberculosis test certificate and academic transcripts — the exact list depends on your nationality and circumstances.',
-  },
-  {
-    title: 'Apply, pay and attend biometrics',
-    body: 'Apply online, pay the visa fee and the Immigration Health Surcharge, and provide biometrics. Apply in good time before your course starts — processing times vary by country and season.',
-  },
-]
+export default async function StudentVisaBasicsPage() {
+  const [
+    bcHome,
+    bcIelts,
+    bcAdmissions,
+    bcVisa,
+    back,
+    eyebrow,
+    title,
+    subtitle,
+    notice,
+    stepsEyebrow,
+    stepsTitle,
+    step1Title,
+    step1Body,
+    step2Title,
+    step2Body,
+    step3Title,
+    step3Body,
+    step4Title,
+    step4Body,
+    checklistEyebrow,
+    checklistTitle,
+    casLabel,
+    casDetail,
+    fundsLabel,
+    fundsDetail,
+    englishLabel,
+    englishDetail,
+    passportLabel,
+    passportDetail,
+    englishTitle,
+    englishBody,
+    englishButton,
+    faqEyebrow,
+    faqTitle,
+    faqQ1,
+    faqA1,
+    faqQ2,
+    faqA2,
+    faqQ3,
+    faqA3,
+    faqQ4,
+    faqA4,
+  ] = await Promise.all([
+    t('ielts.admissions.breadcrumb.home'),
+    t('ielts.admissions.breadcrumb.ielts'),
+    t('ielts.admissions.breadcrumb.admissions'),
+    t('ielts.admissions.breadcrumb.visa'),
+    t('ielts.admissions.visa.back'),
+    t('ielts.admissions.visa.eyebrow'),
+    t('ielts.admissions.visa.title'),
+    t('ielts.admissions.visa.subtitle'),
+    t('ielts.admissions.visa.notice'),
+    t('ielts.admissions.visa.steps.eyebrow'),
+    t('ielts.admissions.visa.steps.title'),
+    t('ielts.admissions.visa.step1.title'),
+    t('ielts.admissions.visa.step1.body'),
+    t('ielts.admissions.visa.step2.title'),
+    t('ielts.admissions.visa.step2.body'),
+    t('ielts.admissions.visa.step3.title'),
+    t('ielts.admissions.visa.step3.body'),
+    t('ielts.admissions.visa.step4.title'),
+    t('ielts.admissions.visa.step4.body'),
+    t('ielts.admissions.visa.checklist.eyebrow'),
+    t('ielts.admissions.visa.checklist.title'),
+    t('ielts.admissions.visa.checklist.cas.label'),
+    t('ielts.admissions.visa.checklist.cas.detail'),
+    t('ielts.admissions.visa.checklist.funds.label'),
+    t('ielts.admissions.visa.checklist.funds.detail'),
+    t('ielts.admissions.visa.checklist.english.label'),
+    t('ielts.admissions.visa.checklist.english.detail'),
+    t('ielts.admissions.visa.checklist.passport.label'),
+    t('ielts.admissions.visa.checklist.passport.detail'),
+    t('ielts.admissions.visa.english.title'),
+    t('ielts.admissions.visa.english.body'),
+    t('ielts.admissions.visa.english.button'),
+    t('ielts.admissions.visa.faq.eyebrow'),
+    t('ielts.admissions.visa.faq.title'),
+    t('ielts.admissions.visa.faq.q1'),
+    t('ielts.admissions.visa.faq.a1'),
+    t('ielts.admissions.visa.faq.q2'),
+    t('ielts.admissions.visa.faq.a2'),
+    t('ielts.admissions.visa.faq.q3'),
+    t('ielts.admissions.visa.faq.a3'),
+    t('ielts.admissions.visa.faq.q4'),
+    t('ielts.admissions.visa.faq.a4'),
+  ])
 
-const CHECKLIST: { icon: typeof FileCheck2; label: string; detail: string }[] = [
-  {
-    icon: FileCheck2,
-    label: 'Your CAS and accepted offer',
-    detail: 'The reference number from your university that ties the application to your course.',
-  },
-  {
-    icon: Banknote,
-    label: 'Evidence of funds',
-    detail:
-      'Proof you can pay your course fees and living costs for a set period, held for the required number of days before you apply.',
-  },
-  {
-    icon: Languages,
-    label: 'Approved English-language evidence',
-    detail:
-      'Often an IELTS qualification — frequently the IELTS for UKVI variant — unless your course or nationality exempts you. Check which test and score the route requires.',
-  },
-  {
-    icon: BadgeCheck,
-    label: 'Passport and personal documents',
-    detail:
-      'A valid passport plus any additional documents (e.g. a TB test certificate) that apply to your country.',
-  },
-]
+  const STEPS: { title: string; body: string }[] = [
+    { title: step1Title, body: step1Body },
+    { title: step2Title, body: step2Body },
+    { title: step3Title, body: step3Body },
+    { title: step4Title, body: step4Body },
+  ]
 
-const FAQS: { question: string; answer: string }[] = [
-  {
-    question: 'Does my IELTS score matter for the visa as well as the offer?',
-    answer:
-      'It can. Universities use your IELTS band to make and confirm your offer, and the Student visa route also has an English-language requirement. Many courses ask for the IELTS for UKVI variant specifically, taken at an approved test centre. Confirm with your university and the official guidance which test and score you need for both the offer and the visa.',
-  },
-  {
-    question: 'When should I apply for the Student visa?',
-    answer:
-      'After you accept an unconditional offer and receive your CAS, and far enough ahead of your course start date to allow for processing, which varies by country and time of year. Applying early reduces stress and the risk of delays.',
-  },
-  {
-    question: 'How much money do I need to show?',
-    answer:
-      'You generally need to evidence your tuition fees plus living costs for a defined period, held for a set number of days before you apply. The exact figures are set by the UK government and updated periodically — always check the current amounts on GOV.UK and confirm with your university.',
-  },
-  {
-    question: 'Is this immigration advice?',
-    answer:
-      'No. The English Hub is an independent study-preparation platform and is not affiliated with UK Visas and Immigration. This page is general information to help you prepare and ask the right questions. For decisions about your application, rely on the official GOV.UK guidance and your university’s international student office.',
-  },
-]
+  const CHECKLIST: { icon: typeof FileCheck2; label: string; detail: string }[] = [
+    { icon: FileCheck2, label: casLabel, detail: casDetail },
+    { icon: Banknote, label: fundsLabel, detail: fundsDetail },
+    { icon: Languages, label: englishLabel, detail: englishDetail },
+    { icon: BadgeCheck, label: passportLabel, detail: passportDetail },
+  ]
 
-export default function StudentVisaBasicsPage() {
+  const FAQS: { question: string; answer: string }[] = [
+    { question: faqQ1, answer: faqA1 },
+    { question: faqQ2, answer: faqA2 },
+    { question: faqQ3, answer: faqA3 },
+    { question: faqQ4, answer: faqA4 },
+  ]
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IELTS', url: 'https://theenglishhub.app/ielts' },
-          { name: 'UK University Admissions', url: 'https://theenglishhub.app/ielts/admissions' },
+          { name: bcHome, url: 'https://theenglishhub.app' },
+          { name: bcIelts, url: 'https://theenglishhub.app/ielts' },
+          { name: bcAdmissions, url: 'https://theenglishhub.app/ielts/admissions' },
           {
-            name: 'Student-visa basics',
+            name: bcVisa,
             url: 'https://theenglishhub.app/ielts/admissions/student-visa',
           },
         ]}
@@ -113,47 +160,42 @@ export default function StudentVisaBasicsPage() {
           render={<Link href="/ielts/admissions" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to UK admissions
+          {back}
         </Button>
 
         {/* Hero */}
         <section className="mt-4 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-emerald-500/[0.05] p-6 sm:p-10">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
             <Plane className="size-3.5" />
-            After your offer
+            {eyebrow}
           </span>
           <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            UK Student-visa basics for Gulf students
+            {title}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A plain-English overview of how the UK Student visa fits into your journey — what you
-            need, when to apply, and how your IELTS result connects to it. Use it to prepare and to
-            plan your timing; rely on GOV.UK and your university for the authoritative rules.
+            {subtitle}
           </p>
         </section>
 
         {/* Important notice */}
         <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-5">
           <ShieldAlert className="mt-0.5 size-5 shrink-0 text-amber-500" aria-hidden />
-          <p className="text-sm leading-relaxed text-foreground">
-            <strong>This is general information, not immigration advice.</strong> The English Hub is
-            independent and not affiliated with UK Visas and Immigration. Immigration rules and
-            financial thresholds change and depend on your personal circumstances — always confirm
-            the current requirements on the official UK government website and with your
-            university’s international office.
-          </p>
+          <p
+            className="text-sm leading-relaxed text-foreground"
+            dangerouslySetInnerHTML={{ __html: notice }}
+          />
         </div>
 
         {/* Steps */}
         <section aria-labelledby="steps-heading" className="mt-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-            The sequence
+            {stepsEyebrow}
           </p>
           <h2
             id="steps-heading"
             className="mt-3 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
           >
-            From offer to visa, in four steps
+            {stepsTitle}
           </h2>
           <ol className="mt-8 space-y-4">
             {STEPS.map((step, i) => (
@@ -176,13 +218,13 @@ export default function StudentVisaBasicsPage() {
         {/* Checklist */}
         <section aria-labelledby="checklist-heading" className="mt-16">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-            What you typically need
+            {checklistEyebrow}
           </p>
           <h2
             id="checklist-heading"
             className="mt-3 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
           >
-            A starting checklist
+            {checklistTitle}
           </h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {CHECKLIST.map(({ icon: Icon, label, detail }) => (
@@ -201,17 +243,13 @@ export default function StudentVisaBasicsPage() {
         <section className="mt-16 rounded-2xl border border-primary/20 bg-primary/[0.04] p-6 sm:p-8">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-serif text-xl font-semibold text-foreground">
-                Make sure your English meets both bars
-              </h2>
+              <h2 className="font-serif text-xl font-semibold text-foreground">{englishTitle}</h2>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Your IELTS band has to satisfy your university’s offer and the visa route’s
-                English-language requirement. Practise the Academic module and check where you stand
-                with an instant AI-predicted band.
+                {englishBody}
               </p>
             </div>
             <Button render={<Link href="/ielts" />} className="shrink-0">
-              Practise IELTS
+              {englishButton}
               <ArrowRight className="size-4" />
             </Button>
           </div>
@@ -220,13 +258,13 @@ export default function StudentVisaBasicsPage() {
         {/* FAQ */}
         <section aria-labelledby="faq-heading" className="mt-16">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-            Common questions
+            {faqEyebrow}
           </p>
           <h2
             id="faq-heading"
             className="mt-3 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
           >
-            Student-visa FAQ
+            {faqTitle}
           </h2>
           <div className="mt-8 space-y-3">
             {FAQS.map((faq) => (

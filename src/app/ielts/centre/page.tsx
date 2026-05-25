@@ -20,6 +20,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
+import { t } from '@/lib/i18n/t'
 import { overallBand, bandColour, bandBgColour, bandLabel, bandTier } from '@/lib/ielts/bands'
 import { IELTS_SKILLS, SKILL_META, type Band, type IeltsSkill } from '@/lib/ielts/types'
 
@@ -31,6 +32,23 @@ const SKILL_ICON: Record<IeltsSkill, typeof Headphones> = {
   reading: BookOpen,
   writing: PenLine,
   speaking: Mic,
+}
+
+// Per-skill labels reuse the shared, already-translated IELTS keys
+// (ielts.skill.*) rather than duplicating them in the centre shard.
+const SKILL_LABEL_KEY: Record<IeltsSkill, string> = {
+  listening: 'ielts.skill.listening',
+  reading: 'ielts.skill.reading',
+  writing: 'ielts.skill.writing',
+  speaking: 'ielts.skill.speaking',
+}
+
+// Resolve the four skill labels once for the active locale.
+async function skillLabels(): Promise<Record<IeltsSkill, string>> {
+  const [listening, reading, writing, speaking] = await Promise.all(
+    IELTS_SKILLS.map((skill) => t(SKILL_LABEL_KEY[skill])),
+  )
+  return { listening, reading, writing, speaking }
 }
 
 // 0–9 / 0.5-step union guard for Float bands read off the DB.
@@ -177,6 +195,15 @@ export default async function IeltsCentrePage() {
     IELTS_SKILLS.some((skill) => s.perSkillBands[skill] !== null),
   )
 
+  const labels = await skillLabels()
+  const [aboutTitle, aboutBody, rosterHeading, noData, unavailable] = await Promise.all([
+    t('ielts.centre.about.title'),
+    t('ielts.centre.about.body'),
+    t('ielts.centre.roster.heading'),
+    t('ielts.centre.roster.no_data'),
+    t('ielts.centre.roster.unavailable'),
+  ])
+
   return (
     <main id="main-content" className="min-h-screen bg-background">
       <CentreHeader />
@@ -189,15 +216,8 @@ export default async function IeltsCentrePage() {
               <Info className="h-5 w-5 text-primary" aria-hidden />
             </span>
             <div>
-              <h2 className="font-serif text-lg font-semibold text-foreground">
-                Monitor your IELTS learners
-              </h2>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                This private dashboard is for IELTS centres, tutors and schools. It shows the latest
-                band each of your linked students has reached in Listening, Reading, Writing and
-                Speaking, plus their overall band. Bands are estimates from practice and update as
-                students complete more attempts.
-              </p>
+              <h2 className="font-serif text-lg font-semibold text-foreground">{aboutTitle}</h2>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{aboutBody}</p>
             </div>
           </div>
         </section>
@@ -210,31 +230,26 @@ export default async function IeltsCentrePage() {
             <div className="flex items-center justify-between">
               <h2 className="flex items-center gap-2 font-serif text-xl font-medium">
                 <Users className="h-5 w-5 text-muted-foreground" aria-hidden />
-                Linked students
+                {rosterHeading}
                 <span className="font-mono text-sm text-muted-foreground">({students.length})</span>
               </h2>
             </div>
 
             {!anyBands ? (
               <div className="rounded-xl border border-dashed border-border bg-muted/20 px-5 py-4">
-                <p className="text-sm text-muted-foreground">
-                  No data yet — bands appear here once your students practise.
-                </p>
+                <p className="text-sm text-muted-foreground">{noData}</p>
               </div>
             ) : null}
 
             {attemptsUnavailable ? (
               <div className="rounded-xl border border-dashed border-amber-500/30 bg-amber-500/[0.06] px-5 py-4">
-                <p className="text-sm text-muted-foreground">
-                  Band data is temporarily unavailable. Your students are listed below; their bands
-                  will appear once the connection is restored.
-                </p>
+                <p className="text-sm text-muted-foreground">{unavailable}</p>
               </div>
             ) : null}
 
             {/* Desktop: table. Mobile: stacked cards. */}
-            <StudentTable students={students} />
-            <StudentCards students={students} />
+            <StudentTable students={students} labels={labels} />
+            <StudentCards students={students} labels={labels} />
           </section>
         )}
       </div>
@@ -244,7 +259,12 @@ export default async function IeltsCentrePage() {
 
 // ─── Header ─────────────────────────────────────────────────────────────────
 
-function CentreHeader() {
+async function CentreHeader() {
+  const [back, title, subtitle] = await Promise.all([
+    t('ielts.centre.back'),
+    t('ielts.centre.title'),
+    t('ielts.centre.subtitle'),
+  ])
   return (
     <section className="border-b border-border bg-card">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
@@ -253,19 +273,15 @@ function CentreHeader() {
           className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to IELTS
+          {back}
         </Link>
         <div className="flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
             <Building2 className="h-6 w-6 text-primary" aria-hidden />
           </span>
           <div>
-            <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-              IELTS Centre Dashboard
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              Latest bands for the learners linked to your account.
-            </p>
+            <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">{title}</h1>
+            <p className="text-sm text-muted-foreground">{subtitle}</p>
           </div>
         </div>
       </div>
@@ -275,7 +291,11 @@ function CentreHeader() {
 
 // ─── Empty: no linked students ──────────────────────────────────────────────
 
-function EmptyNoStudents() {
+async function EmptyNoStudents() {
+  const [title, body] = await Promise.all([
+    t('ielts.centre.empty.title'),
+    t('ielts.centre.empty.body'),
+  ])
   return (
     <section>
       <div className="rounded-2xl border border-border bg-card p-10 text-center shadow-soft">
@@ -283,12 +303,9 @@ function EmptyNoStudents() {
           <Users className="h-7 w-7 text-primary" aria-hidden />
         </span>
         <h2 className="mt-5 font-serif text-2xl font-semibold tracking-tight text-foreground">
-          No students linked yet
+          {title}
         </h2>
-        <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted-foreground">
-          Once learners are linked to your account, their latest IELTS bands across all four skills
-          will appear here. No data yet — bands appear once students practise.
-        </p>
+        <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted-foreground">{body}</p>
       </div>
     </section>
   )
@@ -296,24 +313,39 @@ function EmptyNoStudents() {
 
 // ─── Desktop table ──────────────────────────────────────────────────────────
 
-function StudentTable({ students }: { students: CentreStudent[] }) {
+async function StudentTable({
+  students,
+  labels,
+}: {
+  students: CentreStudent[]
+  labels: Record<IeltsSkill, string>
+}) {
+  const [studentCol, overallCol, lastActiveCol] = await Promise.all([
+    t('ielts.centre.col.student'),
+    t('ielts.centre.col.overall'),
+    t('ielts.centre.col.last_active'),
+  ])
   return (
     <div className="hidden overflow-hidden rounded-2xl border border-border bg-card shadow-soft md:block">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border text-left">
-            <th className="px-5 py-3 font-medium text-muted-foreground">Student</th>
+            <th className="px-5 py-3 font-medium text-muted-foreground">{studentCol}</th>
             {IELTS_SKILLS.map((skill) => (
               <th
                 key={skill}
                 className="px-3 py-3 text-center font-medium text-muted-foreground"
-                title={SKILL_META[skill].label}
+                title={labels[skill]}
               >
-                <span className="inline-flex items-center gap-1.5">{SKILL_META[skill].label}</span>
+                <span className="inline-flex items-center gap-1.5">{labels[skill]}</span>
               </th>
             ))}
-            <th className="px-3 py-3 text-center font-medium text-muted-foreground">Overall</th>
-            <th className="px-5 py-3 text-right font-medium text-muted-foreground">Last active</th>
+            <th className="px-3 py-3 text-center font-medium text-muted-foreground">
+              {overallCol}
+            </th>
+            <th className="px-5 py-3 text-right font-medium text-muted-foreground">
+              {lastActiveCol}
+            </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-border">
@@ -363,7 +395,17 @@ function StudentTable({ students }: { students: CentreStudent[] }) {
 
 // ─── Mobile cards ───────────────────────────────────────────────────────────
 
-function StudentCards({ students }: { students: CentreStudent[] }) {
+async function StudentCards({
+  students,
+  labels,
+}: {
+  students: CentreStudent[]
+  labels: Record<IeltsSkill, string>
+}) {
+  const [overallLabel, lastActiveLabel] = await Promise.all([
+    t('ielts.centre.col.overall'),
+    t('ielts.centre.card.last_active'),
+  ])
   return (
     <div className="space-y-3 md:hidden">
       {students.map((s) => (
@@ -376,13 +418,13 @@ function StudentCards({ students }: { students: CentreStudent[] }) {
               <div className="min-w-0">
                 <p className="truncate font-medium text-foreground">{s.name}</p>
                 <p className="font-mono text-[11px] text-muted-foreground">
-                  Last active {formatDate(s.lastActive)}
+                  {lastActiveLabel} {formatDate(s.lastActive)}
                 </p>
               </div>
             </div>
             <div className="shrink-0 text-right">
               <p className="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
-                Overall
+                {overallLabel}
               </p>
               <p
                 className={cn(
@@ -407,7 +449,7 @@ function StudentCards({ students }: { students: CentreStudent[] }) {
                 >
                   <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <Icon className={cn('h-3.5 w-3.5', SKILL_META[skill].colour)} aria-hidden />
-                    {SKILL_META[skill].label}
+                    {labels[skill]}
                   </span>
                   <span
                     className={cn(

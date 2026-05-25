@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 // ─── /ielts/partners/for-schools ───────────────────────────────────────────
 // Focused B2B landing page for GCC schools, sixth forms and exam-prep centres
@@ -29,82 +30,86 @@ import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 const CONTACT_HREF = '/contact'
 
 // Pressures a school/centre coordinator feels when standing up IELTS provision.
+// Icons + accents only; visible copy resolved from ielts.partners.schools.*.
 const CHALLENGES = [
   {
     icon: Clock,
     accent: 'border-l-clay-500/50',
-    body: 'Marking IELTS Writing and Speaking by hand is slow, so learners wait days for the feedback that would actually move their band.',
+    bodyKey: 'ielts.partners.schools.challenge.marking',
   },
   {
     icon: LineChart,
     accent: 'border-l-ochre-500/50',
-    body: 'Without per-skill data it is hard to know which students are on track for their target band and which need an intervention now.',
+    bodyKey: 'ielts.partners.schools.challenge.data',
   },
   {
     icon: Languages,
     accent: 'border-l-teal-500/50',
-    body: 'English-only resources add a comprehension barrier for Arabic-speaking learners who are still building academic English.',
+    bodyKey: 'ielts.partners.schools.challenge.barrier',
   },
   {
     icon: ClipboardCheck,
     accent: 'border-l-sage-500/50',
-    body: 'Sourcing enough exam-style practice and full mocks for a whole cohort is a constant drain on teacher time.',
+    bodyKey: 'ielts.partners.schools.challenge.materials',
   },
 ]
 
-// What the school/centre gets. Original copy, grounded in the existing loop.
+// What the school/centre gets.
 const FEATURES = [
   {
     icon: Users2,
-    title: 'Onboard a whole cohort',
-    body: 'Assign the full IELTS Academic learning loop — diagnostic, plan, four-skill practice and mocks — to every student under a single agreement.',
+    titleKey: 'ielts.partners.schools.features.cohort.title',
+    bodyKey: 'ielts.partners.schools.features.cohort.body',
   },
   {
     icon: Sparkles,
-    title: 'Instant AI band feedback',
-    body: 'Writing and Speaking are scored against the official descriptors in seconds, with concrete next steps your teachers can build a lesson around.',
+    titleKey: 'ielts.partners.schools.features.feedback.title',
+    bodyKey: 'ielts.partners.schools.features.feedback.body',
   },
   {
     icon: LayoutDashboard,
-    title: 'A coordinator dashboard',
-    body: 'See starting bands, practice activity and predicted overall bands across the cohort — so you spot the students who need support before test day.',
+    titleKey: 'ielts.partners.schools.features.dashboard.title',
+    bodyKey: 'ielts.partners.schools.features.dashboard.body',
   },
   {
     icon: Languages,
-    title: 'Bilingual English / Arabic',
-    body: 'Every learner screen works in English or Arabic, removing the language barrier so Gulf students can focus on the IELTS skill itself.',
+    titleKey: 'ielts.partners.schools.features.bilingual.title',
+    bodyKey: 'ielts.partners.schools.features.bilingual.body',
   },
   {
     icon: ClipboardCheck,
-    title: 'Ready-made practice & mocks',
-    body: 'Original Academic passages, tasks and full timed mock tests mean your team spends its hours teaching, not building materials.',
+    titleKey: 'ielts.partners.schools.features.practice.title',
+    bodyKey: 'ielts.partners.schools.features.practice.body',
   },
   {
     icon: Target,
-    title: 'Evidence for stakeholders',
-    body: 'Per-skill bands and trend lines give you a defensible story to share with learners, parents and leadership about progress towards target bands.',
+    titleKey: 'ielts.partners.schools.features.evidence.title',
+    bodyKey: 'ielts.partners.schools.features.evidence.body',
   },
 ]
 
 // Concrete use cases — how schools/centres actually deploy it.
 const USE_CASES = [
   {
-    label: 'Sixth form / Year 12–13',
-    headline: 'A university-entry IELTS pathway',
-    body: 'Run a structured IELTS strand alongside your curriculum for students heading to English-medium universities, with predicted bands you can reference in references.',
+    labelKey: 'ielts.partners.schools.usecase.sixthform.label',
+    headlineKey: 'ielts.partners.schools.usecase.sixthform.headline',
+    bodyKey: 'ielts.partners.schools.usecase.sixthform.body',
   },
   {
-    label: 'International school',
-    headline: 'English-medium readiness',
-    body: 'Support EAL and bilingual students towards the band their next stage requires, with practice that works in the language they are most comfortable navigating.',
+    labelKey: 'ielts.partners.schools.usecase.intl.label',
+    headlineKey: 'ielts.partners.schools.usecase.intl.headline',
+    bodyKey: 'ielts.partners.schools.usecase.intl.body',
   },
   {
-    label: 'Exam-prep centre',
-    headline: 'A platform behind your tutors',
-    body: 'Hand your teaching team automatic marking, cohort analytics and a deep bank of practice, so every contact hour goes further.',
+    labelKey: 'ielts.partners.schools.usecase.centre.label',
+    headlineKey: 'ielts.partners.schools.usecase.centre.headline',
+    bodyKey: 'ielts.partners.schools.usecase.centre.body',
   },
 ]
 
+// JSON-LD source — kept English (structured data, not visible UI). No visible
+// FAQ accordion renders on this page; the bilingual ielts.partners.schools.faq.*
+// keys exist in the dictionary for parity.
 const FAQS = [
   {
     question: 'How do students access the platform?',
@@ -128,7 +133,29 @@ const FAQS = [
   },
 ]
 
-export default function IeltsPartnersForSchoolsPage() {
+export default async function IeltsPartnersForSchoolsPage() {
+  const challenges = await Promise.all(
+    CHALLENGES.map(async (c) => ({
+      icon: c.icon,
+      accent: c.accent,
+      body: await t(c.bodyKey),
+    })),
+  )
+  const features = await Promise.all(
+    FEATURES.map(async (f) => ({
+      icon: f.icon,
+      title: await t(f.titleKey),
+      body: await t(f.bodyKey),
+    })),
+  )
+  const useCases = await Promise.all(
+    USE_CASES.map(async (u) => ({
+      label: await t(u.labelKey),
+      headline: await t(u.headlineKey),
+      body: await t(u.bodyKey),
+    })),
+  )
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -150,15 +177,13 @@ export default function IeltsPartnersForSchoolsPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-clay-500">
             <Building2 className="h-3.5 w-3.5" aria-hidden />
-            For schools &amp; exam centres
+            {await t('ielts.partners.schools.hero.eyebrow')}
           </p>
           <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            An IELTS pathway your department can run with confidence
+            {await t('ielts.partners.schools.hero.h1')}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Give your students AI-marked IELTS Academic preparation, give your teachers their time
-            back, and give your coordinators a clear view of who is on track — bilingual in English
-            and Arabic throughout.
+            {await t('ielts.partners.schools.hero.lede')}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
@@ -166,7 +191,7 @@ export default function IeltsPartnersForSchoolsPage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href={CONTACT_HREF} />}
             >
-              Book a pilot conversation
+              {await t('ielts.partners.schools.hero.cta_primary')}
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
@@ -175,7 +200,7 @@ export default function IeltsPartnersForSchoolsPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/ielts/partners" />}
             >
-              All partnership options
+              {await t('ielts.partners.schools.hero.cta_secondary')}
             </Button>
           </div>
         </div>
@@ -186,17 +211,17 @@ export default function IeltsPartnersForSchoolsPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              The challenge
+              {await t('ielts.partners.schools.challenge.eyebrow')}
             </p>
             <h2
               id="challenge-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Standing up IELTS provision is hard work
+              {await t('ielts.partners.schools.challenge.heading')}
             </h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {CHALLENGES.map(({ icon: Icon, accent, body }) => (
+            {challenges.map(({ icon: Icon, accent, body }) => (
               <Card
                 key={body}
                 className={`flex items-start gap-4 border-l-4 ${accent} border-border/50 bg-card p-5 sm:p-6`}
@@ -216,17 +241,17 @@ export default function IeltsPartnersForSchoolsPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-              What your school gets
+              {await t('ielts.partners.schools.features.eyebrow')}
             </p>
             <h2
               id="features-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              The whole IELTS loop, run for your cohort
+              {await t('ielts.partners.schools.features.heading')}
             </h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURES.map(({ icon: Icon, title, body }) => (
+            {features.map(({ icon: Icon, title, body }) => (
               <div
                 key={title}
                 className="rounded-2xl border border-border/60 bg-card p-6 shadow-soft"
@@ -249,17 +274,17 @@ export default function IeltsPartnersForSchoolsPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            How schools use it
+            {await t('ielts.partners.schools.usecase.eyebrow')}
           </p>
           <h2
             id="usecase-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Three ways to deploy the platform
+            {await t('ielts.partners.schools.usecase.heading')}
           </h2>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-3">
-          {USE_CASES.map(({ label, headline, body }, i) => (
+          {useCases.map(({ label, headline, body }, i) => (
             <GlassPanel
               key={headline}
               accent={(['teal', 'ochre', 'sage'] as const)[i]}
@@ -282,17 +307,16 @@ export default function IeltsPartnersForSchoolsPage() {
             id="cta-heading"
             className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Bring IELTS preparation to your students
+            {await t('ielts.partners.schools.cta.heading')}
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
-            Tell us about your cohort and timeline, and we will scope a pilot that fits your
-            department.
+            {await t('ielts.partners.schools.cta.lede')}
           </p>
           <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-left text-sm text-muted-foreground">
             {[
-              'A platform and dashboard walkthrough for coordinators',
-              'Bulk access and bilingual delivery for your cohort',
-              'A pilot scoped to your test-prep calendar',
+              await t('ielts.partners.schools.cta.bullet_walkthrough'),
+              await t('ielts.partners.schools.cta.bullet_bulk'),
+              await t('ielts.partners.schools.cta.bullet_pilot'),
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
@@ -306,7 +330,7 @@ export default function IeltsPartnersForSchoolsPage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href={CONTACT_HREF} />}
             >
-              Book a pilot conversation
+              {await t('ielts.partners.schools.cta.button')}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>

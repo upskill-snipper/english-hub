@@ -88,6 +88,10 @@ import { IELTS_WRITING_DICTIONARY } from './dictionary-ielts-writing'
 import { IELTS_SPEAKING_DICTIONARY } from './dictionary-ielts-speaking'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from './dictionary-ielts-diagnostic'
 import { IELTS_HUBPROGRESS_DICTIONARY } from './dictionary-ielts-hubprogress'
+// 2026-05-25: IELTS bilingual shards (Wave 2 — admissions, partners, centre).
+import { IELTS_ADMISSIONS_DICTIONARY } from './dictionary-ielts-admissions'
+import { IELTS_PARTNERS_DICTIONARY } from './dictionary-ielts-partners'
+import { IELTS_CENTRE_DICTIONARY } from './dictionary-ielts-centre'
 
 export type Locale = 'en' | 'ar'
 
@@ -14887,6 +14891,9 @@ export function lookup(key: string, locale: Locale): string {
     IELTS_SPEAKING_DICTIONARY[key] ??
     IELTS_DIAGNOSTIC_DICTIONARY[key] ??
     IELTS_HUBPROGRESS_DICTIONARY[key] ??
+    IELTS_ADMISSIONS_DICTIONARY[key] ??
+    IELTS_PARTNERS_DICTIONARY[key] ??
+    IELTS_CENTRE_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
