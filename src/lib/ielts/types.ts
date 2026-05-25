@@ -7,6 +7,10 @@
 
 export type IeltsSkill = 'listening' | 'reading' | 'writing' | 'speaking'
 
+/** Academic vs General Training. Listening + Speaking are identical across both
+ *  tracks; only Reading + Writing differ. */
+export type IeltsTrack = 'academic' | 'general'
+
 export const IELTS_SKILLS: IeltsSkill[] = ['listening', 'reading', 'writing', 'speaking']
 
 export const SKILL_META: Record<
@@ -137,7 +141,7 @@ export interface ReadingPassage {
 export interface ReadingTest {
   id: string
   title: string
-  track: 'academic'
+  track: IeltsTrack
   passages: ReadingPassage[] // full Academic = 3 passages ≈ 40 Qs
   estimatedMinutes: number
 }
@@ -164,7 +168,7 @@ export interface ListeningTest {
 export interface WritingPrompt {
   id: string
   task: 'writing-task-1' | 'writing-task-2'
-  track: 'academic'
+  track: IeltsTrack
   title: string
   prompt: string // the question text
   imageSrc?: string // chart/graph for Task 1 (optional in Wave 1)

@@ -7,7 +7,7 @@
 // prediction. Always present predicted bands as estimates, never guarantees.
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { Band } from './types'
+import type { Band, IeltsTrack } from './types'
 
 // correct-out-of-40 → band. Read top-down; first threshold met wins.
 const READING_ACADEMIC: [number, Band][] = [
@@ -50,6 +50,29 @@ const LISTENING: [number, Band][] = [
   [0, 0],
 ]
 
+// General Training Reading boundaries (indicative). GT texts are easier, so more
+// correct answers are needed for the same band than Academic. Listening is the
+// same table for both tracks.
+const READING_GENERAL: [number, Band][] = [
+  [40, 9],
+  [39, 8.5],
+  [37, 8],
+  [36, 7.5],
+  [34, 7],
+  [32, 6.5],
+  [30, 6],
+  [27, 5.5],
+  [23, 5],
+  [19, 4.5],
+  [15, 4],
+  [12, 3.5],
+  [9, 3],
+  [6, 2.5],
+  [3, 2],
+  [1, 1],
+  [0, 0],
+]
+
 function lookup(table: [number, Band][], correctOutOf40: number): Band {
   for (const [threshold, band] of table) {
     if (correctOutOf40 >= threshold) return band
@@ -66,10 +89,12 @@ export function objectiveToBand(
   skill: 'listening' | 'reading',
   correct: number,
   total: number,
+  track: IeltsTrack = 'academic',
 ): Band {
   if (total <= 0) return 0
   const scaled = Math.round((Math.max(0, Math.min(correct, total)) / total) * 40)
-  return skill === 'listening' ? lookup(LISTENING, scaled) : lookup(READING_ACADEMIC, scaled)
+  if (skill === 'listening') return lookup(LISTENING, scaled)
+  return lookup(track === 'general' ? READING_GENERAL : READING_ACADEMIC, scaled)
 }
 
 const BAND_STEPS: Band[] = [
