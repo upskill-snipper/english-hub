@@ -225,4 +225,216 @@ Finally, a quick word about getting here. Parking on campus is expensive and spa
       },
     ],
   },
+  {
+    id: 'ls-academic-2',
+    title: 'Practice Test 2 — Booking a Walking Tour & A Talk on Urban Beekeeping',
+    estimatedMinutes: 15,
+    sections: [
+      {
+        id: 'ls-academic-2-s1',
+        title: 'Section 1 — Booking a guided walking tour',
+        // ~220 words. Transactional dialogue (Section 1 style): a customer phoning
+        // a tour company. A surname is spelled, a date and a price are dictated,
+        // and one detail (group size) depends on a stated choice, mirroring the
+        // form/note-completion + multiple-choice mix of a real Section 1.
+        transcript: `WOMAN: Good afternoon, Hillside Heritage Walks, Carla speaking.
+
+MAN: Hello, I'd like to book a place on one of your guided walking tours.
+
+WOMAN: Of course. May I take your name?
+
+MAN: Yes, it's Thomas Ridley. Ridley is R-I-D-L-E-Y.
+
+WOMAN: Thank you, Mr Ridley. Which tour were you interested in?
+
+MAN: The Old Harbour walk, if it's running this weekend.
+
+WOMAN: It is. We run that one on Saturday and Sunday. Which day would suit you?
+
+MAN: Let's say Saturday the fourteenth.
+
+WOMAN: Saturday the fourteenth, lovely. And how many people will be in your group?
+
+MAN: There'll be four of us in total.
+
+WOMAN: Right. The tour is twelve pounds per adult, but for groups of four or more there's a discount, so it comes to ten pounds each.
+
+MAN: That's good to know.
+
+WOMAN: The walk lasts about two hours, and it can be quite steep in places, so I'd recommend bringing comfortable shoes. We meet outside the old customs house at half past nine.
+
+MAN: Should we bring anything else?
+
+WOMAN: Just a bottle of water. And do arrive ten minutes early so the guide can check everyone in.
+
+MAN: Perfect, thank you very much.
+
+WOMAN: You're welcome. We'll see you on Saturday.`,
+        questions: [
+          {
+            id: 'ls-a2-s1-q1',
+            type: 'gap',
+            prompt:
+              'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
+            acceptableAnswers: ['Ridley', 'ridley'],
+            explanation:
+              'The caller gives his name as “Thomas Ridley” and spells the surname: R-I-D-L-E-Y. In Section 1, listen for the spelling and write the name letter by letter.',
+          },
+          {
+            id: 'ls-a2-s1-q2',
+            type: 'gap',
+            prompt: 'Tour booked: the ____________ walk. Write TWO WORDS.',
+            acceptableAnswers: ['Old Harbour', 'old harbour', 'old harbor'],
+            explanation:
+              'He asks for “The Old Harbour walk.” The answer is “Old Harbour” (the American spelling “harbor” is also accepted).',
+          },
+          {
+            id: 'ls-a2-s1-q3',
+            type: 'gap',
+            prompt: 'Date of tour: Saturday the ____________. Write A NUMBER.',
+            acceptableAnswers: ['14', 'fourteenth', '14th'],
+            explanation:
+              'He chooses “Saturday the fourteenth,” so the date is the 14th. Ordinal numbers said aloud (fourteenth) map to the digits 14.',
+          },
+          {
+            id: 'ls-a2-s1-q4',
+            type: 'gap',
+            prompt: 'Number of people in the group: ____________. Write A NUMBER.',
+            acceptableAnswers: ['4', 'four'],
+            explanation:
+              'He says “There’ll be four of us in total,” so the group size is 4. This number also triggers the discount in the next question — Section 1 details often connect.',
+          },
+          {
+            id: 'ls-a2-s1-q5',
+            type: 'mcq',
+            prompt: 'How much will each person in the man’s group pay?',
+            options: [
+              'Twelve pounds, the standard adult price',
+              'Ten pounds, because of the group discount',
+              'Twelve pounds, with water included',
+              'Ten pounds, because the walk is shorter',
+            ],
+            correctIndex: 1,
+            explanation:
+              'The standard price is twelve pounds, but “for groups of four or more there’s a discount, so it comes to ten pounds each.” Because his group has four people (Q4), they pay the discounted ten pounds. The distractors reuse the real prices but give the wrong reason.',
+          },
+          {
+            id: 'ls-a2-s1-q6',
+            type: 'gap',
+            prompt:
+              'The guide recommends bringing comfortable ____________ because the walk is steep. Write ONE WORD.',
+            acceptableAnswers: ['shoes', 'footwear'],
+            explanation:
+              'She says, “it can be quite steep in places, so I’d recommend bringing comfortable shoes.” The answer is “shoes” (footwear accepted as a synonym).',
+          },
+          {
+            id: 'ls-a2-s1-q7',
+            type: 'gap',
+            prompt:
+              'The group should meet outside the old ____________ at half past nine. Write TWO WORDS.',
+            acceptableAnswers: ['customs house', 'customs-house', 'custom house'],
+            explanation:
+              'She says, “We meet outside the old customs house at half past nine.” The meeting point is the “customs house”.',
+          },
+        ],
+      },
+      {
+        id: 'ls-academic-2-s2',
+        title: 'Section 2 — A talk on urban beekeeping',
+        // ~230 words. Informational monologue (Section 2 style): a single speaker
+        // introducing a community project. Uses sequencing/signpost language
+        // ("to begin", "next", "lastly") that the questions follow in order, with
+        // a sentence-completion + multiple-choice mix.
+        transcript: `Hello and thank you for coming along this evening. My name is Marcus, and I help run the Rooftop Bees project here in the city. I'd like to tell you a little about what we do and how you can get involved.
+
+To begin with, you might be surprised to hear that cities can be excellent places for bees. Parks, gardens and even window boxes provide a wide variety of flowers, and because they bloom at slightly different times, urban bees often enjoy a longer feeding season than those in the countryside, where a single crop may flower all at once and then disappear.
+
+Our project places small hives on the flat roofs of office buildings. The height keeps the bees well above street level, so they rarely trouble passers-by, and the warmth that rises from the building below helps the colony through cold nights. Each hive is checked once a week by a trained volunteer.
+
+Next, a word about the honey. We harvest it only once a year, in late summer, and I should stress that we never take all of it — the bees need a generous store to survive the winter. The honey we do collect is sold at local markets, and every penny is put back into running the project.
+
+Lastly, if you'd like to help, you don't need any experience. We run a free training course every spring, and after that you can join a team looking after one of the hives. There's a sign-up sheet at the back of the room. Thank you very much.`,
+        questions: [
+          {
+            id: 'ls-a2-s2-q8',
+            type: 'mcq',
+            prompt: 'According to the speaker, why can cities be good places for bees?',
+            options: [
+              'There are fewer predators than in the countryside.',
+              'A variety of flowers bloom at different times, lengthening the feeding season.',
+              'City temperatures are warmer all year round.',
+              'There is less competition from other insects.',
+            ],
+            correctIndex: 1,
+            explanation:
+              'He explains that parks, gardens and window boxes "bloom at slightly different times," so "urban bees often enjoy a longer feeding season" than countryside bees facing a single crop. Option B matches; the others are not stated.',
+          },
+          {
+            id: 'ls-a2-s2-q9',
+            type: 'gap',
+            prompt:
+              'The hives are placed on the flat ____________ of office buildings. Write ONE WORD.',
+            acceptableAnswers: ['roofs', 'rooftops', 'roof'],
+            explanation:
+              'He says the project "places small hives on the flat roofs of office buildings." The answer is “roofs”.',
+          },
+          {
+            id: 'ls-a2-s2-q10',
+            type: 'mcq',
+            prompt: 'What is one benefit of placing the hives high up on buildings?',
+            options: [
+              'The bees produce more honey at height.',
+              'The warmth from the building helps the colony on cold nights.',
+              'The hives are easier for volunteers to reach.',
+              'The bees can travel to the countryside more quickly.',
+            ],
+            correctIndex: 1,
+            explanation:
+              'He notes that "the warmth that rises from the building below helps the colony through cold nights." Option B is correct; the height is also said to keep bees away from passers-by, but that is a different benefit from the ones listed.',
+          },
+          {
+            id: 'ls-a2-s2-q11',
+            type: 'gap',
+            prompt:
+              'Each hive is checked once a ____________ by a trained volunteer. Write ONE WORD.',
+            acceptableAnswers: ['week'],
+            explanation:
+              'He states, “Each hive is checked once a week by a trained volunteer.” The answer is “week”.',
+          },
+          {
+            id: 'ls-a2-s2-q12',
+            type: 'mcq',
+            prompt: 'Why does the project never take all of the honey?',
+            options: [
+              'Because the honey is difficult to harvest in winter',
+              'Because the bees need a store to survive the winter',
+              'Because the markets only want a small amount',
+              'Because the volunteers keep some for themselves',
+            ],
+            correctIndex: 1,
+            explanation:
+              'He stresses, “we never take all of it — the bees need a generous store to survive the winter.” Option B captures the reason.',
+          },
+          {
+            id: 'ls-a2-s2-q13',
+            type: 'gap',
+            prompt:
+              'The honey is harvested only once a year, in late ____________. Write ONE WORD (a season).',
+            acceptableAnswers: ['summer'],
+            explanation:
+              'He says, “We harvest it only once a year, in late summer.” The answer is “summer”.',
+          },
+          {
+            id: 'ls-a2-s2-q14',
+            type: 'gap',
+            prompt:
+              'People who want to help can take a free training ____________ that runs every spring. Write ONE WORD.',
+            acceptableAnswers: ['course'],
+            explanation:
+              'He explains, “We run a free training course every spring.” The answer is “course”.',
+          },
+        ],
+      },
+    ],
+  },
 ]

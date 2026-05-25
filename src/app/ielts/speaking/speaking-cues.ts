@@ -86,6 +86,66 @@ export const SPEAKING_CUES: SpeakingCue[] = [
       'What role should governments play in helping people learn skills for work?',
     ],
   },
+
+  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  {
+    id: 'sp1-food-cooking',
+    part: 'speaking-part-1',
+    title: 'Part 1 · Food and cooking',
+    prompts: [
+      'Do you enjoy cooking, or do you prefer someone else to cook for you?',
+      'What kind of food did you eat most often when you were a child?',
+      'Has the way you eat changed since you were younger?',
+      'Do you prefer eating at home or eating out at restaurants? Why?',
+      'Is there a dish from another country that you would like to try?',
+    ],
+  },
+
+  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  {
+    id: 'sp2-useful-website',
+    part: 'speaking-part-2',
+    title: 'Part 2 · A website or app you find useful',
+    prepSeconds: 60,
+    speakSeconds: 120,
+    prompts: [
+      'Describe a website or mobile app that you find particularly useful.',
+      'You should say:',
+      'what it is and how you found out about it',
+      'what you use it for and how often you use it',
+      'how easy or difficult it is to use',
+      'and explain why you find it so useful.',
+    ],
+  },
+  {
+    id: 'sp2-person-admire',
+    part: 'speaking-part-2',
+    title: 'Part 2 · A person you admire',
+    prepSeconds: 60,
+    speakSeconds: 120,
+    prompts: [
+      'Describe a person you admire who is not a member of your family.',
+      'You should say:',
+      'who this person is and how you know about them',
+      'what this person does or has done',
+      'what qualities this person has',
+      'and explain why you admire this person.',
+    ],
+  },
+
+  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  {
+    id: 'sp3-technology-daily-life',
+    part: 'speaking-part-3',
+    title: 'Part 3 · Technology in daily life',
+    prompts: [
+      'In what ways has technology changed the way people communicate with one another?',
+      'Do you think people rely too much on their phones these days? Why?',
+      'What are the advantages and disadvantages of working or studying online?',
+      'Do you think older and younger people use technology differently? In what ways?',
+      'How do you think technology will change everyday life in the next twenty years?',
+    ],
+  },
 ]
 
 /** Find a cue by id (used by the page when restoring the chosen prompt). */

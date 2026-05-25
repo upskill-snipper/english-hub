@@ -195,4 +195,185 @@ Understanding these mechanisms has practical value. It cautions courts against t
       },
     ],
   },
+  {
+    id: 'rd-academic-002',
+    title: 'Academic Reading — Practice Test 2',
+    track: 'academic',
+    estimatedMinutes: 20,
+    passages: [
+      {
+        id: 'rd-academic-002-p1',
+        title: 'The Lighthouse Keepers of the North Atlantic',
+        body: `Before the spread of automated navigation, the safety of every ship rounding a rocky coast depended on a handful of people most passengers never saw. Lighthouse keepers lived for weeks at a time on isolated towers and storm-battered islands, tending a single flame whose only purpose was to warn vessels away from danger. The work demanded a peculiar mixture of vigilance and patience, for the great enemy of the keeper was not the weather but boredom.
+
+The earliest lights were simple coal fires burned on open platforms, but these were unreliable: rain could quench them and smoke could obscure them at exactly the moment a ship needed guidance most. The breakthrough came in the early nineteenth century with the invention of a lens that could gather a weak flame's light and bend it into a single concentrated beam visible far out to sea. A lamp that had once been useful for a few kilometres could now be seen from twenty or more, and the design spread rapidly along the coasts of Europe.
+
+Yet the brilliant beam created a new problem. From a distance, one fixed light looked much like another, and a captain who mistook one headland for its neighbour might steer confidently onto the rocks. The solution was to give each lighthouse its own rhythm. By rotating the lens or shielding it at set intervals, engineers made every light flash in a distinct pattern, so that a navigator consulting a chart could identify exactly which coast lay ahead. The light no longer merely shone; it carried information.
+
+The keepers themselves were eventually made redundant by electric lamps and automatic timers, and the last of them were withdrawn from their towers in the closing decades of the twentieth century. Their lights still turn, now watched by sensors rather than human eyes. Something, many sailors feel, has been lost along with them — though none would wish to return to a time when a single sleepy keeper stood between a ship and the rocks.`,
+        questions: [
+          {
+            id: 'rd-002-p1-q1',
+            type: 'tfng',
+            prompt:
+              'According to the passage, the hardest part of a keeper’s job was coping with severe weather.',
+            answer: 'false',
+            explanation:
+              'The first paragraph states that "the great enemy of the keeper was not the weather but boredom." The statement names the weather as the hardest part, which directly contradicts the text, so it is False.',
+          },
+          {
+            id: 'rd-002-p1-q2',
+            type: 'tfng',
+            prompt: 'Early coal-fire lights could be put out by rain.',
+            answer: 'true',
+            explanation:
+              'The second paragraph says the early coal fires "were unreliable: rain could quench them." To quench a fire is to put it out, so the statement is True.',
+          },
+          {
+            id: 'rd-002-p1-q3',
+            type: 'tfng',
+            prompt: 'The lens that concentrated the light was first developed in Asia.',
+            answer: 'not-given',
+            explanation:
+              'The passage dates the lens to "the early nineteenth century" and says the design "spread rapidly along the coasts of Europe," but it never states where the lens was first developed. There is no information about Asia, so the answer is Not Given.',
+          },
+          {
+            id: 'rd-002-p1-q4',
+            type: 'mcq',
+            prompt: 'What was the new problem created by the bright concentrated beam?',
+            options: [
+              'The lamps used too much fuel to stay lit all night.',
+              'From a distance, different fixed lights looked the same.',
+              'The beam was too weak to be seen in bad weather.',
+              'Ships began to travel closer to the coast than before.',
+            ],
+            correctIndex: 1,
+            explanation:
+              'The third paragraph explains that "From a distance, one fixed light looked much like another, and a captain who mistook one headland for its neighbour might steer confidently onto the rocks." Option B captures this problem.',
+          },
+          {
+            id: 'rd-002-p1-q5',
+            type: 'mcq',
+            prompt: 'How did engineers make it possible to tell one lighthouse from another?',
+            options: [
+              'By using a different colour of light at each tower',
+              'By building the towers to different heights',
+              'By giving each light its own distinct flashing pattern',
+              'By placing keepers at only the most dangerous sites',
+            ],
+            correctIndex: 2,
+            explanation:
+              'The third paragraph says engineers "made every light flash in a distinct pattern, so that a navigator consulting a chart could identify exactly which coast lay ahead." Option C is correct; colour and height are not mentioned.',
+          },
+          {
+            id: 'rd-002-p1-q6',
+            type: 'gap',
+            prompt:
+              'Complete the sentence with ONE word from the passage: By rotating or shielding the lens, engineers gave each light a distinct _______ that identified the coast.',
+            acceptableAnswers: ['pattern', 'rhythm'],
+            explanation:
+              'The third paragraph refers to giving "each lighthouse its own rhythm" and making each light "flash in a distinct pattern." Either "pattern" or "rhythm" fits the gap and the meaning.',
+          },
+          {
+            id: 'rd-002-p1-q7',
+            type: 'gap',
+            prompt:
+              'Complete the summary with ONE word from the passage: The keepers were eventually made _______ by electric lamps and automatic timers.',
+            acceptableAnswers: ['redundant'],
+            explanation:
+              'The final paragraph says "The keepers themselves were eventually made redundant by electric lamps and automatic timers." The required word is "redundant".',
+          },
+        ],
+      },
+      {
+        id: 'rd-academic-002-p2',
+        title: 'The Surprising Mathematics of Honeybees',
+        body: `A honeycomb is one of the most familiar structures in nature, and also one of the most quietly remarkable. Each cell is a near-perfect hexagon, and the cells fit together so neatly that not a scrap of space is wasted between them. For centuries observers assumed that bees must possess some innate geometric genius, but the truth, as is often the case in biology, is both simpler and more interesting.
+
+The advantage of the hexagon is real. Of all the shapes that can tile a flat surface without leaving gaps — triangles, squares and hexagons — the hexagon encloses the largest area for the least amount of wall. For an insect that must produce wax from its own body at considerable energetic cost, using the least material to store the most honey is a powerful saving. A colony that wasted wax would be at a disadvantage, and over millions of years natural selection would favour those that did not.
+
+But this does not mean each bee is calculating angles. The leading explanation is that bees first build cells that are roughly circular, packing them together as tightly as they can. The warmth of the working bees keeps the fresh wax soft, and in this semi-liquid state the walls are pulled by surface tension into the most stable arrangement available — which, for circles pressed evenly together, is precisely the hexagonal grid. The mathematics is performed not by the bee but by the physics of the wax itself.
+
+This idea is supported by a telling observation. When researchers examine cells built quickly or at the edges of a comb, where the packing is less even, the hexagons are noticeably less regular, and some cells have five or seven sides. A true geometric instinct would not make such errors. The imperfections are exactly what one would expect if the shape emerges from physical forces rather than design.
+
+The honeycomb, then, is a reminder that the elegant order we admire in nature need not be the product of intention. Sometimes it is enough for a simple behaviour to meet the indifferent laws of physics.`,
+        questions: [
+          {
+            id: 'rd-002-p2-q8',
+            type: 'mcq',
+            prompt: 'Why is the hexagon an efficient shape for a honeycomb cell?',
+            options: [
+              'It is the strongest shape against the weight of honey.',
+              'It encloses the largest area using the least wall material.',
+              'It is the easiest shape for a bee to build quickly.',
+              'It allows cells to be stacked in more than one layer.',
+            ],
+            correctIndex: 1,
+            explanation:
+              'The second paragraph states that the hexagon "encloses the largest area for the least amount of wall." Option B matches this directly; the other options are not given as the reason.',
+          },
+          {
+            id: 'rd-002-p2-q9',
+            type: 'gap',
+            prompt:
+              'Complete the sentence with ONE word from the passage: Producing wax from their own bodies costs bees a great deal of _______, so using less material is a valuable saving.',
+            acceptableAnswers: ['energy'],
+            explanation:
+              'The second paragraph describes wax as produced "at considerable energetic cost." The completion word that fits the noun slot is "energy" (the adjective in the text is "energetic").',
+          },
+          {
+            id: 'rd-002-p2-q10',
+            type: 'tfng',
+            prompt:
+              'The passage states that each individual bee calculates the angles of the cells it builds.',
+            answer: 'false',
+            explanation:
+              'The third paragraph explicitly says "this does not mean each bee is calculating angles" and that "the mathematics is performed not by the bee but by the physics of the wax itself." The statement contradicts this, so it is False.',
+          },
+          {
+            id: 'rd-002-p2-q11',
+            type: 'gap',
+            prompt:
+              'Complete the summary with ONE word from the passage: Bees begin by building roughly _______ cells and packing them tightly together.',
+            acceptableAnswers: ['circular', 'round'],
+            explanation:
+              'The third paragraph says "bees first build cells that are roughly circular." The expected answer is "circular"; "round" is accepted as an equivalent.',
+          },
+          {
+            id: 'rd-002-p2-q12',
+            type: 'mcq',
+            prompt:
+              'According to the passage, what pulls the soft wax walls into a hexagonal grid?',
+            options: [
+              'The weight of the honey stored in the cells',
+              'The careful shaping done by the bees’ legs',
+              'Surface tension acting while the wax is semi-liquid',
+              'The cooling of the wax as the bees leave the comb',
+            ],
+            correctIndex: 2,
+            explanation:
+              'The third paragraph explains that in the "semi-liquid state the walls are pulled by surface tension into the most stable arrangement available." Option C is correct.',
+          },
+          {
+            id: 'rd-002-p2-q13',
+            type: 'tfng',
+            prompt:
+              'Cells built quickly or at the edges of a comb tend to be less regular in shape.',
+            answer: 'true',
+            explanation:
+              'The fourth paragraph reports that in cells "built quickly or at the edges of a comb... the hexagons are noticeably less regular, and some cells have five or seven sides." This supports the statement, so it is True.',
+          },
+          {
+            id: 'rd-002-p2-q14',
+            type: 'gap',
+            prompt:
+              'Complete the sentence with ONE word from the passage: The author argues that the order seen in a honeycomb is not the product of _______ but of physical forces.',
+            acceptableAnswers: ['intention', 'design'],
+            explanation:
+              'The final paragraph states the honeycomb shows "the elegant order we admire in nature need not be the product of intention," contrasting it earlier with shapes that "emerge from physical forces rather than design." Both "intention" and "design" fit.',
+          },
+        ],
+      },
+    ],
+  },
 ]

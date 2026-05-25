@@ -101,4 +101,86 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     minWords: 250,
     suggestedMinutes: 40,
   },
+
+  // ── Task 1 · C — line graph (trend over time, described in words) ─────────
+  {
+    id: 'wt1-museum-visitors',
+    task: 'writing-task-1',
+    track: 'academic',
+    title: 'Visitor numbers at a national museum',
+    prompt: [
+      'The line graph below shows the number of visitors (in thousands) to a national museum across four quarters of the year, comparing 2018 with 2023.',
+      '',
+      'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+      '',
+      'Data (visitor numbers in thousands, by quarter):',
+      '• Quarter 1 (Jan–Mar) — 2018: 120; 2023: 95',
+      '• Quarter 2 (Apr–Jun) — 2018: 180; 2023: 210',
+      '• Quarter 3 (Jul–Sep) — 2018: 260; 2023: 340',
+      '• Quarter 4 (Oct–Dec) — 2018: 150; 2023: 170',
+      '',
+      'Write at least 150 words.',
+    ].join('\n'),
+    minWords: 150,
+    suggestedMinutes: 20,
+  },
+
+  // ── Task 1 · D — two pie charts (proportions, compared) ──────────────────
+  {
+    id: 'wt1-household-energy',
+    task: 'writing-task-1',
+    track: 'academic',
+    title: 'How households use energy',
+    prompt: [
+      'The two pie charts below show how an average household in one country used its energy in 1990 and in 2020.',
+      '',
+      'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+      '',
+      'Data (percentage of total household energy use):',
+      '1990 — Heating: 62%; Water heating: 17%; Lighting: 9%; Appliances and electronics: 8%; Cooking: 4%',
+      '2020 — Heating: 48%; Water heating: 15%; Lighting: 5%; Appliances and electronics: 26%; Cooking: 6%',
+      '',
+      'Write at least 150 words.',
+    ].join('\n'),
+    minWords: 150,
+    suggestedMinutes: 20,
+  },
+
+  // ── Task 2 · C — discuss both views + opinion ────────────────────────────
+  {
+    id: 'wt2-university-free',
+    task: 'writing-task-2',
+    track: 'academic',
+    title: 'Free university education',
+    prompt: [
+      'Some people think that university education should be free for all students, while others argue that students should pay at least part of the cost themselves.',
+      '',
+      'Discuss both views and give your own opinion.',
+      '',
+      'Give reasons for your answer and include any relevant examples from your own knowledge or experience.',
+      '',
+      'Write at least 250 words.',
+    ].join('\n'),
+    minWords: 250,
+    suggestedMinutes: 40,
+  },
+
+  // ── Task 2 · D — advantages / disadvantages ──────────────────────────────
+  {
+    id: 'wt2-living-abroad',
+    task: 'writing-task-2',
+    track: 'academic',
+    title: 'Living and working in another country',
+    prompt: [
+      'An increasing number of people choose to live and work in a country that is not their own.',
+      '',
+      'Do the advantages of moving to another country outweigh the disadvantages?',
+      '',
+      'Give reasons for your answer and include any relevant examples from your own knowledge or experience.',
+      '',
+      'Write at least 250 words.',
+    ].join('\n'),
+    minWords: 250,
+    suggestedMinutes: 40,
+  },
 ]

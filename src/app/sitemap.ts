@@ -75,6 +75,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/ielts/listening`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/ielts/writing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/ielts/speaking`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    // Wave 2 (2026-05-25): admissions track + partnerships. /ielts/centre is a
+    // private teacher dashboard (noindex), so it is intentionally excluded.
+    {
+      url: `${base}/ielts/admissions`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/ielts/admissions/personal-statement`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/ielts/admissions/student-visa`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    { url: `${base}/ielts/partners`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    {
+      url: `${base}/ielts/partners/for-schools`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${base}/ielts/partners/for-agencies`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
 
     // Resources hub
     { url: `${base}/resources`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
