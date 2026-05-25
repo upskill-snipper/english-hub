@@ -17,6 +17,9 @@ import type { WritingPrompt } from '@/lib/ielts/types'
 // Additional Academic writing prompts (item-bank scaling, 2026-05-25).
 import { WRITING_SET_2 } from './writing-prompts-set-2'
 import { WRITING_SET_3 } from './writing-prompts-set-3'
+// General Training writing prompts (track: 'general') — Task 1 are letters.
+// Filtered by the writing page via the TrackToggle so the bank is one array.
+import { GT_WRITING_SET } from './gt-writing-prompts'
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_SET_2,
@@ -188,4 +191,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     minWords: 250,
     suggestedMinutes: 40,
   },
+
+  // ── General Training prompts (track: 'general'; Task 1 = letters) ─────────
+  ...GT_WRITING_SET,
 ]

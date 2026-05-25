@@ -13,7 +13,7 @@
 // pages (mounted SSR guard, header shell). Persistence is localStorage-only.
 // ──────────────────────────────────────────────────────────────────────────
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -36,6 +36,8 @@ import { useT } from '@/lib/i18n/use-t'
 import type { ObjectiveQuestion, ReadingPassage, ReadingTest } from '@/lib/ielts/types'
 import { objectiveToBand, bandLabel, bandTier, bandColour, bandBgColour } from '@/lib/ielts/bands'
 import { saveAttempt, genId } from '@/lib/ielts/store'
+
+import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
 
 import { READING_TESTS } from './reading-tests'
 
@@ -108,7 +110,15 @@ const QUESTION_TYPE_LABEL_KEY: Record<ObjectiveQuestion['type'], string> = {
 
 export default function IeltsReadingPage() {
   const t = useT()
-  const test: ReadingTest | undefined = READING_TESTS[0]
+  const [track, setTrack] = useIeltsTrack()
+
+  // The bank holds both Academic and General Training tests in one array; show
+  // only the tests for the selected track and run the first one.
+  const testsForTrack = useMemo<ReadingTest[]>(
+    () => READING_TESTS.filter((rt) => rt.track === track),
+    [track],
+  )
+  const test: ReadingTest | undefined = testsForTrack[0]
 
   // Flat, ordered list of every question across all passages — drives numbering,
   // marking and the results review.
@@ -121,6 +131,14 @@ export default function IeltsReadingPage() {
   const [started, setStarted] = useState(false)
   const [answers, setAnswers] = useState<AnswerMap>({})
   const [submitted, setSubmitted] = useState(false)
+
+  // Switching track swaps the test, so drop any in-progress answers/results and
+  // return to the intro screen for the newly-selected track.
+  useEffect(() => {
+    setStarted(false)
+    setSubmitted(false)
+    setAnswers({})
+  }, [track])
   // Stable per-question global numbers (Q1..Qn) regardless of passage.
   const questionNumber = useMemo(() => {
     const map: Record<string, number> = {}
@@ -150,12 +168,12 @@ export default function IeltsReadingPage() {
   ).length
 
   const correctCount = allQuestions.filter((q) => isAnswerCorrect(q, answers[q.id])).length
-  const band = objectiveToBand('reading', correctCount, totalQuestions)
+  const band = objectiveToBand('reading', correctCount, totalQuestions, track)
 
   const handleSubmit = () => {
     if (submitted) return
     const correct = allQuestions.filter((q) => isAnswerCorrect(q, answers[q.id])).length
-    const finalBand = objectiveToBand('reading', correct, totalQuestions)
+    const finalBand = objectiveToBand('reading', correct, totalQuestions, track)
     saveAttempt({
       id: genId('rd'),
       skill: 'reading',
@@ -183,9 +201,10 @@ export default function IeltsReadingPage() {
         <Header />
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-            <Badge variant="secondary" className="mb-4">
-              {t('ielts.reading.intro.eyebrow')}
-            </Badge>
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <Badge variant="secondary">{t('ielts.reading.intro.eyebrow')}</Badge>
+              <TrackToggle value={track} onChange={setTrack} />
+            </div>
             <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
               {test.title}
             </h2>

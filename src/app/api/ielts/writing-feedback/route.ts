@@ -52,12 +52,14 @@ import type { Band, CriterionFeedback, TaskFeedback, WritingCriterion } from '@/
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 type WritingTask = 'writing-task-1' | 'writing-task-2'
+type WritingTrack = 'academic' | 'general'
 
 interface WritingFeedbackRequest {
   task: WritingTask
   promptText: string
   response: string
   promptId: string
+  track: WritingTrack
 }
 
 // The model is asked to return this exact shape; we validate it field-by-field
@@ -120,6 +122,51 @@ const TASK1_DESCRIPTORS: Record<WritingCriterion, string> = {
   ].join('\n'),
 }
 
+// General Training Task 1 is a LETTER, not a data report. Task Achievement is
+// therefore judged on whether all THREE bullet points are covered fully, on a
+// consistent and appropriate tone/register (formal / semi-formal / informal)
+// and on a clear purpose — NOT on overview/trend/data language. The other three
+// criteria are the standard four, phrased for a letter. Original paraphrased
+// prose (NOT the official descriptors verbatim).
+const TASK1_GENERAL_DESCRIPTORS: Record<WritingCriterion, string> = {
+  taskAchievement: [
+    'TASK ACHIEVEMENT (GT Task 1 — a LETTER responding to an everyday situation; judge coverage of the THREE bullet points, tone/register and purpose, NOT data or overview language):',
+    '- Band 9: Fully covers all three bullet points, each clearly developed and extended; the purpose of the letter is entirely clear throughout and the tone/register (formal, semi-formal or informal) is consistently natural and wholly appropriate to the reader and situation.',
+    '- Band 8: Covers all three bullet points sufficiently with a clear purpose; tone and register are appropriate and consistent, with at most very occasional slips that do not affect the reader.',
+    '- Band 7: Covers all three bullet points and the purpose is clear, though one bullet may be less developed than the others; tone/register is generally appropriate and mostly consistent, with occasional lapses.',
+    '- Band 6: Addresses all three bullet points but one or more may be covered only briefly or mechanically; the purpose is generally clear; tone/register is mostly appropriate but may be inconsistent or occasionally unsuitable for the reader.',
+    '- Band 5: Covers the bullet points only partially — one may be omitted, misunderstood or barely touched on; the purpose may be unclear in places; tone/register is inconsistent or not well matched to the situation (e.g. too informal for an official letter).',
+    '- Band 4: Attempts the letter but fails to cover one or more bullet points; the purpose is unclear or confused; the format may be inappropriate for a letter and the tone/register is largely unsuitable or wildly inconsistent.',
+  ].join('\n'),
+  coherenceCohesion: [
+    'COHERENCE & COHESION (organisation of the letter, paragraphing and linking):',
+    '- Band 9: Effortless cohesion that attracts no attention; the letter opens, develops the bullet points and closes in a skilfully sequenced, well-paragraphed way.',
+    '- Band 8: Information and ideas are sequenced logically and cohesion is managed well so it rarely attracts attention; paragraphing of the bullet points is appropriate.',
+    '- Band 7: The letter is logically organised with clear progression from opening to close; a range of cohesive devices is used appropriately, with occasional under-/over-use; each paragraph has a clear focus.',
+    '- Band 6: The letter is arranged coherently with overall progression; cohesive devices and openings/closings are used but may be faulty, mechanical or formulaic; paragraphing is present but not always logical.',
+    '- Band 5: Some organisation is present but the sequencing of the bullet points lacks overall clarity; cohesive devices are limited, inaccurate or overused; paragraphing may be missing or unhelpful.',
+    '- Band 4: Ideas are presented but not arranged coherently; there is no clear progression through the letter; cohesive devices are minimal, repetitive or inaccurate; paragraphing is inadequate or absent.',
+  ].join('\n'),
+  lexicalResource: [
+    'LEXICAL RESOURCE (vocabulary for an everyday letter, including tone-appropriate and idiomatic phrasing):',
+    '- Band 9: Wide range used naturally and flexibly with very natural and precise word choice, including conventions of letter-writing suited to the register; rare minor slips only.',
+    '- Band 8: Wide range used fluently and flexibly to convey precise meaning, including register-appropriate expressions; occasional inaccuracies in word choice or collocation.',
+    '- Band 7: Sufficient range to allow some flexibility and precision; some less common items and an awareness of style/register, with occasional errors in word choice or collocation.',
+    '- Band 6: Adequate range for the task; meaning is generally clear despite some errors in spelling/word formation and some imprecise or register-inappropriate word choice.',
+    '- Band 5: Limited range that is minimally adequate; noticeable errors in spelling and word formation, and phrasing that may not suit the intended tone, causing some difficulty for the reader.',
+    '- Band 4: Basic vocabulary used repetitively or inappropriately for the register; limited control of word formation/spelling, with errors that may strain the reader.',
+  ].join('\n'),
+  grammaticalRange: [
+    'GRAMMATICAL RANGE & ACCURACY (range of structures and accuracy of grammar and punctuation in the letter):',
+    '- Band 9: Full range of structures used naturally and appropriately; error-free apart from rare minor slips.',
+    '- Band 8: Wide range of structures; the majority of sentences are error-free, with only occasional non-systematic errors.',
+    '- Band 7: A variety of complex structures; frequent error-free sentences with good control, though some errors persist.',
+    '- Band 6: A mix of simple and complex forms; errors in grammar and punctuation occur but rarely impede communication.',
+    '- Band 5: A limited range of structures; attempts at complex sentences are less accurate than simple ones; errors are frequent and may cause some difficulty.',
+    '- Band 4: Very limited range; subordinate clauses are rare; some structures are accurate but errors predominate and punctuation is often faulty, causing strain.',
+  ].join('\n'),
+}
+
 const TASK2_DESCRIPTORS: Record<WritingCriterion, string> = {
   taskAchievement: [
     'TASK RESPONSE (Task 2 — how fully and relevantly the question is answered and a position developed):',
@@ -161,10 +208,17 @@ const TASK2_DESCRIPTORS: Record<WritingCriterion, string> = {
 
 // ─── System prompt builder ────────────────────────────────────────────────────
 
-function buildSystemPrompt(task: WritingTask): string {
+function buildSystemPrompt(task: WritingTask, track: WritingTrack): string {
   const isTask1 = task === 'writing-task-1'
+  const isGeneralTask1 = isTask1 && track === 'general'
   const criteria = isTask1 ? WRITING_TASK1_CRITERIA : WRITING_TASK2_CRITERIA
-  const descriptors = isTask1 ? TASK1_DESCRIPTORS : TASK2_DESCRIPTORS
+  // GT Task 1 is a letter, so it uses the letter descriptors. Academic Task 1
+  // (data report) and BOTH tracks' Task 2 use the existing descriptor sets.
+  const descriptors = isTask1
+    ? isGeneralTask1
+      ? TASK1_GENERAL_DESCRIPTORS
+      : TASK1_DESCRIPTORS
+    : TASK2_DESCRIPTORS
   const minWords = isTask1 ? 150 : 250
 
   const criteriaBlock = criteria
@@ -173,11 +227,19 @@ function buildSystemPrompt(task: WritingTask): string {
 
   const labels = criteria.map((c) => `"${c.label}"`).join(', ')
 
+  const taskDescription = isGeneralTask1
+    ? 'Task 1 (General Training) letter'
+    : isTask1
+      ? 'Task 1 (Academic) report'
+      : 'Task 2 essay'
+  const examinerKind = isGeneralTask1 ? 'IELTS General Training' : 'IELTS Academic'
+
   return [
-    `You are a highly experienced, strict IELTS Academic Writing examiner. You assess a candidate's ${
-      isTask1 ? 'Task 1 (Academic) report' : 'Task 2 essay'
-    } against the four official assessment criteria and award a band from 0 to 9 (whole or half bands such as 6.0, 6.5, 7.0) for each criterion, plus an overall band.`,
+    `You are a highly experienced, strict ${examinerKind} Writing examiner. You assess a candidate's ${taskDescription} against the four official assessment criteria and award a band from 0 to 9 (whole or half bands such as 6.0, 6.5, 7.0) for each criterion, plus an overall band.`,
     ``,
+    isGeneralTask1
+      ? `This GT Task 1 is a LETTER responding to an everyday situation. Mark it as a letter: assess whether all THREE bullet points are covered, whether the tone/register (formal, semi-formal or informal) is appropriate and consistent, and whether the purpose is clear. Do NOT expect or reward an overview, trends, figures or data-description language — that belongs to Academic Task 1, not here.\n`
+      : ``,
     `This is IELTS preparation practice. Mark exactly as a real examiner would: be accurate and fair, neither inflating nor deflating. Apply the band descriptors below rigorously. A half band is appropriate when a response sits between two whole-band anchors.`,
     ``,
     `THE FOUR CRITERIA AND THEIR BAND DESCRIPTORS:`,
@@ -190,7 +252,11 @@ function buildSystemPrompt(task: WritingTask): string {
     `- Penalise an off-topic, memorised, or under-length response (the task requires at least ${minWords} words). A very short or irrelevant answer cannot score highly on Task Achievement/Response.`,
     `- Quote brief phrases from the candidate's own writing as evidence in your comments where helpful.`,
     `- Keep every comment specific, constructive and concise (1–3 sentences). Use UK English spelling.`,
-    `- "modelPointers" must be 2–4 concrete, actionable techniques the candidate could use to move up a band (e.g. a better way to structure an overview, a linking device, a sentence pattern) — NOT a rewritten model answer and NOT a full essay.`,
+    `- "modelPointers" must be 2–4 concrete, actionable techniques the candidate could use to move up a band (e.g. ${
+      isGeneralTask1
+        ? 'a clearer way to open or close the letter for the register, a phrase that better matches the required tone, a way to cover a bullet point more fully'
+        : 'a better way to structure an overview, a linking device, a sentence pattern'
+    }) — NOT a rewritten model answer and NOT a full ${isGeneralTask1 ? 'letter' : 'essay'}.`,
     ``,
     `OUTPUT FORMAT — CRITICAL:`,
     `Respond with a SINGLE valid JSON object and NOTHING else (no markdown fences, no commentary before or after). Use this exact shape:`,
@@ -352,10 +418,15 @@ function validateRequest(
     return { valid: false, error: 'Request body is required' }
   }
 
-  const { task, promptText, response, promptId } = body as Record<string, unknown>
+  const { task, promptText, response, promptId, track } = body as Record<string, unknown>
 
   if (task !== 'writing-task-1' && task !== 'writing-task-2') {
     return { valid: false, error: "task must be 'writing-task-1' or 'writing-task-2'" }
+  }
+  // `track` is optional; default to 'academic' to preserve prior behaviour. Any
+  // other value is rejected rather than silently coerced.
+  if (track !== undefined && track !== 'academic' && track !== 'general') {
+    return { valid: false, error: "track must be 'academic' or 'general'" }
   }
   if (!promptText || typeof promptText !== 'string') {
     return { valid: false, error: 'promptText is required and must be a string' }
@@ -383,6 +454,7 @@ function validateRequest(
       promptText: promptText as string,
       response: response as string,
       promptId: promptId as string,
+      track: track === 'general' ? 'general' : 'academic',
     },
   }
 }
@@ -391,6 +463,7 @@ function validateRequest(
 
 async function generateWritingFeedback(
   task: WritingTask,
+  track: WritingTrack,
   promptText: string,
   response: string,
   request: NextRequest,
@@ -403,13 +476,14 @@ async function generateWritingFeedback(
   // Shared client — same privacy posture as every other Anthropic route.
   const anthropic = getAnthropicClient(apiKey)
 
-  const baseSystemPrompt = buildSystemPrompt(task)
+  const baseSystemPrompt = buildSystemPrompt(task, track)
   const systemPrompt = withArabicDirective(baseSystemPrompt, request)
 
   // Data-minimisation: only the question text + the candidate's own writing are
   // sent — no name, email, or other PII (matches anthropic-client policy).
+  const trackLabel = track === 'general' ? 'General Training' : 'Academic'
   const userContent = [
-    `IELTS Academic ${task === 'writing-task-1' ? 'Writing Task 1' : 'Writing Task 2'}.`,
+    `IELTS ${trackLabel} ${task === 'writing-task-1' ? 'Writing Task 1' : 'Writing Task 2'}.`,
     ``,
     `QUESTION / PROMPT:`,
     promptText,
@@ -506,7 +580,7 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(validation.error)
     }
 
-    const { task, promptText, response, promptId } = validation.data
+    const { task, promptText, response, promptId, track } = validation.data
     const userId = user.id
 
     // 3c. Safeguarding / misuse pre-screen — parity with the essay route. Routes
@@ -534,7 +608,7 @@ export async function POST(request: NextRequest) {
     let rawText: string
     let tokenUsage: { inputTokens?: number; outputTokens?: number }
     try {
-      const result = await generateWritingFeedback(task, promptText, response, request)
+      const result = await generateWritingFeedback(task, track, promptText, response, request)
       rawText = result.text
       tokenUsage = result.tokenUsage
     } catch (aiError: unknown) {

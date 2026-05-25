@@ -36,6 +36,7 @@ import { genId, saveAttempt } from '@/lib/ielts/store'
 import type { Band, CriterionFeedback, TaskFeedback, WritingPrompt } from '@/lib/ielts/types'
 import { isAiOptedOut } from '@/lib/ai-preferences'
 import { useT } from '@/lib/i18n/use-t'
+import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
 import { WRITING_PROMPTS } from './writing-prompts'
 
 type TaskTab = 'writing-task-1' | 'writing-task-2'
@@ -91,6 +92,7 @@ function isTaskFeedback(value: unknown): value is TaskFeedback {
 
 export default function IeltsWritingPage() {
   const t = useT()
+  const [track, setTrack] = useIeltsTrack()
   const [tab, setTab] = useState<TaskTab>('writing-task-1')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [response, setResponse] = useState('')
@@ -112,7 +114,12 @@ export default function IeltsWritingPage() {
   const [secondsLeft, setSecondsLeft] = useState(0)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const promptsForTab = useMemo(() => WRITING_PROMPTS.filter((p) => p.task === tab), [tab])
+  // Prompts are filtered by both the selected task tab and the selected track.
+  // GT Task 1 prompts are letters; Academic Task 1 prompts are data reports.
+  const promptsForTab = useMemo(
+    () => WRITING_PROMPTS.filter((p) => p.task === tab && p.track === track),
+    [tab, track],
+  )
   const prompt: WritingPrompt | null = useMemo(
     () => WRITING_PROMPTS.find((p) => p.id === selectedId) ?? null,
     [selectedId],
@@ -151,6 +158,22 @@ export default function IeltsWritingPage() {
     [],
   )
 
+  // Switching track changes which prompts exist, so clear any selection and
+  // in-progress response/feedback and return to the prompt picker.
+  useEffect(() => {
+    setSelectedId(null)
+    setResponse('')
+    setFeedback(null)
+    setDisclaimer('')
+    setError(null)
+    setPaywalled(false)
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+    setTimerOn(false)
+  }, [track])
+
   const wordCount = countWords(response)
   const minWords = prompt?.minWords ?? 0
   const meetsMin = wordCount >= minWords
@@ -185,6 +208,7 @@ export default function IeltsWritingPage() {
           promptText: prompt.prompt,
           response,
           promptId: prompt.id,
+          track,
         }),
       })
 
@@ -239,7 +263,7 @@ export default function IeltsWritingPage() {
       setError(t('ielts.writing.error.network'))
       setIsSubmitting(false)
     }
-  }, [prompt, canSubmit, response, stopTimer, t])
+  }, [prompt, canSubmit, response, stopTimer, t, track])
 
   // ── AI opt-out screen ───────────────────────────────────────────────────
   if (aiOff) {
@@ -291,6 +315,10 @@ export default function IeltsWritingPage() {
       {/* ── Task tabs + prompt picker ─────────────────────────────── */}
       {!feedback && (
         <section className="space-y-5">
+          <div className="flex flex-wrap items-center justify-end gap-3">
+            <TrackToggle value={track} onChange={setTrack} />
+          </div>
+
           <Tabs
             value={tab}
             onValueChange={(value) => {

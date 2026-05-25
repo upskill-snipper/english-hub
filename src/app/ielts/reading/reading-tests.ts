@@ -14,6 +14,11 @@ import type { ReadingTest } from '@/lib/ielts/types'
 import { READING_SET_2 } from './reading-tests-set-2'
 import { READING_SET_3 } from './reading-tests-set-3'
 import { READING_SET_4 } from './reading-tests-set-4'
+// General Training reading tests (track: 'general') — filtered by the reading
+// page via the TrackToggle. These live alongside the Academic tests so the bank
+// is one filterable array.
+import { GT_READING_SET_1 } from './gt-reading-tests-1'
+import { GT_READING_SET_2 } from './gt-reading-tests-2'
 
 export const READING_TESTS: ReadingTest[] = [
   ...READING_SET_2,
@@ -383,4 +388,7 @@ The honeycomb, then, is a reminder that the elegant order we admire in nature ne
       },
     ],
   },
+  // ── General Training reading tests (track: 'general') ────────────────────
+  ...GT_READING_SET_1,
+  ...GT_READING_SET_2,
 ]
