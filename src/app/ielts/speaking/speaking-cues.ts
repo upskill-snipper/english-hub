@@ -19,12 +19,16 @@ import { SPEAKING_SET_2 } from './speaking-cues-set-2'
 import { SPEAKING_SET_3 } from './speaking-cues-set-3'
 import { SPEAKING_SET_4 } from './speaking-cues-set-4'
 import { SPEAKING_SET_5 } from './speaking-cues-set-5'
+import { SPEAKING_SET_6 } from './speaking-cues-set-6'
+import { SPEAKING_SET_7 } from './speaking-cues-set-7'
 
 export const SPEAKING_CUES: SpeakingCue[] = [
   ...SPEAKING_SET_2,
   ...SPEAKING_SET_3,
   ...SPEAKING_SET_4,
   ...SPEAKING_SET_5,
+  ...SPEAKING_SET_6,
+  ...SPEAKING_SET_7,
   // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-home-area',
