@@ -83,8 +83,12 @@ export default function ListeningPage() {
   const [mounted, setMounted] = useState(false)
   const [phase, setPhase] = useState<Phase>('intro')
 
-  // Wave 1 ships a single test; this is written so adding more later is trivial.
-  const test = LISTENING_TESTS[0]
+  // The bank holds many tests; the learner picks one from the intro screen.
+  const [selectedTestId, setSelectedTestId] = useState<string | null>(null)
+  const test = useMemo<ListeningTest | null>(
+    () => LISTENING_TESTS.find((lt) => lt.id === selectedTestId) ?? null,
+    [selectedTestId],
+  )
   const flat = useMemo(() => (test ? flattenQuestions(test) : []), [test])
   const total = flat.length
 
@@ -104,7 +108,8 @@ export default function ListeningPage() {
     setMounted(true)
   }, [])
 
-  const startTest = useCallback(() => {
+  const startTest = useCallback((testId: string) => {
+    setSelectedTestId(testId)
     setMcqAnswers({})
     setGapAnswers({})
     setCorrectCount(0)
@@ -112,6 +117,13 @@ export default function ListeningPage() {
     setSavedId(null)
     setRevealed({})
     setPhase('test')
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
+  // Back to the picker to choose a different test.
+  const chooseAnother = useCallback(() => {
+    setSelectedTestId(null)
+    setPhase('intro')
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
@@ -171,8 +183,8 @@ export default function ListeningPage() {
     )
   }
 
-  // Defensive: if data ever goes missing, fail soft rather than crash.
-  if (!test) {
+  // Defensive: only if the bank is genuinely empty do we fail soft.
+  if (LISTENING_TESTS.length === 0) {
     return (
       <main id="main-content" className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -216,9 +228,9 @@ export default function ListeningPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-        {phase === 'intro' && <IntroPanel test={test} total={total} onStart={startTest} />}
+        {phase === 'intro' && <TestPicker onPick={startTest} />}
 
-        {phase === 'test' && (
+        {phase === 'test' && test && (
           <TestPanel
             test={test}
             flat={flat}
@@ -232,7 +244,7 @@ export default function ListeningPage() {
           />
         )}
 
-        {phase === 'results' && (
+        {phase === 'results' && test && (
           <ResultsPanel
             test={test}
             flat={flat}
@@ -246,7 +258,8 @@ export default function ListeningPage() {
             onToggleReveal={(sectionId) =>
               setRevealed((prev) => ({ ...prev, [sectionId]: !prev[sectionId] }))
             }
-            onRetake={startTest}
+            onRetake={() => startTest(test.id)}
+            onChooseAnother={chooseAnother}
           />
         )}
       </div>
@@ -256,38 +269,43 @@ export default function ListeningPage() {
 
 // ─── Intro ──────────────────────────────────────────────────────────────────
 
-function IntroPanel({
-  test,
-  total,
-  onStart,
-}: {
-  test: ListeningTest
-  total: number
-  onStart: () => void
-}) {
+function TestPicker({ onPick }: { onPick: (testId: string) => void }) {
   const t = useT()
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="font-heading text-heading-md text-foreground">{test.title}</h2>
-        <p className="mt-2 text-body-sm text-muted-foreground">{t('ielts.listening.intro.lead')}</p>
+        <h2 className="font-heading text-heading-md text-foreground">
+          {t('ielts.listening.picker.title')}
+        </h2>
+        <p className="mt-2 text-body-sm text-muted-foreground">
+          {t('ielts.listening.picker.subtitle')}
+        </p>
 
-        <div className="mt-5 grid gap-3 sm:grid-cols-3">
-          <Stat
-            icon={<ListChecks className="size-4" />}
-            label={t('ielts.listening.intro.stat.questions')}
-            value={String(total)}
-          />
-          <Stat
-            icon={<Clock className="size-4" />}
-            label={t('ielts.listening.intro.stat.time')}
-            value={`~${test.estimatedMinutes} ${t('ielts.listening.intro.stat.minutes_unit')}`}
-          />
-          <Stat
-            icon={<ClipboardList className="size-4" />}
-            label={t('ielts.listening.intro.stat.sections')}
-            value={String(test.sections.length)}
-          />
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {LISTENING_TESTS.map((lt) => {
+            const qCount = lt.sections.reduce((n, s) => n + s.questions.length, 0)
+            return (
+              <button
+                key={lt.id}
+                type="button"
+                onClick={() => onPick(lt.id)}
+                className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all hover:border-sky-500/40 hover:shadow-card-hover"
+              >
+                <div className="flex items-center gap-2">
+                  <Headphones className="size-4 shrink-0 text-sky-500" />
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                    {lt.title}
+                  </h3>
+                </div>
+                <span className="mt-2 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-muted-foreground">
+                  <ListChecks className="size-3" />
+                  {qCount} {t('ielts.listening.intro.stat.questions')} · {lt.sections.length}{' '}
+                  {t('ielts.listening.intro.stat.sections')} · ~{lt.estimatedMinutes}{' '}
+                  {t('ielts.listening.intro.stat.minutes_unit')}
+                </span>
+              </button>
+            )
+          })}
         </div>
 
         <div className="mt-6 rounded-xl border border-sky-500/25 bg-sky-500/5 p-4">
@@ -297,13 +315,6 @@ function IntroPanel({
           <p className="mt-1 text-body-sm text-muted-foreground">
             {t('ielts.listening.intro.audio_body')}
           </p>
-        </div>
-
-        <div className="mt-6">
-          <Button variant="default" size="lg" onClick={onStart}>
-            <Play className="size-4" />
-            {t('ielts.listening.intro.start')}
-          </Button>
         </div>
       </div>
 
@@ -575,6 +586,7 @@ function ResultsPanel({
   revealed,
   onToggleReveal,
   onRetake,
+  onChooseAnother,
 }: {
   test: ListeningTest
   flat: FlatQuestion[]
@@ -587,6 +599,7 @@ function ResultsPanel({
   revealed: Record<string, boolean>
   onToggleReveal: (sectionId: string) => void
   onRetake: () => void
+  onChooseAnother: () => void
 }) {
   const t = useT()
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0
@@ -658,6 +671,10 @@ function ResultsPanel({
         <Button variant="default" size="lg" onClick={onRetake}>
           <RotateCcw className="size-4" />
           {t('ielts.listening.results.retake')}
+        </Button>
+        <Button variant="outline" size="lg" onClick={onChooseAnother}>
+          <ListChecks className="size-4" />
+          {t('ielts.listening.results.choose_test')}
         </Button>
         <Button variant="outline" size="lg" render={<Link href="/ielts/progress" />}>
           <ChevronRight className="size-4" />

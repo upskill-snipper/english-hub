@@ -54,6 +54,12 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
     ar: 'تستخدم النسخة الأولى صوت تحويل النص إلى كلام المدمج في متصفحك عشان يقرأ كل قسم بصوت عالٍ (بدلاً عن تسجيل صوتي). في الاختبار الحقيقي كل تسجيل يشتغل مرة وحدة — جرّب استماع مرة وحدة، وبعدها استخدم إعادة التشغيل للتدريب بس. النص يبقى مخفي لين ما تسلّم.',
   },
   'ielts.listening.intro.start': { en: 'Start practice test', ar: 'ابدأ الاختبار التدريبي' },
+  // Test picker (intro screen)
+  'ielts.listening.picker.title': { en: 'Choose a listening test', ar: 'اختر اختبار استماع' },
+  'ielts.listening.picker.subtitle': {
+    en: 'Pick any test below to begin. Each one is auto-marked and gives you an estimated band.',
+    ar: 'اختر أي اختبار تحت عشان تبدأ. كل واحد يتصحّح تلقائياً ويعطيك Band تقديري.',
+  },
   'ielts.listening.intro.study_plan': { en: 'My study plan', ar: 'خطة دراستي' },
   'ielts.listening.intro.progress_dashboard': {
     en: 'Progress dashboard',
@@ -123,6 +129,7 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
     ar: 'انحفظ في تقدّمك. درجات الـ Band هنا تقديرية، مو مضمونة.',
   },
   'ielts.listening.results.retake': { en: 'Retake test', ar: 'أعِد الاختبار' },
+  'ielts.listening.results.choose_test': { en: 'Choose another test', ar: 'اختر اختباراً ثانياً' },
   'ielts.listening.results.view_progress': { en: 'View progress', ar: 'شوف التقدّم' },
   'ielts.listening.results.study_plan': { en: 'Study plan', ar: 'خطة الدراسة' },
 
