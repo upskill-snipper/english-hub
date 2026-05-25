@@ -35,6 +35,7 @@ import { bandColour, bandBgColour, bandLabel } from '@/lib/ielts/bands'
 import { genId, saveAttempt } from '@/lib/ielts/store'
 import type { Band, CriterionFeedback, TaskFeedback, WritingPrompt } from '@/lib/ielts/types'
 import { isAiOptedOut } from '@/lib/ai-preferences'
+import { useT } from '@/lib/i18n/use-t'
 import { WRITING_PROMPTS } from './writing-prompts'
 
 type TaskTab = 'writing-task-1' | 'writing-task-2'
@@ -52,21 +53,19 @@ function countWords(text: string): number {
   return trimmed.split(/\s+/).length
 }
 
-/** Map an API status code → a friendly, user-facing message (essay-route parity). */
-function friendlyError(status: number, body: string): string {
-  if (status === 401) return 'Please sign in to get AI band feedback on your writing.'
-  if (status === 403)
-    return body || 'IELTS Writing feedback is a Premium feature. Please upgrade to access it.'
-  if (status === 429)
-    return body || "You've reached today's feedback limit. Please try again tomorrow."
-  if (status === 400)
-    return (
-      body || 'There was a problem with your submission. Please check your response and try again.'
-    )
-  if (status === 503)
-    return body || 'The AI feedback service is temporarily unavailable. Please try again shortly.'
-  if (status >= 500) return 'Something went wrong on our end. Please try again later.'
-  return body || 'An unexpected error occurred. Please try again.'
+/**
+ * Map an API status code → a friendly, user-facing message (essay-route parity).
+ * `t` resolves the localised copy; a non-empty server `body` (which the API may
+ * already localise for 403/429/400/503) still takes precedence where it did before.
+ */
+function friendlyError(t: (key: string) => string, status: number, body: string): string {
+  if (status === 401) return t('ielts.writing.error.401')
+  if (status === 403) return body || t('ielts.writing.error.403')
+  if (status === 429) return body || t('ielts.writing.error.429')
+  if (status === 400) return body || t('ielts.writing.error.400')
+  if (status === 503) return body || t('ielts.writing.error.503')
+  if (status >= 500) return t('ielts.writing.error.500')
+  return body || t('ielts.writing.error.generic')
 }
 
 function formatClock(totalSeconds: number): string {
@@ -91,6 +90,7 @@ function isTaskFeedback(value: unknown): value is TaskFeedback {
 // ─── Page ─────────────────────────────────────────────────────────────────
 
 export default function IeltsWritingPage() {
+  const t = useT()
   const [tab, setTab] = useState<TaskTab>('writing-task-1')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [response, setResponse] = useState('')
@@ -197,14 +197,14 @@ export default function IeltsWritingPage() {
           /* non-JSON error body */
         }
         if (res.status === 403) setPaywalled(true)
-        setError(friendlyError(res.status, message))
+        setError(friendlyError(t, res.status, message))
         setIsSubmitting(false)
         return
       }
 
       const data = (await res.json()) as Partial<ApiSuccess>
       if (!isTaskFeedback(data.feedback)) {
-        setError('We could not read the feedback this time. Please try again.')
+        setError(t('ielts.writing.error.unreadable'))
         setIsSubmitting(false)
         return
       }
@@ -214,7 +214,7 @@ export default function IeltsWritingPage() {
       setDisclaimer(
         typeof data.disclaimer === 'string'
           ? data.disclaimer
-          : 'This is an AI-generated predicted band for IELTS preparation only — not an official result.',
+          : t('ielts.writing.results.disclaimer_fallback'),
       )
 
       // Persist the attempt to the shared IELTS store (localStorage).
@@ -236,10 +236,10 @@ export default function IeltsWritingPage() {
       setIsSubmitting(false)
     } catch (err) {
       console.error('[ielts/writing] fetch error', err)
-      setError('Could not reach the feedback server. Please check your connection and try again.')
+      setError(t('ielts.writing.error.network'))
       setIsSubmitting(false)
     }
-  }, [prompt, canSubmit, response, stopTimer])
+  }, [prompt, canSubmit, response, stopTimer, t])
 
   // ── AI opt-out screen ───────────────────────────────────────────────────
   if (aiOff) {
@@ -249,18 +249,17 @@ export default function IeltsWritingPage() {
         <div className="mt-8 rounded-2xl border border-border bg-muted/40 px-6 py-10 text-center">
           <Lock className="mx-auto size-6 text-muted-foreground" />
           <h1 className="mt-3 font-heading text-xl font-semibold text-foreground">
-            AI feedback is turned off
+            {t('ielts.writing.optout.title')}
           </h1>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            AI features are currently disabled for this account. To turn AI band feedback back on,
-            visit your{' '}
+            {t('ielts.writing.optout.body_before')}{' '}
             <Link
               href="/parent/settings"
               className="text-primary underline-offset-2 hover:underline"
             >
-              privacy settings
+              {t('ielts.writing.optout.privacy_link')}
             </Link>{' '}
-            or ask a parent or guardian to update your preferences.
+            {t('ielts.writing.optout.body_after')}
           </p>
         </div>
       </div>
@@ -275,22 +274,17 @@ export default function IeltsWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.05] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          AI band feedback — IELTS Academic
+          {t('ielts.writing.hero.badge')}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-          IELTS Academic Writing
+          {t('ielts.writing.hero.title')}
         </h1>
         <p className="mt-3 max-w-2xl text-body-md text-muted-foreground">
-          Choose a Task 1 or Task 2 question, write your response under timed conditions if you
-          like, and get an instant predicted band for each of the four marking criteria — plus
-          specific strengths, improvements and techniques to move up a band.
+          {t('ielts.writing.hero.subtitle')}
         </p>
         <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
           <Target className="size-3.5 text-primary" />
-          <span>
-            Task 1 asks for at least 150 words in ~20 minutes; Task 2 asks for at least 250 words in
-            ~40 minutes.
-          </span>
+          <span>{t('ielts.writing.hero.word_minutes_note')}</span>
         </div>
       </section>
 
@@ -306,8 +300,8 @@ export default function IeltsWritingPage() {
             }}
           >
             <TabsList>
-              <TabsTrigger value="writing-task-1">Task 1 — Report</TabsTrigger>
-              <TabsTrigger value="writing-task-2">Task 2 — Essay</TabsTrigger>
+              <TabsTrigger value="writing-task-1">{t('ielts.writing.tab.task1')}</TabsTrigger>
+              <TabsTrigger value="writing-task-2">{t('ielts.writing.tab.task2')}</TabsTrigger>
             </TabsList>
           </Tabs>
 
@@ -330,7 +324,9 @@ export default function IeltsWritingPage() {
                   </p>
                   <span className="mt-3 inline-flex items-center gap-2 text-[11px] text-muted-foreground">
                     <Clock className="size-3" />
-                    {p.suggestedMinutes} min · min {p.minWords} words
+                    {p.suggestedMinutes} {t('ielts.writing.prompt.minutes_suffix')} ·{' '}
+                    {t('ielts.writing.prompt.min_words_label')} {p.minWords}{' '}
+                    {t('ielts.writing.prompt.words_suffix')}
                   </span>
                 </button>
               ))}
@@ -347,12 +343,14 @@ export default function IeltsWritingPage() {
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <Badge variant="secondary" className="mb-1.5 text-[0.65rem] uppercase">
-                    {prompt.task === 'writing-task-1' ? 'Task 1 · Academic' : 'Task 2 · Essay'}
+                    {prompt.task === 'writing-task-1'
+                      ? t('ielts.writing.workspace.tag.task1')
+                      : t('ielts.writing.workspace.tag.task2')}
                   </Badge>
                   <CardTitle className="text-heading-sm font-heading">{prompt.title}</CardTitle>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => resetForPrompt('')}>
-                  Change question
+                  {t('ielts.writing.workspace.change_question')}
                 </Button>
               </div>
             </CardHeader>
@@ -376,22 +374,24 @@ export default function IeltsWritingPage() {
                     secondsLeft <= 60 ? 'text-destructive' : 'text-foreground'
                   }`}
                 >
-                  {formatClock(secondsLeft)} remaining
+                  {formatClock(secondsLeft)} {t('ielts.writing.timer.remaining')}
                 </span>
               ) : (
                 <span className="text-muted-foreground">
-                  Optional timer · {prompt.suggestedMinutes} min
+                  {t('ielts.writing.timer.optional')} · {prompt.suggestedMinutes}{' '}
+                  {t('ielts.writing.prompt.minutes_suffix')}
                 </span>
               )}
             </div>
             {timerOn ? (
               <Button variant="ghost" size="sm" onClick={stopTimer}>
-                Stop timer
+                {t('ielts.writing.timer.stop')}
               </Button>
             ) : (
               <Button variant="outline" size="sm" onClick={startTimer}>
                 <Clock className="size-3.5" />
-                Start {prompt.suggestedMinutes}-minute timer
+                {t('ielts.writing.timer.start_prefix')} {prompt.suggestedMinutes}
+                {t('ielts.writing.timer.start_suffix')}
               </Button>
             )}
           </div>
@@ -399,7 +399,7 @@ export default function IeltsWritingPage() {
           {/* Response textarea */}
           <div className="space-y-1.5">
             <label htmlFor="ielts-response" className="text-sm font-medium text-foreground">
-              Your response
+              {t('ielts.writing.response.label')}
             </label>
             <Textarea
               id="ielts-response"
@@ -407,24 +407,30 @@ export default function IeltsWritingPage() {
               onChange={(e) => setResponse(e.target.value)}
               placeholder={
                 prompt.task === 'writing-task-1'
-                  ? 'Write your overview and describe the key features of the data…'
-                  : 'Write your essay: introduction, body paragraphs, and a conclusion…'
+                  ? t('ielts.writing.response.placeholder.task1')
+                  : t('ielts.writing.response.placeholder.task2')
               }
               rows={16}
               className="resize-y leading-relaxed"
             />
             <div className="flex items-center justify-between text-xs">
               <span className={meetsMin ? 'text-emerald-500' : 'text-muted-foreground'}>
-                {wordCount} {wordCount === 1 ? 'word' : 'words'}
+                {wordCount}{' '}
+                {wordCount === 1
+                  ? t('ielts.writing.words.singular')
+                  : t('ielts.writing.words.plural')}
                 {!meetsMin && (
                   <span className="ml-1 text-muted-foreground">
-                    · aim for {minWords}+ ({Math.max(0, minWords - wordCount)} to go)
+                    · {t('ielts.writing.words.aim_for')} {minWords}+ (
+                    {Math.max(0, minWords - wordCount)} {t('ielts.writing.words.to_go')})
                   </span>
                 )}
-                {meetsMin && <span className="ml-1">· minimum reached</span>}
+                {meetsMin && (
+                  <span className="ml-1">· {t('ielts.writing.words.minimum_reached')}</span>
+                )}
               </span>
               {wordCount > 0 && wordCount < 50 && (
-                <span className="text-destructive">Write at least a few sentences to assess.</span>
+                <span className="text-destructive">{t('ielts.writing.words.too_short')}</span>
               )}
             </div>
           </div>
@@ -439,7 +445,7 @@ export default function IeltsWritingPage() {
               {paywalled && (
                 <p className="mt-2">
                   <Link href="/pricing" className="font-semibold underline underline-offset-2">
-                    View Premium plans
+                    {t('ielts.writing.paywall.view_plans')}
                   </Link>
                 </p>
               )}
@@ -452,16 +458,16 @@ export default function IeltsWritingPage() {
               {isSubmitting ? (
                 <span className="flex items-center gap-2">
                   <span className="inline-block size-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                  Assessing your writing…
+                  {t('ielts.writing.submit.loading')}
                 </span>
               ) : (
-                'Get my band feedback'
+                t('ielts.writing.submit.cta')
               )}
             </Button>
           </div>
           {isSubmitting && (
             <p className="text-center text-xs text-muted-foreground">
-              This usually takes 15–30 seconds. Please don&rsquo;t close the page.
+              {t('ielts.writing.submit.loading_note')}
             </p>
           )}
         </section>
@@ -493,6 +499,7 @@ export default function IeltsWritingPage() {
 // ─── Sub-components ───────────────────────────────────────────────────────
 
 function BackLink() {
+  const t = useT()
   return (
     <Button
       variant="ghost"
@@ -501,7 +508,7 @@ function BackLink() {
       render={<Link href="/ielts" />}
     >
       <ArrowLeft className="size-3.5" />
-      Back to IELTS
+      {t('ielts.writing.back')}
     </Button>
   )
 }
@@ -519,6 +526,7 @@ function FeedbackView({
   onTryAgain: () => void
   onNewPrompt: () => void
 }) {
+  const t = useT()
   const band: Band = feedback.overallBand
   return (
     <section className="space-y-6">
@@ -526,12 +534,12 @@ function FeedbackView({
       <Card className={`border ${bandBgColour(band)}`}>
         <CardContent className="flex flex-col items-center gap-2 py-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Predicted overall band — {promptTitle}
+            {t('ielts.writing.results.predicted_overall')} — {promptTitle}
           </span>
           <span className={`font-heading text-6xl font-extrabold leading-none ${bandColour(band)}`}>
             {bandLabel(band)}
           </span>
-          <span className="text-sm text-muted-foreground">out of 9.0</span>
+          <span className="text-sm text-muted-foreground">{t('ielts.writing.results.out_of')}</span>
         </CardContent>
       </Card>
 
@@ -548,7 +556,7 @@ function FeedbackView({
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm font-semibold text-emerald-500">
               <CheckCircle2 className="size-4" />
-              Strengths
+              {t('ielts.writing.results.strengths')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -570,7 +578,7 @@ function FeedbackView({
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm font-semibold text-amber-500">
               <TrendingUp className="size-4" />
-              Areas to improve
+              {t('ielts.writing.results.improvements')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -592,11 +600,9 @@ function FeedbackView({
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm font-semibold text-violet-400">
               <Lightbulb className="size-4" />
-              Techniques to move up a band
+              {t('ielts.writing.results.model_pointers')}
             </CardTitle>
-            <CardDescription>
-              Concrete things to try next time — not a model answer to copy.
-            </CardDescription>
+            <CardDescription>{t('ielts.writing.results.model_pointers_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
@@ -614,18 +620,15 @@ function FeedbackView({
       {/* Disclaimer */}
       <div className="flex items-start gap-2 rounded-xl border border-border/60 bg-background/50 p-4 text-xs text-muted-foreground">
         <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-amber-500" />
-        <p>
-          {disclaimer ||
-            'This is a predicted band for IELTS preparation only, not an official result.'}
-        </p>
+        <p>{disclaimer || t('ielts.writing.results.disclaimer_fallback')}</p>
       </div>
 
       {/* Actions */}
       <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:justify-end">
         <Button variant="outline" onClick={onNewPrompt}>
-          Try a different question
+          {t('ielts.writing.results.try_different')}
         </Button>
-        <Button onClick={onTryAgain}>Rewrite this answer</Button>
+        <Button onClick={onTryAgain}>{t('ielts.writing.results.rewrite')}</Button>
       </div>
     </section>
   )

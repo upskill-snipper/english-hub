@@ -32,6 +32,7 @@ import {
   MessageSquareText,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -54,10 +55,12 @@ import { genId, saveAttempt } from '@/lib/ielts/store'
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-const PART_BADGE: Record<SpeakingCue['part'], string> = {
-  'speaking-part-1': 'Part 1 · Interview',
-  'speaking-part-2': 'Part 2 · Long turn',
-  'speaking-part-3': 'Part 3 · Discussion',
+// Dictionary key for each part's badge label ("Part N" stays Latin; the label
+// after the dot is translated). Resolved at render time via t().
+const PART_BADGE_KEY: Record<SpeakingCue['part'], string> = {
+  'speaking-part-1': 'ielts.speaking.part1.badge',
+  'speaking-part-2': 'ielts.speaking.part2.badge',
+  'speaking-part-3': 'ielts.speaking.part3.badge',
 }
 
 function formatClock(totalSeconds: number): string {
@@ -76,6 +79,7 @@ type Phase = 'idle' | 'prep' | 'speaking' | 'done'
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function IeltsSpeakingPage() {
+  const t = useT()
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
 
@@ -176,12 +180,12 @@ export default function IeltsSpeakingPage() {
       e.preventDefault()
       if (!cue) return
       if (!user) {
-        setError('Please sign in to get speaking feedback.')
+        setError(t('ielts.speaking.error.sign_in'))
         return
       }
       const promptText = `${cue.title}\n\n${cue.prompts.join('\n')}`
       if (transcript.trim().length < 20) {
-        setError('Please type at least a sentence or two of what you said.')
+        setError(t('ielts.speaking.error.too_short'))
         return
       }
 
@@ -208,7 +212,7 @@ export default function IeltsSpeakingPage() {
           const message =
             data && typeof data === 'object' && 'error' in data && typeof data.error === 'string'
               ? data.error
-              : 'Something went wrong. Please try again.'
+              : t('ielts.speaking.error.bad_request')
           setError(message)
           return
         }
@@ -219,7 +223,7 @@ export default function IeltsSpeakingPage() {
           !('feedback' in data) ||
           typeof (data as { feedback: unknown }).feedback !== 'object'
         ) {
-          setError('We received an unexpected response. Please try again.')
+          setError(t('ielts.speaking.error.unexpected'))
           return
         }
 
@@ -249,12 +253,12 @@ export default function IeltsSpeakingPage() {
           // Persistence is best-effort; never block the result on it.
         }
       } catch {
-        setError('Network error. Please check your connection and try again.')
+        setError(t('ielts.speaking.error.network'))
       } finally {
         setSubmitting(false)
       }
     },
-    [cue, transcript, user],
+    [cue, transcript, user, t],
   )
 
   const handleTryAgain = useCallback(() => {
@@ -293,7 +297,7 @@ export default function IeltsSpeakingPage() {
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to IELTS
+          {t('ielts.speaking.back')}
         </Button>
       </div>
 
@@ -301,23 +305,21 @@ export default function IeltsSpeakingPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
           <Mic className="mr-1 size-3" />
-          IELTS Speaking · Parts 1–3
+          {t('ielts.speaking.hero.eyebrow')}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-          IELTS Speaking Practice
+          {t('ielts.speaking.hero.title')}
         </h1>
         <p className="mt-3 max-w-2xl text-body-md text-muted-foreground">
-          Choose a question set, record yourself for private self-review, then type what you said to
-          get an estimated band for each of the four IELTS Speaking criteria — Fluency &amp;
-          Coherence, Lexical Resource, Grammatical Range &amp; Accuracy, and Pronunciation.
+          {t('ielts.speaking.hero.subtitle')}
         </p>
         <div className="mt-4 flex items-start gap-2 rounded-lg border border-border/60 bg-background/50 p-3 text-xs text-muted-foreground">
           <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-amber-500" />
           <span>
-            <span className="font-semibold text-foreground">Wave 1, transcript-based.</span> Your
-            recording stays on your device and is never uploaded. We score the words you type, so
-            Pronunciation is a best-effort estimate and Fluency is inferred from your transcript.
-            Live auto-transcription and full pronunciation scoring are coming soon.
+            <span className="font-semibold text-foreground">
+              {t('ielts.speaking.hero.notice.lead')}
+            </span>{' '}
+            {t('ielts.speaking.hero.notice.body')}
           </span>
         </div>
       </section>
@@ -328,7 +330,9 @@ export default function IeltsSpeakingPage() {
           <div className="flex size-9 items-center justify-center rounded-lg bg-rose-500/10">
             <MessageSquareText className="size-4.5 text-rose-400" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">Choose a question set</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('ielts.speaking.picker.title')}
+          </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {SPEAKING_CUES.map((c) => {
@@ -346,13 +350,15 @@ export default function IeltsSpeakingPage() {
                 )}
               >
                 <Badge variant="secondary" className="mb-2 w-fit text-[0.65rem] uppercase">
-                  {PART_BADGE[c.part]}
+                  {t(PART_BADGE_KEY[c.part])}
                 </Badge>
                 <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                   {c.title}
                 </h3>
                 <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
-                  {c.part === 'speaking-part-2' ? c.prompts[0] : `${c.prompts.length} questions`}
+                  {c.part === 'speaking-part-2'
+                    ? c.prompts[0]
+                    : `${c.prompts.length} ${t('ielts.speaking.picker.questions')}`}
                 </p>
               </button>
             )
@@ -370,14 +376,14 @@ export default function IeltsSpeakingPage() {
             <CardHeader>
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className="text-[0.65rem] uppercase">
-                  {PART_BADGE[cue.part]}
+                  {t(PART_BADGE_KEY[cue.part])}
                 </Badge>
                 <CardTitle className="text-heading-sm font-heading">{cue.title}</CardTitle>
               </div>
               <CardDescription>
                 {isPart2
-                  ? 'You get 60 seconds to prepare, then speak for up to 2 minutes. Cover all the bullet points.'
-                  : 'Answer each question as you would in the real interview — aim for full, developed answers.'}
+                  ? t('ielts.speaking.prompt.desc.part2')
+                  : t('ielts.speaking.prompt.desc.other')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -441,19 +447,18 @@ export default function IeltsSpeakingPage() {
                     <div>
                       <p className="text-sm font-semibold text-foreground">
                         {phase === 'prep'
-                          ? 'Preparation time'
+                          ? t('ielts.speaking.timer.heading.prep')
                           : phase === 'speaking'
-                            ? 'Speaking — your long turn'
+                            ? t('ielts.speaking.timer.heading.speaking')
                             : phase === 'done'
-                              ? 'Time complete'
-                              : 'Ready when you are'}
+                              ? t('ielts.speaking.timer.heading.done')
+                              : t('ielts.speaking.timer.heading.idle')}
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        {phase === 'idle' &&
-                          'Start the 60-second prep timer, jot a few notes, then speak for up to 2 minutes.'}
-                        {phase === 'prep' && 'Plan your answer. Recording is optional during prep.'}
-                        {phase === 'speaking' && 'Speak now and record yourself for self-review.'}
-                        {phase === 'done' && 'Now type what you said below to get band feedback.'}
+                        {phase === 'idle' && t('ielts.speaking.timer.help.idle')}
+                        {phase === 'prep' && t('ielts.speaking.timer.help.prep')}
+                        {phase === 'speaking' && t('ielts.speaking.timer.help.speaking')}
+                        {phase === 'done' && t('ielts.speaking.timer.help.done')}
                       </p>
                     </div>
                   </div>
@@ -473,17 +478,17 @@ export default function IeltsSpeakingPage() {
                   {phase === 'idle' && (
                     <Button type="button" size="sm" onClick={startPrep}>
                       <Timer className="size-4" />
-                      Start 60s preparation
+                      {t('ielts.speaking.timer.btn.start_prep')}
                     </Button>
                   )}
                   {phase === 'prep' && (
                     <Button type="button" size="sm" variant="default" onClick={startSpeakingNow}>
-                      Skip to speaking
+                      {t('ielts.speaking.timer.btn.skip')}
                     </Button>
                   )}
                   {(phase === 'prep' || phase === 'speaking') && (
                     <Button type="button" size="sm" variant="outline" onClick={stopTimers}>
-                      Stop timer
+                      {t('ielts.speaking.timer.btn.stop')}
                     </Button>
                   )}
                   {phase === 'done' && (
@@ -499,7 +504,7 @@ export default function IeltsSpeakingPage() {
                       }}
                     >
                       <RefreshCw className="size-3.5" />
-                      Reset timer
+                      {t('ielts.speaking.timer.btn.reset')}
                     </Button>
                   )}
                 </div>
@@ -509,7 +514,7 @@ export default function IeltsSpeakingPage() {
 
           {/* Recorder (self-review) */}
           <div className="space-y-2">
-            <Label>Record yourself (optional, private)</Label>
+            <Label>{t('ielts.speaking.recorder.label')}</Label>
             <Recorder maxSeconds={isPart2 ? speakSeconds : undefined} />
           </div>
 
@@ -517,22 +522,22 @@ export default function IeltsSpeakingPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <Label htmlFor="transcript">
-                  Type or paste what you said — we&rsquo;ll give band feedback (auto-transcription
-                  coming soon)
-                </Label>
+                <Label htmlFor="transcript">{t('ielts.speaking.transcript.label')}</Label>
                 <span
                   className={cn(
                     'text-xs tabular-nums',
                     wordCount < 8 ? 'text-muted-foreground' : 'text-muted-foreground',
                   )}
                 >
-                  {wordCount} {wordCount === 1 ? 'word' : 'words'}
+                  {wordCount}{' '}
+                  {wordCount === 1
+                    ? t('ielts.speaking.transcript.word')
+                    : t('ielts.speaking.transcript.words')}
                 </span>
               </div>
               <Textarea
                 id="transcript"
-                placeholder="Write out, as closely as you can, what you actually said. Include your hesitations (um, you know) if you noticed them — it helps the fluency estimate be realistic."
+                placeholder={t('ielts.speaking.transcript.placeholder')}
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
                 rows={10}
@@ -549,7 +554,7 @@ export default function IeltsSpeakingPage() {
 
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-md text-xs text-muted-foreground">
-                This gives an AI band estimate from your transcript — not an official IELTS result.
+                {t('ielts.speaking.submit.helper')}
               </p>
               <Button
                 type="submit"
@@ -559,12 +564,12 @@ export default function IeltsSpeakingPage() {
                 {submitting ? (
                   <>
                     <Loader2 className="size-4 animate-spin" />
-                    Assessing…
+                    {t('ielts.speaking.submit.assessing')}
                   </>
                 ) : (
                   <>
                     <Send className="size-4" />
-                    Get band feedback
+                    {t('ielts.speaking.submit.btn')}
                   </>
                 )}
               </Button>
@@ -586,8 +591,7 @@ export default function IeltsSpeakingPage() {
 
       {/* ── Footnote ─────────────────────────────────────────────────── */}
       <p className="text-center text-[11px] text-muted-foreground/60">
-        For IELTS preparation only. Band estimates are AI-generated from a typed transcript and are
-        not affiliated with or endorsed by the official IELTS partners.
+        {t('ielts.speaking.footnote')}
       </p>
     </div>
   )
@@ -608,6 +612,7 @@ function SpeakingResults({
   saved: boolean
   onTryAgain: () => void
 }) {
+  const t = useT()
   const overall: Band = feedback.overallBand
   return (
     <section className="space-y-6">
@@ -615,10 +620,9 @@ function SpeakingResults({
 
       {/* Transcript-based disclaimer */}
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-700">
-        <p className="font-medium">Transcript-based estimate</p>
+        <p className="font-medium">{t('ielts.speaking.results.disclaimer.title')}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {disclaimer ??
-            'This is an AI practice estimate based on your typed transcript, not an official IELTS score. Pronunciation is approximated from your words and fluency is inferred from the transcript.'}
+          {disclaimer ?? t('ielts.speaking.results.disclaimer.body')}
         </p>
       </div>
 
@@ -637,10 +641,10 @@ function SpeakingResults({
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Estimated overall band
+                  {t('ielts.speaking.results.overall')}
                 </span>
                 <Badge variant="outline" className="text-xs uppercase">
-                  {PART_BADGE[cue.part]}
+                  {t(PART_BADGE_KEY[cue.part])}
                 </Badge>
               </div>
               <p className={cn('mt-1 text-4xl font-bold tracking-tight', bandColour(overall))}>
@@ -649,7 +653,7 @@ function SpeakingResults({
               {saved && (
                 <p className="mt-1 inline-flex items-center gap-1 text-xs text-emerald-500">
                   <CheckCircle className="size-3.5" />
-                  Saved to your progress
+                  {t('ielts.speaking.results.saved')}
                 </p>
               )}
             </div>
@@ -660,10 +664,10 @@ function SpeakingResults({
       {/* Criteria breakdown */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-heading-sm font-heading">Criteria breakdown</CardTitle>
-          <CardDescription>
-            Each criterion is scored 0–9. Pronunciation is a transcript-based proxy in this version.
-          </CardDescription>
+          <CardTitle className="text-heading-sm font-heading">
+            {t('ielts.speaking.results.criteria.title')}
+          </CardTitle>
+          <CardDescription>{t('ielts.speaking.results.criteria.desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {feedback.criteria.map((c: CriterionFeedback, i: number) => (
@@ -693,7 +697,9 @@ function SpeakingResults({
             <CardHeader>
               <div className="flex items-center gap-2">
                 <CheckCircle className="size-4 text-emerald-400" />
-                <CardTitle className="text-sm">What you did well</CardTitle>
+                <CardTitle className="text-sm">
+                  {t('ielts.speaking.results.strengths.title')}
+                </CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -714,7 +720,9 @@ function SpeakingResults({
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-sky-400" />
-                <CardTitle className="text-sm">How to raise your band</CardTitle>
+                <CardTitle className="text-sm">
+                  {t('ielts.speaking.results.improvements.title')}
+                </CardTitle>
               </div>
             </CardHeader>
             <CardContent>
@@ -737,11 +745,11 @@ function SpeakingResults({
           <CardHeader>
             <div className="flex items-center gap-2">
               <Lightbulb className="size-4 text-violet-400" />
-              <CardTitle className="text-sm">Phrases that would lift this answer</CardTitle>
+              <CardTitle className="text-sm">
+                {t('ielts.speaking.results.pointers.title')}
+              </CardTitle>
             </div>
-            <CardDescription>
-              Example language for this topic — adapt it into your own words.
-            </CardDescription>
+            <CardDescription>{t('ielts.speaking.results.pointers.desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
@@ -758,12 +766,10 @@ function SpeakingResults({
 
       {/* Actions */}
       <div className="flex items-center justify-between">
-        <p className="text-xs text-muted-foreground">
-          AI estimate — practice guidance, not a guarantee.
-        </p>
+        <p className="text-xs text-muted-foreground">{t('ielts.speaking.results.action.helper')}</p>
         <Button size="lg" onClick={onTryAgain}>
           <RefreshCw className="size-4" />
-          Try another answer
+          {t('ielts.speaking.results.action.try_again')}
         </Button>
       </div>
     </section>

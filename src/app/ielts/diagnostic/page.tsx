@@ -30,6 +30,9 @@ import {
 } from '@/lib/ielts/bands'
 import { saveDiagnostic } from '@/lib/ielts/store'
 import { SKILL_META, type Band, type IeltsSkill, type ObjectiveQuestion } from '@/lib/ielts/types'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
 
 import {
   DIAGNOSTIC_READING,
@@ -38,6 +41,34 @@ import {
   SELF_ASSESS,
   selfAssessBand,
 } from './diagnostic-items'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// The ielts.diagnostic.* keys live in their own shard (dictionary-ielts-diagnostic)
+// which isn't wired into the global lookup() chain, so resolve them here against
+// the live locale and fall back to the shared useT() for cross-module keys
+// (ielts.skill.*, ielts.cta.*, …). `vars` interpolates {token} placeholders so
+// dynamic copy (counts, bands, skill labels) stays translatable as one phrase.
+type Vars = Record<string, string | number>
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function useDiagT(): (key: string, vars?: Vars) => string {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_DIAGNOSTIC_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── IELTS Placement Diagnostic ──────────────────────────────────────────────
 // A ~10-minute placement test that estimates a band per skill:
@@ -81,6 +112,7 @@ function isAnswered(raw: string | undefined): boolean {
 }
 
 export default function IeltsDiagnosticPage() {
+  const t = useDiagT()
   const [phase, setPhase] = useState<Phase>('intro')
   const [answers, setAnswers] = useState<ObjectiveAnswers>({})
   const [ratings, setRatings] = useState<SelfRatings>({})
@@ -152,7 +184,7 @@ export default function IeltsDiagnosticPage() {
             className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to IELTS
+            {t('ielts.diagnostic.back')}
           </Link>
           <div className="flex items-start gap-4">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
@@ -160,11 +192,10 @@ export default function IeltsDiagnosticPage() {
             </div>
             <div>
               <h1 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-                IELTS Placement Test
+                {t('ielts.diagnostic.title')}
               </h1>
               <p className="mt-1 max-w-2xl text-lg text-muted-foreground">
-                A quick check of where you are right now — about {DIAGNOSTIC_ESTIMATED_MINUTES}{' '}
-                minutes. We use it to build your personalised study plan.
+                {t('ielts.diagnostic.subtitle', { minutes: DIAGNOSTIC_ESTIMATED_MINUTES })}
               </p>
             </div>
           </div>
@@ -172,10 +203,11 @@ export default function IeltsDiagnosticPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
-        {phase === 'intro' && <IntroPanel onStart={() => setPhase('questions')} />}
+        {phase === 'intro' && <IntroPanel t={t} onStart={() => setPhase('questions')} />}
 
         {phase === 'questions' && (
           <QuestionsPanel
+            t={t}
             readingQs={readingQs}
             listeningQs={listeningQs}
             answers={answers}
@@ -190,7 +222,9 @@ export default function IeltsDiagnosticPage() {
           />
         )}
 
-        {phase === 'result' && result && <ResultPanel result={result} onRetake={handleRetake} />}
+        {phase === 'result' && result && (
+          <ResultPanel t={t} result={result} onRetake={handleRetake} />
+        )}
       </div>
     </main>
   )
@@ -198,32 +232,32 @@ export default function IeltsDiagnosticPage() {
 
 // ─── Intro ────────────────────────────────────────────────────────────────────
 
-function IntroPanel({ onStart }: { onStart: () => void }) {
-  const steps: { icon: LucideIcon; title: string; body: string; marked: string }[] = [
+// Shared signature for the local diagnostic translation helper (useDiagT).
+type TFn = (key: string, vars?: Vars) => string
+
+function IntroPanel({ t, onStart }: { t: TFn; onStart: () => void }) {
+  // Skill titles stay Latin (skill names used as labels); body + marking tag
+  // are translated. `auto` flags which Badge variant + tag to use.
+  const steps: { icon: LucideIcon; title: string; bodyKey: string; auto: boolean }[] = [
     {
       icon: BookOpen,
       title: 'Reading',
-      body: 'Read a short passage and answer 4 questions.',
-      marked: 'Auto-marked',
+      bodyKey: 'ielts.diagnostic.intro.reading.body',
+      auto: true,
     },
     {
       icon: Headphones,
       title: 'Listening',
-      body: 'Read a short conversation transcript and answer 4 questions.',
-      marked: 'Auto-marked',
+      bodyKey: 'ielts.diagnostic.intro.listening.body',
+      auto: true,
     },
     {
       icon: PenLine,
       title: 'Writing',
-      body: 'Rate your own confidence — no essay needed yet.',
-      marked: 'Self-estimate',
+      bodyKey: 'ielts.diagnostic.intro.writing.body',
+      auto: false,
     },
-    {
-      icon: Mic,
-      title: 'Speaking',
-      body: 'Rate your own confidence — no recording needed yet.',
-      marked: 'Self-estimate',
-    },
+    { icon: Mic, title: 'Speaking', bodyKey: 'ielts.diagnostic.intro.speaking.body', auto: false },
   ]
 
   return (
@@ -240,23 +274,24 @@ function IntroPanel({ onStart }: { onStart: () => void }) {
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-lg font-medium">{s.title}</h3>
-                <Badge
-                  variant={s.marked === 'Auto-marked' ? 'secondary' : 'outline'}
-                  className="text-xs"
-                >
-                  {s.marked}
+                <Badge variant={s.auto ? 'secondary' : 'outline'} className="text-xs">
+                  {t(
+                    s.auto
+                      ? 'ielts.diagnostic.tag.auto_marked'
+                      : 'ielts.diagnostic.tag.self_estimate',
+                  )}
                 </Badge>
               </div>
-              <p className="mt-0.5 text-sm text-muted-foreground">{s.body}</p>
+              <p className="mt-0.5 text-sm text-muted-foreground">{t(s.bodyKey)}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <EstimateCaveat />
+      <EstimateCaveat t={t} />
 
       <Button size="lg" className="w-full sm:w-auto" onClick={onStart}>
-        Start the placement test
+        {t('ielts.diagnostic.intro.start')}
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </div>
@@ -266,6 +301,7 @@ function IntroPanel({ onStart }: { onStart: () => void }) {
 // ─── Questions ────────────────────────────────────────────────────────────────
 
 function QuestionsPanel({
+  t,
   readingQs,
   listeningQs,
   answers,
@@ -278,6 +314,7 @@ function QuestionsPanel({
   totalObjective,
   allSelfRated,
 }: {
+  t: TFn
   readingQs: ObjectiveQuestion[]
   listeningQs: ObjectiveQuestion[]
   answers: ObjectiveAnswers
@@ -290,19 +327,36 @@ function QuestionsPanel({
   totalObjective: number
   allSelfRated: boolean
 }) {
+  // Rebuild the submit-gate sentence from translatable fragments, preserving the
+  // original conditional structure (count clause / "and" / rate clause / tail).
+  const objectiveIncomplete = answeredObjective < totalObjective
+  const gateParts: string[] = []
+  if (objectiveIncomplete) {
+    gateParts.push(
+      t('ielts.diagnostic.gate.answer_count', {
+        total: totalObjective,
+        answered: answeredObjective,
+      }),
+    )
+  }
+  if (objectiveIncomplete && !allSelfRated) gateParts.push(t('ielts.diagnostic.gate.and'))
+  if (!allSelfRated) gateParts.push(t('ielts.diagnostic.gate.rate_both'))
+  const gateText = gateParts.join('') + t('ielts.diagnostic.gate.to_see')
+
   return (
     <div className="space-y-12">
       {/* ── Reading ── */}
       <SkillSection
         icon={BookOpen}
-        title="Part 1 — Reading"
-        subtitle="Read the passage, then answer the four questions below."
+        title={t('ielts.diagnostic.section.reading.title')}
+        subtitle={t('ielts.diagnostic.section.reading.subtitle')}
       >
         <PassageBlock title={DIAGNOSTIC_READING.title} body={DIAGNOSTIC_READING.body} />
         <div className="mt-6 space-y-6">
           {readingQs.map((q, i) => (
             <ObjectiveQuestionCard
               key={q.id}
+              t={t}
               index={i + 1}
               question={q}
               value={answers[q.id]}
@@ -315,10 +369,11 @@ function QuestionsPanel({
       {/* ── Listening ── */}
       <SkillSection
         icon={Headphones}
-        title="Part 2 — Listening"
-        subtitle="In the real test you would hear this once. Read the transcript, then answer."
+        title={t('ielts.diagnostic.section.listening.title')}
+        subtitle={t('ielts.diagnostic.section.listening.subtitle')}
       >
         <TranscriptBlock
+          t={t}
           title={DIAGNOSTIC_LISTENING.title}
           body={DIAGNOSTIC_LISTENING.transcript}
         />
@@ -326,6 +381,7 @@ function QuestionsPanel({
           {listeningQs.map((q, i) => (
             <ObjectiveQuestionCard
               key={q.id}
+              t={t}
               index={i + 1}
               question={q}
               value={answers[q.id]}
@@ -338,15 +394,15 @@ function QuestionsPanel({
       {/* ── Self-assessment ── */}
       <SkillSection
         icon={PenLine}
-        title="Part 3 — Writing & Speaking (self-estimate)"
-        subtitle="There is no quick way to auto-mark these, so rate yourself honestly. You will refine this with real practice in the Writing and Speaking modules."
+        title={t('ielts.diagnostic.section.selfassess.title')}
+        subtitle={t('ielts.diagnostic.section.selfassess.subtitle')}
       >
         <div className="space-y-8">
           {SELF_ASSESS.map((s) => (
             <SelfAssessBlock
               key={s.skill}
+              t={t}
               skill={s.skill}
-              question={s.question}
               levels={s.levels}
               value={ratings[s.skill]}
               onChange={(v) => onRating(s.skill, v)}
@@ -355,22 +411,14 @@ function QuestionsPanel({
         </div>
       </SkillSection>
 
-      <EstimateCaveat />
+      <EstimateCaveat t={t} />
 
       {/* ── Submit ── */}
       <div className="space-y-3">
-        {!allAnswered && (
-          <p className="text-sm text-muted-foreground">
-            {answeredObjective < totalObjective
-              ? `Answer all ${totalObjective} questions (${answeredObjective}/${totalObjective} done)`
-              : ''}
-            {answeredObjective < totalObjective && !allSelfRated ? ' and ' : ''}
-            {!allSelfRated ? 'rate both Writing and Speaking' : ''} to see your estimate.
-          </p>
-        )}
+        {!allAnswered && <p className="text-sm text-muted-foreground">{gateText}</p>}
         <Button size="lg" className="w-full sm:w-auto" onClick={onSubmit} disabled={!allAnswered}>
           <Sparkles className="mr-2 h-4 w-4" />
-          See my estimated bands
+          {t('ielts.diagnostic.cta.see_bands')}
         </Button>
       </div>
     </div>
@@ -415,14 +463,14 @@ function PassageBlock({ title, body }: { title: string; body: string }) {
   )
 }
 
-function TranscriptBlock({ title, body }: { title: string; body: string }) {
+function TranscriptBlock({ t, title, body }: { t: TFn; title: string; body: string }) {
   return (
     <div className="rounded-xl border border-border bg-muted/30 p-5 shadow-soft sm:p-6">
       <div className="mb-3 flex items-center gap-2">
         <Headphones className="h-4 w-4 text-muted-foreground" />
         <h3 className="font-serif text-lg font-medium">{title}</h3>
         <Badge variant="outline" className="ml-auto text-xs">
-          Transcript
+          {t('ielts.diagnostic.transcript')}
         </Badge>
       </div>
       <div className="space-y-2">
@@ -438,18 +486,20 @@ function TranscriptBlock({ title, body }: { title: string; body: string }) {
 
 // ─── Objective question card (mcq / gap / tfng) ────────────────────────────────
 
-const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; label: string }[] = [
-  { value: 'true', label: 'True' },
-  { value: 'false', label: 'False' },
-  { value: 'not-given', label: 'Not Given' },
+const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; labelKey: string }[] = [
+  { value: 'true', labelKey: 'ielts.diagnostic.tfng.true' },
+  { value: 'false', labelKey: 'ielts.diagnostic.tfng.false' },
+  { value: 'not-given', labelKey: 'ielts.diagnostic.tfng.not_given' },
 ]
 
 function ObjectiveQuestionCard({
+  t,
   index,
   question,
   value,
   onChange,
 }: {
+  t: TFn
   index: number
   question: ObjectiveQuestion
   value: string | undefined
@@ -490,7 +540,7 @@ function ObjectiveQuestionCard({
                       : 'border-border bg-background hover:border-primary/40 hover:bg-accent'
                   }`}
                 >
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </button>
               ))}
             </div>
@@ -501,7 +551,7 @@ function ObjectiveQuestionCard({
               type="text"
               value={value ?? ''}
               onChange={(e) => onChange(e.target.value)}
-              placeholder="Type your answer"
+              placeholder={t('ielts.diagnostic.gap.placeholder')}
               className="w-full max-w-xs rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           )}
@@ -545,19 +595,22 @@ function OptionButton({
 // ─── Self-assessment block (4-point scale) ─────────────────────────────────────
 
 function SelfAssessBlock({
+  t,
   skill,
-  question,
   levels,
   value,
   onChange,
 }: {
+  t: TFn
   skill: 'writing' | 'speaking'
-  question: string
   levels: { value: 1 | 2 | 3 | 4; label: string; description: string }[]
   value: 1 | 2 | 3 | 4 | undefined
   onChange: (value: 1 | 2 | 3 | 4) => void
 }) {
   const meta = SKILL_META[skill]
+  // Translated copy is keyed by skill + level value; scoring still uses lvl.value
+  // (and lvl.band via the source data) so behaviour is unchanged. The 4-point
+  // ladder labels are shared across both skills.
   return (
     <div className="rounded-xl border border-border bg-card p-5 shadow-soft sm:p-6">
       <div className="mb-3 flex items-center gap-2">
@@ -568,7 +621,9 @@ function SelfAssessBlock({
         </span>
         <h3 className="font-serif text-lg font-medium">{meta.label}</h3>
       </div>
-      <p className="mb-4 text-sm font-medium leading-relaxed">{question}</p>
+      <p className="mb-4 text-sm font-medium leading-relaxed">
+        {t(`ielts.diagnostic.selfassess.${skill}.question`)}
+      </p>
       <div className="space-y-2">
         {levels.map((lvl) => (
           <button
@@ -592,10 +647,10 @@ function SelfAssessBlock({
               <span
                 className={`block text-sm font-semibold ${value === lvl.value ? 'text-primary' : ''}`}
               >
-                {lvl.label}
+                {t(`ielts.diagnostic.selfassess.level${lvl.value}.label`)}
               </span>
               <span className="block text-xs leading-relaxed text-muted-foreground">
-                {lvl.description}
+                {t(`ielts.diagnostic.selfassess.${skill}.level${lvl.value}.desc`)}
               </span>
             </span>
           </button>
@@ -609,7 +664,15 @@ function SelfAssessBlock({
 
 const RESULT_SKILL_ORDER: IeltsSkill[] = ['reading', 'listening', 'writing', 'speaking']
 
-function ResultPanel({ result, onRetake }: { result: ComputedResult; onRetake: () => void }) {
+function ResultPanel({
+  t,
+  result,
+  onRetake,
+}: {
+  t: TFn
+  result: ComputedResult
+  onRetake: () => void
+}) {
   const { estimatedBands, overall, readingCorrect, listeningCorrect } = result
 
   return (
@@ -619,7 +682,7 @@ function ResultPanel({ result, onRetake }: { result: ComputedResult; onRetake: (
         className={`rounded-2xl border p-6 text-center shadow-soft sm:p-8 ${bandBgColour(overall)}`}
       >
         <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-          Estimated overall band
+          {t('ielts.diagnostic.result.overall_label')}
         </p>
         <p className={`mt-1 font-serif text-6xl font-semibold ${bandColour(overall)}`}>
           {bandLabel(overall)}
@@ -647,7 +710,11 @@ function ResultPanel({ result, onRetake }: { result: ComputedResult; onRetake: (
               </div>
               <p className={`text-2xl font-bold ${bandColour(band)}`}>{bandLabel(band)}</p>
               <p className="mt-0.5 text-[11px] text-muted-foreground">
-                {isSelf ? 'Self-estimate' : 'Auto-marked'}
+                {t(
+                  isSelf
+                    ? 'ielts.diagnostic.tag.self_estimate'
+                    : 'ielts.diagnostic.tag.auto_marked',
+                )}
               </p>
             </div>
           )
@@ -659,35 +726,30 @@ function ResultPanel({ result, onRetake }: { result: ComputedResult; onRetake: (
         <div className="flex items-center gap-2">
           <CheckCircle2 className="h-4 w-4 text-emerald-500" />
           <p className="text-sm">
-            Reading:{' '}
-            <span className="font-semibold">
-              {readingCorrect}/{DIAGNOSTIC_READING.questions.length}
-            </span>{' '}
-            correct &nbsp;·&nbsp; Listening:{' '}
-            <span className="font-semibold">
-              {listeningCorrect}/{DIAGNOSTIC_LISTENING.questions.length}
-            </span>{' '}
-            correct
+            {t('ielts.diagnostic.result.tally', {
+              readingCorrect,
+              readingTotal: DIAGNOSTIC_READING.questions.length,
+              listeningCorrect,
+              listeningTotal: DIAGNOSTIC_LISTENING.questions.length,
+            })}
           </p>
         </div>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-          This is a short placement set, so your Reading and Listening estimates are scaled from
-          just a few questions. A full practice test in each module will give you a far more
-          accurate band.
+          {t('ielts.diagnostic.result.tally_note')}
         </p>
       </div>
 
-      <EstimateCaveat />
+      <EstimateCaveat t={t} />
 
       {/* CTA */}
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button size="lg" render={<Link href="/ielts/plan" />}>
-          Build my study plan
+          {t('ielts.diagnostic.cta.build_plan')}
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
         <Button variant="outline" size="lg" onClick={onRetake}>
           <RotateCcw className="mr-2 h-4 w-4" />
-          Retake the test
+          {t('ielts.diagnostic.cta.retake')}
         </Button>
       </div>
     </div>
@@ -696,17 +758,13 @@ function ResultPanel({ result, onRetake }: { result: ComputedResult; onRetake: (
 
 // ─── Shared caveat ────────────────────────────────────────────────────────────
 
-function EstimateCaveat() {
+function EstimateCaveat({ t }: { t: TFn }) {
   return (
     <div className="flex items-start gap-3 rounded-xl border border-amber-500/25 bg-amber-500/10 p-4">
       <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-500" />
       <p className="text-xs leading-relaxed text-muted-foreground">
-        <span className="font-semibold text-foreground">
-          These are estimates, not official results.
-        </span>{' '}
-        This placement test gives an indicative starting point. Writing and Speaking bands are
-        self-estimates — refine them with full practice and AI feedback in the Writing and Speaking
-        modules. Official IELTS bands can only come from a real exam.
+        <span className="font-semibold text-foreground">{t('ielts.diagnostic.caveat.strong')}</span>{' '}
+        {t('ielts.diagnostic.caveat.body')}
       </p>
     </div>
   )

@@ -27,6 +27,38 @@ import {
   type IeltsProfile,
   type IeltsSkill,
 } from '@/lib/ielts/types'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// ielts.plan.* keys live in the dictionary-ielts-diagnostic shard, which isn't
+// wired into the global lookup() chain — resolve them here against the live
+// locale, falling back to the shared useT() for cross-module ielts.* keys.
+// `vars` interpolates {token} placeholders so the prioritised-step copy
+// (skill labels, bands, gaps) stays translatable as a whole phrase.
+type Vars = Record<string, string | number>
+type TFn = (key: string, vars?: Vars) => string
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function usePlanT(): TFn {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_DIAGNOSTIC_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── My IELTS Study Plan ─────────────────────────────────────────────────────
 // Reads the placement diagnostic + the live attempt profile, then builds a
@@ -49,16 +81,21 @@ interface SkillRow {
   meetsTarget: boolean
 }
 
+// Structured plan step. Display copy (headline/action/CTA) is composed from the
+// dictionary at render time in PlanStepCard; this keeps prioritisation logic and
+// translation cleanly separated. `kind` selects the copy template; `sizeNote`
+// picks the gap-size sentence for the 'close' variant.
+type StepKind = 'baseline' | 'hold' | 'close'
+
 interface PlanStep {
   priority: number
   skill: IeltsSkill
   current: Band | null
   target: Band
   gap: number
-  headline: string
-  action: string
+  kind: StepKind
+  sizeNote: 'big' | 'medium' | 'small'
   href: string
-  ctaLabel: string
 }
 
 // Merge diagnostic estimate + live profile into one "current band" per skill.
@@ -108,58 +145,81 @@ function buildPlan(rows: SkillRow[], target: Band): PlanStep[] {
   let priority = 1
   return ranked.map((row) => {
     const meta = SKILL_META[row.skill]
-    const step = stepCopy(row, target)
+    const kind: StepKind = row.current === null ? 'baseline' : row.meetsTarget ? 'hold' : 'close'
+    const sizeNote: 'big' | 'medium' | 'small' =
+      row.gap >= 1.5 ? 'big' : row.gap >= 0.5 ? 'medium' : 'small'
     return {
       priority: priority++,
       skill: row.skill,
       current: row.current,
       target,
       gap: row.gap,
-      headline: step.headline,
-      action: step.action,
+      kind,
+      sizeNote,
       href: meta.href,
-      ctaLabel: `Practise ${meta.label}`,
     }
   })
 }
 
-function stepCopy(row: SkillRow, target: Band): { headline: string; action: string } {
-  const meta = SKILL_META[row.skill]
-  const isProductive = row.skill === 'writing' || row.skill === 'speaking'
+// Compose the translated headline + action for a step. Mirrors the original copy
+// logic exactly (baseline / hold / close), but reads phrases from the dictionary
+// and interpolates skill labels (Latin), bands and gaps (digits) as tokens.
+function stepCopy(step: PlanStep, t: TFn): { headline: string; action: string } {
+  const meta = SKILL_META[step.skill]
+  const skillLabel = meta.label
+  const isProductive = step.skill === 'writing' || step.skill === 'speaking'
 
-  if (row.current === null) {
+  if (step.kind === 'baseline') {
+    const taskKind = t(
+      isProductive ? 'ielts.plan.taskkind.feedback' : 'ielts.plan.taskkind.practice_set',
+    )
     return {
-      headline: `Get a baseline in ${meta.label}`,
-      action: `You haven’t practised ${meta.label} yet, so we can’t measure the gap to Band ${bandLabel(target)}. Do one ${isProductive ? 'task with AI feedback' : 'practice set'} to set your starting point — it will reshape this whole plan.`,
+      headline: t('ielts.plan.step.baseline.headline', { skill: skillLabel }),
+      action: t('ielts.plan.step.baseline.action', {
+        skill: skillLabel,
+        target: bandLabel(step.target),
+        taskKind,
+      }),
     }
   }
 
-  if (row.meetsTarget) {
+  if (step.kind === 'hold') {
     return {
-      headline: `Hold your ${meta.label} at Band ${bandLabel(row.current)}`,
-      action: `You’re already at or above your target of Band ${bandLabel(target)} here. Keep it sharp with occasional timed practice so it doesn’t slip, and pour your energy into your weaker skills first.`,
+      headline: t('ielts.plan.step.hold.headline', {
+        skill: skillLabel,
+        current: bandLabel(step.current),
+      }),
+      action: t('ielts.plan.step.hold.action', { target: bandLabel(step.target) }),
     }
   }
 
-  const gapLabel = row.gap % 1 === 0 ? String(row.gap) : row.gap.toFixed(1)
-  const sizeNote =
-    row.gap >= 1.5
-      ? 'This is your biggest gap, so it deserves the most time.'
-      : row.gap >= 0.5
-        ? 'A focused push here should move the needle quickly.'
-        : 'You’re close — a little polish should get you there.'
+  const gapLabel = step.gap % 1 === 0 ? String(step.gap) : step.gap.toFixed(1)
+  const sizeKey =
+    step.sizeNote === 'big'
+      ? 'ielts.plan.step.close.size_big'
+      : step.sizeNote === 'medium'
+        ? 'ielts.plan.step.close.size_medium'
+        : 'ielts.plan.step.close.size_small'
+  const actionLead = t('ielts.plan.step.close.action_lead', {
+    current: bandLabel(step.current),
+    target: bandLabel(step.target),
+  })
+  const sizeNote = t(sizeKey)
+  const actionTail = t(
+    isProductive
+      ? 'ielts.plan.step.close.action_productive'
+      : 'ielts.plan.step.close.action_receptive',
+    { skillLower: skillLabel.toLowerCase() },
+  )
 
   return {
-    headline: `Close a ${gapLabel}-band gap in ${meta.label}`,
-    action: `You’re estimated at Band ${bandLabel(row.current)} and aiming for Band ${bandLabel(target)}. ${sizeNote} ${
-      isProductive
-        ? `Submit a ${meta.label.toLowerCase()} task to get AI band feedback against the official criteria.`
-        : `Work through targeted ${meta.label.toLowerCase()} practice sets and review every answer you miss.`
-    }`,
+    headline: t('ielts.plan.step.close.headline', { gap: gapLabel, skill: skillLabel }),
+    action: `${actionLead} ${sizeNote} ${actionTail}`,
   }
 }
 
 export default function IeltsPlanPage() {
+  const t = usePlanT()
   const [profile, setProfile] = useState<IeltsProfile | null>(null)
   const [diagnostic, setDiagnostic] = useState<DiagnosticResult | null>(null)
   const [target, setTarget] = useState<Band>(DEFAULT_TARGET)
@@ -183,7 +243,7 @@ export default function IeltsPlanPage() {
   if (!loaded) {
     return (
       <main className="min-h-screen bg-background">
-        <PlanHeader />
+        <PlanHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
           <div className="animate-pulse space-y-4">
             <div className="mx-auto h-8 w-64 rounded bg-muted" />
@@ -198,20 +258,18 @@ export default function IeltsPlanPage() {
   if (!hasAnyData) {
     return (
       <main className="min-h-screen bg-background">
-        <PlanHeader />
+        <PlanHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-muted/50">
             <Compass className="h-10 w-10 text-muted-foreground" />
           </div>
-          <h2 className="mb-3 font-serif text-2xl font-medium">Take the placement test first</h2>
+          <h2 className="mb-3 font-serif text-2xl font-medium">{t('ielts.plan.empty.title')}</h2>
           <p className="mx-auto mb-8 max-w-md leading-relaxed text-muted-foreground">
-            Your study plan is built from where you are now. Take the quick placement test and we’ll
-            show you your current band per skill, the gap to your target, and exactly what to work
-            on first.
+            {t('ielts.plan.empty.body')}
           </p>
           <Button size="lg" render={<Link href="/ielts/diagnostic" />}>
             <Target className="mr-2 h-4 w-4" />
-            Take the placement test
+            {t('ielts.plan.empty.cta')}
           </Button>
         </div>
       </main>
@@ -222,7 +280,7 @@ export default function IeltsPlanPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <PlanHeader />
+      <PlanHeader t={t} />
 
       <div className="mx-auto max-w-4xl space-y-12 px-4 py-8 sm:px-6 sm:py-12">
         {/* ── Target + overall ── */}
@@ -231,11 +289,12 @@ export default function IeltsPlanPage() {
             <div>
               <div className="mb-2 flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-primary" />
-                <h2 className="font-serif text-2xl font-medium tracking-tight">Your target</h2>
+                <h2 className="font-serif text-2xl font-medium tracking-tight">
+                  {t('ielts.plan.target.heading')}
+                </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Pick the overall band you’re aiming for. Most universities ask for 6.0–7.0 overall.
-                We’ll prioritise your weakest skills to get you there.
+                {t('ielts.plan.target.body')}
               </p>
             </div>
             <div className="shrink-0">
@@ -243,7 +302,7 @@ export default function IeltsPlanPage() {
                 htmlFor="target-band"
                 className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-muted-foreground"
               >
-                Target band
+                {t('ielts.plan.target.select_label')}
               </label>
               <select
                 id="target-band"
@@ -253,7 +312,7 @@ export default function IeltsPlanPage() {
               >
                 {TARGET_BANDS.map((b) => (
                   <option key={b} value={b}>
-                    Band {bandLabel(b)}
+                    {t('ielts.plan.target.option', { band: bandLabel(b) })}
                   </option>
                 ))}
               </select>
@@ -264,7 +323,7 @@ export default function IeltsPlanPage() {
           <div className="mt-6 grid grid-cols-2 gap-3">
             <div className={`rounded-xl border p-4 ${bandBgColour(currentOverall)}`}>
               <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                Current overall
+                {t('ielts.plan.overall.current')}
               </p>
               <p className={`text-3xl font-bold ${bandColour(currentOverall)}`}>
                 {bandLabel(currentOverall)}
@@ -273,7 +332,7 @@ export default function IeltsPlanPage() {
             </div>
             <div className={`rounded-xl border p-4 ${bandBgColour(target)}`}>
               <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                Target overall
+                {t('ielts.plan.overall.target')}
               </p>
               <p className={`text-3xl font-bold ${bandColour(target)}`}>{bandLabel(target)}</p>
               <p className="mt-0.5 text-[11px] text-muted-foreground">{bandTier(target)}</p>
@@ -282,8 +341,7 @@ export default function IeltsPlanPage() {
 
           {!profile?.hasData && diagnostic && (
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              These figures come from your placement test. Once you complete real practice in each
-              module, your plan will update to use those results instead.
+              {t('ielts.plan.overall.from_placement_note')}
             </p>
           )}
         </section>
@@ -292,11 +350,13 @@ export default function IeltsPlanPage() {
         <section>
           <div className="mb-6 flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-2xl font-medium tracking-tight">Where you stand</h2>
+            <h2 className="font-serif text-2xl font-medium tracking-tight">
+              {t('ielts.plan.stand.heading')}
+            </h2>
           </div>
           <div className="space-y-3">
             {rows.map((row) => (
-              <SkillGapRow key={row.skill} row={row} target={target} />
+              <SkillGapRow key={row.skill} t={t} row={row} target={target} />
             ))}
           </div>
         </section>
@@ -306,31 +366,34 @@ export default function IeltsPlanPage() {
           <div className="mb-2 flex items-center gap-2">
             <Target className="h-5 w-5 text-primary" />
             <h2 className="font-serif text-2xl font-medium tracking-tight">
-              Your plan — weakest skills first
+              {t('ielts.plan.plan.heading')}
             </h2>
           </div>
           <p className="mb-6 text-sm text-muted-foreground">
             {topGap
-              ? `Start with ${SKILL_META[topGap.skill].label} — it has the largest gap to Band ${bandLabel(target)}. Work down the list in order.`
-              : 'You’re meeting your target across the board. Keep practising to stay sharp and consider raising your target.'}
+              ? t('ielts.plan.plan.lead_gap', {
+                  skill: SKILL_META[topGap.skill].label,
+                  target: bandLabel(target),
+                })
+              : t('ielts.plan.plan.lead_on_target')}
           </p>
           <div className="space-y-3">
             {plan.map((step) => (
-              <PlanStepCard key={step.skill} step={step} />
+              <PlanStepCard key={step.skill} t={t} step={step} />
             ))}
           </div>
         </section>
 
         {/* ── Caveat + refresh CTA ── */}
-        <PlanCaveat />
+        <PlanCaveat t={t} />
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button variant="outline" render={<Link href="/ielts/diagnostic" />}>
             <Target className="mr-2 h-4 w-4" />
-            Retake the placement test
+            {t('ielts.plan.cta.retake')}
           </Button>
           <Button variant="outline" render={<Link href="/ielts/progress" />}>
-            View my progress
+            {t('ielts.plan.cta.view_progress')}
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -341,7 +404,7 @@ export default function IeltsPlanPage() {
 
 // ─── Header ───────────────────────────────────────────────────────────────────
 
-function PlanHeader() {
+function PlanHeader({ t }: { t: TFn }) {
   return (
     <section className="border-b border-border bg-card">
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -350,7 +413,7 @@ function PlanHeader() {
           className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to IELTS
+          {t('ielts.diagnostic.back')}
         </Link>
         <div className="flex items-start gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
@@ -358,11 +421,10 @@ function PlanHeader() {
           </div>
           <div>
             <h1 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-              My IELTS Study Plan
+              {t('ielts.plan.title')}
             </h1>
             <p className="mt-1 max-w-2xl text-lg text-muted-foreground">
-              A prioritised, weakest-first route to your target band — built from your placement
-              test and practice so far.
+              {t('ielts.plan.subtitle')}
             </p>
           </div>
         </div>
@@ -373,9 +435,15 @@ function PlanHeader() {
 
 // ─── Skill gap row ──────────────────────────────────────────────────────────
 
-function SkillGapRow({ row, target }: { row: SkillRow; target: Band }) {
+function SkillGapRow({ t, row, target }: { t: TFn; row: SkillRow; target: Band }) {
   const meta = SKILL_META[row.skill]
   const gapLabel = row.gap % 1 === 0 ? String(row.gap) : row.gap.toFixed(1)
+  const sourceKey =
+    row.source === 'practice'
+      ? 'ielts.plan.tag.from_practice'
+      : row.source === 'placement'
+        ? 'ielts.plan.tag.from_placement'
+        : 'ielts.plan.tag.not_assessed'
 
   return (
     <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-soft">
@@ -388,28 +456,27 @@ function SkillGapRow({ row, target }: { row: SkillRow; target: Band }) {
         <div className="flex items-center gap-2">
           <h3 className="font-serif text-base font-medium">{meta.label}</h3>
           <Badge variant="outline" className="text-[10px]">
-            {row.source === 'practice'
-              ? 'From practice'
-              : row.source === 'placement'
-                ? 'From placement'
-                : 'Not assessed'}
+            {t(sourceKey)}
           </Badge>
         </div>
         <p className="mt-0.5 text-xs text-muted-foreground">
-          Current{' '}
+          {t('ielts.plan.stand.current_label')}
           <span className={`font-semibold ${bandColour(row.current)}`}>
             {bandLabel(row.current)}
           </span>{' '}
-          · target <span className="font-semibold text-foreground">{bandLabel(target)}</span>
+          · {t('ielts.plan.stand.target_label')}
+          <span className="font-semibold text-foreground">{bandLabel(target)}</span>
         </p>
       </div>
       <div className="shrink-0 text-right">
         {row.current === null ? (
-          <span className="text-xs font-medium text-muted-foreground">No data yet</span>
+          <span className="text-xs font-medium text-muted-foreground">
+            {t('ielts.plan.stand.no_data')}
+          </span>
         ) : row.meetsTarget ? (
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            On target
+            {t('ielts.plan.stand.on_target')}
           </span>
         ) : (
           <span className="text-sm font-bold text-rose-500">+{gapLabel}</span>
@@ -421,10 +488,12 @@ function SkillGapRow({ row, target }: { row: SkillRow; target: Band }) {
 
 // ─── Plan step card ───────────────────────────────────────────────────────────
 
-function PlanStepCard({ step }: { step: PlanStep }) {
+function PlanStepCard({ t, step }: { t: TFn; step: PlanStep }) {
   const meta = SKILL_META[step.skill]
   const onTarget = step.current !== null && step.gap === 0
   const unknown = step.current === null
+  const { headline, action } = stepCopy(step, t)
+  const gapLabel = step.gap % 1 === 0 ? String(step.gap) : step.gap.toFixed(1)
 
   const accent: { icon: LucideIcon; chip: string } = onTarget
     ? {
@@ -447,22 +516,22 @@ function PlanStepCard({ step }: { step: PlanStep }) {
           >
             {meta.short}
           </span>
-          <h3 className="font-serif text-base font-medium">{step.headline}</h3>
+          <h3 className="font-serif text-base font-medium">{headline}</h3>
           <Badge className={`border text-[10px] ${accent.chip}`}>
             <accent.icon className="h-3 w-3" />
             {onTarget
-              ? 'On target'
+              ? t('ielts.plan.chip.on_target')
               : unknown
-                ? 'Baseline needed'
-                : `+${step.gap % 1 === 0 ? step.gap : step.gap.toFixed(1)} band`}
+                ? t('ielts.plan.chip.baseline_needed')
+                : t('ielts.plan.chip.gap', { gap: gapLabel })}
           </Badge>
         </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">{step.action}</p>
+        <p className="text-sm leading-relaxed text-muted-foreground">{action}</p>
         <Link
           href={step.href}
           className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
         >
-          {step.ctaLabel}
+          {t('ielts.plan.cta.practise', { skill: meta.label })}
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -472,14 +541,13 @@ function PlanStepCard({ step }: { step: PlanStep }) {
 
 // ─── Caveat ───────────────────────────────────────────────────────────────────
 
-function PlanCaveat() {
+function PlanCaveat({ t }: { t: TFn }) {
   return (
     <div className="flex items-start gap-3 rounded-xl border border-amber-500/25 bg-amber-500/10 p-4">
       <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-500" />
       <p className="text-xs leading-relaxed text-muted-foreground">
-        <span className="font-semibold text-foreground">Bands here are estimates.</span> Placement
-        and Writing/Speaking self-estimates are starting points, not official results. The more real
-        practice you do in each module, the more accurate this plan becomes.
+        <span className="font-semibold text-foreground">{t('ielts.plan.caveat.strong')}</span>{' '}
+        {t('ielts.plan.caveat.body')}
       </p>
     </div>
   )

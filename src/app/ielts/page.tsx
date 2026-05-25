@@ -48,72 +48,115 @@ export default async function IeltsHubPage() {
   }
 
   // The seven-stage learning loop. Labels come from ielts.loop.*; the detail
-  // lines are original marketing copy (English — module-specific i18n is a
-  // later pass, mirroring the dictionary shard's stated convention).
+  // lines are now translated via ielts.hubx.loop.*.detail (EN + Khaleeji AR).
   const loopSteps = [
     {
       label: await t('ielts.loop.diagnose'),
       icon: Stethoscope,
-      detail: 'A short placement test pins your starting band across all four skills.',
+      detail: await t('ielts.hubx.loop.diagnose.detail'),
     },
     {
       label: await t('ielts.loop.plan'),
       icon: Map,
-      detail: 'Get a personalised study plan that targets your weakest skill first.',
+      detail: await t('ielts.hubx.loop.plan.detail'),
     },
     {
       label: await t('ielts.loop.practise'),
       icon: Dumbbell,
-      detail: 'Work through Academic Listening, Reading, Writing and Speaking tasks.',
+      detail: await t('ielts.hubx.loop.practise.detail'),
     },
     {
       label: await t('ielts.loop.feedback'),
       icon: Sparkles,
-      detail: 'Writing and Speaking get an instant AI band against the official criteria.',
+      detail: await t('ielts.hubx.loop.feedback.detail'),
     },
     {
       label: await t('ielts.loop.mock'),
       icon: ClipboardCheck,
-      detail: 'Sit a full, timed mock under real exam conditions when you are ready.',
+      detail: await t('ielts.hubx.loop.mock.detail'),
     },
     {
       label: await t('ielts.loop.predict'),
       icon: Gauge,
-      detail: 'See your predicted overall band and exactly what will lift it higher.',
+      detail: await t('ielts.hubx.loop.predict.detail'),
     },
   ]
 
   // "Auto-marked" vs "AI band score" badge copy + per-skill blurbs.
-  const markingLabel = { auto: 'Auto-marked', ai: 'AI band score' } as const
+  const markingLabel = {
+    auto: await t('ielts.hubx.marking.auto'),
+    ai: await t('ielts.hubx.marking.ai'),
+  } as const
   const skillBlurb: Record<(typeof IELTS_SKILLS)[number], string> = {
-    listening:
-      'Section-by-section question practice with instant scoring and a band from your raw mark.',
-    reading:
-      'Academic passages with True/False/Not Given, matching and completion — marked the moment you finish.',
-    writing:
-      'Task 1 data responses and Task 2 essays scored on all four criteria, with fixes you can action.',
-    speaking:
-      'Parts 1–3 with cue cards and follow-ups, assessed for fluency, vocabulary, grammar and pronunciation.',
+    listening: await t('ielts.hubx.skill.listening.blurb'),
+    reading: await t('ielts.hubx.skill.reading.blurb'),
+    writing: await t('ielts.hubx.skill.writing.blurb'),
+    speaking: await t('ielts.hubx.skill.speaking.blurb'),
   }
 
   // "Why The English Hub" differentiators.
   const whyStrip = [
     {
       icon: Zap,
-      title: 'Instant AI band feedback',
-      body: 'No waiting for a tutor. Writing and Speaking responses get a band and targeted next steps in seconds.',
+      title: await t('ielts.hubx.why.instant.title'),
+      body: await t('ielts.hubx.why.instant.body'),
     },
     {
       icon: Languages,
-      title: 'Built bilingual for Gulf learners',
-      body: 'Every page works in English or Arabic, so instructions never get in the way of the practice.',
+      title: await t('ielts.hubx.why.bilingual.title'),
+      body: await t('ielts.hubx.why.bilingual.body'),
     },
     {
       icon: TrendingUp,
-      title: 'A starter-to-Band-9 path',
-      body: 'Whether you are at Band 4 or chasing Band 8, the loop adapts and tracks every step of the climb.',
+      title: await t('ielts.hubx.why.path.title'),
+      body: await t('ielts.hubx.why.path.body'),
     },
   ]
+
+  // "Beyond practice" cards — links resolved up front (server component can't
+  // await inside the JSX .map()).
+  const moreCards = [
+    {
+      href: '/ielts/admissions',
+      icon: GraduationCap,
+      title: await t('ielts.hubx.more.admissions.title'),
+      body: await t('ielts.hubx.more.admissions.body'),
+    },
+    {
+      href: '/ielts/centre',
+      icon: Users,
+      title: await t('ielts.hubx.more.centre.title'),
+      body: await t('ielts.hubx.more.centre.body'),
+    },
+    {
+      href: '/ielts/partners',
+      icon: Building2,
+      title: await t('ielts.hubx.more.partners.title'),
+      body: await t('ielts.hubx.more.partners.body'),
+    },
+  ]
+
+  // Remaining standalone hub copy — section eyebrows, headings, bodies, the
+  // secondary CTA, hero badge chips and inline link labels.
+  const viewProgress = await t('ielts.hubx.view_progress')
+  const exploreLabel = await t('ielts.hubx.more.explore')
+  const heroBadges = [
+    await t('ielts.hubx.badge.academic_module'),
+    await t('ielts.hubx.badge.four_skills'),
+    await t('ielts.hubx.badge.bilingual'),
+  ]
+  const loopEyebrow = await t('ielts.hubx.loop.eyebrow')
+  const loopHeading = await t('ielts.hubx.loop.heading')
+  const loopBody = await t('ielts.hubx.loop.body')
+  const skillsEyebrow = await t('ielts.hubx.skills.eyebrow')
+  const skillsHeading = await t('ielts.hubx.skills.heading')
+  const skillsBody = await t('ielts.hubx.skills.body')
+  const whyEyebrow = await t('ielts.hubx.why.eyebrow')
+  const whyHeading = await t('ielts.hubx.why.heading')
+  const moreEyebrow = await t('ielts.hubx.more.eyebrow')
+  const moreHeading = await t('ielts.hubx.more.heading')
+  const ctaHeading = await t('ielts.hubx.cta.heading')
+  const ctaBody = await t('ielts.hubx.cta.body')
 
   return (
     <main className="min-h-screen bg-background">
@@ -160,15 +203,11 @@ export default async function IeltsHubPage() {
               render={<Link href="/ielts/progress" />}
             >
               <LayoutDashboard className="h-4 w-4" />
-              View my progress
+              {viewProgress}
             </Button>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            {[
-              'Academic module',
-              'Listening · Reading · Writing · Speaking',
-              'English / العربية',
-            ].map((l) => (
+            {heroBadges.map((l) => (
               <span
                 key={l}
                 className="rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground"
@@ -185,17 +224,16 @@ export default async function IeltsHubPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              How it works
+              {loopEyebrow}
             </p>
             <h2
               id="loop-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              One loop, repeated until you are exam-ready
+              {loopHeading}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Every cycle moves you up a band. Diagnose where you are, follow the plan, practise,
-              get feedback, then prove it — and repeat.
+              {loopBody}
             </p>
           </div>
 
@@ -226,17 +264,16 @@ export default async function IeltsHubPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-              Four skills, one platform
+              {skillsEyebrow}
             </p>
             <h2
               id="skills-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Practise every part of the Academic test
+              {skillsHeading}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Listening and Reading are marked automatically. Writing and Speaking are scored by AI
-              against the official band descriptors — so you always know where you stand.
+              {skillsBody}
             </p>
           </div>
 
@@ -263,13 +300,13 @@ export default async function IeltsHubPage() {
       >
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Why The English Hub
+            {whyEyebrow}
           </p>
           <h2
             id="why-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Feedback that used to need a tutor — instantly
+            {whyHeading}
           </h2>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-3">
@@ -293,36 +330,17 @@ export default async function IeltsHubPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              Beyond practice
+              {moreEyebrow}
             </p>
             <h2
               id="more-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              From your target band to your university place
+              {moreHeading}
             </h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {[
-              {
-                href: '/ielts/admissions',
-                icon: GraduationCap,
-                title: 'UK admissions & statement coach',
-                body: 'Plan your UCAS application and get instant AI feedback on your personal statement.',
-              },
-              {
-                href: '/ielts/centre',
-                icon: Users,
-                title: 'For tutors & centres',
-                body: 'Track your students’ bands across every skill from one dashboard.',
-              },
-              {
-                href: '/ielts/partners',
-                icon: Building2,
-                title: 'Partner with us',
-                body: 'Bring The English Hub to your school or agency across the Gulf.',
-              },
-            ].map(({ href, icon: Icon, title: cardTitle, body }) => (
+            {moreCards.map(({ href, icon: Icon, title: cardTitle, body }) => (
               <Link
                 key={href}
                 href={href}
@@ -336,7 +354,7 @@ export default async function IeltsHubPage() {
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Explore{' '}
+                  {exploreLabel}{' '}
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
@@ -352,12 +370,9 @@ export default async function IeltsHubPage() {
             id="cta-heading"
             className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Find your band today — for free
+            {ctaHeading}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
-            Take the placement test, get your personalised plan, and start closing the gap to your
-            target band.
-          </p>
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">{ctaBody}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               size="lg"
@@ -373,7 +388,7 @@ export default async function IeltsHubPage() {
               className="h-12 px-7 text-base"
               render={<Link href="/ielts/progress" />}
             >
-              View my progress
+              {viewProgress}
             </Button>
           </div>
           <p className="mt-6 font-mono text-xs text-muted-foreground">{estimateNote}</p>

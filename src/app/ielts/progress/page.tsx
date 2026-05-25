@@ -65,7 +65,7 @@ function formatDate(iso: string): string {
 
 // ── Band-over-time: lightweight inline bars (no chart library) ──────────────
 
-function BandTrend({ attempts }: { attempts: IeltsAttempt[] }) {
+function BandTrend({ attempts, ariaLabel }: { attempts: IeltsAttempt[]; ariaLabel: string }) {
   // Oldest → newest so the trend reads left-to-right.
   const series = useMemo(
     () =>
@@ -78,7 +78,7 @@ function BandTrend({ attempts }: { attempts: IeltsAttempt[] }) {
   if (series.length === 0) return null
 
   return (
-    <div className="flex h-32 items-end gap-1.5" role="img" aria-label="Band over time">
+    <div className="flex h-32 items-end gap-1.5" role="img" aria-label={ariaLabel}>
       {series.map((a) => {
         const band = a.band as Band
         // Bands run 0–9; give the shortest bars a visible floor.
@@ -148,11 +148,10 @@ export default function IeltsProgressPage() {
               <Target className="h-7 w-7 text-primary" aria-hidden />
             </span>
             <h2 className="mt-5 font-serif text-2xl font-semibold tracking-tight text-foreground">
-              No band yet — let&rsquo;s find yours
+              {t('ielts.progress.empty.title')}
             </h2>
             <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted-foreground">
-              Take the placement test to estimate your band across all four skills. Your overall
-              band, progress and recent attempts will appear here as you practise.
+              {t('ielts.progress.empty.body')}
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -169,7 +168,7 @@ export default function IeltsProgressPage() {
                 className="h-12 px-7 text-base"
                 render={<Link href="/ielts" />}
               >
-                Explore IELTS
+                {t('ielts.progress.empty.explore')}
               </Button>
             </div>
           </div>
@@ -203,9 +202,9 @@ export default function IeltsProgressPage() {
             <p className="mt-2 text-sm text-muted-foreground">{bandTier(overall)}</p>
             {overall === null ? (
               <p className="mx-auto mt-3 max-w-md text-xs leading-relaxed text-muted-foreground">
-                Your overall band unlocks once you have at least one result in every skill. Keep
-                going — you are {IELTS_SKILLS.filter((s) => profile.skills[s].band !== null).length}{' '}
-                of 4 there.
+                {t('ielts.progress.overall.locked_lead')}{' '}
+                {IELTS_SKILLS.filter((s) => profile.skills[s].band !== null).length}{' '}
+                {t('ielts.progress.overall.locked_tail')}
               </p>
             ) : (
               <p className="mt-3 font-mono text-xs text-muted-foreground">
@@ -217,7 +216,9 @@ export default function IeltsProgressPage() {
 
         {/* ── Per-skill bands ──────────────────────────────────────── */}
         <section>
-          <h2 className="mb-4 font-serif text-xl font-medium">Bands by skill</h2>
+          <h2 className="mb-4 font-serif text-xl font-medium">
+            {t('ielts.progress.bands_by_skill')}
+          </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {IELTS_SKILLS.map((skill) => {
               const sb = profile.skills[skill]
@@ -228,6 +229,9 @@ export default function IeltsProgressPage() {
                     short={SKILL_META[skill].short}
                     band={sb.band}
                     attempts={sb.attempts}
+                    notAttemptedLabel={t('ielts.progress.chip.not_attempted')}
+                    attemptOneLabel={t('ielts.progress.chip.attempt_one')}
+                    attemptsOtherLabel={t('ielts.progress.chip.attempts_other')}
                     className="h-full group-hover/chip:border-foreground/20"
                   />
                 </Link>
@@ -246,11 +250,12 @@ export default function IeltsProgressPage() {
                 </span>
                 <div>
                   <p className="font-serif text-base font-semibold text-foreground">
-                    Focus next on {SKILL_META[weakest].label}
+                    {t('ielts.progress.weakest.title_lead')} {SKILL_META[weakest].label}
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    It&rsquo;s currently your lowest band ({bandLabel(profile.skills[weakest].band)}
-                    ). Your study plan puts it first so your overall band rises fastest.
+                    {t('ielts.progress.weakest.body_lead')}
+                    {bandLabel(profile.skills[weakest].band)}
+                    {t('ielts.progress.weakest.body_tail')}
                   </p>
                 </div>
               </div>
@@ -266,12 +271,12 @@ export default function IeltsProgressPage() {
         <section>
           <h2 className="mb-4 flex items-center gap-2 font-serif text-xl font-medium">
             <TrendingUp className="h-5 w-5 text-muted-foreground" aria-hidden />
-            Band over time
+            {t('ielts.progress.trend.heading')}
           </h2>
           <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
             {attempts.length >= 2 ? (
               <>
-                <BandTrend attempts={attempts} />
+                <BandTrend attempts={attempts} ariaLabel={t('ielts.progress.trend.aria')} />
                 <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
                   {IELTS_SKILLS.map((skill) => (
                     <span
@@ -288,9 +293,7 @@ export default function IeltsProgressPage() {
                 </div>
               </>
             ) : (
-              <p className="text-sm text-muted-foreground">
-                Complete a few more attempts to see your band trend build here.
-              </p>
+              <p className="text-sm text-muted-foreground">{t('ielts.progress.trend.empty')}</p>
             )}
           </div>
         </section>
@@ -299,7 +302,7 @@ export default function IeltsProgressPage() {
         <section>
           <h2 className="mb-4 flex items-center gap-2 font-serif text-xl font-medium">
             <Clock className="h-5 w-5 text-muted-foreground" aria-hidden />
-            Recent attempts
+            {t('ielts.progress.recent.heading')}
           </h2>
           <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-soft">
             {recentAttempts.map((a) => {
@@ -351,11 +354,9 @@ function ProgressHeader({ t }: { t: (key: string) => string }) {
           </span>
           <div>
             <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-              My IELTS Progress
+              {t('ielts.progress.header.title')}
             </h1>
-            <p className="text-sm text-muted-foreground">
-              Your bands, trend and recent attempts across all four skills.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('ielts.progress.header.subtitle')}</p>
           </div>
         </div>
       </div>

@@ -17,10 +17,29 @@ export interface BandChipProps {
   band: Band | null
   /** How many attempts contributed to this band (shown as a sublabel). */
   attempts?: number
+  /**
+   * Localised sublabels for the attempts line. Passed in by the caller so this
+   * component stays presentational and locale-agnostic (safe in server or
+   * client). When omitted it falls back to English.
+   */
+  notAttemptedLabel?: string
+  /** Singular attempts label, e.g. "1 attempt". */
+  attemptOneLabel?: string
+  /** Plural attempts noun, e.g. "attempts" — rendered as "{n} attempts". */
+  attemptsOtherLabel?: string
   className?: string
 }
 
-export function BandChip({ label, short, band, attempts, className }: BandChipProps) {
+export function BandChip({
+  label,
+  short,
+  band,
+  attempts,
+  notAttemptedLabel = 'Not attempted',
+  attemptOneLabel = '1 attempt',
+  attemptsOtherLabel = 'attempts',
+  className,
+}: BandChipProps) {
   return (
     <div
       className={cn(
@@ -49,7 +68,11 @@ export function BandChip({ label, short, band, attempts, className }: BandChipPr
         </p>
         {typeof attempts === 'number' ? (
           <p className="text-[11px] text-muted-foreground">
-            {attempts === 0 ? 'Not attempted' : `${attempts} attempt${attempts === 1 ? '' : 's'}`}
+            {attempts === 0
+              ? notAttemptedLabel
+              : attempts === 1
+                ? attemptOneLabel
+                : `${attempts} ${attemptsOtherLabel}`}
           </p>
         ) : null}
       </div>

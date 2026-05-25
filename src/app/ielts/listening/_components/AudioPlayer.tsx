@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Play, Pause, Square, RotateCcw, Volume2, VolumeX, Eye, EyeOff } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── AudioPlayer (Wave 1 TTS stand-in) ─────────────────────────────────────
 // Plays a Listening section's `transcript` aloud using the browser's Web Speech
@@ -53,6 +54,7 @@ function speechSupported(): boolean {
 }
 
 export default function AudioPlayer({ transcript, sectionTitle, resetKey }: AudioPlayerProps) {
+  const t = useT()
   // Resolve support after mount only — this avoids a hydration mismatch, since
   // the server can't know whether the client has the API.
   const [supported, setSupported] = useState<boolean | null>(null)
@@ -147,7 +149,7 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
       <div className="rounded-2xl border border-border/60 bg-card p-5">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Volume2 className="size-4" />
-          <span>Preparing audio…</span>
+          <span>{t('ielts.listening.audio.preparing')}</span>
         </div>
       </div>
     )
@@ -161,11 +163,11 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
           <VolumeX className="size-5 shrink-0 text-amber-500" aria-hidden="true" />
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-foreground">
-              Audio playback isn’t available in this browser
+              {t('ielts.listening.audio.unavailable_heading')}
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              Your browser doesn’t support text-to-speech, so you can read the script for{' '}
-              {sectionTitle} instead and answer the questions from the text.
+              {t('ielts.listening.audio.unavailable_body_prefix')} {sectionTitle}{' '}
+              {t('ielts.listening.audio.unavailable_body_suffix')}
             </p>
             <Button
               variant="outline"
@@ -175,7 +177,9 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
               aria-expanded={showFallback}
             >
               {showFallback ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
-              {showFallback ? 'Hide script' : 'Read the script instead'}
+              {showFallback
+                ? t('ielts.listening.audio.hide_script')
+                : t('ielts.listening.audio.read_script_instead')}
             </Button>
             {showFallback && (
               <div className="mt-3 max-h-72 overflow-y-auto rounded-xl border border-border/60 bg-background/60 p-4">
@@ -192,7 +196,11 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
 
   // ─── Render: full player ──────────────────────────────────────────────────
   const statusLabel =
-    state === 'playing' ? 'Playing' : state === 'paused' ? 'Paused' : 'Ready to play'
+    state === 'playing'
+      ? t('ielts.listening.audio.status.playing')
+      : state === 'paused'
+        ? t('ielts.listening.audio.status.paused')
+        : t('ielts.listening.audio.status.ready')
 
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-5">
@@ -207,7 +215,9 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
             <Volume2 className="size-4" />
           </span>
           <div className="leading-tight">
-            <p className="text-sm font-semibold text-foreground">{sectionTitle} audio</p>
+            <p className="text-sm font-semibold text-foreground">
+              {sectionTitle} {t('ielts.listening.audio.audio_suffix')}
+            </p>
             <p className="text-xs text-muted-foreground" role="status" aria-live="polite">
               {statusLabel}
             </p>
@@ -218,19 +228,19 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
           {state === 'idle' && (
             <Button variant="default" size="sm" onClick={play}>
               <Play className="size-3.5" />
-              Play
+              {t('ielts.listening.audio.play')}
             </Button>
           )}
           {state === 'playing' && (
             <Button variant="secondary" size="sm" onClick={pause}>
               <Pause className="size-3.5" />
-              Pause
+              {t('ielts.listening.audio.pause')}
             </Button>
           )}
           {state === 'paused' && (
             <Button variant="default" size="sm" onClick={resume}>
               <Play className="size-3.5" />
-              Resume
+              {t('ielts.listening.audio.resume')}
             </Button>
           )}
 
@@ -239,23 +249,28 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
             size="sm"
             onClick={stop}
             disabled={state === 'idle'}
-            aria-label="Stop playback"
+            aria-label={t('ielts.listening.audio.stop_aria')}
           >
             <Square className="size-3.5" />
-            Stop
+            {t('ielts.listening.audio.stop')}
           </Button>
 
-          <Button variant="outline" size="sm" onClick={play} aria-label="Replay from the start">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={play}
+            aria-label={t('ielts.listening.audio.replay_aria')}
+          >
             <RotateCcw className="size-3.5" />
-            Replay
+            {t('ielts.listening.audio.replay')}
           </Button>
         </div>
       </div>
 
       <p className="mt-3 text-xs text-muted-foreground">
-        Spoken by your browser’s built-in voice. In the real test the recording plays{' '}
-        <span className="font-medium text-foreground">once</span> — try a single listen first, then
-        use Replay only to practise. The script stays hidden until you submit.
+        {t('ielts.listening.audio.note_prefix')}{' '}
+        <span className="font-medium text-foreground">{t('ielts.listening.audio.note_once')}</span>{' '}
+        {t('ielts.listening.audio.note_suffix')}
       </p>
     </div>
   )

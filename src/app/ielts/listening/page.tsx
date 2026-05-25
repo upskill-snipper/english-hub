@@ -20,6 +20,7 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 import type { ListeningTest, ListeningSection, ObjectiveQuestion, Band } from '@/lib/ielts/types'
 import { objectiveToBand, bandLabel, bandColour, bandBgColour, bandTier } from '@/lib/ielts/bands'
@@ -78,6 +79,7 @@ function isGapCorrect(input: string, acceptable: string[]): boolean {
 }
 
 export default function ListeningPage() {
+  const t = useT()
   const [mounted, setMounted] = useState(false)
   const [phase, setPhase] = useState<Phase>('intro')
 
@@ -174,15 +176,13 @@ export default function ListeningPage() {
     return (
       <main id="main-content" className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <p className="text-sm text-muted-foreground">
-            No listening test is available right now. Please check back soon.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('ielts.listening.none_available')}</p>
           <Link
             href="/ielts"
             className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to IELTS
+            {t('ielts.listening.back_to_ielts')}
           </Link>
         </div>
       </main>
@@ -199,7 +199,7 @@ export default function ListeningPage() {
             className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to IELTS
+            {t('ielts.listening.back_to_ielts')}
           </Link>
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10">
@@ -207,11 +207,9 @@ export default function ListeningPage() {
             </div>
             <div>
               <h1 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
-                IELTS Listening
+                {t('ielts.listening.title')}
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Academic preparation · auto-marked · predicted band score
-              </p>
+              <p className="text-sm text-muted-foreground">{t('ielts.listening.subtitle')}</p>
             </div>
           </div>
         </div>
@@ -267,44 +265,44 @@ function IntroPanel({
   total: number
   onStart: () => void
 }) {
+  const t = useT()
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <h2 className="font-heading text-heading-md text-foreground">{test.title}</h2>
-        <p className="mt-2 text-body-sm text-muted-foreground">
-          A short two-section warm-up that mirrors the most common IELTS Listening question types:
-          form / note completion and multiple choice. Listen to each section, then type or select
-          your answers. You’ll get a predicted band score and a full review with the script and an
-          explanation for every question.
-        </p>
+        <p className="mt-2 text-body-sm text-muted-foreground">{t('ielts.listening.intro.lead')}</p>
 
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
-          <Stat icon={<ListChecks className="size-4" />} label="Questions" value={String(total)} />
+          <Stat
+            icon={<ListChecks className="size-4" />}
+            label={t('ielts.listening.intro.stat.questions')}
+            value={String(total)}
+          />
           <Stat
             icon={<Clock className="size-4" />}
-            label="Time"
-            value={`~${test.estimatedMinutes} min`}
+            label={t('ielts.listening.intro.stat.time')}
+            value={`~${test.estimatedMinutes} ${t('ielts.listening.intro.stat.minutes_unit')}`}
           />
           <Stat
             icon={<ClipboardList className="size-4" />}
-            label="Sections"
+            label={t('ielts.listening.intro.stat.sections')}
             value={String(test.sections.length)}
           />
         </div>
 
         <div className="mt-6 rounded-xl border border-sky-500/25 bg-sky-500/5 p-4">
-          <p className="text-sm font-semibold text-foreground">How the audio works</p>
+          <p className="text-sm font-semibold text-foreground">
+            {t('ielts.listening.intro.audio_heading')}
+          </p>
           <p className="mt-1 text-body-sm text-muted-foreground">
-            Wave 1 uses your browser’s built-in text-to-speech voice to read each section aloud (a
-            stand-in for recorded audio). In the real test each recording plays once — try a single
-            listen, then use Replay only for practice. The script stays hidden until you submit.
+            {t('ielts.listening.intro.audio_body')}
           </p>
         </div>
 
         <div className="mt-6">
           <Button variant="default" size="lg" onClick={onStart}>
             <Play className="size-4" />
-            Start practice test
+            {t('ielts.listening.intro.start')}
           </Button>
         </div>
       </div>
@@ -312,11 +310,11 @@ function IntroPanel({
       <div className="flex flex-wrap gap-3">
         <Button variant="outline" size="sm" render={<Link href="/ielts/plan" />}>
           <ChevronRight className="size-3.5" />
-          My study plan
+          {t('ielts.listening.intro.study_plan')}
         </Button>
         <Button variant="outline" size="sm" render={<Link href="/ielts/progress" />}>
           <ChevronRight className="size-3.5" />
-          Progress dashboard
+          {t('ielts.listening.intro.progress_dashboard')}
         </Button>
       </div>
     </div>
@@ -360,6 +358,7 @@ function TestPanel({
   onTypeGap: (id: string, value: string) => void
   onSubmit: () => void
 }) {
+  const t = useT()
   const progress = total > 0 ? (answeredCount / total) * 100 : 0
 
   return (
@@ -367,9 +366,11 @@ function TestPanel({
       {/* Sticky-ish progress header */}
       <div className="rounded-2xl border border-border/60 bg-card p-4">
         <div className="flex items-center justify-between gap-3">
-          <span className="text-sm font-medium text-foreground">Your answers</span>
+          <span className="text-sm font-medium text-foreground">
+            {t('ielts.listening.test.your_answers')}
+          </span>
           <Badge variant="secondary" className="tabular-nums">
-            {answeredCount} / {total} answered
+            {answeredCount} / {total} {t('ielts.listening.test.answered_suffix')}
           </Badge>
         </div>
         <div
@@ -378,7 +379,9 @@ function TestPanel({
           aria-valuenow={Math.round(progress)}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label={`Listening progress: ${answeredCount} of ${total} questions answered`}
+          aria-label={`${t('ielts.listening.test.progress_aria_prefix')} ${answeredCount} ${t(
+            'ielts.listening.test.progress_aria_of',
+          )} ${total} ${t('ielts.listening.test.progress_aria_suffix')}`}
         >
           <div
             className="h-full rounded-full bg-primary transition-all duration-300 ease-out"
@@ -393,7 +396,7 @@ function TestPanel({
           <section key={section.id} className="space-y-4">
             <div className="flex items-center gap-2">
               <Badge variant="outline" className="text-sky-500">
-                Section {sIdx + 1}
+                {t('ielts.listening.test.section_label')} {sIdx + 1}
               </Badge>
               <h2 className="font-heading text-heading-md text-foreground">{section.title}</h2>
             </div>
@@ -401,7 +404,7 @@ function TestPanel({
             {/* The audio stand-in. Transcript stays hidden here. */}
             <AudioPlayer
               transcript={section.transcript}
-              sectionTitle={`Section ${sIdx + 1}`}
+              sectionTitle={`${t('ielts.listening.test.section_label')} ${sIdx + 1}`}
               resetKey={section.id}
             />
 
@@ -427,16 +430,20 @@ function TestPanel({
           <p className="text-body-sm text-muted-foreground">
             {answeredCount < total ? (
               <>
-                You’ve answered {answeredCount} of {total}. You can submit now — unanswered
-                questions are marked as incorrect.
+                {t('ielts.listening.test.submit_hint_partial_prefix')} {answeredCount}{' '}
+                {t('ielts.listening.test.submit_hint_partial_of')} {total}.{' '}
+                {t('ielts.listening.test.submit_hint_partial_suffix')}
               </>
             ) : (
-              <>All {total} questions answered. Ready to see your band?</>
+              <>
+                {t('ielts.listening.test.submit_hint_done_prefix')} {total}{' '}
+                {t('ielts.listening.test.submit_hint_done_suffix')}
+              </>
             )}
           </p>
           <Button variant="default" size="lg" onClick={onSubmit}>
             <Check className="size-4" />
-            Submit &amp; mark
+            {t('ielts.listening.test.submit')}
           </Button>
         </div>
       </div>
@@ -457,6 +464,7 @@ function QuestionCard({
   onPickMcq: (id: string, idx: number) => void
   onTypeGap: (id: string, value: string) => void
 }) {
+  const t = useT()
   const { question, number } = fq
 
   return (
@@ -512,8 +520,8 @@ function QuestionCard({
                 onChange={(e) => onTypeGap(question.id, e.target.value)}
                 autoComplete="off"
                 spellCheck={false}
-                placeholder="Type your answer"
-                aria-label={`Answer for question ${number}`}
+                placeholder={t('ielts.listening.question.gap_placeholder')}
+                aria-label={`${t('ielts.listening.question.gap_aria_prefix')} ${number}`}
                 className="w-full max-w-xs rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
               />
             </div>
@@ -524,7 +532,11 @@ function QuestionCard({
               {(['true', 'false', 'not-given'] as const).map((opt, i) => {
                 const selected = mcqValue === i
                 const label =
-                  opt === 'not-given' ? 'Not Given' : opt[0].toUpperCase() + opt.slice(1)
+                  opt === 'not-given'
+                    ? t('ielts.listening.question.tfng.not_given')
+                    : opt === 'true'
+                      ? t('ielts.listening.question.tfng.true')
+                      : t('ielts.listening.question.tfng.false')
                 return (
                   <button
                     key={opt}
@@ -576,6 +588,7 @@ function ResultsPanel({
   onToggleReveal: (sectionId: string) => void
   onRetake: () => void
 }) {
+  const t = useT()
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0
 
   // Index the section for each question + a quick correctness map for review.
@@ -590,9 +603,11 @@ function ResultsPanel({
       {/* Band / score card */}
       <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.05] p-6 text-center sm:p-8">
         <Trophy className="mx-auto mb-3 size-10 text-clay-600" aria-hidden="true" />
-        <h2 className="font-heading text-display-sm text-foreground">Test complete</h2>
+        <h2 className="font-heading text-display-sm text-foreground">
+          {t('ielts.listening.results.complete')}
+        </h2>
         <p className="mt-1 text-body-sm text-muted-foreground">
-          Predicted Listening band — an estimate based on this practice set.
+          {t('ielts.listening.results.predicted_note')}
         </p>
 
         <div className="mt-6 flex items-center justify-center gap-6">
@@ -606,28 +621,34 @@ function ResultsPanel({
                 {bandLabel(band)}
               </span>
             </div>
-            <div className="mt-2 text-sm text-muted-foreground">Band</div>
+            <div className="mt-2 text-sm text-muted-foreground">
+              {t('ielts.listening.results.band')}
+            </div>
           </div>
           <div className="h-16 w-px bg-border/60" />
           <div className="text-center">
             <div className="font-heading text-4xl font-bold text-foreground tabular-nums">
               {correct}/{total}
             </div>
-            <div className="mt-1 text-sm text-muted-foreground">Correct</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              {t('ielts.listening.results.correct')}
+            </div>
           </div>
           <div className="h-16 w-px bg-border/60" />
           <div className="text-center">
             <div className="font-heading text-4xl font-bold text-primary tabular-nums">
               {percentage}%
             </div>
-            <div className="mt-1 text-sm text-muted-foreground">Score</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              {t('ielts.listening.results.score')}
+            </div>
           </div>
         </div>
 
         <p className="mt-4 text-sm text-muted-foreground">{bandTier(band)}</p>
         {savedId && (
           <p className="mt-1 text-xs text-muted-foreground">
-            Saved to your progress. Bands here are estimates, not guarantees.
+            {t('ielts.listening.results.saved_note')}
           </p>
         )}
       </div>
@@ -636,15 +657,15 @@ function ResultsPanel({
       <div className="flex flex-wrap gap-3">
         <Button variant="default" size="lg" onClick={onRetake}>
           <RotateCcw className="size-4" />
-          Retake test
+          {t('ielts.listening.results.retake')}
         </Button>
         <Button variant="outline" size="lg" render={<Link href="/ielts/progress" />}>
           <ChevronRight className="size-4" />
-          View progress
+          {t('ielts.listening.results.view_progress')}
         </Button>
         <Button variant="outline" size="lg" render={<Link href="/ielts/plan" />}>
           <ChevronRight className="size-4" />
-          Study plan
+          {t('ielts.listening.results.study_plan')}
         </Button>
       </div>
 
@@ -657,7 +678,7 @@ function ResultsPanel({
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="text-sky-500">
-                  Section {sIdx + 1}
+                  {t('ielts.listening.test.section_label')} {sIdx + 1}
                 </Badge>
                 <h3 className="font-heading text-heading-md text-foreground">{section.title}</h3>
               </div>
@@ -669,7 +690,9 @@ function ResultsPanel({
                 className="text-muted-foreground"
               >
                 {isRevealed ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
-                {isRevealed ? 'Hide script' : 'Show script'}
+                {isRevealed
+                  ? t('ielts.listening.review.hide_script')
+                  : t('ielts.listening.review.show_script')}
               </Button>
             </div>
 
@@ -708,28 +731,33 @@ function ReviewItem({
   mcqValue: number | undefined
   gapValue: string
 }) {
+  const t = useT()
   const { question, number } = fq
+  const noAnswer = t('ielts.listening.review.no_answer')
 
   // Determine correctness + the human-readable "your answer" / "correct answer".
   let isCorrect = false
-  let yourAnswer = '(no answer)'
+  let yourAnswer = noAnswer
   let correctAnswer = ''
 
   if (question.type === 'mcq') {
     isCorrect = mcqValue === question.correctIndex
-    yourAnswer =
-      mcqValue !== undefined ? (question.options[mcqValue] ?? '(no answer)') : '(no answer)'
+    yourAnswer = mcqValue !== undefined ? (question.options[mcqValue] ?? noAnswer) : noAnswer
     correctAnswer = question.options[question.correctIndex]
   } else if (question.type === 'gap') {
     isCorrect = isGapCorrect(gapValue, question.acceptableAnswers)
-    yourAnswer = gapValue.trim() !== '' ? gapValue.trim() : '(no answer)'
+    yourAnswer = gapValue.trim() !== '' ? gapValue.trim() : noAnswer
     correctAnswer = question.acceptableAnswers[0]
   } else if (question.type === 'tfng') {
     const opts = ['true', 'false', 'not-given'] as const
-    const pretty = (v: string) =>
-      v === 'not-given' ? 'Not Given' : v[0].toUpperCase() + v.slice(1)
+    const pretty = (v: (typeof opts)[number]) =>
+      v === 'not-given'
+        ? t('ielts.listening.question.tfng.not_given')
+        : v === 'true'
+          ? t('ielts.listening.question.tfng.true')
+          : t('ielts.listening.question.tfng.false')
     isCorrect = mcqValue !== undefined && opts[mcqValue] === question.answer
-    yourAnswer = mcqValue !== undefined ? pretty(opts[mcqValue]) : '(no answer)'
+    yourAnswer = mcqValue !== undefined ? pretty(opts[mcqValue]) : noAnswer
     correctAnswer = pretty(question.answer)
   }
 
@@ -755,14 +783,20 @@ function ReviewItem({
       <div className="mt-2 space-y-1.5 pl-7">
         {!isCorrect && (
           <p className="text-sm text-red-500">
-            Your answer: <span className="font-medium">{yourAnswer}</span>
+            {t('ielts.listening.review.your_answer')}:{' '}
+            <span className="font-medium">{yourAnswer}</span>
           </p>
         )}
         <p className="text-sm text-emerald-500">
-          {question.type === 'gap' ? 'Accepted answer' : 'Correct answer'}:{' '}
-          <span className="font-medium">{correctAnswer}</span>
+          {question.type === 'gap'
+            ? t('ielts.listening.review.accepted_answer')
+            : t('ielts.listening.review.correct_answer')}
+          : <span className="font-medium">{correctAnswer}</span>
           {question.type === 'gap' && question.acceptableAnswers.length > 1 && (
-            <span className="text-muted-foreground"> (also accepts other close variants)</span>
+            <span className="text-muted-foreground">
+              {' '}
+              {t('ielts.listening.review.also_accepts_variants')}
+            </span>
           )}
         </p>
         {question.explanation && (

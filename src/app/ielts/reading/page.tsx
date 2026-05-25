@@ -31,6 +31,8 @@ import {
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
+import { useT } from '@/lib/i18n/use-t'
+
 import type { ObjectiveQuestion, ReadingPassage, ReadingTest } from '@/lib/ielts/types'
 import { objectiveToBand, bandLabel, bandTier, bandColour, bandBgColour } from '@/lib/ielts/bands'
 import { saveAttempt, genId } from '@/lib/ielts/store'
@@ -74,12 +76,20 @@ function correctAnswerLabel(q: ObjectiveQuestion): string {
   return q.acceptableAnswers.join(' / ')
 }
 
-/** Human-readable form of the user's answer, for the review panel. */
-function userAnswerLabel(q: ObjectiveQuestion, raw: string | undefined): string {
-  if (raw === undefined || raw.trim() === '') return 'No answer'
+/**
+ * Human-readable form of the user's answer, for the review panel.
+ * The "no answer" fallback is UI chrome, so it's passed in translated by the
+ * caller; the actual answer content (option text, gap entry) stays English.
+ */
+function userAnswerLabel(
+  q: ObjectiveQuestion,
+  raw: string | undefined,
+  noAnswerLabel: string,
+): string {
+  if (raw === undefined || raw.trim() === '') return noAnswerLabel
   if (q.type === 'mcq') {
     const idx = Number(raw)
-    return Number.isInteger(idx) && q.options[idx] !== undefined ? q.options[idx] : 'No answer'
+    return Number.isInteger(idx) && q.options[idx] !== undefined ? q.options[idx] : noAnswerLabel
   }
   if (q.type === 'tfng') {
     return TFNG_OPTIONS.find((o) => o.value === raw)?.label ?? raw
@@ -87,15 +97,17 @@ function userAnswerLabel(q: ObjectiveQuestion, raw: string | undefined): string 
   return raw
 }
 
-const QUESTION_TYPE_LABEL: Record<ObjectiveQuestion['type'], string> = {
-  mcq: 'Multiple choice',
-  tfng: 'True / False / Not Given',
-  gap: 'Sentence completion',
+// Maps each question type to its UI-chrome dictionary key (translated via t()).
+const QUESTION_TYPE_LABEL_KEY: Record<ObjectiveQuestion['type'], string> = {
+  mcq: 'ielts.reading.qtype.mcq',
+  tfng: 'ielts.reading.qtype.tfng',
+  gap: 'ielts.reading.qtype.gap',
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────
 
 export default function IeltsReadingPage() {
+  const t = useT()
   const test: ReadingTest | undefined = READING_TESTS[0]
 
   // Flat, ordered list of every question across all passages — drives numbering,
@@ -124,10 +136,8 @@ export default function IeltsReadingPage() {
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
           <AlertCircle className="mx-auto mb-4 size-10 text-muted-foreground" />
-          <h1 className="font-serif text-2xl font-medium">Reading practice unavailable</h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            No reading test could be loaded. Please try again later.
-          </p>
+          <h1 className="font-serif text-2xl font-medium">{t('ielts.reading.empty.title')}</h1>
+          <p className="mt-2 text-sm text-muted-foreground">{t('ielts.reading.empty.body')}</p>
         </div>
       </main>
     )
@@ -174,51 +184,49 @@ export default function IeltsReadingPage() {
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
             <Badge variant="secondary" className="mb-4">
-              IELTS preparation · Academic
+              {t('ielts.reading.intro.eyebrow')}
             </Badge>
             <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
               {test.title}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Read {test.passages.length} short academic passages and answer {totalQuestions}{' '}
-              questions. You will see multiple-choice, True/False/Not Given, and sentence-completion
-              tasks — the core question types in the Academic Reading paper. When you finish, your
-              answers are marked instantly and converted to an estimated band score with full
-              explanations.
+              {t('ielts.reading.intro.body.lead')} {test.passages.length}{' '}
+              {t('ielts.reading.intro.body.passages_word')} {totalQuestions}{' '}
+              {t('ielts.reading.intro.body.questions_word')} {t('ielts.reading.intro.body.rest')}
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <Stat
                 icon={<ListChecks className="size-4" />}
-                label="Questions"
+                label={t('ielts.reading.stat.questions')}
                 value={String(totalQuestions)}
               />
               <Stat
                 icon={<BookOpen className="size-4" />}
-                label="Passages"
+                label={t('ielts.reading.stat.passages')}
                 value={String(test.passages.length)}
               />
               <Stat
                 icon={<Clock className="size-4" />}
-                label="Suggested time"
-                value={`${test.estimatedMinutes} min`}
+                label={t('ielts.reading.stat.suggested_time')}
+                value={`${test.estimatedMinutes} ${t('ielts.reading.stat.minutes')}`}
               />
             </div>
 
             <div className="mt-6 rounded-xl border border-border/40 bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
-              <strong className="font-semibold text-foreground">How marking works:</strong>{' '}
-              multiple-choice and True/False/Not Given are checked against the correct option;
-              sentence completion accepts any listed answer, ignoring case and spaces. The band
-              shown is an estimate for practice, not an official IELTS result.
+              <strong className="font-semibold text-foreground">
+                {t('ielts.reading.marking.title')}
+              </strong>{' '}
+              {t('ielts.reading.marking.body')}
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button size="lg" onClick={() => setStarted(true)}>
-                Start the test
+                {t('ielts.reading.action.start')}
                 <ArrowRight className="size-4" />
               </Button>
               <Button size="lg" variant="outline" render={<Link href="/ielts/plan" />}>
-                Back to study plan
+                {t('ielts.reading.action.back_to_plan')}
               </Button>
             </div>
           </div>
@@ -235,7 +243,9 @@ export default function IeltsReadingPage() {
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 space-y-6">
           {/* Band result */}
           <div className={`rounded-2xl border p-6 text-center sm:p-8 ${bandBgColour(band)}`}>
-            <p className="text-sm font-medium text-muted-foreground">Estimated Reading band</p>
+            <p className="text-sm font-medium text-muted-foreground">
+              {t('ielts.reading.results.estimated_band')}
+            </p>
             <div className={`mt-1 text-6xl font-bold tabular-nums ${bandColour(band)}`}>
               {bandLabel(band)}
             </div>
@@ -246,20 +256,23 @@ export default function IeltsReadingPage() {
                 <div className="text-3xl font-bold tabular-nums text-foreground">
                   {correctCount}/{totalQuestions}
                 </div>
-                <div className="mt-1 text-xs text-muted-foreground">Correct answers</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {t('ielts.reading.results.correct_answers')}
+                </div>
               </div>
               <div className="h-12 w-px bg-border/60" />
               <div className="text-center">
                 <div className="text-3xl font-bold tabular-nums text-foreground">
                   {Math.round((correctCount / totalQuestions) * 100)}%
                 </div>
-                <div className="mt-1 text-xs text-muted-foreground">Score</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {t('ielts.reading.results.score')}
+                </div>
               </div>
             </div>
 
             <p className="mx-auto mt-5 max-w-md text-xs leading-relaxed text-muted-foreground">
-              This is an estimate based on published Academic band approximations and is intended
-              for practice only — it is not an official IELTS score.
+              {t('ielts.reading.results.disclaimer')}
             </p>
           </div>
 
@@ -267,21 +280,21 @@ export default function IeltsReadingPage() {
           <div className="flex flex-wrap gap-3">
             <Button size="lg" onClick={handleRestart}>
               <RotateCcw className="size-4" />
-              Try again
+              {t('ielts.reading.action.try_again')}
             </Button>
             <Button size="lg" variant="outline" render={<Link href="/ielts/progress" />}>
               <TrendingUp className="size-4" />
-              View progress
+              {t('ielts.reading.action.view_progress')}
             </Button>
             <Button size="lg" variant="outline" render={<Link href="/ielts/plan" />}>
               <CalendarDays className="size-4" />
-              Study plan
+              {t('ielts.reading.action.study_plan')}
             </Button>
           </div>
 
           {/* Per-question review, grouped by passage */}
           <div className="space-y-6">
-            <h3 className="font-serif text-xl font-medium">Review your answers</h3>
+            <h3 className="font-serif text-xl font-medium">{t('ielts.reading.review.heading')}</h3>
             {test.passages.map((passage) => (
               <div key={passage.id} className="rounded-2xl border border-border/60 bg-card p-5">
                 <h4 className="mb-4 font-heading text-base font-semibold text-foreground">
@@ -317,11 +330,16 @@ export default function IeltsReadingPage() {
                         <div className="mt-2 space-y-1.5 pl-7">
                           {!correct && (
                             <p className="text-sm text-red-500">
-                              Your answer: {userAnswerLabel(q, answers[q.id])}
+                              {t('ielts.reading.review.your_answer')}{' '}
+                              {userAnswerLabel(
+                                q,
+                                answers[q.id],
+                                t('ielts.reading.review.no_answer'),
+                              )}
                             </p>
                           )}
                           <p className="text-sm text-emerald-500">
-                            Correct answer: {correctAnswerLabel(q)}
+                            {t('ielts.reading.review.correct_answer')} {correctAnswerLabel(q)}
                           </p>
                           {q.explanation && (
                             <p className="text-sm text-muted-foreground">{q.explanation}</p>
@@ -350,7 +368,8 @@ export default function IeltsReadingPage() {
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <ListChecks className="size-3.5" />
             <span className="tabular-nums">
-              {answeredCount} of {totalQuestions} answered
+              {answeredCount} {t('ielts.reading.progress.of')} {totalQuestions}{' '}
+              {t('ielts.reading.progress.answered')}
             </span>
           </div>
           <div
@@ -359,7 +378,9 @@ export default function IeltsReadingPage() {
             aria-valuenow={answeredCount}
             aria-valuemin={0}
             aria-valuemax={totalQuestions}
-            aria-label={`Reading progress: ${answeredCount} of ${totalQuestions} questions answered`}
+            aria-label={t('ielts.reading.progress.aria')
+              .replace('{answered}', String(answeredCount))
+              .replace('{total}', String(totalQuestions))}
           >
             <div
               className="h-full rounded-full bg-primary transition-all duration-300 ease-out"
@@ -367,7 +388,7 @@ export default function IeltsReadingPage() {
             />
           </div>
           <Button size="sm" onClick={handleSubmit}>
-            Submit
+            {t('ielts.reading.action.submit')}
           </Button>
         </div>
       </div>
@@ -390,13 +411,13 @@ export default function IeltsReadingPage() {
         <div className="mt-10 rounded-2xl border border-border/60 bg-card p-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">
-              You have answered{' '}
-              <span className="font-semibold text-foreground tabular-nums">{answeredCount}</span> of{' '}
-              {totalQuestions} questions. You can submit at any time.
+              {t('ielts.reading.summary.you_answered')}{' '}
+              <span className="font-semibold text-foreground tabular-nums">{answeredCount}</span>{' '}
+              {t('ielts.reading.progress.of')} {totalQuestions} {t('ielts.reading.summary.tail')}
             </p>
             <Button size="lg" onClick={handleSubmit}>
               <Check className="size-4" />
-              Submit and see my band
+              {t('ielts.reading.action.submit_and_see_band')}
             </Button>
           </div>
         </div>
@@ -408,6 +429,7 @@ export default function IeltsReadingPage() {
 // ─── Sub-components ─────────────────────────────────────────────────────────
 
 function Header() {
+  const t = useT()
   return (
     <section className="border-b border-border bg-card">
       <div className="mx-auto max-w-6xl px-4 py-7 sm:px-6">
@@ -417,11 +439,9 @@ function Header() {
           </div>
           <div>
             <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-              IELTS Academic Reading
+              {t('ielts.reading.header.title')}
             </h1>
-            <p className="text-sm text-muted-foreground">
-              Original practice passages with instant band estimates
-            </p>
+            <p className="text-sm text-muted-foreground">{t('ielts.reading.header.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -454,13 +474,14 @@ function PassageBlock({
   answers: AnswerMap
   onAnswer: (id: string, value: string) => void
 }) {
+  const t = useT()
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       {/* Passage — sticky on large screens so questions scroll alongside it */}
       <div className="lg:sticky lg:top-16 lg:self-start">
         <div className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
           <Badge variant="outline" className="mb-3">
-            Passage {passageIndex + 1}
+            {t('ielts.reading.passage.label')} {passageIndex + 1}
           </Badge>
           <h2 className="font-serif text-xl font-medium tracking-tight">{passage.title}</h2>
           <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/90">
@@ -498,6 +519,7 @@ function QuestionCard({
   value: string | undefined
   onAnswer: (value: string) => void
 }) {
+  const t = useT()
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">
@@ -507,7 +529,7 @@ function QuestionCard({
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium leading-snug text-foreground">{question.prompt}</p>
           <Badge variant="ghost" className="mt-1.5 -ml-1 text-[0.65rem] text-muted-foreground">
-            {QUESTION_TYPE_LABEL[question.type]}
+            {t(QUESTION_TYPE_LABEL_KEY[question.type])}
           </Badge>
         </div>
       </div>
@@ -572,7 +594,7 @@ function QuestionCard({
           type="text"
           value={value ?? ''}
           onChange={(e) => onAnswer(e.target.value)}
-          placeholder="Type your answer"
+          placeholder={t('ielts.reading.gap.placeholder')}
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}

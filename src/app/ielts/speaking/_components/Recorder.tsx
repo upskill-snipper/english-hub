@@ -18,6 +18,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Mic, Square, Play, Pause, AlertTriangle, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 import { cn } from '@/lib/utils'
 
 type RecorderState = 'idle' | 'recording' | 'recorded'
@@ -47,6 +48,7 @@ export interface RecorderProps {
 }
 
 export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderProps) {
+  const t = useT()
   const [supported, setSupported] = useState<boolean>(true)
   const [state, setState] = useState<RecorderState>('idle')
   const [elapsed, setElapsed] = useState(0)
@@ -139,17 +141,11 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         name === 'SecurityError' ||
         name === 'PermissionDeniedError'
       ) {
-        setError(
-          'Microphone access was blocked. You can still type or paste your transcript below to get band feedback. To record, allow microphone access in your browser settings and try again.',
-        )
+        setError(t('ielts.speaking.recorder.error.denied'))
       } else if (name === 'NotFoundError' || name === 'DevicesNotFoundError') {
-        setError(
-          'No microphone was found. You can still type or paste your transcript below to get band feedback.',
-        )
+        setError(t('ielts.speaking.recorder.error.no_mic'))
       } else {
-        setError(
-          'We could not start recording on this device. You can still type or paste your transcript below to get band feedback.',
-        )
+        setError(t('ielts.speaking.recorder.error.generic'))
       }
       return
     }
@@ -161,9 +157,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
       recorder = new MediaRecorder(stream)
     } catch {
       stopTracks()
-      setError(
-        'Audio recording is not supported in this browser. You can still type or paste your transcript below.',
-      )
+      setError(t('ielts.speaking.recorder.error.unsupported'))
       return
     }
     mediaRecorderRef.current = recorder
@@ -192,9 +186,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
       recorder.start()
     } catch {
       stopTracks()
-      setError(
-        'We could not start recording on this device. You can still type or paste your transcript below.',
-      )
+      setError(t('ielts.speaking.recorder.error.generic'))
       return
     }
 
@@ -211,7 +203,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         return next
       })
     }, 1000)
-  }, [maxSeconds, onRecordingChange, revokeAudioUrl, stopRecording, stopTracks])
+  }, [maxSeconds, onRecordingChange, revokeAudioUrl, stopRecording, stopTracks, t])
 
   const discardRecording = useCallback(() => {
     setIsPlaying(false)
@@ -245,11 +237,9 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         <div className="flex items-start gap-2">
           <AlertTriangle className="mt-0.5 size-4 shrink-0" />
           <div>
-            <p className="font-medium">Recording isn&rsquo;t available in this browser</p>
+            <p className="font-medium">{t('ielts.speaking.recorder.unsupported.title')}</p>
             <p className="mt-1 text-xs text-muted-foreground">
-              No problem — you can still type or paste what you said in the transcript box below and
-              get full band feedback. For audio self-review, try a recent version of Chrome, Edge,
-              Firefox or Safari.
+              {t('ielts.speaking.recorder.unsupported.body')}
             </p>
           </div>
         </div>
@@ -264,12 +254,14 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         {state !== 'recording' ? (
           <Button type="button" variant="default" size="sm" onClick={() => void startRecording()}>
             <Mic className="size-4" />
-            {state === 'recorded' ? 'Record again' : 'Record'}
+            {state === 'recorded'
+              ? t('ielts.speaking.recorder.btn.record_again')
+              : t('ielts.speaking.recorder.btn.record')}
           </Button>
         ) : (
           <Button type="button" variant="destructive" size="sm" onClick={stopRecording}>
             <Square className="size-4" />
-            Stop
+            {t('ielts.speaking.recorder.btn.stop')}
           </Button>
         )}
 
@@ -277,7 +269,9 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
           <>
             <Button type="button" variant="outline" size="sm" onClick={togglePlayback}>
               {isPlaying ? <Pause className="size-4" /> : <Play className="size-4" />}
-              {isPlaying ? 'Pause' : 'Play back'}
+              {isPlaying
+                ? t('ielts.speaking.recorder.btn.pause')
+                : t('ielts.speaking.recorder.btn.play')}
             </Button>
             <Button
               type="button"
@@ -287,7 +281,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
               onClick={discardRecording}
             >
               <Trash2 className="size-3.5" />
-              Discard
+              {t('ielts.speaking.recorder.btn.discard')}
             </Button>
           </>
         )}
@@ -325,8 +319,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
       )}
 
       <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
-        Recording is for your own self-review only — your audio stays on this device and is never
-        uploaded. Listen back, then type what you said below so we can give you band feedback.
+        {t('ielts.speaking.recorder.note')}
       </p>
     </div>
   )

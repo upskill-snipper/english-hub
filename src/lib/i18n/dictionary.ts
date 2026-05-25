@@ -81,6 +81,13 @@ import { MKT_STUDENTS_DICTIONARY } from './dictionary-mkt-students'
 import { MKT_EAL_DICTIONARY } from './dictionary-mkt-eal'
 // 2026-05-25: IELTS Academic learning-loop section.
 import { IELTS_DICTIONARY } from './dictionary-ielts'
+// 2026-05-25: IELTS bilingual (EN + Khaleeji AR) per-section shards (Wave 1).
+import { IELTS_READING_DICTIONARY } from './dictionary-ielts-reading'
+import { IELTS_LISTENING_DICTIONARY } from './dictionary-ielts-listening'
+import { IELTS_WRITING_DICTIONARY } from './dictionary-ielts-writing'
+import { IELTS_SPEAKING_DICTIONARY } from './dictionary-ielts-speaking'
+import { IELTS_DIAGNOSTIC_DICTIONARY } from './dictionary-ielts-diagnostic'
+import { IELTS_HUBPROGRESS_DICTIONARY } from './dictionary-ielts-hubprogress'
 
 export type Locale = 'en' | 'ar'
 
@@ -14874,6 +14881,12 @@ export function lookup(key: string, locale: Locale): string {
     MKT_STUDENTS_DICTIONARY[key] ??
     MKT_EAL_DICTIONARY[key] ??
     IELTS_DICTIONARY[key] ??
+    IELTS_READING_DICTIONARY[key] ??
+    IELTS_LISTENING_DICTIONARY[key] ??
+    IELTS_WRITING_DICTIONARY[key] ??
+    IELTS_SPEAKING_DICTIONARY[key] ??
+    IELTS_DIAGNOSTIC_DICTIONARY[key] ??
+    IELTS_HUBPROGRESS_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
