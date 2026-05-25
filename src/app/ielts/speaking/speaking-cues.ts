@@ -17,10 +17,12 @@ import type { SpeakingCue } from '@/lib/ielts/types'
 import { SPEAKING_SET_2 } from './speaking-cues-set-2'
 // Premium expansion (2026-05-25): more Part 1/2/3 cues.
 import { SPEAKING_SET_3 } from './speaking-cues-set-3'
+import { SPEAKING_SET_4 } from './speaking-cues-set-4'
 
 export const SPEAKING_CUES: SpeakingCue[] = [
   ...SPEAKING_SET_2,
   ...SPEAKING_SET_3,
+  ...SPEAKING_SET_4,
   // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-home-area',
