@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs } from '@/lib/blog/posts'
 import { EAL } from '@/lib/eal/curriculum'
+import { ALL_LESSONS } from '@/lib/ielts/lessons'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://theenglishhub.app'
@@ -108,6 +109,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    // Readiness-program surfaces (2026-05-25). The learn hub (leveled
+    // curriculum), the exam guide (evergreen reference) and the timed mock
+    // tests are public, indexable content. /ielts/dashboard (personal "Your
+    // Hub") and /ielts/planner (exam-date plan, user-specific) are
+    // intentionally EXCLUDED, like /ielts/progress + /ielts/plan. Per-lesson
+    // pages (/ielts/learn/<skill>/<slug>) are appended dynamically below.
+    { url: `${base}/ielts/learn`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/ielts/guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/ielts/mock`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
 
     // Resources hub
     { url: `${base}/resources`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
@@ -1625,6 +1635,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]),
   ]
 
+  // IELTS readiness-program lessons — the leveled strategy library served at
+  // /ielts/learn/<skill>/<slug> (route + slug contract: src/lib/ielts/curriculum.ts).
+  // Generated from the authored lesson set so new lessons appear automatically.
+  const ieltsLessonRoutes: MetadataRoute.Sitemap = ALL_LESSONS.map((lesson) => ({
+    url: `${base}/ielts/learn/${lesson.skill}/${lesson.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
   return [
     ...staticRoutes,
     ...courseRoutes,
@@ -1632,5 +1652,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ks3Routes,
     ...gameRoutes,
     ...ealRoutes,
+    ...ieltsLessonRoutes,
   ]
 }

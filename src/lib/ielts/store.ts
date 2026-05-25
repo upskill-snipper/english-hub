@@ -9,6 +9,7 @@
 
 import { lsGet, lsSet } from '@/components/toolkit/toolkit-types'
 import { overallBand } from './bands'
+import type { IeltsLevel } from './curriculum'
 import {
   IELTS_SKILLS,
   type Band,
@@ -141,4 +142,51 @@ function touchStreak(): void {
 
 export function genId(prefix = 'ielts'): string {
   return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`
+}
+
+// ─── Program goals (target band, exam date, level) ─────────────────────────
+// Drives the dashboard, the exam-date study planner, and "what to study next".
+
+export interface IeltsGoals {
+  targetBand?: Band
+  examDate?: string // ISO date, yyyy-mm-dd
+  level?: IeltsLevel
+}
+
+const GOALS_KEY = 'english-hub-ielts-goals'
+const LESSONS_DONE_KEY = 'english-hub-ielts-lessons-done'
+
+export function getGoals(): IeltsGoals {
+  return lsGet<IeltsGoals>(GOALS_KEY, {})
+}
+
+export function setGoals(patch: IeltsGoals): void {
+  lsSet(GOALS_KEY, { ...getGoals(), ...patch })
+  touchStreak()
+}
+
+/** Whole days until the saved exam date, or null if none set. */
+export function daysUntilExam(): number | null {
+  const { examDate } = getGoals()
+  if (!examDate) return null
+  const ms = new Date(`${examDate}T00:00:00`).getTime() - Date.now()
+  return Math.max(0, Math.ceil(ms / 86_400_000))
+}
+
+// ─── Lesson completion (drives progress + "what to learn next") ────────────
+
+export function getCompletedLessons(): string[] {
+  return lsGet<string[]>(LESSONS_DONE_KEY, [])
+}
+
+export function isLessonComplete(lessonId: string): boolean {
+  return getCompletedLessons().includes(lessonId)
+}
+
+export function markLessonComplete(lessonId: string): void {
+  const done = getCompletedLessons()
+  if (!done.includes(lessonId)) {
+    lsSet(LESSONS_DONE_KEY, [...done, lessonId])
+    touchStreak()
+  }
 }

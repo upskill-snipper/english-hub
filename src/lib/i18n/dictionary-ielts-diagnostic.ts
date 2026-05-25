@@ -329,4 +329,8 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.plan.cta.retake': { en: 'Retake the placement test', ar: 'أعد اختبار تحديد المستوى' },
   'ielts.plan.cta.view_progress': { en: 'View my progress', ar: 'شوف تقدّمي' },
+  'ielts.plan.cta.dated_planner': {
+    en: 'Build a dated study plan',
+    ar: 'سوّ خطة دراسة بمواعيد الاختبار',
+  },
 }

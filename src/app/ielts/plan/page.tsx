@@ -6,6 +6,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  CalendarDays,
   Target,
   Compass,
   TrendingUp,
@@ -388,6 +389,10 @@ export default function IeltsPlanPage() {
         <PlanCaveat t={t} />
 
         <div className="flex flex-col gap-3 sm:flex-row">
+          <Button render={<Link href="/ielts/planner" />}>
+            <CalendarDays className="mr-2 h-4 w-4" />
+            {t('ielts.plan.cta.dated_planner')}
+          </Button>
           <Button variant="outline" render={<Link href="/ielts/diagnostic" />}>
             <Target className="mr-2 h-4 w-4" />
             {t('ielts.plan.cta.retake')}
