@@ -208,7 +208,7 @@ The highlight for many visitors is the otters, which are most often seen early i
         id: 'diag-l2-s2-q8',
         type: 'gap',
         prompt: 'Complete the rule with ONE WORD: Dogs must be kept on a ______ at all times.',
-        acceptableAnswers: ['lead', 'leash'],
+        acceptableAnswers: ['lead'],
         explanation: 'The speaker says "We ask that dogs are kept on a lead at all times".',
       },
       {
