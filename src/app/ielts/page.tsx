@@ -12,6 +12,9 @@ import {
   Zap,
   TrendingUp,
   ChevronRight,
+  GraduationCap,
+  Users,
+  Building2,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
@@ -282,6 +285,63 @@ export default async function IeltsHubPage() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 4b. Beyond practice — admissions, educators, partners */}
+      <section aria-labelledby="more-heading" className="border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+              Beyond practice
+            </p>
+            <h2
+              id="more-heading"
+              className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
+              From your target band to your university place
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                href: '/ielts/admissions',
+                icon: GraduationCap,
+                title: 'UK admissions & statement coach',
+                body: 'Plan your UCAS application and get instant AI feedback on your personal statement.',
+              },
+              {
+                href: '/ielts/centre',
+                icon: Users,
+                title: 'For tutors & centres',
+                body: 'Track your students’ bands across every skill from one dashboard.',
+              },
+              {
+                href: '/ielts/partners',
+                icon: Building2,
+                title: 'Partner with us',
+                body: 'Bring The English Hub to your school or agency across the Gulf.',
+              },
+            ].map(({ href, icon: Icon, title: cardTitle, body }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group rounded-2xl border border-border/60 bg-card p-6 shadow-soft transition-colors hover:border-primary/40"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">
+                  {cardTitle}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                  Explore{' '}
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
