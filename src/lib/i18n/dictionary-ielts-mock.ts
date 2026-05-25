@@ -156,7 +156,9 @@ export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string }> 
   'ielts.mock.q.type.mcq': { en: 'Multiple choice', ar: 'اختيار من متعدد' },
   'ielts.mock.q.type.tfng': { en: 'True / False / Not Given', ar: 'True / False / Not Given' },
   'ielts.mock.q.type.gap': { en: 'Sentence completion', ar: 'إكمال الجملة' },
+  'ielts.mock.q.type.matching': { en: 'Matching', ar: 'مطابقة' },
   'ielts.mock.q.gap_placeholder': { en: 'Type your answer', ar: 'اكتب إجابتك' },
+  'ielts.mock.q.matching_select': { en: 'Select…', ar: 'اختر…' },
 
   // ══════════════════════════════════════════════════════════════════════════
   // LISTENING STAGE  (ListeningStage.tsx)

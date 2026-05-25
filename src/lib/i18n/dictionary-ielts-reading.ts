@@ -115,9 +115,19 @@ export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'True / False / Not Given',
   },
   'ielts.reading.qtype.gap': { en: 'Sentence completion', ar: 'إكمال الجملة' },
+  'ielts.reading.qtype.matching': { en: 'Matching', ar: 'مطابقة' },
 
-  // Gap-fill input placeholder
+  // Gap-fill input placeholder + matching-row "choose an option" placeholder
   'ielts.reading.gap.placeholder': { en: 'Type your answer', ar: 'اكتب إجابتك' },
+  'ielts.reading.matching.select': { en: 'Select…', ar: 'اختر…' },
+
+  // Test picker (intro screen) + "choose another test" action
+  'ielts.reading.picker.title': { en: 'Choose a reading test', ar: 'اختر اختبار قراءة' },
+  'ielts.reading.picker.subtitle': {
+    en: 'Pick any test below to begin. Each one is auto-marked and gives you an estimated band.',
+    ar: 'اختر أي اختبار تحت عشان تبدأ. كل واحد يتصحّح تلقائياً ويعطيك Band تقديري.',
+  },
+  'ielts.reading.action.choose_test': { en: 'Choose another test', ar: 'اختر اختباراً ثانياً' },
 
   // ─── Empty / fallback state ──────────────────────────────────────────────
   'ielts.reading.empty.title': {

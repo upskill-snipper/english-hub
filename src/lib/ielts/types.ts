@@ -127,7 +127,31 @@ export interface TfngQuestion {
   explanation?: string
 }
 
-export type ObjectiveQuestion = McqQuestion | GapQuestion | TfngQuestion
+/** One row of a matching question: a thing to match → the key of its answer. */
+export interface MatchingItem {
+  id: string // unique within the question; used to key the learner's answer
+  text: string // the paragraph reference / statement / sentence stem to match
+  answer: string // the `key` of the correct option in the question's `options`
+}
+
+/**
+ * Matching: match each item to ONE option from a shared list. Covers the IELTS
+ * formats the union previously couldn't express — Matching Headings, Matching
+ * Features, Matching Information (which-paragraph), and Matching Sentence
+ * Endings. Scores ONE mark per item (so a 5-item question is worth 5 marks),
+ * mirroring the real exam. Options may be reused unless authoring says otherwise.
+ */
+export interface MatchingQuestion {
+  id: string
+  type: 'matching'
+  variant: 'headings' | 'features' | 'information' | 'endings'
+  prompt: string // the instruction line shown above the option list
+  options: { key: string; label: string }[] // the shared list to match FROM
+  items: MatchingItem[] // each is one numbered sub-question (one mark)
+  explanation?: string
+}
+
+export type ObjectiveQuestion = McqQuestion | GapQuestion | TfngQuestion | MatchingQuestion
 
 // ─── Reading (Academic) ────────────────────────────────────────────────────
 

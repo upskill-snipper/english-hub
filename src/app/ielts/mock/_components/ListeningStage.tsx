@@ -18,7 +18,7 @@ import type { ListeningTest, ObjectiveQuestion } from '@/lib/ielts/types'
 import { objectiveToBand } from '@/lib/ielts/bands'
 
 import type { ObjectiveResult, AnswerMap } from '../mock-types'
-import { countCorrect, countAnswered } from '../marking'
+import { countCorrect, countAnswered, totalMarks, questionStartNumbers } from '../marking'
 import { SECTION_SECONDS } from '../mock-types'
 import { useMockT } from '../use-mock-t'
 import StageHeader from './StageHeader'
@@ -42,15 +42,9 @@ export default function ListeningStage({
     () => test.sections.flatMap((s) => s.questions),
     [test],
   )
-  const total = allQuestions.length
+  const total = totalMarks(allQuestions)
 
-  const questionNumber = useMemo(() => {
-    const map: Record<string, number> = {}
-    allQuestions.forEach((q, i) => {
-      map[q.id] = i + 1
-    })
-    return map
-  }, [allQuestions])
+  const questionNumber = useMemo(() => questionStartNumbers(allQuestions), [allQuestions])
 
   const setAnswer = useCallback(
     (id: string, value: string) => setAnswers((prev) => ({ ...prev, [id]: value })),

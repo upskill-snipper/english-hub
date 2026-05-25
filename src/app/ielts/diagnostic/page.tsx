@@ -106,6 +106,9 @@ function isCorrect(q: ObjectiveQuestion, raw: string | undefined): boolean {
   if (raw === undefined || raw === '') return false
   if (q.type === 'mcq') return raw === String(q.correctIndex)
   if (q.type === 'tfng') return raw === q.answer
+  // The placement diagnostic never uses `matching` questions; this guard keeps
+  // the function type-safe against the shared ObjectiveQuestion union.
+  if (q.type === 'matching') return false
   // gap: case-insensitive, trimmed match against any acceptable answer
   const norm = raw.trim().toLowerCase()
   return q.acceptableAnswers.some((a) => a.trim().toLowerCase() === norm)

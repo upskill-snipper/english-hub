@@ -25,6 +25,7 @@ import { WRITING_CHARTS_1 } from './writing-prompts-charts-1'
 import { WRITING_CHARTS_2 } from './writing-prompts-charts-2'
 import { WRITING_CHARTS_3 } from './writing-prompts-charts-3'
 import { WRITING_CHARTS_4 } from './writing-prompts-charts-4'
+import { WRITING_CHARTS_5 } from './writing-prompts-charts-5'
 import { WRITING_T2_1 } from './writing-prompts-t2-1'
 // General Training expansion (2026-05-25): more letters + GT Task 2 essays.
 import { GT_WRITING_SET_2 } from './gt-writing-prompts-2'
@@ -36,6 +37,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_CHARTS_2,
   ...WRITING_CHARTS_3,
   ...WRITING_CHARTS_4,
+  ...WRITING_CHARTS_5,
   ...WRITING_T2_1,
   // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
   {

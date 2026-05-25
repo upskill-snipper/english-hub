@@ -35,15 +35,27 @@ import { useT } from '@/lib/i18n/use-t'
 
 import type { ObjectiveQuestion, ReadingPassage, ReadingTest } from '@/lib/ielts/types'
 import { objectiveToBand, bandLabel, bandTier, bandColour, bandBgColour } from '@/lib/ielts/bands'
+import {
+  type AnswerMap,
+  isQuestionFullyCorrect,
+  correctAnswerLabel,
+  userAnswerLabel,
+  totalMarks,
+  totalCorrect,
+  totalAnswered,
+  questionStartNumbers,
+  questionMarks,
+} from '@/lib/ielts/objective'
 import { saveAttempt, genId } from '@/lib/ielts/store'
 
 import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
+import { MatchingControl } from '../_components/MatchingControl'
 
 import { READING_TESTS } from './reading-tests'
 
-// ─── Marking ────────────────────────────────────────────────────────────────
-
-type AnswerMap = Record<string, string>
+// ─── Question-type chrome ─────────────────────────────────────────────────────
+// Marking now lives in the shared @/lib/ielts/objective module so the Reading
+// page and the Mock score identically (including multi-mark `matching`).
 
 const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; label: string }[] = [
   { value: 'true', label: 'True' },
@@ -51,59 +63,12 @@ const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; label: string }[] =
   { value: 'not-given', label: 'Not Given' },
 ]
 
-/** True when a recorded answer for `q` is correct. Empty/unset answers are wrong. */
-function isAnswerCorrect(q: ObjectiveQuestion, raw: string | undefined): boolean {
-  if (raw === undefined) return false
-  const given = raw.trim()
-  if (given === '') return false
-
-  if (q.type === 'mcq') {
-    const idx = Number(given)
-    return Number.isInteger(idx) && idx === q.correctIndex
-  }
-  if (q.type === 'tfng') {
-    return given === q.answer
-  }
-  // gap: case-insensitive, trimmed match against any acceptable answer
-  const normalised = given.toLowerCase()
-  return q.acceptableAnswers.some((a) => a.trim().toLowerCase() === normalised)
-}
-
-/** Human-readable form of the correct answer, for the review panel. */
-function correctAnswerLabel(q: ObjectiveQuestion): string {
-  if (q.type === 'mcq') return q.options[q.correctIndex]
-  if (q.type === 'tfng') {
-    return TFNG_OPTIONS.find((o) => o.value === q.answer)?.label ?? q.answer
-  }
-  return q.acceptableAnswers.join(' / ')
-}
-
-/**
- * Human-readable form of the user's answer, for the review panel.
- * The "no answer" fallback is UI chrome, so it's passed in translated by the
- * caller; the actual answer content (option text, gap entry) stays English.
- */
-function userAnswerLabel(
-  q: ObjectiveQuestion,
-  raw: string | undefined,
-  noAnswerLabel: string,
-): string {
-  if (raw === undefined || raw.trim() === '') return noAnswerLabel
-  if (q.type === 'mcq') {
-    const idx = Number(raw)
-    return Number.isInteger(idx) && q.options[idx] !== undefined ? q.options[idx] : noAnswerLabel
-  }
-  if (q.type === 'tfng') {
-    return TFNG_OPTIONS.find((o) => o.value === raw)?.label ?? raw
-  }
-  return raw
-}
-
 // Maps each question type to its UI-chrome dictionary key (translated via t()).
 const QUESTION_TYPE_LABEL_KEY: Record<ObjectiveQuestion['type'], string> = {
   mcq: 'ielts.reading.qtype.mcq',
   tfng: 'ielts.reading.qtype.tfng',
   gap: 'ielts.reading.qtype.gap',
+  matching: 'ielts.reading.qtype.matching',
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────
@@ -112,13 +77,23 @@ export default function IeltsReadingPage() {
   const t = useT()
   const [track, setTrack] = useIeltsTrack()
 
-  // The bank holds both Academic and General Training tests in one array; show
-  // only the tests for the selected track and run the first one.
+  // The bank holds both Academic and General Training tests in one array; the
+  // learner picks one for the selected track from the intro picker.
   const testsForTrack = useMemo<ReadingTest[]>(
     () => READING_TESTS.filter((rt) => rt.track === track),
     [track],
   )
-  const test: ReadingTest | undefined = testsForTrack[0]
+
+  const [selectedTestId, setSelectedTestId] = useState<string | null>(null)
+  const [started, setStarted] = useState(false)
+  const [answers, setAnswers] = useState<AnswerMap>({})
+  const [submitted, setSubmitted] = useState(false)
+
+  // The chosen test (null until the learner picks one from the list).
+  const test = useMemo<ReadingTest | null>(
+    () => testsForTrack.find((rt) => rt.id === selectedTestId) ?? null,
+    [testsForTrack, selectedTestId],
+  )
 
   // Flat, ordered list of every question across all passages — drives numbering,
   // marking and the results review.
@@ -126,30 +101,22 @@ export default function IeltsReadingPage() {
     () => (test ? test.passages.flatMap((p) => p.questions) : []),
     [test],
   )
-  const totalQuestions = allQuestions.length
+  const totalQuestions = totalMarks(allQuestions)
 
-  const [started, setStarted] = useState(false)
-  const [answers, setAnswers] = useState<AnswerMap>({})
-  const [submitted, setSubmitted] = useState(false)
-
-  // Switching track swaps the test, so drop any in-progress answers/results and
-  // return to the intro screen for the newly-selected track.
+  // Switching track changes the available tests, so clear the selection + any
+  // in-progress answers/results and return to the picker.
   useEffect(() => {
+    setSelectedTestId(null)
     setStarted(false)
     setSubmitted(false)
     setAnswers({})
   }, [track])
-  // Stable per-question global numbers (Q1..Qn) regardless of passage.
-  const questionNumber = useMemo(() => {
-    const map: Record<string, number> = {}
-    allQuestions.forEach((q, i) => {
-      map[q.id] = i + 1
-    })
-    return map
-  }, [allQuestions])
+  // Stable 1-based START number per question, accumulating MARKS so a matching
+  // question reserves a numbered range (e.g. 14–18) and the next question follows.
+  const questionStart = useMemo(() => questionStartNumbers(allQuestions), [allQuestions])
 
-  // Defensive: if the content bank is somehow empty, fail gracefully.
-  if (!test || totalQuestions === 0) {
+  // Defensive: if there are no tests at all for this track, fail gracefully.
+  if (testsForTrack.length === 0) {
     return (
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
@@ -163,16 +130,13 @@ export default function IeltsReadingPage() {
 
   const setAnswer = (id: string, value: string) => setAnswers((prev) => ({ ...prev, [id]: value }))
 
-  const answeredCount = allQuestions.filter(
-    (q) => answers[q.id] !== undefined && answers[q.id].trim() !== '',
-  ).length
-
-  const correctCount = allQuestions.filter((q) => isAnswerCorrect(q, answers[q.id])).length
-  const band = objectiveToBand('reading', correctCount, totalQuestions, track)
+  const answeredCount = totalAnswered(allQuestions, answers)
+  const correctCount = totalCorrect(allQuestions, answers)
+  const band = test ? objectiveToBand('reading', correctCount, totalQuestions, track) : null
 
   const handleSubmit = () => {
-    if (submitted) return
-    const correct = allQuestions.filter((q) => isAnswerCorrect(q, answers[q.id])).length
+    if (submitted || !test) return
+    const correct = totalCorrect(allQuestions, answers)
     const finalBand = objectiveToBand('reading', correct, totalQuestions, track)
     saveAttempt({
       id: genId('rd'),
@@ -194,60 +158,64 @@ export default function IeltsReadingPage() {
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // ─── Intro / start screen ────────────────────────────────────────────────
-  if (!started) {
+  // ─── Intro / test picker ─────────────────────────────────────────────────
+  // The learner chooses which test in the bank to sit (the bank now holds many
+  // tests per track, including ones with matching-headings / -features items).
+  if (!started || !test) {
     return (
       <main id="main-content" className="min-h-screen bg-background">
         <Header />
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-              <Badge variant="secondary">{t('ielts.reading.intro.eyebrow')}</Badge>
-              <TrackToggle value={track} onChange={setTrack} />
-            </div>
-            <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-              {test.title}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {t('ielts.reading.intro.body.lead')} {test.passages.length}{' '}
-              {t('ielts.reading.intro.body.passages_word')} {totalQuestions}{' '}
-              {t('ielts.reading.intro.body.questions_word')} {t('ielts.reading.intro.body.rest')}
-            </p>
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <Badge variant="secondary">{t('ielts.reading.intro.eyebrow')}</Badge>
+            <TrackToggle value={track} onChange={setTrack} />
+          </div>
+          <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
+            {t('ielts.reading.picker.title')}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {t('ielts.reading.picker.subtitle')}
+          </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <Stat
-                icon={<ListChecks className="size-4" />}
-                label={t('ielts.reading.stat.questions')}
-                value={String(totalQuestions)}
-              />
-              <Stat
-                icon={<BookOpen className="size-4" />}
-                label={t('ielts.reading.stat.passages')}
-                value={String(test.passages.length)}
-              />
-              <Stat
-                icon={<Clock className="size-4" />}
-                label={t('ielts.reading.stat.suggested_time')}
-                value={`${test.estimatedMinutes} ${t('ielts.reading.stat.minutes')}`}
-              />
-            </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {testsForTrack.map((rt) => {
+              const qCount = totalMarks(rt.passages.flatMap((p) => p.questions))
+              return (
+                <button
+                  key={rt.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedTestId(rt.id)
+                    setAnswers({})
+                    setSubmitted(false)
+                    setStarted(true)
+                    if (typeof window !== 'undefined')
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }}
+                  className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
+                >
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="size-4 shrink-0 text-emerald-500" />
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                      {rt.title}
+                    </h3>
+                  </div>
+                  <span className="mt-2 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-muted-foreground">
+                    <ListChecks className="size-3" />
+                    {qCount} {t('ielts.reading.stat.questions')} · {rt.passages.length}{' '}
+                    {t('ielts.reading.stat.passages')} · {rt.estimatedMinutes}{' '}
+                    {t('ielts.reading.stat.minutes')}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
 
-            <div className="mt-6 rounded-xl border border-border/40 bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
-              <strong className="font-semibold text-foreground">
-                {t('ielts.reading.marking.title')}
-              </strong>{' '}
-              {t('ielts.reading.marking.body')}
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button size="lg" onClick={() => setStarted(true)}>
-                {t('ielts.reading.action.start')}
-                <ArrowRight className="size-4" />
-              </Button>
-              <Button size="lg" variant="outline" render={<Link href="/ielts/plan" />}>
-                {t('ielts.reading.action.back_to_plan')}
-              </Button>
-            </div>
+          <div className="mt-6 rounded-xl border border-border/40 bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
+            <strong className="font-semibold text-foreground">
+              {t('ielts.reading.marking.title')}
+            </strong>{' '}
+            {t('ielts.reading.marking.body')}
           </div>
         </div>
       </main>
@@ -301,6 +269,20 @@ export default function IeltsReadingPage() {
               <RotateCcw className="size-4" />
               {t('ielts.reading.action.try_again')}
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => {
+                setStarted(false)
+                setSelectedTestId(null)
+                setSubmitted(false)
+                setAnswers({})
+                if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+            >
+              <ListChecks className="size-4" />
+              {t('ielts.reading.action.choose_test')}
+            </Button>
             <Button size="lg" variant="outline" render={<Link href="/ielts/progress" />}>
               <TrendingUp className="size-4" />
               {t('ielts.reading.action.view_progress')}
@@ -321,7 +303,7 @@ export default function IeltsReadingPage() {
                 </h4>
                 <div className="space-y-3">
                   {passage.questions.map((q) => {
-                    const correct = isAnswerCorrect(q, answers[q.id])
+                    const correct = isQuestionFullyCorrect(q, answers)
                     return (
                       <details
                         key={q.id}
@@ -342,12 +324,14 @@ export default function IeltsReadingPage() {
                             {correct ? <Check className="size-3" /> : <X className="size-3" />}
                           </span>
                           <span className="font-mono text-xs text-muted-foreground">
-                            Q{questionNumber[q.id]}
+                            {questionMarks(q) > 1
+                              ? `Q${questionStart[q.id]}–${questionStart[q.id] + questionMarks(q) - 1}`
+                              : `Q${questionStart[q.id]}`}
                           </span>
                           <span className="flex-1 font-medium text-foreground">{q.prompt}</span>
                         </summary>
                         <div className="mt-2 space-y-1.5 pl-7">
-                          {!correct && (
+                          {!correct && q.type !== 'matching' && (
                             <p className="text-sm text-red-500">
                               {t('ielts.reading.review.your_answer')}{' '}
                               {userAnswerLabel(
@@ -419,7 +403,7 @@ export default function IeltsReadingPage() {
               key={passage.id}
               passage={passage}
               passageIndex={pIndex}
-              questionNumber={questionNumber}
+              questionStart={questionStart}
               answers={answers}
               onAnswer={setAnswer}
             />
@@ -483,13 +467,13 @@ function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; va
 function PassageBlock({
   passage,
   passageIndex,
-  questionNumber,
+  questionStart,
   answers,
   onAnswer,
 }: {
   passage: ReadingPassage
   passageIndex: number
-  questionNumber: Record<string, number>
+  questionStart: Record<string, number>
   answers: AnswerMap
   onAnswer: (id: string, value: string) => void
 }) {
@@ -517,9 +501,9 @@ function PassageBlock({
           <QuestionCard
             key={q.id}
             question={q}
-            number={questionNumber[q.id]}
-            value={answers[q.id]}
-            onAnswer={(v) => onAnswer(q.id, v)}
+            startNumber={questionStart[q.id]}
+            answers={answers}
+            onAnswer={onAnswer}
           />
         ))}
       </div>
@@ -529,21 +513,24 @@ function PassageBlock({
 
 function QuestionCard({
   question,
-  number,
-  value,
+  startNumber,
+  answers,
   onAnswer,
 }: {
   question: ObjectiveQuestion
-  number: number
-  value: string | undefined
-  onAnswer: (value: string) => void
+  startNumber: number
+  answers: AnswerMap
+  onAnswer: (id: string, value: string) => void
 }) {
   const t = useT()
+  const value = answers[question.id]
+  const marks = questionMarks(question)
+  const numberLabel = marks > 1 ? `${startNumber}–${startNumber + marks - 1}` : String(startNumber)
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">
-        <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary tabular-nums">
-          {number}
+        <span className="flex min-w-6 shrink-0 items-center justify-center rounded-md bg-primary/10 px-1.5 text-xs font-bold text-primary tabular-nums">
+          {numberLabel}
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium leading-snug text-foreground">{question.prompt}</p>
@@ -561,7 +548,7 @@ function QuestionCard({
               <button
                 key={i}
                 type="button"
-                onClick={() => onAnswer(String(i))}
+                onClick={() => onAnswer(question.id, String(i))}
                 aria-pressed={selected}
                 className={`rounded-xl border p-3 text-left text-sm transition-all duration-200 ${
                   selected
@@ -593,7 +580,7 @@ function QuestionCard({
               <button
                 key={opt.value}
                 type="button"
-                onClick={() => onAnswer(opt.value)}
+                onClick={() => onAnswer(question.id, opt.value)}
                 aria-pressed={selected}
                 className={`rounded-lg border px-3.5 py-2 text-sm font-medium transition-all duration-200 ${
                   selected
@@ -612,12 +599,22 @@ function QuestionCard({
         <input
           type="text"
           value={value ?? ''}
-          onChange={(e) => onAnswer(e.target.value)}
+          onChange={(e) => onAnswer(question.id, e.target.value)}
           placeholder={t('ielts.reading.gap.placeholder')}
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}
           className="w-full rounded-lg border border-border/60 bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
+        />
+      )}
+
+      {question.type === 'matching' && (
+        <MatchingControl
+          question={question}
+          startNumber={startNumber}
+          answers={answers}
+          onAnswer={onAnswer}
+          selectLabel={t('ielts.reading.matching.select')}
         />
       )}
     </div>

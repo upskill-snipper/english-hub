@@ -30,6 +30,7 @@ import { LISTENING_SET_4 } from './listening-tests-set-4'
 import { LISTENING_SET_5 } from './listening-tests-set-5'
 import { LISTENING_SET_6 } from './listening-tests-set-6'
 import { LISTENING_SET_7 } from './listening-tests-set-7'
+import { LISTENING_SET_8 } from './listening-tests-set-8'
 
 export const LISTENING_TESTS: ListeningTest[] = [
   ...LISTENING_SET_2,
@@ -38,6 +39,7 @@ export const LISTENING_TESTS: ListeningTest[] = [
   ...LISTENING_SET_5,
   ...LISTENING_SET_6,
   ...LISTENING_SET_7,
+  ...LISTENING_SET_8,
   {
     id: 'ls-academic-1',
     title: 'Practice Test 1 — Community Library & Campus Orientation',
