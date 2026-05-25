@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
 import { useT } from '@/lib/i18n/use-t'
+import { DictationButton } from '@/components/speech/DictationButton'
 
 /* ─── Board catalogue ──────────────────────────────────────── */
 
@@ -623,12 +624,18 @@ export default function SubmitEssayPage() {
 
               {/* ── Title ──────────────────────────────────── */}
               <div className="space-y-1.5">
-                <label htmlFor="title" className="text-sm font-medium text-foreground">
-                  {tx('marking.submit.label_title')}{' '}
-                  <span className="text-xs font-normal text-muted-foreground">
-                    {tx('marking.submit.label_title_optional')}
-                  </span>
-                </label>
+                <div className="flex items-center justify-between gap-2">
+                  <label htmlFor="title" className="text-sm font-medium text-foreground">
+                    {tx('marking.submit.label_title')}{' '}
+                    <span className="text-xs font-normal text-muted-foreground">
+                      {tx('marking.submit.label_title_optional')}
+                    </span>
+                  </label>
+                  <DictationButton
+                    onText={(t) => setTitle((v) => (v ? v.trimEnd() + ' ' : '') + t)}
+                    iconOnly
+                  />
+                </div>
                 <input
                   id="title"
                   type="text"
@@ -641,9 +648,15 @@ export default function SubmitEssayPage() {
 
               {/* ── Essay body ─────────────────────────────── */}
               <div className="space-y-1.5">
-                <label htmlFor="essay" className="text-sm font-medium text-foreground">
-                  {tx('marking.submit.label_essay')}
-                </label>
+                <div className="flex items-center justify-between gap-2">
+                  <label htmlFor="essay" className="text-sm font-medium text-foreground">
+                    {tx('marking.submit.label_essay')}
+                  </label>
+                  <DictationButton
+                    onText={(t) => setEssay((v) => (v ? v.trimEnd() + ' ' : '') + t)}
+                    iconOnly
+                  />
+                </div>
                 <textarea
                   id="essay"
                   value={essay}

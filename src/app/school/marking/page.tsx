@@ -28,6 +28,8 @@ import {
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 
+import { DictationButton } from '@/components/speech/DictationButton'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -684,9 +686,12 @@ export default function SchoolMarkingPage() {
 
                 {/* AI feedback */}
                 <section>
-                  <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    AI feedback
-                  </h3>
+                  <div className="mb-1.5 flex items-center justify-between gap-2">
+                    <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      AI feedback
+                    </h3>
+                    <ReadAloudButton text={active.ai_feedback?.trim() ?? ''} iconOnly />
+                  </div>
                   <div className="whitespace-pre-wrap rounded-lg border border-border bg-muted/30 p-3 text-sm leading-relaxed text-foreground">
                     {active.ai_feedback?.trim() || 'No AI feedback available.'}
                   </div>
@@ -742,9 +747,17 @@ export default function SchoolMarkingPage() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <Label htmlFor="review-feedback">
-                        {t('school_marking_review.feedback_label')}
-                      </Label>
+                      <div className="flex items-center justify-between gap-2">
+                        <Label htmlFor="review-feedback">
+                          {t('school_marking_review.feedback_label')}
+                        </Label>
+                        <DictationButton
+                          onText={(txt) =>
+                            setReviewFeedback((v) => (v ? v.trimEnd() + ' ' : '') + txt)
+                          }
+                          iconOnly
+                        />
+                      </div>
                       <Textarea
                         id="review-feedback"
                         value={reviewFeedback}
@@ -756,9 +769,17 @@ export default function SchoolMarkingPage() {
 
                     <div className="grid gap-3 sm:grid-cols-2">
                       <div className="space-y-1.5">
-                        <Label htmlFor="review-reason">
-                          {t('school_marking_review.adjustment_reason_label')}
-                        </Label>
+                        <div className="flex items-center justify-between gap-2">
+                          <Label htmlFor="review-reason">
+                            {t('school_marking_review.adjustment_reason_label')}
+                          </Label>
+                          <DictationButton
+                            onText={(txt) =>
+                              setReviewReason((v) => (v ? v.trimEnd() + ' ' : '') + txt)
+                            }
+                            iconOnly
+                          />
+                        </div>
                         <Textarea
                           id="review-reason"
                           value={reviewReason}
@@ -768,9 +789,17 @@ export default function SchoolMarkingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <Label htmlFor="review-notes">
-                          {t('school_marking_review.moderation_notes_label')}
-                        </Label>
+                        <div className="flex items-center justify-between gap-2">
+                          <Label htmlFor="review-notes">
+                            {t('school_marking_review.moderation_notes_label')}
+                          </Label>
+                          <DictationButton
+                            onText={(txt) =>
+                              setReviewNotes((v) => (v ? v.trimEnd() + ' ' : '') + txt)
+                            }
+                            iconOnly
+                          />
+                        </div>
                         <Textarea
                           id="review-notes"
                           value={reviewNotes}
@@ -876,7 +905,15 @@ export default function SchoolMarkingPage() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <Label htmlFor="override-comment">Comment</Label>
+                      <div className="flex items-center justify-between gap-2">
+                        <Label htmlFor="override-comment">Comment</Label>
+                        <DictationButton
+                          onText={(txt) =>
+                            setOverrideComment((v) => (v ? v.trimEnd() + ' ' : '') + txt)
+                          }
+                          iconOnly
+                        />
+                      </div>
                       <Textarea
                         id="override-comment"
                         value={overrideComment}

@@ -24,6 +24,8 @@ import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
+import { DictationButton } from '@/components/speech/DictationButton'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -440,20 +442,28 @@ export default function EssayFeedbackPage() {
 
             {/* Essay textarea */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <Label htmlFor="essay">{t('dashboard.essay_feedback.label_essay')}</Label>
-                <span
-                  className={cn(
-                    'text-xs tabular-nums',
-                    wordCount < 100 ? 'text-destructive' : 'text-muted-foreground',
-                  )}
-                >
-                  {wordCount}{' '}
-                  {wordCount !== 1
-                    ? t('dashboard.essay_feedback.words')
-                    : t('dashboard.essay_feedback.word')}
-                  {wordCount < 100 && ` ${t('dashboard.essay_feedback.word_min')}`}
-                </span>
+                <div className="flex items-center gap-2">
+                  {/* Speak-to-type — append dictated text to the essay. */}
+                  <DictationButton
+                    onText={(chunk) => setEssay((v) => (v ? v + ' ' : '') + chunk)}
+                    lang="en-GB"
+                    iconOnly
+                  />
+                  <span
+                    className={cn(
+                      'text-xs tabular-nums',
+                      wordCount < 100 ? 'text-destructive' : 'text-muted-foreground',
+                    )}
+                  >
+                    {wordCount}{' '}
+                    {wordCount !== 1
+                      ? t('dashboard.essay_feedback.words')
+                      : t('dashboard.essay_feedback.word')}
+                    {wordCount < 100 && ` ${t('dashboard.essay_feedback.word_min')}`}
+                  </span>
+                </div>
               </div>
               <Textarea
                 id="essay"
@@ -565,6 +575,13 @@ function FeedbackResults({
                 <Badge variant="secondary" className="text-xs">
                   {questionType}
                 </Badge>
+                {/* Read aloud — grade band + why it was awarded. */}
+                <ReadAloudButton
+                  text={`${feedback.gradeBand}. ${feedback.gradeJustification}`}
+                  lang="en-GB"
+                  iconOnly
+                  label={t('dashboard.essay_feedback.detailed_feedback_title')}
+                />
               </div>
               <p className="mt-1 text-sm text-muted-foreground">{feedback.gradeJustification}</p>
             </div>
@@ -662,9 +679,13 @@ function FeedbackResults({
       {/* Annotated Feedback */}
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
-            <MessageSquareText className="h-4 w-4 text-primary" />
-            <CardTitle>{t('dashboard.essay_feedback.detailed_feedback_title')}</CardTitle>
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <MessageSquareText className="h-4 w-4 text-primary" />
+              <CardTitle>{t('dashboard.essay_feedback.detailed_feedback_title')}</CardTitle>
+            </div>
+            {/* Read aloud — helps EAL learners follow the detailed feedback. */}
+            <ReadAloudButton text={feedback.annotatedFeedback} lang="en-GB" />
           </div>
           <CardDescription>{t('dashboard.essay_feedback.detailed_feedback_desc')}</CardDescription>
         </CardHeader>

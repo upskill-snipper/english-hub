@@ -39,6 +39,8 @@ import {
   ASSIGNMENT_STATUS_LABELS,
 } from '@/lib/types/assignment'
 import { useT } from '@/lib/i18n/use-t'
+import { DictationButton } from '@/components/speech/DictationButton'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 
 /* ── Helpers ───────────────────────────────────────────────────────────── */
 
@@ -474,16 +476,25 @@ export default function AssignmentDetailPage() {
                     </td>
                     <td className="py-3 pr-4">
                       {editingStudentId === sub.studentId ? (
-                        <Textarea
-                          value={editFeedback}
-                          onChange={(e) => setEditFeedback(e.target.value)}
-                          className="min-h-[60px] text-xs"
-                          placeholder={t('school.assignments.feedback.placeholder')}
-                        />
+                        <div className="flex items-start gap-1.5">
+                          <Textarea
+                            value={editFeedback}
+                            onChange={(e) => setEditFeedback(e.target.value)}
+                            className="min-h-[60px] text-xs"
+                            placeholder={t('school.assignments.feedback.placeholder')}
+                          />
+                          <DictationButton
+                            onText={(text) =>
+                              setEditFeedback((v) => (v ? v.trimEnd() + ' ' : '') + text)
+                            }
+                            iconOnly
+                          />
+                        </div>
                       ) : sub.feedback ? (
                         <span className="flex items-center gap-1 text-xs text-muted-foreground max-w-[200px] truncate">
                           <MessageSquare className="h-3 w-3 shrink-0" />
                           {sub.feedback}
+                          <ReadAloudButton text={sub.feedback} iconOnly className="ml-1 shrink-0" />
                         </span>
                       ) : (
                         <span className="text-xs text-muted-foreground">--</span>

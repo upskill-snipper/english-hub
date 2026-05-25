@@ -41,6 +41,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Separator } from '@/components/ui/separator'
 
+import { DictationButton } from '@/components/speech/DictationButton'
 import { Recorder } from './_components/Recorder'
 import { SPEAKING_CUES } from './speaking-cues'
 import type {
@@ -521,8 +522,14 @@ export default function IeltsSpeakingPage() {
           {/* Transcript + submit */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="transcript">{t('ielts.speaking.transcript.label')}</Label>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <Label htmlFor="transcript">{t('ielts.speaking.transcript.label')}</Label>
+                  <DictationButton
+                    label="Speak to transcribe"
+                    onText={(chunk) => setTranscript((v) => (v ? v.trimEnd() + ' ' : '') + chunk)}
+                  />
+                </div>
                 <span
                   className={cn(
                     'text-xs tabular-nums',
@@ -554,7 +561,11 @@ export default function IeltsSpeakingPage() {
 
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-md text-xs text-muted-foreground">
-                {t('ielts.speaking.submit.helper')}
+                {t('ielts.speaking.submit.helper')}{' '}
+                <span>
+                  Tip: you can now tap “Speak to transcribe” to dictate your answer instead of
+                  typing it.
+                </span>
               </p>
               <Button
                 type="submit"

@@ -53,6 +53,8 @@ import {
   pct,
 } from '@/components/dataviz'
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
+import { DictationButton } from '@/components/speech/DictationButton'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -1328,6 +1330,14 @@ export default function StudentDrilldownPage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
+                          {essay.feedbackPoints.length > 0 && (
+                            <ReadAloudButton
+                              text={`Feedback for ${essay.title}. ${essay.feedbackPoints.join('. ')}`}
+                              iconOnly
+                              label="Read feedback aloud"
+                              className="print:hidden"
+                            />
+                          )}
                           <Badge
                             variant="outline"
                             className={`text-sm font-bold ${
@@ -1490,20 +1500,26 @@ export default function StudentDrilldownPage() {
                   className="flex-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
                   rows={2}
                 />
-                <Button
-                  size="sm"
-                  onClick={() => {
-                    if (newNoteText.trim()) {
-                      addNote(newNoteText.trim())
-                      setNewNoteText('')
-                    }
-                  }}
-                  disabled={!newNoteText.trim()}
-                  className="self-end gap-1.5"
-                >
-                  <Plus className="h-4 w-4" />
-                  Add
-                </Button>
+                <div className="flex flex-col items-center gap-2 self-end">
+                  <DictationButton
+                    onText={(t) => setNewNoteText((v) => (v ? v.trimEnd() + ' ' : '') + t)}
+                    iconOnly
+                  />
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      if (newNoteText.trim()) {
+                        addNote(newNoteText.trim())
+                        setNewNoteText('')
+                      }
+                    }}
+                    disabled={!newNoteText.trim()}
+                    className="gap-1.5"
+                  >
+                    <Plus className="h-4 w-4" />
+                    Add
+                  </Button>
+                </div>
               </div>
 
               <Separator />
@@ -1524,7 +1540,7 @@ export default function StudentDrilldownPage() {
                             className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
                             rows={3}
                           />
-                          <div className="flex gap-2">
+                          <div className="flex items-center gap-2">
                             <Button
                               size="sm"
                               variant="outline"
@@ -1545,6 +1561,13 @@ export default function StudentDrilldownPage() {
                             >
                               Cancel
                             </Button>
+                            <DictationButton
+                              onText={(t) =>
+                                setEditingNoteText((v) => (v ? v.trimEnd() + ' ' : '') + t)
+                              }
+                              iconOnly
+                              className="ml-auto"
+                            />
                           </div>
                         </div>
                       ) : (

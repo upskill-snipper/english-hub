@@ -43,6 +43,9 @@ import {
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 
+import { DictationButton } from '@/components/speech/DictationButton'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
+
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -758,6 +761,22 @@ export default function MarkerConsolePage() {
                           className="h-8 flex-1 rounded-md border border-border bg-background px-2 text-sm"
                           aria-label={`${ao.ao} ${tt(t, 'marker.field.comment', 'comment')}`}
                         />
+                        <DictationButton
+                          onText={(chunk) =>
+                            setAoCorrections((prev) =>
+                              prev.map((p, i) =>
+                                i === idx
+                                  ? {
+                                      ...p,
+                                      comment: (p.comment ? p.comment.trimEnd() + ' ' : '') + chunk,
+                                    }
+                                  : p,
+                              ),
+                            )
+                          }
+                          iconOnly
+                          label={tt(t, 'marker.field.ao_comment_dictate', 'Dictate note')}
+                        />
                       </div>
                     ))}
                   </div>
@@ -765,9 +784,27 @@ export default function MarkerConsolePage() {
 
                 {/* Final feedback */}
                 <div className="mt-3 space-y-1.5">
-                  <Label htmlFor="final-feedback">
-                    {tt(t, 'marker.field.feedback', 'Final feedback')}
-                  </Label>
+                  <div className="flex items-center justify-between gap-2">
+                    <Label htmlFor="final-feedback">
+                      {tt(t, 'marker.field.feedback', 'Final feedback')}
+                    </Label>
+                    <div className="flex items-center gap-1.5">
+                      {current.ai_feedback && (
+                        <ReadAloudButton
+                          text={current.ai_feedback}
+                          iconOnly
+                          label={tt(t, 'marker.field.feedback_read', 'Read AI feedback aloud')}
+                        />
+                      )}
+                      <DictationButton
+                        onText={(chunk) =>
+                          setFinalFeedback((v) => (v ? v.trimEnd() + ' ' : '') + chunk)
+                        }
+                        iconOnly
+                        label={tt(t, 'marker.field.feedback_dictate', 'Dictate feedback')}
+                      />
+                    </div>
+                  </div>
                   <Textarea
                     id="final-feedback"
                     value={finalFeedback}
@@ -783,12 +820,21 @@ export default function MarkerConsolePage() {
 
                 {/* Adjustment reason (required when changed) */}
                 <div className="mt-3 space-y-1.5">
-                  <Label htmlFor="adj-reason">
-                    {tt(t, 'marker.field.reason', 'Adjustment reason')}
-                    {(changedFromDraft || submitting === 'correct') && (
-                      <span className="ml-1 text-destructive">*</span>
-                    )}
-                  </Label>
+                  <div className="flex items-center justify-between gap-2">
+                    <Label htmlFor="adj-reason">
+                      {tt(t, 'marker.field.reason', 'Adjustment reason')}
+                      {(changedFromDraft || submitting === 'correct') && (
+                        <span className="ml-1 text-destructive">*</span>
+                      )}
+                    </Label>
+                    <DictationButton
+                      onText={(chunk) =>
+                        setAdjustmentReason((v) => (v ? v.trimEnd() + ' ' : '') + chunk)
+                      }
+                      iconOnly
+                      label={tt(t, 'marker.field.reason_dictate', 'Dictate reason')}
+                    />
+                  </div>
                   <Textarea
                     id="adj-reason"
                     value={adjustmentReason}
