@@ -163,6 +163,82 @@ export interface ListeningTest {
   estimatedMinutes: number
 }
 
+// ─── Writing Task 1 (Academic) data visuals ────────────────────────────────
+// Structured chart specs so an Academic Task 1 prompt renders a REAL visual
+// (bar / line / pie / table / process) instead of only a textual data
+// description. Rendered by src/app/ielts/writing/_components/WritingChart.tsx
+// (recharts-based, themed). Authoring rule: the numbers in the spec MUST match
+// any figures quoted in the prompt text, so the candidate sees one consistent
+// data set whether they read the chart or the words.
+
+/** Shared optional metadata for every chart kind. */
+interface ChartBase {
+  /** Figure caption shown under the visual, e.g. the axis/units note. */
+  caption?: string
+  /** Measurement unit applied to values, e.g. '%', 'US$', 'thousands', 'kg'. */
+  unit?: string
+}
+
+/** One data series. `values` aligns 1:1 with the chart's `categories`. */
+export interface ChartSeries {
+  name: string // series label (e.g. a year, a city, a product)
+  values: number[]
+}
+
+/** Vertical bars; >1 series renders grouped (or stacked) bars. */
+export interface BarChartSpec extends ChartBase {
+  kind: 'bar'
+  categories: string[] // x-axis category labels
+  series: ChartSeries[]
+  yAxisLabel?: string
+  stacked?: boolean
+}
+
+/** Trend over time (or ordered categories); >1 series = multiple lines. */
+export interface LineChartSpec extends ChartBase {
+  kind: 'line'
+  categories: string[] // x-axis labels (usually time periods)
+  series: ChartSeries[]
+  yAxisLabel?: string
+}
+
+export interface PieSlice {
+  label: string
+  value: number
+}
+
+/** One or two pie/doughnut charts (two lets the candidate compare datasets). */
+export interface PieChartSpec extends ChartBase {
+  kind: 'pie'
+  datasets: { name: string; slices: PieSlice[] }[]
+}
+
+/** A data table (first column is the row header). */
+export interface TableChartSpec extends ChartBase {
+  kind: 'table'
+  columns: string[] // header row; columns[0] labels the row-header column
+  rows: { label: string; cells: (string | number)[] }[]
+}
+
+export interface ProcessStep {
+  label: string
+  detail?: string
+}
+
+/** A process / life-cycle diagram (stages, optionally looping back). */
+export interface ProcessChartSpec extends ChartBase {
+  kind: 'process'
+  steps: ProcessStep[]
+  cyclical?: boolean
+}
+
+export type WritingChartSpec =
+  | BarChartSpec
+  | LineChartSpec
+  | PieChartSpec
+  | TableChartSpec
+  | ProcessChartSpec
+
 // ─── Writing (Academic) ────────────────────────────────────────────────────
 
 export interface WritingPrompt {
@@ -171,7 +247,9 @@ export interface WritingPrompt {
   track: IeltsTrack
   title: string
   prompt: string // the question text
-  imageSrc?: string // chart/graph for Task 1 (optional in Wave 1)
+  /** Academic Task 1: a structured chart rendered as a real visual. */
+  chart?: WritingChartSpec
+  imageSrc?: string // real chart/graph image asset (optional; takes precedence if set)
   imageAlt?: string
   minWords: number // 150 (Task 1) / 250 (Task 2)
   suggestedMinutes: number

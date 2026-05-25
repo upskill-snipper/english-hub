@@ -38,6 +38,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { useT } from '@/lib/i18n/use-t'
 import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
 import { WRITING_PROMPTS } from './writing-prompts'
+import { WritingChart } from './_components/WritingChart'
 
 type TaskTab = 'writing-task-1' | 'writing-task-2'
 
@@ -382,11 +383,14 @@ export default function IeltsWritingPage() {
                 </Button>
               </div>
             </CardHeader>
-            <CardContent>
-              {/* The Task 1 data/visual is embedded in the prompt text. */}
+            <CardContent className="space-y-4">
+              {/* Instruction / question text. For chart prompts the numbers live
+                  in the rendered visual below, not dumped into this text. */}
               <div className="whitespace-pre-line rounded-xl border border-border/60 bg-background/50 p-4 text-sm leading-relaxed text-foreground">
                 {prompt.prompt}
               </div>
+              {/* Academic Task 1: the real chart/graph/table/process visual. */}
+              {prompt.chart && <WritingChart spec={prompt.chart} />}
             </CardContent>
           </Card>
 
