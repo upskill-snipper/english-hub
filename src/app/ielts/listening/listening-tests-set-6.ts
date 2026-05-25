@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 6) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 6) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,16 +6,16 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: registering by phone
+//   • Section 1 - an everyday transactional DIALOGUE (here: registering by phone
 //     for a charity fun run), assessed with form / note completion + a
 //     multiple-choice item. A surname is spelled and a phone number is dictated,
 //     and one detail (the entry fee) depends on a stated choice (the distance).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk for visitors to a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk for visitors to a
 //     botanical garden), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "next", "finally") the questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor planning
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor planning
 //     a marketing assignment), assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: ocean currents),
+//   • Section 4 - an academic LECTURE / monologue (here: ocean currents),
 //     assessed with note/sentence completion + multiple choice.
 //
 // Question conventions (shared contract from @/lib/ielts/types):
@@ -24,7 +24,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -34,12 +34,12 @@ import type { ListeningTest } from '@/lib/ielts/types'
 export const LISTENING_SET_6: ListeningTest[] = [
   {
     id: 'ls-academic-6',
-    title: 'Practice Test 6 — Charity Run, Botanical Garden, Marketing Assignment & Ocean Currents',
+    title: 'Practice Test 6 - Charity Run, Botanical Garden, Marketing Assignment & Ocean Currents',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-6-s1',
-        title: 'Section 1 — Registering for a charity run',
+        title: 'Section 1 - Registering for a charity run',
         // ~275 words. Transactional dialogue (Section 1 style): a caller signing
         // up by phone for a charity fun run. A surname is spelled and a mobile
         // number is dictated; one detail (the entry fee) depends on a stated
@@ -59,7 +59,7 @@ MAN: It's oh-seven-nine-double-two, four-oh-six, three-one-eight.
 
 WOMAN: Got it. Now, there are two distances this year. There's the five-kilometre route, which is fairly flat, and the ten-kilometre route, which goes up over the hill by the reservoir.
 
-MAN: I'll do the ten-kilometre one — I've been training for the hills.
+MAN: I'll do the ten-kilometre one - I've been training for the hills.
 
 WOMAN: Good for you. The entry fee is twelve pounds for the five, and eighteen pounds for the ten, and that includes your race number and a T-shirt.
 
@@ -86,7 +86,7 @@ WOMAN: You're very welcome. See you on the day.`,
               'Complete the registration form. Write ONE WORD for the answer.\n\nParticipant surname: ____________',
             acceptableAnswers: ['Hartley', 'hartley'],
             explanation:
-              'The caller gives his name as “Oliver Hartley” and spells the surname out: H-A-R-T-L-E-Y. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Oliver Hartley” and spells the surname out: H-A-R-T-L-E-Y. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-006-s1-q2',
@@ -94,7 +94,7 @@ WOMAN: You're very welcome. See you on the day.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07922406318', '0792 2406318', '07922 406 318', '079 22 406 318'],
             explanation:
-              'The number is dictated as “oh-seven-nine-double-two, four-oh-six, three-one-eight”, which is 07922406318. “Double two” means two 2s, and “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-nine-double-two, four-oh-six, three-one-eight”, which is 07922406318. “Double two” means two 2s, and “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-006-s1-q3',
@@ -108,7 +108,7 @@ WOMAN: You're very welcome. See you on the day.`,
             ],
             correctIndex: 1,
             explanation:
-              'He says, “I’ll do the ten-kilometre one — I’ve been training for the hills.” The distractors reuse real words from the audio (flat, cheaper, reservoir) but none matches his stated reason. Listen for the reason, not just the keyword.',
+              'He says, “I’ll do the ten-kilometre one - I’ve been training for the hills.” The distractors reuse real words from the audio (flat, cheaper, reservoir) but none matches his stated reason. Listen for the reason, not just the keyword.',
           },
           {
             id: 'ls-006-s1-q4',
@@ -116,7 +116,7 @@ WOMAN: You're very welcome. See you on the day.`,
             prompt: 'Entry fee for the route the man chose: £ ____________. Write A NUMBER.',
             acceptableAnswers: ['18', 'eighteen'],
             explanation:
-              'The fee is “twelve pounds for the five, and eighteen pounds for the ten.” Because he selects the ten-kilometre route (Q3), the fee that applies is 18 — Section 1 often makes one detail depend on an earlier choice.',
+              'The fee is “twelve pounds for the five, and eighteen pounds for the ten.” Because he selects the ten-kilometre route (Q3), the fee that applies is 18 - Section 1 often makes one detail depend on an earlier choice.',
           },
           {
             id: 'ls-006-s1-q5',
@@ -132,7 +132,7 @@ WOMAN: You're very welcome. See you on the day.`,
             prompt: 'T-shirt size requested: ____________. Write ONE WORD.',
             acceptableAnswers: ['medium', 'Medium', 'M'],
             explanation:
-              'Offered “small, medium and large”, he replies “Medium, please.” The answer is “medium” — listen for the speaker’s own choice rather than the full list of options.',
+              'Offered “small, medium and large”, he replies “Medium, please.” The answer is “medium” - listen for the speaker’s own choice rather than the full list of options.',
           },
           {
             id: 'ls-006-s1-q7',
@@ -141,7 +141,7 @@ WOMAN: You're very welcome. See you on the day.`,
               'Participants should arrive by ____________ to check in. Write the time you hear.',
             acceptableAnswers: ['9', 'nine', '9.00', '9:00', '9am', '9 am', 'nine o’clock'],
             explanation:
-              'She says, “The run starts at half past nine, but please arrive by nine so we can check everyone in.” The arrival time is 9 (9.00) — note that half past nine is the start time, a deliberate distractor.',
+              'She says, “The run starts at half past nine, but please arrive by nine so we can check everyone in.” The arrival time is 9 (9.00) - note that half past nine is the start time, a deliberate distractor.',
           },
           {
             id: 'ls-006-s1-q8',
@@ -149,7 +149,7 @@ WOMAN: You're very welcome. See you on the day.`,
             prompt: 'Participants assemble on the green next to the ____________. Write TWO WORDS.',
             acceptableAnswers: ['town hall', 'town-hall', 'the town hall'],
             explanation:
-              'She says, “We assemble on the green next to the town hall, not at the sports centre as in previous years.” The meeting point is the “town hall” — the sports centre is last year’s location, a near-miss distractor.',
+              'She says, “We assemble on the green next to the town hall, not at the sports centre as in previous years.” The meeting point is the “town hall” - the sports centre is last year’s location, a near-miss distractor.',
           },
           {
             id: 'ls-006-s1-q9',
@@ -178,7 +178,7 @@ WOMAN: You're very welcome. See you on the day.`,
       },
       {
         id: 'ls-academic-6-s2',
-        title: 'Section 2 — Welcome talk at a botanical garden',
+        title: 'Section 2 - Welcome talk at a botanical garden',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a botanical garden, explaining the layout and a
         // few rules. Uses sequencing/signpost language ("first", "after that",
@@ -192,9 +192,9 @@ Let me start with the zone closest to us, the Tropical House. This is the large 
 
 After the Tropical House, follow the gravel path to the Rose Garden. It's at its very best in June, when over two hundred varieties are in bloom, and the scent on a warm afternoon is unforgettable.
 
-One thing that surprises many visitors is our policy on picnics. You're very welcome to bring food, but please eat only in the designated picnic area beside the lake — not on the lawns, as the sprinklers come on without warning.
+One thing that surprises many visitors is our policy on picnics. You're very welcome to bring food, but please eat only in the designated picnic area beside the lake - not on the lawns, as the sprinklers come on without warning.
 
-Finally, do try to catch one of our guided walks. They leave from the shop every hour, and today's theme is medicinal plants — the ones our ancestors used as medicine long before modern science. That's everything from me. Do enjoy your visit, and please ask any of us in green jackets if you need help.`,
+Finally, do try to catch one of our guided walks. They leave from the shop every hour, and today's theme is medicinal plants - the ones our ancestors used as medicine long before modern science. That's everything from me. Do enjoy your visit, and please ask any of us in green jackets if you need help.`,
         questions: [
           {
             id: 'ls-006-s2-q11',
@@ -258,7 +258,7 @@ Finally, do try to catch one of our guided walks. They leave from the shop every
               'The Rose Garden has over ____________ varieties of rose in bloom. Write A NUMBER.',
             acceptableAnswers: ['200', 'two hundred'],
             explanation:
-              'She says “over two hundred varieties are in bloom.” The answer is 200 — numbers said as words still count, but writing the digits is safest.',
+              'She says “over two hundred varieties are in bloom.” The answer is 200 - numbers said as words still count, but writing the digits is safest.',
           },
           {
             id: 'ls-006-s2-q17',
@@ -272,7 +272,7 @@ Finally, do try to catch one of our guided walks. They leave from the shop every
             ],
             correctIndex: 1,
             explanation:
-              'She says, “please eat only in the designated picnic area beside the lake — not on the lawns, as the sprinklers come on without warning.” Option B matches; the lawns are explicitly ruled out.',
+              'She says, “please eat only in the designated picnic area beside the lake - not on the lawns, as the sprinklers come on without warning.” Option B matches; the lawns are explicitly ruled out.',
           },
           {
             id: 'ls-006-s2-q18',
@@ -297,13 +297,13 @@ Finally, do try to catch one of our guided walks. They leave from the shop every
             prompt: 'Today’s guided walk has the theme of ____________ plants. Write ONE WORD.',
             acceptableAnswers: ['medicinal', 'medical'],
             explanation:
-              'She says, “today’s theme is medicinal plants — the ones our ancestors used as medicine.” The answer is “medicinal”.',
+              'She says, “today’s theme is medicinal plants - the ones our ancestors used as medicine.” The answer is “medicinal”.',
           },
         ],
       },
       {
         id: 'ls-academic-6-s3',
-        title: 'Section 3 — Tutorial: planning a marketing assignment',
+        title: 'Section 3 - Tutorial: planning a marketing assignment',
         // ~290 words. Academic discussion (Section 3 style): two students (Ria and
         // Daniel) and a tutor (Dr Okafor) plan a marketing assignment. Speakers
         // debate the choice of product, method and structure, so the questions mix
@@ -316,7 +316,7 @@ DR OKAFOR: A practical choice. Daniel, what's your central question?
 
 DANIEL: We want to find out why the brand appeals so strongly to younger customers, even though it isn't the cheapest option on the market.
 
-DR OKAFOR: Good — a clear focus. And how are you gathering your evidence?
+DR OKAFOR: Good - a clear focus. And how are you gathering your evidence?
 
 DANIEL: Two ways. We'll analyse the company's social media posts over the last year, and we'll run a short online survey of students on campus.
 
@@ -387,7 +387,7 @@ DR OKAFOR: Let's say two weeks from today. That gives you time to run the survey
               'Dr Okafor advises a survey of no more than ____________ questions. Write A NUMBER.',
             acceptableAnswers: ['10', 'ten'],
             explanation:
-              'He says to aim for “no more than ten questions.” The answer is 10 — the students had planned twenty, which is a deliberate distractor.',
+              'He says to aim for “no more than ten questions.” The answer is 10 - the students had planned twenty, which is a deliberate distractor.',
           },
           {
             id: 'ls-006-s3-q26',
@@ -449,18 +449,18 @@ DR OKAFOR: Let's say two weeks from today. That gives you time to run the survey
       },
       {
         id: 'ls-academic-6-s4',
-        title: 'Section 4 — Lecture: ocean currents',
+        title: 'Section 4 - Lecture: ocean currents',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on ocean currents. Dense, factual,
         // and signposted ("first", "the second", "finally"), with the
         // note/sentence-completion + multiple-choice mix typical of Section 4.
-        transcript: `Good afternoon. Today I want to introduce the great currents that move water around our oceans, because, far from being still, the sea is in constant, large-scale motion — and that motion shapes the climate of the entire planet.
+        transcript: `Good afternoon. Today I want to introduce the great currents that move water around our oceans, because, far from being still, the sea is in constant, large-scale motion - and that motion shapes the climate of the entire planet.
 
 Let me begin with a useful distinction. Oceanographers divide currents into two broad types. The first are surface currents, which affect roughly the top few hundred metres of water and are driven mainly by the wind. The second are deep currents, which move far below the surface and are driven instead by differences in density.
 
-So what controls that density? Two things: temperature and salt. Cold water is denser than warm water, and salty water is denser than fresh. Where the sea is both cold and salty — for example, near the poles — the water becomes heavy and sinks, and that sinking is the engine that drives the deep circulation.
+So what controls that density? Two things: temperature and salt. Cold water is denser than warm water, and salty water is denser than fresh. Where the sea is both cold and salty - for example, near the poles - the water becomes heavy and sinks, and that sinking is the engine that drives the deep circulation.
 
-Together, these surface and deep flows form a single connected system that scientists call the global conveyor belt. A parcel of water can take around a thousand years to complete one full loop of this belt — a timescale that surprises most people.
+Together, these surface and deep flows form a single connected system that scientists call the global conveyor belt. A parcel of water can take around a thousand years to complete one full loop of this belt - a timescale that surprises most people.
 
 Why does any of this matter to us? Above all, because currents redistribute heat. Warm surface currents carry heat away from the equator towards the poles, and this is why north-western Europe, for instance, is far milder than other places at the same latitude.
 
@@ -478,7 +478,7 @@ Finally, a note of concern. As polar ice melts, it adds fresh water to the sea, 
             ],
             correctIndex: 1,
             explanation:
-              'She opens by saying that “far from being still, the sea is in constant, large-scale motion — and that motion shapes the climate of the entire planet.” Option B captures this framing; the others are not claimed.',
+              'She opens by saying that “far from being still, the sea is in constant, large-scale motion - and that motion shapes the climate of the entire planet.” Option B captures this framing; the others are not claimed.',
           },
           {
             id: 'ls-006-s4-q32',
@@ -486,7 +486,7 @@ Finally, a note of concern. As polar ice melts, it adds fresh water to the sea, 
             prompt: 'Surface currents are driven mainly by the ____________. Write ONE WORD.',
             acceptableAnswers: ['wind'],
             explanation:
-              'She says surface currents “are driven mainly by the wind.” The answer is “wind” — deep currents, by contrast, are driven by density.',
+              'She says surface currents “are driven mainly by the wind.” The answer is “wind” - deep currents, by contrast, are driven by density.',
           },
           {
             id: 'ls-006-s4-q33',
@@ -567,7 +567,7 @@ Finally, a note of concern. As polar ice melts, it adds fresh water to the sea, 
               'As polar ice melts, it adds fresh water that makes surface water less salty and therefore less ____________. Write ONE WORD.',
             acceptableAnswers: ['dense'],
             explanation:
-              'She says melting ice “makes the surface water less salty and therefore less dense.” The answer is “dense” — the concern is that this could weaken the sinking that drives the conveyor belt.',
+              'She says melting ice “makes the surface water less salty and therefore less dense.” The answer is “dense” - the concern is that this could weaken the sinking that drives the conveyor belt.',
           },
         ],
       },

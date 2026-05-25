@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (to an official / a company),
+//     The register varies by prompt - formal (to an official / a company),
 //     semi-formal (to a landlord / a manager) or informal (to a friend). The
 //     situation and the three bullets live inside `prompt`. minWords 150,
 //     suggestedMinutes 20.
@@ -20,7 +20,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter of complaint (to a company) ───────────────
+  // ── Task 1 · A - FORMAL letter of complaint (to a company) ───────────────
   {
     id: 'gt-wt1-broken-appliance',
     task: 'writing-task-1',
@@ -43,7 +43,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — FORMAL letter of request (to an official) ───────────────
+  // ── Task 1 · B - FORMAL letter of request (to an official) ───────────────
   {
     id: 'gt-wt1-evening-classes',
     task: 'writing-task-1',
@@ -66,7 +66,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — SEMI-FORMAL letter (to a landlord) ──────────────────────
+  // ── Task 1 · C - SEMI-FORMAL letter (to a landlord) ──────────────────────
   {
     id: 'gt-wt1-flat-repairs',
     task: 'writing-task-1',
@@ -89,7 +89,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · D — INFORMAL letter (to a friend) ───────────────────────────
+  // ── Task 1 · D - INFORMAL letter (to a friend) ───────────────────────────
   {
     id: 'gt-wt1-visit-friend',
     task: 'writing-task-1',
@@ -112,7 +112,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree / disagree) ──────────────────────────────
+  // ── Task 2 · A - opinion (agree / disagree) ──────────────────────────────
   {
     id: 'gt-wt2-mobile-phones',
     task: 'writing-task-2',
@@ -131,7 +131,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — problem / solution + opinion ────────────────────────────
+  // ── Task 2 · B - problem / solution + opinion ────────────────────────────
   {
     id: 'gt-wt2-fast-food',
     task: 'writing-task-2',
@@ -150,7 +150,7 @@ export const GT_WRITING_SET: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — advantages / disadvantages ──────────────────────────────
+  // ── Task 2 · C - advantages / disadvantages ──────────────────────────────
   {
     id: 'gt-wt2-online-shopping',
     task: 'writing-task-2',

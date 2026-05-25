@@ -3,17 +3,17 @@
 // reference surface:
 //   • src/app/ielts/guide/page.tsx → ielts.guide.* (SEO exam reference)
 //
-// SCOPE: interface copy only — the back link, hero eyebrow/heading/intro, the
+// SCOPE: interface copy only - the back link, hero eyebrow/heading/intro, the
 // per-section eyebrows/headings/intros, connective narrative sentences, table
 // column headers, callout framing, stat-card labels, FAQ questions + the
 // connective phrasing around each FAQ answer, CTA copy and the disclaimer.
 //
-// HARD BOUNDARY — no exam FACTS live here. Every factual figure on the page is
+// HARD BOUNDARY - no exam FACTS live here. Every factual figure on the page is
 // the single source of truth in `@/lib/ielts/exam-facts` (IELTS_OVERVIEW,
 // SECTION_FACTS.format / .questionsOrTasks, BAND_SCALE descriptions,
 // SCORING_RULE, COMMON_MISTAKES, COUNTRY_REQUIREMENTS, PROCESS_STEPS detail,
 // ONE_SKILL_RETAKE_NOTE). Those render straight from exam-facts and stay in
-// English — they are NOT mirrored as keys here. Where a sentence interleaves a
+// English - they are NOT mirrored as keys here. Where a sentence interleaves a
 // fact (e.g. an FAQ answer or an overview paragraph), only the connective
 // fragments around the interpolated value are keyed; the value itself is the
 // untranslated exam-facts string spliced in at render time.
@@ -38,8 +38,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'دليل امتحان IELTS الكامل',
   },
   'ielts.guide.hero.intro': {
-    en: 'Everything you need to understand the test before you book it: the four sections and their timings, how the 0–9 band scale is scored, where candidates lose marks, and the step-by-step process from registration to results.',
-    ar: 'كل اللي تحتاجه عشان تفهم الامتحان قبل ما تحجزه: الأقسام الأربعة ومواعيدها، كيف يتحسب مقياس Band من 0–9، وين يخسر المتقدّمين درجات، والعملية خطوة خطوة من التسجيل لين النتائج.',
+    en: 'Everything you need to understand the test before you book it: the four sections and their timings, how the 0-9 band scale is scored, where candidates lose marks, and the step-by-step process from registration to results.',
+    ar: 'كل اللي تحتاجه عشان تفهم الامتحان قبل ما تحجزه: الأقسام الأربعة ومواعيدها، كيف يتحسب مقياس Band من 0-9، وين يخسر المتقدّمين درجات، والعملية خطوة خطوة من التسجيل لين النتائج.',
   },
   'ielts.guide.hero.cta_diagnostic': {
     en: 'Take the free diagnostic',
@@ -47,8 +47,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
   },
   'ielts.guide.hero.cta_hub': { en: 'Explore the IELTS hub', ar: 'استكشف مركز IELTS' },
   'ielts.guide.hero.disclaimer': {
-    en: 'An independent, factual reference. The English Hub is not affiliated with the official IELTS test owners. Band requirements are set per institution and may change — always confirm the current requirement with your university, employer or immigration authority.',
-    ar: 'مرجع مستقل ومبني على الحقائق. The English Hub مو تابع لمالكي اختبار IELTS الرسميين. متطلبات Band تحددها كل مؤسسة بنفسها وممكن تتغيّر — دايماً تأكّد من المتطلب الحالي مع جامعتك أو جهة عملك أو سلطة الهجرة.',
+    en: 'An independent, factual reference. The English Hub is not affiliated with the official IELTS test owners. Band requirements are set per institution and may change - always confirm the current requirement with your university, employer or immigration authority.',
+    ar: 'مرجع مستقل ومبني على الحقائق. The English Hub مو تابع لمالكي اختبار IELTS الرسميين. متطلبات Band تحددها كل مؤسسة بنفسها وممكن تتغيّر - دايماً تأكّد من المتطلب الحالي مع جامعتك أو جهة عملك أو سلطة الهجرة.',
   },
 
   // ─── 1. Overview ──────────────────────────────────────────────────────────
@@ -68,8 +68,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
   // Paragraph 2 splits around the TRF validity figure:
   //   {lead} {trfValidityYears} years.
   'ielts.guide.overview.p2_lead': {
-    en: 'It assesses four skills — Listening, Reading, Writing and Speaking — each reported on a 0–9 band scale. There is no pass or fail: you receive a band for every skill and an overall band, and each institution decides the minimum it will accept. Your result is issued as a Test Report Form (TRF), valid for',
-    ar: 'يقيس أربع مهارات — Listening وReading وWriting وSpeaking — وكل وحدة تنذكر على مقياس Band من 0–9. ما في نجاح أو رسوب: تاخذ Band لكل مهارة وBand كلي، وكل مؤسسة تحدد الحد الأدنى اللي بتقبله. نتيجتك تُصدر كـ Test Report Form (TRF)، صالح لمدة',
+    en: 'It assesses four skills - Listening, Reading, Writing and Speaking - each reported on a 0-9 band scale. There is no pass or fail: you receive a band for every skill and an overall band, and each institution decides the minimum it will accept. Your result is issued as a Test Report Form (TRF), valid for',
+    ar: 'يقيس أربع مهارات - Listening وReading وWriting وSpeaking - وكل وحدة تنذكر على مقياس Band من 0-9. ما في نجاح أو رسوب: تاخذ Band لكل مهارة وBand كلي، وكل مؤسسة تحدد الحد الأدنى اللي بتقبله. نتيجتك تُصدر كـ Test Report Form (TRF)، صالح لمدة',
   },
   'ielts.guide.overview.p2_years': { en: 'years', ar: 'سنوات' },
   // Paragraph 3 splits around the two share percentages:
@@ -96,15 +96,15 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     en: 'take General Training',
     ar: 'ياخذون General Training',
   },
-  // "{trfValidityYears} yrs" stat value — only the unit suffix is chrome.
+  // "{trfValidityYears} yrs" stat value - only the unit suffix is chrome.
   'ielts.guide.overview.stat.yrs': { en: 'yrs', ar: 'سنة' },
 
   // ─── 2. The four sections ───────────────────────────────────────────────────
   'ielts.guide.sections.eyebrow': { en: 'Test structure', ar: 'هيكل الامتحان' },
   'ielts.guide.sections.title': { en: 'The four sections', ar: 'الأقسام الأربعة' },
   'ielts.guide.sections.intro': {
-    en: 'Each module is timed and marked independently. The published means below are the real-world Academic averages — useful context for setting a realistic target.',
-    ar: 'كل وحدة مؤقّتة وتتصحّح بشكل مستقل. المتوسطات المنشورة تحت هي معدلات Academic الحقيقية — سياق مفيد عشان تحط هدف واقعي.',
+    en: 'Each module is timed and marked independently. The published means below are the real-world Academic averages - useful context for setting a realistic target.',
+    ar: 'كل وحدة مؤقّتة وتتصحّح بشكل مستقل. المتوسطات المنشورة تحت هي معدلات Academic الحقيقية - سياق مفيد عشان تحط هدف واقعي.',
   },
   // Per-card chrome: the time unit suffix and the "mean ~" badge prefix.
   'ielts.guide.sections.minutes': { en: 'minutes', ar: 'دقيقة' },
@@ -116,8 +116,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'Listening وReading وWriting يتقدّمون لهم ورا بعض في جلسة وحدة مدتها',
   },
   'ielts.guide.sections.sitting_tail': {
-    en: 'with no breaks. Speaking is held separately — the same day, or up to seven days apart.',
-    ar: 'بدون استراحات. Speaking يكون منفصل — نفس اليوم، أو لين سبعة أيام بعدها.',
+    en: 'with no breaks. Speaking is held separately - the same day, or up to seven days apart.',
+    ar: 'بدون استراحات. Speaking يكون منفصل - نفس اليوم، أو لين سبعة أيام بعدها.',
   },
 
   // ─── 3. Scoring ─────────────────────────────────────────────────────────────
@@ -142,8 +142,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
   // Callout splits around the hardest-skill mean band:
   //   {lead} (… mean is only ~{mean}). {tail}
   'ielts.guide.struggle.callout_lead': {
-    en: 'is the lowest-scoring module for most candidates worldwide — and lowest of all for Gulf learners (the published Academic mean is only ~',
-    ar: 'هي أقل وحدة بالدرجات لأغلب المتقدّمين بالعالم — وأقلها كلها لمتعلّمي الخليج (متوسط Academic المنشور بس ~',
+    en: 'is the lowest-scoring module for most candidates worldwide - and lowest of all for Gulf learners (the published Academic mean is only ~',
+    ar: 'هي أقل وحدة بالدرجات لأغلب المتقدّمين بالعالم - وأقلها كلها لمتعلّمي الخليج (متوسط Academic المنشور بس ~',
   },
   'ielts.guide.struggle.callout_tail': {
     en: '). If you only have time to fix one thing, fix this.',
@@ -170,8 +170,8 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'تحدد الحد الأدنى مالها بنفسها',
   },
   'ielts.guide.requirements.intro_tail': {
-    en: '— and IELTS itself has no pass/fail. Always check the exact requirement for your specific course or visa.',
-    ar: '— وIELTS نفسه ما فيه نجاح أو رسوب. دايماً شيك على المتطلب بالضبط لتخصصك أو تأشيرتك.',
+    en: '- and IELTS itself has no pass/fail. Always check the exact requirement for your specific course or visa.',
+    ar: '- وIELTS نفسه ما فيه نجاح أو رسوب. دايماً شيك على المتطلب بالضبط لتخصصك أو تأشيرتك.',
   },
   // Requirements table column headers.
   'ielts.guide.requirements.col.where': { en: 'Where', ar: 'وين' },
@@ -186,17 +186,17 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
   'ielts.guide.faq.eyebrow': { en: 'Quick answers', ar: 'إجابات سريعة' },
   'ielts.guide.faq.title': { en: 'IELTS FAQs', ar: 'أسئلة IELTS الشائعة' },
 
-  // Q1 — good band. Answer = {SCORING_RULE fact} + connective context.
+  // Q1 - good band. Answer = {SCORING_RULE fact} + connective context.
   'ielts.guide.faq.q1.question': {
     en: 'What is a good IELTS band score?',
     ar: 'شنو درجة Band الزينة في IELTS؟',
   },
   'ielts.guide.faq.q1.answer_context': {
-    en: 'There is no universal pass mark: institutions set their own minimums. As context, most undergraduate study sits around Band 6.0–6.5 and postgraduate around 6.5–7.5, while professional registration can require 7.0–7.5 in each skill.',
-    ar: 'ما في درجة نجاح موحّدة: المؤسسات تحدد الحد الأدنى مالها بنفسها. كسياق، أغلب الدراسة الجامعية حوالي Band 6.0–6.5 والدراسات العليا حوالي 6.5–7.5، بينما التسجيل المهني ممكن يطلب 7.0–7.5 في كل مهارة.',
+    en: 'There is no universal pass mark: institutions set their own minimums. As context, most undergraduate study sits around Band 6.0-6.5 and postgraduate around 6.5-7.5, while professional registration can require 7.0-7.5 in each skill.',
+    ar: 'ما في درجة نجاح موحّدة: المؤسسات تحدد الحد الأدنى مالها بنفسها. كسياق، أغلب الدراسة الجامعية حوالي Band 6.0-6.5 والدراسات العليا حوالي 6.5-7.5، بينما التسجيل المهني ممكن يطلب 7.0-7.5 في كل مهارة.',
   },
 
-  // Q2 — test length. Answer interleaves the sitting duration + Speaking minutes.
+  // Q2 - test length. Answer interleaves the sitting duration + Speaking minutes.
   //   {a} {h}h{mm} ({SITTING_MINUTES} {minutes_word}) {b} {speakingMins} {c}
   'ielts.guide.faq.q2.question': {
     en: 'How long is the IELTS test?',
@@ -212,11 +212,11 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'بدون استراحات. Speaking عبارة عن مقابلة',
   },
   'ielts.guide.faq.q2.answer_c': {
-    en: 'minute interview held separately — the same day or up to seven days apart.',
-    ar: 'دقيقة تكون منفصلة — نفس اليوم أو لين سبعة أيام بعدها.',
+    en: 'minute interview held separately - the same day or up to seven days apart.',
+    ar: 'دقيقة تكون منفصلة - نفس اليوم أو لين سبعة أيام بعدها.',
   },
 
-  // Q3 — hardest section. Answer interleaves the hardest-skill label + mean band,
+  // Q3 - hardest section. Answer interleaves the hardest-skill label + mean band,
   // then the ONE_SKILL_RETAKE_NOTE fact (stays English).
   //   {label} {a} Band {mean}. {ONE_SKILL_RETAKE_NOTE}
   'ielts.guide.faq.q3.question': {
@@ -224,11 +224,11 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'أي قسم في IELTS هو الأصعب؟',
   },
   'ielts.guide.faq.q3.answer_a': {
-    en: 'is the lowest-scoring module for most candidates worldwide, and lowest of all for Gulf learners — the published mean is around Band',
-    ar: 'هي أقل وحدة بالدرجات لأغلب المتقدّمين بالعالم، وأقلها كلها لمتعلّمي الخليج — المتوسط المنشور حوالي Band',
+    en: 'is the lowest-scoring module for most candidates worldwide, and lowest of all for Gulf learners - the published mean is around Band',
+    ar: 'هي أقل وحدة بالدرجات لأغلب المتقدّمين بالعالم، وأقلها كلها لمتعلّمي الخليج - المتوسط المنشور حوالي Band',
   },
 
-  // Q4 — validity. Answer interleaves TRF validity years + acceptedBy fact.
+  // Q4 - validity. Answer interleaves TRF validity years + acceptedBy fact.
   //   {a} {trfValidityYears} {years_word}. {b} {acceptedBy}.
   'ielts.guide.faq.q4.question': {
     en: 'How long is an IELTS result valid?',

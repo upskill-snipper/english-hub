@@ -1,4 +1,4 @@
-// ─── IELTS exam facts — single source of truth ─────────────────────────────
+// ─── IELTS exam facts - single source of truth ─────────────────────────────
 // Canonical, factual reference data for the IELTS readiness program: exam
 // structure, timings, the band scale, scoring rule, the most common mistakes
 // per skill, typical country requirements, the test process, and headline
@@ -65,7 +65,7 @@ export const SECTION_FACTS: SectionFact[] = [
     label: 'Speaking',
     timeMinutes: 14,
     questionsOrTasks:
-      'Part 1 (4–5 min) · Part 2 cue card (1 min prep + 2 min talk) · Part 3 (4–5 min)',
+      'Part 1 (4-5 min) · Part 2 cue card (1 min prep + 2 min talk) · Part 3 (4-5 min)',
     format:
       'A face-to-face interview with a certified examiner. Marked on Fluency & Coherence, Lexical Resource, Grammar, Pronunciation.',
     meanBandAcademic: 6.0,
@@ -76,7 +76,7 @@ export const SECTION_FACTS: SectionFact[] = [
  *  no breaks; Speaking is held separately (same day or up to 7 days apart). */
 export const SITTING_MINUTES = 160
 
-// ─── Band scale (0–9) ──────────────────────────────────────────────────────
+// ─── Band scale (0-9) ──────────────────────────────────────────────────────
 
 export const BAND_SCALE: { band: number; level: string; description: string }[] = [
   {
@@ -126,30 +126,30 @@ export const SCORING_RULE =
 // ─── Where test takers struggle most (drives prioritisation) ───────────────
 
 /** Writing is the lowest-scoring module for virtually every nationality, and
- *  lowest of all for Gulf test takers — so a learner with no data is steered
+ *  lowest of all for Gulf test takers - so a learner with no data is steered
  *  to Writing first, and the planner weights it. */
 export const HARDEST_SKILL: IeltsSkill = 'writing'
 
 export const COMMON_MISTAKES: Record<IeltsSkill, string[]> = {
   writing: [
-    'Not fully answering the question (e.g. forgetting to give your opinion) — this caps Task Response at Band 5.',
-    'Memorised template phrases ("It is irrefutable that…") — examiners are trained to spot and penalise them.',
+    'Not fully answering the question (e.g. forgetting to give your opinion) - this caps Task Response at Band 5.',
+    'Memorised template phrases ("It is irrefutable that…") - examiners are trained to spot and penalise them.',
     'Writing under the word count (150 for Task 1, 250 for Task 2) triggers an automatic penalty.',
-    'No paragraphing — one block of text drops Coherence & Cohesion to Band 5.',
+    'No paragraphing - one block of text drops Coherence & Cohesion to Band 5.',
     'Vocabulary that is either too simple, or "big words" used incorrectly.',
-    'Personal anecdotes in Task 2 — use general or hypothetical examples instead.',
+    'Personal anecdotes in Task 2 - use general or hypothetical examples instead.',
     'Informal language (contractions, slang) lowers the academic register.',
-    'Changing your position mid-essay — keep one consistent argument.',
-    'Task 1: omitting the overview paragraph — the single most penalised omission.',
+    'Changing your position mid-essay - keep one consistent argument.',
+    'Task 1: omitting the overview paragraph - the single most penalised omission.',
   ],
   reading: [
     'Reading every word instead of skimming for gist and scanning for answers.',
     'Getting stuck on difficult vocabulary instead of moving on.',
-    'True/False/Not Given: treating "Not Given" as "False" — Not Given means the text simply does not say.',
+    'True/False/Not Given: treating "Not Given" as "False" - Not Given means the text simply does not say.',
     'Losing track of time across 3 passages / 40 questions in 60 minutes.',
   ],
   listening: [
-    'Not reading the question prompts before the audio starts — they give vital context.',
+    'Not reading the question prompts before the audio starts - they give vital context.',
     'Being thrown by distractors: options that are mentioned but are not the answer (speakers correct themselves).',
     'Spelling and word-limit errors on completion answers.',
     'Unfamiliarity with native-speed, varied accents (it plays only once).',
@@ -157,21 +157,21 @@ export const COMMON_MISTAKES: Record<IeltsSkill, string[]> = {
   speaking: [
     'Translating from your first language in your head, which causes hesitation.',
     'Giving very short answers instead of extending with reasons and examples.',
-    'Reciting scripted/rehearsed answers — examiners detect and penalise these.',
-    'Treating Part 3 like small talk — it needs structured, developed, abstract discussion.',
+    'Reciting scripted/rehearsed answers - examiners detect and penalise these.',
+    'Treating Part 3 like small talk - it needs structured, developed, abstract discussion.',
   ],
 }
 
 // ─── Typical institutional requirements (set per institution; not a pass/fail) ─
 
 export const COUNTRY_REQUIREMENTS: { where: string; purpose: string; min: string }[] = [
-  { where: 'UK', purpose: 'University (undergraduate)', min: '6.0–6.5 overall' },
-  { where: 'UK', purpose: 'University (postgraduate)', min: '6.5–7.5 overall' },
-  { where: 'UK', purpose: 'UKVI visa', min: '4.0–7.0 (visa-dependent)' },
+  { where: 'UK', purpose: 'University (undergraduate)', min: '6.0-6.5 overall' },
+  { where: 'UK', purpose: 'University (postgraduate)', min: '6.5-7.5 overall' },
+  { where: 'UK', purpose: 'UKVI visa', min: '4.0-7.0 (visa-dependent)' },
   { where: 'Australia', purpose: 'Student visa (from 2024)', min: '6.0 overall' },
-  { where: 'Canada', purpose: 'Skilled-worker immigration', min: '6.0–6.5 overall' },
-  { where: 'USA', purpose: 'Universities', min: '6.5–7.0 overall' },
-  { where: 'AU/UK', purpose: 'Nursing / medical registration', min: '7.0–7.5 per skill' },
+  { where: 'Canada', purpose: 'Skilled-worker immigration', min: '6.0-6.5 overall' },
+  { where: 'USA', purpose: 'Universities', min: '6.5-7.0 overall' },
+  { where: 'AU/UK', purpose: 'Nursing / medical registration', min: '7.0-7.5 per skill' },
 ]
 
 // ─── The process ────────────────────────────────────────────────────────────
@@ -185,11 +185,11 @@ export const PROCESS_STEPS: { title: string; detail: string }[] = [
   {
     title: 'Choose a format',
     detail:
-      'Computer-delivered (results in ~1–5 days), paper-based (~13 days), or IELTS Online (~6–8 days).',
+      'Computer-delivered (results in ~1-5 days), paper-based (~13 days), or IELTS Online (~6-8 days).',
   },
   {
     title: 'Register & pay',
-    detail: 'Book via the British Council or IDP with your passport — ideally ~2 months ahead.',
+    detail: 'Book via the British Council or IDP with your passport - ideally ~2 months ahead.',
   },
   {
     title: 'Test day',
@@ -203,7 +203,7 @@ export const PROCESS_STEPS: { title: string; detail: string }[] = [
   },
 ]
 
-/** ~91% of One Skill Retake candidates retake their LOWEST skill — most people
+/** ~91% of One Skill Retake candidates retake their LOWEST skill - most people
  *  know where they underperform. The program leans into that self-awareness. */
 export const ONE_SKILL_RETAKE_NOTE =
-  'You can retake a single skill within 60 days of a computer-delivered test. About 91% of candidates retake their weakest skill — most often Writing.'
+  'You can retake a single skill within 60 days of a computer-delivered test. About 91% of candidates retake their weakest skill - most often Writing.'

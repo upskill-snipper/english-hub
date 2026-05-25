@@ -1,20 +1,20 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 9) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 9) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, programmes),
 // plus one longer general-interest article. This file ships ONE complete,
 // carefully-checked GT test scaled to a full sitting (~40 marks):
-//   • Section 1 — a local food-festival programme + a library membership guide.
+//   • Section 1 - a local food-festival programme + a library membership guide.
 //     Includes a Matching (features) question worth 5 marks asking which event
 //     each statement describes; options may be reused.
-//   • Section 2 — a workplace wellbeing programme for staff.
-//   • Section 3 — a general-interest article on the comeback of board games.
-//     Includes a Matching (headings) question covering paragraphs B–F with two
+//   • Section 2 - a workplace wellbeing programme for staff.
+//   • Section 3 - a general-interest article on the comeback of board games.
+//     Includes a Matching (headings) question covering paragraphs B-F with two
 //     distractor headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
 // giving 40 marks in total. Every answer is verifiable from the text and every
@@ -26,36 +26,36 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_9: ReadingTest[] = [
   {
     id: 'rd-general-009',
-    title: 'General Training Reading — Practice Test 9',
+    title: 'General Training Reading - Practice Test 9',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — festival programme + library guide ──
+      // ── Section 1: EVERYDAY / SOCIAL - festival programme + library guide ──
       // Two short texts. A Matching (features) question (5 marks) asks which of
       // the five festival events each statement describes; options may be reused.
       {
         id: 'rd-gen-009-p1',
         title: 'Hartley Vale Food Festival Programme & Riverbank Library Membership Guide',
-        body: `PART 1 — HARTLEY VALE FOOD FESTIVAL: WEEKEND PROGRAMME
+        body: `PART 1 - HARTLEY VALE FOOD FESTIVAL: WEEKEND PROGRAMME
 
 The Hartley Vale Food Festival returns to Market Square this weekend. Entry to the square is free, but five of the events listed below must be booked in advance because places are strictly limited. Book online or at the information tent by the main gate. Please read each description carefully, as the events differ in price, location and who they are suitable for.
 
-EVENT 1 — Bread-Making Workshop
+EVENT 1 - Bread-Making Workshop
 Learn to mix, knead and bake a simple farmhouse loaf with baker Tom Ellis. The class is held in the heated Marquee A and lasts two hours. It costs £12, which includes all ingredients and an apron to borrow. You take home everything you bake. Beginners are especially welcome, and no previous experience is needed. Please tell us when booking if you cannot eat wheat, as a gluten-free option can be arranged with three days' notice.
 
-EVENT 2 — Children's Cookery Corner
+EVENT 2 - Children's Cookery Corner
 A free drop-in session for children aged five to ten, who decorate biscuits and build fruit skewers under supervision. It runs continuously from 10 a.m. to 4 p.m. in the Family Tent. Children must be accompanied by an adult, who stays for the whole visit but does not need to book. Aprons and all materials are provided, and there is no charge.
 
-EVENT 3 — Cheese and Cider Tasting
+EVENT 3 - Cheese and Cider Tasting
 An afternoon of local cheeses paired with cider from the Hartley Vale orchards, led by a regional producer. Held in the Old Granary at 3 p.m., it lasts ninety minutes and costs £18. Because cider is served, this event is open only to those aged eighteen and over, and proof of age may be requested at the door. Soft drinks are available for anyone who prefers not to drink alcohol.
 
-EVENT 4 — Street-Food Cook-Off (Spectator Seats)
+EVENT 4 - Street-Food Cook-Off (Spectator Seats)
 Watch six local chefs compete to create the best dish from a surprise box of ingredients, with a live commentary. The cook-off takes place on the Main Stage at 1 p.m. and lasts about an hour. A seat costs £5, though you are also welcome to stand at the back for free. The dishes are judged by the audience, so every ticket holder receives a voting card.
 
-EVENT 5 — Foraging Walk
+EVENT 5 - Foraging Walk
 A guided walk along the river path with naturalist Dr Priya Shah, who shows you which wild plants are safe to pick and how to use them in the kitchen. The walk leaves from the festival gate at 11 a.m. and lasts two and a half hours, so sturdy footwear is essential. It costs £10 and is limited to twelve people. The route is uneven in places and is not suitable for pushchairs or wheelchairs.
 
-PART 2 — RIVERBANK LIBRARY: MEMBERSHIP GUIDE
+PART 2 - RIVERBANK LIBRARY: MEMBERSHIP GUIDE
 
 Joining Riverbank Library is free and open to anyone who lives, works or studies in the borough. To register, bring one document showing your name and current address, such as a utility bill or tenancy agreement, to the front desk. Children under sixteen may join, but a parent or guardian must sign the application on their behalf. Once you have joined, your card is ready to use the same day.
 
@@ -146,13 +146,13 @@ Using the computers and study rooms: The public computers are free to use for up
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the five festival events, 1–5. For each statement below, choose the event it describes. Write the correct number, 1–5. (Each event may be chosen more than once.)',
+              'Look at the five festival events, 1-5. For each statement below, choose the event it describes. Write the correct number, 1-5. (Each event may be chosen more than once.)',
             options: [
-              { key: '1', label: 'Event 1 — Bread-Making Workshop' },
-              { key: '2', label: 'Event 2 — Children’s Cookery Corner' },
-              { key: '3', label: 'Event 3 — Cheese and Cider Tasting' },
-              { key: '4', label: 'Event 4 — Street-Food Cook-Off (Spectator Seats)' },
-              { key: '5', label: 'Event 5 — Foraging Walk' },
+              { key: '1', label: 'Event 1 - Bread-Making Workshop' },
+              { key: '2', label: 'Event 2 - Children’s Cookery Corner' },
+              { key: '3', label: 'Event 3 - Cheese and Cider Tasting' },
+              { key: '4', label: 'Event 4 - Street-Food Cook-Off (Spectator Seats)' },
+              { key: '5', label: 'Event 5 - Foraging Walk' },
             ],
             items: [
               {
@@ -186,10 +186,10 @@ Using the computers and study rooms: The public computers are free to use for up
           },
         ],
       },
-      // ── Section 2: WORKPLACE — staff wellbeing programme ───────────────────
+      // ── Section 2: WORKPLACE - staff wellbeing programme ───────────────────
       {
         id: 'rd-gen-009-p2',
-        title: 'Staff Wellbeing Programme — A Guide for Employees',
+        title: 'Staff Wellbeing Programme - A Guide for Employees',
         body: `Our new Staff Wellbeing Programme brings together the support already on offer and adds several new services. This guide explains what is available and how to take part. Everything described here is open to all employees, whether full time or part time, and using these services will never appear on your work record.
 
 THE EMPLOYEE ASSISTANCE LINE
@@ -205,7 +205,7 @@ QUIET ROOMS AND BREAKS
 Each building now has a quiet room set aside for rest, prayer or a few minutes away from a busy desk. These rooms may be used by anyone and do not need to be booked, but they are not meeting rooms and should be kept silent. Staff are also reminded that the law entitles them to a break of at least twenty minutes once they have worked more than six hours, and managers are asked to make sure these breaks are actually taken rather than skipped.
 
 TAKING PART
-You do not need your manager's permission to use any part of this programme, and you are not required to give a reason. We do ask, however, that where a service must be arranged during working hours — such as a counselling appointment — you agree the timing with your team in advance so that work can be covered. Feedback on the programme is welcome and can be left anonymously through the box on the intranet.`,
+You do not need your manager's permission to use any part of this programme, and you are not required to give a reason. We do ask, however, that where a service must be arranged during working hours - such as a counselling appointment - you agree the timing with your team in advance so that work can be covered. Feedback on the programme is welcome and can be left anonymously through the box on the intranet.`,
         questions: [
           {
             id: 'rd-gen-009-p2-q10',
@@ -321,9 +321,9 @@ You do not need your manager's permission to use any part of this programme, and
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — the comeback of board games ───
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - the comeback of board games ───
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-009-p3',
         title: 'Rolling the Dice Again: Why Board Games Are Booming',
@@ -343,14 +343,14 @@ Paragraph E
 The boom has reshaped the places where games are played and sold. Specialist shops, once rare and often intimidating to the casual visitor, now run friendly evenings where strangers are matched at tables and shown how to play. Board-game cafes charge a small fee for a few hours at a table stacked with hundreds of titles, and earn most of their money from the coffee and cake that keep players in their seats. Libraries and community centres have begun lending games as they lend books, reasoning that a shelf of games draws people through the door and gives them a reason to stay.
 
 Paragraph F
-Whether the boom can last is a fair question. Some in the trade worry that too many new titles are now competing for the same shelf space and the same free evenings, and that buyers may grow weary of choice. Others point out that a well-made game, unlike a gadget, does not go out of date: a clever design played today will be just as good in twenty years, and can be handed on to the next person who fancies a turn. If they are right, the recent surge may settle into something quieter and more lasting — not a craze that burns out, but a pastime that has simply rediscovered why people enjoyed it in the first place.`,
+Whether the boom can last is a fair question. Some in the trade worry that too many new titles are now competing for the same shelf space and the same free evenings, and that buyers may grow weary of choice. Others point out that a well-made game, unlike a gadget, does not go out of date: a clever design played today will be just as good in twenty years, and can be handed on to the next person who fancies a turn. If they are right, the recent surge may settle into something quieter and more lasting - not a craze that burns out, but a pastime that has simply rediscovered why people enjoyed it in the first place.`,
         questions: [
           {
             id: 'rd-gen-009-p3-q21',
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. A break from life lived through screens' },
               { key: 'ii', label: 'ii. How the web opened the hobby to everyone' },
@@ -368,7 +368,7 @@ Whether the boom can last is a fair question. Some in the trade worry that too m
               { id: 'pF', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'Paragraph B contrasts old luck-based titles with games "built around clever decisions rather than the roll of a single dice" — heading iv (a new style built on smart choices). Paragraph C explains how online funding and video reviewers meant the hobby "now lay open to anyone with a screen" — heading ii (the web opened it to everyone). Paragraph D argues the appeal is that a board game "is not a screen," a rest from digital distraction — heading i. Paragraph E describes how shops, cafes and libraries have changed — heading v (the places where games are bought and played). Paragraph F asks "Whether the boom can last" — heading vi. Headings iii (the high cost of producing a game) and vii (teaching children fair play) are distractors that are not used.',
+              'Paragraph B contrasts old luck-based titles with games "built around clever decisions rather than the roll of a single dice" - heading iv (a new style built on smart choices). Paragraph C explains how online funding and video reviewers meant the hobby "now lay open to anyone with a screen" - heading ii (the web opened it to everyone). Paragraph D argues the appeal is that a board game "is not a screen," a rest from digital distraction - heading i. Paragraph E describes how shops, cafes and libraries have changed - heading v (the places where games are bought and played). Paragraph F asks "Whether the boom can last" - heading vi. Headings iii (the high cost of producing a game) and vii (teaching children fair play) are distractors that are not used.',
           },
           {
             id: 'rd-gen-009-p3-q22',

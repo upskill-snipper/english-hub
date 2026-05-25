@@ -1,14 +1,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// dictionary-misc-t1.ts — Bucket A wave 6 (EN + Khaleeji AR)
+// dictionary-misc-t1.ts - Bucket A wave 6 (EN + Khaleeji AR)
 //
 // Namespaces covered:
-//   • alevel.*       — A-Level board hub + per-board (AQA / Edexcel) pages
-//   • affiliates.*   — authed /affiliates/* portal metadata + public landing
+//   • alevel.*       - A-Level board hub + per-board (AQA / Edexcel) pages
+//   • affiliates.*   - authed /affiliates/* portal metadata + public landing
 //                      metadata (the `affiliates.*` keyspace consumed by
 //                      src/app/affiliates/{page,dashboard,payouts,resources,
 //                      settings}). NOT the separate `aff_comp.public.*`
 //                      keyspace, which was completed in an earlier wave.
-//   • resources.study_tools.* — the audit-fix tail (keys 121-149) for the
+//   • resources.study_tools.* - the audit-fix tail (keys 121-149) for the
 //                      study-tools sub-apps (checklists / flashcards /
 //                      revision-planner / quote-tester / tester).
 //
@@ -26,41 +26,41 @@
 //   - resources.study_tools.*   → written fresh from the consuming
 //     (audit-fix tail)            study-tools components
 //
-// AR register: natural Khaleeji (Gulf) — the voice of src/lib/eal/
+// AR register: natural Khaleeji (Gulf) - the voice of src/lib/eal/
 // curriculum.ts. Exam terminology kept accurate; brand and proper nouns
 // (AQA, Pearson Edexcel, OCR, WJEC Eduqas, The English Hub) left as-is.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
-  // ─── A-Level board cards (/a-level) — verbatim from may15 ───────────────────
+  // ─── A-Level board cards (/a-level) - verbatim from may15 ───────────────────
   'alevel.board.aqa.name': { en: 'AQA A-level English', ar: 'AQA A-level English' },
   'alevel.board.aqa.description': {
-    en: 'AS and A-level English Literature and Language — paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
-    ar: 'AS and A-level English Literature and Language — paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
+    en: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
+    ar: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
   },
   'alevel.board.edexcel.name': {
     en: 'Pearson Edexcel A-level English',
     ar: 'Pearson Edexcel A-level English',
   },
   'alevel.board.edexcel.description': {
-    en: 'Pearson Edexcel A-level English Literature and Language — focused revision against the specification and exemplar A* answers.',
-    ar: 'Pearson Edexcel A-level English Literature and Language — focused revision against the specification and exemplar A* answers.',
+    en: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
+    ar: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
   },
   'alevel.board.ocr.name': { en: 'OCR A-level English', ar: 'OCR A-level English' },
   'alevel.board.ocr.description': {
-    en: 'OCR A-level English Literature and Language — examiner-aligned analysis and structure for the closed-book papers.',
-    ar: 'OCR A-level English Literature and Language — examiner-aligned analysis and structure for the closed-book papers.',
+    en: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
+    ar: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
   },
   'alevel.board.eduqas.name': { en: 'Eduqas A-level English', ar: 'Eduqas A-level English' },
   'alevel.board.eduqas.description': {
-    en: 'WJEC Eduqas A-level English Literature and Language — coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
-    ar: 'WJEC Eduqas A-level English Literature and Language — coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
+    en: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
+    ar: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
   },
 
-  // ─── A-Level hub badge — verbatim from screenshot-fixes (ar === en) ─────────
+  // ─── A-Level hub badge - verbatim from screenshot-fixes (ar === en) ─────────
   'alevel.hub.badge.uk_a_level': { en: 'UK A-Level', ar: 'UK A-Level' },
 
-  // ─── A-Level per-board pages (/a-level/{aqa,edexcel}) — fresh EN ────────────
+  // ─── A-Level per-board pages (/a-level/{aqa,edexcel}) - fresh EN ────────────
   // Rendered as the <h1> board title + hero teaser paragraph in
   // ALevelBoardHub. Exam codes are passed separately (not in these strings).
   'alevel.aqa.board_name': {
@@ -69,7 +69,7 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'alevel.aqa.summary': {
     en: 'Revision for AQA A-Level English Literature and Language. Use the cross-board set-text analysis, essay technique and language-study tools below while full AQA A-Level guides are on our roadmap.',
-    ar: 'مراجعة لمادة AQA A-Level English Literature and Language. استخدم أدوات تحليل النصوص المقررة وتقنية المقال ودراسة اللغة المشتركة بين البوردات تحت، لين ما تنزل أدلة AQA A-Level الكاملة — هي على خريطة الطريق مالنا.',
+    ar: 'مراجعة لمادة AQA A-Level English Literature and Language. استخدم أدوات تحليل النصوص المقررة وتقنية المقال ودراسة اللغة المشتركة بين البوردات تحت، لين ما تنزل أدلة AQA A-Level الكاملة - هي على خريطة الطريق مالنا.',
   },
   'alevel.edexcel.board_name': {
     en: 'Pearson Edexcel A-Level English',
@@ -77,19 +77,19 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'alevel.edexcel.summary': {
     en: 'Revision for Pearson Edexcel A-Level English Literature and Language. Use the cross-board set-text analysis, essay technique and language-study tools below while full Edexcel A-Level guides are on our roadmap.',
-    ar: 'مراجعة لمادة Pearson Edexcel A-Level English Literature and Language. استخدم أدوات تحليل النصوص المقررة وتقنية المقال ودراسة اللغة المشتركة بين البوردات تحت، لين ما تنزل أدلة Edexcel A-Level الكاملة — هي على خريطة الطريق مالنا.',
+    ar: 'مراجعة لمادة Pearson Edexcel A-Level English Literature and Language. استخدم أدوات تحليل النصوص المقررة وتقنية المقال ودراسة اللغة المشتركة بين البوردات تحت، لين ما تنزل أدلة Edexcel A-Level الكاملة - هي على خريطة الطريق مالنا.',
   },
 
-  // ─── /affiliates breadcrumbs — verbatim from report-fix-may16b ──────────────
+  // ─── /affiliates breadcrumbs - verbatim from report-fix-may16b ──────────────
   'affiliates.breadcrumb.home': { en: 'Home', ar: 'Home' },
   'affiliates.breadcrumb.self': { en: 'Affiliates', ar: 'Affiliates' },
 
-  // ─── /affiliates public landing metadata — verbatim from report-fix-may16b ──
+  // ─── /affiliates public landing metadata - verbatim from report-fix-may16b ──
   // NOTE: title is fed through the root metadata title.template
-  // ('%s — The English Hub'), so it must NOT contain the brand itself.
+  // ('%s - The English Hub'), so it must NOT contain the brand itself.
   'affiliates.public.meta.title': {
-    en: 'Affiliate Programme — Earn Recurring Commission for Partners',
-    ar: 'Affiliate Programme — Earn Recurring Commission for Partners',
+    en: 'Affiliate Programme - Earn Recurring Commission for Partners',
+    ar: 'Affiliate Programme - Earn Recurring Commission for Partners',
   },
   'affiliates.public.meta.description': {
     en: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',
@@ -100,9 +100,9 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'The English Hub affiliate programme',
   },
 
-  // ─── /affiliates authed portal metadata — fresh EN ─────────────────────────
+  // ─── /affiliates authed portal metadata - fresh EN ─────────────────────────
   // Document <title>s; fed through the root title.template
-  // ('%s — The English Hub'), so they must NOT repeat the brand.
+  // ('%s - The English Hub'), so they must NOT repeat the brand.
   'affiliates.dashboard.meta.title': {
     en: 'Affiliate Dashboard',
     ar: 'لوحة الشريك',
@@ -124,7 +124,7 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'إعدادات الشريك',
   },
 
-  // ─── resources.study_tools.* — audit-fix tail (fresh EN) ───────────────────
+  // ─── resources.study_tools.* - audit-fix tail (fresh EN) ───────────────────
 
   // Checklists sub-app (/resources/study-tools/checklists)
   'resources.study_tools.checklists.title': {
@@ -164,16 +164,16 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'رتّب الأولويات:',
   },
   'resources.study_tools.checklists.tip.prioritise.body': {
-    en: 'the unticked items show you exactly what to revise next — start there.',
-    ar: 'العناصر اللي ما أشّرت عليها تبيّن لك بالضبط وش تراجع بعدها — ابدأ من هني.',
+    en: 'the unticked items show you exactly what to revise next - start there.',
+    ar: 'العناصر اللي ما أشّرت عليها تبيّن لك بالضبط وش تراجع بعدها - ابدأ من هني.',
   },
   'resources.study_tools.checklists.tip.revisit.label': {
     en: 'Revisit:',
     ar: 'راجع مرّة ثانية:',
   },
   'resources.study_tools.checklists.tip.revisit.body': {
-    en: 'come back a week later and re-test the skills you ticked — keep the ones that still hold.',
-    ar: 'ارجع بعد أسبوع واختبر نفسك بالمهارات اللي أشّرت عليها — خلّ اللي لسّه راسخة.',
+    en: 'come back a week later and re-test the skills you ticked - keep the ones that still hold.',
+    ar: 'ارجع بعد أسبوع واختبر نفسك بالمهارات اللي أشّرت عليها - خلّ اللي لسّه راسخة.',
   },
   'resources.study_tools.checklists.tip.saved.label': {
     en: 'Saved automatically:',
@@ -244,8 +244,8 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'اختبار المعرفة',
   },
   'resources.study_tools.tester.subtitle': {
-    en: 'Quick multiple-choice quizzes on your set texts — characters, themes, context and quotations. Get instant feedback and review what you missed.',
-    ar: 'اختبارات اختيار من متعدّد سريعة على نصوصك المقررة — الشخصيات والثيمات والسياق والاقتباسات. تحصل تقييم فوري وتراجع اللي فاتك.',
+    en: 'Quick multiple-choice quizzes on your set texts - characters, themes, context and quotations. Get instant feedback and review what you missed.',
+    ar: 'اختبارات اختيار من متعدّد سريعة على نصوصك المقررة - الشخصيات والثيمات والسياق والاقتباسات. تحصل تقييم فوري وتراجع اللي فاتك.',
   },
   'resources.study_tools.tester.complete': {
     en: 'Quiz complete',

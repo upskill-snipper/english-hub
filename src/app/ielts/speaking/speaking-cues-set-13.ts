@@ -1,12 +1,12 @@
-// ─── IELTS Speaking cues · Set 13 (Academic, Parts 1–3) ────────────────────
+// ─── IELTS Speaking cues · Set 13 (Academic, Parts 1-3) ────────────────────
 // A thirteenth batch of original IELTS-preparation practice prompts for the
 // async Speaking module. Same shape and conventions as SPEAKING_CUES, with
 // fresh everyday topics so learners can keep rotating through material without
 // repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (consumer culture & fashion,
 //     traditions & celebrations in society).
 //
@@ -16,7 +16,7 @@
 // someone gave you, then widens out in Part 3 to consumer culture & fashion and
 // the role of traditions & celebrations in society.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids use an `s13` marker so the
 // coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -24,7 +24,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_13: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-s13-clothes',
     part: 'speaking-part-1',
@@ -50,7 +50,7 @@ export const SPEAKING_SET_13: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-s13-gift',
     part: 'speaking-part-2',
@@ -82,7 +82,7 @@ export const SPEAKING_SET_13: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-s13-consumer-culture',
     part: 'speaking-part-3',

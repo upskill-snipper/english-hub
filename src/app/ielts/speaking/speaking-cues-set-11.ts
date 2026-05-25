@@ -1,17 +1,17 @@
-// ─── IELTS Speaking cues · Set 11 (Academic, Parts 1–3) ────────────────────
+// ─── IELTS Speaking cues · Set 11 (Academic, Parts 1-3) ────────────────────
 // An eleventh batch of original IELTS-preparation practice prompts for the
 // async Speaking module. Same shape and conventions as the other sets, with a
 // fresh, balanced rotation of six cues so learners never hit repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics
+//   • Part 1 - short interview questions on familiar, everyday topics
 //     (weather & seasons, shopping habits).
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings (a piece of
 //     equipment or technology you use often, a decision that turned out well).
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend the Part 2 topics (technology & work, decisions in
-//     society — how people and communities make choices).
+//     society - how people and communities make choices).
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids carry an `s11` marker (e.g.
 // `sp1-s11-weather`) so the aggregator can merge this set without colliding
 // with any other cue file.
@@ -20,7 +20,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_11: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-s11-weather',
     part: 'speaking-part-1',
@@ -46,7 +46,7 @@ export const SPEAKING_SET_11: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-s11-equipment',
     part: 'speaking-part-2',
@@ -78,7 +78,7 @@ export const SPEAKING_SET_11: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-s11-tech-work',
     part: 'speaking-part-3',

@@ -6,7 +6,7 @@
 // shared AudioPlayer TTS stand-in, then answers its questions). When the clock
 // expires OR the candidate submits, every answer is auto-marked and the raw
 // score is converted to a band with objectiveToBand('listening', …). The result
-// is handed up to the runner, which advances to Reading — there is no return.
+// is handed up to the runner, which advances to Reading - there is no return.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { useCallback, useMemo, useRef, useState } from 'react'

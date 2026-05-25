@@ -1,5 +1,5 @@
 /**
- * HOMEPAGE_DICTIONARY — bilingual supplement for the homepage (`src/app/page.tsx`).
+ * HOMEPAGE_DICTIONARY - bilingual supplement for the homepage (`src/app/page.tsx`).
  *
  * The homepage was authored 100% in English as inline literals with no i18n
  * path, so Arabic-mode visitors saw English on the page they land on. This
@@ -9,12 +9,12 @@
  * curated hand-written supplements (DEMO_PAGES / POETRY_HUB / TOOLKIT).
  *
  * The `ar` values are genuine Khaleeji (Gulf) Arabic in a natural marketing
- * register — NOT MSA, NOT machine/literal. Voice and lexical choices mirror
+ * register - NOT MSA, NOT machine/literal. Voice and lexical choices mirror
  * the existing EAL Khaleeji content in `src/lib/eal/curriculum.ts`
  * (e.g. وايد, هذي, ما تقدر, conversational direct address).
  *
  * Proper nouns (exam board names: AQA, Pearson Edexcel, OCR, WJEC Eduqas,
- * Cambridge IGCSE …) are intentionally NOT in this dictionary — they render
+ * Cambridge IGCSE …) are intentionally NOT in this dictionary - they render
  * identically in both locales straight from the Board[] data.
  */
 
@@ -29,26 +29,26 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'مراجعة إنجليزي GCSE و IGCSE، تصحيح بالذكاء الاصطناعي على نفس معايير الـ AO.',
   },
   'homepage.gcse.subheading': {
-    en: 'Year 10–11, ages 14–16. Tap your board and you’ll land on the exact specification you sit.',
-    ar: 'سنة 10–11، أعمار 14–16. اضغط على البورد حقّك وبتوصل عالمنهج اللي تمتحن فيه بالضبط.',
+    en: 'Year 10-11, ages 14-16. Tap your board and you’ll land on the exact specification you sit.',
+    ar: 'سنة 10-11، أعمار 14-16. اضغط على البورد حقّك وبتوصل عالمنهج اللي تمتحن فيه بالضبط.',
   },
 
-  /* ── KS3 board picker section (Years 7–9, pre-GCSE) ── */
+  /* ── KS3 board picker section (Years 7-9, pre-GCSE) ── */
   'homepage.ks3.kicker': {
-    en: 'Younger learners (Years 7–9)',
-    ar: 'الطلاب الأصغر (السنوات 7–9)',
+    en: 'Younger learners (Years 7-9)',
+    ar: 'الطلاب الأصغر (السنوات 7-9)',
   },
   'homepage.ks3.heading': {
-    en: 'KS3 English — the curriculum before GCSE',
-    ar: 'إنجليزي KS3 — المنهج اللي قبل الـ GCSE',
+    en: 'KS3 English - the curriculum before GCSE',
+    ar: 'إنجليزي KS3 - المنهج اللي قبل الـ GCSE',
   },
   'homepage.ks3.subheading': {
-    en: 'Ages 11–14. Reading comprehension, creative writing, grammar foundations and year-by-year schemes of work that prime students for GCSE English.',
-    ar: 'أعمار 11–14. فهم المقروء، الكتابة الإبداعية، أساسيات القواعد، وخطط دراسية سنة بسنة تجهّز الطالب لإنجليزي الـ GCSE.',
+    en: 'Ages 11-14. Reading comprehension, creative writing, grammar foundations and year-by-year schemes of work that prime students for GCSE English.',
+    ar: 'أعمار 11-14. فهم المقروء، الكتابة الإبداعية، أساسيات القواعد، وخطط دراسية سنة بسنة تجهّز الطالب لإنجليزي الـ GCSE.',
   },
   'homepage.board.ks3.blurb': {
-    en: 'Years 7, 8 and 9 schemes of work — weekly lessons, set texts and assessments.',
-    ar: 'خطط دراسية للسنوات 7 و 8 و 9 — دروس أسبوعية ونصوص مقرّرة وتقييمات.',
+    en: 'Years 7, 8 and 9 schemes of work - weekly lessons, set texts and assessments.',
+    ar: 'خطط دراسية للسنوات 7 و 8 و 9 - دروس أسبوعية ونصوص مقرّرة وتقييمات.',
   },
 
   /* ── IGCSE board picker section ── */
@@ -62,7 +62,7 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   /* ── GeoFaq heading (the FAQ items themselves live in an out-of-scope
-       component and stay English-only — see report) ── */
+       component and stay English-only - see report) ── */
   'homepage.faq.heading': {
     en: 'GCSE & IGCSE English: common questions',
     ar: 'إنجليزي GCSE و IGCSE: أسئلة شائعة',
@@ -78,8 +78,8 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'ابنِ الأساس من بدري، أو تعلّم الإنجليزي جنب العربي.',
   },
   'homepage.rail.intro': {
-    en: 'KS3 covers Years 7–9, the curriculum before GCSE. EAL is the bilingual track for Arabic-speaking students preparing for UK exams. Both run independently of (and alongside) any GCSE / IGCSE board you pick below.',
-    ar: 'الـ KS3 يغطّي السنوات 7–9، وهو المنهج اللي قبل الـ GCSE. والـ EAL هو المسار ثنائي اللغة للطلاب الناطقين بالعربي اللي يجهّزون لامتحانات بريطانيا. الاثنين يشتغلون بشكل مستقل عن أي بورد GCSE أو IGCSE تختاره تحت — ويمشون جنبه.',
+    en: 'KS3 covers Years 7-9, the curriculum before GCSE. EAL is the bilingual track for Arabic-speaking students preparing for UK exams. Both run independently of (and alongside) any GCSE / IGCSE board you pick below.',
+    ar: 'الـ KS3 يغطّي السنوات 7-9، وهو المنهج اللي قبل الـ GCSE. والـ EAL هو المسار ثنائي اللغة للطلاب الناطقين بالعربي اللي يجهّزون لامتحانات بريطانيا. الاثنين يشتغلون بشكل مستقل عن أي بورد GCSE أو IGCSE تختاره تحت - ويمشون جنبه.',
   },
 
   /* KS3 card */
@@ -88,12 +88,12 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'تأسيس',
   },
   'homepage.rail.ks3.title': {
-    en: 'KS3 English — Years 7–9',
-    ar: 'إنجليزي KS3 — السنوات 7–9',
+    en: 'KS3 English - Years 7-9',
+    ar: 'إنجليزي KS3 - السنوات 7-9',
   },
   'homepage.rail.ks3.subtitle': {
-    en: 'Ages 11–14 · The curriculum before GCSE',
-    ar: 'أعمار 11–14 · المنهج اللي قبل الـ GCSE',
+    en: 'Ages 11-14 · The curriculum before GCSE',
+    ar: 'أعمار 11-14 · المنهج اللي قبل الـ GCSE',
   },
   'homepage.rail.ks3.body': {
     en: 'Reading comprehension, creative writing, grammar foundations, and the year-by-year curriculum that primes students for GCSE English. Full Year 7, Year 8 and Year 9 schemes of work with weekly lessons, set texts, and assessments.',
@@ -179,8 +179,8 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   /* IGCSE board blurbs */
   'homepage.board.cambridge.blurb': {
-    en: '0500 and 0990 — Reading, Composition, model answers.',
-    ar: '0500 و 0990 — القراءة، الإنشاء، نماذج إجابات.',
+    en: '0500 and 0990 - Reading, Composition, model answers.',
+    ar: '0500 و 0990 - القراءة، الإنشاء، نماذج إجابات.',
   },
   'homepage.board.edexcel_igcse_lit.blurb': {
     en: 'Drama, Prose, Shakespeare, Unseen Poetry.',

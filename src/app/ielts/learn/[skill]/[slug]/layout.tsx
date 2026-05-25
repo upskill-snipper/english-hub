@@ -4,7 +4,7 @@ import { lessonBySlug } from '@/lib/ielts/lessons'
 import { levelMeta } from '@/lib/ielts/curriculum'
 
 // Per-lesson metadata + canonical. The lesson page is a client component (it
-// reads localStorage-backed completion), so it can't export `metadata` itself —
+// reads localStorage-backed completion), so it can't export `metadata` itself -
 // this server layout derives a unique title, description and canonical for each
 // lesson from the curriculum data. Unknown skill/slug falls back to a generic
 // (still noindex-safe, indexable) library title; the page renders a graceful
@@ -20,7 +20,7 @@ export async function generateMetadata({
 
   if (!lesson) {
     return {
-      title: 'Lesson not found — Learn IELTS — The English Hub',
+      title: 'Lesson not found - Learn IELTS - The English Hub',
       alternates: { canonical },
       robots: { index: false, follow: true },
     }
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   const level = levelMeta(lesson.level)
   return {
-    title: `${lesson.title} — Learn IELTS — The English Hub`,
+    title: `${lesson.title} - Learn IELTS - The English Hub`,
     description: `${lesson.summary} A ${lesson.estMinutes}-minute IELTS lesson (${level.label} level).`,
     alternates: { canonical },
   }

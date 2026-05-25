@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 7) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 7) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,18 +6,18 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to a
 //     letting agent about renting a flat), assessed with form / note completion
 //     + a multiple-choice item. A surname is spelled and a phone number is
 //     dictated, and one detail (the monthly rent) depends on a stated choice.
-//   • Section 2 — an everyday MONOLOGUE (here: an induction talk for new members
+//   • Section 2 - an everyday MONOLOGUE (here: an induction talk for new members
 //     of a co-working space), assessed with sentence completion + multiple
 //     choice, carrying signpost language ("first", "next", "finally") that the
 //     questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     reviewing the design of a psychology experiment on memory), assessed with
 //     multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of tea),
+//   • Section 4 - an academic LECTURE / monologue (here: the history of tea),
 //     assessed with note/sentence completion + multiple choice.
 //
 // Question conventions (shared contract from @/lib/ielts/types):
@@ -26,7 +26,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -37,12 +37,12 @@ export const LISTENING_SET_7: ListeningTest[] = [
   {
     id: 'ls-academic-7',
     title:
-      'Practice Test 7 — Renting a Flat, Co-working Induction, A Memory Experiment & The History of Tea',
+      'Practice Test 7 - Renting a Flat, Co-working Induction, A Memory Experiment & The History of Tea',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-7-s1',
-        title: 'Section 1 — Renting a flat through a letting agent',
+        title: 'Section 1 - Renting a flat through a letting agent',
         // ~270 words. Transactional dialogue (Section 1 style): a caller enquiring
         // about a flat with a letting agent over the phone. A surname is spelled
         // and a mobile number is dictated; one detail (the monthly rent) depends on
@@ -64,7 +64,7 @@ WOMAN: Lovely. Now, the flat is on the second floor, and it's fully furnished. T
 
 MAN: And does that include the bills?
 
-WOMAN: It doesn't, normally — that's just the rent. But the landlord offers an all-inclusive option where water, gas and electricity are bundled in, and that comes to one thousand and fifty pounds a month.
+WOMAN: It doesn't, normally - that's just the rent. But the landlord offers an all-inclusive option where water, gas and electricity are bundled in, and that comes to one thousand and fifty pounds a month.
 
 MAN: I think I'd prefer the all-inclusive one, to keep things simple.
 
@@ -72,7 +72,7 @@ WOMAN: A sensible choice. Now, there's a deposit equal to one month's rent, and 
 
 MAN: That's fine. When would it be available from?
 
-WOMAN: The tenants move out on the fifteenth, so you could take it from the first of next month. Viewings are on Thursdays — would this Thursday at half past five suit you?
+WOMAN: The tenants move out on the fifteenth, so you could take it from the first of next month. Viewings are on Thursdays - would this Thursday at half past five suit you?
 
 MAN: Perfect. And what should I bring to the viewing?
 
@@ -89,7 +89,7 @@ WOMAN: You're very welcome. See you on Thursday.`,
               'Complete the enquiry form. Write ONE WORD for the answer.\n\nCaller surname: ____________',
             acceptableAnswers: ['Brennan', 'brennan'],
             explanation:
-              'The caller gives his name as “Oliver Brennan” and spells the surname out: B-R-E-N-N-A-N. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Oliver Brennan” and spells the surname out: B-R-E-N-N-A-N. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-007-s1-q2',
@@ -97,7 +97,7 @@ WOMAN: You're very welcome. See you on Thursday.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07911426830', '0791 1426830', '07911 426 830', '079 11 426 830'],
             explanation:
-              'The number is dictated as “oh-seven-nine-double-one, four-two-six, eight-three-oh”, which is 07911426830. “Double one” means two 1s, “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-nine-double-one, four-two-six, eight-three-oh”, which is 07911426830. “Double one” means two 1s, “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-007-s1-q3',
@@ -153,7 +153,7 @@ WOMAN: You're very welcome. See you on Thursday.`,
               'The flat would be available to rent from the ____________ of next month. Write ONE WORD (a number word).',
             acceptableAnswers: ['first', '1st'],
             explanation:
-              'She explains the current tenants move out on the fifteenth, “so you could take it from the first of next month.” The available date is the “first” — the fifteenth is when the old tenants leave, a deliberate distractor.',
+              'She explains the current tenants move out on the fifteenth, “so you could take it from the first of next month.” The available date is the “first” - the fifteenth is when the old tenants leave, a deliberate distractor.',
           },
           {
             id: 'ls-007-s1-q9',
@@ -178,13 +178,13 @@ WOMAN: You're very welcome. See you on Thursday.`,
               'To the viewing, the man should bring a form of photo ____________. Write ONE WORD.',
             acceptableAnswers: ['identification', 'id', 'identity'],
             explanation:
-              'She says, “Just a form of photo identification, such as a passport.” The answer is “identification” (ID/identity accepted) — the passport is the example, not the gap word.',
+              'She says, “Just a form of photo identification, such as a passport.” The answer is “identification” (ID/identity accepted) - the passport is the example, not the gap word.',
           },
         ],
       },
       {
         id: 'ls-academic-7-s2',
-        title: 'Section 2 — Induction at a co-working space',
+        title: 'Section 2 - Induction at a co-working space',
         // ~265 words. Informational monologue (Section 2 style): a single speaker
         // giving an induction talk to new members of a co-working space, explaining
         // the layout, rules and facilities. Uses sequencing/signpost language
@@ -192,15 +192,15 @@ WOMAN: You're very welcome. See you on Thursday.`,
         // sentence/note-completion + multiple-choice mix.
         transcript: `Hello everyone, and welcome to your first day at Loft Workspace. My name is Daniel, and I'm the community manager here. I'll spend a few minutes showing you how things work before I let you settle in.
 
-First, let me explain the floors. We're standing on the ground floor, which is our social hub — there's a café, comfortable sofas, and a noticeboard with all our upcoming events. It can get quite lively down here, so it isn't the place for focused work. If you need quiet, head up to the first floor, which is our designated silent zone. Phone calls are not allowed up there at all — please step into one of the booths on the landing instead.
+First, let me explain the floors. We're standing on the ground floor, which is our social hub - there's a café, comfortable sofas, and a noticeboard with all our upcoming events. It can get quite lively down here, so it isn't the place for focused work. If you need quiet, head up to the first floor, which is our designated silent zone. Phone calls are not allowed up there at all - please step into one of the booths on the landing instead.
 
 Next, a word about meeting rooms. There are six of them on the second floor, and you book them through our app rather than the front desk. Each member gets four hours of free room time a month, and after that it's charged by the hour.
 
-Now, the part everyone asks about — the kitchen. Tea and coffee are free and available all day. We do ask one thing: please wash up your own cups. Our cleaner comes in the evenings, but the kitchen is a shared space during the day.
+Now, the part everyone asks about - the kitchen. Tea and coffee are free and available all day. We do ask one thing: please wash up your own cups. Our cleaner comes in the evenings, but the kitchen is a shared space during the day.
 
 A quick note on access. Your membership card lets you in twenty-four hours a day, seven days a week, so you're welcome to work late or at weekends.
 
-Finally, if you have any technical problems — the wifi, the printers, anything like that — don't email me. Raise a ticket through the app and our support team will respond, usually within the hour. Right, that's everything. Enjoy your first day.`,
+Finally, if you have any technical problems - the wifi, the printers, anything like that - don't email me. Raise a ticket through the app and our support team will respond, usually within the hour. Right, that's everything. Enjoy your first day.`,
         questions: [
           {
             id: 'ls-007-s2-q11',
@@ -236,7 +236,7 @@ Finally, if you have any technical problems — the wifi, the printers, anything
             ],
             correctIndex: 1,
             explanation:
-              'He says phone calls “are not allowed up there at all — please step into one of the booths on the landing instead.” Option B is the instruction he gives.',
+              'He says phone calls “are not allowed up there at all - please step into one of the booths on the landing instead.” Option B is the instruction he gives.',
           },
           {
             id: 'ls-007-s2-q14',
@@ -275,7 +275,7 @@ Finally, if you have any technical problems — the wifi, the printers, anything
               'In the kitchen, members are asked to wash up their own ____________. Write ONE WORD.',
             acceptableAnswers: ['cups', 'cup'],
             explanation:
-              'He says, “please wash up your own cups.” The answer is “cups” — the cleaner comes in the evenings, but the kitchen is shared during the day.',
+              'He says, “please wash up your own cups.” The answer is “cups” - the cleaner comes in the evenings, but the kitchen is shared during the day.',
           },
           {
             id: 'ls-007-s2-q18',
@@ -312,7 +312,7 @@ Finally, if you have any technical problems — the wifi, the printers, anything
       },
       {
         id: 'ls-academic-7-s3',
-        title: 'Section 3 — Tutorial: designing a memory experiment',
+        title: 'Section 3 - Tutorial: designing a memory experiment',
         // ~295 words. Academic discussion (Section 3 style): two students (Maya and
         // Tom) and a tutor (Dr Okafor) discuss the design of a psychology experiment
         // on memory. Speakers debate method and procedure, so the questions mix
@@ -325,7 +325,7 @@ DR OKAFOR: A classic question. How will you split your participants?
 
 TOM: Into two groups. One group learns the list in the morning and is tested twelve hours later, having been awake all day. The other learns it in the evening and is tested after a night's sleep.
 
-DR OKAFOR: Good — so the gap is the same for both. How many participants are you aiming for?
+DR OKAFOR: Good - so the gap is the same for both. How many participants are you aiming for?
 
 MAYA: We were hoping for forty, but recruiting has been slow, so realistically it'll be around thirty.
 
@@ -341,7 +341,7 @@ DR OKAFOR: One thing to watch: make sure both groups see the list for exactly th
 
 TOM: Good point. We'll time it at two minutes for everyone.
 
-DR OKAFOR: And consent — have you thought about the ethics form?
+DR OKAFOR: And consent - have you thought about the ethics form?
 
 MAYA: Yes, every participant signs one beforehand, and we tell them they can withdraw at any time.
 
@@ -379,7 +379,7 @@ TOM: We'll do that next week.`,
               'The students now realistically expect about ____________ participants. Write A NUMBER.',
             acceptableAnswers: ['30', 'thirty'],
             explanation:
-              'Maya says, “We were hoping for forty, but recruiting has been slow, so realistically it’ll be around thirty.” The realistic number is 30 — forty was the original hope, a distractor.',
+              'Maya says, “We were hoping for forty, but recruiting has been slow, so realistically it’ll be around thirty.” The realistic number is 30 - forty was the original hope, a distractor.',
           },
           {
             id: 'ls-007-s3-q24',
@@ -387,7 +387,7 @@ TOM: We'll do that next week.`,
             prompt: 'The word list contains ____________ words. Write A NUMBER.',
             acceptableAnswers: ['30', 'thirty'],
             explanation:
-              'Tom says the list is “Thirty words.” The answer is 30 — note this coincidentally matches the participant estimate, so listen to which figure each question asks about.',
+              'Tom says the list is “Thirty words.” The answer is 30 - note this coincidentally matches the participant estimate, so listen to which figure each question asks about.',
           },
           {
             id: 'ls-007-s3-q25',
@@ -456,22 +456,22 @@ TOM: We'll do that next week.`,
       },
       {
         id: 'ls-academic-7-s4',
-        title: 'Section 4 — Lecture: the history of tea',
+        title: 'Section 4 - Lecture: the history of tea',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the history of tea. Dense,
         // factual and signposted ("to begin", "by the", "finally"), with the
         // note/sentence-completion + multiple-choice mix typical of Section 4.
-        transcript: `Good afternoon. Today I'd like to trace the long history of one of the world's most popular drinks — tea. It is, after water, the most widely consumed beverage on the planet, and its story stretches back thousands of years.
+        transcript: `Good afternoon. Today I'd like to trace the long history of one of the world's most popular drinks - tea. It is, after water, the most widely consumed beverage on the planet, and its story stretches back thousands of years.
 
 Let me begin with its origins. Tea comes from the leaves of a single plant, Camellia sinensis, which is native to the region where south-west China meets northern Myanmar. According to a well-known Chinese legend, tea was discovered by accident when leaves blew into a pot of boiling water belonging to an emperor. Whether or not that's true, we have firm written records of tea being drunk in China by around the third century, originally as a medicine rather than for pleasure.
 
 By the eighth century, tea-drinking had become a refined social custom, and a scholar named Lu Yu wrote the first known book entirely devoted to it. From China, the habit spread to Japan, carried back by Buddhist monks who had travelled there to study.
 
-Now, tea reached Europe surprisingly late. It was Portuguese and Dutch traders who first brought it back in the sixteenth and seventeenth centuries. At first it was extremely expensive — a luxury only the wealthy could afford — and it was often kept locked away in special boxes.
+Now, tea reached Europe surprisingly late. It was Portuguese and Dutch traders who first brought it back in the sixteenth and seventeenth centuries. At first it was extremely expensive - a luxury only the wealthy could afford - and it was often kept locked away in special boxes.
 
 The drink became central to British life in particular. One reason tea overtook coffee there was the influence of the East India Company, which controlled the trade. Tea also became bound up with politics: heavy taxes on it famously helped to spark protest in the American colonies.
 
-Finally, a word on how it's grown today. Tea bushes are kept short by regular pruning, and only the top two leaves and a bud are picked — usually by hand, because machines damage the delicate leaves. We'll look at the processing methods next week.`,
+Finally, a word on how it's grown today. Tea bushes are kept short by regular pruning, and only the top two leaves and a bud are picked - usually by hand, because machines damage the delicate leaves. We'll look at the processing methods next week.`,
         questions: [
           {
             id: 'ls-007-s4-q31',
@@ -549,7 +549,7 @@ Finally, a word on how it's grown today. Tea bushes are kept short by regular pr
             ],
             correctIndex: 1,
             explanation:
-              'She says, “At first it was extremely expensive — a luxury only the wealthy could afford — and it was often kept locked away in special boxes.” Option B matches.',
+              'She says, “At first it was extremely expensive - a luxury only the wealthy could afford - and it was often kept locked away in special boxes.” Option B matches.',
           },
           {
             id: 'ls-007-s4-q38',

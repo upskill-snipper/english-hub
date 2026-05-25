@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 19) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 19) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test showcases the Matching question type across all three passages:
 // Matching Headings (Passage 1), Matching Information / which-paragraph
-// (Passage 2) and Matching Features — statements to people (Passage 3), set
+// (Passage 2) and Matching Features - statements to people (Passage 3), set
 // alongside the usual mix of True/False/Not Given, multiple choice and
 // sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_19: ReadingTest[] = [
   {
     id: 'rd-academic-019',
-    title: 'Academic Reading — Practice Test 19',
+    title: 'Academic Reading - Practice Test 19',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -36,9 +36,9 @@ A hibernating animal is not merely asleep. During true hibernation an animal's b
 
 That autumn preparation is itself a crucial part of the strategy. In the weeks before hibernation many animals eat voraciously, sometimes doubling their body weight, and lay down a special tissue called brown fat. Ordinary white fat is simply a store of energy, but brown fat is different: when the animal needs to raise its temperature again, this tissue can burn its contents directly to produce heat, acting in effect as a built-in furnace. The timing of all this is governed less by the weather of any particular year than by the shortening of the days, a signal far more reliable than temperature, which can rise and fall unpredictably from week to week.
 
-It would be a mistake, however, to imagine that a hibernating animal simply falls asleep in October and wakes in spring. Most hibernators rouse themselves periodically throughout the winter, raising their body temperature back to normal for a few hours or days before sinking down again. These arousals are puzzling, because warming up is extraordinarily expensive: a single return to normal temperature can consume as much energy as many days spent in the cold, dormant state, and together the arousals may account for most of the fuel a hibernator burns all winter. Exactly why animals pay this heavy price is still debated. Some researchers suspect the warm periods allow the body to carry out essential maintenance — restoring the immune system, for instance, or allowing the brain to sleep in the ordinary sense, which the deep cold seems to prevent.
+It would be a mistake, however, to imagine that a hibernating animal simply falls asleep in October and wakes in spring. Most hibernators rouse themselves periodically throughout the winter, raising their body temperature back to normal for a few hours or days before sinking down again. These arousals are puzzling, because warming up is extraordinarily expensive: a single return to normal temperature can consume as much energy as many days spent in the cold, dormant state, and together the arousals may account for most of the fuel a hibernator burns all winter. Exactly why animals pay this heavy price is still debated. Some researchers suspect the warm periods allow the body to carry out essential maintenance - restoring the immune system, for instance, or allowing the brain to sleep in the ordinary sense, which the deep cold seems to prevent.
 
-Not every animal that disappears in winter is a true hibernator. The bear, the creature most people picture when the word is mentioned, is in fact a borderline case. A denning bear lowers its heart rate and does not eat, drink or pass waste for months, which is impressive enough, yet its body temperature drops only slightly, by a few degrees rather than dozens. This shallow dormancy means a bear can be roused quickly if disturbed — a useful ability for an animal large enough to defend itself, and essential for a female that gives birth and nurses her cubs in the depths of the denning season. Smaller hibernators such as ground squirrels, which go genuinely cold, cannot wake so readily, and a disturbed one may take an hour or more to become fully active.
+Not every animal that disappears in winter is a true hibernator. The bear, the creature most people picture when the word is mentioned, is in fact a borderline case. A denning bear lowers its heart rate and does not eat, drink or pass waste for months, which is impressive enough, yet its body temperature drops only slightly, by a few degrees rather than dozens. This shallow dormancy means a bear can be roused quickly if disturbed - a useful ability for an animal large enough to defend itself, and essential for a female that gives birth and nurses her cubs in the depths of the denning season. Smaller hibernators such as ground squirrels, which go genuinely cold, cannot wake so readily, and a disturbed one may take an hour or more to become fully active.
 
 Hibernation, then, is not a single phenomenon but a spectrum of strategies for enduring scarcity, ranging from the bear's light slumber to the near-suspended animation of the smallest mammals. Scientists studying these animals are driven by more than curiosity about the natural world. A ground squirrel can lie at close to freezing for weeks and then warm up with no lasting damage to its heart or brain, feats that would kill a human being. If researchers could understand how a hibernator protects its tissues through such extremes, the knowledge might one day help patients survive heart attacks, strokes or the long, cold journey of space travel.`,
         questions: [
@@ -48,7 +48,7 @@ Hibernation, then, is not a single phenomenon but a spectrum of strategies for e
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A built-in furnace prepared in advance' },
               { key: 'ii', label: 'Three ways to face a season of scarcity' },
@@ -68,7 +68,7 @@ Hibernation, then, is not a single phenomenon but a spectrum of strategies for e
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'viii' },
             ],
             explanation:
-              'A sets out the "three broad answers" to winter scarcity — migrate, stay active, or shut down (ii). B explains that hibernation "is not merely asleep" but a dramatic shutdown of temperature, heart rate and breathing (v). C describes the autumn build-up of brown fat that acts "as a built-in furnace" (i). D discusses the puzzling, energy-expensive periodic arousals during winter (iv). E presents the bear as "a borderline case" of shallow dormancy (vi). F moves from the spectrum of strategies to possible medical applications (viii). Heading iii ("Why warm-blooded animals cannot live in the cold") is a distractor — the passage never claims they cannot; heading vii ("A migration route across continents") is a distractor, as migration is only mentioned in passing in A and no route is described.',
+              'A sets out the "three broad answers" to winter scarcity - migrate, stay active, or shut down (ii). B explains that hibernation "is not merely asleep" but a dramatic shutdown of temperature, heart rate and breathing (v). C describes the autumn build-up of brown fat that acts "as a built-in furnace" (i). D discusses the puzzling, energy-expensive periodic arousals during winter (iv). E presents the bear as "a borderline case" of shallow dormancy (vi). F moves from the spectrum of strategies to possible medical applications (viii). Heading iii ("Why warm-blooded animals cannot live in the cold") is a distractor - the passage never claims they cannot; heading vii ("A migration route across continents") is a distractor, as migration is only mentioned in passing in A and no route is described.',
           },
           {
             id: 'rd-019-p1-q2',
@@ -149,9 +149,9 @@ Hibernation, then, is not a single phenomenon but a spectrum of strategies for e
         title: 'The Story of the Dictionary',
         body: `We tend to treat the dictionary as a kind of court of final appeal, the place that settles an argument about what a word "really" means or how it should be spelled. Yet the dictionary as we know it is a surprisingly recent invention, and for most of the history of writing people managed without one. The earliest ancestors of the modern dictionary were not lists of a language explained in its own terms at all, but bilingual aids: clay tablets from ancient Mesopotamia, some four thousand years old, that paired words in one language with their equivalents in another so that scribes could read documents written in an older or foreign tongue. The purpose was practical translation, not the description of a single language.
 
-For a long time this remained the pattern. In medieval Europe the typical word-book was a list of difficult Latin terms, each followed by an easier Latin word or a translation into the local language, compiled to help students struggling with texts in a language that was no longer anyone's mother tongue. The idea of explaining ordinary English words in English, for the benefit of English speakers, would have seemed almost pointless: why define words that every reader already knew? The first book that could fairly be called an English dictionary did not appear until 1604, and it was a modest affair, listing only a few thousand "hard words" — the difficult, often foreign-derived terms that an ordinary reader might stumble over — and ignoring the common vocabulary entirely.
+For a long time this remained the pattern. In medieval Europe the typical word-book was a list of difficult Latin terms, each followed by an easier Latin word or a translation into the local language, compiled to help students struggling with texts in a language that was no longer anyone's mother tongue. The idea of explaining ordinary English words in English, for the benefit of English speakers, would have seemed almost pointless: why define words that every reader already knew? The first book that could fairly be called an English dictionary did not appear until 1604, and it was a modest affair, listing only a few thousand "hard words" - the difficult, often foreign-derived terms that an ordinary reader might stumble over - and ignoring the common vocabulary entirely.
 
-Over the following century these "hard word" books grew larger and more ambitious, until the goal shifted from explaining only the difficult words to recording the whole of the language. The most celebrated product of this new ambition in English was the dictionary published by Samuel Johnson in 1755. Johnson worked for years with a small team of assistants, and his great innovation was to illustrate the meaning of words with quotations drawn from respected writers, so that a reader could see not merely what a word was said to mean but how it had actually been used. His definitions could be precise and they could be playful — his much-quoted entry for a "lexicographer", a writer of dictionaries, described such a person as a "harmless drudge" — and his work shaped English dictionaries for the better part of a century.
+Over the following century these "hard word" books grew larger and more ambitious, until the goal shifted from explaining only the difficult words to recording the whole of the language. The most celebrated product of this new ambition in English was the dictionary published by Samuel Johnson in 1755. Johnson worked for years with a small team of assistants, and his great innovation was to illustrate the meaning of words with quotations drawn from respected writers, so that a reader could see not merely what a word was said to mean but how it had actually been used. His definitions could be precise and they could be playful - his much-quoted entry for a "lexicographer", a writer of dictionaries, described such a person as a "harmless drudge" - and his work shaped English dictionaries for the better part of a century.
 
 Johnson's dictionary, for all its scale, was largely the achievement of one determined man. The project that eventually overtook it was conceived on an entirely different model. The vast work that became the Oxford English Dictionary, begun in the second half of the nineteenth century, set out to record every word in the language and, for each, to trace its history through dated quotations showing when and how its meaning had changed over the centuries. No single scholar could read enough to achieve this, and so the editors issued a public appeal, inviting volunteers across the English-speaking world to read books and send in slips of paper recording interesting uses of words. Hundreds of thousands of such slips poured in, and the dictionary was, in a real sense, a great collaborative enterprise, assembled from the reading of a scattered army of contributors. The work took decades; the first complete edition was not finished until 1928, long after the project had begun.
 
@@ -165,7 +165,7 @@ The digital age has transformed the dictionary once again. Freed from the cost a
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -283,7 +283,7 @@ The digital age has transformed the dictionary once again. Freed from the cost a
             prompt: 'Online dictionaries have completely replaced printed dictionaries.',
             answer: 'not-given',
             explanation:
-              'Paragraph F describes the advantages of online dictionaries — being larger, continually updated and able to track new words "within months" — but it never claims that they have replaced printed dictionaries altogether. The passage gives no information either way, so the statement is Not Given.',
+              'Paragraph F describes the advantages of online dictionaries - being larger, continually updated and able to track new words "within months" - but it never claims that they have replaced printed dictionaries altogether. The passage gives no information either way, so the statement is Not Given.',
           },
         ],
       },
@@ -297,19 +297,19 @@ The most dramatic of their services is protection against the sea. A belt of man
 
 Mangroves do more than break waves. The maze of roots beneath the water is a nursery for fish, offering young fish a sheltered place to grow up safe from larger predators in the open sea, and many of the fish that coastal communities later catch in deeper water begin life among the mangroves. The forests also trap sediment washing down from the land, building up the soil and, in places, allowing the coast to grow seaward rather than retreat. And by holding the muddy shoreline together with their roots, they slow the erosion that would otherwise eat away at the land behind them. A single belt of trees, in other words, defends the coast, feeds the fishery and stabilises the very ground it stands on.
 
-In recent years a further service has attracted particular attention. Mangroves are extraordinarily effective at capturing carbon from the atmosphere and locking it away — not chiefly in their wood, as a rainforest does, but in the deep, waterlogged mud in which they grow. Because that mud holds so little oxygen, the dead leaves and roots that fall into it rot only very slowly, and the carbon they contain can stay buried for centuries or longer. Acre for acre, a mangrove forest can store several times as much carbon as a typical forest on dry land, most of it hidden underground. This "blue carbon", as the carbon held by coastal ecosystems has come to be called, has made the protection of mangroves attractive to those seeking to slow the warming of the climate.
+In recent years a further service has attracted particular attention. Mangroves are extraordinarily effective at capturing carbon from the atmosphere and locking it away - not chiefly in their wood, as a rainforest does, but in the deep, waterlogged mud in which they grow. Because that mud holds so little oxygen, the dead leaves and roots that fall into it rot only very slowly, and the carbon they contain can stay buried for centuries or longer. Acre for acre, a mangrove forest can store several times as much carbon as a typical forest on dry land, most of it hidden underground. This "blue carbon", as the carbon held by coastal ecosystems has come to be called, has made the protection of mangroves attractive to those seeking to slow the warming of the climate.
 
-There is, however, a darker side to this hidden store. When a mangrove forest is cleared — most often, in recent decades, to make ponds for farming prawns, or to create land for building — the carbon that has accumulated in its soil over centuries does not simply stay where it is. Exposed to the air, the drained mud begins to break down, and the carbon locked within it escapes into the atmosphere. Clearing a mangrove forest therefore does double harm: it removes a system that was absorbing carbon, and it releases a vast quantity that had been safely stored. For this reason the destruction of mangroves contributes far more to the warming of the planet than their modest area might suggest.
+There is, however, a darker side to this hidden store. When a mangrove forest is cleared - most often, in recent decades, to make ponds for farming prawns, or to create land for building - the carbon that has accumulated in its soil over centuries does not simply stay where it is. Exposed to the air, the drained mud begins to break down, and the carbon locked within it escapes into the atmosphere. Clearing a mangrove forest therefore does double harm: it removes a system that was absorbing carbon, and it releases a vast quantity that had been safely stored. For this reason the destruction of mangroves contributes far more to the warming of the planet than their modest area might suggest.
 
 The loss has been severe. Over the past half-century a large share of the world's mangroves has been cut down, and although the rate of loss has slowed as their value has become better known, the forests remain under pressure from coastal development and shrimp farming. The response has been a wave of restoration projects, in which mangroves are replanted on shores from which they had vanished. Such projects are not always successful: seedlings planted in the wrong place, or without regard for the tides and the flow of fresh water, frequently die. The marine biologist Aisha Ndlovu, who has studied such schemes, argues that the most effective approach is often not to plant at all, but simply to restore the natural flow of water to a degraded site and allow the mangroves to return on their own. Where conditions are right, she observes, the forest is perfectly capable of replanting itself.`,
         questions: [
-          // ── Matching Features — statements to people/sources (5 items) = 5 marks ──
+          // ── Matching Features - statements to people/sources (5 items) = 5 marks ──
           {
             id: 'rd-019-p3-q1',
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the following statements and the list of services and effects of mangroves below. Match each statement to the function it describes in the passage. Write the correct letter, A–E. There are more options than statements, so you will not use them all.',
+              'Look at the following statements and the list of services and effects of mangroves below. Match each statement to the function it describes in the passage. Write the correct letter, A-E. There are more options than statements, so you will not use them all.',
             options: [
               { key: 'A', label: 'Protection against storm waves' },
               { key: 'B', label: 'A nursery for young fish' },
@@ -345,7 +345,7 @@ The loss has been severe. Over the past half-century a large share of the world'
               },
             ],
             explanation:
-              'Item 1 → D: paragraph C says the forests "trap sediment washing down from the land... allowing the coast to grow seaward rather than retreat." Item 2 → A: paragraph B reports villages behind mangroves "suffered less damage and fewer deaths" after the 2004 wave. Item 3 → C: paragraph D explains the mud "holds so little oxygen" so material "rot[s] only very slowly," storing carbon. Item 4 → B: paragraph C calls the roots "a nursery for fish," a safe place before fish are caught "in deeper water." Item 5 → C: paragraph D names the carbon held by such ecosystems "blue carbon." Option E ("A source of timber for building") is a distractor — the passage notes mangroves store carbon in mud rather than wood and never presents them as a timber source.',
+              'Item 1 → D: paragraph C says the forests "trap sediment washing down from the land... allowing the coast to grow seaward rather than retreat." Item 2 → A: paragraph B reports villages behind mangroves "suffered less damage and fewer deaths" after the 2004 wave. Item 3 → C: paragraph D explains the mud "holds so little oxygen" so material "rot[s] only very slowly," storing carbon. Item 4 → B: paragraph C calls the roots "a nursery for fish," a safe place before fish are caught "in deeper water." Item 5 → C: paragraph D names the carbon held by such ecosystems "blue carbon." Option E ("A source of timber for building") is a distractor - the passage notes mangroves store carbon in mud rather than wood and never presents them as a timber source.',
           },
           {
             id: 'rd-019-p3-q2',

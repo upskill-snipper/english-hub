@@ -1,4 +1,4 @@
-// ─── IELTS placement diagnostic — content ──────────────────────────────────
+// ─── IELTS placement diagnostic - content ──────────────────────────────────
 // A short, ORIGINAL Academic-track placement set: a mini Reading passage with
 // 4 auto-markable questions and a mini Listening section (transcript-driven,
 // Wave 1 TTS) with 4 auto-markable questions. Plus the self-assessment scale
@@ -6,7 +6,7 @@
 //
 // Total target time ≈ 10 minutes (≈5 Reading, ≈3 Listening, ≈2 self-assess).
 //
-// All content here is original and written for this placement test only — it is
+// All content here is original and written for this placement test only - it is
 // deliberately shorter and easier to navigate than a full /ielts/reading test.
 // This file lives under the diagnostic route and is owned by the diagnostic
 // module; the shared question/passage shapes come from @/lib/ielts/types.
@@ -30,7 +30,7 @@ export const DIAGNOSTIC_READING: ReadingPassage = {
   title: 'The Hidden Power of Tides',
   body: `Twice a day, along most of the world's coastlines, the sea rises and falls in a slow, predictable rhythm. These movements are tides, and they are caused chiefly by the gravitational pull of the Moon, with a smaller contribution from the Sun. Because the Moon is so much closer to the Earth than the Sun, its pull on the oceans is more than twice as strong, even though the Sun is vastly larger.
 
-When the Sun, Moon and Earth fall roughly into a straight line — at the new and full Moon — their gravitational forces combine to produce especially large tides known as spring tides. The name has nothing to do with the season; it comes from an older sense of the word meaning "to spring up". About a week later, when the Sun and Moon pull at right angles to one another, the tidal range is at its smallest. These weaker tides are called neap tides.
+When the Sun, Moon and Earth fall roughly into a straight line - at the new and full Moon - their gravitational forces combine to produce especially large tides known as spring tides. The name has nothing to do with the season; it comes from an older sense of the word meaning "to spring up". About a week later, when the Sun and Moon pull at right angles to one another, the tidal range is at its smallest. These weaker tides are called neap tides.
 
 Engineers have long been attracted to the idea of capturing this regular movement of water to generate electricity. A tidal barrage works rather like a dam built across the mouth of a river or bay: as the tide rises, water is allowed to flow through gates and spin turbines, and the process is repeated as the tide falls. Unlike wind or sunshine, tides can be predicted years in advance, which makes the supply of energy unusually reliable. The drawback is cost. Building a barrage is enormously expensive, and the structure can disturb the delicate habitats of estuaries, where many birds and fish feed and breed. For this reason, only a handful of large tidal power stations operate today, although interest in smaller, less damaging designs continues to grow.`,
   questions: [
@@ -85,7 +85,7 @@ export const DIAGNOSTIC_LISTENING: ListeningSection = {
 
 STUDENT: Hi. I’ve just moved to the area and I’d like to join, please.
 
-LIBRARIAN: Of course. It’s completely free to register. I’ll just need one piece of photo identification and something that shows your current address — a recent utility bill or a bank statement is fine.
+LIBRARIAN: Of course. It’s completely free to register. I’ll just need one piece of photo identification and something that shows your current address - a recent utility bill or a bank statement is fine.
 
 STUDENT: I’ve got my passport and a phone bill from last week. Will that do?
 
@@ -93,9 +93,9 @@ LIBRARIAN: That’s perfect. Now, as a standard member you can borrow up to twel
 
 STUDENT: Great. And is there a charge if I bring something back late?
 
-LIBRARIAN: There is a small fee, yes — it’s twenty pence per item for each day it’s overdue. But we’ll always send you a reminder by email two days before anything is due, so it’s easy to avoid.
+LIBRARIAN: There is a small fee, yes - it’s twenty pence per item for each day it’s overdue. But we’ll always send you a reminder by email two days before anything is due, so it’s easy to avoid.
 
-STUDENT: That’s helpful. One more thing — do you have study rooms?
+STUDENT: That’s helpful. One more thing - do you have study rooms?
 
 LIBRARIAN: We do. There are bookable study rooms on the second floor. They’re popular, so I’d recommend reserving one through our website the day before you need it.
 
@@ -220,7 +220,7 @@ export const SELF_ASSESS: SelfAssessSkill[] = [
   },
 ]
 
-// Map a chosen self-assessment level (1–4) for a skill to its rough band.
+// Map a chosen self-assessment level (1-4) for a skill to its rough band.
 export function selfAssessBand(
   skill: Extract<IeltsSkill, 'writing' | 'speaking'>,
   value: 1 | 2 | 3 | 4,

@@ -17,12 +17,12 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
-// ─── IELTS → UK university admissions hub — SEO landing page ─────────────────
+// ─── IELTS → UK university admissions hub - SEO landing page ─────────────────
 // The entry point to the admissions track that sits alongside the IELTS
 // learning loop. Server component so all guidance copy renders statically for
 // SEO. Exactly one <h1>. Section-level <metadata> + canonical live in
 // layout.tsx. All content is ORIGINAL preparation guidance written for Gulf
-// students applying to the UK — it never implies official UCAS / university
+// students applying to the UK - it never implies official UCAS / university
 // affiliation and presents bands/dates as typical, not guaranteed.
 //
 // Bilingual (English + Khaleeji Arabic) via `await t('ielts.admissions.*')`;
@@ -236,14 +236,14 @@ export default async function IeltsAdmissionsHubPage() {
   const timelineTitle = timelineTitleRaw.replace('{token}', TIMELINE_MONTHS)
   const psIntro = psIntroRaw.replace('{chars}', PS_CHAR_LIMIT).replace('{lines}', PS_LINE_LIMIT)
 
-  // Typical IELTS Academic requirements by course type. INDICATIVE only — every
+  // Typical IELTS Academic requirements by course type. INDICATIVE only - every
   // university and course sets its own; students must always check the specific
   // course page. Overall band, then the typical per-component minimum.
   const REQUIREMENT_TIERS: { band: string; detail: string; courses: string }[] = [
-    { band: '7.0–7.5+', detail: tier1Detail, courses: tier1Courses },
+    { band: '7.0-7.5+', detail: tier1Detail, courses: tier1Courses },
     { band: '6.5', detail: tier2Detail, courses: tier2Courses },
     { band: '6.0', detail: tier3Detail, courses: tier3Courses },
-    { band: '5.0–5.5', detail: tier4Detail, courses: tier4Courses },
+    { band: '5.0-5.5', detail: tier4Detail, courses: tier4Courses },
   ]
 
   // The five UCAS steps.
@@ -266,7 +266,7 @@ export default async function IeltsAdmissionsHubPage() {
 
   const PS_POINTS = [psPoint1, psPoint2, psPoint3, psPoint4, psPoint5]
 
-  // FAQ content — surfaced both visually and as FAQ schema (localized).
+  // FAQ content - surfaced both visually and as FAQ schema (localized).
   const FAQS: { question: string; answer: string }[] = [
     { question: faqQ1, answer: faqA1 },
     { question: faqQ2, answer: faqA2 },

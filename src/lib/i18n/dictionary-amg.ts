@@ -1,10 +1,10 @@
 /**
- * AMG dictionary — Analytics / Marking / Games (Bucket A, Tier-2b).
+ * AMG dictionary - Analytics / Marking / Games (Bucket A, Tier-2b).
  *
  * Authored EN + genuine Khaleeji (Gulf register, voice of
  * src/lib/eal/curriculum.ts) for `analytics.*`, `marking.*` and `games.*`
  * keys that were USED in code but only existed in placeholder/junk
- * supplements — so AR-mode visitors saw English or title-cased key
+ * supplements - so AR-mode visitors saw English or title-cased key
  * fragments instead of real Arabic.
  *
  * For audit-fix-only keys the junk EN (e.g. `Bar Chart Aria`) was
@@ -14,7 +14,7 @@
  *
  * Keys already carrying real Khaleeji in dictionary-screenshot-fixes.ts
  * (analytics.grade.*, analytics.unit.{students,students_total,attempts},
- * analytics.metric.correct) are intentionally NOT redefined here — the
+ * analytics.metric.correct) are intentionally NOT redefined here - the
  * screenshot-fixes supplement already renders them correctly.
  *
  * Chained into lookup() in ./dictionary.ts (do NOT edit dictionary.ts).
@@ -34,7 +34,7 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'students on the platform',
     ar: 'طالب على المنصة',
   },
-  // `{n} {t('analytics.badge.students_studied_text')}` — studied this text
+  // `{n} {t('analytics.badge.students_studied_text')}` - studied this text
   'analytics.badge.students_studied_text': {
     en: 'students studied this text',
     ar: 'طالب درسوا هذا النص',
@@ -108,7 +108,7 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'analytics.nrr.headline_title': { en: 'Net revenue retention', ar: 'صافي الاحتفاظ بالإيراد' },
   'analytics.nrr.investor_target': { en: 'Investor target', ar: 'هدف المستثمرين' },
   'analytics.nrr.previous_month': { en: 'Previous month', ar: 'الشهر اللي راح' },
-  // "{momChange} {t('analytics.nrr.pts_mom')}" — points month-on-month
+  // "{momChange} {t('analytics.nrr.pts_mom')}" - points month-on-month
   'analytics.nrr.pts_mom': { en: 'pts MoM', ar: 'نقطة عن الشهر اللي راح' },
   'analytics.nrr.trailing_12mo': { en: 'Trailing 12 mo', ar: 'آخر ١٢ شهر' },
 
@@ -116,8 +116,8 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // "{t('analytics.skill.based_on')} {n} {responses}"
   'analytics.skill.based_on': { en: 'Based on', ar: 'مبني على' },
   'analytics.skill.no_data_yet_hint': {
-    en: 'No responses yet — keep practising to build this profile.',
-    ar: 'ما في إجابات لين الحين — واصل التمرين عشان يتكوّن الملف.',
+    en: 'No responses yet - keep practising to build this profile.',
+    ar: 'ما في إجابات لين الحين - واصل التمرين عشان يتكوّن الملف.',
   },
 
   // ─── Summary stat cards (AggregateStats.tsx) ─────────────────────
@@ -158,9 +158,9 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ─── Demo-school grade bands (copied verbatim EN ← may15) ─────────
-  'analytics.grade_band.top': { en: 'Top grades (7–9)', ar: 'أعلى الدرجات (٧–٩)' },
-  'analytics.grade_band.pass': { en: 'Pass grades (4–6)', ar: 'درجات النجاح (٤–٦)' },
-  'analytics.grade_band.below': { en: 'Below pass (1–3)', ar: 'تحت النجاح (١–٣)' },
+  'analytics.grade_band.top': { en: 'Top grades (7-9)', ar: 'أعلى الدرجات (٧-٩)' },
+  'analytics.grade_band.pass': { en: 'Pass grades (4-6)', ar: 'درجات النجاح (٤-٦)' },
+  'analytics.grade_band.below': { en: 'Below pass (1-3)', ar: 'تحت النجاح (١-٣)' },
 
   // ════════════════════════════════════════════════════════════════
   //  MARKING  (/marking, /mock-exams, /practice, AITextArea.tsx)
@@ -204,10 +204,10 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'marking.library.coming_soon': { en: 'Coming soon', ar: 'قريباً' },
 
   // ─── Mark-scheme picker (copied verbatim EN ← may15) ─────────────
-  'marking.scheme.lit_p1': { en: 'Literature Paper 1', ar: 'الأدب — الورقة ١' },
-  'marking.scheme.lit_p2': { en: 'Literature Paper 2', ar: 'الأدب — الورقة ٢' },
-  'marking.scheme.lang_p1': { en: 'Language Paper 1', ar: 'اللغة — الورقة ١' },
-  'marking.scheme.lang_p2': { en: 'Language Paper 2', ar: 'اللغة — الورقة ٢' },
+  'marking.scheme.lit_p1': { en: 'Literature Paper 1', ar: 'الأدب - الورقة ١' },
+  'marking.scheme.lit_p2': { en: 'Literature Paper 2', ar: 'الأدب - الورقة ٢' },
+  'marking.scheme.lang_p1': { en: 'Language Paper 1', ar: 'اللغة - الورقة ١' },
+  'marking.scheme.lang_p2': { en: 'Language Paper 2', ar: 'اللغة - الورقة ٢' },
 
   // ════════════════════════════════════════════════════════════════
   //  GAMES  (src/components/games/GameCard.tsx, GameShell.tsx)
@@ -244,7 +244,7 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'games.shell.restart': { en: 'Restart', ar: 'من جديد' },
   'games.shell.finish': { en: 'Finish', ar: 'خلّص' },
 
-  // ─── Difficulty badges — resolved via DIFFICULTY_KEY_MAP[level]
+  // ─── Difficulty badges - resolved via DIFFICULTY_KEY_MAP[level]
   //     in GameCard.tsx & GameShell.tsx (copied verbatim EN ← may15)
   'games.difficulty.foundation': { en: 'Foundation', ar: 'تأسيسي' },
   'games.difficulty.crossover': { en: 'Crossover', ar: 'انتقالي' },

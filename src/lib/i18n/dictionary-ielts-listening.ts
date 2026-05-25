@@ -4,8 +4,8 @@
 // controls (visible + aria labels), question labels, results (band/score)
 // labels, review labels, empty/loading states.
 //
-// SCOPE: interface chrome ONLY. The practice CONTENT — transcripts, question
-// prompts, options, gap answers, explanations — stays English and lives in
+// SCOPE: interface chrome ONLY. The practice CONTENT - transcripts, question
+// prompts, options, gap answers, explanations - stays English and lives in
 // src/app/ielts/listening/listening-tests.ts (NOT translated here).
 //
 // Khaleeji (Gulf) Arabic conventions per the master dictionary header
@@ -18,7 +18,7 @@
 // ielts.estimate_note, etc.) live in ./dictionary-ielts.ts and are reused
 // from the components directly rather than duplicated here.
 //
-// Wire into src/lib/i18n/dictionary.ts (import + one line in lookup()) — owned
+// Wire into src/lib/i18n/dictionary.ts (import + one line in lookup()) - owned
 // by the integrator; this file only authors the EN+AR pairs.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -50,8 +50,8 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
 
   'ielts.listening.intro.audio_heading': { en: 'How the audio works', ar: 'كيف يشتغل الصوت' },
   'ielts.listening.intro.audio_body': {
-    en: 'Wave 1 uses your browser’s built-in text-to-speech voice to read each section aloud (a stand-in for recorded audio). In the real test each recording plays once — try a single listen, then use Replay only for practice. The script stays hidden until you submit.',
-    ar: 'تستخدم النسخة الأولى صوت تحويل النص إلى كلام المدمج في متصفحك عشان يقرأ كل قسم بصوت عالٍ (بدلاً عن تسجيل صوتي). في الاختبار الحقيقي كل تسجيل يشتغل مرة وحدة — جرّب استماع مرة وحدة، وبعدها استخدم إعادة التشغيل للتدريب بس. النص يبقى مخفي لين ما تسلّم.',
+    en: 'Wave 1 uses your browser’s built-in text-to-speech voice to read each section aloud (a stand-in for recorded audio). In the real test each recording plays once - try a single listen, then use Replay only for practice. The script stays hidden until you submit.',
+    ar: 'تستخدم النسخة الأولى صوت تحويل النص إلى كلام المدمج في متصفحك عشان يقرأ كل قسم بصوت عالٍ (بدلاً عن تسجيل صوتي). في الاختبار الحقيقي كل تسجيل يشتغل مرة وحدة - جرّب استماع مرة وحدة، وبعدها استخدم إعادة التشغيل للتدريب بس. النص يبقى مخفي لين ما تسلّم.',
   },
   'ielts.listening.intro.start': { en: 'Start practice test', ar: 'ابدأ الاختبار التدريبي' },
   // Test picker (intro screen)
@@ -80,7 +80,7 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
     en: 'questions answered',
     ar: 'أسئلة مُجابة',
   },
-  // Composed: `{section_label} {n}` — number stays dynamic.
+  // Composed: `{section_label} {n}` - number stays dynamic.
   'ielts.listening.test.section_label': { en: 'Section', ar: 'القسم' },
   'ielts.listening.test.submit': { en: 'Submit & mark', ar: 'سلّم وصحّح' },
   // Submit hint, partial: composed as `{prefix} {answered} {of} {total}. {suffix}`.
@@ -90,8 +90,8 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
   },
   'ielts.listening.test.submit_hint_partial_of': { en: 'of', ar: 'من' },
   'ielts.listening.test.submit_hint_partial_suffix': {
-    en: 'You can submit now — unanswered questions are marked as incorrect.',
-    ar: 'تقدر تسلّم الحين — الأسئلة اللي ما جاوبت عليها بتنحسب غلط.',
+    en: 'You can submit now - unanswered questions are marked as incorrect.',
+    ar: 'تقدر تسلّم الحين - الأسئلة اللي ما جاوبت عليها بتنحسب غلط.',
   },
   // Submit hint, all answered: composed as `{prefix} {total} {suffix}`.
   'ielts.listening.test.submit_hint_done_prefix': { en: 'All', ar: 'كل' },
@@ -118,8 +118,8 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
   // ── Results panel ─────────────────────────────────────────────────────────
   'ielts.listening.results.complete': { en: 'Test complete', ar: 'انتهى الاختبار' },
   'ielts.listening.results.predicted_note': {
-    en: 'Predicted Listening band — an estimate based on this practice set.',
-    ar: 'Band الاستماع المتوقع — تقدير مبني على هذا التدريب.',
+    en: 'Predicted Listening band - an estimate based on this practice set.',
+    ar: 'Band الاستماع المتوقع - تقدير مبني على هذا التدريب.',
   },
   'ielts.listening.results.band': { en: 'Band', ar: 'Band' },
   'ielts.listening.results.correct': { en: 'Correct', ar: 'صحيحة' },
@@ -152,7 +152,7 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
     en: 'Audio playback isn’t available in this browser',
     ar: 'تشغيل الصوت مو متاح في هذا المتصفح',
   },
-  // Composed: `{prefix} {sectionTitle} {suffix}` — section title stays dynamic.
+  // Composed: `{prefix} {sectionTitle} {suffix}` - section title stays dynamic.
   'ielts.listening.audio.unavailable_body_prefix': {
     en: 'Your browser doesn’t support text-to-speech, so you can read the script for',
     ar: 'متصفحك ما يدعم تحويل النص إلى كلام، فتقدر تقرأ نص',
@@ -192,7 +192,7 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
   },
   'ielts.listening.audio.note_once': { en: 'once', ar: 'مرة وحدة' },
   'ielts.listening.audio.note_suffix': {
-    en: '— try a single listen first, then use Replay only to practise. The script stays hidden until you submit.',
-    ar: '— جرّب استماع مرة وحدة أول، وبعدها استخدم إعادة التشغيل للتدريب بس. النص يبقى مخفي لين ما تسلّم.',
+    en: '- try a single listen first, then use Replay only to practise. The script stays hidden until you submit.',
+    ar: '- جرّب استماع مرة وحدة أول، وبعدها استخدم إعادة التشغيل للتدريب بس. النص يبقى مخفي لين ما تسلّم.',
   },
 }

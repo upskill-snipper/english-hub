@@ -1,5 +1,5 @@
 /**
- * dictionary-b1-resources.ts — Bucket B Phase B1.
+ * dictionary-b1-resources.ts - Bucket B Phase B1.
  * Curated EN + Khaleeji (Gulf) Arabic for the /resources shell + hub pages.
  *
  * Covers:
@@ -28,7 +28,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'مصادر الإنجليزي: أسئلة شائعة',
   },
 
-  // ─── resources/english-language/layout.tsx — metadata ───────────────
+  // ─── resources/english-language/layout.tsx - metadata ───────────────
   'resources.eng_lang.meta.title': {
     en: 'English Language Resources',
     ar: 'مصادر اللغة الإنجليزية',
@@ -38,25 +38,25 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'مصادر مراجعة اللغة الإنجليزية لـ GCSE و IGCSE لمجالس AQA و Edexcel و OCR و WJEC و CAIE. أدلة الأوراق والتقنيات ومهارات الكتابة وحدود الدرجات.',
   },
   'resources.eng_lang.meta.og_title': {
-    en: 'English Language Resources — The English Hub',
-    ar: 'مصادر اللغة الإنجليزية — The English Hub',
+    en: 'English Language Resources - The English Hub',
+    ar: 'مصادر اللغة الإنجليزية - The English Hub',
   },
 
-  // ─── resources/english-literature/layout.tsx — metadata ─────────────
+  // ─── resources/english-literature/layout.tsx - metadata ─────────────
   'resources.eng_lit.meta.title': {
-    en: 'English Literature Revision — GCSE & IGCSE',
-    ar: 'مراجعة الأدب الإنجليزي — GCSE و IGCSE',
+    en: 'English Literature Revision - GCSE & IGCSE',
+    ar: 'مراجعة الأدب الإنجليزي - GCSE و IGCSE',
   },
   'resources.eng_lit.meta.desc': {
     en: 'Complete GCSE and IGCSE English Literature revision. Study guides for Shakespeare, prose, drama, and poetry with character analysis, themes, quotations, and essay techniques.',
     ar: 'مراجعة شاملة لـ GCSE و IGCSE في الأدب الإنجليزي. أدلة دراسة لشكسبير والنثر والمسرح والشعر مع تحليل الشخصيات والثيمات والاقتباسات وتقنيات المقال.',
   },
   'resources.eng_lit.meta.og_title': {
-    en: 'English Literature Revision — The English Hub',
-    ar: 'مراجعة الأدب الإنجليزي — The English Hub',
+    en: 'English Literature Revision - The English Hub',
+    ar: 'مراجعة الأدب الإنجليزي - The English Hub',
   },
 
-  // ─── resources/glossary/layout.tsx — metadata ───────────────────────
+  // ─── resources/glossary/layout.tsx - metadata ───────────────────────
   'resources.glossary.meta.title': {
     en: 'English Glossary',
     ar: 'قاموس مصطلحات الإنجليزي',
@@ -66,11 +66,11 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'قاموس شامل للمصطلحات الأدبية واللغوية الإنجليزية لطلاب GCSE و IGCSE. تعريفات وأمثلة وشرح للمصطلحات المهمة للامتحان.',
   },
   'resources.glossary.meta.og_title': {
-    en: 'English Glossary — The English Hub',
-    ar: 'قاموس مصطلحات الإنجليزي — The English Hub',
+    en: 'English Glossary - The English Hub',
+    ar: 'قاموس مصطلحات الإنجليزي - The English Hub',
   },
 
-  // ─── resources/revision-notes/layout.tsx — metadata ─────────────────
+  // ─── resources/revision-notes/layout.tsx - metadata ─────────────────
   'resources.rev_notes.meta.title': {
     en: 'Revision Notes',
     ar: 'ملاحظات المراجعة',
@@ -80,11 +80,11 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'ملاحظات مراجعة مجانية لـ GCSE في الأدب الإنجليزي لكل النصوص المقررة. تحليل الشخصيات والثيمات والاقتباسات الرئيسية ونصائح الامتحان لماكبث وتفتيش وغيرها.',
   },
   'resources.rev_notes.meta.og_title': {
-    en: 'Revision Notes — The English Hub',
-    ar: 'ملاحظات المراجعة — The English Hub',
+    en: 'Revision Notes - The English Hub',
+    ar: 'ملاحظات المراجعة - The English Hub',
   },
 
-  // ─── resources/techniques/layout.tsx — metadata ──────────────────────
+  // ─── resources/techniques/layout.tsx - metadata ──────────────────────
   'resources.techniques.meta.title': {
     en: 'English Techniques',
     ar: 'تقنيات الإنجليزي',
@@ -94,11 +94,11 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'أتقن تقنيات اللغة والبنية لـ GCSE في الإنجليزي. تعلّم كيف تتعرّف على الأجهزة الأدبية والتقنيات البلاغية والسمات البنيوية وتحلّلها.',
   },
   'resources.techniques.meta.og_title': {
-    en: 'English Techniques — The English Hub',
-    ar: 'تقنيات الإنجليزي — The English Hub',
+    en: 'English Techniques - The English Hub',
+    ar: 'تقنيات الإنجليزي - The English Hub',
   },
 
-  // ─── resources/vocabulary/layout.tsx — metadata ──────────────────────
+  // ─── resources/vocabulary/layout.tsx - metadata ──────────────────────
   'resources.vocab.meta.title': {
     en: 'Vocabulary Builder',
     ar: 'بناء المفردات',
@@ -108,11 +108,11 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'طوِّر مفرداتك الإنجليزية لامتحانات GCSE. بنوك كلمات أكاديمية وتحليلية ووصفية مع تعريفات وأمثلة وتمارين تطبيقية.',
   },
   'resources.vocab.meta.og_title': {
-    en: 'Vocabulary Builder — The English Hub',
-    ar: 'بناء المفردات — The English Hub',
+    en: 'Vocabulary Builder - The English Hub',
+    ar: 'بناء المفردات - The English Hub',
   },
 
-  // ─── resources/teaching/layout.tsx — metadata ────────────────────────
+  // ─── resources/teaching/layout.tsx - metadata ────────────────────────
   'resources.teaching.meta.title': {
     en: 'Teaching Resources',
     ar: 'مصادر التدريس',
@@ -122,11 +122,11 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'مصادر تدريس مجانية لمعلّمي الإنجليزي. خطط دروس ومواد تقييم وأوراق عمل قابلة للطباعة ومحتوى متوافق مع المنهج من KS3 إلى IGCSE.',
   },
   'resources.teaching.meta.og_title': {
-    en: 'Teaching Resources — The English Hub',
-    ar: 'مصادر التدريس — The English Hub',
+    en: 'Teaching Resources - The English Hub',
+    ar: 'مصادر التدريس - The English Hub',
   },
 
-  // ─── resources/english-language/page.tsx — hub (client) ─────────────
+  // ─── resources/english-language/page.tsx - hub (client) ─────────────
   // Hero
   'resources.eng_lang.hub.eyebrow': { en: 'GCSE & IGCSE', ar: 'GCSE و IGCSE' },
   'resources.eng_lang.hub.h1': { en: 'English Language', ar: 'اللغة الإنجليزية' },
@@ -237,13 +237,13 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   // Jump to board bar
   'resources.eng_lang.jump_board': { en: 'Jump to your board', ar: 'روح لبوردك' },
 
-  // ─── resources/english-literature/page.tsx — hub (server) ───────────
+  // ─── resources/english-literature/page.tsx - hub (server) ───────────
   'resources.eng_lit.hub.eyebrow': { en: 'GCSE & IGCSE Revision', ar: 'مراجعة GCSE و IGCSE' },
   'resources.eng_lit.hub.h1': { en: 'English Literature', ar: 'الأدب الإنجليزي' },
   'resources.eng_lit.hub.for_board': { en: 'For', ar: 'لـ' },
   'resources.eng_lit.hub.subtitle': {
-    en: 'In-depth study guides for Shakespeare, prose, drama, and poetry. Character analysis, theme breakdowns, key quotations, essay techniques, and exam preparation — everything you need in one place.',
-    ar: 'أدلة دراسة متعمّقة لشكسبير والنثر والمسرح والشعر. تحليل الشخصيات وتفكيك الثيمات والاقتباسات الرئيسية وتقنيات المقال والتحضير للامتحان — كل اللي تحتاجه في مكان واحد.',
+    en: 'In-depth study guides for Shakespeare, prose, drama, and poetry. Character analysis, theme breakdowns, key quotations, essay techniques, and exam preparation - everything you need in one place.',
+    ar: 'أدلة دراسة متعمّقة لشكسبير والنثر والمسرح والشعر. تحليل الشخصيات وتفكيك الثيمات والاقتباسات الرئيسية وتقنيات المقال والتحضير للامتحان - كل اللي تحتاجه في مكان واحد.',
   },
   // Stat labels
   'resources.eng_lit.stat.texts': { en: 'Set Texts Covered', ar: 'النصوص المقررة' },
@@ -256,8 +256,8 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'ماذا يتضمّن GCSE في الأدب الإنجليزي؟',
   },
   'resources.eng_lit.what.body': {
-    en: 'GCSE English Literature requires you to read, analyse, and respond to a range of literary texts from different periods and genres. You will develop skills in close reading, critical analysis, comparison, and essay writing — demonstrating how writers create meaning through language, form, and structure. These skills are universal across all exam boards; while the specific texts and paper structures vary, the core analytical approach remains the same.',
-    ar: 'يتطلّب GCSE في الأدب الإنجليزي قراءة وتحليل الاستجابة لمجموعة من النصوص الأدبية من حقب وأنواع مختلفة. ستطوّر مهارات القراءة الدقيقة والتحليل النقدي والمقارنة وكتابة المقال — مع إظهار كيف يصنع الكتّاب المعنى من خلال اللغة والشكل والبنية. هذي المهارات عالمية عبر كل بوردات الامتحان؛ وإن كانت النصوص المحددة وهياكل الأوراق تختلف، يبقى النهج التحليلي الأساسي نفسه.',
+    en: 'GCSE English Literature requires you to read, analyse, and respond to a range of literary texts from different periods and genres. You will develop skills in close reading, critical analysis, comparison, and essay writing - demonstrating how writers create meaning through language, form, and structure. These skills are universal across all exam boards; while the specific texts and paper structures vary, the core analytical approach remains the same.',
+    ar: 'يتطلّب GCSE في الأدب الإنجليزي قراءة وتحليل الاستجابة لمجموعة من النصوص الأدبية من حقب وأنواع مختلفة. ستطوّر مهارات القراءة الدقيقة والتحليل النقدي والمقارنة وكتابة المقال - مع إظهار كيف يصنع الكتّاب المعنى من خلال اللغة والشكل والبنية. هذي المهارات عالمية عبر كل بوردات الامتحان؛ وإن كانت النصوص المحددة وهياكل الأوراق تختلف، يبقى النهج التحليلي الأساسي نفسه.',
   },
   // Study guides section
   'resources.eng_lit.guides.h2': { en: 'Set text study guides', ar: 'أدلة دراسة النصوص المقررة' },
@@ -322,12 +322,12 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   },
   'resources.eng_lit.exam.view_board': { en: 'View board resources', ar: 'شوف مصادر البورد' },
 
-  // ─── resources/techniques/page.tsx — hub (client) ────────────────────
+  // ─── resources/techniques/page.tsx - hub (client) ────────────────────
   'resources.techniques.hub.eyebrow': { en: 'Techniques Reference', ar: 'مرجع التقنيات' },
   'resources.techniques.hub.h1': { en: 'Master Every Technique', ar: 'أتقن كل تقنية' },
   'resources.techniques.hub.subtitle': {
-    en: 'The definitive guide to 60+ language and structural techniques for GCSE English. Definitions, examples, effects, and exam-ready sentence starters — everything you need in one place.',
-    ar: 'الدليل الشامل لأكثر من 60 تقنية لغوية وبنيوية لـ GCSE في الإنجليزي. تعريفات وأمثلة وتأثيرات ومبدئيات جمل جاهزة للامتحان — كل اللي تحتاجه في مكان واحد.',
+    en: 'The definitive guide to 60+ language and structural techniques for GCSE English. Definitions, examples, effects, and exam-ready sentence starters - everything you need in one place.',
+    ar: 'الدليل الشامل لأكثر من 60 تقنية لغوية وبنيوية لـ GCSE في الإنجليزي. تعريفات وأمثلة وتأثيرات ومبدئيات جمل جاهزة للامتحان - كل اللي تحتاجه في مكان واحد.',
   },
   'resources.techniques.hub.search_placeholder': {
     en: 'Search techniques... e.g. metaphor, sibilance',
@@ -365,7 +365,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'طبّق هذي المبادئ الست على كل إجابة مبنية على تقنية عشان تحصل على درجات عالية باستمرار.',
   },
 
-  // ─── resources/revision-notes/revision-notes-view.tsx — client ───────
+  // ─── resources/revision-notes/revision-notes-view.tsx - client ───────
   'resources.rev_notes.hub.h1': { en: 'Revision Notes', ar: 'ملاحظات المراجعة' },
   'resources.rev_notes.hub.for_board': { en: 'For', ar: 'لـ' },
   'resources.rev_notes.hub.subtitle': {

@@ -58,7 +58,7 @@ import { IELTS_DASHBOARD_DICTIONARY } from '@/lib/i18n/dictionary-ielts-dashboar
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
 // ielts.dashboard.* keys live in the dictionary-ielts-dashboard shard, which
-// isn't wired into the global lookup() chain — resolve them here against the
+// isn't wired into the global lookup() chain - resolve them here against the
 // live locale, falling back to the shared useT() for cross-module ielts.* keys.
 // `vars` interpolates {token} placeholders so dynamic copy (bands, day counts,
 // lesson fractions, streak counts, gap steps) stays translatable as a whole
@@ -86,7 +86,7 @@ function useDashboardT(): TFn {
   }
 }
 
-// ─── My IELTS Dashboard — the signed-in learner home ───────────────────────
+// ─── My IELTS Dashboard - the signed-in learner home ───────────────────────
 // Mirrors the GCSE "Your Hub" (/revision) + /dashboard experience for the IELTS
 // readiness program. Reads the localStorage-backed IELTS store AFTER mount (a
 // hydration-safe `mounted` guard, exactly like /ielts/progress and the GCSE
@@ -96,7 +96,7 @@ function useDashboardT(): TFn {
 //
 // COLD START: a brand-new learner has no attempts (profile.hasData === false)
 // and therefore no measured weakest skill. Rather than show an empty
-// "recommended" lens, we steer them to WRITING via HARDEST_SKILL — Writing is
+// "recommended" lens, we steer them to WRITING via HARDEST_SKILL - Writing is
 // the lowest-scoring module for virtually every nationality and lowest of all
 // for Gulf test-takers, so it is the highest-leverage place to begin. Once they
 // have data, the same lens switches to their actual weakest skill.
@@ -121,10 +121,10 @@ function lessonHref(lesson: Lesson): string {
   return `/ielts/learn/${lesson.skill}/${lesson.slug}`
 }
 
-/** Format an ISO date for the attempts list — UK style, defensively. */
+/** Format an ISO date for the attempts list - UK style, defensively. */
 function formatDate(iso: string): string {
   const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return '—'
+  if (Number.isNaN(d.getTime())) return '-'
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
@@ -203,7 +203,7 @@ export default function IeltsDashboardPage() {
 
   const completedSet = useMemo(() => new Set(completedLessonIds), [completedLessonIds])
 
-  /** First lesson the learner has not completed — drives "Continue learning". */
+  /** First lesson the learner has not completed - drives "Continue learning". */
   const nextLesson = useMemo(
     () => ALL_LESSONS.find((l) => !completedSet.has(l.id)) ?? null,
     [completedSet],
@@ -493,7 +493,7 @@ export default function IeltsDashboardPage() {
           aria-label={t('ielts.dashboard.overview.aria')}
           className="grid gap-4 lg:grid-cols-3"
         >
-          {/* Lens 1 — In progress */}
+          {/* Lens 1 - In progress */}
           <GlassPanel accent="primary" className="p-5">
             <PanelEyebrow>{t('ielts.dashboard.lens.inprogress.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
@@ -510,7 +510,7 @@ export default function IeltsDashboardPage() {
               {inProgress.map((row) => {
                 const Icon = SKILL_ICON[row.skill]
                 const meta = SKILL_META[row.skill]
-                // Deep-link to the skill's first incomplete lesson — there is no
+                // Deep-link to the skill's first incomplete lesson - there is no
                 // /ielts/learn/<skill> index route, only the hub + per-lesson pages.
                 const nextForSkill = lessonsForSkill(row.skill).find((l) => !completedSet.has(l.id))
                 const href = nextForSkill ? lessonHref(nextForSkill) : '/ielts/learn'
@@ -562,7 +562,7 @@ export default function IeltsDashboardPage() {
             </Link>
           </GlassPanel>
 
-          {/* Lens 2 — Recommended next (weakest skill, or Writing-first cold start) */}
+          {/* Lens 2 - Recommended next (weakest skill, or Writing-first cold start) */}
           <GlassPanel accent="clay" className="p-5">
             <PanelEyebrow>{t('ielts.dashboard.lens.recommended.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
@@ -580,7 +580,7 @@ export default function IeltsDashboardPage() {
             />
           </GlassPanel>
 
-          {/* Lens 3 — Per-skill band chips */}
+          {/* Lens 3 - Per-skill band chips */}
           <GlassPanel accent="teal" className="p-5">
             <PanelEyebrow>{t('ielts.dashboard.lens.bands.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">

@@ -1,7 +1,7 @@
 // ─── IELTS progress store ──────────────────────────────────────────────────
 // Wave 1 persistence: localStorage, reusing the toolkit's safe lsGet/lsSet
 // helpers (same pattern as the GCSE quiz/marking history). This is a deliberate
-// abstraction layer — when the server-side IELTSAttempt / IELTSTaskSubmission
+// abstraction layer - when the server-side IELTSAttempt / IELTSTaskSubmission
 // Prisma models are wired (see prisma/schema.prisma), only this file changes;
 // every IELTS module calls getAttempts/saveAttempt/buildIeltsProfile and is
 // unaffected by where the data actually lives.

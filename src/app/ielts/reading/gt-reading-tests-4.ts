@@ -1,19 +1,19 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 4) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 4) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
-// Given, and sentence/summary completion). Framed as "IELTS preparation" only —
+// Given, and sentence/summary completion). Framed as "IELTS preparation" only -
 // no official affiliation is implied. General Training track.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, advertisements,
 // timetables, course catalogues) and WORKPLACE texts (policies, handbooks,
 // training material), plus one longer general-interest article. This file
 // ships ONE complete, carefully-checked GT test (3 sections, 40 questions).
-// Topics are deliberately distinct from GT Sets 1–3:
-//   Section 1 — a community college short-course catalogue + a public library
+// Topics are deliberately distinct from GT Sets 1-3:
+//   Section 1 - a community college short-course catalogue + a public library
 //               events notice (everyday / social register);
-//   Section 2 — a workplace remote-working policy and equipment handbook;
-//   Section 3 — a general-interest feature on the rise of the four-day week.
+//   Section 2 - a workplace remote-working policy and equipment handbook;
+//   Section 3 - a general-interest feature on the rise of the four-day week.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { ReadingTest } from '@/lib/ielts/types'
@@ -21,7 +21,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_4: ReadingTest[] = [
   {
     id: 'rd-general-004',
-    title: 'General Training Reading — Practice Test 4',
+    title: 'General Training Reading - Practice Test 4',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
@@ -30,44 +30,44 @@ export const GT_READING_SET_4: ReadingTest[] = [
       // a public-library events notice. 13 questions.
       {
         id: 'rd-general-004-p1',
-        title: 'Greenfields Community College — Autumn Short Courses & Westgate Library Events',
-        body: `TEXT A — GREENFIELDS COMMUNITY COLLEGE: AUTUMN SHORT-COURSE CATALOGUE
+        title: 'Greenfields Community College - Autumn Short Courses & Westgate Library Events',
+        body: `TEXT A - GREENFIELDS COMMUNITY COLLEGE: AUTUMN SHORT-COURSE CATALOGUE
 
 Our autumn term runs from late September to mid-December. The short courses below are open to anyone aged sixteen and over; no previous experience is needed unless a course description says otherwise. To reserve a place, complete the online enrolment form or call the office on weekday mornings. Payment is due at the time of booking, and a place is not held until payment has been received.
 
 INTRODUCTION TO DIGITAL PHOTOGRAPHY (Course DP1)
-Tuesdays, 7.00–9.00 p.m., ten weeks. Tutor: Maria Okafor. £95.
+Tuesdays, 7.00-9.00 p.m., ten weeks. Tutor: Maria Okafor. £95.
 Bring any digital camera, including a phone camera. We cover composition, light and simple editing. There is an optional Saturday outing in week six to photograph the harbour; the cost of transport for this trip is not included in the course fee.
 
 CONVERSATIONAL SPANISH FOR BEGINNERS (Course SP1)
-Thursdays, 6.30–8.00 p.m., twelve weeks. Tutor: Diego Ramos. £110.
+Thursdays, 6.30-8.00 p.m., twelve weeks. Tutor: Diego Ramos. £110.
 This course is for true beginners. If you have studied Spanish before, please ask the office about our intermediate group, which meets on the same evening. A workbook is provided and is included in the fee.
 
 EVERYDAY WOODWORKING (Course WW1)
-Saturdays, 10.00 a.m.–1.00 p.m., eight weeks. Tutor: Tom Fletcher. £140.
+Saturdays, 10.00 a.m.-1.00 p.m., eight weeks. Tutor: Tom Fletcher. £140.
 You will make a small stool to take home. All tools are supplied, but because the workshop uses sharp equipment, places are limited to eight learners and enrolment closes one week before the first session. Sturdy footwear must be worn; anyone in open sandals will be asked to sit out.
 
 GENTLE YOGA (Course YG1)
-Mondays, 10.30–11.30 a.m., ten weeks. Tutor: Priya Shah. £70.
+Mondays, 10.30-11.30 a.m., ten weeks. Tutor: Priya Shah. £70.
 Suitable for older learners and those returning to exercise after a break. Please tell the tutor about any health conditions before the first class. Mats are available to borrow, though many learners prefer to bring their own.
 
 CONCESSIONS
 Learners receiving certain state benefits, and full-time students under twenty-five, may claim a reduced fee on most courses. Proof must be shown when enrolling. The reduced rate does not apply to Everyday Woodworking, as the materials cost is fixed.
 
-TEXT B — WESTGATE PUBLIC LIBRARY: WHAT'S ON THIS MONTH
+TEXT B - WESTGATE PUBLIC LIBRARY: WHAT'S ON THIS MONTH
 
 Westgate Library is more than a place to borrow books. Each month we host free events for all ages. Unless stated, events are free and no ticket is required, but for sessions marked "booking essential" the room has limited space, so please reserve a seat at the desk or by phone.
 
-STORYTIME FOR UNDER-FIVES — every Wednesday, 10.30 a.m.
+STORYTIME FOR UNDER-FIVES - every Wednesday, 10.30 a.m.
 A half-hour of songs and picture books for toddlers and their carers. Just turn up; no need to book. Please note there is no Storytime on the last Wednesday of the month, when the children's area is used for staff training.
 
-CODE CLUB FOR YOUNG PEOPLE — Saturdays, 2.00–3.30 p.m.
+CODE CLUB FOR YOUNG PEOPLE - Saturdays, 2.00-3.30 p.m.
 A friendly introduction to computer coding for those aged nine to fourteen. Laptops are provided. Booking essential, as places fill quickly.
 
-LOCAL HISTORY TALK: "THE OLD CANAL" — Thursday 18th, 6.00 p.m.
+LOCAL HISTORY TALK: "THE OLD CANAL" - Thursday 18th, 6.00 p.m.
 Local historian Frank Dale shares photographs of the town's canal before it was filled in. Suitable for adults. Booking essential.
 
-JOB-SEARCH HELP DESK — every Monday and Friday, 9.30 a.m.–12.30 p.m.
+JOB-SEARCH HELP DESK - every Monday and Friday, 9.30 a.m.-12.30 p.m.
 Drop in for free help with writing a CV or filling in online application forms. A volunteer adviser is on hand. No appointment needed, but you may have to wait at busy times.
 
 A reminder: the library now closes at 5.00 p.m. on Saturdays, an hour earlier than before. Evening events on other days are unaffected.`,
@@ -211,7 +211,7 @@ A reminder: the library now closes at 5.00 p.m. on Saturdays, an hour earlier th
       // A remote-working policy and equipment handbook. 13 questions.
       {
         id: 'rd-general-004-p2',
-        title: 'Staff Policy — Remote Working & Home Equipment Handbook',
+        title: 'Staff Policy - Remote Working & Home Equipment Handbook',
         body: `This policy explains how remote working operates at our company and how to look after the equipment we provide. It applies to all employees whose role has been approved for working away from the office. Please read it before your first day of home working.
 
 WHO CAN WORK REMOTELY
@@ -374,7 +374,7 @@ The company does not pay for your household heating or electricity. However, a f
       {
         id: 'rd-general-004-p3',
         title: 'The Rise of the Four-Day Working Week',
-        body: `For most of the past century, the five-day working week has seemed as fixed as the seasons. Yet in recent years a growing number of organisations have begun to question whether five days is really necessary, and to experiment with giving staff a third day off without cutting their pay. The idea is not new — it was floated by economists as long ago as the 1930s — but only lately has it moved from the fringes of debate into the offices of mainstream employers.
+        body: `For most of the past century, the five-day working week has seemed as fixed as the seasons. Yet in recent years a growing number of organisations have begun to question whether five days is really necessary, and to experiment with giving staff a third day off without cutting their pay. The idea is not new - it was floated by economists as long ago as the 1930s - but only lately has it moved from the fringes of debate into the offices of mainstream employers.
 
 The argument in its favour rests on a simple claim: that people who are well rested work better. Supporters point out that the eight-hour day itself was once dismissed as impractical, yet it became the norm without the collapse in output that critics had feared. A shorter week, they suggest, could follow the same path. If workers waste less time on unproductive meetings and low-value tasks, the reasoning goes, the same amount could be achieved in fewer hours.
 
@@ -382,11 +382,11 @@ Several large trials have now tested this claim. In one widely reported scheme, 
 
 Why might a shorter week leave output unchanged? Researchers offer several explanations. With less time available, employees and managers became more ruthless about cutting meetings that achieved little. Distractions were reduced, and people guarded their working hours more carefully, knowing that the reward was a longer weekend. Some firms also found that the extra day off reduced the number of days lost to illness, as staff had time to attend to errands and rest that might otherwise have been squeezed into evenings.
 
-The change is not without its difficulties, however. A four-day week is far easier to arrange in an office than in a hospital, a shop or a factory, where someone must be present whenever the doors are open. Some organisations have responded by staggering days off across the team, so that the business stays open five or six days while each individual works four. Others have found that simply compressing the same hours into fewer, longer days leaves staff just as tired as before — which is why most successful schemes reduce total hours rather than merely rearranging them.
+The change is not without its difficulties, however. A four-day week is far easier to arrange in an office than in a hospital, a shop or a factory, where someone must be present whenever the doors are open. Some organisations have responded by staggering days off across the team, so that the business stays open five or six days while each individual works four. Others have found that simply compressing the same hours into fewer, longer days leaves staff just as tired as before - which is why most successful schemes reduce total hours rather than merely rearranging them.
 
 Critics raise a further concern. They warn that the benefits seen in short trials may fade once the novelty wears off, and that the firms willing to take part in such experiments are unlikely to be typical. A confident, well-organised company, they argue, may thrive on a shorter week, while a struggling one might simply fall further behind. There is, too, the question of fairness: a policy that suits desk-based professionals may do little for those in lower-paid jobs that cannot easily be reorganised.
 
-For all these doubts, the direction of travel seems clear. Surveys suggest that a shorter week is now among the benefits that younger workers most want, and employers competing for talent are taking note. Few expect the four-day week to become universal in the near future. But the very fact that serious companies are willing to test it marks a shift in how we think about work — a recognition, perhaps, that the hours we spend at our desks matter less than what we manage to achieve while we are there.`,
+For all these doubts, the direction of travel seems clear. Surveys suggest that a shorter week is now among the benefits that younger workers most want, and employers competing for talent are taking note. Few expect the four-day week to become universal in the near future. But the very fact that serious companies are willing to test it marks a shift in how we think about work - a recognition, perhaps, that the hours we spend at our desks matter less than what we manage to achieve while we are there.`,
         questions: [
           {
             id: 'rd-gen-004-p3-q27',
@@ -497,7 +497,7 @@ For all these doubts, the direction of travel seems clear. Surveys suggest that 
             ],
             correctIndex: 1,
             explanation:
-              'The fifth paragraph explains that compressing the same hours "into fewer, longer days leaves staff just as tired as before — which is why most successful schemes reduce total hours." Option B is correct.',
+              'The fifth paragraph explains that compressing the same hours "into fewer, longer days leaves staff just as tired as before - which is why most successful schemes reduce total hours." Option B is correct.',
           },
           {
             id: 'rd-gen-004-p3-q37',

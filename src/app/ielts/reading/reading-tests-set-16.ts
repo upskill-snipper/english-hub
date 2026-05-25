@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 16) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 16) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions of three
 // DIFFERENT variants: Matching Headings (Passage 1, with two distractor
-// headings), Matching Features — statements to named figures (Passage 2), and
+// headings), Matching Features - statements to named figures (Passage 2), and
 // Matching Sentence Endings (Passage 3), alongside the usual mix of
 // True/False/Not Given, multiple choice and sentence/summary completion.
 //
@@ -21,7 +21,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_16: ReadingTest[] = [
   {
     id: 'rd-academic-016',
-    title: 'Academic Reading — Practice Test 16',
+    title: 'Academic Reading - Practice Test 16',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -47,7 +47,7 @@ In recent decades fermented foods have attracted attention for a further reason.
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A flavour worth seeking for its own sake' },
               { key: 'ii', label: 'The discovery that living things were at work' },
@@ -67,7 +67,7 @@ In recent decades fermented foods have attracted attention for a further reason.
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vii' },
             ],
             explanation:
-              'A introduces the "quiet logic" of letting food spoil "in a controlled way" to preserve it (iv). B explains the micro-organisms and, crucially, that "it is these by-products, rather than the microbes themselves, that do the preserving" (vi). C recounts Pasteur showing fermentation "was... the work of living micro-organisms" (ii). D describes adding "a starter culture" so the right organisms "win the race" and the result is "far more consistent" (v). E argues fermentation also "transforms" food so that foods "became delicacies, sought out for their taste" (i). F covers gut-bacteria research whose "firm conclusions are still some way off" (vii). Heading iii ("cheaper to produce") is a distractor the passage never claims; heading viii ("the decline of traditional regional cheeses") is a distractor — D actually says such cheeses can now be reproduced reliably, not that they are declining.',
+              'A introduces the "quiet logic" of letting food spoil "in a controlled way" to preserve it (iv). B explains the micro-organisms and, crucially, that "it is these by-products, rather than the microbes themselves, that do the preserving" (vi). C recounts Pasteur showing fermentation "was... the work of living micro-organisms" (ii). D describes adding "a starter culture" so the right organisms "win the race" and the result is "far more consistent" (v). E argues fermentation also "transforms" food so that foods "became delicacies, sought out for their taste" (i). F covers gut-bacteria research whose "firm conclusions are still some way off" (vii). Heading iii ("cheaper to produce") is a distractor the passage never claims; heading viii ("the decline of traditional regional cheeses") is a distractor - D actually says such cheeses can now be reproduced reliably, not that they are declining.',
           },
           {
             id: 'rd-016-p1-q2',
@@ -124,7 +124,7 @@ In recent decades fermented foods have attracted attention for a further reason.
             id: 'rd-016-p1-q7',
             type: 'gap',
             prompt:
-              'Complete the summary with TWO words from the passage: To control fermentation reliably, a modern cheesemaker or brewer adds a _______ — a chosen population of the desired organisms — at the very beginning.',
+              'Complete the summary with TWO words from the passage: To control fermentation reliably, a modern cheesemaker or brewer adds a _______ - a chosen population of the desired organisms - at the very beginning.',
             acceptableAnswers: ['starter culture'],
             explanation:
               'Paragraph D states that a producer "typically adds a starter culture, a carefully selected population of the desired organisms, at the very beginning." The required answer is "starter culture".',
@@ -162,15 +162,15 @@ In recent decades fermented foods have attracted attention for a further reason.
 
 The earliest ancestor of the bicycle had no pedals at all. Around 1817 the German inventor Karl Drais built a two-wheeled wooden machine that the rider straddled and pushed along the ground with the feet, steering by a pivoting front wheel. Drais conceived it less as a sporting device than as a practical answer to a particular crisis: a recent volcanic eruption had ruined harvests across Europe, horses were dying of starvation, and a vehicle that needed no feeding had an obvious appeal. His "running machine" attracted brief curiosity but was soon dismissed as a toy, partly because riding it on the rough roads of the day was so uncomfortable.
 
-The next leap was to make the rider's effort drive the machine rather than merely balance it. In the 1860s pedals were attached directly to the front wheel, producing the vehicle that became known as the velocipede or, more memorably, the boneshaker — a name that records exactly how it felt on cobbled streets, for its iron-banded wooden wheels transmitted every bump straight to the rider. Yet the boneshaker contained the seed of a serious limitation. Because the pedals turned the wheel directly, the machine moved forward only as far as the wheel's circumference with each turn of the pedals, so the sole way to go faster was to enlarge the front wheel.
+The next leap was to make the rider's effort drive the machine rather than merely balance it. In the 1860s pedals were attached directly to the front wheel, producing the vehicle that became known as the velocipede or, more memorably, the boneshaker - a name that records exactly how it felt on cobbled streets, for its iron-banded wooden wheels transmitted every bump straight to the rider. Yet the boneshaker contained the seed of a serious limitation. Because the pedals turned the wheel directly, the machine moved forward only as far as the wheel's circumference with each turn of the pedals, so the sole way to go faster was to enlarge the front wheel.
 
 This logic produced the strange and now-iconic machine of the 1870s, with an enormous front wheel and a tiny rear one. The engineer James Starley was among those who refined it into a lighter, faster vehicle, replacing heavy wooden parts with slender metal ones and tensioned wire spokes that could carry a large wheel at a fraction of the old weight. For a decade it was the height of fashion among young and athletic men. But it was also alarming. The rider perched high above the front axle, and the slightest obstacle could pitch him head first over the handlebars, an accident so common it earned its own name. The machine was fast but dangerous, and almost impossible for older or less agile riders to mount at all, since climbing aboard meant scrambling up to a saddle set well above head height.
 
-The decisive breakthrough was the chain. Rather than fixing the pedals to the wheel, a designer could connect them by a chain to a toothed wheel on the rear axle, and by making that rear cog smaller than the one the pedals turned, a single push of the pedals could spin the wheel more than once. Speed was now a matter of gearing rather than of wheel size, and the front wheel could shrink to something safe. The result, which appeared in the 1880s and was widely promoted by the manufacturer John Kemp Starley — a nephew of James — was christened the "safety bicycle." With two wheels of equal and modest size, a chain drive and, soon afterwards, air-filled rubber tyres to cushion the ride, it is recognisably the bicycle of today.
+The decisive breakthrough was the chain. Rather than fixing the pedals to the wheel, a designer could connect them by a chain to a toothed wheel on the rear axle, and by making that rear cog smaller than the one the pedals turned, a single push of the pedals could spin the wheel more than once. Speed was now a matter of gearing rather than of wheel size, and the front wheel could shrink to something safe. The result, which appeared in the 1880s and was widely promoted by the manufacturer John Kemp Starley - a nephew of James - was christened the "safety bicycle." With two wheels of equal and modest size, a chain drive and, soon afterwards, air-filled rubber tyres to cushion the ride, it is recognisably the bicycle of today.
 
 The social consequences were greater than the engineering. The safety bicycle was cheap enough for ordinary working people and stable enough for almost anyone to learn, and it spread with astonishing speed in the 1890s. For the first time, individuals of modest means could travel several miles on a whim, without a horse and without a railway timetable, and at a moment of their own choosing rather than the railway company's. Historians have argued that the bicycle widened the area in which people could look for work or a marriage partner, loosening the grip of the village on those born within it. It played a particular part in the lives of women, for whom it offered a rare and conspicuous form of independent movement, and it even influenced what they wore, encouraging looser and more practical clothing than the fashions of the day. A machine that had begun as a curiosity for the wealthy had, within a single generation, quietly helped to reshape everyday life.`,
         questions: [
-          // ── Matching Features — statements to named figures (5 items) = 5 marks ──
+          // ── Matching Features - statements to named figures (5 items) = 5 marks ──
           {
             id: 'rd-016-p2-q1',
             type: 'matching',
@@ -211,7 +211,7 @@ The social consequences were greater than the engineering. The safety bicycle wa
               },
             ],
             explanation:
-              'Item 1 → A: Drais "built a two-wheeled wooden machine that the rider straddled and pushed along the ground with the feet." Item 2 → B: "The engineer James Starley was among those who refined it" — "it" being the high-wheeled machine of the 1870s. Item 3 → C: the safety bicycle "was widely promoted by the manufacturer John Kemp Starley." Item 4 → A: Drais designed his machine after "a recent volcanic eruption had ruined harvests... horses were dying of starvation." Item 5 → C: John Kemp Starley is identified as "a nephew of James." Option D (Louis Pasteur) is a distractor — he is not mentioned in this passage at all.',
+              'Item 1 → A: Drais "built a two-wheeled wooden machine that the rider straddled and pushed along the ground with the feet." Item 2 → B: "The engineer James Starley was among those who refined it" - "it" being the high-wheeled machine of the 1870s. Item 3 → C: the safety bicycle "was widely promoted by the manufacturer John Kemp Starley." Item 4 → A: Drais designed his machine after "a recent volcanic eruption had ruined harvests... horses were dying of starvation." Item 5 → C: John Kemp Starley is identified as "a nephew of James." Option D (Louis Pasteur) is a distractor - he is not mentioned in this passage at all.',
           },
           {
             id: 'rd-016-p2-q2',
@@ -228,7 +228,7 @@ The social consequences were greater than the engineering. The safety bicycle wa
               'The nickname “boneshaker” reflected how uncomfortable the velocipede was to ride on cobbled streets.',
             answer: 'true',
             explanation:
-              'Paragraph C says the velocipede was "known as the velocipede or, more memorably, the boneshaker — a name that records exactly how it felt on cobbled streets, for its iron-banded wooden wheels transmitted every bump straight to the rider." This supports the statement, so it is True.',
+              'Paragraph C says the velocipede was "known as the velocipede or, more memorably, the boneshaker - a name that records exactly how it felt on cobbled streets, for its iron-banded wooden wheels transmitted every bump straight to the rider." This supports the statement, so it is True.',
           },
           {
             id: 'rd-016-p2-q4',
@@ -300,7 +300,7 @@ The social consequences were greater than the engineering. The safety bicycle wa
       {
         id: 'rd-academic-016-p3',
         title: 'The Many Arts of Animal Camouflage',
-        body: `To survive, an animal must often avoid being seen — by the prey it hopes to ambush, or by the predator that hopes to eat it. Over millions of years natural selection has produced an extraordinary range of solutions to this single problem, and the word "camouflage" turns out to cover not one trick but several quite distinct strategies, each defeating the eye in a different way.
+        body: `To survive, an animal must often avoid being seen - by the prey it hopes to ambush, or by the predator that hopes to eat it. Over millions of years natural selection has produced an extraordinary range of solutions to this single problem, and the word "camouflage" turns out to cover not one trick but several quite distinct strategies, each defeating the eye in a different way.
 
 The most familiar is simple background matching, in which an animal's colour and pattern resemble its usual surroundings so closely that it seems to melt into them. A green caterpillar on a green leaf, or a sandy-coloured lizard on desert rock, is hard to pick out because there is little contrast between the animal and what lies behind it. Background matching works best when an animal stays in one kind of place, for an animal coloured to vanish against bark will stand out sharply the moment it strays onto pale sand or fresh green foliage. Some species have nonetheless taken the strategy to remarkable extremes; a few can even adjust their colour to suit a new background, as a flatfish does when it settles on the sea floor, sensing the tone beneath it and shifting its own markings to match within minutes.
 
@@ -318,7 +318,7 @@ Camouflage is not confined to the moment of stillness, however, and this points 
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence about camouflage strategies with the correct ending, A–H, from the list below, according to the passage. There are more endings than sentences, so you will not use them all. Write the correct letter, A–H.',
+              'Complete each sentence about camouflage strategies with the correct ending, A-H, from the list below, according to the passage. There are more endings than sentences, so you will not use them all. Write the correct letter, A-H.',
             options: [
               {
                 key: 'A',
@@ -358,7 +358,7 @@ Camouflage is not confined to the moment of stillness, however, and this points 
               { id: 'p3-e-5', text: 'Visual camouflage in general', answer: 'B' },
             ],
             explanation:
-              'Background matching → E: an animal\'s "colour and pattern resemble its usual surroundings so closely that it seems to melt into them." Disruptive colouration → A: bold edge patches make the observer "see several unrelated shapes rather than one animal," preventing the eye from assembling the parts. Countershading → C: darker back and paler belly mean "the extra light on top and the shadow below cancel out," hiding the rounded form. Masquerade → D: the animal disguises itself "as a specific object of no interest," misidentified "as something not worth a second glance." Visual camouflage in general → B: the final paragraph stresses these methods "fail the instant their owner moves" and offer "no protection at all" against smell or heat, i.e. they work only while the animal stays hidden from the eye. Endings F (effective during fast movement — the passage says the opposite), G (protects against smell/heat — the passage denies this) and H (warning colour) are distractors not supported by the text.',
+              'Background matching → E: an animal\'s "colour and pattern resemble its usual surroundings so closely that it seems to melt into them." Disruptive colouration → A: bold edge patches make the observer "see several unrelated shapes rather than one animal," preventing the eye from assembling the parts. Countershading → C: darker back and paler belly mean "the extra light on top and the shadow below cancel out," hiding the rounded form. Masquerade → D: the animal disguises itself "as a specific object of no interest," misidentified "as something not worth a second glance." Visual camouflage in general → B: the final paragraph stresses these methods "fail the instant their owner moves" and offer "no protection at all" against smell or heat, i.e. they work only while the animal stays hidden from the eye. Endings F (effective during fast movement - the passage says the opposite), G (protects against smell/heat - the passage denies this) and H (warning colour) are distractors not supported by the text.',
           },
           {
             id: 'rd-016-p3-q2',
@@ -442,7 +442,7 @@ Camouflage is not confined to the moment of stillness, however, and this points 
               'The passage claims that background matching is the only camouflage strategy capable of fooling a predator.',
             answer: 'false',
             explanation:
-              'The passage describes several distinct strategies — background matching, disruptive colouration, countershading and masquerade — and opens by saying camouflage "turns out to cover not one trick but several quite distinct strategies." The claim that background matching is the only effective strategy contradicts the whole passage, so it is False.',
+              'The passage describes several distinct strategies - background matching, disruptive colouration, countershading and masquerade - and opens by saying camouflage "turns out to cover not one trick but several quite distinct strategies." The claim that background matching is the only effective strategy contradicts the whole passage, so it is False.',
           },
         ],
       },

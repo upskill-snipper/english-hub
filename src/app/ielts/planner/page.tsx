@@ -52,7 +52,7 @@ import { IELTS_PLANNER_DICTIONARY } from '@/lib/i18n/dictionary-ielts-planner'
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
 // ielts.planner.* keys live in the dictionary-ielts-planner shard, which isn't
-// wired into the global lookup() chain — resolve them here against the live
+// wired into the global lookup() chain - resolve them here against the live
 // locale, falling back to the shared useT() for cross-module ielts.* keys.
 // `vars` interpolates {token} placeholders so dynamic copy (day/week counts,
 // band labels, skill labels, phase ranges, the urgency lines) stays
@@ -87,7 +87,7 @@ function usePlannerT(): TFn {
 // front-loading weak skills and reserving the final week for a full mock. A
 // separate "what can I do right now?" panel turns "I have 15/30/60 minutes" into
 // one concrete, correctly-sized next action. All goals persist through the
-// store's setGoals/getGoals — no parallel localStorage keys.
+// store's setGoals/getGoals - no parallel localStorage keys.
 // ────────────────────────────────────────────────────────────────────────────
 
 // Selectable target bands (the bands realistically targeted by Academic test-takers).
@@ -151,17 +151,17 @@ function rankSkills(
 // the list stays scannable; very close to the exam we still show whole weeks
 // but compress focus. Each block names a focus skill (cycling weakest-first),
 // the units to learn for it (from UNITS via unitsForSkill), the matching
-// practice link, and — in the final block — a full mock.
+// practice link, and - in the final block - a full mock.
 
 type BlockKind = 'learn-practice' | 'consolidate' | 'mock-week'
 
 interface PlanBlock {
   index: number
   kind: BlockKind
-  label: string // "Week 1", "Phase 1 (weeks 1–3)", "Final week"
+  label: string // "Week 1", "Phase 1 (weeks 1-3)", "Final week"
   startOffsetDays: number // days from today to block start
   spanDays: number
-  focus: IeltsSkill[] // skills to front-load this block (1–2)
+  focus: IeltsSkill[] // skills to front-load this block (1-2)
   learnUnits: Unit[] // concrete units to study this block
   includeMock: boolean
   note: string
@@ -952,7 +952,7 @@ function PlanBlockCard({ t, block, today }: { t: TFn; block: PlanBlock; today: D
   const start = new Date(today.getTime() + block.startOffsetDays * MS_PER_DAY)
   const end = new Date(today.getTime() + (block.startOffsetDays + block.spanDays - 1) * MS_PER_DAY)
   const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
-  const dateRange = block.spanDays <= 1 ? fmt(start) : `${fmt(start)} – ${fmt(end)}`
+  const dateRange = block.spanDays <= 1 ? fmt(start) : `${fmt(start)} - ${fmt(end)}`
 
   return (
     <li className="rounded-xl border border-border bg-card p-4 shadow-soft sm:p-5">

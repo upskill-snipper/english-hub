@@ -37,7 +37,7 @@ import { IELTS_LEARN_DICTIONARY } from '@/lib/i18n/dictionary-ielts-learn'
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
 // ielts.learn.* keys live in the dictionary-ielts-learn shard, which isn't wired
-// into the global lookup() chain — resolve them here against the live locale,
+// into the global lookup() chain - resolve them here against the live locale,
 // falling back to the shared useT() for any cross-module ielts.* key. `vars`
 // interpolates {token} placeholders so phrases that wrap a dynamic value (lesson
 // counts, skill labels) stay translatable as a whole. Modelled on usePlanT()
@@ -65,7 +65,7 @@ function useLearnT(): LearnTFn {
   }
 }
 
-// ─── IELTS LEARN hub — the self-learning library ───────────────────────────
+// ─── IELTS LEARN hub - the self-learning library ───────────────────────────
 // A scannable, encouraging library of every IELTS lesson, organised by skill
 // (a cross-skill Foundation track first, then Listening / Reading / Writing /
 // Speaking). Each skill shows its curriculum UNITS, and each unit lists its
@@ -74,7 +74,7 @@ function useLearnT(): LearnTFn {
 // learning" card come from the localStorage-backed completion store.
 //
 // Client component: completion lives in localStorage, so (like the IELTS
-// progress dashboard) we mount first, then read it — keeping SSR hydration-safe.
+// progress dashboard) we mount first, then read it - keeping SSR hydration-safe.
 // Exactly one <h1>. Metadata + canonical live in ./layout.tsx.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -177,7 +177,7 @@ export default function IeltsLearnHubPage() {
   }, [])
 
   // First lesson the learner hasn't completed yet (respecting the level filter
-  // when one is active) — drives the "Continue learning" card.
+  // when one is active) - drives the "Continue learning" card.
   const continueLesson = useMemo<Lesson | undefined>(() => {
     const pool =
       activeLevel === 'all' ? orderedLessons : orderedLessons.filter((l) => l.level === activeLevel)

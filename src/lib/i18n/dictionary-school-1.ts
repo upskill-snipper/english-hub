@@ -1,9 +1,9 @@
 /**
- * dictionary-school-1.ts — Bucket A Tier-2, school.* namespace (PART 1 of 2).
+ * dictionary-school-1.ts - Bucket A Tier-2, school.* namespace (PART 1 of 2).
  *
  * Covers the FIRST alphabetical half of the authed school-dashboard i18n
  * namespace: `school.analytics.*` and `school.assignments.*`.
- * (Part 2 — `dictionary-school-2.ts` — picks up from `school.calendar.*`.)
+ * (Part 2 - `dictionary-school-2.ts` - picks up from `school.calendar.*`.)
  *
  * These keys previously resolved only via `dictionary-audit-fix.ts`, whose
  * entries are path-fragment placeholders ("Title", "Subtitle", "Heading",
@@ -16,19 +16,19 @@
  *   - src/app/school/assignments/[assignmentId]/page.tsx
  *
  * Arabic is genuine Khaleeji (Gulf register) matching the teacher/admin SaaS
- * dashboard tone of src/lib/eal/curriculum.ts — not MSA, not machine output.
+ * dashboard tone of src/lib/eal/curriculum.ts - not MSA, not machine output.
  * Education/exam terms (GCSE, mock, cohort, NRR) kept accurate.
  *
  * Screenshot-fixes keys whose AR is already a real translation
  * (school.analytics.nrr.back_to_dashboard, school.analytics.nrr.export_investors,
  *  school.assignments.action.cancel, school.assignments.back,
  *  school.assignments.create_cta, school.assignments.status.active,
- *  school.assignments.status.draft) are intentionally OMITTED — they are
+ *  school.assignments.status.draft) are intentionally OMITTED - they are
  *  already correctly localised in dictionary-screenshot-fixes.ts.
  */
 
 export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
-  // ─── school.analytics — overview page ────────────────────────────────────
+  // ─── school.analytics - overview page ────────────────────────────────────
   'school.analytics.title': { en: 'Analytics', ar: 'التحليلات' },
   'school.analytics.subtitle': {
     en: 'School-wide performance, engagement and attainment at a glance',
@@ -78,8 +78,8 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'طلبة منبَّه عليهم بسبب ضعف التفاعل أو التحصيل',
   },
   'school.analytics.at_risk.none': {
-    en: 'No students currently flagged — nice work.',
-    ar: 'ما فيه طلبة منبَّه عليهم حاليًا — شغل زين.',
+    en: 'No students currently flagged - nice work.',
+    ar: 'ما فيه طلبة منبَّه عليهم حاليًا - شغل زين.',
   },
   'school.analytics.col.name': { en: 'Name', ar: 'الاسم' },
   'school.analytics.col.year': { en: 'Year', ar: 'السنة' },
@@ -125,7 +125,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.analytics.export_excel': { en: 'Export to Excel', ar: 'تصدير إلى Excel' },
   'school.analytics.export_pdf': { en: 'Export to PDF', ar: 'تصدير إلى PDF' },
 
-  // ─── school.analytics.nrr — investor NRR dashboard ───────────────────────
+  // ─── school.analytics.nrr - investor NRR dashboard ───────────────────────
   'school.analytics.back_to_analytics': { en: 'Back to analytics', ar: 'رجوع للتحليلات' },
   'school.analytics.nrr.title': { en: 'Net revenue retention', ar: 'صافي الاحتفاظ بالإيرادات' },
   'school.analytics.nrr.subtitle': {
@@ -167,7 +167,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.analytics.nrr.full_heatmap': { en: 'Full heatmap', ar: 'الخريطة الحرارية كاملة' },
 
-  // ─── school.assignments — listing page ───────────────────────────────────
+  // ─── school.assignments - listing page ───────────────────────────────────
   'school.assignments.title': { en: 'Assignments', ar: 'الواجبات' },
   'school.assignments.active_singular': { en: 'active', ar: 'واجب نشط' },
   'school.assignments.active_plural': { en: 'active', ar: 'واجبات نشطة' },
@@ -208,8 +208,8 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.assignments.field.title': { en: 'Title', ar: 'العنوان' },
   'school.assignments.field.title_placeholder': {
-    en: 'e.g. Macbeth essay — Act 1 analysis',
-    ar: 'مثال: مقال ماكبث — تحليل الفصل الأول',
+    en: 'e.g. Macbeth essay - Act 1 analysis',
+    ar: 'مثال: مقال ماكبث - تحليل الفصل الأول',
   },
   'school.assignments.field.instructions': { en: 'Instructions', ar: 'التعليمات' },
   'school.assignments.field.instructions_placeholder': {
@@ -237,7 +237,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.assignments.action.creating': { en: 'Creating…', ar: 'يجري الإنشاء…' },
 
-  // Detail page — not found / header
+  // Detail page - not found / header
   'school.assignments.not_found.title': { en: 'Assignment not found', ar: 'الواجب غير موجود' },
   'school.assignments.not_found.body': {
     en: 'This assignment may have been deleted or the link is incorrect.',
@@ -246,7 +246,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.assignments.badge.overdue': { en: 'Overdue', ar: 'متأخّر' },
   'school.assignments.resource_linked': { en: 'Resource linked', ar: 'مورد مرتبط' },
 
-  // Detail page — stats
+  // Detail page - stats
   'school.assignments.stat.students': { en: 'Students', ar: 'الطلبة' },
   'school.assignments.stat.submitted': { en: 'Submitted', ar: 'مُسلَّم' },
   'school.assignments.stat.avg_score': { en: 'Average score', ar: 'متوسط الدرجة' },
@@ -255,7 +255,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.assignments.range.lowest': { en: 'Lowest', ar: 'الأدنى' },
   'school.assignments.range.graded': { en: 'Graded', ar: 'مُصحَّح' },
 
-  // Detail page — submissions table
+  // Detail page - submissions table
   'school.assignments.submissions.title': { en: 'Submissions', ar: 'التسليمات' },
   'school.assignments.submissions.pending': { en: 'pending', ar: 'قيد الانتظار' },
   'school.assignments.submissions.submitted': { en: 'submitted', ar: 'مُسلَّم' },
@@ -266,7 +266,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.assignments.col.score': { en: 'Score', ar: 'الدرجة' },
   'school.assignments.col.feedback': { en: 'Feedback', ar: 'الملاحظات' },
   'school.assignments.col.actions': { en: 'Actions', ar: 'الإجراءات' },
-  'school.assignments.grade.placeholder': { en: '0–100', ar: '0–100' },
+  'school.assignments.grade.placeholder': { en: '0-100', ar: '0-100' },
   'school.assignments.feedback.placeholder': {
     en: 'Add feedback for this student…',
     ar: 'ضيف ملاحظات لهذا الطالب…',

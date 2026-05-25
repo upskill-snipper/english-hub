@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 11 ───────────────────────────
 // An eleventh bank of five Academic Task 1 prompts, each paired with a REAL
 // chart spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–9 and the
+// Authoring rules followed throughout (mirroring chart sets 1-9 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the measured numbers,
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the measured numbers,
 //     because the data lives entirely in `chart` (one source of truth);
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
-//   • table — every row.cells length === columns.length − 1 (first column is
+//   • table - every row.cells length === columns.length − 1 (first column is
 //     the row header);
 //   • every spec sets a `caption`;
 //   • numbers are realistic, internally consistent and tell a clear story
@@ -54,7 +54,7 @@ export const WRITING_CHARTS_11: WritingPrompt[] = [
       unit: 'hours/day',
       yAxisLabel: 'Average screen time (hours per day)',
       caption: 'Average daily screen time by age group (hours), 2013, 2018 and 2023.',
-      categories: ['Under 18', '18–34', '35–54', '55 and over'],
+      categories: ['Under 18', '18-34', '35-54', '55 and over'],
       series: [
         { name: '2013', values: [3.1, 4.2, 3.4, 1.8] },
         { name: '2018', values: [4.6, 5.5, 4.1, 2.6] },
@@ -82,7 +82,7 @@ export const WRITING_CHARTS_11: WritingPrompt[] = [
       kind: 'line',
       unit: 'millions',
       yAxisLabel: 'Passengers per year (millions)',
-      caption: 'Annual passenger numbers by mode of public transport (millions), 2014–2024.',
+      caption: 'Annual passenger numbers by mode of public transport (millions), 2014-2024.',
       categories: ['2014', '2016', '2018', '2020', '2022', '2024'],
       series: [
         { name: 'Metro', values: [120, 138, 155, 92, 160, 185] },

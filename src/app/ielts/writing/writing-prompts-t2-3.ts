@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-3 ───────────────────────
 // A third dedicated bank of EIGHT Academic Writing Task 2 questions (argument /
 // opinion essays). As with every Task 2 prompt, none carries a visual, so no
-// prompt defines a `chart`, `imageSrc` or `imageAlt` field — the writing page
+// prompt defines a `chart`, `imageSrc` or `imageAlt` field - the writing page
 // renders the question text from `prompt` alone.
 //
 // The eight cover the full range of Task 2 question formats (at least one of
 // each): opinion (agree/disagree), discussion (both views + opinion), problem
 // & solution / causes & solutions, two-part / direct question, and advantages
 // & disadvantages. Topics are deliberately fresh and distinct from sets T2-1
-// and T2-2 and the Wave 1–3 banks — the influence of social media on
+// and T2-2 and the Wave 1-3 banks - the influence of social media on
 // relationships, taxpayer-funded university tuition, the role of government in
 // promoting healthy eating, protecting endangered languages, how remote working
 // reshapes city centres, teaching practical skills in school, city versus
-// countryside living, and the pay of professional sports stars — so this set
+// countryside living, and the pay of professional sports stars - so this set
 // complements rather than duplicates the existing item bank.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

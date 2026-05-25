@@ -3,10 +3,10 @@
 // ─── SpeakingStage ──────────────────────────────────────────────────────────
 // The Speaking section of the mock (~14 min). It walks the candidate through the
 // three parts of a real IELTS Speaking interview under one overall clock:
-//   • Part 1 — short interview questions (familiar topics).
-//   • Part 2 — the "long turn": a 60s preparation countdown then up to 120s of
+//   • Part 1 - short interview questions (familiar topics).
+//   • Part 2 - the "long turn": a 60s preparation countdown then up to 120s of
 //     speaking from a cue card (an inner sub-timer, paced within the 14 min).
-//   • Part 3 — a two-way discussion of more abstract ideas.
+//   • Part 3 - a two-way discussion of more abstract ideas.
 // Recording is optional and for self-review only (noted to the candidate); the
 // scored artefact is a TYPED transcript per part, matching the Wave-1 Speaking
 // feedback contract.
@@ -280,7 +280,7 @@ export default function SpeakingStage({
             </ol>
           </PartBlock>
 
-          {/* Part 2 — long turn with prep/speak sub-timer */}
+          {/* Part 2 - long turn with prep/speak sub-timer */}
           <PartBlock
             t={t}
             badge={t('ielts.mock.speaking.badge_part2')}

@@ -1,5 +1,5 @@
 /**
- * Bucket A wave 5 (part 1) — `resources` namespace repair.
+ * Bucket A wave 5 (part 1) - `resources` namespace repair.
  *
  * These 120 keys previously lived only in ./dictionary-audit-fix.ts with
  * path-segment fake English ("Title"/"Heading"/"Lead"/"Desc"/"B"/"H") and
@@ -18,13 +18,13 @@
  */
 
 export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> = {
-  /* ─── Exam technique — breadcrumbs ─────────────────────────────── */
+  /* ─── Exam technique - breadcrumbs ─────────────────────────────── */
   'resources.exam_tech.bc.exam_tech': { en: `Exam technique`, ar: `تقنيات الامتحان` },
   'resources.exam_tech.bc.home': { en: `Home`, ar: `الرئيسية` },
   'resources.exam_tech.bc.resources': { en: `Resources`, ar: `المصادر` },
   'resources.exam_tech.bc.this': { en: `Exam technique`, ar: `تقنيات الامتحان` },
 
-  /* ─── Exam technique hub — "continue exploring" cards ──────────── */
+  /* ─── Exam technique hub - "continue exploring" cards ──────────── */
   'resources.exam_tech.cont.all.desc': {
     en: `Browse every revision guide, resource and tool in one place.`,
     ar: `تصفّح كل أدلة المراجعة والمصادر والأدوات في مكان واحد.`,
@@ -42,7 +42,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.exam_tech.cont.tech.label': { en: `Literary techniques`, ar: `التقنيات الأدبية` },
   'resources.exam_tech.cont.title': { en: `Continue exploring`, ar: `كمّل استكشافك` },
 
-  /* ─── Exam technique hub — section card CTA ────────────────────── */
+  /* ─── Exam technique hub - section card CTA ────────────────────── */
   'resources.exam_tech.cta.read_guide': { en: `Read the guide`, ar: `اقرأ الدليل` },
 
   /* ─── Exam day page ────────────────────────────────────────────── */
@@ -95,8 +95,8 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `تمرّن على بنية مقالك`,
   },
   'resources.exam_tech.es.subtitle': {
-    en: `Proven templates for introductions, PEEL paragraphs, topic sentences, linking and conclusions — for every GCSE and IGCSE English essay.`,
-    ar: `قوالب مجرّبة للمقدّمات وفقرات PEEL والجمل الموضوعية والربط والخواتيم — لكل مقال إنجليزي في GCSE وIGCSE.`,
+    en: `Proven templates for introductions, PEEL paragraphs, topic sentences, linking and conclusions - for every GCSE and IGCSE English essay.`,
+    ar: `قوالب مجرّبة للمقدّمات وفقرات PEEL والجمل الموضوعية والربط والخواتيم - لكل مقال إنجليزي في GCSE وIGCSE.`,
   },
   'resources.exam_tech.es.title': { en: `Essay structure templates`, ar: `قوالب بنية المقال` },
   'resources.exam_tech.es.topic': {
@@ -104,18 +104,18 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `كتابة جمل موضوعية قوية`,
   },
 
-  /* ─── Exam technique hub — "explore the guides" ────────────────── */
+  /* ─── Exam technique hub - "explore the guides" ────────────────── */
   'resources.exam_tech.explore.subtitle': {
     en: `Four focused guides that cover everything you need to perform under exam conditions.`,
     ar: `أربعة أدلة مركّزة تغطّي كل اللي تحتاجه عشان تأدّي تحت ظروف الامتحان.`,
   },
   'resources.exam_tech.explore.title': { en: `Explore the guides`, ar: `استكشف الأدلة` },
 
-  /* ─── Exam technique hub — hero ────────────────────────────────── */
+  /* ─── Exam technique hub - hero ────────────────────────────────── */
   'resources.exam_tech.hero.eyebrow': { en: `Exam technique`, ar: `تقنيات الامتحان` },
   'resources.exam_tech.hero.subtitle': {
-    en: `Knowledge alone does not earn top grades — exam technique does. Master timing, question types, essay structure and exam-day strategy.`,
-    ar: `المعرفة وحدها ما تجيب أعلى الدرجات — تقنية الامتحان هي اللي تجيبها. أتقن التوقيت وأنواع الأسئلة وبنية المقال واستراتيجية يوم الامتحان.`,
+    en: `Knowledge alone does not earn top grades - exam technique does. Master timing, question types, essay structure and exam-day strategy.`,
+    ar: `المعرفة وحدها ما تجيب أعلى الدرجات - تقنية الامتحان هي اللي تجيبها. أتقن التوقيت وأنواع الأسئلة وبنية المقال واستراتيجية يوم الامتحان.`,
   },
   'resources.exam_tech.hero.title': {
     en: `Exam technique that turns knowledge into grades`,
@@ -139,18 +139,18 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `تمرّن على أنواع الأسئلة هذي`,
   },
   'resources.exam_tech.qt.subtitle': {
-    en: `Decode what every question is really asking — how to structure your answer, common mistakes to avoid, and example responses.`,
-    ar: `افهم شو يطلبه كل سؤال فعلاً — كيف تركّب إجابتك، والأخطاء الشائعة اللي تتجنّبها، ونماذج إجابات.`,
+    en: `Decode what every question is really asking - how to structure your answer, common mistakes to avoid, and example responses.`,
+    ar: `افهم شو يطلبه كل سؤال فعلاً - كيف تركّب إجابتك، والأخطاء الشائعة اللي تتجنّبها، ونماذج إجابات.`,
   },
   'resources.exam_tech.qt.title': {
     en: `How to approach different question types`,
     ar: `كيف تتعامل مع أنواع الأسئلة المختلفة`,
   },
 
-  /* ─── Exam technique hub — quick wins ──────────────────────────── */
+  /* ─── Exam technique hub - quick wins ──────────────────────────── */
   'resources.exam_tech.qw.check.b': {
-    en: `Always save the last few minutes to proofread for spelling, punctuation and grammar — easy marks are lost here.`,
-    ar: `دايماً خلّ آخر دقايق للمراجعة الإملائية والترقيم والقواعد — هنا تضيع درجات سهلة.`,
+    en: `Always save the last few minutes to proofread for spelling, punctuation and grammar - easy marks are lost here.`,
+    ar: `دايماً خلّ آخر دقايق للمراجعة الإملائية والترقيم والقواعد - هنا تضيع درجات سهلة.`,
   },
   'resources.exam_tech.qw.check.h': { en: `Check your SPaG`, ar: `راجع الإملاء والترقيم` },
   'resources.exam_tech.qw.clock.b': {
@@ -159,8 +159,8 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.exam_tech.qw.clock.h': { en: `Watch the clock`, ar: `راقب الساعة` },
   'resources.exam_tech.qw.plan.b': {
-    en: `Spend three to five minutes planning any extended answer — a quick plan keeps you focused and on-question.`,
-    ar: `خصّص من ثلاث إلى خمس دقايق لتخطيط أي إجابة مطوّلة — الخطّة السريعة تخلّيك مركّز وملتزم بالسؤال.`,
+    en: `Spend three to five minutes planning any extended answer - a quick plan keeps you focused and on-question.`,
+    ar: `خصّص من ثلاث إلى خمس دقايق لتخطيط أي إجابة مطوّلة - الخطّة السريعة تخلّيك مركّز وملتزم بالسؤال.`,
   },
   'resources.exam_tech.qw.plan.h': { en: `Plan before you write`, ar: `خطّط قبل ما تكتب` },
   'resources.exam_tech.qw.quotes.b': {
@@ -179,7 +179,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.exam_tech.qw.title': { en: `Five quick wins`, ar: `خمسة مكاسب سريعة` },
 
-  /* ─── Exam technique hub — revision CTA ────────────────────────── */
+  /* ─── Exam technique hub - revision CTA ────────────────────────── */
   'resources.exam_tech.revcta.body': {
     en: `Put every technique into practice with timed, interactive exam-technique revision.`,
     ar: `طبّق كل تقنية مع مراجعة تفاعلية موقّتة لتقنيات الامتحان.`,
@@ -190,7 +190,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.exam_tech.revcta.title': { en: `Ready to practise?`, ar: `جاهز تتمرّن؟` },
 
-  /* ─── Exam technique hub — section cards ───────────────────────── */
+  /* ─── Exam technique hub - section cards ───────────────────────── */
   'resources.exam_tech.sec.day.badge': { en: `Be ready`, ar: `كن جاهزاً` },
   'resources.exam_tech.sec.day.desc': {
     en: `What to bring, how to read the paper, how to stay calm, and what to do in the last five minutes.`,
@@ -237,18 +237,18 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `شو تسوّي إذا خلص وقتك`,
   },
   'resources.exam_tech.tm.subtitle': {
-    en: `Paper-by-paper timing breakdowns for AQA, Edexcel, Cambridge IGCSE and OCR — plus what to do if you run out of time.`,
-    ar: `تقسيم التوقيت ورقة ورقة لـ AQA وEdexcel وCambridge IGCSE وOCR — بالإضافة لشو تسوّي إذا خلص وقتك.`,
+    en: `Paper-by-paper timing breakdowns for AQA, Edexcel, Cambridge IGCSE and OCR - plus what to do if you run out of time.`,
+    ar: `تقسيم التوقيت ورقة ورقة لـ AQA وEdexcel وCambridge IGCSE وOCR - بالإضافة لشو تسوّي إذا خلص وقتك.`,
   },
   'resources.exam_tech.tm.title': {
     en: `Time management in English exams`,
     ar: `إدارة الوقت في امتحانات الإنجليزي`,
   },
 
-  /* ─── Exam technique hub — why it matters ──────────────────────── */
+  /* ─── Exam technique hub - why it matters ──────────────────────── */
   'resources.exam_tech.why.body1': {
-    en: `Every year, students who know their texts inside out still miss top grades — not because they lack knowledge, but because they run out of time, misread the question, or never learned how to structure an answer under pressure.`,
-    ar: `كل سنة، طلاب يعرفون نصوصهم عن ظهر قلب وبرضو يفوتهم أعلى الدرجات — مو لأنهم ما يعرفون، بس لأن الوقت يخلص عليهم، أو يقرون السؤال غلط، أو ما تعلّموا كيف يركّبون إجابة تحت الضغط.`,
+    en: `Every year, students who know their texts inside out still miss top grades - not because they lack knowledge, but because they run out of time, misread the question, or never learned how to structure an answer under pressure.`,
+    ar: `كل سنة، طلاب يعرفون نصوصهم عن ظهر قلب وبرضو يفوتهم أعلى الدرجات - مو لأنهم ما يعرفون، بس لأن الوقت يخلص عليهم، أو يقرون السؤال غلط، أو ما تعلّموا كيف يركّبون إجابة تحت الضغط.`,
   },
   'resources.exam_tech.why.body2': {
     en: `Exam technique is the difference between knowing the answer and proving it on paper. These guides turn what you know into the marks you deserve.`,
@@ -259,7 +259,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `ليش تقنية الامتحان مهمّة`,
   },
 
-  /* ─── Poetry hub — assessment objectives ───────────────────────── */
+  /* ─── Poetry hub - assessment objectives ───────────────────────── */
   'resources.poetry.ao.subtitle': {
     en: `Every poetry answer is marked against these assessment objectives. Knowing them tells you exactly what examiners reward.`,
     ar: `كل إجابة شعر تتصحّح حسب أهداف التقييم هذي. معرفتها تقول لك بالضبط شو يكافئ عليه المصحّحون.`,
@@ -267,14 +267,14 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.poetry.ao.tip_prefix': { en: `Tip:`, ar: `نصيحة:` },
   'resources.poetry.ao.title': { en: `How poetry is assessed`, ar: `كيف يُقيَّم الشعر` },
 
-  /* ─── Poetry hub — board badge prefix ──────────────────────────── */
+  /* ─── Poetry hub - board badge prefix ──────────────────────────── */
   'resources.poetry.board_prefix': { en: `Tailored for`, ar: `مخصّص لـ` },
 
-  /* ─── Poetry hub — card CTAs ───────────────────────────────────── */
+  /* ─── Poetry hub - card CTAs ───────────────────────────────────── */
   'resources.poetry.cta.start_learning': { en: `Start learning`, ar: `ابدأ التعلّم` },
   'resources.poetry.cta.view_analysis': { en: `View analysis`, ar: `شوف التحليل` },
 
-  /* ─── Poetry hub — hero ────────────────────────────────────────── */
+  /* ─── Poetry hub - hero ────────────────────────────────────────── */
   'resources.poetry.hero.eyebrow': { en: `GCSE poetry`, ar: `شعر GCSE` },
   'resources.poetry.hero.no_anthology_prefix': {
     en: `Your exam board`,
@@ -290,10 +290,10 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.poetry.hero.title': { en: `Poetry made clear`, ar: `الشعر بصورة واضحة` },
 
-  /* ─── Poetry hub — anthology card poem count suffix ────────────── */
+  /* ─── Poetry hub - anthology card poem count suffix ────────────── */
   'resources.poetry.poems_suffix': { en: `poems`, ar: `قصيدة` },
 
-  /* ─── Poetry hub — board sections ──────────────────────────────── */
+  /* ─── Poetry hub - board sections ──────────────────────────────── */
   'resources.poetry.section.aqa.subtitle': {
     en: `In-depth analysis of all 15 poems in each AQA cluster, with key quotes, themes and comparison links.`,
     ar: `تحليل معمّق لكل الـ ١٥ قصيدة في كل مجموعة AQA، مع الاقتباسات الأساسية والثيمات وروابط المقارنة.`,
@@ -329,10 +329,10 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.poetry.section.ocr.title': { en: `OCR poetry`, ar: `شعر OCR` },
 
-  /* ─── Poetry hub — skills + tips + top 10 ──────────────────────── */
+  /* ─── Poetry hub - skills + tips + top 10 ──────────────────────── */
   'resources.poetry.skills.subtitle': {
-    en: `Master the analytical skills that work across every poem — seen or unseen.`,
-    ar: `أتقن المهارات التحليلية اللي تشتغل مع كل قصيدة — منظورة أو غير منظورة.`,
+    en: `Master the analytical skills that work across every poem - seen or unseen.`,
+    ar: `أتقن المهارات التحليلية اللي تشتغل مع كل قصيدة - منظورة أو غير منظورة.`,
   },
   'resources.poetry.skills.title': { en: `Poetry skills guides`, ar: `أدلة مهارات الشعر` },
   'resources.poetry.tips.subtitle': {
@@ -341,21 +341,21 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.poetry.tips.title': { en: `Quick poetry tips`, ar: `نصايح شعر سريعة` },
   'resources.poetry.top10.subtitle': {
-    en: `The poems that come up most often in exams — start your revision here.`,
-    ar: `القصايد اللي تجي أكثر شي في الامتحانات — ابدأ مراجعتك من هنا.`,
+    en: `The poems that come up most often in exams - start your revision here.`,
+    ar: `القصايد اللي تجي أكثر شي في الامتحانات - ابدأ مراجعتك من هنا.`,
   },
   'resources.poetry.top10.title': {
     en: `Top 10 most tested poems`,
     ar: `أكثر ١٠ قصايد تجي في الامتحان`,
   },
 
-  /* ─── Study tools — board badge prefix ─────────────────────────── */
+  /* ─── Study tools - board badge prefix ─────────────────────────── */
   'resources.study_tools.board_prefix': { en: `Tailored for`, ar: `مخصّص لـ` },
 
-  /* ─── Study tools — checklists page ────────────────────────────── */
+  /* ─── Study tools - checklists page ────────────────────────────── */
   'resources.study_tools.checklists.all_covered': {
-    en: `Every skill covered — you are exam-ready!`,
-    ar: `كل المهارات مغطّاة — أنت جاهز للامتحان!`,
+    en: `Every skill covered - you are exam-ready!`,
+    ar: `كل المهارات مغطّاة - أنت جاهز للامتحان!`,
   },
   'resources.study_tools.checklists.check_all': { en: `Check all`, ar: `حدّد الكل` },
   'resources.study_tools.checklists.clear_all': { en: `Clear all`, ar: `امسح الكل` },
@@ -374,16 +374,16 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `كن صادقاً:`,
   },
   'resources.study_tools.checklists.tip.prioritise.body': {
-    en: `Focus your revision on the unticked items first — they are where the marks are.`,
-    ar: `ركّز مراجعتك على البنود غير المؤشّرة أول — هي مكان الدرجات.`,
+    en: `Focus your revision on the unticked items first - they are where the marks are.`,
+    ar: `ركّز مراجعتك على البنود غير المؤشّرة أول - هي مكان الدرجات.`,
   },
   'resources.study_tools.checklists.tip.prioritise.label': {
     en: `Prioritise:`,
     ar: `رتّب الأولويات:`,
   },
   'resources.study_tools.checklists.tip.revisit.body': {
-    en: `Come back a week before the exam and re-check — confidence fades without practice.`,
-    ar: `ارجع قبل الامتحان بأسبوع وراجع مرّة ثانية — الثقة تخفّ بدون تمرين.`,
+    en: `Come back a week before the exam and re-check - confidence fades without practice.`,
+    ar: `ارجع قبل الامتحان بأسبوع وراجع مرّة ثانية - الثقة تخفّ بدون تمرين.`,
   },
   'resources.study_tools.checklists.tip.revisit.label': {
     en: `Revisit:`,

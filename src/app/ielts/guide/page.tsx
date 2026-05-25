@@ -32,9 +32,9 @@ import {
 } from '@/lib/ielts/exam-facts'
 import { IELTS_SKILLS, SKILL_META, type IeltsSkill } from '@/lib/ielts/types'
 
-// ─── IELTS Exam Guide — authoritative SEO reference page ─────────────────────
+// ─── IELTS Exam Guide - authoritative SEO reference page ─────────────────────
 // A standalone, indexable reference that explains what IELTS is, the four
-// sections and their timings, how the 0–9 band scale is scored, the most common
+// sections and their timings, how the 0-9 band scale is scored, the most common
 // mistakes per skill, typical institutional requirements, and the test process.
 //
 // SINGLE SOURCE OF TRUTH: every factual figure on this page is rendered from
@@ -49,7 +49,7 @@ import { IELTS_SKILLS, SKILL_META, type IeltsSkill } from '@/lib/ielts/types'
 // published scale, never as a guarantee of a result.
 // ────────────────────────────────────────────────────────────────────────────
 
-// Per-skill icon for the section cards — keyed to IeltsSkill so it stays in
+// Per-skill icon for the section cards - keyed to IeltsSkill so it stays in
 // lockstep with SECTION_FACTS / SKILL_META.
 const SKILL_ICON: Record<IeltsSkill, typeof Headphones> = {
   listening: Headphones,
@@ -62,7 +62,7 @@ const SKILL_ICON: Record<IeltsSkill, typeof Headphones> = {
 const sittingHours = Math.floor(SITTING_MINUTES / 60)
 const sittingMins = SITTING_MINUTES % 60
 
-// FAQ content for the FAQPageJsonLd structured data — kept English for SEO
+// FAQ content for the FAQPageJsonLd structured data - kept English for SEO
 // (search engines index the canonical English page). Answers are assembled from
 // exam-facts so the structured data never drifts from the reference figures.
 // The visible accordion uses a locale-aware copy built inside the component:
@@ -71,7 +71,7 @@ const HARDEST_LABEL = SKILL_META[HARDEST_SKILL].label
 const FAQS: { question: string; answer: string }[] = [
   {
     question: 'What is a good IELTS band score?',
-    answer: `${SCORING_RULE} There is no universal pass mark: institutions set their own minimums. As context, most undergraduate study sits around Band 6.0–6.5 and postgraduate around 6.5–7.5, while professional registration can require 7.0–7.5 in each skill.`,
+    answer: `${SCORING_RULE} There is no universal pass mark: institutions set their own minimums. As context, most undergraduate study sits around Band 6.0-6.5 and postgraduate around 6.5-7.5, while professional registration can require 7.0-7.5 in each skill.`,
   },
   {
     question: 'How long is the IELTS test?',
@@ -80,11 +80,11 @@ const FAQS: { question: string; answer: string }[] = [
       .padStart(
         2,
         '0',
-      )} (${SITTING_MINUTES} minutes) with no breaks. Speaking is a ${SECTION_FACTS.find((s) => s.skill === 'speaking')?.timeMinutes ?? 14}-minute interview held separately — the same day or up to seven days apart.`,
+      )} (${SITTING_MINUTES} minutes) with no breaks. Speaking is a ${SECTION_FACTS.find((s) => s.skill === 'speaking')?.timeMinutes ?? 14}-minute interview held separately - the same day or up to seven days apart.`,
   },
   {
     question: 'Which IELTS section is the hardest?',
-    answer: `${HARDEST_LABEL} is the lowest-scoring module for most candidates worldwide, and lowest of all for Gulf learners — the published mean is around Band ${SECTION_FACTS.find((s) => s.skill === HARDEST_SKILL)?.meanBandAcademic ?? ''}. ${ONE_SKILL_RETAKE_NOTE}`,
+    answer: `${HARDEST_LABEL} is the lowest-scoring module for most candidates worldwide, and lowest of all for Gulf learners - the published mean is around Band ${SECTION_FACTS.find((s) => s.skill === HARDEST_SKILL)?.meanBandAcademic ?? ''}. ${ONE_SKILL_RETAKE_NOTE}`,
   },
   {
     question: 'How long is an IELTS result valid?',
@@ -191,7 +191,7 @@ export default async function IeltsGuidePage() {
   const processEyebrow = await t('ielts.guide.process.eyebrow')
   const processTitle = await t('ielts.guide.process.title')
 
-  // FAQ — localised accordion copy. Each answer = translated connective
+  // FAQ - localised accordion copy. Each answer = translated connective
   // fragment(s) + the same exam-facts figures used by the English schema above.
   const faqEyebrow = await t('ielts.guide.faq.eyebrow')
   const faqTitle = await t('ielts.guide.faq.title')

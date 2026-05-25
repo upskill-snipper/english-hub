@@ -713,7 +713,7 @@ function ResultsPanel({
               </Button>
             </div>
 
-            {/* Transcript — only here, in the post-submit review. */}
+            {/* Transcript - only here, in the post-submit review. */}
             {isRevealed && (
               <div className="mt-3 max-h-80 overflow-y-auto rounded-xl border border-border/60 bg-background/60 p-4">
                 <p className="whitespace-pre-line text-body-sm leading-relaxed text-foreground">

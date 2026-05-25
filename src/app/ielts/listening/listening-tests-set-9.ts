@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 9) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 9) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to
 //     book a pitch at a campsite), assessed with form / note completion + a
 //     multiple-choice item. A surname is spelled and a mobile number is
 //     dictated, and one detail (the nightly price) depends on a stated choice
 //     (tent vs. campervan pitch).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk for visitors to a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk for visitors to a
 //     public aquarium), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "next", "finally") that the
 //     questions track in order.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a small-business plan for an enterprise module), assessed with
 //     multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the migration of
+//   • Section 4 - an academic LECTURE / monologue (here: the migration of
 //     birds), assessed with note/sentence completion + multiple choice.
 //
 // Question conventions (shared contract from @/lib/ielts/types):
@@ -27,7 +27,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -38,12 +38,12 @@ export const LISTENING_SET_9: ListeningTest[] = [
   {
     id: 'ls-academic-9',
     title:
-      'Practice Test 9 — Booking a Campsite Pitch, A Talk at an Aquarium, Planning a Small Business & The Migration of Birds',
+      'Practice Test 9 - Booking a Campsite Pitch, A Talk at an Aquarium, Planning a Small Business & The Migration of Birds',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-9-s1',
-        title: 'Section 1 — Booking a campsite pitch',
+        title: 'Section 1 - Booking a campsite pitch',
         // ~280 words. Transactional dialogue (Section 1 style): a caller phoning
         // a campsite to reserve a pitch. A surname is spelled and a mobile number
         // is dictated; one detail (the nightly price) depends on a stated choice
@@ -59,7 +59,7 @@ MAN: Yes, it's Stephen Whitlock. Whitlock is spelled W-H-I-T-L-O-C-K.
 
 WOMAN: Thank you, Mr Whitlock. And a contact number, in case we need to reach you?
 
-MAN: It's a mobile — zero seven, nine double four, three one, six two five.
+MAN: It's a mobile - zero seven, nine double four, three one, six two five.
 
 WOMAN: Let me read that back: zero seven, nine double four, three one, six two five. Lovely. Now, will you be bringing a tent or a campervan?
 
@@ -69,15 +69,15 @@ WOMAN: I see. A standard tent pitch is sixteen pounds a night, but a campervan p
 
 MAN: That's fine. We'd like to arrive on the third of June and stay for four nights.
 
-WOMAN: The third of June, four nights — that's noted. Check-in is from two o'clock in the afternoon, and we ask everyone to leave by eleven in the morning on their last day.
+WOMAN: The third of June, four nights - that's noted. Check-in is from two o'clock in the afternoon, and we ask everyone to leave by eleven in the morning on their last day.
 
 MAN: Understood. Are there any facilities I should know about?
 
-WOMAN: Of course. There's a shower block beside the entrance, and a small shop that sells basics until eight in the evening. One thing to note — we don't allow campfires anywhere on the grounds, but you may use a raised barbecue.
+WOMAN: Of course. There's a shower block beside the entrance, and a small shop that sells basics until eight in the evening. One thing to note - we don't allow campfires anywhere on the grounds, but you may use a raised barbecue.
 
 MAN: Good to know. And is there anything I need to bring to check in?
 
-WOMAN: Just some photo identification, please — a driving licence is perfect.
+WOMAN: Just some photo identification, please - a driving licence is perfect.
 
 MAN: Great, thank you very much for your help.
 
@@ -90,7 +90,7 @@ WOMAN: You're welcome. We'll see you in June.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Whitlock', 'whitlock'],
             explanation:
-              'The caller gives his name as “Stephen Whitlock” and spells the surname out: W-H-I-T-L-O-C-K. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Stephen Whitlock” and spells the surname out: W-H-I-T-L-O-C-K. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-009-s1-q2',
@@ -120,7 +120,7 @@ WOMAN: You're welcome. We'll see you in June.`,
             prompt: 'Price of the chosen pitch: £ ____________ per night. Write A NUMBER.',
             acceptableAnswers: ['24', 'twenty-four', 'twenty four'],
             explanation:
-              'A tent pitch is sixteen pounds, but the campervan pitch he books “is twenty-four pounds a night.” Because he chooses the campervan (Q3), this is the price that applies — Section 1 often makes one detail depend on an earlier choice.',
+              'A tent pitch is sixteen pounds, but the campervan pitch he books “is twenty-four pounds a night.” Because he chooses the campervan (Q3), this is the price that applies - Section 1 often makes one detail depend on an earlier choice.',
           },
           {
             id: 'ls-009-s1-q5',
@@ -136,7 +136,7 @@ WOMAN: You're welcome. We'll see you in June.`,
             prompt: 'Number of nights booked: ____________. Write A NUMBER.',
             acceptableAnswers: ['4', 'four'],
             explanation:
-              'He asks to “stay for four nights”, and the assistant confirms “four nights — that’s noted.” The answer is 4.',
+              'He asks to “stay for four nights”, and the assistant confirms “four nights - that’s noted.” The answer is 4.',
           },
           {
             id: 'ls-009-s1-q7',
@@ -145,7 +145,7 @@ WOMAN: You're welcome. We'll see you in June.`,
               'On their last day, guests must leave by ____________ in the morning. Write A NUMBER (a time).',
             acceptableAnswers: ['11', 'eleven', '11am', '11 am'],
             explanation:
-              'The assistant says, “we ask everyone to leave by eleven in the morning on their last day.” Listen for “by”, which signals a deadline — the answer is 11.',
+              'The assistant says, “we ask everyone to leave by eleven in the morning on their last day.” Listen for “by”, which signals a deadline - the answer is 11.',
           },
           {
             id: 'ls-009-s1-q8',
@@ -162,7 +162,7 @@ WOMAN: You're welcome. We'll see you in June.`,
             prompt: 'To check in, the man must bring some photo ____________. Write ONE WORD.',
             acceptableAnswers: ['identification', 'id'],
             explanation:
-              'She asks him to bring “some photo identification, please — a driving licence is perfect.” The key requirement is photo identification; “driving licence” is the example, not the gap word.',
+              'She asks him to bring “some photo identification, please - a driving licence is perfect.” The key requirement is photo identification; “driving licence” is the example, not the gap word.',
           },
           {
             id: 'ls-009-s1-q10',
@@ -182,7 +182,7 @@ WOMAN: You're welcome. We'll see you in June.`,
       },
       {
         id: 'ls-academic-9-s2',
-        title: 'Section 2 — A welcome talk at an aquarium',
+        title: 'Section 2 - A welcome talk at an aquarium',
         // ~265 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a public aquarium. Uses sequencing/signpost
         // language ("to start", "next", "finally") that the questions follow in
@@ -191,13 +191,13 @@ WOMAN: You're welcome. We'll see you in June.`,
 
 To start with, the aquarium is arranged as a single loop, so you simply follow the blue line on the floor and you'll see every exhibit in order without retracing your steps. The whole route takes most families about ninety minutes, though you're welcome to take longer.
 
-The first zone you'll enter is the Rockpool Room. This is the only area where you may gently touch the animals — under the supervision of our staff, of course. Please remember to wash your hands at the basins provided before you move on, as this protects both you and the creatures.
+The first zone you'll enter is the Rockpool Room. This is the only area where you may gently touch the animals - under the supervision of our staff, of course. Please remember to wash your hands at the basins provided before you move on, as this protects both you and the creatures.
 
 Next comes our most popular attraction: the underwater tunnel. As you walk through, sharks and rays glide directly above your head. I'd suggest visiting it before midday, because it becomes very crowded in the afternoon and you'll get a much clearer view in the morning.
 
 After the tunnel, you'll reach the feeding station. Our divers feed the largest tank at half past two every day, and they answer questions through underwater microphones while they work. It's well worth timing your visit to catch it.
 
-Finally, a couple of practical points. Photography is welcome throughout, but please switch off your flash, as it disturbs the fish. And our café on the upper floor stops serving hot food at four o'clock, so do plan accordingly. That's everything — please enjoy your visit.`,
+Finally, a couple of practical points. Photography is welcome throughout, but please switch off your flash, as it disturbs the fish. And our café on the upper floor stops serving hot food at four o'clock, so do plan accordingly. That's everything - please enjoy your visit.`,
         questions: [
           {
             id: 'ls-009-s2-q11',
@@ -220,7 +220,7 @@ Finally, a couple of practical points. Photography is welcome throughout, but pl
               'The visit around the whole route takes most families about ____________ minutes. Write A NUMBER.',
             acceptableAnswers: ['90', 'ninety'],
             explanation:
-              'He says, “The whole route takes most families about ninety minutes.” The answer is 90 — numbers said as words still count, but writing the digits is safest.',
+              'He says, “The whole route takes most families about ninety minutes.” The answer is 90 - numbers said as words still count, but writing the digits is safest.',
           },
           {
             id: 'ls-009-s2-q13',
@@ -229,7 +229,7 @@ Finally, a couple of practical points. Photography is welcome throughout, but pl
               'The Rockpool Room is the only area where visitors may gently ____________ the animals. Write ONE WORD.',
             acceptableAnswers: ['touch'],
             explanation:
-              'He describes the Rockpool Room as “the only area where you may gently touch the animals — under the supervision of our staff.” The answer is “touch”.',
+              'He describes the Rockpool Room as “the only area where you may gently touch the animals - under the supervision of our staff.” The answer is “touch”.',
           },
           {
             id: 'ls-009-s2-q14',
@@ -260,7 +260,7 @@ Finally, a couple of practical points. Photography is welcome throughout, but pl
             prompt: 'The divers feed the largest tank at ____________ every day. Write A TIME.',
             acceptableAnswers: ['2.30', '2:30', 'half past two', '2.30pm', '2:30pm', 'half past 2'],
             explanation:
-              'He says, “Our divers feed the largest tank at half past two every day.” Half past two is written 2.30 — listen for the exact clock time.',
+              'He says, “Our divers feed the largest tank at half past two every day.” Half past two is written 2.30 - listen for the exact clock time.',
           },
           {
             id: 'ls-009-s2-q17',
@@ -292,7 +292,7 @@ Finally, a couple of practical points. Photography is welcome throughout, but pl
               'The café on the upper floor stops serving hot food at ____________ o’clock. Write A NUMBER.',
             acceptableAnswers: ['4', 'four', '4pm', '4 pm'],
             explanation:
-              'He warns that “our café on the upper floor stops serving hot food at four o’clock.” The answer is 4 — listen for the cut-off time.',
+              'He warns that “our café on the upper floor stops serving hot food at four o’clock.” The answer is 4 - listen for the cut-off time.',
           },
           {
             id: 'ls-009-s2-q20',
@@ -306,18 +306,18 @@ Finally, a couple of practical points. Photography is welcome throughout, but pl
       },
       {
         id: 'ls-academic-9-s3',
-        title: 'Section 3 — Planning a small business plan',
+        title: 'Section 3 - Planning a small business plan',
         // ~290 words. Academic discussion (Section 3 style): two students and a
         // tutor planning a small-business plan for an enterprise module. Assessed
         // with multiple choice + completion, with opinions and decisions signalled
         // by discussion markers ("I think", "let's", "we agreed").
-        transcript: `TUTOR: Right, Maya and Josh — let's go through the business plan you're submitting for the enterprise module. Have you settled on what your imaginary company will sell?
+        transcript: `TUTOR: Right, Maya and Josh - let's go through the business plan you're submitting for the enterprise module. Have you settled on what your imaginary company will sell?
 
 MAYA: We have. We're going to design a subscription box of locally roasted coffee, delivered monthly.
 
 TUTOR: A nice idea. Josh, who did you decide your main customers would be?
 
-JOSH: At first we thought we'd target offices, but we changed our minds — we're aiming at home workers instead, because that market has grown so much.
+JOSH: At first we thought we'd target offices, but we changed our minds - we're aiming at home workers instead, because that market has grown so much.
 
 TUTOR: Sensible. Now, the plan needs several sections. Have you drafted the market research yet?
 
@@ -325,17 +325,17 @@ MAYA: That's the part I'm leading on. I've run a short survey, and I'm a bit wor
 
 TUTOR: Fifty is a reasonable start for a student project, but do acknowledge the limitation in your write-up. What about the financial forecast?
 
-JOSH: I'm handling that. The tricky bit is the start-up cost — the roasting equipment is far more expensive than we expected.
+JOSH: I'm handling that. The tricky bit is the start-up cost - the roasting equipment is far more expensive than we expected.
 
 TUTOR: Then make sure you explain how you'd fund it. Have you considered a small bank loan rather than using savings?
 
 JOSH: We had, yes. We've decided to apply for a loan, because it keeps some cash in reserve for emergencies.
 
-TUTOR: Good thinking. One more thing — the marketing section. How will you reach these home workers?
+TUTOR: Good thinking. One more thing - the marketing section. How will you reach these home workers?
 
 MAYA: Mostly through social media, but we also want to give away free samples at local markets.
 
-TUTOR: I like the samples idea; it's memorable. Just remember to cost it properly. And when you write the conclusion, focus on what makes you different from the big coffee brands — that's your strongest argument.
+TUTOR: I like the samples idea; it's memorable. Just remember to cost it properly. And when you write the conclusion, focus on what makes you different from the big coffee brands - that's your strongest argument.
 
 JOSH: Will do. We'll emphasise the local sourcing.
 
@@ -362,7 +362,7 @@ TUTOR: Perfect. Send me a draft by Friday and I'll give you feedback.`,
             ],
             correctIndex: 1,
             explanation:
-              'Josh says, “At first we thought we’d target offices, but we changed our minds — we’re aiming at home workers instead, because that market has grown so much.” The offices option is the rejected first idea.',
+              'Josh says, “At first we thought we’d target offices, but we changed our minds - we’re aiming at home workers instead, because that market has grown so much.” The offices option is the rejected first idea.',
           },
           {
             id: 'ls-009-s3-q23',
@@ -394,7 +394,7 @@ TUTOR: Perfect. Send me a draft by Friday and I'll give you feedback.`,
               'In the financial forecast, the trickiest item is the high start-up cost of the roasting ____________. Write ONE WORD.',
             acceptableAnswers: ['equipment'],
             explanation:
-              'Josh says, “The tricky bit is the start-up cost — the roasting equipment is far more expensive than we expected.” The answer is “equipment”.',
+              'Josh says, “The tricky bit is the start-up cost - the roasting equipment is far more expensive than we expected.” The answer is “equipment”.',
           },
           {
             id: 'ls-009-s3-q26',
@@ -440,7 +440,7 @@ TUTOR: Perfect. Send me a draft by Friday and I'll give you feedback.`,
             ],
             correctIndex: 1,
             explanation:
-              'The tutor advises, “when you write the conclusion, focus on what makes you different from the big coffee brands — that’s your strongest argument.” Option B matches.',
+              'The tutor advises, “when you write the conclusion, focus on what makes you different from the big coffee brands - that’s your strongest argument.” Option B matches.',
           },
           {
             id: 'ls-009-s3-q30',
@@ -455,7 +455,7 @@ TUTOR: Perfect. Send me a draft by Friday and I'll give you feedback.`,
       },
       {
         id: 'ls-academic-9-s4',
-        title: 'Section 4 — A lecture on the migration of birds',
+        title: 'Section 4 - A lecture on the migration of birds',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // lecturer presenting on bird migration. Densely factual, with note/
         // sentence completion + multiple choice. Signpost phrases ("firstly",

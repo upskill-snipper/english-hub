@@ -1,11 +1,11 @@
-// ─── IELTS Academic Reading — practice item bank (Set 4) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 4) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
 // reproductions of any official IELTS past paper, and no official affiliation
 // is implied. Academic track.
 //
-// Domain focus for this set: TECHNOLOGY / PSYCHOLOGY / BUSINESS & ECONOMICS —
+// Domain focus for this set: TECHNOLOGY / PSYCHOLOGY / BUSINESS & ECONOMICS -
 // chosen to stay distinct from the transport, memory, maritime and biology
 // topics used elsewhere in the bank so learners meet fresh subject matter.
 // ────────────────────────────────────────────────────────────────────────────
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_4: ReadingTest[] = [
   {
     id: 'rd-acad-s4-001',
-    title: 'Academic Reading — Practice Test (Set 4)',
+    title: 'Academic Reading - Practice Test (Set 4)',
     track: 'academic',
     estimatedMinutes: 20,
     passages: [
@@ -24,7 +24,7 @@ export const READING_SET_4: ReadingTest[] = [
         title: 'The Psychology of the Free Trial',
         body: `Few business tactics have spread as quickly as the free trial. A streaming service, a fitness application or a piece of accounting software now routinely invites newcomers to use the full product for a month at no charge, asking only for payment details that will be billed automatically once the period ends. The arrangement looks generous, and in one sense it is. Yet economists who study consumer behaviour argue that its real power lies in something less obvious than simple kindness.
 
-The first force at work is what researchers call the endowment effect. Once people have spent a few weeks treating a product as their own — saving playlists, building workout records, importing their files — they begin to value it far more highly than they did before they tried it. Giving the product up no longer feels like declining an offer; it feels like losing something they already possess, and losses, the evidence suggests, weigh roughly twice as heavily on the mind as equivalent gains.
+The first force at work is what researchers call the endowment effect. Once people have spent a few weeks treating a product as their own - saving playlists, building workout records, importing their files - they begin to value it far more highly than they did before they tried it. Giving the product up no longer feels like declining an offer; it feels like losing something they already possess, and losses, the evidence suggests, weigh roughly twice as heavily on the mind as equivalent gains.
 
 A second force is simple inertia. Cancelling a subscription usually requires a deliberate act: finding the right page, confirming the decision, perhaps answering a survey designed to change one's mind. Continuing requires nothing at all. Because the effort of cancelling falls due immediately while the cost of staying is spread thinly across future months, many users postpone the decision repeatedly until it is forgotten altogether. Firms understand this well, which is why the sign-up process is typically far smoother than the exit.
 

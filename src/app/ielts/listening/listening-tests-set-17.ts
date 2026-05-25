@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 17) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 17) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, … LISTENING_SET_17) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions, 10 marks each) that mirror the real IELTS Listening paper,
 // with topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a man phoning a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a man phoning a
 //     leisure centre to join the gym), assessed with form / note completion +
 //     multiple choice. A surname is spelled and a mobile number is dictated, and
 //     one detail (the total first payment) depends on a stated choice (which
 //     membership is taken).
-//   • Section 2 — an everyday MONOLOGUE (here: a guide's introduction to a
+//   • Section 2 - an everyday MONOLOGUE (here: a guide's introduction to a
 //     museum tour: layout, floors, facilities and timings), assessed with
 //     matching (floor → feature) + sentence completion + multiple choice,
 //     carrying signpost language the questions follow.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a geography field trip: equipment, roles and deadlines),
 //     assessed with multiple choice + matching (task → person) + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: how volcanoes form,
+//   • Section 4 - an academic LECTURE / monologue (here: how volcanoes form,
 //     their types, monitoring and hazards), assessed with note/sentence
 //     completion + multiple choice, including one True/False/Not Given item.
 //
@@ -29,7 +29,7 @@
 //   • 'mcq'      → single best answer; `correctIndex` is 0-based.
 //   • 'tfng'     → True / False / Not Given.
 //   • 'matching' → match each item to ONE option key; ONE mark PER item.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -40,12 +40,12 @@ export const LISTENING_SET_17: ListeningTest[] = [
   {
     id: 'ls-academic-017',
     title:
-      'Practice Test 17 — Joining a Leisure Centre, A Guided Museum Tour, Planning a Geography Field Trip & How Volcanoes Work',
+      'Practice Test 17 - Joining a Leisure Centre, A Guided Museum Tour, Planning a Geography Field Trip & How Volcanoes Work',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-017-s1',
-        title: 'Section 1 — Joining a gym at a leisure centre',
+        title: 'Section 1 - Joining a gym at a leisure centre',
         // ~300 words. Transactional dialogue (Section 1 style): a man phoning the
         // Riverside Leisure Centre to join the gym. A surname is spelled and a mobile
         // number is dictated; the total first payment depends on a stated choice
@@ -61,7 +61,7 @@ MAN: Yes, it's Thomas Brakefield. The surname is spelled B-R-A-K-E-F-I-E-L-D.
 
 WOMAN: Lovely, thank you. And the best phone number for you?
 
-MAN: It's my mobile — oh-seven-nine-three-one, four double six, two-one-five.
+MAN: It's my mobile - oh-seven-nine-three-one, four double six, two-one-five.
 
 WOMAN: Got it. Now, we offer three types of membership. There's Off-Peak, which is thirty pounds a month but only lets you in before four in the afternoon. There's Standard, at forty-five pounds a month, with access at any time. And there's Premium, which is sixty pounds a month and adds unlimited classes and the swimming pool.
 
@@ -75,7 +75,7 @@ WOMAN: On weekdays we open at six in the morning and close at ten at night. At w
 
 MAN: Perfect. And is there an induction?
 
-WOMAN: Yes — before you use the equipment, you book a free induction with a trainer who shows you how everything works. The earliest we have is this Saturday at half past nine.
+WOMAN: Yes - before you use the equipment, you book a free induction with a trainer who shows you how everything works. The earliest we have is this Saturday at half past nine.
 
 MAN: That works for me.
 
@@ -88,7 +88,7 @@ WOMAN: Great. I'll put you down for that.`,
               'Complete the membership form. Write ONE WORD for the answer.\n\nApplicant surname: ____________',
             acceptableAnswers: ['Brakefield', 'brakefield'],
             explanation:
-              'The caller gives his name as “Thomas Brakefield” and spells the surname: B-R-A-K-E-F-I-E-L-D. In Section 1, names are almost always spelled aloud — write them down letter by letter.',
+              'The caller gives his name as “Thomas Brakefield” and spells the surname: B-R-A-K-E-F-I-E-L-D. In Section 1, names are almost always spelled aloud - write them down letter by letter.',
           },
           {
             id: 'ls-017-s1-q2',
@@ -96,7 +96,7 @@ WOMAN: Great. I'll put you down for that.`,
             prompt: 'Contact mobile number: ____________. Write the number exactly as you hear it.',
             acceptableAnswers: ['07931 466215', '07931466215', '07931 466 215', '0 7931 466215'],
             explanation:
-              'He dictates the number as “oh-seven-nine-three-one, four double six, two-one-five” — that is 07931 466215. “Double six” means two 6s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
+              'He dictates the number as “oh-seven-nine-three-one, four double six, two-one-five” - that is 07931 466215. “Double six” means two 6s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-017-s1-q3',
@@ -197,27 +197,27 @@ WOMAN: Great. I'll put you down for that.`,
       },
       {
         id: 'ls-academic-017-s2',
-        title: 'Section 2 — A guided museum tour introduction',
+        title: 'Section 2 - A guided museum tour introduction',
         // ~300 words. Informational monologue (Section 2 style): a guide introduces a
         // tour of the City Museum, describing what is on each floor, the facilities and
         // the timings. Uses clear floor-by-floor signposting that the matching question
         // follows, with a sentence-completion + multiple-choice mix.
         transcript: `Hello everyone, and welcome to the City Museum. My name's Gareth and I'll be guiding you this morning. Before we set off, let me give you a quick picture of how the building is arranged, so you know where everything is.
 
-The museum has three floors, and we'll work our way up. Here on the ground floor, where we're standing now, is the natural history collection — that's the dinosaur skeletons and the wildlife displays the children always love. The ground floor is also where you'll find the cloakroom, just behind me on the left, where you can leave coats and bags.
+The museum has three floors, and we'll work our way up. Here on the ground floor, where we're standing now, is the natural history collection - that's the dinosaur skeletons and the wildlife displays the children always love. The ground floor is also where you'll find the cloakroom, just behind me on the left, where you can leave coats and bags.
 
-We'll take the stairs up to the first floor next. The whole of the first floor is given over to local history — the story of the town from Roman times to the present day. Tucked in the corner of the first floor is the gift shop, in case you'd like a souvenir on your way out.
+We'll take the stairs up to the first floor next. The whole of the first floor is given over to local history - the story of the town from Roman times to the present day. Tucked in the corner of the first floor is the gift shop, in case you'd like a souvenir on your way out.
 
-The top floor, the second floor, houses our art gallery, with paintings and sculpture from the last three centuries. And it's on the second floor that you'll find the café, with rather good views over the river — a nice spot to finish.
+The top floor, the second floor, houses our art gallery, with paintings and sculpture from the last three centuries. And it's on the second floor that you'll find the café, with rather good views over the river - a nice spot to finish.
 
-A few practical points. Photography is allowed throughout, but please switch off your flash, as it can damage the older paintings. The full guided tour lasts about ninety minutes, and we'll finish back here in the entrance hall. If you prefer to explore alone, audio guides are available from the front desk for three pounds. Right — if everyone's ready, let's begin with the dinosaurs.`,
+A few practical points. Photography is allowed throughout, but please switch off your flash, as it can damage the older paintings. The full guided tour lasts about ninety minutes, and we'll finish back here in the entrance hall. If you prefer to explore alone, audio guides are available from the front desk for three pounds. Right - if everyone's ready, let's begin with the dinosaurs.`,
         questions: [
           {
             id: 'ls-017-s2-q11',
             type: 'matching',
             variant: 'features',
             prompt:
-              'Which floor of the museum is each thing on? Choose the correct floor for each item from the list A–C. You may use any letter more than once.',
+              'Which floor of the museum is each thing on? Choose the correct floor for each item from the list A-C. You may use any letter more than once.',
             options: [
               { key: 'A', label: 'the ground floor' },
               { key: 'B', label: 'the first floor' },
@@ -285,7 +285,7 @@ A few practical points. Photography is allowed throughout, but please switch off
       },
       {
         id: 'ls-academic-017-s3',
-        title: 'Section 3 — Tutorial: planning a geography field trip',
+        title: 'Section 3 - Tutorial: planning a geography field trip',
         // ~300 words. Academic discussion (Section 3 style): two students (Hannah and
         // Tom) and a tutor (Dr Mensah) plan a geography field trip to a river valley.
         // They discuss the focus, equipment, how to divide the roles and a key
@@ -303,17 +303,17 @@ DR MENSAH: Good. Now, equipment. What are you taking?
 
 HANNAH: A tape measure for the width, and metre sticks for the depth. For the flow, we were going to time a float over a set distance, but the lab has lent us a proper flow meter, which will be far more accurate.
 
-DR MENSAH: Excellent — use the flow meter. And do remember waterproof boots; the riverbed is slippery. Now, how are you splitting the work?
+DR MENSAH: Excellent - use the flow meter. And do remember waterproof boots; the riverbed is slippery. Now, how are you splitting the work?
 
-TOM: We've agreed that Hannah will be in charge of safety — checking the weather and the river level before we go in.
+TOM: We've agreed that Hannah will be in charge of safety - checking the weather and the river level before we go in.
 
 HANNAH: And Tom's looking after the data recording, writing everything down in the field notebook so nothing gets lost.
 
-DR MENSAH: Sensible. Who's handling the equipment — making sure it's all charged and packed?
+DR MENSAH: Sensible. Who's handling the equipment - making sure it's all charged and packed?
 
 TOM: That'll be me as well, actually.
 
-DR MENSAH: Fine, as long as it's clear. One last thing — the most important: your risk assessment form. I need that submitted before you go, and the deadline is the fifteenth of March. Without it, the trip can't be approved.
+DR MENSAH: Fine, as long as it's clear. One last thing - the most important: your risk assessment form. I need that submitted before you go, and the deadline is the fifteenth of March. Without it, the trip can't be approved.
 
 HANNAH: Understood. We'll get it to you by then.`,
         questions: [
@@ -373,7 +373,7 @@ HANNAH: Understood. We'll get it to you by then.`,
             type: 'matching',
             variant: 'features',
             prompt:
-              'Who is responsible for each task on the field trip? Choose the correct person for each task from the list A–C. You may use any letter more than once.',
+              'Who is responsible for each task on the field trip? Choose the correct person for each task from the list A-C. You may use any letter more than once.',
             options: [
               { key: 'A', label: 'Hannah' },
               { key: 'B', label: 'Tom' },
@@ -398,7 +398,7 @@ HANNAH: Understood. We'll get it to you by then.`,
               },
             ],
             explanation:
-              'Hannah will “be in charge of safety — checking the weather and the river level”; Tom is “looking after the data recording, writing everything down in the field notebook” and confirms equipment is “me as well”; and the tutor must approve the trip (“the trip can’t be approved” without the form).',
+              'Hannah will “be in charge of safety - checking the weather and the river level”; Tom is “looking after the data recording, writing everything down in the field notebook” and confirms equipment is “me as well”; and the tutor must approve the trip (“the trip can’t be approved” without the form).',
           },
           {
             id: 'ls-017-s3-q29',
@@ -422,22 +422,22 @@ HANNAH: Understood. We'll get it to you by then.`,
       },
       {
         id: 'ls-academic-017-s4',
-        title: 'Section 4 — Lecture: how volcanoes work',
+        title: 'Section 4 - Lecture: how volcanoes work',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single speaker
-        // delivers a structured lecture on volcanoes — how they form, the main types,
+        // delivers a structured lecture on volcanoes - how they form, the main types,
         // how they are monitored and the hazards they pose. Dense, factual and
         // signposted ("let me begin", "next", "finally"), with the note/sentence-
         // completion + multiple-choice mix typical of Section 4, including one
         // True/False/Not Given item.
-        transcript: `Good morning. Today's lecture is about volcanoes — how they form, the different shapes they take, how scientists keep watch on them, and the dangers they bring. I'll take each of those in turn.
+        transcript: `Good morning. Today's lecture is about volcanoes - how they form, the different shapes they take, how scientists keep watch on them, and the dangers they bring. I'll take each of those in turn.
 
 Let me begin with formation. A volcano is essentially an opening in the Earth's crust through which molten rock reaches the surface. That molten rock, while it's still underground, is called magma; once it erupts and flows out, we call it lava. Most volcanoes occur along the boundaries where the great plates of the Earth's crust meet.
 
-Next, the types. The shape of a volcano depends largely on how runny or sticky its lava is. Where the lava is very fluid, it spreads out and builds a broad, gently sloping mountain — a shield volcano. Where the lava is thick and sticky, it cannot travel far, so it piles up into the steep-sided cone most people picture, known as a stratovolcano. These steep ones tend to produce the most violent eruptions.
+Next, the types. The shape of a volcano depends largely on how runny or sticky its lava is. Where the lava is very fluid, it spreads out and builds a broad, gently sloping mountain - a shield volcano. Where the lava is thick and sticky, it cannot travel far, so it piles up into the steep-sided cone most people picture, known as a stratovolcano. These steep ones tend to produce the most violent eruptions.
 
 Now, monitoring. Scientists watch volcanoes closely for warning signs. One of the most useful is a swelling of the ground as magma rises beneath it, which can be measured very precisely with instruments. They also track small earthquakes and changes in the gases escaping from the volcano.
 
-Finally, the hazards. The lava itself is actually one of the lesser dangers, because it usually moves slowly enough to escape on foot. Far more deadly is what's called a pyroclastic flow — an avalanche of scorching gas and ash that races downhill at tremendous speed. Volcanic ash is also a serious hazard to aircraft, as it can stop jet engines. Next week we'll examine a single famous eruption in detail.`,
+Finally, the hazards. The lava itself is actually one of the lesser dangers, because it usually moves slowly enough to escape on foot. Far more deadly is what's called a pyroclastic flow - an avalanche of scorching gas and ash that races downhill at tremendous speed. Volcanic ash is also a serious hazard to aircraft, as it can stop jet engines. Next week we'll examine a single famous eruption in detail.`,
         questions: [
           {
             id: 'ls-017-s4-q31',
@@ -478,7 +478,7 @@ Finally, the hazards. The lava itself is actually one of the lesser dangers, bec
               'Very fluid lava spreads out to build a broad, gently sloping ____________ volcano. Write ONE WORD.',
             acceptableAnswers: ['shield'],
             explanation:
-              'The lecturer says fluid lava “builds a broad, gently sloping mountain — a shield volcano.” The answer is “shield”.',
+              'The lecturer says fluid lava “builds a broad, gently sloping mountain - a shield volcano.” The answer is “shield”.',
           },
           {
             id: 'ls-017-s4-q35',
@@ -529,10 +529,10 @@ Finally, the hazards. The lava itself is actually one of the lesser dangers, bec
             id: 'ls-017-s4-q39',
             type: 'gap',
             prompt:
-              'The most deadly hazard described is a pyroclastic ____________ — an avalanche of scorching gas and ash. Write ONE WORD.',
+              'The most deadly hazard described is a pyroclastic ____________ - an avalanche of scorching gas and ash. Write ONE WORD.',
             acceptableAnswers: ['flow'],
             explanation:
-              'The lecturer says “Far more deadly is what’s called a pyroclastic flow — an avalanche of scorching gas and ash.” The answer is “flow”.',
+              'The lecturer says “Far more deadly is what’s called a pyroclastic flow - an avalanche of scorching gas and ash.” The answer is “flow”.',
           },
           {
             id: 'ls-017-s4-q40',

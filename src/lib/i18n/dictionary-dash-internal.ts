@@ -12,7 +12,7 @@
  * BANNED (Levantine): شو, بحكي, كيفك, ليش
  *
  * Latin retention: brand names, exam codes (GCSE, IGCSE, AQA, OCR,
- * Edexcel, AO1–AO6, CAIE, WJEC, Eduqas, IAL, KS3, MCQ, PDF, AI) stay
+ * Edexcel, AO1-AO6, CAIE, WJEC, Eduqas, IAL, KS3, MCQ, PDF, AI) stay
  * in Latin script inside Arabic text per Gulf convention.
  *
  * GENDER POLICY: binary M/F. Male-second-person addressed by default
@@ -303,7 +303,7 @@ export const DASH_INTERNAL_DICTIONARY: Dictionary = {
   },
   'dashboard.review.err.fallback': { en: 'Review not found.', ar: 'ما لقينا المراجعة.' },
 
-  // ─── Dashboard / Teacher Resources — shared ────────────────────────
+  // ─── Dashboard / Teacher Resources - shared ────────────────────────
   'dashboard.tr.back': { en: '← Back to Resources', ar: '← رجوع للموارد' },
 
   // ─── Teacher Resources / Creative Writing ──────────────────────────

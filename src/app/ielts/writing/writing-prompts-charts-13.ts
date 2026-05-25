@@ -1,19 +1,19 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 13 ───────────────────────────
 // A thirteenth bank of five Academic Task 1 prompts, each paired with a REAL
 // chart spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–9 and the
+// Authoring rules followed throughout (mirroring chart sets 1-9 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth). The text may name
 //     years, categories and units, but never a measured value.
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
-//   • table — every row.cells length === columns.length − 1 (first column is the
+//   • table - every row.cells length === columns.length − 1 (first column is the
 //     row header);
 //   • every spec sets a `caption`;
 //   • numbers are realistic, internally consistent and tell a clear story
@@ -21,7 +21,7 @@
 //     achievable.
 //
 // Five fresh, original topics, deliberately distinct from every existing prompt
-// across the whole chart bank (sets 1–9 + the worked examples):
+// across the whole chart bank (sets 1-9 + the worked examples):
 //   1 amount of household waste recycled per person in four towns, two years
 //     (multi-series bar)
 //   2 average daily temperature in two cities across the twelve months

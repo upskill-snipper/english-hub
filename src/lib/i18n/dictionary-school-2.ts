@@ -1,5 +1,5 @@
 /**
- * Bucket-A Tier-2 curated bilingual dictionary — SECOND alphabetical half
+ * Bucket-A Tier-2 curated bilingual dictionary - SECOND alphabetical half
  * of the `school.*` namespace, plus the full `growth.*` and `toolkit.*`
  * namespaces.
  *
@@ -20,7 +20,7 @@
  *   median. Part-1 owns the FIRST half (… up to and including
  *   `school.calendar.cancel`). THIS file owns the SECOND half, which
  *   begins at `school.calendar.class` and runs through
- *   `school.settings.title` — i.e. the calendar grid/dialog, the lessons
+ *   `school.settings.title` - i.e. the calendar grid/dialog, the lessons
  *   library + lesson-plan detail, and the entire School Settings page
  *   (profile, subscription, admins, notifications, security, GDPR, join
  *   code). Plus every `growth.*` (public traction dashboard) and every
@@ -41,7 +41,7 @@
  *
  * Merged into the master lookup by dictionary.ts → lookup(); placed in
  * the curated-override tier BEFORE AUDIT_FIX so genuine copy wins over
- * the junk it replaces. This file only defines data — wiring lives in
+ * the junk it replaces. This file only defines data - wiring lives in
  * dictionary.ts and is owned by the integrating change.
  */
 
@@ -66,8 +66,8 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.calendar.lesson.title': { en: 'Lesson title', ar: 'عنوان الدرس' },
   'school.calendar.lesson.title_placeholder': {
-    en: 'e.g. Macbeth — Act 1 analysis',
-    ar: 'مثال: Macbeth — تحليل الفصل الأول',
+    en: 'e.g. Macbeth - Act 1 analysis',
+    ar: 'مثال: Macbeth - تحليل الفصل الأول',
   },
   'school.calendar.month': { en: 'Month', ar: 'شهر' },
   'school.calendar.print': { en: 'Print', ar: 'اطبع' },
@@ -124,8 +124,8 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'دوّر في العروض…',
   },
   'school.lessons.library.subtitle': {
-    en: 'Ready-made slide decks for every year group — preview and download as PowerPoint.',
-    ar: 'عروض شرائح جاهزة لكل مرحلة — عاينها ونزّلها كملف PowerPoint.',
+    en: 'Ready-made slide decks for every year group - preview and download as PowerPoint.',
+    ar: 'عروض شرائح جاهزة لكل مرحلة - عاينها ونزّلها كملف PowerPoint.',
   },
   'school.lessons.library.title': {
     en: 'Presentation library',
@@ -179,7 +179,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // Access, Admin Accounts, Notifications, Security, GDPR & Data, Join
   // Code. Save buttons toggle to a "saving" state; toasts confirm/err.
 
-  // Admin accounts — promote/demote teachers ↔ admins.
+  // Admin accounts - promote/demote teachers ↔ admins.
   'school.settings.admins.add': { en: 'Add member', ar: 'إضافة عضو' },
   'school.settings.admins.demote': {
     en: 'Demote to teacher',
@@ -213,7 +213,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'ما قدرنا نحدّث الصلاحية. حاول مرة ثانية.',
   },
 
-  // GDPR & Data — export request + destructive school deletion.
+  // GDPR & Data - export request + destructive school deletion.
   'school.settings.gdpr.cancel': { en: 'Cancel', ar: 'إلغاء' },
   'school.settings.gdpr.confirm_delete': {
     en: 'Permanently delete school',
@@ -256,8 +256,8 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'فشل طلب التصدير. حاول مرة ثانية.',
   },
   'school.settings.gdpr.export_success': {
-    en: 'Export requested — we will email you a download link.',
-    ar: 'تم طلب التصدير — بنرسل لك رابط التنزيل على الإيميل.',
+    en: 'Export requested - we will email you a download link.',
+    ar: 'تم طلب التصدير - بنرسل لك رابط التنزيل على الإيميل.',
   },
   'school.settings.gdpr.requesting': {
     en: 'Requesting…',
@@ -284,7 +284,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'اكتب',
   },
 
-  // Join code — share with students to enrol them.
+  // Join code - share with students to enrol them.
   'school.settings.joincode.body': {
     en: 'Students enter this code when signing up to join your school automatically.',
     ar: 'الطلاب يدخّلون هالكود وقت التسجيل عشان ينضمّون لمدرستك تلقائيًا.',
@@ -324,7 +324,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'كود الانضمام',
   },
 
-  // Notifications — email alerts for the school admin.
+  // Notifications - email alerts for the school admin.
   'school.settings.notif.at_risk_desc': {
     en: 'Be alerted when a student is flagged as at risk of underperforming.',
     ar: 'ييك تنبيه لما طالب ينحدّد إنه معرّض لخطر ضعف الأداء.',
@@ -371,7 +371,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'الملخّص الأسبوعي',
   },
 
-  // School profile — name, type, board, curriculum, contact, logo.
+  // School profile - name, type, board, curriculum, contact, logo.
   'school.settings.profile.address': { en: 'Address', ar: 'العنوان' },
   'school.settings.profile.address_placeholder': {
     en: 'Street address',
@@ -474,7 +474,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'رفع الشعار',
   },
 
-  // Security — password policy, session timeout, 2FA (coming soon).
+  // Security - password policy, session timeout, 2FA (coming soon).
   'school.settings.security.coming_soon': {
     en: 'Coming soon',
     ar: 'قريبًا',
@@ -488,16 +488,16 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'سياسة كلمة المرور',
   },
   'school.settings.security.policy.basic': {
-    en: 'Basic — minimum 8 characters',
-    ar: 'أساسية — 8 أحرف كحد أدنى',
+    en: 'Basic - minimum 8 characters',
+    ar: 'أساسية - 8 أحرف كحد أدنى',
   },
   'school.settings.security.policy.strong': {
-    en: 'Strong — letters, numbers & symbols',
-    ar: 'قوية — حروف وأرقام ورموز',
+    en: 'Strong - letters, numbers & symbols',
+    ar: 'قوية - حروف وأرقام ورموز',
   },
   'school.settings.security.policy.very_strong': {
-    en: 'Very strong — 12+ characters with symbols',
-    ar: 'قوية جدًا — 12 حرف فأكثر مع رموز',
+    en: 'Very strong - 12+ characters with symbols',
+    ar: 'قوية جدًا - 12 حرف فأكثر مع رموز',
   },
   'school.settings.security.policy_help': {
     en: 'Applies to every account in your school.',
@@ -537,15 +537,15 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.settings.security.title': { en: 'Security', ar: 'الأمان' },
 
-  // Subscription & access — plan status, founder tier, billing contact.
+  // Subscription & access - plan status, founder tier, billing contact.
   'school.settings.subscription.active': { en: 'Active', ar: 'فعّال' },
   'school.settings.subscription.billing_pre': {
     en: 'For billing questions or to change your plan, contact',
     ar: 'لأسئلة الفوترة أو لتغيير باقتك، تواصل مع',
   },
   'school.settings.subscription.contact_note': {
-    en: 'Plans are managed by our team — no changes are made automatically.',
-    ar: 'الباقات يديرها فريقنا — ما يصير أي تغيير تلقائي.',
+    en: 'Plans are managed by our team - no changes are made automatically.',
+    ar: 'الباقات يديرها فريقنا - ما يصير أي تغيير تلقائي.',
   },
   'school.settings.subscription.current_plan': {
     en: 'Current plan',
@@ -608,12 +608,12 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'المستثمرون والشركاء:',
   },
   'growth.h1': {
-    en: 'Our traction — in the open',
-    ar: 'نموّنا — بشفافية',
+    en: 'Our traction - in the open',
+    ar: 'نموّنا - بشفافية',
   },
   'growth.lead': {
-    en: 'Live metrics for The English Hub, published straight from production. No vanity figures — these are the numbers we run the business on.',
-    ar: 'مؤشرات حيّة لـ The English Hub، منشورة مباشرة من بيئة التشغيل. ما فيه أرقام للمظهر — هاي الأرقام اللي ندير فيها الشغل.',
+    en: 'Live metrics for The English Hub, published straight from production. No vanity figures - these are the numbers we run the business on.',
+    ar: 'مؤشرات حيّة لـ The English Hub، منشورة مباشرة من بيئة التشغيل. ما فيه أرقام للمظهر - هاي الأرقام اللي ندير فيها الشغل.',
   },
   'growth.stat.essays_hint': {
     en: 'Total essays marked by our AI to date',

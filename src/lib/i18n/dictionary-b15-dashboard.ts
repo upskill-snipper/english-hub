@@ -1,4 +1,4 @@
-/** dictionary-b15-dashboard.ts — Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /dashboard + /toolkit product UI. */
+/** dictionary-b15-dashboard.ts - Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /dashboard + /toolkit product UI. */
 export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ── dashboard/analytics ────────────────────────────────────────────────────
   'dashboard.analytics.back': { en: 'Dashboard', ar: 'لوحة التحكم' },
@@ -284,7 +284,7 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   'dashboard.privacy.delete_title': { en: 'Delete Your Data', ar: 'حذف بياناتك' },
   'dashboard.privacy.delete_desc': {
     en: "You can delete individual essays or your entire account. Take your time - there's no pressure.",
-    ar: 'يمكنك حذف مقالات فردية أو حسابك بالكامل. خذ وقتك — لا ضغط.',
+    ar: 'يمكنك حذف مقالات فردية أو حسابك بالكامل. خذ وقتك - لا ضغط.',
   },
   'dashboard.privacy.delete_essays_title': {
     en: 'Delete Individual Essays',
@@ -318,28 +318,28 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   },
   'dashboard.data_requests.card_access_title': { en: 'Request My Data', ar: 'طلب بياناتي' },
   'dashboard.data_requests.card_access_desc': {
-    en: 'Article 15 — Get a full copy of all personal data we hold about you.',
-    ar: 'المادة 15 — احصل على نسخة كاملة من جميع البيانات الشخصية التي نحتفظ بها عنك.',
+    en: 'Article 15 - Get a full copy of all personal data we hold about you.',
+    ar: 'المادة 15 - احصل على نسخة كاملة من جميع البيانات الشخصية التي نحتفظ بها عنك.',
   },
   'dashboard.data_requests.btn_access': { en: 'Request My Data', ar: 'طلب بياناتي' },
   'dashboard.data_requests.btn_access_submitting': { en: 'Submitting...', ar: 'جاري الإرسال...' },
   'dashboard.data_requests.card_download_title': { en: 'Download My Data', ar: 'تحميل بياناتي' },
   'dashboard.data_requests.card_download_desc': {
-    en: 'Article 20 — Download your data in a machine-readable format (JSON).',
-    ar: 'المادة 20 — حمّل بياناتك بصيغة قابلة للقراءة آلياً (JSON).',
+    en: 'Article 20 - Download your data in a machine-readable format (JSON).',
+    ar: 'المادة 20 - حمّل بياناتك بصيغة قابلة للقراءة آلياً (JSON).',
   },
   'dashboard.data_requests.btn_download': { en: 'Download My Data', ar: 'تحميل بياناتي' },
   'dashboard.data_requests.btn_download_preparing': { en: 'Preparing...', ar: 'جاري التحضير...' },
   'dashboard.data_requests.card_correct_title': { en: 'Correct My Data', ar: 'تصحيح بياناتي' },
   'dashboard.data_requests.card_correct_desc': {
-    en: 'Article 16 — Update or correct any inaccurate personal information.',
-    ar: 'المادة 16 — حدّث أو صحّح أي معلومات شخصية غير دقيقة.',
+    en: 'Article 16 - Update or correct any inaccurate personal information.',
+    ar: 'المادة 16 - حدّث أو صحّح أي معلومات شخصية غير دقيقة.',
   },
   'dashboard.data_requests.btn_edit_profile': { en: 'Edit My Profile', ar: 'تعديل ملفي الشخصي' },
   'dashboard.data_requests.card_delete_title': { en: 'Delete My Data', ar: 'حذف بياناتي' },
   'dashboard.data_requests.card_delete_desc': {
-    en: 'Article 17 — Request erasure of your personal data. This action cannot be undone.',
-    ar: 'المادة 17 — اطلب مسح بياناتك الشخصية. هذا الإجراء لا يمكن التراجع عنه.',
+    en: 'Article 17 - Request erasure of your personal data. This action cannot be undone.',
+    ar: 'المادة 17 - اطلب مسح بياناتك الشخصية. هذا الإجراء لا يمكن التراجع عنه.',
   },
   'dashboard.data_requests.btn_delete': { en: 'Delete My Data', ar: 'حذف بياناتي' },
   'dashboard.data_requests.confirm_delete_title': { en: 'Are you sure?', ar: 'هل أنت متأكد؟' },

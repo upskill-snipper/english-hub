@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (to a local council / a training
+//     The register varies by prompt - formal (to a local council / a training
 //     provider) or informal (to a friend). The situation and the three bullets
 //     live inside `prompt`. minWords 150, suggestedMinutes 20.
 //   • Task 2 is an opinion / discussion essay, like Academic, but on more
@@ -19,7 +19,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_7: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter to a local council ─────────────────────────
+  // ── Task 1 · A - FORMAL letter to a local council ─────────────────────────
   {
     id: 'wt1-gt7-park-improvement',
     task: 'writing-task-1',
@@ -44,7 +44,7 @@ export const GT_WRITING_SET_7: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — INFORMAL letter inviting a friend to visit ───────────────
+  // ── Task 1 · B - INFORMAL letter inviting a friend to visit ───────────────
   {
     id: 'wt1-gt7-invite-friend',
     task: 'writing-task-1',
@@ -69,7 +69,7 @@ export const GT_WRITING_SET_7: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — FORMAL letter requesting course information ──────────────
+  // ── Task 1 · C - FORMAL letter requesting course information ──────────────
   {
     id: 'wt1-gt7-course-enquiry',
     task: 'writing-task-1',
@@ -94,7 +94,7 @@ export const GT_WRITING_SET_7: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree / disagree) ───────────────────────────────
+  // ── Task 2 · A - opinion (agree / disagree) ───────────────────────────────
   {
     id: 'wt2-gt7-organised-activities',
     task: 'writing-task-2',
@@ -113,7 +113,7 @@ export const GT_WRITING_SET_7: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — discussion (both views + opinion) ────────────────────────
+  // ── Task 2 · B - discussion (both views + opinion) ────────────────────────
   {
     id: 'wt2-gt7-buy-local',
     task: 'writing-task-2',
@@ -132,7 +132,7 @@ export const GT_WRITING_SET_7: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — opinion (working from home vs office) ────────────────────
+  // ── Task 2 · C - opinion (working from home vs office) ────────────────────
   {
     id: 'wt2-gt7-home-vs-office',
     task: 'writing-task-2',

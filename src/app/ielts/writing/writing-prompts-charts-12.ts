@@ -1,17 +1,17 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 12 ───────────────────────────
 // A twelfth bank of five Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–9 and the
+// Authoring rules followed throughout (mirroring chart sets 1-9 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth);
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
-//   • table — every row.cells length === columns.length − 1 (first column is
+//   • table - every row.cells length === columns.length − 1 (first column is
 //     the row header);
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -41,7 +41,7 @@ export const WRITING_CHARTS_12: WritingPrompt[] = [
     track: 'academic',
     title: 'Number of international students at three universities',
     prompt: [
-      'The bar chart below shows the number of international students enrolled at three universities — Northgate, Saint Clare and Westfield — in 2018, 2021 and 2024.',
+      'The bar chart below shows the number of international students enrolled at three universities - Northgate, Saint Clare and Westfield - in 2018, 2021 and 2024.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -70,7 +70,7 @@ export const WRITING_CHARTS_12: WritingPrompt[] = [
     track: 'academic',
     title: 'Average house prices in three regions over a decade',
     prompt: [
-      'The line graph below shows the average price of a house, in thousands of pounds, in three regions — the North, the Midlands and the South — between 2014 and 2024.',
+      'The line graph below shows the average price of a house, in thousands of pounds, in three regions - the North, the Midlands and the South - between 2014 and 2024.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -80,7 +80,7 @@ export const WRITING_CHARTS_12: WritingPrompt[] = [
       kind: 'line',
       unit: '£ thousands',
       yAxisLabel: 'Average price (£ 000s)',
-      caption: 'Average house price by region (£ thousands), 2014–2024.',
+      caption: 'Average house price by region (£ thousands), 2014-2024.',
       categories: ['2014', '2016', '2018', '2020', '2022', '2024'],
       series: [
         { name: 'North', values: [148, 152, 160, 171, 198, 214] },
@@ -99,7 +99,7 @@ export const WRITING_CHARTS_12: WritingPrompt[] = [
     track: 'academic',
     title: 'Employment by sector in four countries',
     prompt: [
-      'The table below shows the percentage of the workforce employed in four sectors — agriculture, manufacturing, services and the public sector — in four countries in 2023.',
+      'The table below shows the percentage of the workforce employed in four sectors - agriculture, manufacturing, services and the public sector - in four countries in 2023.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -192,7 +192,7 @@ export const WRITING_CHARTS_12: WritingPrompt[] = [
         {
           label: 'Sorting',
           detail:
-            'The collected glass is separated by colour — clear, green and brown — and any plastic, metal or paper is removed.',
+            'The collected glass is separated by colour - clear, green and brown - and any plastic, metal or paper is removed.',
         },
         {
           label: 'Crushing',

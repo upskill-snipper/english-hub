@@ -1,9 +1,9 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 8) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 8) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary completion and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, guides, advertisements)
 // and WORKPLACE texts (policies, staff handbooks), plus one longer
@@ -11,10 +11,10 @@
 // test (3 sections, 40 marks).
 //
 // Section 1 (everyday/social): a museum visit guide + a residents' parking-
-//   permit notice — includes a Matching (features) question.
+//   permit notice - includes a Matching (features) question.
 // Section 2 (workplace): a flexible-working request policy.
 // Section 3 (general-interest): the benefits of learning a musical instrument
-//   as an adult — six labelled paragraphs (A–F) with a Matching (headings)
+//   as an adult - six labelled paragraphs (A-F) with a Matching (headings)
 //   question worth 5 marks.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -23,30 +23,30 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_8: ReadingTest[] = [
   {
     id: 'rd-general-008',
-    title: 'General Training Reading — Practice Test 8',
+    title: 'General Training Reading - Practice Test 8',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — museum guide + parking notice ────────
+      // ── Section 1: EVERYDAY / SOCIAL - museum guide + parking notice ────────
       {
         id: 'rd-gen-008-p1',
-        title: 'Harbourgate City Museum — Visitor Guide & Residents’ Parking Notice',
-        body: `HARBOURGATE CITY MUSEUM — A GUIDE FOR YOUR VISIT
+        title: 'Harbourgate City Museum - Visitor Guide & Residents’ Parking Notice',
+        body: `HARBOURGATE CITY MUSEUM - A GUIDE FOR YOUR VISIT
 
 Welcome to Harbourgate City Museum. Entry to the permanent galleries is free, though we suggest a donation of £5 to help us care for the collection. Tickets are required only for the temporary exhibition on the top floor, which changes three times a year.
 
 The museum is arranged over four floors, and the layout below will help you plan your time.
 
-GROUND FLOOR — The Harbour Gallery
+GROUND FLOOR - The Harbour Gallery
 This gallery tells the story of the town's fishing fleet and the families who depended on it. Most of the objects here were donated by local people, and many can be touched, making this the best starting point for younger children. A short film about life at sea runs every half hour in the corner theatre.
 
-FIRST FLOOR — The Makers' Gallery
+FIRST FLOOR - The Makers' Gallery
 Here you will find the tools and products of the trades that once filled the old town: rope-making, boat-building and net-mending. Volunteers, several of whom learned these crafts themselves, give live demonstrations at 11.00 a.m. and 2.00 p.m. each day. Photography without flash is welcome throughout this floor.
 
-SECOND FLOOR — The Quiet Gallery
-This floor displays delicate items — old maps, letters and hand-painted charts — under low lighting to protect them from fading. Bags larger than a small handbag must be left in the free lockers near the entrance before you come up. To preserve the calm, this is the one gallery where the café trolley does not go.
+SECOND FLOOR - The Quiet Gallery
+This floor displays delicate items - old maps, letters and hand-painted charts - under low lighting to protect them from fading. Bags larger than a small handbag must be left in the free lockers near the entrance before you come up. To preserve the calm, this is the one gallery where the café trolley does not go.
 
-TOP FLOOR — The Spinnaker Room
+TOP FLOOR - The Spinnaker Room
 Our changing temporary exhibition is held here and requires a ticket, which you can buy at the front desk or online. The current show, on the history of map-making, runs until the end of August.
 
 FACILITIES
@@ -54,11 +54,11 @@ The café on the ground floor serves drinks and light meals until thirty minutes
 
 ─────────────────────────────────────────────
 
-NOTICE TO RESIDENTS — CHANGES TO PARKING PERMITS, OLD TOWN ZONE C
+NOTICE TO RESIDENTS - CHANGES TO PARKING PERMITS, OLD TOWN ZONE C
 
 From 1 September the way residents apply for parking permits in Zone C will change. Please read this notice carefully, as the old paper permits will no longer be valid after that date.
 
-Applications will be made online only, through the council website. If you cannot use the website, the library on Quay Street can help you apply free of charge during its normal opening hours. You will need to upload proof that you live in Zone C — a recent utility bill or tenancy agreement is accepted, but a bank statement is not.
+Applications will be made online only, through the council website. If you cannot use the website, the library on Quay Street can help you apply free of charge during its normal opening hours. You will need to upload proof that you live in Zone C - a recent utility bill or tenancy agreement is accepted, but a bank statement is not.
 
 Each household may hold up to two resident permits. The first costs £40 a year; the second costs £65. A separate visitor permit, which allows a guest to park for one day at a time, is available in books of ten for £18. Permits are charged per vehicle and cannot be moved between cars.
 
@@ -93,12 +93,12 @@ Permits are renewed once a year. We will send a reminder by email four weeks bef
             type: 'matching',
             variant: 'features',
             prompt:
-              'The museum has four floors, A–D. For each statement below, decide which floor it describes. Write the correct letter, A–D. (Each floor may be chosen more than once.)',
+              'The museum has four floors, A-D. For each statement below, decide which floor it describes. Write the correct letter, A-D. (Each floor may be chosen more than once.)',
             options: [
-              { key: 'A', label: 'A — Ground Floor: The Harbour Gallery' },
-              { key: 'B', label: "B — First Floor: The Makers' Gallery" },
-              { key: 'C', label: 'C — Second Floor: The Quiet Gallery' },
-              { key: 'D', label: 'D — Top Floor: The Spinnaker Room' },
+              { key: 'A', label: 'A - Ground Floor: The Harbour Gallery' },
+              { key: 'B', label: "B - First Floor: The Makers' Gallery" },
+              { key: 'C', label: 'C - Second Floor: The Quiet Gallery' },
+              { key: 'D', label: 'D - Top Floor: The Spinnaker Room' },
             ],
             items: [
               {
@@ -128,7 +128,7 @@ Permits are renewed once a year. We will send a reminder by email four weeks bef
               },
             ],
             explanation:
-              'i1 and i5 — the Second Floor (Quiet Gallery) is where bags larger than a small handbag must be left in lockers and is "the one gallery where the café trolley does not go," so both are C. i2 — the Top Floor (Spinnaker Room) "requires a ticket," so D. i3 — the Ground Floor (Harbour Gallery) is "the best starting point for younger children," so A. i4 — the First Floor (Makers\' Gallery) has live demonstrations "at 11.00 a.m. and 2.00 p.m. each day" (twice a day), so B.',
+              'i1 and i5 - the Second Floor (Quiet Gallery) is where bags larger than a small handbag must be left in lockers and is "the one gallery where the café trolley does not go," so both are C. i2 - the Top Floor (Spinnaker Room) "requires a ticket," so D. i3 - the Ground Floor (Harbour Gallery) is "the best starting point for younger children," so A. i4 - the First Floor (Makers\' Gallery) has live demonstrations "at 11.00 a.m. and 2.00 p.m. each day" (twice a day), so B.',
           },
           {
             id: 'rd-gen-008-p1-q5',
@@ -172,10 +172,10 @@ Permits are renewed once a year. We will send a reminder by email four weeks bef
           },
         ],
       },
-      // ── Section 2: WORKPLACE — flexible-working request policy ──────────────
+      // ── Section 2: WORKPLACE - flexible-working request policy ──────────────
       {
         id: 'rd-gen-008-p2',
-        title: 'Flexible Working Requests — Staff Policy',
+        title: 'Flexible Working Requests - Staff Policy',
         body: `This policy explains how employees may ask to change their working pattern and how those requests are handled. It applies to all staff who have completed their probation period.
 
 WHAT YOU CAN ASK FOR
@@ -188,7 +188,7 @@ WHAT HAPPENS NEXT
 Your manager will arrange a meeting to discuss the request, normally within two weeks. You are welcome to bring a colleague with you to this meeting. The company aims to give you a decision in writing within one month of receiving the request, although this may be extended if more information is needed and you agree to the delay.
 
 IF YOUR REQUEST IS REFUSED
-A request may be turned down only for a genuine business reason — for example, the work cannot be reorganised among other staff, or the change would harm the quality of service to customers. The reason must be explained in the written decision. If your request is refused, you may appeal in writing within fourteen days, and a more senior manager who was not involved in the original decision will review it.
+A request may be turned down only for a genuine business reason - for example, the work cannot be reorganised among other staff, or the change would harm the quality of service to customers. The reason must be explained in the written decision. If your request is refused, you may appeal in writing within fourteen days, and a more senior manager who was not involved in the original decision will review it.
 
 A TRIAL PERIOD
 Where a manager is unsure whether a new pattern will work, they may agree to a trial period of up to three months before making a permanent change. At the end of the trial, the arrangement will be reviewed. If it has not worked well, you will return to your previous pattern, and this does not count as a refusal of your request.`,
@@ -284,20 +284,20 @@ Where a manager is unsure whether a new pattern will work, they may agree to a t
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — learning an instrument as an adult
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - learning an instrument as an adult
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-008-p3',
         title: 'Never Too Late: Taking Up a Musical Instrument in Adulthood',
         body: `Paragraph A
-There is a stubborn belief that music is the property of the young — that unless you began scraping at a violin or thumping a piano in childhood, the door has quietly closed. Music teachers know better. Walk into an adult beginners' class today and you will find people in their thirties, fifties and seventies bent over guitars, keyboards and clarinets, many of them picking up an instrument for the very first time. Far from being a lost cause, the adult learner often brings advantages that a restless child simply does not have.
+There is a stubborn belief that music is the property of the young - that unless you began scraping at a violin or thumping a piano in childhood, the door has quietly closed. Music teachers know better. Walk into an adult beginners' class today and you will find people in their thirties, fifties and seventies bent over guitars, keyboards and clarinets, many of them picking up an instrument for the very first time. Far from being a lost cause, the adult learner often brings advantages that a restless child simply does not have.
 
 Paragraph B
 The first of these advantages is choice. A child is usually handed an instrument by a parent or a school; an adult chooses freely, and that choice tends to fall on something they genuinely love. Motivation that springs from desire rather than duty is a powerful teacher. Adults also understand why practice matters and can organise their own time, so a short, focused session in the evening often achieves more than an hour of a distracted ten-year-old's grumbling. Patience, the very quality childhood lacks, turns out to be the learner's greatest friend.
 
 Paragraph C
-The benefits reach well beyond the music itself. Learning an instrument asks the brain to do several things at once — to read or recall notes, to move the fingers precisely, to keep time and to listen and adjust, all in the same moment. Studies of older learners suggest that this kind of demanding, coordinated activity helps to keep the mind sharp, supporting memory and attention in ways that more passive pastimes do not. The effort of mastering something difficult appears to be part of the reward.
+The benefits reach well beyond the music itself. Learning an instrument asks the brain to do several things at once - to read or recall notes, to move the fingers precisely, to keep time and to listen and adjust, all in the same moment. Studies of older learners suggest that this kind of demanding, coordinated activity helps to keep the mind sharp, supporting memory and attention in ways that more passive pastimes do not. The effort of mastering something difficult appears to be part of the reward.
 
 Paragraph D
 There is an emotional dividend too. Playing music is widely found to lower stress and lift mood; the simple act of producing a pleasing sound can quiet a busy mind better than many deliberate attempts to relax. Group settings add a further layer. An adult who joins a community band or a weekly ensemble gains not only tuition but company, a shared goal and the particular satisfaction of making something with others. For people whose social circle has narrowed with age, that weekly gathering can matter as much as the notes.
@@ -313,7 +313,7 @@ The remedy that experienced teachers recommend is modest and consistent. A littl
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. Practical advice for staying the course' },
               { key: 'ii', label: 'ii. The cost of lessons and instruments' },
@@ -331,7 +331,7 @@ The remedy that experienced teachers recommend is modest and consistent. A littl
               { id: 'pF', text: 'Paragraph F', answer: 'i' },
             ],
             explanation:
-              'B (iii) lists the advantages the adult learner brings — free choice, motivation, the ability to organise time, and patience. C (vi) explains how playing makes the brain coordinate several tasks at once and helps keep the mind sharp. D (v) covers the emotional dividend (lower stress, better mood) and the company of group playing. E (iv) describes the early difficulties — less supple fingers, slow progress and the temptation to give up. F (i) gives practical advice for keeping going (little and often, achievable pieces, remembering why one started). Headings ii (cost) and vii (the best age for a child) are not used.',
+              'B (iii) lists the advantages the adult learner brings - free choice, motivation, the ability to organise time, and patience. C (vi) explains how playing makes the brain coordinate several tasks at once and helps keep the mind sharp. D (v) covers the emotional dividend (lower stress, better mood) and the company of group playing. E (iv) describes the early difficulties - less supple fingers, slow progress and the temptation to give up. F (i) gives practical advice for keeping going (little and often, achievable pieces, remembering why one started). Headings ii (cost) and vii (the best age for a child) are not used.',
           },
           {
             id: 'rd-gen-008-p3-q19',
@@ -345,7 +345,7 @@ The remedy that experienced teachers recommend is modest and consistent. A littl
             ],
             correctIndex: 1,
             explanation:
-              'Paragraph A describes "a stubborn belief that music is the property of the young — that unless you began ... in childhood, the door has quietly closed." Option B captures this mistaken belief, which the writer then challenges.',
+              'Paragraph A describes "a stubborn belief that music is the property of the young - that unless you began ... in childhood, the door has quietly closed." Option B captures this mistaken belief, which the writer then challenges.',
           },
           {
             id: 'rd-gen-008-p3-q20',

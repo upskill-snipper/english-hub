@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 29) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 29) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — cues to species
+// which-paragraph (Passage 2) and Matching Features - cues to species
 // (Passage 3), alongside the usual mix of True/False/Not Given, multiple choice
 // and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_29: ReadingTest[] = [
   {
     id: 'rd-academic-029',
-    title: 'Academic Reading — Practice Test 29',
+    title: 'Academic Reading - Practice Test 29',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -38,7 +38,7 @@ The decisive leap came in the 1860s in France, when an unknown craftsman fixed c
 
 A peculiar logic of the pedal-on-wheel design now drove the machine into its strangest phase. Because the pedals turned the front wheel directly, one full turn of the pedals carried the rider only as far as the wheel's circumference. The obvious way to go faster was simply to make the front wheel bigger, and makers duly enlarged it until it towered over the rider's head, balanced above a tiny trailing wheel at the back. This was the famous high-wheeler, often called the penny-farthing after two British coins of very different sizes. It could reach an impressive speed, but the rider perched far above the ground was alarmingly easy to pitch over the handlebars by a sudden stop or a stone in the road. Riding one demanded youth, nerve and athleticism, and the machine remained, like the hobby-horse before it, the preserve of a bold minority.
 
-The breakthrough that finally opened cycling to everyone arrived in the 1880s, and its key idea was indirect drive. Instead of fixing the pedals to the wheel itself, the new design placed them on a separate axle in the middle of the frame and connected them to the rear wheel by a loop of chain running over toothed wheels of different sizes. By choosing the ratio of those toothed wheels, a maker could make one turn of the pedals spin the rear wheel more than once, so speed no longer depended on a giant wheel. The two wheels could shrink to a sensible, equal size, the rider could sit low and safely between them, and the danger of being thrown headfirst all but vanished. The machine was so much safer than the towering high-wheeler that it became known simply as the safety bicycle, and its basic layout — a diamond-shaped frame, a chain to the back wheel, two wheels of equal size — is essentially the one still in use today. The arrival of the air-filled rubber tyre a few years later, cushioning the ride at last, completed the transformation.
+The breakthrough that finally opened cycling to everyone arrived in the 1880s, and its key idea was indirect drive. Instead of fixing the pedals to the wheel itself, the new design placed them on a separate axle in the middle of the frame and connected them to the rear wheel by a loop of chain running over toothed wheels of different sizes. By choosing the ratio of those toothed wheels, a maker could make one turn of the pedals spin the rear wheel more than once, so speed no longer depended on a giant wheel. The two wheels could shrink to a sensible, equal size, the rider could sit low and safely between them, and the danger of being thrown headfirst all but vanished. The machine was so much safer than the towering high-wheeler that it became known simply as the safety bicycle, and its basic layout - a diamond-shaped frame, a chain to the back wheel, two wheels of equal size - is essentially the one still in use today. The arrival of the air-filled rubber tyre a few years later, cushioning the ride at last, completed the transformation.
 
 The social consequences were greater than anyone had foreseen. The safety bicycle was cheap enough that working people could eventually afford one, and for the first time ordinary men and women could travel several miles under their own power, quickly and for free, whenever they wished. Country labourers could court partners in neighbouring villages; factory workers could live further from the noise and dirt of their workplaces. The effect on women was especially marked. The bicycle offered a respectable, independent means of travel that required no horse, no carriage and no chaperone, and it could not easily be ridden in the heavy, restrictive skirts then in fashion. Dress reformers seized on the machine as an argument for lighter, more practical clothing, and many later commentators credited the humble bicycle with quietly advancing the cause of women's freedom. A device built for sport and novelty had, almost by accident, helped to loosen the bonds of a rigid society.`,
         questions: [
@@ -48,7 +48,7 @@ The social consequences were greater than anyone had foreseen. The safety bicycl
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'The towering machine for the brave few' },
               { key: 'ii', label: 'A slow assembly rather than a single invention' },
@@ -68,7 +68,7 @@ The social consequences were greater than anyone had foreseen. The safety bicycl
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vii' },
             ],
             explanation:
-              'A says the bicycle "was not invented so much as gradually assembled" over a century (ii). B describes von Drais\'s footed wooden hobby-horse and its short-lived craze (iv). C introduces pedals fixed to the front wheel and the jolting "boneshakers" (v). D covers the towering high-wheeler / penny-farthing ridden only by a "bold minority" (i). E explains the chain-driven safety bicycle that opened cycling to everyone (vi). F traces the wider social effects, "especially marked" for women (vii). Heading iii (racing rules) is a distractor — the front wheel grew for speed, not because of rules; heading viii (decline in the motor age) is never discussed.',
+              'A says the bicycle "was not invented so much as gradually assembled" over a century (ii). B describes von Drais\'s footed wooden hobby-horse and its short-lived craze (iv). C introduces pedals fixed to the front wheel and the jolting "boneshakers" (v). D covers the towering high-wheeler / penny-farthing ridden only by a "bold minority" (i). E explains the chain-driven safety bicycle that opened cycling to everyone (vi). F traces the wider social effects, "especially marked" for women (vii). Heading iii (racing rules) is a distractor - the front wheel grew for speed, not because of rules; heading viii (decline in the motor age) is never discussed.',
           },
           {
             id: 'rd-029-p1-q2',
@@ -123,7 +123,7 @@ The social consequences were greater than anyone had foreseen. The safety bicycl
               'The basic layout of the safety bicycle is essentially still in use on bicycles today.',
             answer: 'true',
             explanation:
-              'Paragraph E states the safety bicycle\'s layout — "a diamond-shaped frame, a chain to the back wheel, two wheels of equal size — is essentially the one still in use today." This matches the statement, so it is True.',
+              'Paragraph E states the safety bicycle\'s layout - "a diamond-shaped frame, a chain to the back wheel, two wheels of equal size - is essentially the one still in use today." This matches the statement, so it is True.',
           },
           {
             id: 'rd-029-p1-q7',
@@ -157,7 +157,7 @@ Not every glowing organism makes its own chemistry from scratch. A great many ma
 
 Why should so many creatures have gone to the trouble of evolving light at all? The most common reason is defence. A startled deep-sea shrimp may spew out a glowing cloud, much as a squid releases ink, dazzling a predator while the shrimp escapes into the dark. Other animals use the opposite tactic, lighting themselves up when seized in the hope of attracting a still larger predator that will turn on their attacker. There is even a strategy of disguise: many fish that live in the dim twilight zone of the ocean carry rows of small lights along their bellies, tuned to match the faint glow filtering down from the surface, so that a predator looking up from below sees no telltale silhouette against the brighter water. This trick of erasing one's own shadow is known as counter-illumination.
 
-Light is also a powerful tool for attraction, whether of prey or of mates. The most famous hunter is the deep-sea anglerfish, which dangles a glowing lure in front of its jaws to draw small fish within reach; here, as in many deep-sea fishes, the light itself is produced by bacteria living in the lure. On land, the flashing of fireflies is a courtship signal, and each species flashes in its own particular rhythm so that males and females of the same kind can recognise one another in the dark. The system is not foolproof. In some species the females of one kind have learned to imitate the answering flash of another, luring hopeful males of the wrong species close — and then eating them.
+Light is also a powerful tool for attraction, whether of prey or of mates. The most famous hunter is the deep-sea anglerfish, which dangles a glowing lure in front of its jaws to draw small fish within reach; here, as in many deep-sea fishes, the light itself is produced by bacteria living in the lure. On land, the flashing of fireflies is a courtship signal, and each species flashes in its own particular rhythm so that males and females of the same kind can recognise one another in the dark. The system is not foolproof. In some species the females of one kind have learned to imitate the answering flash of another, luring hopeful males of the wrong species close - and then eating them.
 
 It is in the deep ocean, far below the reach of sunlight, that living light comes into its own. Sunlight fades to nothing within a few hundred metres of the surface, and below that lies a vast, permanently dark realm that makes up most of the living space on the planet. In this enormous habitat, bioluminescence is not a curiosity but a normal feature of life: a remarkably high proportion of deep-sea animals can produce light of some kind. Most of that light is blue, for blue travels furthest through seawater, though a few unusual fishes can produce and detect red light, giving them a private channel invisible to their prey. In the perpetual darkness of the deep, the ability to make light is less a luxury than one of the basic currencies of survival.`,
         questions: [
@@ -167,7 +167,7 @@ It is in the deep ocean, far below the reach of sunlight, that living light come
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -297,17 +297,17 @@ It is in the deep ocean, far below the reach of sunlight, that living light come
         title: 'Finding the Way',
         body: `Every year, billions of animals undertake journeys that dwarf anything in human experience. Birds cross oceans, whales travel the length of hemispheres, and even insects no heavier than a paperclip migrate thousands of kilometres between breeding and feeding grounds. What is most astonishing is not the distance but the precision: a young bird may fly to a wintering ground it has never seen and return, months later, to the very hedgerow where it hatched. For centuries the question of how animals find their way seemed an impenetrable mystery. Only patient experiment has begun to reveal the answer, which is that there is no single answer at all. Animals navigate by combining a whole toolkit of different cues, switching between them as conditions allow.
 
-The most obvious cue is the sun, and many creatures use it as a compass. The difficulty is that the sun moves across the sky through the day, so its position alone cannot indicate a fixed direction. To use the sun for steering, an animal must also keep track of the time of day and make allowance for the sun's movement, a feat that requires an accurate internal clock. Experiments with birds have shown this clock at work in a striking way. When captive birds were kept under artificial lighting that shifted their sense of time by several hours and then released, they set off at a predictable angle away from their proper course — exactly the error expected if they were reading the sun's position against a clock that was now wrong.
+The most obvious cue is the sun, and many creatures use it as a compass. The difficulty is that the sun moves across the sky through the day, so its position alone cannot indicate a fixed direction. To use the sun for steering, an animal must also keep track of the time of day and make allowance for the sun's movement, a feat that requires an accurate internal clock. Experiments with birds have shown this clock at work in a striking way. When captive birds were kept under artificial lighting that shifted their sense of time by several hours and then released, they set off at a predictable angle away from their proper course - exactly the error expected if they were reading the sun's position against a clock that was now wrong.
 
-For animals that travel by night, the stars offer a similar service. Unlike the sun, the night sky appears to wheel around a single fixed point, the celestial pole, about which the other stars seem to turn. An animal that can locate this still centre has found a reliable indicator of direction that does not depend on knowing the time. In a famous series of experiments, young songbirds were raised inside a planetarium, a domed theatre on whose ceiling an artificial night sky can be projected. The birds learned to orient themselves by the patterns they saw there, and when the projected sky was rotated about a false centre, they shifted their preferred direction to match — clear evidence that they read the stars rather than relying on any inborn map of particular constellations.
+For animals that travel by night, the stars offer a similar service. Unlike the sun, the night sky appears to wheel around a single fixed point, the celestial pole, about which the other stars seem to turn. An animal that can locate this still centre has found a reliable indicator of direction that does not depend on knowing the time. In a famous series of experiments, young songbirds were raised inside a planetarium, a domed theatre on whose ceiling an artificial night sky can be projected. The birds learned to orient themselves by the patterns they saw there, and when the projected sky was rotated about a false centre, they shifted their preferred direction to match - clear evidence that they read the stars rather than relying on any inborn map of particular constellations.
 
 Perhaps the most remarkable cue of all is one entirely hidden from human senses: the magnetic field of the Earth itself. The planet behaves like a vast, weak magnet, and its field varies in a regular way across the globe, offering in principle a source of directional and even positional information. A wide range of animals, from migratory birds to sea turtles, appears able to detect this field and use it as a compass, and some may even sense its strength and angle precisely enough to gauge their position. Exactly how they do so is still debated; the sense organ involved is tiny and hard to locate, and the magnetic signal is extraordinarily faint. What is clear from experiment is that the ability is real, for animals exposed to artificial magnetic fields can be made to alter course.
 
-Closer to the ground, more familiar cues come into play. Animals that travel shorter distances, or that are completing the final stage of a long journey, often steer by landmarks — coastlines, mountain ranges, rivers and other features of the land that can be learned and remembered. Smell, too, can be a powerful guide. The classic case is the salmon, which hatches in a particular stream, migrates far out to sea, and years later returns to spawn in the very same stretch of water. The fish is thought to memorise the distinctive chemical scent of its home stream as a young fish and to follow that remembered odour back upriver, sniffing its way to the exact spot of its birth among countless alternative branches.
+Closer to the ground, more familiar cues come into play. Animals that travel shorter distances, or that are completing the final stage of a long journey, often steer by landmarks - coastlines, mountain ranges, rivers and other features of the land that can be learned and remembered. Smell, too, can be a powerful guide. The classic case is the salmon, which hatches in a particular stream, migrates far out to sea, and years later returns to spawn in the very same stretch of water. The fish is thought to memorise the distinctive chemical scent of its home stream as a young fish and to follow that remembered odour back upriver, sniffing its way to the exact spot of its birth among countless alternative branches.
 
 These many cues are not used in isolation but woven together, with one taking over when another fails. A bird may steer by the sun by day, switch to the stars at night, fall back on the Earth's magnetic field when clouds hide both, and finally home in on familiar landmarks as it nears its destination. This flexibility is also what makes migration so vulnerable to a changing world. Artificial light at night can lure migrating birds off course and exhaust them; structures such as tall towers and bright buildings claim great numbers each year; and there is concern that human activity which alters the cues themselves may interfere with the delicate senses on which these journeys depend. A system perfected over millions of years can be disrupted in a single human lifetime.`,
         questions: [
-          // ── Matching Features — cues to the species/example (5 items) = 5 marks ──
+          // ── Matching Features - cues to the species/example (5 items) = 5 marks ──
           {
             id: 'rd-029-p3-q1',
             type: 'matching',
@@ -395,7 +395,7 @@ These many cues are not used in isolation but woven together, with one taking ov
             ],
             correctIndex: 1,
             explanation:
-              'Paragraph C says that when the projected sky was rotated, the birds shifted direction to match — "clear evidence that they read the stars rather than relying on any inborn map of particular constellations." Option B matches and rules out option A.',
+              'Paragraph C says that when the projected sky was rotated, the birds shifted direction to match - "clear evidence that they read the stars rather than relying on any inborn map of particular constellations." Option B matches and rules out option A.',
           },
           {
             id: 'rd-029-p3-q6',

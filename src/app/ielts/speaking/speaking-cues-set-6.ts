@@ -1,15 +1,15 @@
-// ─── IELTS Speaking cues · Set 6 (Academic, Parts 1–3) ─────────────────────
+// ─── IELTS Speaking cues · Set 6 (Academic, Parts 1-3) ─────────────────────
 // A sixth batch of original IELTS-preparation practice prompts for the async
 // Speaking module. Same shape and conventions as SPEAKING_CUES, with fresh
 // everyday topics so learners can rotate through more material without repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (skills & expertise, architecture &
 //     public spaces, food & shared meals, role models in everyday life).
 //
-// Topics here are deliberately distinct from the base cues and Sets 2–5 (which
+// Topics here are deliberately distinct from the base cues and Sets 2-5 (which
 // already cover home/area, daily routine, food/cooking, weather, transport,
 // hometown, music, weekends, technology, shopping, books/reading, sport, sleep,
 // clothes, the internet, festivals, animals/pets, plus cue cards for a skill,
@@ -21,7 +21,7 @@
 // news & current events, plus cue cards on a skill to master, an impressive
 // building, a memorable meal and a non-famous person you admire.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids use the `sp-006-` prefix so
 // the coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -29,7 +29,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_6: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp-006-p1-cooking-meals',
     part: 'speaking-part-1',
@@ -73,7 +73,7 @@ export const SPEAKING_SET_6: SpeakingCue[] = [
     part: 'speaking-part-1',
     title: 'Part 1 · News and current events',
     prompts: [
-      'How do you usually keep up with the news — online, on television, or some other way?',
+      'How do you usually keep up with the news - online, on television, or some other way?',
       'What kinds of news stories tend to interest you the most?',
       'Do you check the news at a particular time of day?',
       'Has the way you follow the news changed over the last few years?',
@@ -81,7 +81,7 @@ export const SPEAKING_SET_6: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp-006-p2-skill-to-master',
     part: 'speaking-part-2',
@@ -143,7 +143,7 @@ export const SPEAKING_SET_6: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp-006-p3-skills-expertise',
     part: 'speaking-part-3',
@@ -188,7 +188,7 @@ export const SPEAKING_SET_6: SpeakingCue[] = [
     part: 'speaking-part-3',
     title: 'Part 3 · Everyday role models',
     prompts: [
-      'Who do you think makes a better role model — a famous person or someone in our daily lives?',
+      'Who do you think makes a better role model - a famous person or someone in our daily lives?',
       'Why do some people look up to celebrities rather than the people around them?',
       'How do the people we admire when we are young shape who we become?',
       'Do you think public figures have a responsibility to set a good example? Why?',

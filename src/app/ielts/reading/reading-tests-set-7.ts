@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 7) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 7) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_7: ReadingTest[] = [
   {
     id: 'rd-academic-007',
-    title: 'Academic Reading — Practice Test 7',
+    title: 'Academic Reading - Practice Test 7',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -26,7 +26,7 @@ export const READING_SET_7: ReadingTest[] = [
 
 The man usually credited with changing this was not an engineer or a shipping magnate but an American trucking operator named Malcom McLean. Frustrated by the hours his drivers wasted waiting on the quayside while their loads were unpacked and reloaded, he reasoned that it would be far simpler to lift an entire truck trailer onto a ship and set it down again at the other end. In 1956 he sent a converted tanker carrying fifty-eight metal boxes from Newark to Houston. The idea seemed almost too obvious to patent, yet its consequences would prove enormous.
 
-The genius of the shipping container lay less in the box itself than in what it allowed everything around it to become. Because every container shared the same dimensions and the same corner fittings, it could be stacked, locked and lifted by standard equipment anywhere in the world. A crane that had once shifted a few tonnes an hour could now move thirty in a single lift, and a ship that had idled in port for a week could be turned around in a day. The container did not merely speed up loading; it allowed the whole journey — factory, lorry, ship, train and warehouse — to be treated as one smooth, mechanised flow.
+The genius of the shipping container lay less in the box itself than in what it allowed everything around it to become. Because every container shared the same dimensions and the same corner fittings, it could be stacked, locked and lifted by standard equipment anywhere in the world. A crane that had once shifted a few tonnes an hour could now move thirty in a single lift, and a ship that had idled in port for a week could be turned around in a day. The container did not merely speed up loading; it allowed the whole journey - factory, lorry, ship, train and warehouse - to be treated as one smooth, mechanised flow.
 
 The savings were staggering. By some estimates the cost of loading loose cargo fell by more than ninety per cent once containers came into general use. For the first time, the expense of transport ceased to be a serious obstacle to trade. A manufacturer in one country could now buy components from a dozen others, assemble them, and ship the finished article across the planet without the freight bill destroying the profit. Factories no longer had to sit close to their customers or their ports; they could be built wherever land and labour were cheapest, and their products could reach distant markets at a price that would once have been unthinkable.
 
@@ -82,7 +82,7 @@ Today the descendants of McLean's fifty-eight boxes number in the tens of millio
             ],
             correctIndex: 1,
             explanation:
-              'The third paragraph states that the container "allowed the whole journey — factory, lorry, ship, train and warehouse — to be treated as one smooth, mechanised flow," and stresses that its genius lay in what it let everything around it become. Option B captures this.',
+              'The third paragraph states that the container "allowed the whole journey - factory, lorry, ship, train and warehouse - to be treated as one smooth, mechanised flow," and stresses that its genius lay in what it let everything around it become. Option B captures this.',
           },
           {
             id: 'rd-007-p1-q6',
@@ -171,7 +171,7 @@ Today the descendants of McLean's fifty-eight boxes number in the tens of millio
       {
         id: 'rd-academic-007-p2',
         title: 'The Hidden Elements Inside Our Devices',
-        body: `The smartphone in a person's pocket is, among other things, a small museum of the periodic table. Tucked inside it are tiny quantities of a group of metals with unfamiliar names — neodymium, dysprosium, europium, yttrium and a dozen others — collectively known as the rare earth elements. Despite their grand title, these metals are not especially scarce in the ground. Some are more abundant in the Earth's crust than copper or lead. What makes them difficult, and strategically important, is something quite different.
+        body: `The smartphone in a person's pocket is, among other things, a small museum of the periodic table. Tucked inside it are tiny quantities of a group of metals with unfamiliar names - neodymium, dysprosium, europium, yttrium and a dozen others - collectively known as the rare earth elements. Despite their grand title, these metals are not especially scarce in the ground. Some are more abundant in the Earth's crust than copper or lead. What makes them difficult, and strategically important, is something quite different.
 
 The first peculiarity is the way they occur. Rare earths are almost never found in concentrated, easily mined seams. Instead they are thinly scattered through ordinary rock, and the seventeen elements are chemically so similar to one another that they tend to appear mixed together in the same mineral. Separating a single desired element from this cocktail is a delicate and laborious task, requiring the ore to be dissolved and passed through dozens or even hundreds of chemical stages. The process is costly, consumes large amounts of acid, and generates a great deal of toxic and sometimes radioactive waste. It is the refining, far more than the digging, that limits supply.
 
@@ -337,7 +337,7 @@ Yet the picture is more complicated than these figures suggest, and the complica
 
 The effects on the individual are equally mixed. Many remote workers report greater satisfaction, citing the freedom to arrange their day around family life and the relief of escaping a stressful journey. Others, however, describe a creeping sense of isolation. The boundary between work and home, once marked by the act of leaving the building, dissolves when the laptop sits in the corner of the living room, and some find that they work longer hours than before without quite noticing. The colleague who might once have suggested a break is no longer in the room. For workers who live alone, the loss of incidental human contact can weigh heavily, and a few studies have linked prolonged isolated working to a decline in well-being.
 
-There is also a question of fairness that the simple economics conceals. Remote work suits some jobs and some homes far better than others. A senior manager with a spacious house and a dedicated study experiences it very differently from a young employee sharing a small flat with several others and working from a bed. The option to work remotely tends to be available chiefly to office workers, while those whose jobs are physical — in factories, hospitals, shops and transport — must still travel as before. A policy that delights one part of the workforce may therefore deepen the divide between it and another, and managers worry, too, that those who choose to come into the office may quietly gain an advantage in promotion over equally capable colleagues who stay at home.
+There is also a question of fairness that the simple economics conceals. Remote work suits some jobs and some homes far better than others. A senior manager with a spacious house and a dedicated study experiences it very differently from a young employee sharing a small flat with several others and working from a bed. The option to work remotely tends to be available chiefly to office workers, while those whose jobs are physical - in factories, hospitals, shops and transport - must still travel as before. A policy that delights one part of the workforce may therefore deepen the divide between it and another, and managers worry, too, that those who choose to come into the office may quietly gain an advantage in promotion over equally capable colleagues who stay at home.
 
 Faced with these competing pressures, most large organisations have edged towards a compromise. Rather than choosing wholly between the office and the home, they have adopted what is usually called a hybrid model, in which employees spend part of the week in the workplace and part of it elsewhere. The hope is to keep the concentration and flexibility of home while preserving the collaboration and the sense of belonging that the office provides. Whether such arrangements can capture the best of both, or merely the inconveniences of each, is not yet clear. What does seem certain is that the sudden experiment, however it began, has permanently altered the assumption that work and the workplace must be one and the same thing.`,
         questions: [

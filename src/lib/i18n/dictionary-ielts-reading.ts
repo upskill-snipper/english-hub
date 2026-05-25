@@ -4,7 +4,7 @@
 //
 // SCOPE: this shard translates the *interface* only. The practice CONTENT
 // (passages, questions, options, gap answers, explanations) lives in
-// ./reading-tests.ts and stays English — IELTS is an English exam — so no keys
+// ./reading-tests.ts and stays English - IELTS is an English exam - so no keys
 // for it exist here.
 //
 // Khaleeji (Gulf) Arabic per the master dictionary header conventions
@@ -38,8 +38,8 @@ export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string 
   },
   'ielts.reading.intro.body.questions_word': { en: 'questions.', ar: 'سؤال.' },
   'ielts.reading.intro.body.rest': {
-    en: 'You will see multiple-choice, True/False/Not Given, and sentence-completion tasks — the core question types in the Academic Reading paper. When you finish, your answers are marked instantly and converted to an estimated band score with full explanations.',
-    ar: 'بتشوف أسئلة اختيار من متعدد، True/False/Not Given، وإكمال جمل — وهي أهم أنواع الأسئلة في ورقة القراءة Academic. أول ما تخلّص، تتصحّح إجاباتك على طول وتتحوّل لتقدير Band مع شرح كامل.',
+    en: 'You will see multiple-choice, True/False/Not Given, and sentence-completion tasks - the core question types in the Academic Reading paper. When you finish, your answers are marked instantly and converted to an estimated band score with full explanations.',
+    ar: 'بتشوف أسئلة اختيار من متعدد، True/False/Not Given، وإكمال جمل - وهي أهم أنواع الأسئلة في ورقة القراءة Academic. أول ما تخلّص، تتصحّح إجاباتك على طول وتتحوّل لتقدير Band مع شرح كامل.',
   },
 
   // Intro stat tiles
@@ -68,8 +68,8 @@ export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string 
   'ielts.reading.results.correct_answers': { en: 'Correct answers', ar: 'الإجابات الصحيحة' },
   'ielts.reading.results.score': { en: 'Score', ar: 'النتيجة' },
   'ielts.reading.results.disclaimer': {
-    en: 'This is an estimate based on published Academic band approximations and is intended for practice only — it is not an official IELTS score.',
-    ar: 'هذا تقدير مبني على تقريبات Band الـ Academic المنشورة، وهو للتدريب بس — مو نتيجة IELTS رسمية.',
+    en: 'This is an estimate based on published Academic band approximations and is intended for practice only - it is not an official IELTS score.',
+    ar: 'هذا تقدير مبني على تقريبات Band الـ Academic المنشورة، وهو للتدريب بس - مو نتيجة IELTS رسمية.',
   },
 
   // Results actions
@@ -100,7 +100,7 @@ export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string 
   // Passage label: "Passage {n}"
   'ielts.reading.passage.label': { en: 'Passage', ar: 'النص' },
 
-  // Bottom submit summary — split around the dynamic counts.
+  // Bottom submit summary - split around the dynamic counts.
   'ielts.reading.summary.you_answered': { en: 'You have answered', ar: 'جاوبت على' },
   'ielts.reading.summary.tail': {
     en: 'questions. You can submit at any time.',

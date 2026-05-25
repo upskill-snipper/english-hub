@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 27) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 27) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — adaptations to plants
+// which-paragraph (Passage 2) and Matching Features - adaptations to plants
 // (Passage 3), alongside the usual mix of True/False/Not Given, multiple choice
 // and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_27: ReadingTest[] = [
   {
     id: 'rd-academic-027',
-    title: 'Academic Reading — Practice Test 27',
+    title: 'Academic Reading - Practice Test 27',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -50,7 +50,7 @@ The modern era of timekeeping abandoned moving weights and springs in favour of 
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has seven paragraphs, A–G. Choose the correct heading for paragraphs B–G from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–ix) for each paragraph.',
+              'The passage has seven paragraphs, A-G. Choose the correct heading for paragraphs B-G from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-ix) for each paragraph.',
             options: [
               { key: 'i', label: 'Borrowing the Sun to tell the hour' },
               { key: 'ii', label: 'A steady beat from a swinging weight' },
@@ -169,7 +169,7 @@ Against this shared backdrop, individuals differ more than is often realised. So
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -306,15 +306,15 @@ The hunt for water continues underground, where desert plants pursue two opposit
 
 A more hidden adaptation lies in the very chemistry of photosynthesis. Ordinary plants open their stomata in the daytime to take in carbon dioxide, but in the desert the daytime air is precisely when water loss is most punishing. A number of desert plants have evolved a different timetable, known as CAM photosynthesis. They keep their stomata firmly shut through the heat of the day and open them only at night, when the air is cool and water escapes far more slowly. The carbon dioxide taken in after dark is stored in the form of an acid and then released and used for photosynthesis the following day behind closed pores. By separating the gathering of carbon from its use in time, CAM lets a plant feed itself while losing only a fraction of the water that daytime breathing would cost.
 
-For some plants the boldest answer of all is to avoid the worst of the desert by not being active during it. Certain shrubs respond to a long drought by dropping their leaves and slowing their life almost to a standstill, a dormancy from which a single good rain can rouse them within days. Others go further still and survive only as seeds, racing through their entire lives in the brief window after a downpour. Such seeds may lie in the soil for years, even decades, protected by coats that will not allow them to sprout until enough rain has fallen to see the new generation through to flowering. When at last the rains are heavy enough, a barren plain can erupt almost overnight into a carpet of bloom — proof that the desert is not empty of life but merely waiting, with great patience, for water.`,
+For some plants the boldest answer of all is to avoid the worst of the desert by not being active during it. Certain shrubs respond to a long drought by dropping their leaves and slowing their life almost to a standstill, a dormancy from which a single good rain can rouse them within days. Others go further still and survive only as seeds, racing through their entire lives in the brief window after a downpour. Such seeds may lie in the soil for years, even decades, protected by coats that will not allow them to sprout until enough rain has fallen to see the new generation through to flowering. When at last the rains are heavy enough, a barren plain can erupt almost overnight into a carpet of bloom - proof that the desert is not empty of life but merely waiting, with great patience, for water.`,
         questions: [
-          // ── Matching Features — adaptations to plant types (5 items) = 5 marks ──
+          // ── Matching Features - adaptations to plant types (5 items) = 5 marks ──
           {
             id: 'rd-027-p3-q1',
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the following descriptions and the list of desert survival strategies below. Match each description to the strategy it relates to in the passage. Write the correct letter, A–D. NB You may use any letter more than once.',
+              'Look at the following descriptions and the list of desert survival strategies below. Match each description to the strategy it relates to in the passage. Write the correct letter, A-D. NB You may use any letter more than once.',
             options: [
               { key: 'A', label: 'Storing water in fleshy tissue (succulence)' },
               { key: 'B', label: 'Reducing or losing the leaves' },

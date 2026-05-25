@@ -1,5 +1,5 @@
 /**
- * Genuine Khaleeji Arabic — trust namespaces (Bucket A wave 1)
+ * Genuine Khaleeji Arabic - trust namespaces (Bucket A wave 1)
  *
  * Covers the `press`, `about`, `accessibility` and `footer` keys for the
  * wired public pages:
@@ -17,8 +17,8 @@
  *   - accessibility           → dictionary-report-fix-may16b.ts
  * NOT from dictionary-audit-fix.ts (which holds auto-junk like "Title").
  *
- * AR is hand-authored natural Gulf (Khaleeji) register — conversational,
- * not MSA, not machine-literal — matching the voice of
+ * AR is hand-authored natural Gulf (Khaleeji) register - conversational,
+ * not MSA, not machine-literal - matching the voice of
  * src/lib/eal/curriculum.ts. Brand and proper nouns (The English Hub,
  * Companies House, WCAG, ICO numbers, exam boards, EASS, etc.) are kept
  * as-is.
@@ -31,7 +31,7 @@
 
 export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ───────────────────────────────────────────────────────────────────
-  // /press — Hero
+  // /press - Hero
   // ───────────────────────────────────────────────────────────────────
   'press.hero.eyebrow': { en: 'Press & Media', ar: 'الصحافة والإعلام' },
   'press.hero.title': {
@@ -93,8 +93,8 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   'press.facts.founded.label': { en: 'Founded', ar: 'تأسّست' },
   'press.facts.founded.year': {
-    en: '2024 — operating from 2026',
-    ar: '٢٠٢٤ — وتشتغل من ٢٠٢٦',
+    en: '2024 - operating from 2026',
+    ar: '٢٠٢٤ - وتشتغل من ٢٠٢٦',
   },
   'press.facts.founded.bootstrapped': {
     en: 'Bootstrapped. No outside investment to date.',
@@ -156,8 +156,8 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'press.product.pricing.founding_strong': { en: 'Schools', ar: 'المدارس' },
   'press.product.pricing.founding_body': {
-    en: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2–3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
-    ar: 'تجربة المدارس المؤسِّسة تبدأ من £4,000/سنة لأول ١٠ مدارس (ترخيص سنوي متجدّد، مثبّت لمدّة ٢–٣ سنوات). الترخيص المدرسي العادي يبدأ من £8,000/سنة بعد كذا. أسعار مخصّصة للمجموعات (MAT) والمجموعات الدولية على ترخيص سنوي مخصّص.',
+    en: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2-3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
+    ar: 'تجربة المدارس المؤسِّسة تبدأ من £4,000/سنة لأول ١٠ مدارس (ترخيص سنوي متجدّد، مثبّت لمدّة ٢-٣ سنوات). الترخيص المدرسي العادي يبدأ من £8,000/سنة بعد كذا. أسعار مخصّصة للمجموعات (MAT) والمجموعات الدولية على ترخيص سنوي مخصّص.',
   },
   'press.product.pricing.gbp_note': {
     en: 'All prices are in GBP and exclude VAT where applicable.',
@@ -166,20 +166,20 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   'press.product.distinct.h3': { en: 'What is distinctive', ar: 'وش اللي يميّزنا' },
   'press.product.distinct.boards': {
-    en: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE — students see the materials matched to their actual board, not generic English content.',
-    ar: 'محتوى متوافق مع مواصفات AQA وPearson Edexcel وOCR وWJEC Eduqas وCambridge IGCSE — الطالب يشوف المواد المطابقة لمجلسه الفعلي، مو محتوى إنجليزي عام.',
+    en: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE - students see the materials matched to their actual board, not generic English content.',
+    ar: 'محتوى متوافق مع مواصفات AQA وPearson Edexcel وOCR وWJEC Eduqas وCambridge IGCSE - الطالب يشوف المواد المطابقة لمجلسه الفعلي، مو محتوى إنجليزي عام.',
   },
   'press.product.distinct.plain_english': {
     en: 'Plain English explanations of assessment objectives, mark-scheme language and exam structure for students who find existing revision sites dense or jargon-heavy.',
     ar: 'شرح بإنجليزي بسيط لأهداف التقييم، ولغة مخطّط الدرجات، وبنية الامتحان، للطلاب اللي يلقون مواقع المراجعة الحالية معقّدة أو فيها مصطلحات وايد.',
   },
   'press.product.distinct.board_selection': {
-    en: "A persistent board picker — once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
-    ar: 'منتقي مجلس ثابت — أول ما يختار الطالب أو المدرسة مجلس الامتحان، كل صفحة في المنصّة تتبدّل لتتطابق مع مواصفات ذيك المجلس.',
+    en: "A persistent board picker - once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
+    ar: 'منتقي مجلس ثابت - أول ما يختار الطالب أو المدرسة مجلس الامتحان، كل صفحة في المنصّة تتبدّل لتتطابق مع مواصفات ذيك المجلس.',
   },
   'press.product.distinct.childrens_code': {
-    en: 'Designed with the UK Age-Appropriate Design Code in mind — no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
-    ar: 'مصمّم مع مراعاة مدوّنة التصميم المناسب للأعمار في بريطانيا — بدون إعلانات طرف ثالث، بدون بكسلات تتبّع، صلاحيات حسب الدور لحسابات المدارس، وسياسة معالجة بيانات منشورة.',
+    en: 'Designed with the UK Age-Appropriate Design Code in mind - no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
+    ar: 'مصمّم مع مراعاة مدوّنة التصميم المناسب للأعمار في بريطانيا - بدون إعلانات طرف ثالث، بدون بكسلات تتبّع، صلاحيات حسب الدور لحسابات المدارس، وسياسة معالجة بيانات منشورة.',
   },
 
   // Press contact
@@ -218,8 +218,8 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'press.kit.download_disabled': { en: 'Available on request', ar: 'متوفّر عند الطلب' },
   'press.kit.download_title': {
-    en: 'Brand assets pack — coming soon. Email the press desk for the current files.',
-    ar: 'حزمة أصول العلامة — قريباً. راسل مكتب الصحافة على الملفّات الحالية.',
+    en: 'Brand assets pack - coming soon. Email the press desk for the current files.',
+    ar: 'حزمة أصول العلامة - قريباً. راسل مكتب الصحافة على الملفّات الحالية.',
   },
 
   // Recent coverage
@@ -322,8 +322,8 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'أرشيف BBC والصحف الكبرى',
   },
   'about.verified.sources.bbc_body': {
-    en: 'For context — biographical, historical, social — we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
-    ar: 'للسياق — السيري والتاريخي والاجتماعي — نتحقّق مقابل مصادر منشورة ومسمّاة. نفضّل BBC والصحف الكبرى والناشرين الأكاديميين على ملخّصات الويب المفتوح.',
+    en: 'For context - biographical, historical, social - we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
+    ar: 'للسياق - السيري والتاريخي والاجتماعي - نتحقّق مقابل مصادر منشورة ومسمّاة. نفضّل BBC والصحف الكبرى والناشرين الأكاديميين على ملخّصات الويب المفتوح.',
   },
   'about.verified.sources.board_strong': {
     en: 'Public exam-board specifications',
@@ -341,32 +341,32 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'مو كل المحتوى يحمل نفس وزن الدليل. نستخدم أربع تسميات داخلية للثقة عشان القارئ يقدر يعرف وش وراء صفحة معيّنة.',
   },
   'about.verified.confidence.highest_label': {
-    en: 'Highest — quote checked + human reviewed',
-    ar: 'الأعلى — اقتباس مفحوص + مراجَع بشرياً',
+    en: 'Highest - quote checked + human reviewed',
+    ar: 'الأعلى - اقتباس مفحوص + مراجَع بشرياً',
   },
   'about.verified.confidence.highest_body': {
     en: 'Quotations cross-referenced against a public-domain source. Analysis read end-to-end by a human editor. Used for set-text pages and exemplar essays.',
     ar: 'اقتباسات مراجعة مقابل مصدر في الملك العام. والتحليل مقروء من أوّله لآخره من محرّر بشري. يُستخدم لصفحات النصوص المقرّرة والمقالات النموذجية.',
   },
   'about.verified.confidence.high_label': {
-    en: 'High — human reviewed',
-    ar: 'عالي — مراجَع بشرياً',
+    en: 'High - human reviewed',
+    ar: 'عالي - مراجَع بشرياً',
   },
   'about.verified.confidence.high_body': {
     en: 'AI-drafted then read end-to-end by a human editor. Used for theme-level analysis, contextual notes and revision summaries.',
     ar: 'مصاغ بالذكاء الاصطناعي وبعدين مقروء من أوّله لآخره من محرّر بشري. يُستخدم للتحليل على مستوى الثيمات، والملاحظات السياقية، وملخّصات المراجعة.',
   },
   'about.verified.confidence.medium_label': {
-    en: 'Medium — AI-drafted, awaiting review',
-    ar: 'متوسّط — مصاغ بالذكاء الاصطناعي، بانتظار المراجعة',
+    en: 'Medium - AI-drafted, awaiting review',
+    ar: 'متوسّط - مصاغ بالذكاء الاصطناعي، بانتظار المراجعة',
   },
   'about.verified.confidence.medium_body': {
     en: 'AI-generated content surfaced as a learning aid but not yet signed off by a human editor. We mark this clearly so students know what they are looking at.',
     ar: 'محتوى مولّد بالذكاء الاصطناعي معروض كأداة تعلّم بس لسا ما اعتمده محرّر بشري. نأشّر على هذا بوضوح عشان الطلاب يعرفون وش يشوفون.',
   },
   'about.verified.confidence.low_label': {
-    en: 'Formative — practice feedback only',
-    ar: 'تكويني — ملاحظات تمرين بس',
+    en: 'Formative - practice feedback only',
+    ar: 'تكويني - ملاحظات تمرين بس',
   },
   'about.verified.confidence.low_body': {
     en: 'AI-generated essay feedback and grade indications. Useful for practice and pattern-spotting, but not official marking. Always to be discussed with a teacher before being acted on.',

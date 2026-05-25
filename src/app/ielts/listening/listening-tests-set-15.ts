@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 15) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 15) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a guest phoning a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a guest phoning a
 //     hotel to book a room), assessed with form / note completion + a
 //     multiple-choice item. A surname is spelled and a card number is dictated,
 //     and one detail (the total cost) depends on a stated choice (how many
 //     nights and which room).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk to visitors at a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk to visitors at a
 //     science centre), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("to begin", "after that", "finally") that the
 //     questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two architecture students and a
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two architecture students and a
 //     tutor reviewing a studio design project for a community library),
 //     assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of money,
+//   • Section 4 - an academic LECTURE / monologue (here: the history of money,
 //     from barter to digital payment), assessed with note/sentence completion +
 //     multiple choice, including one True/False/Not Given item.
 //
@@ -28,9 +28,9 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
-// Question numbering is continuous q1–q40 across the four sections, matching the
+// Question numbering is continuous q1-q40 across the four sections, matching the
 // other full-length tests. All content below is original and written for IELTS
 // preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -41,12 +41,12 @@ export const LISTENING_SET_15: ListeningTest[] = [
   {
     id: 'ls-academic-15',
     title:
-      'Practice Test 15 — Booking a Hotel Room, A Welcome Talk at a Science Centre, Reviewing an Architecture Project & The History of Money',
+      'Practice Test 15 - Booking a Hotel Room, A Welcome Talk at a Science Centre, Reviewing an Architecture Project & The History of Money',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-15-s1',
-        title: 'Section 1 — Booking a hotel room',
+        title: 'Section 1 - Booking a hotel room',
         // ~285 words. Transactional dialogue (Section 1 style): a guest phoning a
         // hotel to book a room. A surname is spelled and a card number is dictated;
         // one detail (the total cost) depends on stated choices (how many nights and
@@ -66,7 +66,7 @@ MAN: I'd arrive on the eighth of June and stay for three nights.
 
 WOMAN: Three nights, lovely. We have two options. A standard double room is ninety pounds a night, and a deluxe room, which is larger and overlooks the river, is one hundred and ten.
 
-MAN: I'll take the deluxe, please — the view sounds worth it.
+MAN: I'll take the deluxe, please - the view sounds worth it.
 
 WOMAN: A good choice. So that's three nights in the deluxe room. To secure the booking I'll need a card number.
 
@@ -74,7 +74,7 @@ MAN: Certainly. It's four-five-one-six, double zero, nine-two, seven-one.
 
 WOMAN: Thank you. Now, breakfast is served until half past nine and is included in the price. Is there anything else you'll need?
 
-MAN: Just one thing — do you have parking?
+MAN: Just one thing - do you have parking?
 
 WOMAN: We do. There's a free car park behind the building, but it can be busy, so I'd advise arriving before six in the evening to be sure of a space.
 
@@ -93,7 +93,7 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
               'Complete the booking form. Write ONE WORD for the answer.\n\nGuest surname: ____________',
             acceptableAnswers: ['Hartley', 'hartley'],
             explanation:
-              'The caller gives his name as “James Hartley” and spells the surname: H-A-R-T-L-E-Y. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “James Hartley” and spells the surname: H-A-R-T-L-E-Y. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-015-s1-q2',
@@ -101,7 +101,7 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
             prompt: 'Date of arrival: the ____________ of June. Write A NUMBER.',
             acceptableAnswers: ['8', 'eighth', '8th'],
             explanation:
-              'He says, “I’d arrive on the eighth of June.” The arrival date is the 8th — ordinal numbers said aloud (eighth) map to the digits 8.',
+              'He says, “I’d arrive on the eighth of June.” The arrival date is the 8th - ordinal numbers said aloud (eighth) map to the digits 8.',
           },
           {
             id: 'ls-015-s1-q3',
@@ -109,7 +109,7 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
             prompt: 'Number of nights booked: ____________. Write A NUMBER.',
             acceptableAnswers: ['3', 'three'],
             explanation:
-              'He says he will “stay for three nights.” The answer is 3. This figure also feeds into the total-cost question below — Section 1 details often connect.',
+              'He says he will “stay for three nights.” The answer is 3. This figure also feeds into the total-cost question below - Section 1 details often connect.',
           },
           {
             id: 'ls-015-s1-q4',
@@ -123,7 +123,7 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
             ],
             correctIndex: 1,
             explanation:
-              'He says, “I’ll take the deluxe, please — the view sounds worth it,” after the assistant notes the deluxe room “overlooks the river.” The distractors reuse real words from the audio (cheaper, larger, breakfast) but none matches his stated reason.',
+              'He says, “I’ll take the deluxe, please - the view sounds worth it,” after the assistant notes the deluxe room “overlooks the river.” The distractors reuse real words from the audio (cheaper, larger, breakfast) but none matches his stated reason.',
           },
           {
             id: 'ls-015-s1-q5',
@@ -131,7 +131,7 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
             prompt: 'Card number given: ____________. Write the number exactly as you hear it.',
             acceptableAnswers: ['4516 00 92 71', '4516009271', '4516 0092 71', '451600 9271'],
             explanation:
-              'He dictates the number as “four-five-one-six, double zero, nine-two, seven-one” — that is 4516 00 92 71. “Double zero” means two 0s; spacing is not penalised, but every digit must be correct.',
+              'He dictates the number as “four-five-one-six, double zero, nine-two, seven-one” - that is 4516 00 92 71. “Double zero” means two 0s; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-015-s1-q6',
@@ -198,22 +198,22 @@ WOMAN: You're very welcome, Mr Hartley. We look forward to seeing you on the eig
       },
       {
         id: 'ls-academic-15-s2',
-        title: 'Section 2 — A welcome talk at a science centre',
+        title: 'Section 2 - A welcome talk at a science centre',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a science centre and outlining the day. Uses
         // sequencing/signpost language ("to begin", "after that", "finally") that the
         // questions follow in order, with a sentence-completion + multiple-choice mix.
         transcript: `Good morning, everyone, and welcome to the Northgate Science Centre. My name is Tom, and I'm one of the explainers here. Before you set off, let me run through what's on today and a few things that will help you make the most of your visit.
 
-To begin with, the layout. We're spread over three floors, and the easiest way to get around is to start at the top and work your way down. The lift is just behind me, but I'd encourage you to take the stairs if you can — there's a fascinating display of optical illusions along the staircase walls that most people miss.
+To begin with, the layout. We're spread over three floors, and the easiest way to get around is to start at the top and work your way down. The lift is just behind me, but I'd encourage you to take the stairs if you can - there's a fascinating display of optical illusions along the staircase walls that most people miss.
 
 Our most popular attraction is the planetarium on the second floor. The shows are free, but they do fill up, so please collect a timed ticket from the desk as soon as you arrive rather than turning up on the hour and hoping.
 
-After that, don't miss the live demonstrations in the Energy Zone. Today's theme is electricity, and at eleven o'clock our team will be making a volunteer's hair stand on end with a static generator — always a favourite with younger visitors.
+After that, don't miss the live demonstrations in the Energy Zone. Today's theme is electricity, and at eleven o'clock our team will be making a volunteer's hair stand on end with a static generator - always a favourite with younger visitors.
 
 A quick word on practicalities. Photography is welcome throughout, except in the planetarium, where flashes spoil the show for others. There's a café on the ground floor, and if the weather holds you're welcome to eat your own food in the garden, though not inside the galleries.
 
-Finally, before you leave, do visit the shop by the exit. Any purchase helps fund our free schools programme. That's everything from me — enjoy your day, and don't be afraid to ask questions.`,
+Finally, before you leave, do visit the shop by the exit. Any purchase helps fund our free schools programme. That's everything from me - enjoy your day, and don't be afraid to ask questions.`,
         questions: [
           {
             id: 'ls-015-s2-q11',
@@ -327,7 +327,7 @@ Finally, before you leave, do visit the shop by the exit. Any purchase helps fun
       },
       {
         id: 'ls-academic-15-s3',
-        title: 'Section 3 — Tutorial: reviewing an architecture project',
+        title: 'Section 3 - Tutorial: reviewing an architecture project',
         // ~295 words. Academic discussion (Section 3 style): two architecture students
         // (Priya and Sam) and a tutor (Dr Bennett) review a studio design project for
         // a community library. Speakers debate the building's location, materials, a
@@ -346,7 +346,7 @@ DR BENNETT: I agree timber suits the brief. Now, were there any problems you had
 
 PRIYA: One big one. Our first plan put the children's area right next to the quiet study room, and we realised the noise would carry straight through. So we've moved the children's section to the far end, by the entrance.
 
-DR BENNETT: Good catch — zoning by noise level is exactly right. And sustainability? You mentioned the carbon in the timber.
+DR BENNETT: Good catch - zoning by noise level is exactly right. And sustainability? You mentioned the carbon in the timber.
 
 SAM: Yes, and there's more. We're putting solar panels on the roof, and rainwater from the roof is collected in a tank and used to flush the toilets.
 
@@ -354,7 +354,7 @@ DR BENNETT: Excellent. Those are the kinds of features the assessors look for. W
 
 PRIYA: As well as the drawings, we're building a physical model at a scale of one to fifty, so people can really see the daylight coming in.
 
-DR BENNETT: Perfect. A model at that scale will show the interior beautifully. Just leave yourselves enough time — model-making always takes longer than you expect.`,
+DR BENNETT: Perfect. A model at that scale will show the interior beautifully. Just leave yourselves enough time - model-making always takes longer than you expect.`,
         questions: [
           {
             id: 'ls-015-s3-q21',
@@ -469,23 +469,23 @@ DR BENNETT: Perfect. A model at that scale will show the interior beautifully. J
             ],
             correctIndex: 1,
             explanation:
-              'Dr Bennett says, “Just leave yourselves enough time — model-making always takes longer than you expect.” Option B matches the warning.',
+              'Dr Bennett says, “Just leave yourselves enough time - model-making always takes longer than you expect.” Option B matches the warning.',
           },
         ],
       },
       {
         id: 'ls-academic-15-s4',
-        title: 'Section 4 — Lecture: the history of money',
+        title: 'Section 4 - Lecture: the history of money',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single speaker
         // delivers a structured lecture on the history of money, from barter to digital
         // payment. Dense, factual and signposted ("let me begin", "next", "finally"),
         // with the note/sentence-completion + multiple-choice mix typical of Section 4,
         // including one True/False/Not Given item.
-        transcript: `Good morning. Today I want to trace the history of money — how societies moved from swapping goods directly to the tap of a card, and why each step was such an improvement on the last.
+        transcript: `Good morning. Today I want to trace the history of money - how societies moved from swapping goods directly to the tap of a card, and why each step was such an improvement on the last.
 
 Let me begin with the world before money: barter. If I had grain and wanted a pot, I had to find a potter who happened to want grain. Economists call this the problem of the "double coincidence of wants", and it made trade slow and limited. Money solved it by giving everyone a single thing they would always accept.
 
-The earliest moneys were ordinary commodities — cattle, salt, shells. These had real drawbacks: cattle can't be divided, and salt dissolves in the rain. So societies gradually moved to metal, especially silver and gold, which are durable, easy to divide and valued everywhere.
+The earliest moneys were ordinary commodities - cattle, salt, shells. These had real drawbacks: cattle can't be divided, and salt dissolves in the rain. So societies gradually moved to metal, especially silver and gold, which are durable, easy to divide and valued everywhere.
 
 The next great leap was coinage. The first true coins, stamped pieces of metal of guaranteed weight, are usually credited to the kingdom of Lydia, in what is now Turkey, around the seventh century BC. The stamp meant traders no longer had to weigh the metal at every transaction.
 
@@ -523,7 +523,7 @@ Finally, in our own time, money has become increasingly abstract. Most of the mo
               'Before metal, the earliest moneys were ordinary commodities such as cattle, salt and ____________. Write ONE WORD.',
             acceptableAnswers: ['shells', 'shell'],
             explanation:
-              'The speaker lists the earliest moneys as “ordinary commodities — cattle, salt, shells.” The answer is “shells”.',
+              'The speaker lists the earliest moneys as “ordinary commodities - cattle, salt, shells.” The answer is “shells”.',
           },
           {
             id: 'ls-015-s4-q34',

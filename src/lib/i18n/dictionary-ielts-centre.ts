@@ -30,8 +30,8 @@ export const IELTS_CENTRE_DICTIONARY: Record<string, { en: string; ar?: string }
   // Roster
   'ielts.centre.roster.heading': { en: 'Linked students', ar: 'الطلاب المرتبطون' },
   'ielts.centre.roster.no_data': {
-    en: 'No data yet — bands appear here once your students practise.',
-    ar: 'ما في بيانات بعد — درجات Band بتظهر هني أول ما يتدرّب طلابك.',
+    en: 'No data yet - bands appear here once your students practise.',
+    ar: 'ما في بيانات بعد - درجات Band بتظهر هني أول ما يتدرّب طلابك.',
   },
   'ielts.centre.roster.unavailable': {
     en: 'Band data is temporarily unavailable. Your students are listed below; their bands will appear once the connection is restored.',
@@ -47,7 +47,7 @@ export const IELTS_CENTRE_DICTIONARY: Record<string, { en: string; ar?: string }
   // Empty: no linked students
   'ielts.centre.empty.title': { en: 'No students linked yet', ar: 'ما في طلاب مرتبطين بعد' },
   'ielts.centre.empty.body': {
-    en: 'Once learners are linked to your account, their latest IELTS bands across all four skills will appear here. No data yet — bands appear once students practise.',
-    ar: 'أول ما يترابط الطلاب بحسابك، بتظهر هني آخر درجات IELTS Band لهم في المهارات الأربع كلها. ما في بيانات بعد — درجات Band بتظهر أول ما يتدرّب الطلاب.',
+    en: 'Once learners are linked to your account, their latest IELTS bands across all four skills will appear here. No data yet - bands appear once students practise.',
+    ar: 'أول ما يترابط الطلاب بحسابك، بتظهر هني آخر درجات IELTS Band لهم في المهارات الأربع كلها. ما في بيانات بعد - درجات Band بتظهر أول ما يتدرّب الطلاب.',
   },
 }

@@ -1,5 +1,5 @@
 /**
- * dictionary-school-3.ts — Bucket-A Tier-2b, school.* RESIDUAL gap-fill.
+ * dictionary-school-3.ts - Bucket-A Tier-2b, school.* RESIDUAL gap-fill.
  *
  * WHY THIS FILE EXISTS
  * --------------------
@@ -9,14 +9,14 @@
  * `school.calendar.class` onward). The two agents chose slightly
  * different alphabetical split points, leaving a ~25-key band of
  * `school.analytics.*` (the NRR cohorts + movements sub-pages) and four
- * early `school.calendar.*` keys with NO curated owner — they still
+ * early `school.calendar.*` keys with NO curated owner - they still
  * resolved only against AUDIT_FIX_DICTIONARY, whose EN is an auto-
  * generated Title-cased path fragment ("Title", "Subtitle", "Heatmap
  * Title", "Add Lesson", "Net", "Month") and whose AR is broken machine
  * output (mojibake / Latin shards / mixed scripts). In Arabic mode this
  * band rendered English or garbage.
  *
- * SCOPE — RESIDUAL ONLY (20 keys), provably exclusive of every curated
+ * SCOPE - RESIDUAL ONLY (20 keys), provably exclusive of every curated
  * dictionary (school-1, school-2, dictionary.ts, school-comp,
  * screenshot-fixes) and of the other parallel agents' namespaces:
  *   - school.analytics.cohorts.*   → /school/analytics/nrr/cohorts
@@ -27,8 +27,8 @@
  * in src/app/school/**. Five audit-fix keys in the same alphabetical
  * band (school.analytics.avg_score_suffix, .based_on_prefix,
  * .stat.active_students_sub, .stat.at_risk_sub, .stat.during_prefix)
- * are DEAD — referenced nowhere in src/app/school/** or src/components
- * (literal or key-constant indirection) — so they are deliberately
+ * are DEAD - referenced nowhere in src/app/school/** or src/components
+ * (literal or key-constant indirection) - so they are deliberately
  * EXCLUDED. All 7 school.* keys in dictionary-screenshot-fixes.ts have
  * ar !== en (already translated) and are likewise out of scope.
  *
@@ -42,7 +42,7 @@
  * and exam-board/class filter dropdowns.
  *
  * AR: genuine Khaleeji (Gulf SaaS-dashboard register), voice of
- * src/lib/eal/curriculum.ts and the curated school-1/school-2 dicts —
+ * src/lib/eal/curriculum.ts and the curated school-1/school-2 dicts -
  * not MSA boilerplate, not machine output. Finance/exam terms kept
  * accurate (NRR, MRR, cohort = مجموعة, retention = الاحتفاظ, churn,
  * waterfall = الشلال). Brand/product/exam nouns stay Latin per Gulf
@@ -55,7 +55,7 @@
 
 export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── School · Analytics · NRR · Cohort retention ────────────────────
-  // /school/analytics/nrr/cohorts — investor cohort-retention page:
+  // /school/analytics/nrr/cohorts - investor cohort-retention page:
   // page title/subtitle, a 4-tile "Month N retention" summary row
   // (month_prefix + age + retention_suffix, then avg_all_cohorts as the
   // sub-line), the full cohort heatmap card, and a "how to read it"
@@ -94,7 +94,7 @@ export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ─── School · Analytics · NRR · Revenue movements ───────────────────
-  // /school/analytics/nrr/movements — investor MRR-movements page:
+  // /school/analytics/nrr/movements - investor MRR-movements page:
   // page title/subtitle, an MRR waterfall card (waterfall_title +
   // subtitle, with a month picker), and a month-by-month movement
   // tracker table (tracker_title + subtitle; columns: Month … Net).
@@ -119,8 +119,8 @@ export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'متتبّع الحركات',
   },
   'school.analytics.movements.tracker_subtitle': {
-    en: 'Every revenue movement, month by month — click a row to see its waterfall.',
-    ar: 'كل حركة إيراد، شهر بشهر — اضغط على أي صف عشان تشوف الشلال مالته.',
+    en: 'Every revenue movement, month by month - click a row to see its waterfall.',
+    ar: 'كل حركة إيراد، شهر بشهر - اضغط على أي صف عشان تشوف الشلال مالته.',
   },
   'school.analytics.movements.col.month': {
     en: 'Month',

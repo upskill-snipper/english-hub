@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 11) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 11) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to a
 //     catering company to order food for an event), assessed with form / note
 //     completion + a multiple-choice item. A surname is spelled and a phone
 //     number is dictated, and one detail (the price per head) depends on a
 //     stated choice (which menu the caller picks).
-//   • Section 2 — an everyday MONOLOGUE (here: an induction talk for new members
+//   • Section 2 - an everyday MONOLOGUE (here: an induction talk for new members
 //     at a public library), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "next", "finally") that the questions
 //     track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor in a
-//     tutorial about a renewable-energy student project — a small solar/wind
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor in a
+//     tutorial about a renewable-energy student project - a small solar/wind
 //     charging station on campus), assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of
+//   • Section 4 - an academic LECTURE / monologue (here: the history of
 //     chocolate, from cacao in Mesoamerica to the modern bar), assessed with
 //     note/sentence completion + multiple choice, including one True/False/Not
 //     Given item.
@@ -29,7 +29,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -40,12 +40,12 @@ export const LISTENING_SET_11: ListeningTest[] = [
   {
     id: 'ls-academic-11',
     title:
-      'Practice Test 11 — Ordering Event Catering, A Library Induction, A Renewable-Energy Project & The History of Chocolate',
+      'Practice Test 11 - Ordering Event Catering, A Library Induction, A Renewable-Energy Project & The History of Chocolate',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-11-s1',
-        title: 'Section 1 — Ordering food for an event',
+        title: 'Section 1 - Ordering food for an event',
         // ~280 words. Transactional dialogue (Section 1 style): a caller phoning a
         // catering company to order food for a retirement party. A surname is
         // spelled and a mobile number is dictated; one detail (the price per head)
@@ -67,15 +67,15 @@ WOMAN: Perfect. And what date is the event?
 
 MAN: It's on Saturday the twenty-first of June.
 
-WOMAN: Right. Now, we offer two set menus. The Garden menu is a cold buffet — sandwiches, salads and fruit — at twelve pounds a head. The Harvest menu adds hot dishes and a dessert, and that's eighteen pounds a head.
+WOMAN: Right. Now, we offer two set menus. The Garden menu is a cold buffet - sandwiches, salads and fruit - at twelve pounds a head. The Harvest menu adds hot dishes and a dessert, and that's eighteen pounds a head.
 
-MAN: I think the Harvest one — people will expect something warm in the evening.
+MAN: I think the Harvest one - people will expect something warm in the evening.
 
 WOMAN: A good choice. And how many guests are you expecting?
 
 MAN: Around thirty, but I'll confirm the exact number next week.
 
-WOMAN: No problem. One thing I must ask — does anyone have particular dietary needs?
+WOMAN: No problem. One thing I must ask - does anyone have particular dietary needs?
 
 MAN: Yes, two of the guests are vegetarian, and one cannot eat nuts.
 
@@ -94,7 +94,7 @@ MAN: Thank you so much for your help.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Whitlock', 'whitlock'],
             explanation:
-              'The caller gives his name as “Patrick Whitlock” and spells the surname out: W-H-I-T-L-O-C-K. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Patrick Whitlock” and spells the surname out: W-H-I-T-L-O-C-K. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-011-s1-q2',
@@ -102,7 +102,7 @@ MAN: Thank you so much for your help.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07922416803', '0792 2416803', '07922 416 803', '079 22 416 803'],
             explanation:
-              'The number is dictated as “oh-seven-nine-double-two, four-one-six, eight-oh-three”, which is 07922416803. “Double two” means two 2s and “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-nine-double-two, four-one-six, eight-oh-three”, which is 07922416803. “Double two” means two 2s and “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-011-s1-q3',
@@ -124,7 +124,7 @@ MAN: Thank you so much for your help.`,
             ],
             correctIndex: 1,
             explanation:
-              'The Garden menu is “twelve pounds a head”, but the Harvest menu “adds hot dishes and a dessert… eighteen pounds a head.” Because he says, “I think the Harvest one — people will expect something warm,” he pays £18 per head. The distractors reuse the real figures but give the wrong reason.',
+              'The Garden menu is “twelve pounds a head”, but the Harvest menu “adds hot dishes and a dessert… eighteen pounds a head.” Because he says, “I think the Harvest one - people will expect something warm,” he pays £18 per head. The distractors reuse the real figures but give the wrong reason.',
           },
           {
             id: 'ls-011-s1-q5',
@@ -149,7 +149,7 @@ MAN: Thank you so much for your help.`,
             prompt: 'Number of guests who are vegetarian: ____________. Write A NUMBER.',
             acceptableAnswers: ['2', 'two'],
             explanation:
-              'He says, “two of the guests are vegetarian, and one cannot eat nuts.” The number who are vegetarian is 2 — a deliberate contrast with the one guest who cannot eat nuts.',
+              'He says, “two of the guests are vegetarian, and one cannot eat nuts.” The number who are vegetarian is 2 - a deliberate contrast with the one guest who cannot eat nuts.',
           },
           {
             id: 'ls-011-s1-q8',
@@ -157,7 +157,7 @@ MAN: Thank you so much for your help.`,
             prompt: 'One guest has an allergy and cannot eat ____________. Write ONE WORD.',
             acceptableAnswers: ['nuts', 'nut'],
             explanation:
-              'He says, “one cannot eat nuts.” The answer is “nuts” — note this is separate from the two vegetarian guests in the previous question.',
+              'He says, “one cannot eat nuts.” The answer is “nuts” - note this is separate from the two vegetarian guests in the previous question.',
           },
           {
             id: 'ls-011-s1-q9',
@@ -188,7 +188,7 @@ MAN: Thank you so much for your help.`,
       },
       {
         id: 'ls-academic-11-s2',
-        title: 'Section 2 — A library induction for new members',
+        title: 'Section 2 - A library induction for new members',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // welcoming new members to a public library and explaining the layout,
         // services and rules. Uses sequencing/signpost language ("first", "next",
@@ -198,13 +198,13 @@ MAN: Thank you so much for your help.`,
 
 First, let me explain borrowing. With your new card you can take out up to twelve items at once, and the standard loan period is three weeks. If no one else has reserved a book, you can renew it online twice, giving you up to nine weeks in total. Do remember that returning items late means a small charge of ten pence per day.
 
-Now, a word about the layout. The ground floor is for fiction and the children's section, and we ask that you keep your voice down rather than expecting complete silence — it's a family space. If you need to make a phone call, please step out into the foyer.
+Now, a word about the layout. The ground floor is for fiction and the children's section, and we ask that you keep your voice down rather than expecting complete silence - it's a family space. If you need to make a phone call, please step out into the foyer.
 
 Next, the first floor. This is where you'll find non-fiction, the reference collection, and the quiet study area, where laptops are welcome but conversation is not. Up here we also have a small local-history room, which is only open on Friday afternoons.
 
 One service people often overlook is our free events programme. Every Tuesday evening we host an author talk or a workshop, and these are completely free, though we do ask you to book a seat in advance because they are popular.
 
-Finally, a quick note on access. The library is open seven days a week, but on Sundays we close at one o'clock rather than the usual five. There's a returns box by the main entrance for items handed back outside opening hours. Right — please do have a look around, and come and find me if you have any questions.`,
+Finally, a quick note on access. The library is open seven days a week, but on Sundays we close at one o'clock rather than the usual five. There's a returns box by the main entrance for items handed back outside opening hours. Right - please do have a look around, and come and find me if you have any questions.`,
         questions: [
           {
             id: 'ls-011-s2-q11',
@@ -213,7 +213,7 @@ Finally, a quick note on access. The library is open seven days a week, but on S
               'With a new card, members can borrow up to ____________ items at once. Write A NUMBER.',
             acceptableAnswers: ['12', 'twelve'],
             explanation:
-              'She says, “you can take out up to twelve items at once, and the standard loan period is three weeks.” The answer is 12 — the three weeks is the loan period, a deliberate distractor.',
+              'She says, “you can take out up to twelve items at once, and the standard loan period is three weeks.” The answer is 12 - the three weeks is the loan period, a deliberate distractor.',
           },
           {
             id: 'ls-011-s2-q12',
@@ -250,7 +250,7 @@ Finally, a quick note on access. The library is open seven days a week, but on S
             ],
             correctIndex: 1,
             explanation:
-              'She asks visitors to “keep your voice down rather than expecting complete silence — it’s a family space”, and to step into the foyer for phone calls. Option B matches; complete silence is explicitly NOT required there.',
+              'She asks visitors to “keep your voice down rather than expecting complete silence - it’s a family space”, and to step into the foyer for phone calls. Option B matches; complete silence is explicitly NOT required there.',
           },
           {
             id: 'ls-011-s2-q15',
@@ -320,9 +320,9 @@ Finally, a quick note on access. The library is open seven days a week, but on S
       },
       {
         id: 'ls-academic-11-s3',
-        title: 'Section 3 — Tutorial: a renewable-energy student project',
+        title: 'Section 3 - Tutorial: a renewable-energy student project',
         // ~290 words. Academic discussion (Section 3 style): two students (Aisha and
-        // Tom) and a tutor (Dr Reeves) discuss their renewable-energy project — a
+        // Tom) and a tutor (Dr Reeves) discuss their renewable-energy project - a
         // small solar and wind charging station to be built on campus. Speakers
         // debate the design, a problem with the wind turbine, the budget and how to
         // present results, so the questions mix multiple choice (decisions/opinions)
@@ -343,11 +343,11 @@ DR REEVES: And how did you solve that?
 
 TOM: We switched to a smaller vertical design. It produces a little less power, but it's much quieter, which matters more in that location.
 
-DR REEVES: A wise trade-off. What about the electricity you generate — where does it go?
+DR REEVES: A wise trade-off. What about the electricity you generate - where does it go?
 
 AISHA: Into a battery, so the station still works after dark. We chose a lithium battery because it's lighter and lasts longer than the older lead-acid type.
 
-DR REEVES: Good. And the budget — are you within it?
+DR REEVES: Good. And the budget - are you within it?
 
 TOM: Just about. The panel was cheaper than expected, but the battery cost more, so it roughly balanced out.
 
@@ -476,7 +476,7 @@ DR REEVES: Perfect. A clear graph will be far more convincing than a table of ra
       },
       {
         id: 'ls-academic-11-s4',
-        title: 'Section 4 — Lecture: the history of chocolate',
+        title: 'Section 4 - Lecture: the history of chocolate',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the history of chocolate, from
         // the cacao tree in Mesoamerica to the modern eating bar. Dense, factual and
@@ -485,9 +485,9 @@ DR REEVES: Perfect. A clear graph will be far more convincing than a table of ra
         // True/False/Not Given item.
         transcript: `Good afternoon. Today I want to follow the remarkable journey of chocolate, from an ancient drink to the bar you can buy in any shop. It's a story that spans continents and several centuries.
 
-Let me start with the plant itself. Chocolate is made from the seeds, or beans, of the cacao tree, which grows naturally in the rainforests of Central and South America. The earliest peoples to use it were the Maya and, later, the Aztecs. Crucially, they did not eat chocolate — they drank it. They roasted and ground the beans and mixed them with water and spices such as chilli to make a bitter, frothy drink. Notice that there was no sugar in it at all.
+Let me start with the plant itself. Chocolate is made from the seeds, or beans, of the cacao tree, which grows naturally in the rainforests of Central and South America. The earliest peoples to use it were the Maya and, later, the Aztecs. Crucially, they did not eat chocolate - they drank it. They roasted and ground the beans and mixed them with water and spices such as chilli to make a bitter, frothy drink. Notice that there was no sugar in it at all.
 
-For these civilisations, cacao was far more than a treat. The beans were so valuable that they were actually used as money — you could buy goods with a handful of them.
+For these civilisations, cacao was far more than a treat. The beans were so valuable that they were actually used as money - you could buy goods with a handful of them.
 
 Chocolate reached Europe in the sixteenth century, brought back by Spanish explorers. At first it was still drunk, but Europeans made one important change: they added sugar, which transformed the bitter drink into the sweet one we recognise today. For roughly two hundred years, it remained an expensive luxury enjoyed only by the wealthy.
 
@@ -516,7 +516,7 @@ Finally, a word on later refinements. Milk chocolate, made by adding milk powder
             ],
             correctIndex: 1,
             explanation:
-              'The speaker stresses, “they did not eat chocolate — they drank it”, mixing ground beans “with water and spices such as chilli to make a bitter, frothy drink.” Option B matches.',
+              'The speaker stresses, “they did not eat chocolate - they drank it”, mixing ground beans “with water and spices such as chilli to make a bitter, frothy drink.” Option B matches.',
           },
           {
             id: 'ls-011-s4-q33',
@@ -547,7 +547,7 @@ Finally, a word on later refinements. Milk chocolate, made by adding milk powder
             ],
             correctIndex: 1,
             explanation:
-              'The speaker says, “The beans were so valuable that they were actually used as money — you could buy goods with a handful of them.” Option B matches.',
+              'The speaker says, “The beans were so valuable that they were actually used as money - you could buy goods with a handful of them.” Option B matches.',
           },
           {
             id: 'ls-011-s4-q36',

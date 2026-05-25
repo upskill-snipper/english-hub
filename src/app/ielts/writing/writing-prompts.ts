@@ -1,6 +1,6 @@
 // ─── IELTS Academic Writing prompts ─────────────────────────────────────────
 // Wave 1 prompt bank for the AI-marked Writing module: two Task 1 questions
-// (Academic — describe/summarise a visual) and two Task 2 questions
+// (Academic - describe/summarise a visual) and two Task 2 questions
 // (argument / opinion essays).
 //
 // Because no chart/graph image assets exist yet, each Task 1 prompt embeds the
@@ -17,7 +17,7 @@ import type { WritingPrompt } from '@/lib/ielts/types'
 // Additional Academic writing prompts (item-bank scaling, 2026-05-25).
 import { WRITING_SET_2 } from './writing-prompts-set-2'
 import { WRITING_SET_3 } from './writing-prompts-set-3'
-// General Training writing prompts (track: 'general') — Task 1 are letters.
+// General Training writing prompts (track: 'general') - Task 1 are letters.
 // Filtered by the writing page via the TrackToggle so the bank is one array.
 import { GT_WRITING_SET } from './gt-writing-prompts'
 // Premium expansion (2026-05-25): chart-based Academic Task 1 prompts + more Task 2 essays.
@@ -78,7 +78,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_T2_6,
   ...WRITING_T2_7,
   ...WRITING_T2_8,
-  // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
+  // ── Task 1 · A - table of data (comparison + trend) ──────────────────────
   {
     id: 'wt1-online-grocery',
     task: 'writing-task-1',
@@ -107,7 +107,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — process diagram (described in words) ────────────────────
+  // ── Task 1 · B - process diagram (described in words) ────────────────────
   {
     id: 'wt1-paper-recycling',
     task: 'writing-task-1',
@@ -158,7 +158,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree/disagree) ────────────────────────────────
+  // ── Task 2 · A - opinion (agree/disagree) ────────────────────────────────
   {
     id: 'wt2-remote-work',
     task: 'writing-task-2',
@@ -177,7 +177,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — problem / solution + opinion ────────────────────────────
+  // ── Task 2 · B - problem / solution + opinion ────────────────────────────
   {
     id: 'wt2-single-use-plastic',
     task: 'writing-task-2',
@@ -196,7 +196,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 1 · C — line graph (trend over time, described in words) ─────────
+  // ── Task 1 · C - line graph (trend over time, described in words) ─────────
   {
     id: 'wt1-museum-visitors',
     task: 'writing-task-1',
@@ -214,7 +214,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
       unit: 'thousands',
       yAxisLabel: 'Visitors (000s)',
       caption: 'Visitor numbers (thousands) to a national museum, by quarter.',
-      categories: ['Q1 (Jan–Mar)', 'Q2 (Apr–Jun)', 'Q3 (Jul–Sep)', 'Q4 (Oct–Dec)'],
+      categories: ['Q1 (Jan-Mar)', 'Q2 (Apr-Jun)', 'Q3 (Jul-Sep)', 'Q4 (Oct-Dec)'],
       series: [
         { name: '2018', values: [120, 180, 260, 150] },
         { name: '2023', values: [95, 210, 340, 170] },
@@ -224,7 +224,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · D — two pie charts (proportions, compared) ──────────────────
+  // ── Task 1 · D - two pie charts (proportions, compared) ──────────────────
   {
     id: 'wt1-household-energy',
     task: 'writing-task-1',
@@ -268,7 +268,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · C — discuss both views + opinion ────────────────────────────
+  // ── Task 2 · C - discuss both views + opinion ────────────────────────────
   {
     id: 'wt2-university-free',
     task: 'writing-task-2',
@@ -287,7 +287,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · D — advantages / disadvantages ──────────────────────────────
+  // ── Task 2 · D - advantages / disadvantages ──────────────────────────────
   {
     id: 'wt2-living-abroad',
     task: 'writing-task-2',

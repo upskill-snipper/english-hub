@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 10 ───────────────────────────
 // A tenth bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–9 and the
+// Authoring rules followed throughout (mirroring chart sets 1-9 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
-//   • table — every row.cells length === columns.length − 1 (first column is
+//   • table - every row.cells length === columns.length − 1 (first column is
 //     the row header);
 //   • every spec sets a `caption`;
 //   • numbers are realistic, internally consistent and tell a clear story
@@ -20,7 +20,7 @@
 //     achievable.
 //
 // Six fresh, original topics, deliberately distinct from every existing prompt
-// across the whole chart bank (sets 1–9 + the worked examples — renewable mix,
+// across the whole chart bank (sets 1-9 + the worked examples - renewable mix,
 // tourist arrivals/by-purpose, freshwater, internet-by-age, water cycle,
 // enrolment, household spending, electricity sources, recycled materials,
 // butterfly / coffee / chocolate / tea / water-treatment / bread / hydro /
@@ -45,7 +45,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_10: WritingPrompt[] = [
-  // ── 1 · bar (single series across six countries — comparison) ─────────────
+  // ── 1 · bar (single series across six countries - comparison) ─────────────
   {
     id: 'wt1c10-broadband-speed',
     task: 'writing-task-1',
@@ -70,7 +70,7 @@ export const WRITING_CHARTS_10: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 2 · multi-series line (rail vs road freight — diverging trends) ───────
+  // ── 2 · multi-series line (rail vs road freight - diverging trends) ───────
   {
     id: 'wt1c10-freight-transport',
     task: 'writing-task-1',
@@ -87,7 +87,7 @@ export const WRITING_CHARTS_10: WritingPrompt[] = [
       kind: 'line',
       unit: 'billion tonne-km',
       yAxisLabel: 'Freight (billion tonne-km)',
-      caption: 'Goods moved by rail and by road (billion tonne-kilometres), 1990–2020.',
+      caption: 'Goods moved by rail and by road (billion tonne-kilometres), 1990-2020.',
       categories: ['1990', '1995', '2000', '2005', '2010', '2015', '2020'],
       series: [
         { name: 'Road freight', values: [120, 145, 178, 205, 224, 251, 278] },
@@ -195,7 +195,7 @@ export const WRITING_CHARTS_10: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 5 · table (subject × year group — average weekly study hours) ─────────
+  // ── 5 · table (subject × year group - average weekly study hours) ─────────
   {
     id: 'wt1c10-study-hours',
     task: 'writing-task-1',
@@ -224,7 +224,7 @@ export const WRITING_CHARTS_10: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 6 · multi-series line (renewable vs fossil electricity — crossover) ───
+  // ── 6 · multi-series line (renewable vs fossil electricity - crossover) ───
   {
     id: 'wt1c10-electricity-sources-decades',
     task: 'writing-task-1',
@@ -241,7 +241,7 @@ export const WRITING_CHARTS_10: WritingPrompt[] = [
       kind: 'line',
       unit: 'TWh',
       yAxisLabel: 'Electricity generated (TWh)',
-      caption: 'Electricity generated from renewables and fossil fuels (TWh), 1980–2020.',
+      caption: 'Electricity generated from renewables and fossil fuels (TWh), 1980-2020.',
       categories: ['1980', '1990', '2000', '2010', '2020'],
       series: [
         { name: 'Fossil fuels', values: [210, 248, 265, 230, 162] },

@@ -13,11 +13,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
-// ─── UK Student-visa basics — admissions sub-page (SEO) ──────────────────────
+// ─── UK Student-visa basics - admissions sub-page (SEO) ──────────────────────
 // A focused, original overview of the UK Student visa for Gulf students who
 // have (or are about to receive) a UK university offer. Server component, one
 // <h1>, canonical in the sibling layout.tsx. This is general PREPARATION
-// information only — explicitly NOT immigration advice, and not affiliated with
+// information only - explicitly NOT immigration advice, and not affiliated with
 // UK Visas and Immigration. Every section points the reader to GOV.UK for the
 // authoritative, current rules.
 //

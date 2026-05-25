@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 21) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 21) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, … LISTENING_SET_21) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 marks) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a customer phoning
+//   • Section 1 - an everyday transactional DIALOGUE (here: a customer phoning
 //     a garage to book a car service), assessed with form / note completion +
 //     multiple choice. A surname is spelled and a registration is dictated, and
 //     one detail (the total cost) depends on the optional extras the caller
 //     chooses, mirroring a real Section 1.
-//   • Section 2 — an everyday MONOLOGUE (here: an announcement introducing a
+//   • Section 2 - an everyday MONOLOGUE (here: an announcement introducing a
 //     community sports festival), assessed with a MATCHING task (events → the
 //     venue where each is held) plus sentence completion + multiple choice,
 //     carrying signpost language the questions follow.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two engineering students and a
-//     tutor discussing a bridge-design project — brief, materials, testing,
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two engineering students and a
+//     tutor discussing a bridge-design project - brief, materials, testing,
 //     deadline and who does what), assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: wind power — how a
+//   • Section 4 - an academic LECTURE / monologue (here: wind power - how a
 //     turbine works, onshore versus offshore, advantages and limitations),
 //     assessed with note/sentence completion + multiple choice, including one
 //     True/False/Not Given item.
@@ -31,7 +31,7 @@
 //   • 'matching' → one mark PER item; the container id is distinct from every
 //                  item id (no collisions); each item.answer is a valid option key.
 //   • 'tfng'     → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -42,12 +42,12 @@ export const LISTENING_SET_21: ListeningTest[] = [
   {
     id: 'ls-academic-021',
     title:
-      'Practice Test 21 — Booking a Car Service, A Community Sports Festival, A Bridge-Design Engineering Project & Wind Power',
+      'Practice Test 21 - Booking a Car Service, A Community Sports Festival, A Bridge-Design Engineering Project & Wind Power',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-021-s1',
-        title: 'Section 1 — Booking a car service at a garage',
+        title: 'Section 1 - Booking a car service at a garage',
         // ~300 words. Transactional dialogue (Section 1 style): a customer phoning a
         // garage to book a service. A surname is spelled and a registration is
         // dictated; the total cost depends on the optional extras the caller chooses
@@ -71,11 +71,11 @@ WOMAN: Sure, it's L-J-six-eight, then K-W-R. So LJ68 KWR.
 
 MAN: Got it. And what seems to be the trouble, or is it just a routine service?
 
-WOMAN: Mostly routine, but there's one thing — there's a rattling noise from the front when I go over a bump.
+WOMAN: Mostly routine, but there's one thing - there's a rattling noise from the front when I go over a bump.
 
-MAN: Right, a rattle over bumps — we'll check the suspension while it's in. Now, a full service is one hundred and twenty pounds. We also offer two optional extras: an air-conditioning check for thirty-five pounds, and an interior valet for twenty-five.
+MAN: Right, a rattle over bumps - we'll check the suspension while it's in. Now, a full service is one hundred and twenty pounds. We also offer two optional extras: an air-conditioning check for thirty-five pounds, and an interior valet for twenty-five.
 
-WOMAN: I'll have the air-conditioning check — it hasn't been cold lately. But I'll skip the valet this time.
+WOMAN: I'll have the air-conditioning check - it hasn't been cold lately. But I'll skip the valet this time.
 
 MAN: No problem. So that's the full service plus the air-con check. When would suit you?
 
@@ -85,7 +85,7 @@ MAN: Wednesday… I can do the morning. If you drop it off at eight, it'll be re
 
 WOMAN: Perfect. And do you have a courtesy car?
 
-MAN: We do, but you'd need to book it separately — give us a ring the day before. We'll send a text reminder the night before your appointment anyway.
+MAN: We do, but you'd need to book it separately - give us a ring the day before. We'll send a text reminder the night before your appointment anyway.
 
 WOMAN: Great, thanks very much.`,
         questions: [
@@ -96,7 +96,7 @@ WOMAN: Great, thanks very much.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Pickford', 'pickford'],
             explanation:
-              'The caller gives her name as “Helen Pickford” and spells the surname: P-I-C-K-F-O-R-D. In Section 1, surnames are almost always spelled aloud — write them down letter by letter.',
+              'The caller gives her name as “Helen Pickford” and spells the surname: P-I-C-K-F-O-R-D. In Section 1, surnames are almost always spelled aloud - write them down letter by letter.',
           },
           {
             id: 'ls-021-s1-q2',
@@ -192,13 +192,13 @@ WOMAN: Great, thanks very much.`,
             ],
             correctIndex: 1,
             explanation:
-              'Sam says, “you’d need to book it separately — give us a ring the day before.” Option B matches; the text reminder is a separate detail.',
+              'Sam says, “you’d need to book it separately - give us a ring the day before.” Option B matches; the text reminder is a separate detail.',
           },
         ],
       },
       {
         id: 'ls-academic-021-s2',
-        title: 'Section 2 — A community sports festival',
+        title: 'Section 2 - A community sports festival',
         // ~300 words. Informational monologue (Section 2 style): a single speaker
         // introduces the programme for a community sports festival. A MATCHING task
         // pairs five events with the venue where each is held, followed by a
@@ -206,11 +206,11 @@ WOMAN: Great, thanks very much.`,
         // questions follow.
         transcript: `Hello everyone, and welcome to the planning briefing for this year's Riverside Community Sports Festival. My name's Dev, and I'm the events coordinator. The festival runs across one busy Saturday in June, and I'll talk you through where everything happens, how to take part, and what's on offer.
 
-Let me start with the main events and their locations, because we're spread across several venues this year. The five-kilometre fun run sets off from the High Street, right outside the town hall — that's our starting line. The swimming gala, of course, takes place at the leisure centre pool. The football tournament will be held on the school playing fields, which have plenty of space for the eight teams. Our brand-new event, the climbing wall, has been set up in the sports hall — it's portable, but it needs a roof over it. And finally, the cycling time trial uses the old airfield, where there's a long, flat, traffic-free track.
+Let me start with the main events and their locations, because we're spread across several venues this year. The five-kilometre fun run sets off from the High Street, right outside the town hall - that's our starting line. The swimming gala, of course, takes place at the leisure centre pool. The football tournament will be held on the school playing fields, which have plenty of space for the eight teams. Our brand-new event, the climbing wall, has been set up in the sports hall - it's portable, but it needs a roof over it. And finally, the cycling time trial uses the old airfield, where there's a long, flat, traffic-free track.
 
-Now, how do you enter? Most events are free and you simply turn up on the day. The one exception is the fun run, which costs five pounds, and for that you must register in advance online — we can't take entries on the morning.
+Now, how do you enter? Most events are free and you simply turn up on the day. The one exception is the fun run, which costs five pounds, and for that you must register in advance online - we can't take entries on the morning.
 
-A quick word on what you can win. Every finisher in the fun run gets a medal, but the overall festival prize — awarded to the club with the most points across all events — is a trophy that the winning club keeps for the year.
+A quick word on what you can win. Every finisher in the fun run gets a medal, but the overall festival prize - awarded to the club with the most points across all events - is a trophy that the winning club keeps for the year.
 
 One practical note: parking at the leisure centre is very limited, so if you can, please walk or cycle. The festival office, by the way, is in the library, and that's where you collect your race number and ask any questions on the day.`,
         questions: [
@@ -219,7 +219,7 @@ One practical note: parking at the leisure centre is very limited, so if you can
             type: 'matching',
             variant: 'features',
             prompt:
-              'Questions 11–15. Match each festival event with the venue where it is held. Write the correct letter, A–F, next to each event. (There is one extra venue you will not need.)',
+              'Questions 11-15. Match each festival event with the venue where it is held. Write the correct letter, A-F, next to each event. (There is one extra venue you will not need.)',
             options: [
               { key: 'A', label: 'the High Street / outside the town hall' },
               { key: 'B', label: 'the leisure centre pool' },
@@ -267,7 +267,7 @@ One practical note: parking at the leisure centre is very limited, so if you can
             ],
             correctIndex: 1,
             explanation:
-              'He says the fun run “costs five pounds, and for that you must register in advance online — we can’t take entries on the morning.” Option B matches; turning up free applies to the other events.',
+              'He says the fun run “costs five pounds, and for that you must register in advance online - we can’t take entries on the morning.” Option B matches; turning up free applies to the other events.',
           },
           {
             id: 'ls-021-s2-q19',
@@ -281,7 +281,7 @@ One practical note: parking at the leisure centre is very limited, so if you can
             ],
             correctIndex: 2,
             explanation:
-              'He says the overall prize, “awarded to the club with the most points across all events — is a trophy that the winning club keeps for the year.” Option C matches; the medal goes to every fun-run finisher.',
+              'He says the overall prize, “awarded to the club with the most points across all events - is a trophy that the winning club keeps for the year.” Option C matches; the medal goes to every fun-run finisher.',
           },
           {
             id: 'ls-021-s2-q20',
@@ -296,9 +296,9 @@ One practical note: parking at the leisure centre is very limited, so if you can
       },
       {
         id: 'ls-academic-021-s3',
-        title: 'Section 3 — Tutorial: a bridge-design engineering project',
+        title: 'Section 3 - Tutorial: a bridge-design engineering project',
         // ~300 words. Academic discussion (Section 3 style): two engineering students
-        // (Leo and Priya) and a tutor (Dr Khan) discuss their design project — the
+        // (Leo and Priya) and a tutor (Dr Khan) discuss their design project - the
         // brief, the materials, how they will test the model, the deadline and who
         // does what. Questions mix multiple choice (decisions/opinions) with
         // completion (concrete details).
@@ -306,11 +306,11 @@ One practical note: parking at the leisure centre is very limited, so if you can
 
 LEO: We have to design and build a model bridge that spans forty centimetres, and it has to hold as much weight as possible while using as little material as we can.
 
-DR KHAN: Good — so it's really a strength-to-weight challenge. What material are you using?
+DR KHAN: Good - so it's really a strength-to-weight challenge. What material are you using?
 
-PRIYA: We considered balsa wood, but in the end we chose card — corrugated card, specifically. It's cheap, and surprisingly strong when you fold it into triangles.
+PRIYA: We considered balsa wood, but in the end we chose card - corrugated card, specifically. It's cheap, and surprisingly strong when you fold it into triangles.
 
-DR KHAN: Triangles — so you've gone for a truss design rather than an arch?
+DR KHAN: Triangles - so you've gone for a truss design rather than an arch?
 
 LEO: Yes. We read that triangles don't deform under load the way squares do, so a truss should be stiffer for the same weight.
 
@@ -318,7 +318,7 @@ DR KHAN: Exactly right. Now, how will you test it?
 
 PRIYA: We'll hang a bucket from the centre and add sand gradually until the bridge fails. We record the maximum load it held just before it broke.
 
-DR KHAN: Sensible. And make sure you do more than one run — a single test tells you very little. When is this all due?
+DR KHAN: Sensible. And make sure you do more than one run - a single test tells you very little. When is this all due?
 
 LEO: The build is due in three weeks, but the written report comes a week after that.
 
@@ -362,7 +362,7 @@ DR KHAN: That's a fair split. One last tip: photograph each stage as you build. 
             ],
             correctIndex: 1,
             explanation:
-              'Priya says they “considered balsa wood, but in the end we chose card — corrugated card,” which is “cheap, and surprisingly strong when you fold it into triangles.” Option B matches; balsa was rejected.',
+              'Priya says they “considered balsa wood, but in the end we chose card - corrugated card,” which is “cheap, and surprisingly strong when you fold it into triangles.” Option B matches; balsa was rejected.',
           },
           {
             id: 'ls-021-s3-q24',
@@ -409,7 +409,7 @@ DR KHAN: That's a fair split. One last tip: photograph each stage as you build. 
             ],
             correctIndex: 1,
             explanation:
-              'Dr Khan says, “make sure you do more than one run — a single test tells you very little.” Option B matches.',
+              'Dr Khan says, “make sure you do more than one run - a single test tells you very little.” Option B matches.',
           },
           {
             id: 'ls-021-s3-q28',
@@ -446,17 +446,17 @@ DR KHAN: That's a fair split. One last tip: photograph each stage as you build. 
       },
       {
         id: 'ls-academic-021-s4',
-        title: 'Section 4 — Lecture: wind power',
+        title: 'Section 4 - Lecture: wind power',
         // ~310 words. Academic lecture / monologue (Section 4 style): a single speaker
         // explains how a wind turbine works, contrasts onshore and offshore wind, and
         // sets out the advantages and limitations of wind power. Dense, factual and
         // signposted, with the note/sentence-completion + multiple-choice mix typical
         // of Section 4, including one True/False/Not Given item.
-        transcript: `Good afternoon. Today's lecture is on wind power — how we turn moving air into electricity, the two main settings in which we do it, and where the real strengths and weaknesses of the technology lie.
+        transcript: `Good afternoon. Today's lecture is on wind power - how we turn moving air into electricity, the two main settings in which we do it, and where the real strengths and weaknesses of the technology lie.
 
-Let's begin with how a turbine actually works. The wind pushes against the blades, making them spin. The blades are connected to a central shaft, and that rotating shaft drives a generator, which is the component that produces the electricity. Modern turbines also turn to face the wind: a small motor rotates the whole top section, the nacelle, so the blades always meet the wind head-on. One key figure to remember is that the energy captured rises sharply with wind speed — in fact, it's proportional to the cube of the wind speed, so doubling the wind gives roughly eight times the power.
+Let's begin with how a turbine actually works. The wind pushes against the blades, making them spin. The blades are connected to a central shaft, and that rotating shaft drives a generator, which is the component that produces the electricity. Modern turbines also turn to face the wind: a small motor rotates the whole top section, the nacelle, so the blades always meet the wind head-on. One key figure to remember is that the energy captured rises sharply with wind speed - in fact, it's proportional to the cube of the wind speed, so doubling the wind gives roughly eight times the power.
 
-Now, where do we put these turbines? Broadly, there are two options: onshore, meaning on land, and offshore, meaning out at sea. Onshore wind is cheaper to build and easier to connect to the grid. Offshore wind, by contrast, is more expensive to install, but it has a major advantage — the wind at sea is stronger and far steadier, so the turbines generate more consistently.
+Now, where do we put these turbines? Broadly, there are two options: onshore, meaning on land, and offshore, meaning out at sea. Onshore wind is cheaper to build and easier to connect to the grid. Offshore wind, by contrast, is more expensive to install, but it has a major advantage - the wind at sea is stronger and far steadier, so the turbines generate more consistently.
 
 Let me turn to the limitations, because wind power isn't a complete answer on its own. The obvious one is that it's intermittent: when the wind drops, output falls, so we need either storage or back-up sources to keep supply steady. People often raise noise and the effect on birds as objections, and these are taken seriously in planning. What I'd stress, though, is that wind turbines produce no carbon dioxide while running, which is precisely why they're central to cutting emissions. Next week, we'll examine how engineers forecast the wind to manage that intermittency.`,
         questions: [
@@ -536,7 +536,7 @@ Let me turn to the limitations, because wind power isn't a complete answer on it
             ],
             correctIndex: 1,
             explanation:
-              'He says offshore wind “is more expensive to install, but it has a major advantage — the wind at sea is stronger and far steadier, so the turbines generate more consistently.” Option B matches.',
+              'He says offshore wind “is more expensive to install, but it has a major advantage - the wind at sea is stronger and far steadier, so the turbines generate more consistently.” Option B matches.',
           },
           {
             id: 'ls-021-s4-q38',

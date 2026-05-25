@@ -3,7 +3,7 @@
 // ─── IELTS Speaking · audio Recorder (self-review only) ─────────────────────
 // Records the learner's spoken answer via getUserMedia + MediaRecorder so they
 // can play it back and self-assess while they type their transcript. In Wave 1
-// the audio is NEVER uploaded — it stays in the browser (an in-memory object
+// the audio is NEVER uploaded - it stays in the browser (an in-memory object
 // URL) and is discarded on unmount or when a new recording starts. Live
 // auto-transcription and real pronunciation scoring are Phase 2.
 //
@@ -40,7 +40,7 @@ function formatElapsed(totalSeconds: number): string {
 }
 
 export interface RecorderProps {
-  /** Optional soft ceiling (seconds) — recording auto-stops here (e.g. 120 for Part 2). */
+  /** Optional soft ceiling (seconds) - recording auto-stops here (e.g. 120 for Part 2). */
   maxSeconds?: number
   /** Notifies the page when recording starts/stops, so it can pause its own timers if needed. */
   onRecordingChange?: (recording: boolean) => void
@@ -65,7 +65,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
   // current one without re-subscribing the effect on every state change.
   const audioUrlRef = useRef<string | null>(null)
 
-  // Feature-detect on mount (client only — avoids SSR/hydration mismatch).
+  // Feature-detect on mount (client only - avoids SSR/hydration mismatch).
   useEffect(() => {
     setSupported(isRecordingSupported())
   }, [])
@@ -99,7 +99,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
       try {
         mediaRecorderRef.current?.state !== 'inactive' && mediaRecorderRef.current?.stop()
       } catch {
-        // recorder may already be inactive — safe to ignore
+        // recorder may already be inactive - safe to ignore
       }
       revokeAudioUrl()
     }
@@ -111,7 +111,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         mediaRecorderRef.current.stop() // fires `onstop` → builds the blob/URL
       }
     } catch {
-      // ignore — onstop cleanup below still runs
+      // ignore - onstop cleanup below still runs
     }
     clearTimer()
     onRecordingChange?.(false)
@@ -125,7 +125,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
       return
     }
 
-    // Starting fresh — drop any previous take.
+    // Starting fresh - drop any previous take.
     revokeAudioUrl()
     setAudioUrl(null)
     setElapsed(0)

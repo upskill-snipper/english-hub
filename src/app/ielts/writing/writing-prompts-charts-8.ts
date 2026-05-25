@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 8 ────────────────────────────
 // An eighth bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–7 and the
+// Authoring rules followed throughout (mirroring chart sets 1-7 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
-//   • table — every row.cells length === columns.length − 1 (first column is
+//   • table - every row.cells length === columns.length − 1 (first column is
 //     the row header);
 //   • every spec sets a `caption`;
 //   • numbers are realistic, internally consistent and tell a clear story
@@ -20,7 +20,7 @@
 //     achievable.
 //
 // Six fresh, original topics, deliberately distinct from every existing prompt
-// across the whole chart bank (sets 1–7 + the worked examples): renewable mix,
+// across the whole chart bank (sets 1-7 + the worked examples): renewable mix,
 // tourist arrivals, freshwater, internet-by-age, water cycle, enrolment,
 // household spending, electricity sources, recycled materials, butterfly /
 // coffee / chocolate / water-treatment / bread / hydroelectric / solar cycles,
@@ -43,7 +43,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_8: WritingPrompt[] = [
-  // ── 1 · bar (single series across six countries — comparison) ─────────────
+  // ── 1 · bar (single series across six countries - comparison) ─────────────
   {
     id: 'wt1c8-working-hours',
     task: 'writing-task-1',
@@ -254,7 +254,7 @@ export const WRITING_CHARTS_8: WritingPrompt[] = [
       kind: 'line',
       unit: '%',
       yAxisLabel: 'Adult literacy rate (%)',
-      caption: 'Adult literacy rate as a share of the adult population (%), 1970–2020.',
+      caption: 'Adult literacy rate as a share of the adult population (%), 1970-2020.',
       categories: ['1970', '1980', '1990', '2000', '2010', '2020'],
       series: [
         { name: 'Region A', values: [88, 91, 94, 96, 98, 99] },

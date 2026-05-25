@@ -1,23 +1,23 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 12) ──────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 12) ──────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary/note completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, programmes),
 // plus one longer general-interest article. This file ships ONE complete,
 // carefully-checked GT test scaled to a full sitting (~40 marks):
-//   • Section 1 — a leisure-centre class timetable + notice covering class
+//   • Section 1 - a leisure-centre class timetable + notice covering class
 //     times, booking, what to bring and the cancellation policy. Includes a
 //     Matching (features) question worth 5 marks asking which class each
 //     statement describes; options may be reused.
-//   • Section 2 — a workplace extract from a company internet & email
+//   • Section 2 - a workplace extract from a company internet & email
 //     acceptable-use policy (permitted use, monitoring, passwords, reporting).
-//   • Section 3 — a general-interest article on the benefits of learning a
+//   • Section 3 - a general-interest article on the benefits of learning a
 //     language as an adult. Includes a Matching (headings) question covering
-//     paragraphs B–F with two distractor headings, worth 5 marks.
+//     paragraphs B-F with two distractor headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
 // giving 40 marks in total. Every answer is verifiable from the text and every
 // item carries an explanation. All ids are unique ('rd-gen-012-…').
@@ -28,17 +28,17 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_12: ReadingTest[] = [
   {
     id: 'rd-general-012',
-    title: 'General Training Reading — Practice Test 12',
+    title: 'General Training Reading - Practice Test 12',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — leisure-centre class timetable + notice.
+      // ── Section 1: EVERYDAY / SOCIAL - leisure-centre class timetable + notice.
       // A Matching (features) question (5 marks) asks which of the five classes
       // each statement describes; options may be reused.
       {
         id: 'rd-gen-012-p1',
         title: 'Riverside Leisure Centre: Term Class Timetable & Notice',
-        body: `PART 1 — RIVERSIDE LEISURE CENTRE: NOTICE FOR THE SPRING TERM
+        body: `PART 1 - RIVERSIDE LEISURE CENTRE: NOTICE FOR THE SPRING TERM
 
 The spring term of group classes begins on Monday the sixth of April and runs for ten weeks. All classes are held in the studio on the upper floor, except for swimming, which takes place in the main pool. Please read this notice carefully, as several rules have changed since last term.
 
@@ -51,23 +51,23 @@ For all studio classes, bring your own water bottle and a small towel; mats are 
 IF YOU NEED TO CANCEL
 If you cannot attend a class you have booked, please cancel it at least four hours beforehand, either online or by telephone, so that your place can be offered to someone else. Members who fail to cancel three times in a single term will lose the right to book online for the rest of that term and must book by telephone instead. There is no charge for cancelling in good time.
 
-PART 2 — SPRING TERM CLASS TIMETABLE
+PART 2 - SPRING TERM CLASS TIMETABLE
 
 Five group classes run this term. Each is described below.
 
-CLASS 1 — Morning Yoga
+CLASS 1 - Morning Yoga
 A gentle class suitable for complete beginners, held on Tuesday and Friday at 7 a.m. The pace is slow and the focus is on breathing and stretching. Please arrive ten minutes early, as latecomers cannot be admitted once the relaxation has begun. The class lasts one hour.
 
-CLASS 2 — Circuit Training
+CLASS 2 - Circuit Training
 A fast, energetic workout for those who already exercise regularly; it is not recommended for first-timers. It runs on Monday and Thursday evenings at 6 p.m. and lasts forty-five minutes. The instructor sets each station to your own level, so you work as hard as you choose.
 
-CLASS 3 — Parent and Baby Movement
+CLASS 3 - Parent and Baby Movement
 A relaxed session for parents and carers with babies under one year old. Held on Wednesday mornings at half past nine, it combines gentle exercise with songs and play. Babies must stay with their carer at all times, and there is space for only twelve pairs.
 
-CLASS 4 — Lane Swimming Skills
+CLASS 4 - Lane Swimming Skills
 A coached session in the main pool for adults who can already swim one length unaided. It is held on Tuesday and Thursday at 8 p.m. The coach works on improving your stroke rather than on teaching you to swim from the beginning. A swimming cap is required.
 
-CLASS 5 — Over-60s Keep Fit
+CLASS 5 - Over-60s Keep Fit
 A friendly, low-impact class designed for older adults, held on Monday and Friday afternoons at 2 p.m. Chairs are available for any exercise you prefer to do seated, and the first session of the term is free so that you can try it before booking the rest.`,
         questions: [
           {
@@ -153,13 +153,13 @@ A friendly, low-impact class designed for older adults, held on Monday and Frida
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the five classes, 1–5. For each statement below, choose the class it describes. Write the correct number, 1–5. (Each class may be chosen more than once.)',
+              'Look at the five classes, 1-5. For each statement below, choose the class it describes. Write the correct number, 1-5. (Each class may be chosen more than once.)',
             options: [
-              { key: '1', label: 'Class 1 — Morning Yoga' },
-              { key: '2', label: 'Class 2 — Circuit Training' },
-              { key: '3', label: 'Class 3 — Parent and Baby Movement' },
-              { key: '4', label: 'Class 4 — Lane Swimming Skills' },
-              { key: '5', label: 'Class 5 — Over-60s Keep Fit' },
+              { key: '1', label: 'Class 1 - Morning Yoga' },
+              { key: '2', label: 'Class 2 - Circuit Training' },
+              { key: '3', label: 'Class 3 - Parent and Baby Movement' },
+              { key: '4', label: 'Class 4 - Lane Swimming Skills' },
+              { key: '5', label: 'Class 5 - Over-60s Keep Fit' },
             ],
             items: [
               {
@@ -193,14 +193,14 @@ A friendly, low-impact class designed for older adults, held on Monday and Frida
           },
         ],
       },
-      // ── Section 2: WORKPLACE — internet & email acceptable-use policy ───────
+      // ── Section 2: WORKPLACE - internet & email acceptable-use policy ───────
       {
         id: 'rd-gen-012-p2',
         title: 'Acceptable Use Policy: Company Internet and Email',
         body: `This extract from the staff handbook sets out how the company's internet connection, email accounts and devices may be used. It applies to everyone who is given a login, including temporary staff and contractors. By using a company account you agree to these rules; if anything is unclear, ask the IT help desk before you act, not afterwards.
 
 PERMITTED USE
-Company systems are provided mainly for work. We do allow reasonable personal use — for example, reading the news at lunchtime or sending a short private email — provided it is occasional, does not interfere with your duties, and does not cost the company money. Some activities are never allowed on company equipment: downloading films or music, running a private business, gambling, and visiting sites that are offensive or illegal. Streaming video for entertainment is also not permitted during working hours, as it slows the connection for everyone.
+Company systems are provided mainly for work. We do allow reasonable personal use - for example, reading the news at lunchtime or sending a short private email - provided it is occasional, does not interfere with your duties, and does not cost the company money. Some activities are never allowed on company equipment: downloading films or music, running a private business, gambling, and visiting sites that are offensive or illegal. Streaming video for entertainment is also not permitted during working hours, as it slows the connection for everyone.
 
 MONITORING
 Staff should not expect their use of company systems to be private. We keep automatic records of the websites that are visited and the emails that are sent and received, and these records may be examined if there is a good reason, such as a security alert or an investigation into misuse. We do not read the content of personal messages as a matter of routine, and any check of an individual's activity must first be approved by a manager. Records are kept for twelve months and are then deleted.
@@ -209,7 +209,7 @@ PASSWORDS
 Your password is the key to your account, and you are responsible for keeping it secret. Never write it down where others can see it, and never share it with a colleague, not even with your own manager; if someone genuinely needs access to your files while you are away, the IT help desk can arrange this properly. Choose a password of at least twelve characters that you do not use for any personal account, and change it at once if you think someone else may have learned it. The system will, in any case, ask you to set a new password every ninety days.
 
 REPORTING PROBLEMS
-If you receive a suspicious email — for instance, one that asks for your password or urges you to click a link in a hurry — do not reply and do not click anything. Instead, forward it to the help desk and then delete it. Report a lost or stolen laptop or phone immediately, by telephone if it is outside office hours, so that the device can be locked remotely. Acting quickly limits the harm; a problem reported within the hour can often be contained, while one hidden for a day may not.`,
+If you receive a suspicious email - for instance, one that asks for your password or urges you to click a link in a hurry - do not reply and do not click anything. Instead, forward it to the help desk and then delete it. Report a lost or stolen laptop or phone immediately, by telephone if it is outside office hours, so that the device can be locked remotely. Acting quickly limits the harm; a problem reported within the hour can often be contained, while one hidden for a day may not.`,
         questions: [
           {
             id: 'rd-gen-012-p2-q10',
@@ -325,9 +325,9 @@ If you receive a suspicious email — for instance, one that asks for your passw
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — learning a language as an adult.
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - learning a language as an adult.
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-012-p3',
         title: 'Never Too Late: The Rewards of Learning a Language as an Adult',
@@ -344,17 +344,17 @@ Paragraph D
 The benefits are not only private and mental; they are also deeply social. A traveller who can order a meal, ask for directions or exchange a few sentences with a stranger sees a country from the inside rather than through glass. Closer to home, learning the language of a neighbour or a colleague is a powerful way of showing respect and building trust. Many adult learners say that the friendships formed in a weekly class, united by the shared struggle of getting the words out, matter to them as much as the language itself.
 
 Paragraph E
-So how should a busy adult go about it? The single most important habit is regularity: twenty minutes every day will carry you further than a three-hour session once a fortnight, because a language is built slowly, by frequent contact. It also helps to make the learning enjoyable, by choosing material you actually like — a favourite kind of music, a cookery channel, a series with subtitles — so that practice does not feel like a chore. Above all, speak from the very first week, however badly; the learners who progress are the ones who are willing to make mistakes out loud.
+So how should a busy adult go about it? The single most important habit is regularity: twenty minutes every day will carry you further than a three-hour session once a fortnight, because a language is built slowly, by frequent contact. It also helps to make the learning enjoyable, by choosing material you actually like - a favourite kind of music, a cookery channel, a series with subtitles - so that practice does not feel like a chore. Above all, speak from the very first week, however badly; the learners who progress are the ones who are willing to make mistakes out loud.
 
 Paragraph F
-None of this should suggest that learning a language as an adult is quick or easy. Progress can feel painfully slow, and there will be long stretches when you seem to make none at all; these plateaus are normal and pass with persistence. The goal, too, is worth keeping modest and human: very few adult learners will ever be mistaken for a native speaker, and that was never the point. To be understood, to make a connection, to open a door that was previously closed — these are prizes well within reach of anyone prepared to keep at it.`,
+None of this should suggest that learning a language as an adult is quick or easy. Progress can feel painfully slow, and there will be long stretches when you seem to make none at all; these plateaus are normal and pass with persistence. The goal, too, is worth keeping modest and human: very few adult learners will ever be mistaken for a native speaker, and that was never the point. To be understood, to make a connection, to open a door that was previously closed - these are prizes well within reach of anyone prepared to keep at it.`,
         questions: [
           {
             id: 'rd-gen-012-p3-q21',
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. The honest truth about effort and pace' },
               { key: 'ii', label: 'ii. Practical habits that make learning work' },
@@ -372,7 +372,7 @@ None of this should suggest that learning a language as an adult is quick or eas
               { id: 'pF', text: 'Paragraph F', answer: 'i' },
             ],
             explanation:
-              'Paragraph B attacks "the most persistent myth... that there is a fixed window" — heading vi. Paragraph C describes "cognitive rewards" and a mind kept "active and challenged" — heading iii (sharper thinking and a healthier mind). Paragraph D says the benefits are "deeply social" and about friendships and trust — heading v (connecting with other people). Paragraph E answers "how should a busy adult go about it?" with habits like regularity — heading ii (practical habits that make learning work). Paragraph F states plainly that learning is not "quick or easy" and addresses pace — heading i. Headings iv (why schools should teach more languages) and vii (the best age to begin a language) are distractors that are not used.',
+              'Paragraph B attacks "the most persistent myth... that there is a fixed window" - heading vi. Paragraph C describes "cognitive rewards" and a mind kept "active and challenged" - heading iii (sharper thinking and a healthier mind). Paragraph D says the benefits are "deeply social" and about friendships and trust - heading v (connecting with other people). Paragraph E answers "how should a busy adult go about it?" with habits like regularity - heading ii (practical habits that make learning work). Paragraph F states plainly that learning is not "quick or easy" and addresses pace - heading i. Headings iv (why schools should teach more languages) and vii (the best age to begin a language) are distractors that are not used.',
           },
           {
             id: 'rd-gen-012-p3-q22',

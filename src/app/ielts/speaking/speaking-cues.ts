@@ -1,11 +1,11 @@
-// ─── IELTS Speaking cues (Academic, Parts 1–3) ─────────────────────────────
+// ─── IELTS Speaking cues (Academic, Parts 1-3) ─────────────────────────────
 // Original IELTS-preparation practice prompts for the async Speaking module.
 // These mirror the *shape* of a real IELTS Speaking interview without copying
 // any official or third-party question bank:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend the Part 2 topic.
 //
 // The page imports SPEAKING_CUES and lets the learner pick a set; the feedback
@@ -43,13 +43,13 @@ export const SPEAKING_CUES: SpeakingCue[] = [
   ...SPEAKING_SET_12,
   ...SPEAKING_SET_13,
   ...SPEAKING_SET_14,
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-home-area',
     part: 'speaking-part-1',
     title: 'Part 1 · Your home and area',
     prompts: [
-      'Where do you live at the moment — is it a house or an apartment?',
+      'Where do you live at the moment - is it a house or an apartment?',
       'What do you like most about the area you live in?',
       'Is there anything you would like to change about your neighbourhood?',
       'Do you think you will stay living in the same place in the future? Why or why not?',
@@ -69,7 +69,7 @@ export const SPEAKING_CUES: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-skill-learned',
     part: 'speaking-part-2',
@@ -101,7 +101,7 @@ export const SPEAKING_CUES: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-learning-society',
     part: 'speaking-part-3',
@@ -115,7 +115,7 @@ export const SPEAKING_CUES: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-food-cooking',
     part: 'speaking-part-1',
@@ -129,7 +129,7 @@ export const SPEAKING_CUES: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-useful-website',
     part: 'speaking-part-2',
@@ -161,7 +161,7 @@ export const SPEAKING_CUES: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-technology-daily-life',
     part: 'speaking-part-3',

@@ -1,5 +1,5 @@
 /**
- * dictionary-mkt-eal.ts — /eal marketing page completion.
+ * dictionary-mkt-eal.ts - /eal marketing page completion.
  *
  * Bilingual EN + Khaleeji (Gulf) Arabic supplement for the EAL landing
  * hub at `src/app/eal/page.tsx`. The page was partially bilingual via
@@ -9,7 +9,7 @@
  * folds the existing inline bilingual ternaries onto stable keys so
  * future copy edits don't have to chase JSX.
  *
- * Namespace `mkt.eal.*` — deliberately disjoint from any existing
+ * Namespace `mkt.eal.*` - deliberately disjoint from any existing
  * `eal.*` keys (curriculum / category labels resolved through
  * `src/lib/eal/types.ts`) so this shard is purely additive and cannot
  * collide with the partial wiring already on the page.
@@ -17,7 +17,7 @@
  * The shard is consumed in-file by the EAL hub page (imported directly
  * and resolved through a tiny page-local lookup that wraps `useT()`),
  * so `dictionary.ts` is not modified. Once any future master dictionary
- * pass wires this in, the page lookup degrades gracefully — entries
+ * pass wires this in, the page lookup degrades gracefully - entries
  * here would just be hit twice with identical results.
  *
  * Khaleeji conventions match `dictionary-homepage.ts` and the existing
@@ -28,12 +28,12 @@
  * A2 / B1 / B2 / C1.
  *
  * Templated keys use the literal placeholder `{level}` for the CEFR
- * band letter — the page replaces it at render time so a single key
+ * band letter - the page replaces it at render time so a single key
  * covers all four bands (A2/B1/B2/C1).
  */
 
 export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
-  // ─── Institutional hero (top of page — schools framing) ─────────────
+  // ─── Institutional hero (top of page - schools framing) ─────────────
   'mkt.eal.inst.badge': {
     en: 'For schools',
     ar: 'للمدارس',
@@ -43,8 +43,8 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'دعم إنجليزي منظّم لطلاب الـ EAL',
   },
   'mkt.eal.inst.lead': {
-    en: 'Designed to help international and GCC schools support EAL learners across vocabulary, reading fluency, comprehension, grammar and writing confidence — with teacher visibility and progress reporting.',
-    ar: 'مصمّم عشان يساعد المدارس الدولية ومدارس الـ GCC على دعم طلاب الـ EAL في المفردات، طلاقة القراءة، الفهم، القواعد، والثقة في الكتابة — مع رؤية واضحة للمعلّم وتقارير تتبّع التقدّم.',
+    en: 'Designed to help international and GCC schools support EAL learners across vocabulary, reading fluency, comprehension, grammar and writing confidence - with teacher visibility and progress reporting.',
+    ar: 'مصمّم عشان يساعد المدارس الدولية ومدارس الـ GCC على دعم طلاب الـ EAL في المفردات، طلاقة القراءة، الفهم، القواعد، والثقة في الكتابة - مع رؤية واضحة للمعلّم وتقارير تتبّع التقدّم.',
   },
   'mkt.eal.inst.cta_schools': {
     en: 'For schools',
@@ -57,20 +57,20 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   // ─── 3 benefit cards row ────────────────────────────────────────────
   'mkt.eal.benefit.curriculum.title': {
-    en: 'Vocabulary, reading and writing — structured',
-    ar: 'المفردات والقراءة والكتابة — بشكل منظّم',
+    en: 'Vocabulary, reading and writing - structured',
+    ar: 'المفردات والقراءة والكتابة - بشكل منظّم',
   },
   'mkt.eal.benefit.curriculum.desc': {
-    en: 'A coherent progression across vocabulary breadth, reading fluency, comprehension, grammar accuracy and writing confidence — graded across CEFR levels so learners always know the next step.',
-    ar: 'تدرّج متماسك يشمل اتساع المفردات، طلاقة القراءة، الفهم، دقة القواعد، والثقة في الكتابة — مرتّب على مستويات CEFR عشان الطالب يعرف الخطوة الجاية على طول.',
+    en: 'A coherent progression across vocabulary breadth, reading fluency, comprehension, grammar accuracy and writing confidence - graded across CEFR levels so learners always know the next step.',
+    ar: 'تدرّج متماسك يشمل اتساع المفردات، طلاقة القراءة، الفهم، دقة القواعد، والثقة في الكتابة - مرتّب على مستويات CEFR عشان الطالب يعرف الخطوة الجاية على طول.',
   },
   'mkt.eal.benefit.intl.title': {
     en: 'Designed for international schools',
     ar: 'مصمّم للمدارس الدولية',
   },
   'mkt.eal.benefit.intl.desc': {
-    en: 'Built with Qatar, the wider GCC and IGCSE/GCSE classrooms in mind — content addresses the specific language gaps Arabic-L1 learners face when working through a UK-aligned curriculum.',
-    ar: 'مبني وقطر ودول الـ GCC وصفوف الـ IGCSE/GCSE في البال — المحتوى يعالج بالضبط الفجوات اللغوية اللي يواجهها متحدّث العربي وقت يدرس منهج بريطاني.',
+    en: 'Built with Qatar, the wider GCC and IGCSE/GCSE classrooms in mind - content addresses the specific language gaps Arabic-L1 learners face when working through a UK-aligned curriculum.',
+    ar: 'مبني وقطر ودول الـ GCC وصفوف الـ IGCSE/GCSE في البال - المحتوى يعالج بالضبط الفجوات اللغوية اللي يواجهها متحدّث العربي وقت يدرس منهج بريطاني.',
   },
   'mkt.eal.benefit.teacher.title': {
     en: 'Teacher visibility and progress reporting',
@@ -88,7 +88,7 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'mkt.eal.teacher_view.desc': {
     en: 'Teacher view: progress by learner, by skill, and by year group, so departments can plan targeted EAL support.',
-    ar: 'صفحة المعلّم: تقدّم لكل طالب، وحسب المهارة، وحسب الصف الدراسي — عشان الأقسام تقدر تخطّط دعم EAL مركّز.',
+    ar: 'صفحة المعلّم: تقدّم لكل طالب، وحسب المهارة، وحسب الصف الدراسي - عشان الأقسام تقدر تخطّط دعم EAL مركّز.',
   },
 
   // ─── Learner hero (second hero, was inline ternaries) ───────────────
@@ -137,8 +137,8 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'اختبار تحديد المستوى (CEFR)',
   },
   'mkt.eal.cta.lead': {
-    en: 'A short, free test that pinpoints your level from A2 to C1 and routes you straight to the lessons you most need — built around the weak points common to Arabic speakers.',
-    ar: 'اختبار قصير ومجاني يحدّد مستواك من A2 إلى C1، ويوجّهك مباشرة للدروس اللي تحتاجها أكثر — مصمّم على نقاط الضعف الشائعة عند متحدّث العربي.',
+    en: 'A short, free test that pinpoints your level from A2 to C1 and routes you straight to the lessons you most need - built around the weak points common to Arabic speakers.',
+    ar: 'اختبار قصير ومجاني يحدّد مستواك من A2 إلى C1، ويوجّهك مباشرة للدروس اللي تحتاجها أكثر - مصمّم على نقاط الضعف الشائعة عند متحدّث العربي.',
   },
   'mkt.eal.cta.button': {
     en: 'Start the test',
@@ -151,7 +151,7 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'الدروس حسب المهارة',
   },
   // Per-card counters (singular/plural rendering is left as the original
-  // file shipped — EN uses plural noun, AR uses generic noun — verbatim).
+  // file shipped - EN uses plural noun, AR uses generic noun - verbatim).
   'mkt.eal.topics.examples_label': {
     en: 'examples',
     ar: 'مثال',
@@ -203,8 +203,8 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'داخل كل درس',
   },
   'mkt.eal.practice.ai_body': {
-    en: 'Every lesson includes reading, listening, writing and speaking practice — writing and speaking are AI-assessed with feedback tailored to Arabic speakers.',
-    ar: 'كل درس فيه تدريب على القراءة والاستماع والكتابة والمحادثة — والكتابة والمحادثة يصحّحها الذكاء الاصطناعي مع ملاحظات مخصّصة لمتحدّث العربي.',
+    en: 'Every lesson includes reading, listening, writing and speaking practice - writing and speaking are AI-assessed with feedback tailored to Arabic speakers.',
+    ar: 'كل درس فيه تدريب على القراءة والاستماع والكتابة والمحادثة - والكتابة والمحادثة يصحّحها الذكاء الاصطناعي مع ملاحظات مخصّصة لمتحدّث العربي.',
   },
   'mkt.eal.practice.skill_reading': {
     en: 'Reading',
@@ -237,8 +237,8 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'العاب الإنجليزية للمبتدئين',
   },
   'mkt.eal.games.lead': {
-    en: '18+ friendly games: picture–word match, articles, the verb “to be”, tenses, prepositions, numbers & time, phrasal verbs and more — with instant feedback and scores.',
-    ar: 'أكثر من ١٨ لعبة سهلة وممتعة: مطابقة الصور بالكلمات، أدوات التعريف، فعل to be، الأزمنة، حروف الجر، الأرقام والوقت، والمزيد — مع تصحيح فوري ونقاط.',
+    en: '18+ friendly games: picture-word match, articles, the verb “to be”, tenses, prepositions, numbers & time, phrasal verbs and more - with instant feedback and scores.',
+    ar: 'أكثر من ١٨ لعبة سهلة وممتعة: مطابقة الصور بالكلمات، أدوات التعريف، فعل to be، الأزمنة، حروف الجر، الأرقام والوقت، والمزيد - مع تصحيح فوري ونقاط.',
   },
   'mkt.eal.games.play_now': {
     en: 'Play now',
@@ -250,16 +250,16 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'How to use this section',
     ar: 'كيف تستخدم هذا القسم',
   },
-  // Step 1 — placement test
+  // Step 1 - placement test
   'mkt.eal.howto.step1.bold': {
     en: 'Start with the placement test',
     ar: 'ابدأ باختبار تحديد المستوى',
   },
   'mkt.eal.howto.step1.body': {
-    en: 'so you know your A2–C1 level and go straight to the right lessons.',
+    en: 'so you know your A2-C1 level and go straight to the right lessons.',
     ar: 'عشان تعرف مستواك من A2 إلى C1 وتروح للدروس المناسبة لك مباشرة.',
   },
-  // Step 2 — sentence structure
+  // Step 2 - sentence structure
   'mkt.eal.howto.step2.bold': {
     en: 'Then move to “Sentence Structure”',
     ar: 'ثم انتقل إلى «بناء الجملة»',
@@ -268,16 +268,16 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'the biggest gap between Arabic and English. Fix word order first.',
     ar: 'أكبر فرق بين العربي والإنجليزي. أصلح ترتيب الكلمات أولاً.',
   },
-  // Step 3 — grammar
+  // Step 3 - grammar
   'mkt.eal.howto.step3.bold': {
     en: 'Next, “Grammar”',
     ar: 'بعدها «القواعد»',
   },
   'mkt.eal.howto.step3.body': {
-    en: 'articles, tenses, subject–verb agreement — these decide a big chunk of the SPaG grade.',
-    ar: 'أدوات التعريف، الأزمنة، مطابقة الفاعل للفعل — تحدّد جزء كبير من درجة SPaG.',
+    en: 'articles, tenses, subject-verb agreement - these decide a big chunk of the SPaG grade.',
+    ar: 'أدوات التعريف، الأزمنة، مطابقة الفاعل للفعل - تحدّد جزء كبير من درجة SPaG.',
   },
-  // Step 4 — common errors
+  // Step 4 - common errors
   'mkt.eal.howto.step4.bold': {
     en: 'Use “Common Errors” as a checklist',
     ar: 'استخدم «الأخطاء الشائعة» كقائمة فحص',

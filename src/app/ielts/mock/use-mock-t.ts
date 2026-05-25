@@ -2,7 +2,7 @@
 
 // ─── Local i18n helper for the IELTS Mock Test ──────────────────────────────
 // ielts.mock.* keys live in the dictionary-ielts-mock shard, which isn't wired
-// into the global lookup() chain — resolve them here against the live locale,
+// into the global lookup() chain - resolve them here against the live locale,
 // falling back to the shared useT() for any cross-module ielts.* keys. `vars`
 // interpolates {token} placeholders so a phrase (section names, counts, bands,
 // word counts, part numbers) stays translatable as a whole.

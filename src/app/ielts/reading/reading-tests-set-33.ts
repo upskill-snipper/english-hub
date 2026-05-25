@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 33) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 33) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — statements to defence
+// which-paragraph (Passage 2) and Matching Features - statements to defence
 // strategies (Passage 3), alongside the usual mix of True/False/Not Given,
 // multiple choice and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_33: ReadingTest[] = [
   {
     id: 'rd-academic-033',
-    title: 'Academic Reading — Practice Test 33',
+    title: 'Academic Reading - Practice Test 33',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -36,7 +36,7 @@ The peoples of Mesoamerica were the first to make use of cacao, and they treated
 
 Chocolate crossed the Atlantic in the wake of the Spanish conquest of the sixteenth century. The first Europeans to taste the bitter brew were unimpressed, but in the kitchens of the Spanish court it was gradually transformed to suit local taste. The decisive change was the addition of sugar, together with warming spices such as cinnamon, which turned a sharp, alien drink into a sweet and fashionable one. For a time Spain managed to keep its new luxury something of a secret, but the fashion could not be contained for ever. Over the following century the sweetened drink spread to the courts and coffee houses of France, Italy and England, where it was sipped by the wealthy as an expensive and faintly exotic indulgence, often credited with medicinal virtues it almost certainly did not possess.
 
-For all its popularity, chocolate remained a drink, and a rich and greasy one, because the ground seed is roughly half fat. That fat, known as cocoa butter, floated awkwardly on the surface of the cup and made the beverage heavy to digest. The problem was solved in 1828 by a Dutch chemist, Coenraad van Houten, who devised a press capable of squeezing much of the cocoa butter out of the roasted paste. What remained could be ground into a fine, low-fat powder that mixed far more easily with liquid. Van Houten also treated the powder with an alkali to soften its harsh flavour and darken its colour, a process still called 'Dutching' today. His press did more than improve the drink, however, for it separated cocoa into two useful streams — the powder and the butter — and so unlocked the possibility of a chocolate that could be eaten rather than drunk.
+For all its popularity, chocolate remained a drink, and a rich and greasy one, because the ground seed is roughly half fat. That fat, known as cocoa butter, floated awkwardly on the surface of the cup and made the beverage heavy to digest. The problem was solved in 1828 by a Dutch chemist, Coenraad van Houten, who devised a press capable of squeezing much of the cocoa butter out of the roasted paste. What remained could be ground into a fine, low-fat powder that mixed far more easily with liquid. Van Houten also treated the powder with an alkali to soften its harsh flavour and darken its colour, a process still called 'Dutching' today. His press did more than improve the drink, however, for it separated cocoa into two useful streams - the powder and the butter - and so unlocked the possibility of a chocolate that could be eaten rather than drunk.
 
 The solid bar was the result. In 1847 the English firm of Fry's combined cocoa powder, sugar and melted cocoa butter to produce a paste that could be cast in a mould and set hard, creating what is generally regarded as the first true eating chocolate. It was dark and rather coarse by later standards, but the principle was established. A further refinement came from Switzerland: in 1875 Daniel Peter, drawing on a neighbour's expertise in dried milk, succeeded in blending milk into chocolate to make the first milk chocolate, milder and creamier than anything before it. Soon afterwards the Swiss manufacturer Rodolphe Lindt invented a process called conching, in which the chocolate is slowly worked and warmed for hours, driving off harsh flavours and giving the smooth, melting texture that consumers came to expect.
 
@@ -48,7 +48,7 @@ These inventions arrived just as the wider economy was being reshaped by the fac
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A ritual drink among the peoples of Mesoamerica' },
               { key: 'ii', label: 'Sweetened and made fashionable in Europe' },
@@ -68,7 +68,7 @@ These inventions arrived just as the wider economy was being reshaped by the fac
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vii' },
             ],
             explanation:
-              'A traces cacao from "that forest seed to an industrial product" (iii). B describes the bitter, ritual drink of the Maya and Aztecs (i). C covers the addition of sugar that made it "sweet and fashionable" in Europe (ii). D explains van Houten\'s press that "separated cocoa into two useful streams" (iv). E narrates the first eating chocolate and milk chocolate (vi). F describes how it "became... an everyday treat" of the industrial age (vii). Heading v (modern plantation growing) is a distractor never discussed; heading viii (health risks of sugar) is a distractor — the passage does not address the dangers of sugar.',
+              'A traces cacao from "that forest seed to an industrial product" (iii). B describes the bitter, ritual drink of the Maya and Aztecs (i). C covers the addition of sugar that made it "sweet and fashionable" in Europe (ii). D explains van Houten\'s press that "separated cocoa into two useful streams" (iv). E narrates the first eating chocolate and milk chocolate (vi). F describes how it "became... an everyday treat" of the industrial age (vii). Heading v (modern plantation growing) is a distractor never discussed; heading viii (health risks of sugar) is a distractor - the passage does not address the dangers of sugar.',
           },
           {
             id: 'rd-033-p1-q2',
@@ -150,9 +150,9 @@ These inventions arrived just as the wider economy was being reshaped by the fac
       {
         id: 'rd-academic-033-p2',
         title: 'The Art of Disappearing',
-        body: `In the unending struggle between predator and prey, few weapons are as elegant as the ability to go unseen. Camouflage — the use of colour, pattern and form to avoid detection or recognition — is one of nature's most widespread defences, and also one of its most varied. It is not a single trick but a whole repertoire of strategies, each exploiting a different weakness in the way eyes and brains make sense of a scene. The same animal may even combine several at once. What unites them is a common purpose: to break the link between an object and the observer who would otherwise notice it, whether that observer is a hunting bird, a stalking cat or a wary insect.
+        body: `In the unending struggle between predator and prey, few weapons are as elegant as the ability to go unseen. Camouflage - the use of colour, pattern and form to avoid detection or recognition - is one of nature's most widespread defences, and also one of its most varied. It is not a single trick but a whole repertoire of strategies, each exploiting a different weakness in the way eyes and brains make sense of a scene. The same animal may even combine several at once. What unites them is a common purpose: to break the link between an object and the observer who would otherwise notice it, whether that observer is a hunting bird, a stalking cat or a wary insect.
 
-The simplest and most familiar strategy is background matching, in which an animal's colours and textures resemble those of its usual surroundings so closely that it seems to melt into them. A green caterpillar on a green leaf, a brown moth on bark, a sandy lizard on a desert floor — all rely on blending with a typical background. The strategy works best when the creature stays in the habitat it matches and keeps still, since movement betrays even the most perfect colouring. Some species go further and can adjust their appearance: certain flatfish, for instance, shift the pattern of their skin to suit the seabed beneath them, while the well-known chameleon changes colour partly for the same end, though as much for signalling to other chameleons as for hiding.
+The simplest and most familiar strategy is background matching, in which an animal's colours and textures resemble those of its usual surroundings so closely that it seems to melt into them. A green caterpillar on a green leaf, a brown moth on bark, a sandy lizard on a desert floor - all rely on blending with a typical background. The strategy works best when the creature stays in the habitat it matches and keeps still, since movement betrays even the most perfect colouring. Some species go further and can adjust their appearance: certain flatfish, for instance, shift the pattern of their skin to suit the seabed beneath them, while the well-known chameleon changes colour partly for the same end, though as much for signalling to other chameleons as for hiding.
 
 A subtler approach attacks not the colour of an animal but its outline. The eye recognises objects largely by their edges, the continuous boundary that separates a shape from its background, and an animal that breaks up that boundary becomes far harder to pick out. This is the principle of disruptive colouration, in which bold patches of contrasting colour run across the body, often crossing the edges of limbs or wings. Instead of seeing a single recognisable form, the observer's eye is drawn to the separate patches and fails to assemble them into the shape of an animal at all. Many fish, frogs and ground-nesting birds carry such markings, and human armies borrowed the same idea for the irregular blotches of military camouflage.
 
@@ -160,7 +160,7 @@ A third strategy turns the logic of camouflage on its head, not by matching the 
 
 One of the most ingenious tricks of all addresses a problem that flat colouring cannot solve: the betraying effect of light and shadow. Sunlight falls from above, so a solid, evenly coloured body is lit on top and shaded beneath, and that gradient of brightness gives away its rounded, three-dimensional shape even when its colour matches the background. The answer is countershading, in which an animal is darker on its upper surface and paler on its underside. The dark top, catching the light, and the pale belly, lying in shadow, cancel out the natural gradient, so the animal appears flat and shapeless and is far harder to detect. Countless fish, deer, mice and birds are countershaded in exactly this way, the boundary between dark and light running neatly along their flanks.
 
-Camouflage, then, is less a single adaptation than an arms race written across the skins of animals. As predators evolve sharper eyes and quicker pattern recognition, prey evolve ever more refined ways to defeat them, and predators in turn use camouflage of their own to approach unseen. The strategies overlap and reinforce one another, and a single creature may match its background, break up its outline and be countershaded all at once. Studying these tricks has taught biologists a great deal not only about animals but about vision itself, for every method of hiding is, in effect, a clue to how seeing works — and to how it can be fooled.`,
+Camouflage, then, is less a single adaptation than an arms race written across the skins of animals. As predators evolve sharper eyes and quicker pattern recognition, prey evolve ever more refined ways to defeat them, and predators in turn use camouflage of their own to approach unseen. The strategies overlap and reinforce one another, and a single creature may match its background, break up its outline and be countershaded all at once. Studying these tricks has taught biologists a great deal not only about animals but about vision itself, for every method of hiding is, in effect, a clue to how seeing works - and to how it can be fooled.`,
         questions: [
           // ── Matching Information / which-paragraph (5 items) = 5 marks ──
           {
@@ -168,7 +168,7 @@ Camouflage, then, is less a single adaptation than an arms race written across t
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -304,9 +304,9 @@ What followed was an explosion of building without parallel in the nation's hist
 
 The effects of this network reached into almost every corner of life. For the first time ordinary people could travel quickly and cheaply over long distances, and journeys that had taken days by coach were reduced to hours. Fresh food, newspapers and the post moved at unheard-of speed, knitting distant towns into a single market and a single conversation. One curious but far-reaching consequence concerned time itself: because each town had traditionally kept its own local time by the sun, railway timetables were a confusion until the companies imposed a single standard time across the country, set by the clocks of the capital. The railway thus did something no government had managed, synchronising the nation's clocks for the sake of its trains.
 
-The social changes were equally profound. Cities could now draw food and fuel from far afield and so grew larger than ever before, while their workers, freed from the need to live within walking distance of their work, began to spread into the new suburbs that lines made possible. Seaside towns that had been sleepy fishing villages swelled into bustling resorts as excursion trains brought day-trippers by the thousand. Whole industries — coal, iron, engineering — were enlarged by the demand for rails, engines and rolling stock. The railway, born in the coal pits as a way of moving minerals a little more easily, had within a few decades reshaped the economy, the landscape and the daily habits of an entire society.`,
+The social changes were equally profound. Cities could now draw food and fuel from far afield and so grew larger than ever before, while their workers, freed from the need to live within walking distance of their work, began to spread into the new suburbs that lines made possible. Seaside towns that had been sleepy fishing villages swelled into bustling resorts as excursion trains brought day-trippers by the thousand. Whole industries - coal, iron, engineering - were enlarged by the demand for rails, engines and rolling stock. The railway, born in the coal pits as a way of moving minerals a little more easily, had within a few decades reshaped the economy, the landscape and the daily habits of an entire society.`,
         questions: [
-          // ── Matching Features — statements to defence strategies... (5 items) = 5 marks ──
+          // ── Matching Features - statements to defence strategies... (5 items) = 5 marks ──
           // (Matching the railway lines/engines to the facts in the passage.)
           {
             id: 'rd-033-p3-q1',
@@ -354,7 +354,7 @@ The social changes were equally profound. Cities could now draw food and fuel fr
             id: 'rd-033-p3-q2',
             type: 'tfng',
             prompt:
-              'The two essential ideas of the railway — a prepared track and a flanged wheel — were already present in the early wagonways.',
+              'The two essential ideas of the railway - a prepared track and a flanged wheel - were already present in the early wagonways.',
             answer: 'true',
             explanation:
               'Paragraph A states that "in these modest mineral lines lay the two essential ideas of the railway: a prepared track and a flanged wheel kept on it." This matches the statement, so it is True.',

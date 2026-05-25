@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 15) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 15) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (Matching
 // Headings, Matching Information, MCQ, True/False/Not Given, and
@@ -17,7 +17,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_15: ReadingTest[] = [
   {
     id: 'rd-academic-015',
-    title: 'Academic Reading — Practice Test 15',
+    title: 'Academic Reading - Practice Test 15',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -34,7 +34,7 @@ D  The problem is that bacteria do not stay still. They reproduce with extraordi
 
 E  Human behaviour has accelerated this process at every turn. Antibiotics have often been prescribed for illnesses they cannot touch, such as colds and influenza, which are caused by viruses rather than bacteria. Patients frequently stop taking their tablets as soon as they feel better, leaving behind the hardier bacteria that the full course would have finished off. On a far larger scale, antibiotics have been fed routinely to farm animals, not to treat disease but to make them grow faster, exposing countless bacteria to the drugs and breeding resistance on an industrial scale. Each unnecessary dose is, in effect, a training exercise that teaches the bacterial world how to survive our best weapons.
 
-F  The consequences are already being felt in hospitals around the globe. Certain strains of bacteria have emerged that shrug off almost every drug available, and infections that were once trivial to cure can again become life-threatening. Physicians increasingly find themselves reaching for older, more toxic medicines that had been set aside, or combining several drugs in the hope that what one fails to kill another will. The fear among specialists is of a return to a world in which routine surgery, cancer treatment and organ transplants — all of which depend on the ability to control infection — become far more dangerous than they are today.
+F  The consequences are already being felt in hospitals around the globe. Certain strains of bacteria have emerged that shrug off almost every drug available, and infections that were once trivial to cure can again become life-threatening. Physicians increasingly find themselves reaching for older, more toxic medicines that had been set aside, or combining several drugs in the hope that what one fails to kill another will. The fear among specialists is of a return to a world in which routine surgery, cancer treatment and organ transplants - all of which depend on the ability to control infection - become far more dangerous than they are today.
 
 G  There is, however, no single solution waiting to be discovered. Developing a genuinely new class of antibiotic is slow, difficult and unprofitable, since a successful drug would deliberately be held in reserve and used as little as possible. Researchers are therefore pursuing many paths at once: tighter rules on prescribing, restrictions on the use of antibiotics in farming, faster tests so that doctors can identify the precise culprit before treating, and entirely new approaches such as viruses that prey on bacteria. None promises a quick escape. What is clear is that the antibiotic era, far from being a permanent conquest, must be defended continually if its extraordinary gains are not to be lost.`,
         questions: [
@@ -43,7 +43,7 @@ G  There is, however, no single solution waiting to be discovered. Developing a 
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has seven paragraphs, A–G. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–ix) for each paragraph.',
+              'The passage has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-ix) for each paragraph.',
             options: [
               { key: 'i', label: 'How resistance arises and spreads among bacteria' },
               { key: 'ii', label: 'A chance observation rescued years later' },
@@ -65,7 +65,7 @@ G  There is, however, no single solution waiting to be discovered. Developing a 
               { id: 'rd-015-p1-h-g', text: 'Paragraph G', answer: 'v' },
             ],
             explanation:
-              "A introduces the transformation that ended the old fear of infection (iv). B explains the selective action that lets the drugs distinguish bacteria from human cells (vi). C is the story of Fleming's chance observation, neglected for a decade until Oxford revived it (ii). D explains how resistance arises through random change and spreads, including between species (i). E lists human habits — over-prescribing, unfinished courses, farm use — that hasten the danger (viii). F describes the threat already visible in hospitals (vii). G concludes that there is no easy solution and that the era must be defended (v). Headings iii and ix are distractors: the cost of producing penicillin and why viruses are hard to treat are not the subject of any paragraph.",
+              "A introduces the transformation that ended the old fear of infection (iv). B explains the selective action that lets the drugs distinguish bacteria from human cells (vi). C is the story of Fleming's chance observation, neglected for a decade until Oxford revived it (ii). D explains how resistance arises through random change and spreads, including between species (i). E lists human habits - over-prescribing, unfinished courses, farm use - that hasten the danger (viii). F describes the threat already visible in hospitals (vii). G concludes that there is no easy solution and that the era must be defended (v). Headings iii and ix are distractors: the cost of producing penicillin and why viruses are hard to treat are not the subject of any paragraph.",
           },
           {
             id: 'rd-015-p1-q2',
@@ -127,20 +127,20 @@ G  There is, however, no single solution waiting to be discovered. Developing a 
 
 B  The most characteristic form of the early collection was the so-called cabinet of curiosities, which flourished among European nobles and scholars from the sixteenth century onwards. These were rooms, or sometimes entire suites of rooms, crammed with an astonishing jumble of objects: stuffed crocodiles hanging from the ceiling, coral and seashells, ancient coins, the horn of a narwhal sold as that of a unicorn, mechanical toys and preserved human remains. There was little attempt to separate the natural from the man-made, or fact from legend. The aim was to gather the whole world in miniature, to provoke wonder, and to display the breadth of the collector's reach across distant lands and ages.
 
-C  A crucial shift came when private collections began to pass into public hands. Some owners, late in life, bequeathed their treasures to a city or a learned society on the condition that they be preserved and shown. One of the earliest institutions to open its doors to the curious was the Ashmolean in Oxford, founded in the late seventeenth century around a collection given to the university. A few decades later the British Museum was established by act of parliament, its founding collection purchased for the nation, and it admitted visitors free of charge — though in its first years entry was by written application only, and the numbers allowed in each day were strictly limited.
+C  A crucial shift came when private collections began to pass into public hands. Some owners, late in life, bequeathed their treasures to a city or a learned society on the condition that they be preserved and shown. One of the earliest institutions to open its doors to the curious was the Ashmolean in Oxford, founded in the late seventeenth century around a collection given to the university. A few decades later the British Museum was established by act of parliament, its founding collection purchased for the nation, and it admitted visitors free of charge - though in its first years entry was by written application only, and the numbers allowed in each day were strictly limited.
 
 D  The decisive change in the character of the museum, however, came with the political upheavals at the end of the eighteenth century. When the French monarchy fell, the royal art collection was declared the property of the people, and the palace of the Louvre was reopened as a public gallery. The gesture was deeply symbolic: paintings that had hung in private royal apartments now belonged, at least in principle, to every citizen. The notion took hold across Europe that a nation's cultural heritage was a common inheritance, and that the state had a duty to preserve it and make it available to all. The museum was thus recast from a private luxury into a public institution with an educational mission.
 
 E  This new sense of purpose changed not only who could enter but how the objects themselves were arranged. The old cabinets had delighted in variety and surprise; the new museums sought order and instruction. Curators began to classify their holdings, grouping objects by material, by period or by region, and to lay them out so that a visitor might trace the development of an art form or the history of a people. Labels appeared, explaining what each object was and why it mattered. The visit was no longer meant merely to astonish but to teach, and the arrangement of a gallery came to embody a particular way of understanding the world.
 
-F  The nineteenth century became the great age of museum building. Growing cities competed to erect grand halls of art, science and industry, often in imposing classical styles intended to lend dignity to learning. Reformers argued that exposure to fine objects would improve the taste and even the morals of ordinary working people, and admission was increasingly made free so that the labouring classes might benefit. By the close of the century the public museum had become a fixture of civic life, a place that a city was almost embarrassed to be without. The descendants of the cluttered private cabinet had become spacious, orderly and, above all, open — institutions that belonged, in theory at least, to everyone.`,
+F  The nineteenth century became the great age of museum building. Growing cities competed to erect grand halls of art, science and industry, often in imposing classical styles intended to lend dignity to learning. Reformers argued that exposure to fine objects would improve the taste and even the morals of ordinary working people, and admission was increasingly made free so that the labouring classes might benefit. By the close of the century the public museum had become a fixture of civic life, a place that a city was almost embarrassed to be without. The descendants of the cluttered private cabinet had become spacious, orderly and, above all, open - institutions that belonged, in theory at least, to everyone.`,
         questions: [
           {
             id: 'rd-015-p2-q1',
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -271,13 +271,13 @@ F  The nineteenth century became the great age of museum building. Growing citie
       {
         id: 'rd-academic-015-p3',
         title: 'A Fifth Façade: The Rise of the Green Roof',
-        body: `Look down on almost any modern city from the air and a striking feature reveals itself: a vast expanse of flat, dark, empty rooftops. These surfaces, often described by architects as the building's neglected fifth façade, have traditionally been treated as nothing more than a cap to keep out the rain. In a growing number of cities, however, they are being reimagined as living landscapes. A green roof — a roof partly or wholly covered with growing plants over a waterproof membrane — turns this dead space into something that can cool the air, soak up rain, shelter wildlife and even grow food.
+        body: `Look down on almost any modern city from the air and a striking feature reveals itself: a vast expanse of flat, dark, empty rooftops. These surfaces, often described by architects as the building's neglected fifth façade, have traditionally been treated as nothing more than a cap to keep out the rain. In a growing number of cities, however, they are being reimagined as living landscapes. A green roof - a roof partly or wholly covered with growing plants over a waterproof membrane - turns this dead space into something that can cool the air, soak up rain, shelter wildlife and even grow food.
 
-The practice is far from new. Turf roofs of grass and earth kept turf-walled houses warm in cold northern climates for centuries, and the legendary hanging gardens of the ancient world suggest the appeal is very old indeed. What is new is the engineering that allows plants to be grown safely and reliably on a modern structure. A contemporary green roof is built up in distinct layers. Above the structural roof sits a waterproof membrane, protected by a barrier that stops roots from working their way through it. Above that lie a drainage layer that carries away excess water, a filter sheet, a thin growing medium — usually a lightweight mineral mix rather than ordinary garden soil — and finally the plants themselves.
+The practice is far from new. Turf roofs of grass and earth kept turf-walled houses warm in cold northern climates for centuries, and the legendary hanging gardens of the ancient world suggest the appeal is very old indeed. What is new is the engineering that allows plants to be grown safely and reliably on a modern structure. A contemporary green roof is built up in distinct layers. Above the structural roof sits a waterproof membrane, protected by a barrier that stops roots from working their way through it. Above that lie a drainage layer that carries away excess water, a filter sheet, a thin growing medium - usually a lightweight mineral mix rather than ordinary garden soil - and finally the plants themselves.
 
 Engineers draw a basic distinction between two kinds of green roof. An extensive roof has only a shallow layer of growing medium, a few centimetres deep, and is planted with tough, low, drought-tolerant species that need almost no attention once established. It is light enough to be added to many existing buildings and is intended to be looked at rather than walked upon. An intensive roof, by contrast, has a much deeper soil layer capable of supporting shrubs, lawns and even small trees, creating in effect a roof garden that people can enter and enjoy. The price of this richness is considerable weight, regular maintenance and a far stronger structure to bear the load, so intensive roofs are usually designed into a building from the start.
 
-The benefits that have driven this revival are largely practical. A bare dark roof absorbs the sun and grows fiercely hot, radiating heat that helps to make a city centre several degrees warmer than the countryside around it — an effect known as the urban heat island. A planted roof, by contrast, stays cool: the plants shade the surface and release moisture as they transpire, much as a tree cools the ground beneath it. This lowers the temperature both of the building below, cutting the energy needed for air conditioning, and of the surrounding air. Spread across thousands of roofs, the cooling effect on a whole district can be significant.
+The benefits that have driven this revival are largely practical. A bare dark roof absorbs the sun and grows fiercely hot, radiating heat that helps to make a city centre several degrees warmer than the countryside around it - an effect known as the urban heat island. A planted roof, by contrast, stays cool: the plants shade the surface and release moisture as they transpire, much as a tree cools the ground beneath it. This lowers the temperature both of the building below, cutting the energy needed for air conditioning, and of the surrounding air. Spread across thousands of roofs, the cooling effect on a whole district can be significant.
 
 A second benefit concerns water. When rain falls on a conventional city of hard, sealed surfaces, it runs off almost instantly, and during a heavy storm this sudden surge can overwhelm the drains and cause flooding. A green roof behaves quite differently. Its growing medium acts like a sponge, absorbing a large proportion of the rainfall and releasing the rest slowly over the hours that follow. By holding back and delaying the flow, a city's green roofs can ease the strain on its drainage system at exactly the moment when that strain is greatest.
 
@@ -297,7 +297,7 @@ None of this comes without difficulty. A green roof costs considerably more to i
             ],
             correctIndex: 1,
             explanation:
-              'The first paragraph describes rooftops as "the building\'s neglected fifth façade" — vast surfaces "traditionally treated as nothing more than a cap to keep out the rain." Option B captures the idea of a large, neglected surface. The other options are not supported.',
+              'The first paragraph describes rooftops as "the building\'s neglected fifth façade" - vast surfaces "traditionally treated as nothing more than a cap to keep out the rain." Option B captures the idea of a large, neglected surface. The other options are not supported.',
           },
           {
             id: 'rd-015-p3-q2',

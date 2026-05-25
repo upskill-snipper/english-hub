@@ -1,17 +1,17 @@
-// ─── IELTS placement diagnostic — extra Listening content ──────────────────
+// ─── IELTS placement diagnostic - extra Listening content ──────────────────
 // Three ORIGINAL listening sections that extend the single "Joining the City
 // Library" section in diagnostic-items.ts, giving the placement test a much
 // wider, difficulty-graded sample so it can separate band levels reliably.
 //
 // Difficulty rises across the set, mirroring a real IELTS Listening paper:
-//   • Section 1 (EASIER)  — everyday transactional DIALOGUE (booking a course).
-//   • Section 2 (MEDIUM)  — everyday MONOLOGUE (a visitor-centre talk).
-//   • Section 3 (HARDER)  — academic DISCUSSION (a tutorial on a field project).
+//   • Section 1 (EASIER)  - everyday transactional DIALOGUE (booking a course).
+//   • Section 2 (MEDIUM)  - everyday MONOLOGUE (a visitor-centre talk).
+//   • Section 3 (HARDER)  - academic DISCUSSION (a tutorial on a field project).
 //
 // Each `transcript` is read aloud by the Wave 1 text-to-speech stand-in AND
 // shown in the post-submit review, so every answer is plainly derivable from
 // the words spoken: names are spelled out, numbers are dictated. All content is
-// original and written for this placement only — there is no official IELTS
+// original and written for this placement only - there is no official IELTS
 // affiliation. The shared shapes come from @/lib/ielts/types; ids use a
 // `diag-l2-*` prefix to avoid colliding with the existing `diag-l-*` ids.
 // ────────────────────────────────────────────────────────────────────────────
@@ -19,7 +19,7 @@
 import type { ListeningSection } from '@/lib/ielts/types'
 
 export const DIAGNOSTIC_LISTENING_EXTRA: ListeningSection[] = [
-  // ─── Section 1 — EASIER: transactional dialogue ──────────────────────────
+  // ─── Section 1 - EASIER: transactional dialogue ──────────────────────────
   {
     id: 'diag-l2-s1',
     title: 'Booking a Pottery Course',
@@ -43,7 +43,7 @@ RECEPTIONIST: Thank you. And a contact number?
 
 CALLER: Yes, it's oh-seven-seven-double-one, four-oh-three, nine-six-two.
 
-RECEPTIONIST: Got that. The teacher is Anna, and she'll email you a short list of what to expect before the first session. One thing to note — the studio is the building behind the main hall, not the hall itself, so do allow a few extra minutes to find it.
+RECEPTIONIST: Got that. The teacher is Anna, and she'll email you a short list of what to expect before the first session. One thing to note - the studio is the building behind the main hall, not the hall itself, so do allow a few extra minutes to find it.
 
 CALLER: Good to know. Is there parking on site?
 
@@ -131,17 +131,17 @@ CALLER: Perfect. Thank you so much for your help.`,
     ],
   },
 
-  // ─── Section 2 — MEDIUM: monologue (visitor-centre talk) ──────────────────
+  // ─── Section 2 - MEDIUM: monologue (visitor-centre talk) ──────────────────
   {
     id: 'diag-l2-s2',
     title: 'Welcome Talk at Brackenfell Nature Reserve',
     transcript: `Good morning everyone, and a warm welcome to Brackenfell Nature Reserve. My name is Tom and I'll give you a quick introduction before you set off to explore on your own. The reserve covers about four hundred hectares of woodland, wetland and open meadow, and it was first opened to the public in nineteen eighty-five.
 
-There are three marked walking trails, each shown in a different colour on your map. The red trail is the shortest, at just two kilometres, and it's mostly flat, so it's ideal if you have young children or limited time. The blue trail is longer and takes you down to the lake, where we have a wooden bird hide. The green trail is the most demanding — it climbs to the ridge and back, and you should allow about three hours to complete it.
+There are three marked walking trails, each shown in a different colour on your map. The red trail is the shortest, at just two kilometres, and it's mostly flat, so it's ideal if you have young children or limited time. The blue trail is longer and takes you down to the lake, where we have a wooden bird hide. The green trail is the most demanding - it climbs to the ridge and back, and you should allow about three hours to complete it.
 
 A few practical points. The café beside the entrance serves hot food until three o'clock, but please note it is closed on Mondays. Toilets are available here at the visitor centre and also at the lakeside hide. We ask that dogs are kept on a lead at all times, mainly to protect the ground-nesting birds in spring.
 
-The highlight for many visitors is the otters, which are most often seen early in the morning from the bird hide. If you'd like to learn more, free guided walks led by our volunteers leave from this desk every Saturday at ten o'clock. There's no need to book — simply turn up. Finally, on your way out, do call in at the gift shop, where all the money raised goes directly towards looking after the reserve. Enjoy your visit.`,
+The highlight for many visitors is the otters, which are most often seen early in the morning from the bird hide. If you'd like to learn more, free guided walks led by our volunteers leave from this desk every Saturday at ten o'clock. There's no need to book - simply turn up. Finally, on your way out, do call in at the gift shop, where all the money raised goes directly towards looking after the reserve. Enjoy your visit.`,
     questions: [
       {
         id: 'diag-l2-s2-q1',
@@ -236,7 +236,7 @@ The highlight for many visitors is the otters, which are most often seen early i
     ],
   },
 
-  // ─── Section 3 — HARDER: academic discussion (tutorial) ───────────────────
+  // ─── Section 3 - HARDER: academic discussion (tutorial) ───────────────────
   {
     id: 'diag-l2-s3',
     title: 'Tutorial: Planning a River Pollution Study',
@@ -250,9 +250,9 @@ DANIEL: Because we expect the water to get more polluted as it passes the farmla
 
 TUTOR: Good thinking. And what exactly will you measure?
 
-PRIYA: Three things at each site: the oxygen level, the temperature, and the number of small invertebrates — things like mayfly larvae. They're sensitive to pollution, so they're a useful indicator.
+PRIYA: Three things at each site: the oxygen level, the temperature, and the number of small invertebrates - things like mayfly larvae. They're sensitive to pollution, so they're a useful indicator.
 
-TUTOR: They are indeed. One word of caution, though — invertebrate counts can vary a lot from week to week, so a single visit won't tell you much. I'd strongly suggest repeating the whole survey monthly for at least a term.
+TUTOR: They are indeed. One word of caution, though - invertebrate counts can vary a lot from week to week, so a single visit won't tell you much. I'd strongly suggest repeating the whole survey monthly for at least a term.
 
 DANIEL: That makes sense. We'd assumed one round of sampling would do, but we'll build in repeats.
 
@@ -260,7 +260,7 @@ TUTOR: Do. Now, how are you handling safety? Riverbanks can be slippery.
 
 PRIYA: We'll always work in a pair, never alone, and we've booked the waders and the testing kit from the department store.
 
-TUTOR: Sensible. And the deadline — when is the written report due?
+TUTOR: Sensible. And the deadline - when is the written report due?
 
 DANIEL: The fifteenth of March. We're a little worried about the statistics section, to be honest.
 

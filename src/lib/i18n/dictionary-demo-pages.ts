@@ -354,8 +354,8 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
   'demo_teacher.quizzes.mark_scheme_prefix': { en: 'Mark scheme:', ar: 'جدول التصحيح:' },
   'demo_teacher.quizzes.assign_btn': { en: 'Assign to Class', ar: 'كلّف الفصل' },
   'demo_teacher.quizzes.toast_pre': {
-    en: 'Available with full account —',
-    ar: 'متوفّر مع الحساب الكامل —',
+    en: 'Available with full account -',
+    ar: 'متوفّر مع الحساب الكامل -',
   },
   'demo_teacher.quizzes.toast_link': { en: 'Start free trial', ar: 'ابدأ التجربة المجانية' },
 
@@ -378,8 +378,8 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
     ar: 'سوّ واجب تلقائياً بـ AI',
   },
   'demo_teacher.homework.ai_card.body': {
-    en: 'Select a topic, type, and grade level — get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.',
-    ar: 'اختر موضوع ونوع ومستوى — تأخذ واجب كامل مع جدول التصحيح ومعايير النجاح ومهام إضافية خلال ثواني.',
+    en: 'Select a topic, type, and grade level - get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.',
+    ar: 'اختر موضوع ونوع ومستوى - تأخذ واجب كامل مع جدول التصحيح ومعايير النجاح ومهام إضافية خلال ثواني.',
   },
   'demo_teacher.homework.create_heading': { en: 'Create New Assignment', ar: 'سوّ واجب جديد' },
   'demo_teacher.homework.field.class': { en: 'Class', ar: 'الفصل' },
@@ -454,8 +454,8 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
 
   // /demo/student/flashcards
   'demo_student.flashcards.banner': {
-    en: 'Flashcard demo — progress is not saved.',
-    ar: 'ديمو بطاقات تعليمية — التقدّم ما يتحفظ.',
+    en: 'Flashcard demo - progress is not saved.',
+    ar: 'ديمو بطاقات تعليمية - التقدّم ما يتحفظ.',
   },
   'demo_student.flashcards.title': { en: 'Flashcard Practice', ar: 'تدريب البطاقات التعليمية' },
   'demo_student.flashcards.subtitle': {
@@ -489,8 +489,8 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
     ar: 'كمّل تدرّب على اللي فاتك!',
   },
   'demo_student.flashcards.end.perfect': {
-    en: 'Perfect score — well done!',
-    ar: 'علامة تامّة — أحسنت!',
+    en: 'Perfect score - well done!',
+    ar: 'علامة تامّة - أحسنت!',
   },
   'demo_student.flashcards.end.try_again': { en: 'Try Again', ar: 'جرّب مرة ثانية' },
   'demo_student.flashcards.end.shuffle_retry': { en: 'Shuffle & Retry', ar: 'خلّط وأعد' },

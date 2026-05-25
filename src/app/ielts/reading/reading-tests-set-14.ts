@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 14) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 14) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (Matching
 // Headings / Information / Sentence Endings, MCQ, True/False/Not Given, and
@@ -17,7 +17,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_14: ReadingTest[] = [
   {
     id: 'rd-academic-014',
-    title: 'Academic Reading — Practice Test 14',
+    title: 'Academic Reading - Practice Test 14',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -43,7 +43,7 @@ G. None of these systems is used in isolation. A migrating bird seems to weigh t
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has seven paragraphs, A–G. Choose the most suitable heading for paragraphs B, C, E and F from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number for each paragraph.',
+              'The passage has seven paragraphs, A-G. Choose the most suitable heading for paragraphs B, C, E and F from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number for each paragraph.',
             options: [
               { key: 'i', label: 'A direction sensed from within the Earth' },
               { key: 'ii', label: 'Why the early morning suits the singer' },
@@ -193,7 +193,7 @@ This continuing dependence carries its own risks. The plantation rubber of Asia 
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has seven paragraphs. Which paragraph contains each of the following pieces of information? Choose the correct option (A–G) for each statement. NB You may use any letter more than once.',
+              'The passage has seven paragraphs. Which paragraph contains each of the following pieces of information? Choose the correct option (A-G) for each statement. NB You may use any letter more than once.',
             options: [
               { key: 'A', label: 'Paragraph 1 (peoples of the Americas tapping the trees)' },
               { key: 'B', label: 'Paragraph 2 (the material reaching Europe)' },
@@ -327,7 +327,7 @@ This continuing dependence carries its own risks. The plantation rubber of Asia 
         title: 'The Economics of Repair and Reuse',
         body: `For much of the twentieth century, the direction of travel in wealthy economies was clear: goods were made to be bought, used and thrown away. A broken appliance was replaced rather than mended, and the second-hand shop was widely seen as a last resort for those who could not afford new. In the past two decades, however, the trade in used goods and the business of repair have grown into a serious part of the economy, driven by a combination of thrift, environmental concern and the rise of online marketplaces that let strangers buy and sell with ease.
 
-The economic logic of reuse is at heart very simple. A manufactured object embodies not only the materials it is made from but the energy and labour that went into making it. When the object is discarded while it still works, all of that embodied value is thrown away with it. Extending the life of the object — by passing it to a second owner, or by repairing it rather than replacing it — spreads that original cost over a longer period of use, and avoids the further cost of making a replacement. From the point of view of society as a whole, a well-functioning second-hand market is therefore a way of getting more service out of the same quantity of resources.
+The economic logic of reuse is at heart very simple. A manufactured object embodies not only the materials it is made from but the energy and labour that went into making it. When the object is discarded while it still works, all of that embodied value is thrown away with it. Extending the life of the object - by passing it to a second owner, or by repairing it rather than replacing it - spreads that original cost over a longer period of use, and avoids the further cost of making a replacement. From the point of view of society as a whole, a well-functioning second-hand market is therefore a way of getting more service out of the same quantity of resources.
 
 For the individual, the appeal is more immediate. A used item is almost always cheaper than its new equivalent, sometimes dramatically so, and for many households the second-hand market is what makes a particular good affordable at all. There is also a less obvious benefit. A buyer who knows that an item can later be resold treats part of its price not as money spent but as money lent: the object can be sold on when it is no longer wanted, recovering some of the outlay. Economists note that goods which hold their value well, and which are easy to resell, effectively cost their owners less than the sticker price suggests, because a portion of that price is recovered at the end.
 
@@ -432,7 +432,7 @@ The rise of the second-hand and repair economy is not without complications of i
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence (1–4) with the correct ending (A–G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all.',
+              'Complete each sentence (1-4) with the correct ending (A-G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all.',
             options: [
               {
                 key: 'A',

@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 11) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 11) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test SHOWCASES the new Matching question type. It contains three matching
 // questions: Matching Headings (Passage 1), Matching Information / which-paragraph
-// (Passage 2), and Matching Features — statements to researchers (Passage 3),
+// (Passage 2), and Matching Features - statements to researchers (Passage 3),
 // alongside the usual mix of True/False/Not Given, multiple choice and
 // sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_11: ReadingTest[] = [
   {
     id: 'rd-academic-011',
-    title: 'Academic Reading — Practice Test 11',
+    title: 'Academic Reading - Practice Test 11',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ The very feature that makes glass useful, however, also makes it dangerous. Its 
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Two liquids that refuse to mix' },
               { key: 'ii', label: 'A breath that made glass affordable' },
@@ -68,7 +68,7 @@ The very feature that makes glass useful, however, also makes it dangerous. Its 
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'viii' },
             ],
             explanation:
-              'A explains glass is "an amorphous solid... caught between two worlds", neither liquid nor crystal (iii). B gives the recipe — silica plus a flux and lime, two added ingredients (vi). C describes how glassblowing let cups and bottles "once reserved for the wealthy" reach ordinary tables (ii — affordability via breath). D recounts the centuries-long difficulty of making a flat, undistorted sheet, solved by the float process (iv). E covers purified glass drawn into optical fibres that carry the internet as light (vii). F explains toughened and laminated glass as answers to its tendency to shatter (viii). Heading i ("Two liquids that refuse to mix") is a distractor — the tin/glass detail belongs inside D, not as its theme; heading v ("Why coloured glass is preferred for windows") is a distractor that the passage never claims.',
+              'A explains glass is "an amorphous solid... caught between two worlds", neither liquid nor crystal (iii). B gives the recipe - silica plus a flux and lime, two added ingredients (vi). C describes how glassblowing let cups and bottles "once reserved for the wealthy" reach ordinary tables (ii - affordability via breath). D recounts the centuries-long difficulty of making a flat, undistorted sheet, solved by the float process (iv). E covers purified glass drawn into optical fibres that carry the internet as light (vii). F explains toughened and laminated glass as answers to its tendency to shatter (viii). Heading i ("Two liquids that refuse to mix") is a distractor - the tin/glass detail belongs inside D, not as its theme; heading v ("Why coloured glass is preferred for windows") is a distractor that the passage never claims.',
           },
           {
             id: 'rd-011-p1-q2',
@@ -163,7 +163,7 @@ The recovery was driven less by deliberate reintroduction than by a quiet transf
 
 The clearest evidence of what wolves can do to a landscape comes not from Europe but from North America, where wolves were returned to Yellowstone National Park in the mid-1990s after an absence of seventy years. In their absence, elk had multiplied and grazed heavily along rivers and streams, stripping away the young willow and aspen on which other species depended. With wolves once more in the valleys, the elk could no longer linger safely in these exposed places. Browsing pressure eased, trees regrew, and the returning vegetation drew back beavers and songbirds. Scientists call such a chain of effects, spreading downward from a top predator through an entire web of life, a trophic cascade, and Yellowstone became its most celebrated illustration.
 
-The Yellowstone story has been told so often that it is sometimes oversimplified, and several researchers have urged caution. They point out that the recovery of the willows was patchy rather than universal, and that other changes — wetter years, a falling elk population caused partly by human hunting outside the park, and the return of bears — were unfolding at the same time, making it difficult to credit the wolf alone. The lesson, these scientists argue, is not that wolves have no effect but that ecosystems are tangled webs in which no single cause acts in isolation. A predator can shift the balance without being the only force at work.
+The Yellowstone story has been told so often that it is sometimes oversimplified, and several researchers have urged caution. They point out that the recovery of the willows was patchy rather than universal, and that other changes - wetter years, a falling elk population caused partly by human hunting outside the park, and the return of bears - were unfolding at the same time, making it difficult to credit the wolf alone. The lesson, these scientists argue, is not that wolves have no effect but that ecosystems are tangled webs in which no single cause acts in isolation. A predator can shift the balance without being the only force at work.
 
 For the people who share the landscape with a returning predator, such academic debates can seem remote. To a shepherd who finds sheep killed in a mountain pasture, the wolf is not a symbol of ecological renewal but a direct threat to a livelihood, and resentment can run deep in regions where, within living memory, the animal was regarded as vermin to be destroyed. Conservation bodies have responded with schemes that compensate farmers for confirmed losses and that fund older, low-technology defences: high electric fences, and above all the large guardian dogs that for centuries protected flocks before the wolf was eliminated and the practice was forgotten. Raised among the sheep from birth, such dogs come to treat the flock as their own and place themselves between it and any approaching predator, a method so old that it had almost vanished from memory in the decades when there was nothing left to guard against. Where such measures are used consistently, losses fall, though they rarely disappear entirely.
 
@@ -175,7 +175,7 @@ The deepest obstacle to coexistence may therefore be social rather than biologic
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -276,7 +276,7 @@ The deepest obstacle to coexistence may therefore be social rather than biologic
             ],
             correctIndex: 2,
             explanation:
-              'Paragraph D says the willow recovery "was patchy" and that "other changes — wetter years, a falling elk population... and the return of bears — were unfolding at the same time, making it difficult to credit the wolf alone." Option C captures this. The same paragraph stresses the lesson "is not that wolves have no effect," which rules out option A.',
+              'Paragraph D says the willow recovery "was patchy" and that "other changes - wetter years, a falling elk population... and the return of bears - were unfolding at the same time, making it difficult to credit the wolf alone." Option C captures this. The same paragraph stresses the lesson "is not that wolves have no effect," which rules out option A.',
           },
           {
             id: 'rd-011-p2-q8',
@@ -328,7 +328,7 @@ The role of culture complicates the picture further. The associations a colour c
 
 What, then, should a company conclude? The researchers converge, despite their different starting points, on a sober and rather practical message. There are no magic colours that will reliably make people buy, and the confident charts that assign a single emotion to each hue promise more than the evidence can support. What matters instead is the fit between a colour and everything around it: the product, the competition, the culture and the story the brand wishes to tell. Colour is a genuine and powerful tool of persuasion, but it is a grammar to be used with care, not a set of magic words.`,
         questions: [
-          // ── Matching Features — statements to researchers (5 items) = 5 marks ──
+          // ── Matching Features - statements to researchers (5 items) = 5 marks ──
           {
             id: 'rd-011-p3-q1',
             type: 'matching',

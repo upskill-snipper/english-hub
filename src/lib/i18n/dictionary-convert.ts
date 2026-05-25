@@ -1,5 +1,5 @@
 /**
- * Conversion-surface override — 2026-05-16 (Bucket A, wave 3)
+ * Conversion-surface override - 2026-05-16 (Bucket A, wave 3)
  *
  * The public checkout / conversion pages were rendering English (or junk)
  * in AR mode because four namespaces only had auto-generated path-segment
@@ -36,24 +36,24 @@
 
 export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ════════════════════════════════════════════════════════════════════
-  //  redeem.*  — /redeem promo-code redemption (public checkout surface)
+  //  redeem.*  - /redeem promo-code redemption (public checkout surface)
   //  EN written fresh from src/app/redeem/page.tsx render points.
   // ════════════════════════════════════════════════════════════════════
 
-  // <h1>{t('redeem.h1')}</h1> — page hero on the promo redemption page.
+  // <h1>{t('redeem.h1')}</h1> - page hero on the promo redemption page.
   'redeem.h1': {
     en: 'Redeem your code',
     ar: 'استخدم كودك',
   },
-  // <p>{t('redeem.lead')}</p> — sub-hero, directly under the H1.
+  // <p>{t('redeem.lead')}</p> - sub-hero, directly under the H1.
   'redeem.lead': {
     en: 'Enter your promo code below to unlock your discounted plan and continue to secure checkout.',
     ar: 'حُطّ كود الخصم تحت عشان تفتح خطتك بالسعر المخفّض وتكمّل للدفع الآمن.',
   },
   // Amber banner shown when Stripe Checkout was cancelled (?cancelled=1).
   'redeem.cancelled': {
-    en: 'Checkout was cancelled — your code is still valid, so you can try again whenever you’re ready.',
-    ar: 'تم إلغاء الدفع — كودك لا زال صالح، تقدر تعيد المحاولة وقت ما تكون جاهز.',
+    en: 'Checkout was cancelled - your code is still valid, so you can try again whenever you’re ready.',
+    ar: 'تم إلغاء الدفع - كودك لا زال صالح، تقدر تعيد المحاولة وقت ما تكون جاهز.',
   },
   // Bold heading of the amber "annual only" notice above the code field.
   'redeem.annual_only.title': {
@@ -65,7 +65,7 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'Promo discounts unlock on annual subscriptions. You can switch to monthly later from your account.',
     ar: 'خصومات الأكواد تنفتح على الاشتراكات السنوية. تقدر تحوّل للشهري بعدين من حسابك.',
   },
-  // <span>{t('redeem.field.code')}</span> — label above the code input
+  // <span>{t('redeem.field.code')}</span> - label above the code input
   // (also reused as its aria-label).
   'redeem.field.code': {
     en: 'Promo code',
@@ -78,8 +78,8 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   // Helper line under the code input (#promo-helper).
   'redeem.field.helper': {
-    en: 'Codes aren’t case-sensitive — letters, numbers, hyphens and underscores only.',
-    ar: 'الكود ما يفرّق بين الحروف الكبيرة والصغيرة — حروف وأرقام وشرطات وشرطات سفلية بس.',
+    en: 'Codes aren’t case-sensitive - letters, numbers, hyphens and underscores only.',
+    ar: 'الكود ما يفرّق بين الحروف الكبيرة والصغيرة - حروف وأرقام وشرطات وشرطات سفلية بس.',
   },
   // Shown while /api/promo/validate is in flight.
   'redeem.checking': {
@@ -125,7 +125,7 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'Something went wrong. Please try again, or contact support if it keeps happening.',
     ar: 'صار شي غلط. حاول مرة ثانية، أو تواصل مع الدعم إذا استمرّ.',
   },
-  // Continue button — idle vs. submitting label.
+  // Continue button - idle vs. submitting label.
   'redeem.continue': {
     en: 'Continue to checkout',
     ar: 'كمّل للدفع',
@@ -165,12 +165,12 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'خصمك ينطبق تلقائيًا عند الدفع.',
   },
   'redeem.next.li3': {
-    en: 'Once payment is confirmed, your full access unlocks straight away — including in the app.',
-    ar: 'أول ما يتأكّد الدفع، وصولك الكامل ينفتح على طول — حتى داخل التطبيق.',
+    en: 'Once payment is confirmed, your full access unlocks straight away - including in the app.',
+    ar: 'أول ما يتأكّد الدفع، وصولك الكامل ينفتح على طول - حتى داخل التطبيق.',
   },
 
   // ════════════════════════════════════════════════════════════════════
-  //  join_school.*  — /join-school class-code join (public conversion)
+  //  join_school.*  - /join-school class-code join (public conversion)
   //  EN written fresh from src/app/join-school/page.tsx render points.
   // ════════════════════════════════════════════════════════════════════
 
@@ -191,8 +191,8 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   // Muted info box above the form.
   'join_school.info_box': {
-    en: 'Your teacher will have shared a 6-character code. Joining links your progress to your class — it won’t change your subscription.',
-    ar: 'معلّمك بيكون شارك معاك كود من ٦ خانات. الانضمام يربط تقدّمك بصفّك — ما يغيّر اشتراكك.',
+    en: 'Your teacher will have shared a 6-character code. Joining links your progress to your class - it won’t change your subscription.',
+    ar: 'معلّمك بيكون شارك معاك كود من ٦ خانات. الانضمام يربط تقدّمك بصفّك - ما يغيّر اشتراكك.',
   },
   // <Label htmlFor="joinCode">{t('join_school.label.code')}</Label>
   'join_school.label.code': {
@@ -201,8 +201,8 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   // Helper under the code input.
   'join_school.code_hint': {
-    en: '6 characters — letters and numbers only',
-    ar: '٦ خانات — حروف وأرقام بس',
+    en: '6 characters - letters and numbers only',
+    ar: '٦ خانات - حروف وأرقام بس',
   },
   // Submit button: loading vs. idle.
   'join_school.joining': {
@@ -223,8 +223,8 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'ما قدرنا نضمّك لهذي المدرسة. راجع الكود وحاول مرة ثانية.',
   },
   'join_school.err.network': {
-    en: 'Network error — please check your connection and try again.',
-    ar: 'خطأ في الشبكة — تأكّد من اتصالك وحاول مرة ثانية.',
+    en: 'Network error - please check your connection and try again.',
+    ar: 'خطأ في الشبكة - تأكّد من اتصالك وحاول مرة ثانية.',
   },
   // Card footer: pre <link> post.
   'join_school.footer.pre': {
@@ -265,7 +265,7 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ════════════════════════════════════════════════════════════════════
-  //  brand.*  — a11y labels on the /brand kit components
+  //  brand.*  - a11y labels on the /brand kit components
   //  (ColourSwatch, LogoAsset, TypographySpecimen). All four keys are
   //  screen-reader-only prose; brand names stay Latin. EN written fresh.
   // ════════════════════════════════════════════════════════════════════
@@ -291,7 +291,7 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ════════════════════════════════════════════════════════════════════
-  //  billing.*  — EN copied BYTE-IDENTICAL from
+  //  billing.*  - EN copied BYTE-IDENTICAL from
   //  dictionary-placeholder-fix-may16.ts. AR rendered into natural
   //  Khaleeji (the may16 source mirrored EN as a stop-gap).
   // ════════════════════════════════════════════════════════════════════
@@ -330,16 +330,16 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'هذا الكود مو صالح أو انتهت صلاحيته.',
   },
   'billing.affiliate.error.network': {
-    en: "Couldn't check that code just now — please try again.",
-    ar: 'ما قدرنا نتحقّق من الكود الحين — حاول مرة ثانية.',
+    en: "Couldn't check that code just now - please try again.",
+    ar: 'ما قدرنا نتحقّق من الكود الحين - حاول مرة ثانية.',
   },
   'billing.affiliate.applied_prefix': {
     en: 'Code applied:',
     ar: 'الكود مطبَّق:',
   },
   'billing.affiliate.applied_suffix': {
-    en: '— your discount is locked in.',
-    ar: '— خصمك صار مثبَّت.',
+    en: '- your discount is locked in.',
+    ar: '- خصمك صار مثبَّت.',
   },
   'billing.affiliate.remove': { en: 'Remove', ar: 'شيله' },
   'billing.affiliate.saves_prefix': { en: 'Saves you', ar: 'يوفّر لك' },
@@ -389,12 +389,12 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'billing.trial.cta_upgrade_now': { en: 'Upgrade now', ar: 'طوّر الحين' },
   'billing.trial.left_suffix': { en: 'left', ar: 'باقي' },
   'billing.trial.subline_default': {
-    en: "You're on a free trial — upgrade any time to keep full access.",
-    ar: 'أنت على تجربة مجانية — طوّر أي وقت عشان تحتفظ بالوصول الكامل.',
+    en: "You're on a free trial - upgrade any time to keep full access.",
+    ar: 'أنت على تجربة مجانية - طوّر أي وقت عشان تحتفظ بالوصول الكامل.',
   },
   'billing.trial.subline_last_day': {
-    en: 'Last day of your free trial — upgrade now to avoid losing access.',
-    ar: 'آخر يوم بتجربتك المجانية — طوّر الحين عشان ما تفقد الوصول.',
+    en: 'Last day of your free trial - upgrade now to avoid losing access.',
+    ar: 'آخر يوم بتجربتك المجانية - طوّر الحين عشان ما تفقد الوصول.',
   },
   'billing.trial.unit_day': { en: 'day', ar: 'يوم' },
   'billing.trial.unit_days': { en: 'days', ar: 'أيام' },

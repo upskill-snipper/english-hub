@@ -1,23 +1,23 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 11) ──────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 11) ──────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary/note completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, programmes),
 // plus one longer general-interest article. This file ships ONE complete,
 // carefully-checked GT test scaled to a full sitting (~40 marks):
-//   • Section 1 — a notice for a town's new community library + an extract from
+//   • Section 1 - a notice for a town's new community library + an extract from
 //     a new-employee induction handbook. Includes a Matching (features)
 //     question worth 5 marks asking which service each statement describes;
 //     options may be reused.
-//   • Section 2 — a workplace induction handbook on probation, timekeeping,
+//   • Section 2 - a workplace induction handbook on probation, timekeeping,
 //     leave requests and health & safety.
-//   • Section 3 — a general-interest article on the benefits and practicalities
+//   • Section 3 - a general-interest article on the benefits and practicalities
 //     of volunteering. Includes a Matching (headings) question covering
-//     paragraphs B–F with two distractor headings, worth 5 marks.
+//     paragraphs B-F with two distractor headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
 // giving 40 marks in total. Every answer is verifiable from the text and every
 // item carries an explanation. All ids are unique ('rd-gen-011-…').
@@ -28,17 +28,17 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_11: ReadingTest[] = [
   {
     id: 'rd-general-011',
-    title: 'General Training Reading — Practice Test 11',
+    title: 'General Training Reading - Practice Test 11',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — community library notice + library
+      // ── Section 1: EVERYDAY / SOCIAL - community library notice + library
       // services. A Matching (features) question (5 marks) asks which of the
       // five library services each statement describes; options may be reused.
       {
         id: 'rd-gen-011-p1',
         title: 'Maple Street Community Library: Opening Notice & Services Guide',
-        body: `PART 1 — MAPLE STREET COMMUNITY LIBRARY: OPENING NOTICE
+        body: `PART 1 - MAPLE STREET COMMUNITY LIBRARY: OPENING NOTICE
 
 After two years of fundraising and building work, the new Maple Street Community Library opens to the public on the first of next month. The library stands on the corner of Maple Street and Canal Road, a short walk from the bus station. There is no car park of our own, but the public car park behind the town hall is a three-minute walk away and is free after 6 p.m.
 
@@ -51,23 +51,23 @@ Membership is free and is open to anyone, whether or not they live in the town. 
 BORROWING
 Members may take out up to twenty items at a time. Books are lent for four weeks and may be renewed twice unless someone else is waiting for them. Magazines and the audiobooks on the blue carousel are lent for one week only and cannot be renewed. We no longer charge fines for late returns; instead, your borrowing is paused until everything overdue is brought back. Please report a lost item promptly, as a replacement charge applies once an item is six weeks overdue.
 
-PART 2 — SERVICES AT MAPLE STREET LIBRARY
+PART 2 - SERVICES AT MAPLE STREET LIBRARY
 
 The library offers five regular services in addition to lending. Each is listed below.
 
-SERVICE 1 — The Quiet Reading Room
+SERVICE 1 - The Quiet Reading Room
 A silent room on the first floor for study and reading. No talking, music or phone calls are permitted, and the room must not be used for group work. Seats cannot be booked and are given on a first-come basis; at busy times a member of staff may ask you to share a table.
 
-SERVICE 2 — The Children's Story Hour
+SERVICE 2 - The Children's Story Hour
 A free session for under-fives and their carers, held every Wednesday and Saturday morning at half past ten. There is no need to book, but the room holds only thirty children, so please arrive early on busy days. Carers must stay with their child throughout the session.
 
-SERVICE 3 — The Digital Help Desk
+SERVICE 3 - The Digital Help Desk
 One-to-one help with computers, email and government websites, offered by trained volunteers. Sessions last forty-five minutes and must be booked at least one day ahead, either in person or by phone. Bring your own device if you have one, though we can lend a laptop for the session if you ask when booking.
 
-SERVICE 4 — The Local History Archive
+SERVICE 4 - The Local History Archive
 A collection of old maps, photographs and newspapers about the town. Material may be viewed in the archive room but may not be taken out of the building. You must wear the cotton gloves provided when handling original documents, and photography without flash is allowed for personal use only.
 
-SERVICE 5 — The Seed Library
+SERVICE 5 - The Seed Library
 A free scheme that lets members borrow vegetable and flower seeds in spring and return a portion of the seeds they save at the end of the growing season. There is no charge and no obligation to return seeds, but doing so keeps the scheme going for others. Each member may take up to five packets per visit.`,
         questions: [
           {
@@ -153,13 +153,13 @@ A free scheme that lets members borrow vegetable and flower seeds in spring and 
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the five library services, 1–5. For each statement below, choose the service it describes. Write the correct number, 1–5. (Each service may be chosen more than once.)',
+              'Look at the five library services, 1-5. For each statement below, choose the service it describes. Write the correct number, 1-5. (Each service may be chosen more than once.)',
             options: [
-              { key: '1', label: 'Service 1 — The Quiet Reading Room' },
-              { key: '2', label: 'Service 2 — The Children’s Story Hour' },
-              { key: '3', label: 'Service 3 — The Digital Help Desk' },
-              { key: '4', label: 'Service 4 — The Local History Archive' },
-              { key: '5', label: 'Service 5 — The Seed Library' },
+              { key: '1', label: 'Service 1 - The Quiet Reading Room' },
+              { key: '2', label: 'Service 2 - The Children’s Story Hour' },
+              { key: '3', label: 'Service 3 - The Digital Help Desk' },
+              { key: '4', label: 'Service 4 - The Local History Archive' },
+              { key: '5', label: 'Service 5 - The Seed Library' },
             ],
             items: [
               {
@@ -193,17 +193,17 @@ A free scheme that lets members borrow vegetable and flower seeds in spring and 
           },
         ],
       },
-      // ── Section 2: WORKPLACE — new-employee induction handbook ──────────────
+      // ── Section 2: WORKPLACE - new-employee induction handbook ──────────────
       {
         id: 'rd-gen-011-p2',
-        title: 'New Employee Induction Handbook — Your First Months',
+        title: 'New Employee Induction Handbook - Your First Months',
         body: `Welcome to the company. This extract from the induction handbook explains the rules that apply during your first months and the everyday procedures every member of staff is expected to follow. Keep it to hand; a full copy of all policies is available on the staff portal, and your line manager will go through anything that is unclear during your first week.
 
 YOUR PROBATION PERIOD
 All new employees begin on a six-month probation period. During this time we are getting to know you, and you are deciding whether the role suits you. Your line manager will meet you formally at the end of your first, third and fifth months to discuss how things are going. Either side may end the employment during probation by giving one week's written notice, rather than the longer notice that applies once probation is complete. Probation may, in some cases, be extended by up to three months, but only after a meeting at which the reasons are explained to you in writing.
 
 TIMEKEEPING
-Standard hours are 9 a.m. to 5 p.m., with an unpaid lunch break of one hour to be taken between noon and 2 p.m. You must record your arrival and departure each day using the card reader at the staff entrance; the system, not a paper sheet, is the official record of your hours. If you are going to be late or absent, telephone your team before 9.30 a.m. — a text message or email is not acceptable for reporting an unplanned absence, as it may not be seen in time.
+Standard hours are 9 a.m. to 5 p.m., with an unpaid lunch break of one hour to be taken between noon and 2 p.m. You must record your arrival and departure each day using the card reader at the staff entrance; the system, not a paper sheet, is the official record of your hours. If you are going to be late or absent, telephone your team before 9.30 a.m. - a text message or email is not acceptable for reporting an unplanned absence, as it may not be seen in time.
 
 REQUESTING LEAVE
 Annual leave must be requested through the online portal and approved by your manager before you book any travel. Requests are dealt with in the order they arrive, so apply early for popular dates. No more than two members of a team may be on leave at the same time. Leave cannot normally be taken during the last week of any month, when the accounts are closed, except in an emergency agreed with your manager. Sick leave is different: you do not request it in advance, but you must follow the absence-reporting rule above and, for any absence longer than seven days, provide a doctor's note.
@@ -324,14 +324,14 @@ Your safety, and that of your colleagues, comes before any task. You must comple
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — the benefits of volunteering ───
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - the benefits of volunteering ───
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-011-p3',
         title: 'Giving Time: The Quiet Rewards of Volunteering',
         body: `Paragraph A
-Ask people why they volunteer and many will talk about wanting to help others, to repay a kindness, or to give something back to a place that has shaped their lives. All of this is true, and the work that volunteers do — staffing food banks, coaching children, sitting with the lonely, clearing rivers — keeps countless services running that no budget could otherwise afford. Yet there is another side to the story that is less often told: the people who give their time tend to gain a great deal in return, and not always the things they expected.
+Ask people why they volunteer and many will talk about wanting to help others, to repay a kindness, or to give something back to a place that has shaped their lives. All of this is true, and the work that volunteers do - staffing food banks, coaching children, sitting with the lonely, clearing rivers - keeps countless services running that no budget could otherwise afford. Yet there is another side to the story that is less often told: the people who give their time tend to gain a great deal in return, and not always the things they expected.
 
 Paragraph B
 Volunteering takes a surprising variety of forms, and the picture of an unpaid worker rattling a collection tin captures only a small part of it. Some roles are hands-on and physical, such as planting trees or sorting donations in a charity warehouse. Others draw on professional skills: an accountant might keep the books for a small charity, a designer might build its website, a retired teacher might help adults learn to read. A growing number of roles can even be done from home, from translating documents to answering a support line, which opens the door to people who cannot easily travel. There is, in short, something to suit almost anyone.
@@ -343,7 +343,7 @@ Paragraph D
 The benefits to the volunteer are real and well documented. Studies have repeatedly found that people who volunteer report lower levels of stress and a greater sense of purpose than those who do not, and the effect appears strongest among older people, for whom regular volunteering can ease the isolation that sometimes follows retirement. Part of the reason is simple: helping others lifts the mood and turns attention outward, away from one's own worries. Part of it is the structure and the company that a regular commitment brings to the week.
 
 Paragraph E
-There are practical rewards too, particularly for those early in their working lives. A young person with little paid experience can use voluntary work to build a history of showing up, taking responsibility and working in a team — the very qualities an employer looks for. Volunteers often pick up concrete skills, from first aid to public speaking, and just as importantly they meet people outside their usual circle. More than a few have found that a voluntary role led, in time, to a paid job, either with the same organisation or through someone they met while doing it.
+There are practical rewards too, particularly for those early in their working lives. A young person with little paid experience can use voluntary work to build a history of showing up, taking responsibility and working in a team - the very qualities an employer looks for. Volunteers often pick up concrete skills, from first aid to public speaking, and just as importantly they meet people outside their usual circle. More than a few have found that a voluntary role led, in time, to a paid job, either with the same organisation or through someone they met while doing it.
 
 Paragraph F
 None of this means that volunteering is without its difficulties, and it is fairer to newcomers to say so plainly. A role can ask more of you than you first imagined, and it is easy to take on too much and burn out, especially for those who find it hard to say no. The work can be emotional, particularly when you are supporting people in real distress. The best organisations know this and offer training, support and a clear limit to what any one person is asked to give. Approached sensibly, with honesty about your own limits, volunteering can be one of the most rewarding things a person ever chooses to do.`,
@@ -353,7 +353,7 @@ None of this means that volunteering is without its difficulties, and it is fair
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. The honest difficulties to be aware of' },
               { key: 'ii', label: 'ii. Many different ways to give your time' },
@@ -371,7 +371,7 @@ None of this means that volunteering is without its difficulties, and it is fair
               { id: 'pF', text: 'Paragraph F', answer: 'i' },
             ],
             explanation:
-              'Paragraph B describes the "surprising variety of forms" volunteering takes — heading ii. Paragraph C advises "those who are not sure where to begin" and the volunteer centre — heading vi (taking the first step). Paragraph D reports lower stress and greater purpose among volunteers — heading iii (benefits to wellbeing). Paragraph E covers "practical rewards... for those early in their working lives" and routes to paid work — heading v (a career boost for those starting out). Paragraph F states the "difficulties" and burnout plainly — heading i. Headings iv (why charities are short of money) and vii (the history of charitable giving) are distractors that are not used.',
+              'Paragraph B describes the "surprising variety of forms" volunteering takes - heading ii. Paragraph C advises "those who are not sure where to begin" and the volunteer centre - heading vi (taking the first step). Paragraph D reports lower stress and greater purpose among volunteers - heading iii (benefits to wellbeing). Paragraph E covers "practical rewards... for those early in their working lives" and routes to paid work - heading v (a career boost for those starting out). Paragraph F states the "difficulties" and burnout plainly - heading i. Headings iv (why charities are short of money) and vii (the history of charitable giving) are distractors that are not used.',
           },
           {
             id: 'rd-gen-011-p3-q22',

@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 10) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 10) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,17 +6,17 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to
 //     join a community choir), assessed with form / note completion + a
 //     multiple-choice item. A surname is spelled and a phone number is
 //     dictated, and one detail (the membership fee) depends on a stated choice.
-//   • Section 2 — an everyday MONOLOGUE (here: a guided tour of a historic
+//   • Section 2 - an everyday MONOLOGUE (here: a guided tour of a historic
 //     house), assessed with sentence completion + multiple choice, carrying
 //     signpost language ("first", "next", "finally") that the questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a sociology survey project), assessed with multiple choice +
 //     completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the water supply of
+//   • Section 4 - an academic LECTURE / monologue (here: the water supply of
 //     ancient Rome and its aqueducts), assessed with note/sentence completion
 //     + multiple choice, including one True/False/Not Given item.
 //
@@ -26,7 +26,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -37,12 +37,12 @@ export const LISTENING_SET_10: ListeningTest[] = [
   {
     id: 'ls-academic-10',
     title:
-      'Practice Test 10 — Joining a Community Choir, A Historic House Tour, A Sociology Survey Project & The Water Supply of Ancient Rome',
+      'Practice Test 10 - Joining a Community Choir, A Historic House Tour, A Sociology Survey Project & The Water Supply of Ancient Rome',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-10-s1',
-        title: 'Section 1 — Joining a community choir',
+        title: 'Section 1 - Joining a community choir',
         // ~260 words. Transactional dialogue (Section 1 style): a caller enquiring
         // about joining a local community choir over the phone. A surname is spelled
         // and a mobile number is dictated; one detail (the annual membership fee)
@@ -53,7 +53,7 @@ export const LISTENING_SET_10: ListeningTest[] = [
 
 MAN: Hello, I saw your poster and I'd love to join the choir. Could you tell me how it works?
 
-WOMAN: Of course — we'd be delighted to have you. Let me take a few details first. Could I have your name?
+WOMAN: Of course - we'd be delighted to have you. Let me take a few details first. Could I have your name?
 
 MAN: Yes, it's Oliver Pennington. Pennington is spelled P-E-N-N-I-N-G-T-O-N.
 
@@ -63,7 +63,7 @@ MAN: It's oh-seven-nine-double-four, three-one-two, eight-six-five.
 
 WOMAN: Lovely. Now, do you know which voice part you sing? We have sopranos, altos, tenors and basses.
 
-MAN: I think I'm a tenor — I sing fairly high for a man.
+MAN: I think I'm a tenor - I sing fairly high for a man.
 
 WOMAN: Wonderful, we're short of tenors at the moment. Now, about membership. Full membership is forty pounds a year, but if you're in full-time education it's only fifteen.
 
@@ -73,7 +73,7 @@ WOMAN: Of course. Rehearsals are every Wednesday evening, from seven until nine,
 
 MAN: That sounds ideal. Do I need to read music?
 
-WOMAN: Not at all — we learn most pieces by ear. But do bring a folder for the song sheets, and a bottle of water, as the hall can get quite warm.
+WOMAN: Not at all - we learn most pieces by ear. But do bring a folder for the song sheets, and a bottle of water, as the hall can get quite warm.
 
 MAN: Brilliant. I'll see you on Wednesday, then.
 
@@ -86,7 +86,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
               'Complete the membership form. Write ONE WORD for the answer.\n\nApplicant surname: ____________',
             acceptableAnswers: ['Pennington', 'pennington'],
             explanation:
-              'The caller gives his name as “Oliver Pennington” and spells the surname out: P-E-N-N-I-N-G-T-O-N. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Oliver Pennington” and spells the surname out: P-E-N-N-I-N-G-T-O-N. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-010-s1-q2',
@@ -94,7 +94,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07944312865', '0794 4312865', '07944 312 865', '079 44 312 865'],
             explanation:
-              'The number is dictated as “oh-seven-nine-double-four, three-one-two, eight-six-five”, which is 07944312865. “Double four” means two 4s and “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-nine-double-four, three-one-two, eight-six-five”, which is 07944312865. “Double four” means two 4s and “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-010-s1-q3',
@@ -102,7 +102,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
             prompt: 'The man thinks he sings the ____________ voice part. Write ONE WORD.',
             acceptableAnswers: ['tenor'],
             explanation:
-              'He says, “I think I’m a tenor — I sing fairly high for a man,” and Marion confirms they are short of tenors. The answer is “tenor”.',
+              'He says, “I think I’m a tenor - I sing fairly high for a man,” and Marion confirms they are short of tenors. The answer is “tenor”.',
           },
           {
             id: 'ls-010-s1-q4',
@@ -133,7 +133,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
             prompt: 'Rehearsals run from seven until ____________ in the evening. Write A NUMBER.',
             acceptableAnswers: ['9', 'nine', '9pm', '9 pm'],
             explanation:
-              'She says rehearsals run “from seven until nine.” The finishing time is nine (9 pm) — listen for “until”, which signals an end point.',
+              'She says rehearsals run “from seven until nine.” The finishing time is nine (9 pm) - listen for “until”, which signals an end point.',
           },
           {
             id: 'ls-010-s1-q7',
@@ -155,7 +155,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
             ],
             correctIndex: 1,
             explanation:
-              'When he asks, “Do I need to read music?”, she replies, “Not at all — we learn most pieces by ear.” Option B matches; the others are not stated.',
+              'When he asks, “Do I need to read music?”, she replies, “Not at all - we learn most pieces by ear.” Option B matches; the others are not stated.',
           },
           {
             id: 'ls-010-s1-q9',
@@ -179,7 +179,7 @@ WOMAN: We look forward to it. Goodbye for now.`,
       },
       {
         id: 'ls-academic-10-s2',
-        title: 'Section 2 — A guided tour of a historic house',
+        title: 'Section 2 - A guided tour of a historic house',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // guiding visitors around a historic country house and explaining the
         // route, rules and highlights. Uses sequencing/signpost language ("first",
@@ -187,13 +187,13 @@ WOMAN: We look forward to it. Goodbye for now.`,
         // sentence/note-completion + multiple-choice mix.
         transcript: `Good morning, everyone, and a warm welcome to Hartwood House. My name is Diane, and I'll be guiding you through the building this morning. Before we go in, just a couple of rules, and then a little about what you'll see.
 
-First, a word about photography. You're very welcome to take photos, but please switch off your flash — the bright light can fade the old paintings and fabrics over time. And I must ask you not to touch any of the furniture, however tempting it looks.
+First, a word about photography. You're very welcome to take photos, but please switch off your flash - the bright light can fade the old paintings and fabrics over time. And I must ask you not to touch any of the furniture, however tempting it looks.
 
-Now, let me explain the route. We'll begin in the Great Hall, which is the oldest part of the house, dating from 1480. Notice the magnificent oak ceiling — every beam was cut by hand. From there, we'll move into the library, which holds over eight thouson books; sorry, over eight thousand books, some of them five hundred years old.
+Now, let me explain the route. We'll begin in the Great Hall, which is the oldest part of the house, dating from 1480. Notice the magnificent oak ceiling - every beam was cut by hand. From there, we'll move into the library, which holds over eight thouson books; sorry, over eight thousand books, some of them five hundred years old.
 
 Next, we'll go upstairs to the Long Gallery. This was originally built so that the family could take exercise indoors when the weather was poor. Today it displays a remarkable collection of family portraits.
 
-After the gallery, we'll step outside into the walled garden. The head gardener will be there to answer your questions, and I'd point out that the roses in June are particularly famous — people travel a long way to see them.
+After the gallery, we'll step outside into the walled garden. The head gardener will be there to answer your questions, and I'd point out that the roses in June are particularly famous - people travel a long way to see them.
 
 Finally, the visit ends at the tea room, which is housed in the old stables. I can thoroughly recommend the fruit cake, which is baked here to a recipe over a century old. The shop next door sells plants grown in our own greenhouses. Right, if you'll all follow me, we'll make a start.`,
         questions: [
@@ -209,7 +209,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
             ],
             correctIndex: 1,
             explanation:
-              'She says, “please switch off your flash — the bright light can fade the old paintings and fabrics over time.” Option B matches; photography itself is allowed.',
+              'She says, “please switch off your flash - the bright light can fade the old paintings and fabrics over time.” Option B matches; photography itself is allowed.',
           },
           {
             id: 'ls-010-s2-q12',
@@ -227,7 +227,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
               'In the Great Hall, visitors can see a magnificent ____________ ceiling. Write ONE WORD.',
             acceptableAnswers: ['oak'],
             explanation:
-              'She says, “Notice the magnificent oak ceiling — every beam was cut by hand.” The answer is “oak”.',
+              'She says, “Notice the magnificent oak ceiling - every beam was cut by hand.” The answer is “oak”.',
           },
           {
             id: 'ls-010-s2-q14',
@@ -250,7 +250,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
             ],
             correctIndex: 1,
             explanation:
-              'She says it “was originally built so that the family could take exercise indoors when the weather was poor.” Displaying portraits is its use today, not its original purpose — so Option B is correct.',
+              'She says it “was originally built so that the family could take exercise indoors when the weather was poor.” Displaying portraits is its use today, not its original purpose - so Option B is correct.',
           },
           {
             id: 'ls-010-s2-q16',
@@ -273,7 +273,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
             ],
             correctIndex: 1,
             explanation:
-              'She says, “the roses in June are particularly famous — people travel a long way to see them.” Option B matches.',
+              'She says, “the roses in June are particularly famous - people travel a long way to see them.” Option B matches.',
           },
           {
             id: 'ls-010-s2-q18',
@@ -310,7 +310,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
       },
       {
         id: 'ls-academic-10-s3',
-        title: 'Section 3 — Tutorial: planning a sociology survey project',
+        title: 'Section 3 - Tutorial: planning a sociology survey project',
         // ~290 words. Academic discussion (Section 3 style): two students (Hana and
         // Tom) and a tutor (Dr Fielding) plan a sociology survey on commuting
         // habits. Speakers debate method, sampling and analysis, so the questions
@@ -318,7 +318,7 @@ Finally, the visit ends at the tea room, which is housed in the old stables. I c
         // details).
         transcript: `DR FIELDING: Right, Hana and Tom, let's talk through your sociology survey. What topic have you settled on?
 
-HANA: We want to look at how people in the town choose to travel to work — whether they drive, cycle, walk or take the bus, and why.
+HANA: We want to look at how people in the town choose to travel to work - whether they drive, cycle, walk or take the bus, and why.
 
 DR FIELDING: A good, manageable topic. How are you planning to collect your data?
 
@@ -332,15 +332,15 @@ DR FIELDING: That's ambitious but achievable. Now, the most important decision i
 
 TOM: We were going to stand outside the railway station in the morning.
 
-DR FIELDING: Be careful there — if you only ask people at the station, you'll mostly catch train users, and your sample will be biased. You need a mix of locations.
+DR FIELDING: Be careful there - if you only ask people at the station, you'll mostly catch train users, and your sample will be biased. You need a mix of locations.
 
 HANA: Good point. We'll also try the supermarket car park and the town centre.
 
-DR FIELDING: Much better. One more thing — keep the questionnaire short. People won't stop for long, so aim for no more than ten questions.
+DR FIELDING: Much better. One more thing - keep the questionnaire short. People won't stop for long, so aim for no more than ten questions.
 
 TOM: We'll cut it down. And for the analysis, we were thinking of showing the results as pie charts.
 
-DR FIELDING: Pie charts work well for proportions. But do include the actual numbers too, not just percentages, so your reader can judge the sample size. My final advice: run a small pilot first — test it on ten people to spot any confusing questions before you start properly.
+DR FIELDING: Pie charts work well for proportions. But do include the actual numbers too, not just percentages, so your reader can judge the sample size. My final advice: run a small pilot first - test it on ten people to spot any confusing questions before you start properly.
 
 HANA: That makes sense. We'll pilot it next week.`,
         questions: [
@@ -356,7 +356,7 @@ HANA: That makes sense. We'll pilot it next week.`,
             ],
             correctIndex: 0,
             explanation:
-              'Hana says, “We want to look at how people in the town choose to travel to work — whether they drive, cycle, walk or take the bus, and why.” Option A matches the topic exactly.',
+              'Hana says, “We want to look at how people in the town choose to travel to work - whether they drive, cycle, walk or take the bus, and why.” Option A matches the topic exactly.',
           },
           {
             id: 'ls-010-s3-q22',
@@ -458,19 +458,19 @@ HANA: That makes sense. We'll pilot it next week.`,
             ],
             correctIndex: 1,
             explanation:
-              'He says, “run a small pilot first — test it on ten people to spot any confusing questions before you start properly.” Option B matches.',
+              'He says, “run a small pilot first - test it on ten people to spot any confusing questions before you start properly.” Option B matches.',
           },
         ],
       },
       {
         id: 'ls-academic-10-s4',
-        title: 'Section 4 — Lecture: the water supply of ancient Rome',
+        title: 'Section 4 - Lecture: the water supply of ancient Rome',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the water supply of ancient Rome
         // and its aqueducts. Dense, factual and signposted ("let me begin", "by the
         // time", "finally"), with the note/sentence-completion + multiple-choice mix
         // typical of Section 4, including one True/False/Not Given item.
-        transcript: `Good afternoon. Today we'll examine one of the great engineering achievements of the ancient world — the system that brought fresh water to the city of Rome. At its height, Rome was supplied by eleven separate aqueducts, and understanding how they worked tells us a great deal about Roman engineering.
+        transcript: `Good afternoon. Today we'll examine one of the great engineering achievements of the ancient world - the system that brought fresh water to the city of Rome. At its height, Rome was supplied by eleven separate aqueducts, and understanding how they worked tells us a great deal about Roman engineering.
 
 Let me begin with the source. Most of Rome's water did not come from the River Tiber, which ran through the city but was too dirty to drink. Instead, engineers tapped clean springs and lakes in the hills many miles away, and then carried the water back to the city.
 

@@ -1,8 +1,8 @@
-// ─── IELTS Academic Reading — practice item bank (Wave 1) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Wave 1) ──────────────────
 // ORIGINAL content written for The English Hub. These are NOT reproductions of
 // any official IELTS past paper; the passages and questions are invented purely
 // to practise the Academic Reading question formats (MCQ, True/False/Not Given,
-// and sentence/summary completion). Framed as "IELTS preparation" only — no
+// and sentence/summary completion). Framed as "IELTS preparation" only - no
 // official affiliation is implied. Academic track.
 //
 // Phase 2 scales this bank via the content pipeline; Wave 1 ships ONE complete,
@@ -54,7 +54,7 @@ import { READING_SET_32 } from './reading-tests-set-32'
 import { READING_SET_33 } from './reading-tests-set-33'
 import { READING_SET_34 } from './reading-tests-set-34'
 import { READING_SET_35 } from './reading-tests-set-35'
-// General Training reading tests (track: 'general') — filtered by the reading
+// General Training reading tests (track: 'general') - filtered by the reading
 // page via the TrackToggle. These live alongside the Academic tests so the bank
 // is one filterable array.
 import { GT_READING_SET_1 } from './gt-reading-tests-1'
@@ -109,7 +109,7 @@ export const READING_TESTS: ReadingTest[] = [
   ...READING_SET_35,
   {
     id: 'rd-academic-001',
-    title: 'Academic Reading — Practice Test 1',
+    title: 'Academic Reading - Practice Test 1',
     track: 'academic',
     estimatedMinutes: 20,
     passages: [
@@ -292,7 +292,7 @@ Understanding these mechanisms has practical value. It cautions courts against t
   },
   {
     id: 'rd-academic-002',
-    title: 'Academic Reading — Practice Test 2',
+    title: 'Academic Reading - Practice Test 2',
     track: 'academic',
     estimatedMinutes: 20,
     passages: [
@@ -305,7 +305,7 @@ The earliest lights were simple coal fires burned on open platforms, but these w
 
 Yet the brilliant beam created a new problem. From a distance, one fixed light looked much like another, and a captain who mistook one headland for its neighbour might steer confidently onto the rocks. The solution was to give each lighthouse its own rhythm. By rotating the lens or shielding it at set intervals, engineers made every light flash in a distinct pattern, so that a navigator consulting a chart could identify exactly which coast lay ahead. The light no longer merely shone; it carried information.
 
-The keepers themselves were eventually made redundant by electric lamps and automatic timers, and the last of them were withdrawn from their towers in the closing decades of the twentieth century. Their lights still turn, now watched by sensors rather than human eyes. Something, many sailors feel, has been lost along with them — though none would wish to return to a time when a single sleepy keeper stood between a ship and the rocks.`,
+The keepers themselves were eventually made redundant by electric lamps and automatic timers, and the last of them were withdrawn from their towers in the closing decades of the twentieth century. Their lights still turn, now watched by sensors rather than human eyes. Something, many sailors feel, has been lost along with them - though none would wish to return to a time when a single sleepy keeper stood between a ship and the rocks.`,
         questions: [
           {
             id: 'rd-002-p1-q1',
@@ -385,9 +385,9 @@ The keepers themselves were eventually made redundant by electric lamps and auto
         title: 'The Surprising Mathematics of Honeybees',
         body: `A honeycomb is one of the most familiar structures in nature, and also one of the most quietly remarkable. Each cell is a near-perfect hexagon, and the cells fit together so neatly that not a scrap of space is wasted between them. For centuries observers assumed that bees must possess some innate geometric genius, but the truth, as is often the case in biology, is both simpler and more interesting.
 
-The advantage of the hexagon is real. Of all the shapes that can tile a flat surface without leaving gaps — triangles, squares and hexagons — the hexagon encloses the largest area for the least amount of wall. For an insect that must produce wax from its own body at considerable energetic cost, using the least material to store the most honey is a powerful saving. A colony that wasted wax would be at a disadvantage, and over millions of years natural selection would favour those that did not.
+The advantage of the hexagon is real. Of all the shapes that can tile a flat surface without leaving gaps - triangles, squares and hexagons - the hexagon encloses the largest area for the least amount of wall. For an insect that must produce wax from its own body at considerable energetic cost, using the least material to store the most honey is a powerful saving. A colony that wasted wax would be at a disadvantage, and over millions of years natural selection would favour those that did not.
 
-But this does not mean each bee is calculating angles. The leading explanation is that bees first build cells that are roughly circular, packing them together as tightly as they can. The warmth of the working bees keeps the fresh wax soft, and in this semi-liquid state the walls are pulled by surface tension into the most stable arrangement available — which, for circles pressed evenly together, is precisely the hexagonal grid. The mathematics is performed not by the bee but by the physics of the wax itself.
+But this does not mean each bee is calculating angles. The leading explanation is that bees first build cells that are roughly circular, packing them together as tightly as they can. The warmth of the working bees keeps the fresh wax soft, and in this semi-liquid state the walls are pulled by surface tension into the most stable arrangement available - which, for circles pressed evenly together, is precisely the hexagonal grid. The mathematics is performed not by the bee but by the physics of the wax itself.
 
 This idea is supported by a telling observation. When researchers examine cells built quickly or at the edges of a comb, where the packing is less even, the hexagons are noticeably less regular, and some cells have five or seven sides. A true geometric instinct would not make such errors. The imperfections are exactly what one would expect if the shape emerges from physical forces rather than design.
 

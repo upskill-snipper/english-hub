@@ -1,5 +1,5 @@
 /**
- * Emergency placeholder fix — 2026-05-15
+ * Emergency placeholder fix - 2026-05-15
  *
  * 21 production routes were rendering `[[some.key]]` markup because
  * audit_missing_keys.py only catches `t('literal-string')` calls and
@@ -14,7 +14,7 @@
  * pick these up and replace with proper Khaleeji.
  *
  * Wired into the lookup chain from dictionary.ts immediately after
- * AUDIT_FIX_DICTIONARY (same precedence — both are emergency fills).
+ * AUDIT_FIX_DICTIONARY (same precedence - both are emergency fills).
  */
 
 import type { Dictionary } from './dictionary'
@@ -24,8 +24,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   'alevel.board.aqa.name': { en: 'AQA A-level English', ar: 'AQA A-level English' },
   'alevel.board.aqa.short': { en: 'AQA', ar: 'AQA' },
   'alevel.board.aqa.description': {
-    en: 'AS and A-level English Literature and Language — paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
-    ar: 'AS and A-level English Literature and Language — paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
+    en: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
+    ar: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
   },
   'alevel.board.edexcel.name': {
     en: 'Pearson Edexcel A-level English',
@@ -33,20 +33,20 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'alevel.board.edexcel.short': { en: 'Edexcel', ar: 'Edexcel' },
   'alevel.board.edexcel.description': {
-    en: 'Pearson Edexcel A-level English Literature and Language — focused revision against the specification and exemplar A* answers.',
-    ar: 'Pearson Edexcel A-level English Literature and Language — focused revision against the specification and exemplar A* answers.',
+    en: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
+    ar: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
   },
   'alevel.board.ocr.name': { en: 'OCR A-level English', ar: 'OCR A-level English' },
   'alevel.board.ocr.short': { en: 'OCR', ar: 'OCR' },
   'alevel.board.ocr.description': {
-    en: 'OCR A-level English Literature and Language — examiner-aligned analysis and structure for the closed-book papers.',
-    ar: 'OCR A-level English Literature and Language — examiner-aligned analysis and structure for the closed-book papers.',
+    en: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
+    ar: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
   },
   'alevel.board.eduqas.name': { en: 'Eduqas A-level English', ar: 'Eduqas A-level English' },
   'alevel.board.eduqas.short': { en: 'Eduqas', ar: 'Eduqas' },
   'alevel.board.eduqas.description': {
-    en: 'WJEC Eduqas A-level English Literature and Language — coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
-    ar: 'WJEC Eduqas A-level English Literature and Language — coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
+    en: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
+    ar: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
   },
 
   // ─── Games difficulty badges (/games/*) ──────────────────────────
@@ -61,9 +61,9 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   'marking.scheme.lang_p2': { en: 'Language Paper 2', ar: 'Language Paper 2' },
 
   // ─── Demo school grade-band analytics (/demo/school) ─────────────
-  'analytics.grade_band.top': { en: 'Top grades (7–9)', ar: 'Top grades (7–9)' },
-  'analytics.grade_band.pass': { en: 'Pass grades (4–6)', ar: 'Pass grades (4–6)' },
-  'analytics.grade_band.below': { en: 'Below pass (1–3)', ar: 'Below pass (1–3)' },
+  'analytics.grade_band.top': { en: 'Top grades (7-9)', ar: 'Top grades (7-9)' },
+  'analytics.grade_band.pass': { en: 'Pass grades (4-6)', ar: 'Pass grades (4-6)' },
+  'analytics.grade_band.below': { en: 'Below pass (1-3)', ar: 'Below pass (1-3)' },
 
   // ─── Exam-boards hub (/exam-boards) ──────────────────────────────
   'exam_boards.crumb.home': { en: 'Home', ar: 'Home' },
@@ -74,8 +74,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Every UK GCSE and IGCSE board, covered',
   },
   'exam_boards.lead': {
-    en: 'Specification-aligned revision for AQA, Edexcel, OCR, Eduqas, Cambridge International and Pearson Edexcel International — pick yours below.',
-    ar: 'Specification-aligned revision for AQA, Edexcel, OCR, Eduqas, Cambridge International and Pearson Edexcel International — pick yours below.',
+    en: 'Specification-aligned revision for AQA, Edexcel, OCR, Eduqas, Cambridge International and Pearson Edexcel International - pick yours below.',
+    ar: 'Specification-aligned revision for AQA, Edexcel, OCR, Eduqas, Cambridge International and Pearson Edexcel International - pick yours below.',
   },
   'exam_boards.level.gcse': { en: 'GCSE (UK)', ar: 'GCSE (UK)' },
   'exam_boards.level.igcse': { en: 'IGCSE (international)', ar: 'IGCSE (international)' },
@@ -122,16 +122,16 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Pearson Edexcel IGCSE Literature',
   },
   'exam_boards.edexcel_igcse.blurb': {
-    en: 'Edexcel IGCSE English Literature (4ET1) — set texts and unseen poetry.',
-    ar: 'Edexcel IGCSE English Literature (4ET1) — set texts and unseen poetry.',
+    en: 'Edexcel IGCSE English Literature (4ET1) - set texts and unseen poetry.',
+    ar: 'Edexcel IGCSE English Literature (4ET1) - set texts and unseen poetry.',
   },
   'exam_boards.edexcel_igcse_lang.name': {
     en: 'Pearson Edexcel IGCSE Language',
     ar: 'Pearson Edexcel IGCSE Language',
   },
   'exam_boards.edexcel_igcse_lang.blurb': {
-    en: 'Edexcel IGCSE English Language A (4EA1) — non-fiction reading and transactional writing.',
-    ar: 'Edexcel IGCSE English Language A (4EA1) — non-fiction reading and transactional writing.',
+    en: 'Edexcel IGCSE English Language A (4EA1) - non-fiction reading and transactional writing.',
+    ar: 'Edexcel IGCSE English Language A (4EA1) - non-fiction reading and transactional writing.',
   },
   'exam_boards.cta.open_board': { en: 'Open board hub', ar: 'Open board hub' },
   'exam_boards.why.h2': { en: 'Why your exam board matters', ar: 'Why your exam board matters' },
@@ -140,12 +140,12 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Each board sets its own assessment objectives, prescribes its own anthology and set texts, and weights the marks differently between context, language analysis and structure.',
   },
   'exam_boards.why.p2': {
-    en: 'A model answer that scores Grade 9 on AQA might lose marks on Edexcel — the rubric is different even when the texts overlap.',
-    ar: 'A model answer that scores Grade 9 on AQA might lose marks on Edexcel — the rubric is different even when the texts overlap.',
+    en: 'A model answer that scores Grade 9 on AQA might lose marks on Edexcel - the rubric is different even when the texts overlap.',
+    ar: 'A model answer that scores Grade 9 on AQA might lose marks on Edexcel - the rubric is different even when the texts overlap.',
   },
   'exam_boards.why.p3_pre': {
-    en: 'Every revision page on The English Hub is board-aware. Pick yours once and the whole site re-skins to your spec — or read our ',
-    ar: 'Every revision page on The English Hub is board-aware. Pick yours once and the whole site re-skins to your spec — or read our ',
+    en: 'Every revision page on The English Hub is board-aware. Pick yours once and the whole site re-skins to your spec - or read our ',
+    ar: 'Every revision page on The English Hub is board-aware. Pick yours once and the whole site re-skins to your spec - or read our ',
   },
   'exam_boards.why.p3_link': {
     en: 'side-by-side comparison of every board',
@@ -162,8 +162,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Free GCSE & IGCSE English revision resources',
   },
   'free_res.lead': {
-    en: 'Pick up the printable revision packs we use with our own students. No email signup, no paywall — just open and download.',
-    ar: 'Pick up the printable revision packs we use with our own students. No email signup, no paywall — just open and download.',
+    en: 'Pick up the printable revision packs we use with our own students. No email signup, no paywall - just open and download.',
+    ar: 'Pick up the printable revision packs we use with our own students. No email signup, no paywall - just open and download.',
   },
   'free_res.grid_sr': { en: 'Free resources grid', ar: 'Free resources grid' },
   'free_res.coming_soon': { en: 'Coming soon', ar: 'Coming soon' },
@@ -174,8 +174,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Get told when new free packs drop',
   },
   'free_res.notify_lead': {
-    en: 'One email per pack. Unsubscribe anytime — no follow-up marketing.',
-    ar: 'One email per pack. Unsubscribe anytime — no follow-up marketing.',
+    en: 'One email per pack. Unsubscribe anytime - no follow-up marketing.',
+    ar: 'One email per pack. Unsubscribe anytime - no follow-up marketing.',
   },
   'free_res.scope.aqa': { en: 'AQA', ar: 'AQA' },
   'free_res.scope.aqa_edx_ocr_eduqas': {
@@ -187,24 +187,24 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   'free_res.scope.cambridge': { en: 'Cambridge IGCSE', ar: 'Cambridge IGCSE' },
   'free_res.macbeth_qb.title': { en: 'Macbeth quote bank', ar: 'Macbeth quote bank' },
   'free_res.macbeth_qb.desc': {
-    en: '60 essential Macbeth quotations sorted by theme, character and act — with one-line analysis hooks for every quote.',
-    ar: '60 essential Macbeth quotations sorted by theme, character and act — with one-line analysis hooks for every quote.',
+    en: '60 essential Macbeth quotations sorted by theme, character and act - with one-line analysis hooks for every quote.',
+    ar: '60 essential Macbeth quotations sorted by theme, character and act - with one-line analysis hooks for every quote.',
   },
   'free_res.pc_grid.title': {
     en: 'Power and Conflict cluster grid',
     ar: 'Power and Conflict cluster grid',
   },
   'free_res.pc_grid.desc': {
-    en: 'All 15 AQA Power and Conflict poems in a single landscape grid — themes, form, key images and one comparison hook per poem.',
-    ar: 'All 15 AQA Power and Conflict poems in a single landscape grid — themes, form, key images and one comparison hook per poem.',
+    en: 'All 15 AQA Power and Conflict poems in a single landscape grid - themes, form, key images and one comparison hook per poem.',
+    ar: 'All 15 AQA Power and Conflict poems in a single landscape grid - themes, form, key images and one comparison hook per poem.',
   },
   'free_res.aic_map.title': {
     en: 'An Inspector Calls character map',
     ar: 'An Inspector Calls character map',
   },
   'free_res.aic_map.desc': {
-    en: "Every character and their arc on one A3 sheet — social class, generation and the Inspector's effect on each.",
-    ar: "Every character and their arc on one A3 sheet — social class, generation and the Inspector's effect on each.",
+    en: "Every character and their arc on one A3 sheet - social class, generation and the Inspector's effect on each.",
+    ar: "Every character and their arc on one A3 sheet - social class, generation and the Inspector's effect on each.",
   },
   'free_res.ao2.title': {
     en: 'AO2 language analysis cheatsheet',
@@ -227,8 +227,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'CIE 0500 vs 0475 differentiator',
   },
   'free_res.cie_diff.desc': {
-    en: 'Side-by-side breakdown of the two Cambridge syllabuses — assessment objectives, papers, weightings and what to revise first.',
-    ar: 'Side-by-side breakdown of the two Cambridge syllabuses — assessment objectives, papers, weightings and what to revise first.',
+    en: 'Side-by-side breakdown of the two Cambridge syllabuses - assessment objectives, papers, weightings and what to revise first.',
+    ar: 'Side-by-side breakdown of the two Cambridge syllabuses - assessment objectives, papers, weightings and what to revise first.',
   },
 
   // ─── Resources hub (/resources) ──────────────────────────────────
@@ -238,8 +238,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Every revision resource, one shelf',
   },
   'resources.hub.subtitle': {
-    en: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs — sorted by category.',
-    ar: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs — sorted by category.',
+    en: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs - sorted by category.',
+    ar: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs - sorted by category.',
   },
   'resources.hub.stat.study_guides': { en: 'Study guides', ar: 'Study guides' },
   'resources.hub.stat.categories': { en: 'Categories', ar: 'Categories' },
@@ -250,8 +250,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'resources.hub.quick.revision_notes.title': { en: 'Revision notes', ar: 'Revision notes' },
   'resources.hub.quick.revision_notes.desc': {
-    en: 'Concise summaries of plot, character, theme and context — written for revision, not first reading.',
-    ar: 'Concise summaries of plot, character, theme and context — written for revision, not first reading.',
+    en: 'Concise summaries of plot, character, theme and context - written for revision, not first reading.',
+    ar: 'Concise summaries of plot, character, theme and context - written for revision, not first reading.',
   },
   'resources.hub.quick.writing_skills.title': { en: 'Writing skills', ar: 'Writing skills' },
   'resources.hub.quick.writing_skills.desc': {
@@ -305,8 +305,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   'resources.poetry.skill.techniques.tag': { en: 'Technique', ar: 'Technique' },
   'resources.poetry.skill.techniques.title': { en: 'Poetic techniques', ar: 'Poetic techniques' },
   'resources.poetry.skill.techniques.desc': {
-    en: "Identifying form, structure and language devices — what they're called and what effects they create.",
-    ar: "Identifying form, structure and language devices — what they're called and what effects they create.",
+    en: "Identifying form, structure and language devices - what they're called and what effects they create.",
+    ar: "Identifying form, structure and language devices - what they're called and what effects they create.",
   },
   'resources.poetry.skill.unseen.tag': { en: 'Unseen', ar: 'Unseen' },
   'resources.poetry.skill.unseen.title': { en: 'Unseen poetry', ar: 'Unseen poetry' },
@@ -349,8 +349,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Context earns AO3, not anecdote',
   },
   'resources.poetry.tip.context.text': {
-    en: "AO3 wants ideas linked back to the poem's effect — never an essay about the poet's life detached from the lines.",
-    ar: "AO3 wants ideas linked back to the poem's effect — never an essay about the poet's life detached from the lines.",
+    en: "AO3 wants ideas linked back to the poem's effect - never an essay about the poet's life detached from the lines.",
+    ar: "AO3 wants ideas linked back to the poem's effect - never an essay about the poet's life detached from the lines.",
   },
   'resources.poetry.tip.structure.title': {
     en: "Read the poem's shape first",
@@ -378,12 +378,12 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Analyse language, form and structure with subject terminology',
   },
   'resources.poetry.ao.ao2.tip': {
-    en: "For every technique you name, write the EFFECT it creates — that's where the marks live.",
-    ar: "For every technique you name, write the EFFECT it creates — that's where the marks live.",
+    en: "For every technique you name, write the EFFECT it creates - that's where the marks live.",
+    ar: "For every technique you name, write the EFFECT it creates - that's where the marks live.",
   },
   'resources.poetry.ao.ao3.detail': {
-    en: 'Contextual links — ideas, beliefs and conditions the poem reflects',
-    ar: 'Contextual links — ideas, beliefs and conditions the poem reflects',
+    en: 'Contextual links - ideas, beliefs and conditions the poem reflects',
+    ar: 'Contextual links - ideas, beliefs and conditions the poem reflects',
   },
   'resources.poetry.ao.ao3.tip': {
     en: "Tie context to a specific line, not just the poet's biography in general.",
@@ -393,8 +393,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   // ─── Resources / study tools (/resources/study-tools) ────────────
   'resources.study_tools.title': { en: 'Study tools', ar: 'Study tools' },
   'resources.study_tools.subtitle': {
-    en: 'Plan revision, drill recall, and time your past papers — every tool below saves to your account.',
-    ar: 'Plan revision, drill recall, and time your past papers — every tool below saves to your account.',
+    en: 'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
+    ar: 'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
   },
   'resources.study_tools.cta.open': { en: 'Open tool', ar: 'Open tool' },
   'resources.study_tools.rp.title': { en: 'Revision planner', ar: 'Revision planner' },
@@ -426,8 +426,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   'resources.study_tools.qt.feat.score': { en: 'Score tracking', ar: 'Score tracking' },
   'resources.study_tools.cl.title': { en: 'Exam checklist', ar: 'Exam checklist' },
   'resources.study_tools.cl.desc': {
-    en: 'Tick off every topic on your spec — board-specific, autosaves to your account.',
-    ar: 'Tick off every topic on your spec — board-specific, autosaves to your account.',
+    en: 'Tick off every topic on your spec - board-specific, autosaves to your account.',
+    ar: 'Tick off every topic on your spec - board-specific, autosaves to your account.',
   },
   'resources.study_tools.cl.feat.aqa': { en: 'AQA spec coverage', ar: 'AQA spec coverage' },
   'resources.study_tools.cl.feat.edexcel': {
@@ -448,8 +448,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Start with the planner',
   },
   'resources.study_tools.tip.start.body': {
-    en: 'A schedule is the difference between revising and panic-revising — set yours up first.',
-    ar: 'A schedule is the difference between revising and panic-revising — set yours up first.',
+    en: 'A schedule is the difference between revising and panic-revising - set yours up first.',
+    ar: 'A schedule is the difference between revising and panic-revising - set yours up first.',
   },
   'resources.study_tools.tip.daily.label': {
     en: 'Daily, not weekend-only',
@@ -461,8 +461,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'resources.study_tools.tip.track.label': { en: "Track what's hard", ar: "Track what's hard" },
   'resources.study_tools.tip.track.body': {
-    en: "The flashcard hard-card focus shows you what's actually not sticking — go review the underlying notes for those.",
-    ar: "The flashcard hard-card focus shows you what's actually not sticking — go review the underlying notes for those.",
+    en: "The flashcard hard-card focus shows you what's actually not sticking - go review the underlying notes for those.",
+    ar: "The flashcard hard-card focus shows you what's actually not sticking - go review the underlying notes for those.",
   },
 
   // ─── Affiliate program (/affiliate, /affiliates, /affiliate/*) ───
@@ -479,8 +479,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: '20% on every plan you refer, paid monthly. No minimum traffic, no exclusivity.',
   },
   'aff.tiers.tier-2.description': {
-    en: '25% commission once you cross 10 paid referrals — automatic upgrade, no application.',
-    ar: '25% commission once you cross 10 paid referrals — automatic upgrade, no application.',
+    en: '25% commission once you cross 10 paid referrals - automatic upgrade, no application.',
+    ar: '25% commission once you cross 10 paid referrals - automatic upgrade, no application.',
   },
   'aff.tiers.tier-3.description': {
     en: '30% commission at 25 paid referrals, plus access to co-marketing slots in our newsletter.',
@@ -499,8 +499,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Who can join the affiliate program?',
   },
   'aff.faq.eligibility.a': {
-    en: 'Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify — there is no minimum follower count for Tier 1.',
-    ar: 'Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify — there is no minimum follower count for Tier 1.',
+    en: 'Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify - there is no minimum follower count for Tier 1.',
+    ar: 'Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify - there is no minimum follower count for Tier 1.',
   },
   'aff.faq.payouts.q': {
     en: 'How and when are commissions paid?',
@@ -520,8 +520,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'aff.faq.renewals.q': { en: 'Do I earn on plan renewals?', ar: 'Do I earn on plan renewals?' },
   'aff.faq.renewals.a': {
-    en: 'Yes — commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.',
-    ar: 'Yes — commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.',
+    en: 'Yes - commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.',
+    ar: 'Yes - commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.',
   },
   'aff.faq.tier_upgrade.q': { en: 'How do I move up a tier?', ar: 'How do I move up a tier?' },
   'aff.faq.tier_upgrade.a': {
@@ -562,8 +562,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Short-form social post',
   },
   'aff.resources.copy.short_social.body': {
-    en: 'My students keep telling me about The English Hub — clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}',
-    ar: 'My students keep telling me about The English Hub — clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}',
+    en: 'My students keep telling me about The English Hub - clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}',
+    ar: 'My students keep telling me about The English Hub - clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}',
   },
   'aff.resources.copy.newsletter.label': { en: 'Newsletter blurb', ar: 'Newsletter blurb' },
   'aff.resources.copy.newsletter.body': {
@@ -575,8 +575,8 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Blog review intro paragraph',
   },
   'aff.resources.copy.blog_review.body': {
-    en: "I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out — and where it does not yet match the competition. {link}",
-    ar: "I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out — and where it does not yet match the competition. {link}",
+    en: "I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out - and where it does not yet match the competition. {link}",
+    ar: "I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out - and where it does not yet match the competition. {link}",
   },
   'aff.resources.shot.dashboard_overview': {
     en: 'Student dashboard overview',
@@ -600,9 +600,9 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     en: 'Under 1,000 followers / subscribers',
     ar: 'Under 1,000 followers / subscribers',
   },
-  'aff.signup.audience.1k_5k': { en: '1,000 – 5,000', ar: '1,000 – 5,000' },
-  'aff.signup.audience.5k_25k': { en: '5,000 – 25,000', ar: '5,000 – 25,000' },
-  'aff.signup.audience.25k_100k': { en: '25,000 – 100,000', ar: '25,000 – 100,000' },
+  'aff.signup.audience.1k_5k': { en: '1,000 - 5,000', ar: '1,000 - 5,000' },
+  'aff.signup.audience.5k_25k': { en: '5,000 - 25,000', ar: '5,000 - 25,000' },
+  'aff.signup.audience.25k_100k': { en: '25,000 - 100,000', ar: '25,000 - 100,000' },
   'aff.signup.audience.over_100k': { en: 'Over 100,000', ar: 'Over 100,000' },
   'aff.signup.niche.english_tutoring': { en: 'English tutoring', ar: 'English tutoring' },
   'aff.signup.niche.school_classroom': {
@@ -623,16 +623,16 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     ar: 'Industry-leading commissions',
   },
   'aff_comp.public.why.reason1.desc': {
-    en: 'Start at 20% on every plan, climb to 35% as you grow — paid monthly with no minimum payout.',
-    ar: 'Start at 20% on every plan, climb to 35% as you grow — paid monthly with no minimum payout.',
+    en: 'Start at 20% on every plan, climb to 35% as you grow - paid monthly with no minimum payout.',
+    ar: 'Start at 20% on every plan, climb to 35% as you grow - paid monthly with no minimum payout.',
   },
   'aff_comp.public.why.reason2.title': {
     en: 'A product parents actually trust',
     ar: 'A product parents actually trust',
   },
   'aff_comp.public.why.reason2.desc': {
-    en: 'Exam-board specific revision built by English teachers — not generic AI slop. Easy to recommend honestly.',
-    ar: 'Exam-board specific revision built by English teachers — not generic AI slop. Easy to recommend honestly.',
+    en: 'Exam-board specific revision built by English teachers - not generic AI slop. Easy to recommend honestly.',
+    ar: 'Exam-board specific revision built by English teachers - not generic AI slop. Easy to recommend honestly.',
   },
   'aff_comp.public.why.reason3.title': {
     en: 'Real support, not a portal',
@@ -654,13 +654,13 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'aff_comp.public.how.step3.title': { en: 'Share it your way', ar: 'Share it your way' },
   'aff_comp.public.how.step3.desc': {
-    en: 'Use our banners, screenshots and copy snippets — or write entirely your own. Whatever works for your audience.',
-    ar: 'Use our banners, screenshots and copy snippets — or write entirely your own. Whatever works for your audience.',
+    en: 'Use our banners, screenshots and copy snippets - or write entirely your own. Whatever works for your audience.',
+    ar: 'Use our banners, screenshots and copy snippets - or write entirely your own. Whatever works for your audience.',
   },
   'aff_comp.public.how.step4.title': { en: 'Get paid monthly', ar: 'Get paid monthly' },
   'aff_comp.public.how.step4.desc': {
-    en: 'Commissions clear on the 5th of each month via Stripe or PayPal — for every plan, including renewals, for as long as the customer stays.',
-    ar: 'Commissions clear on the 5th of each month via Stripe or PayPal — for every plan, including renewals, for as long as the customer stays.',
+    en: 'Commissions clear on the 5th of each month via Stripe or PayPal - for every plan, including renewals, for as long as the customer stays.',
+    ar: 'Commissions clear on the 5th of each month via Stripe or PayPal - for every plan, including renewals, for as long as the customer stays.',
   },
   'aff_comp.public.commission.plan.student_monthly': {
     en: 'Student · monthly',
@@ -764,15 +764,15 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
   },
   'sitemap.section.set_texts': { en: 'GCSE set texts', ar: 'GCSE set texts' },
   'sitemap.section.anthology_poems': { en: 'Anthology poems', ar: 'Anthology poems' },
-  'sitemap.section.igcse': { en: 'IGCSE — board hubs', ar: 'IGCSE — board hubs' },
-  'sitemap.section.igcse_cambridge': { en: 'IGCSE — Cambridge', ar: 'IGCSE — Cambridge' },
+  'sitemap.section.igcse': { en: 'IGCSE - board hubs', ar: 'IGCSE - board hubs' },
+  'sitemap.section.igcse_cambridge': { en: 'IGCSE - Cambridge', ar: 'IGCSE - Cambridge' },
   'sitemap.section.igcse_edexcel': {
-    en: 'IGCSE — Pearson Edexcel Literature',
-    ar: 'IGCSE — Pearson Edexcel Literature',
+    en: 'IGCSE - Pearson Edexcel Literature',
+    ar: 'IGCSE - Pearson Edexcel Literature',
   },
   'sitemap.section.igcse_edexcel_lang': {
-    en: 'IGCSE — Pearson Edexcel Language',
-    ar: 'IGCSE — Pearson Edexcel Language',
+    en: 'IGCSE - Pearson Edexcel Language',
+    ar: 'IGCSE - Pearson Edexcel Language',
   },
   'sitemap.section.courses': { en: 'Courses and units', ar: 'Courses and units' },
   'sitemap.section.resources': { en: 'Resources and study tools', ar: 'Resources and study tools' },

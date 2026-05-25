@@ -7,7 +7,7 @@
 // labels (Learn / Practise / Full mock), the empty/initial state and the
 // footer caveat.
 //
-// SCOPE: interface chrome only. IELTS is an English exam — no test CONTENT
+// SCOPE: interface chrome only. IELTS is an English exam - no test CONTENT
 // lives here. Curriculum-owned labels are NOT translated and stay where they
 // are produced: skill labels come from SKILL_META.label (Listening / Reading /
 // Writing / Speaking), level labels + band ranges come from LEVELS /
@@ -33,8 +33,8 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
   'ielts.planner.back': { en: 'Back to IELTS', ar: 'رجوع لـ IELTS' },
   'ielts.planner.title': { en: 'IELTS Study Planner', ar: 'مخطّط دراسة IELTS' },
   'ielts.planner.subtitle': {
-    en: "Tell us your exam date and target band, and we'll plan backwards from the exam — front-loading your weakest skills, week by week.",
-    ar: 'قل لنا تاريخ امتحانك وBand الهدف، وإحنا نخطّط من الامتحان للخلف — نركّز على أضعف مهاراتك أول، أسبوع بأسبوع.',
+    en: "Tell us your exam date and target band, and we'll plan backwards from the exam - front-loading your weakest skills, week by week.",
+    ar: 'قل لنا تاريخ امتحانك وBand الهدف، وإحنا نخطّط من الامتحان للخلف - نركّز على أضعف مهاراتك أول، أسبوع بأسبوع.',
   },
 
   // ─── Countdown ──────────────────────────────────────────────────────
@@ -52,8 +52,8 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
 
   // Urgency line (one of four, picked by days-left bucket).
   'ielts.planner.urgency.exam_day': {
-    en: "It's exam day — you've got this.",
-    ar: 'اليوم يوم الامتحان — أنت قدّها.',
+    en: "It's exam day - you've got this.",
+    ar: 'اليوم يوم الامتحان - أنت قدّها.',
   },
   'ielts.planner.urgency.final_stretch': {
     en: 'Final stretch: practise to time, rest well, stay calm.',
@@ -64,14 +64,14 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'أنت قريب. ظبّط الأسلوب وسوِّ على الأقل اختبار تجريبي كامل واحد.',
   },
   'ielts.planner.urgency.runway': {
-    en: 'Plenty of runway — build the habit and the bands will follow.',
-    ar: 'عندك وقت وايد — ابنِ العادة وBands بتجي وراها.',
+    en: 'Plenty of runway - build the habit and the bands will follow.',
+    ar: 'عندك وقت وايد - ابنِ العادة وBands بتجي وراها.',
   },
 
   // ─── Goals form ─────────────────────────────────────────────────────
   'ielts.planner.goals.heading': { en: 'Your goals', ar: 'أهدافك' },
   'ielts.planner.goals.target_label': { en: 'Target band', ar: 'Band الهدف' },
-  // Target-band <option> text — band number stays a digit (Latin "Band").
+  // Target-band <option> text - band number stays a digit (Latin "Band").
   'ielts.planner.goals.target_option': { en: 'Band {band}', ar: 'Band {band}' },
   'ielts.planner.goals.date_label': { en: 'Exam date', ar: 'تاريخ الامتحان' },
   'ielts.planner.goals.level_label': { en: 'Your level now', ar: 'مستواك الحين' },
@@ -90,20 +90,20 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'قل لنا كم عندك وقت وإحنا نختار لك شي واحد',
   },
   'ielts.planner.rightnow.intro_weakest': {
-    en: ' — aimed at your weakest skill, {skill}.',
-    ar: ' — موجّه لأضعف مهارة عندك، {skill}.',
+    en: ' - aimed at your weakest skill, {skill}.',
+    ar: ' - موجّه لأضعف مهارة عندك، {skill}.',
   },
   'ielts.planner.rightnow.intro_end': { en: '.', ar: '.' },
   'ielts.planner.rightnow.time_aria': { en: 'Time available', ar: 'الوقت المتاح' },
-  // Minutes toggle label — number stays a digit.
+  // Minutes toggle label - number stays a digit.
   'ielts.planner.rightnow.minutes': { en: '{count} min', ar: '{count} دقيقة' },
 
   // 15-minute action (a single lesson). {title} is a curriculum unit title or a
   // skill label (Latin); {skillLower} is the lower-cased skill label (Latin).
   'ielts.planner.rightnow.learn.title': { en: 'Learn: {title}', ar: 'تعلّم: {title}' },
   'ielts.planner.rightnow.learn.body_unit': {
-    en: 'A focused {skillLower} lesson — {blurb} Just enough to move one thing forward.',
-    ar: 'درس {skillLower} مركّز — {blurb} بس عشان تتقدّم شي واحد.',
+    en: 'A focused {skillLower} lesson - {blurb} Just enough to move one thing forward.',
+    ar: 'درس {skillLower} مركّز - {blurb} بس عشان تتقدّم شي واحد.',
   },
   'ielts.planner.rightnow.learn.body_generic': {
     en: 'One short {skillLower} lesson to keep momentum.',
@@ -131,8 +131,8 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'سوِّ قسم اختبار تجريبي كامل (أو اختبار تجريبي مصغّر)',
   },
   'ielts.planner.rightnow.mock.body': {
-    en: 'An hour is enough for a full Listening or Reading test under exam conditions — the single best way to build stamina and spot weak points. Mark it and note what to fix.',
-    ar: 'ساعة تكفي لاختبار Listening أو Reading كامل بظروف امتحان — أحسن طريقة وحدة تبني التحمّل وتكتشف نقاط الضعف. صحّحه ودوّن شنو تصلّح.',
+    en: 'An hour is enough for a full Listening or Reading test under exam conditions - the single best way to build stamina and spot weak points. Mark it and note what to fix.',
+    ar: 'ساعة تكفي لاختبار Listening أو Reading كامل بظروف امتحان - أحسن طريقة وحدة تبني التحمّل وتكتشف نقاط الضعف. صحّحه ودوّن شنو تصلّح.',
   },
   'ielts.planner.rightnow.mock.cta': { en: 'Go to mock exams', ar: 'روح للاختبارات التجريبية' },
 
@@ -170,12 +170,12 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
   // ─── Milestones ─────────────────────────────────────────────────────
   'ielts.planner.milestones.heading': { en: 'Milestones', ar: 'المحطّات' },
   'ielts.planner.milestone.plan_starts': {
-    en: 'Plan starts — first focus session',
-    ar: 'الخطة تبدأ — أول جلسة تركيز',
+    en: 'Plan starts - first focus session',
+    ar: 'الخطة تبدأ - أول جلسة تركيز',
   },
   'ielts.planner.milestone.midpoint': {
-    en: 'Mid-point check-in — re-take the diagnostic',
-    ar: 'مراجعة منتصف الطريق — أعد اختبار تحديد المستوى',
+    en: 'Mid-point check-in - re-take the diagnostic',
+    ar: 'مراجعة منتصف الطريق - أعد اختبار تحديد المستوى',
   },
   'ielts.planner.milestone.full_mock': { en: 'Full mock exam', ar: 'اختبار تجريبي كامل' },
   'ielts.planner.milestone.rest': {
@@ -189,31 +189,31 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
   // = phase name (from .phase_name_*). All numbers stay digits.
   'ielts.planner.block.week': { en: 'Week {n}', ar: 'الأسبوع {n}' },
   'ielts.planner.block.final_week': {
-    en: 'Final week — exam ready',
-    ar: 'الأسبوع الأخير — جاهز للامتحان',
+    en: 'Final week - exam ready',
+    ar: 'الأسبوع الأخير - جاهز للامتحان',
   },
   'ielts.planner.block.phase_week': { en: '{name} (week {start})', ar: '{name} (الأسبوع {start})' },
   'ielts.planner.block.phase_weeks': {
-    en: '{name} (weeks {start}–{end})',
-    ar: '{name} (الأسابيع {start}–{end})',
+    en: '{name} (weeks {start}-{end})',
+    ar: '{name} (الأسابيع {start}-{end})',
   },
 
   // Phase names (the 4-phase long-runway campaign).
   'ielts.planner.phase.name1': {
-    en: 'Phase 1 — Foundations & weak spots',
-    ar: 'المرحلة 1 — الأساسيات ونقاط الضعف',
+    en: 'Phase 1 - Foundations & weak spots',
+    ar: 'المرحلة 1 - الأساسيات ونقاط الضعف',
   },
   'ielts.planner.phase.name2': {
-    en: 'Phase 2 — Build technique across all four skills',
-    ar: 'المرحلة 2 — ابنِ الأسلوب في المهارات الأربع كلها',
+    en: 'Phase 2 - Build technique across all four skills',
+    ar: 'المرحلة 2 - ابنِ الأسلوب في المهارات الأربع كلها',
   },
   'ielts.planner.phase.name3': {
-    en: 'Phase 3 — Sharpen under time pressure',
-    ar: 'المرحلة 3 — اشحذ مهاراتك تحت ضغط الوقت',
+    en: 'Phase 3 - Sharpen under time pressure',
+    ar: 'المرحلة 3 - اشحذ مهاراتك تحت ضغط الوقت',
   },
   'ielts.planner.phase.name4': {
-    en: 'Phase 4 — Exam-ready & full mocks',
-    ar: 'المرحلة 4 — جاهز للامتحان واختبارات تجريبية كاملة',
+    en: 'Phase 4 - Exam-ready & full mocks',
+    ar: 'المرحلة 4 - جاهز للامتحان واختبارات تجريبية كاملة',
   },
 
   // Block notes. {list} = focus skill labels (Latin) joined by " and "; {primary}
@@ -280,8 +280,8 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'هذي الخطة دليل، مو ضمان.',
   },
   'ielts.planner.caveat.body': {
-    en: 'It adapts to your exam date and results, but real progress comes from consistent practice. Adjust the pace to fit your week — little and often beats cramming.',
-    ar: 'تتأقلم مع تاريخ امتحانك ونتائجك، بس التقدّم الحقيقي يجي من التدريب المستمر. ظبّط الإيقاع على أسبوعك — شوي وباستمرار أحسن من الحشو دفعة وحدة.',
+    en: 'It adapts to your exam date and results, but real progress comes from consistent practice. Adjust the pace to fit your week - little and often beats cramming.',
+    ar: 'تتأقلم مع تاريخ امتحانك ونتائجك، بس التقدّم الحقيقي يجي من التدريب المستمر. ظبّط الإيقاع على أسبوعك - شوي وباستمرار أحسن من الحشو دفعة وحدة.',
   },
   'ielts.planner.cta.weakest_plan': {
     en: 'See your weakest-first plan',

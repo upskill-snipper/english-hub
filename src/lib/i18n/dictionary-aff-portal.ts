@@ -1,5 +1,5 @@
 /**
- * Affiliate / partner-portal dictionary — `aff.*` namespace
+ * Affiliate / partner-portal dictionary - `aff.*` namespace
  * Bucket A · Tier-2b · authored 2026-05-17
  *
  * Covers the public /affiliate landing page and the authenticated
@@ -11,19 +11,19 @@
  *    signup option labels: copied BYTE-IDENTICAL from the curated
  *    human-English in dictionary-report-fix-may16b.ts and
  *    dictionary-placeholder-fix-may15.ts (those files mirror `ar` = `en`
- *    pending translation — this file supplies the real Khaleeji `ar`).
+ *    pending translation - this file supplies the real Khaleeji `ar`).
  *  • Portal "chrome" keys (dashboard / links / payouts / login / signup
  *    shells) had only path-fragment JUNK EN ("Title", "Heading", "Body")
  *    in dictionary-audit-fix.ts. That junk was NOT copied; on-brand
  *    British English was written here from the consuming components.
  *
- * `ar` is genuine Khaleeji (Gulf) throughout — partner-portal register,
+ * `ar` is genuine Khaleeji (Gulf) throughout - partner-portal register,
  * second person, conversational (voice of src/lib/eal/curriculum.ts),
  * never MSA / literal. Brand & technical nouns (The English Hub, Stripe,
  * PayPal, UTM, IGCSE, GCSE, AQA, Edexcel, OCR, Eduqas, KS3, EAL, PNG,
  * #ad) and {placeholders} are preserved verbatim.
  *
- * Merged into the master lookup() centrally by dictionary.ts — do not
+ * Merged into the master lookup() centrally by dictionary.ts - do not
  * import elsewhere.
  */
 
@@ -101,8 +101,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `20% على كل خطة تحوّلها، تنصرف شهرياً. بدون حد أدنى للزيارات، وبدون حصرية.`,
   },
   'aff.tiers.tier-2.description': {
-    en: `25% commission once you cross 10 paid referrals — automatic upgrade, no application.`,
-    ar: `عمولة 25% أول ما تتجاوز 10 إحالات مدفوعة — ترقية تلقائية، بدون ما تقدّم طلب.`,
+    en: `25% commission once you cross 10 paid referrals - automatic upgrade, no application.`,
+    ar: `عمولة 25% أول ما تتجاوز 10 إحالات مدفوعة - ترقية تلقائية، بدون ما تقدّم طلب.`,
   },
   'aff.tiers.tier-3.description': {
     en: `30% commission at 25 paid referrals, plus access to co-marketing slots in our newsletter.`,
@@ -170,8 +170,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `مين يقدر ينضم لبرنامج الشركاء؟`,
   },
   'aff.faq.eligibility.a': {
-    en: `Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify — there is no minimum follower count for Tier 1.`,
-    ar: `أي أحد عنده جمهور من طلاب إنجليزي GCSE/IGCSE بالمملكة المتحدة أو أهاليهم أو معلّميهم. المدرّسين الخصوصيّين وصنّاع المحتوى وموظّفي المدارس والمدوّنين كلهم مؤهّلين — ما فيه حد أدنى للمتابعين في المستوى الأول.`,
+    en: `Anyone with an audience of UK GCSE/IGCSE English students, parents or teachers. Tutors, content creators, school staff and bloggers all qualify - there is no minimum follower count for Tier 1.`,
+    ar: `أي أحد عنده جمهور من طلاب إنجليزي GCSE/IGCSE بالمملكة المتحدة أو أهاليهم أو معلّميهم. المدرّسين الخصوصيّين وصنّاع المحتوى وموظّفي المدارس والمدوّنين كلهم مؤهّلين - ما فيه حد أدنى للمتابعين في المستوى الأول.`,
   },
   'aff.faq.payouts.q': {
     en: `How and when are commissions paid?`,
@@ -191,8 +191,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
   },
   'aff.faq.renewals.q': { en: `Do I earn on plan renewals?`, ar: `أكسب على تجديدات الخطة؟` },
   'aff.faq.renewals.a': {
-    en: `Yes — commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.`,
-    ar: `إي — العمولة تنصرف طول عمر الاشتراك، ما دام العميل فعّال وانت محافظ على وضعك كشريك بحالة سليمة.`,
+    en: `Yes - commission is paid on the lifetime of the subscription for as long as the customer remains active and you remain an affiliate in good standing.`,
+    ar: `إي - العمولة تنصرف طول عمر الاشتراك، ما دام العميل فعّال وانت محافظ على وضعك كشريك بحالة سليمة.`,
   },
   'aff.faq.tier_upgrade.q': { en: `How do I move up a tier?`, ar: `كيف أطلع مستوى أعلى؟` },
   'aff.faq.tier_upgrade.a': {
@@ -214,8 +214,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `باقي لك {n} إحالة توصل {tier}`,
   },
   'aff.dashboard.top_tier_reached': {
-    en: `You've reached the top tier — nicely done.`,
-    ar: `وصلت لأعلى مستوى — عاش، شغل نظيف.`,
+    en: `You've reached the top tier - nicely done.`,
+    ar: `وصلت لأعلى مستوى - عاش، شغل نظيف.`,
   },
   'aff.dashboard.current_rate': { en: `current rate`, ar: `النسبة الحالية` },
   'aff.dashboard.next_rate': { en: `next rate`, ar: `النسبة الجاية` },
@@ -227,8 +227,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `روابط التتبّع الأكثر ربحاً عندك`,
   },
   'aff.dashboard.no_data': {
-    en: `No data yet — share a link to start tracking.`,
-    ar: `ما فيه بيانات بعد — شارك رابط وبيبدأ التتبّع.`,
+    en: `No data yet - share a link to start tracking.`,
+    ar: `ما فيه بيانات بعد - شارك رابط وبيبدأ التتبّع.`,
   },
   'aff.dashboard.col_link': { en: `Link`, ar: `الرابط` },
   'aff.dashboard.col_clicks': { en: `Clicks`, ar: `النقرات` },
@@ -311,8 +311,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `رمز الفرز ورقم الحساب`,
   },
   'aff.payouts.bank_demo_hint': {
-    en: `Demo only — no real bank details are stored.`,
-    ar: `تجريبي بس — ما نخزّن أي بيانات بنكية حقيقية.`,
+    en: `Demo only - no real bank details are stored.`,
+    ar: `تجريبي بس - ما نخزّن أي بيانات بنكية حقيقية.`,
   },
   'aff.payouts.save_payment_method': { en: `Save payment method`, ar: `احفظ طريقة الدفع` },
   'aff.payouts.saved': { en: `Saved`, ar: `انحفظ` },
@@ -340,8 +340,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `كل قالب فيه`,
   },
   'aff.resources.copy_templates_subtitle_tail': {
-    en: `placeholder — replace it with your tracking link.`,
-    ar: `خانة بديلة — بدّلها برابط التتبّع حقّك.`,
+    en: `placeholder - replace it with your tracking link.`,
+    ar: `خانة بديلة - بدّلها برابط التتبّع حقّك.`,
   },
   'aff.resources.copy': { en: `Copy`, ar: `انسخ` },
   'aff.resources.copied': { en: `Copied`, ar: `تم النسخ` },
@@ -363,8 +363,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `منشور سوشال قصير`,
   },
   'aff.resources.copy.short_social.body': {
-    en: `My students keep telling me about The English Hub — clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}`,
-    ar: `طلابي ما يخلّون يكلّموني عن The English Hub — مراجعة GCSE وIGCSE نظيفة، مخصّصة حسب مجلس الامتحان، وإجابات نموذجية مصحّحة صح. يستاهل تشوفه: {link}`,
+    en: `My students keep telling me about The English Hub - clean GCSE & IGCSE revision, exam-board specific, properly graded model answers. Worth a look: {link}`,
+    ar: `طلابي ما يخلّون يكلّموني عن The English Hub - مراجعة GCSE وIGCSE نظيفة، مخصّصة حسب مجلس الامتحان، وإجابات نموذجية مصحّحة صح. يستاهل تشوفه: {link}`,
   },
   'aff.resources.copy.newsletter.label': { en: `Newsletter blurb`, ar: `فقرة للنشرة البريدية` },
   'aff.resources.copy.newsletter.body': {
@@ -376,8 +376,8 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     ar: `فقرة افتتاحية لمراجعة بالمدوّنة`,
   },
   'aff.resources.copy.blog_review.body': {
-    en: `I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out — and where it does not yet match the competition. {link}`,
-    ar: `قضّيت الأسابيع اللي راحت أجرّب The English Hub وأقارنه بثلاث من أكثر منصّات مراجعة إنجليزي GCSE اللي ينصحون فيها. هذا اللي برز لي — ووين لسّه ما يجاري المنافسين. {link}`,
+    en: `I've spent the last few weeks testing The English Hub against three of the most-recommended GCSE English revision platforms. Here is what stood out - and where it does not yet match the competition. {link}`,
+    ar: `قضّيت الأسابيع اللي راحت أجرّب The English Hub وأقارنه بثلاث من أكثر منصّات مراجعة إنجليزي GCSE اللي ينصحون فيها. هذا اللي برز لي - ووين لسّه ما يجاري المنافسين. {link}`,
   },
   'aff.resources.shot.dashboard_overview': {
     en: `Student dashboard overview`,
@@ -452,9 +452,9 @@ export const AFF_PORTAL_DICTIONARY: Dictionary = {
     en: `Under 1,000 followers / subscribers`,
     ar: `أقل من 1,000 متابع / مشترك`,
   },
-  'aff.signup.audience.1k_5k': { en: `1,000 – 5,000`, ar: `1,000 – 5,000` },
-  'aff.signup.audience.5k_25k': { en: `5,000 – 25,000`, ar: `5,000 – 25,000` },
-  'aff.signup.audience.25k_100k': { en: `25,000 – 100,000`, ar: `25,000 – 100,000` },
+  'aff.signup.audience.1k_5k': { en: `1,000 - 5,000`, ar: `1,000 - 5,000` },
+  'aff.signup.audience.5k_25k': { en: `5,000 - 25,000`, ar: `5,000 - 25,000` },
+  'aff.signup.audience.25k_100k': { en: `25,000 - 100,000`, ar: `25,000 - 100,000` },
   'aff.signup.audience.over_100k': { en: `Over 100,000`, ar: `أكثر من 100,000` },
   'aff.signup.niche.english_tutoring': { en: `English tutoring`, ar: `تدريس إنجليزي خصوصي` },
   'aff.signup.niche.school_classroom': {

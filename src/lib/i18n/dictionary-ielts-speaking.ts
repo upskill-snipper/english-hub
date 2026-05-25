@@ -3,9 +3,9 @@
 // the transcript box, submit/loading/error states, and the results labels) for
 // src/app/ielts/speaking/page.tsx and its _components/Recorder.tsx.
 //
-// SCOPE: this shard translates the *interface* only. The practice CONTENT — the
+// SCOPE: this shard translates the *interface* only. The practice CONTENT - the
 // speaking cue cards / questions / prompts (./speaking-cues.ts) and the AI
-// feedback text returned by /api/ielts/speaking-feedback — stays English and has
+// feedback text returned by /api/ielts/speaking-feedback - stays English and has
 // NO keys here. IELTS is an English exam, so the surrounding Arabic chrome wraps
 // English content.
 //
@@ -26,18 +26,18 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
 
   // ─── Hero ──────────────────────────────────────────────────────────────
   'ielts.speaking.hero.eyebrow': {
-    en: 'IELTS Speaking · Parts 1–3',
-    ar: 'IELTS Speaking · Part 1–3',
+    en: 'IELTS Speaking · Parts 1-3',
+    ar: 'IELTS Speaking · Part 1-3',
   },
   'ielts.speaking.hero.title': {
     en: 'IELTS Speaking Practice',
     ar: 'تدريب IELTS Speaking',
   },
   'ielts.speaking.hero.subtitle': {
-    en: 'Choose a question set, record yourself for private self-review, then type what you said to get an estimated band for each of the four IELTS Speaking criteria — Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.',
-    ar: 'اختر مجموعة أسئلة، سجّل نفسك لمراجعة خاصة، وبعدها اكتب اللي قلته عشان تاخذ تقدير Band لكل معيار من معايير IELTS Speaking الأربعة — Fluency & Coherence وLexical Resource وGrammatical Range & Accuracy وPronunciation.',
+    en: 'Choose a question set, record yourself for private self-review, then type what you said to get an estimated band for each of the four IELTS Speaking criteria - Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.',
+    ar: 'اختر مجموعة أسئلة، سجّل نفسك لمراجعة خاصة، وبعدها اكتب اللي قلته عشان تاخذ تقدير Band لكل معيار من معايير IELTS Speaking الأربعة - Fluency & Coherence وLexical Resource وGrammatical Range & Accuracy وPronunciation.',
   },
-  // Wave-1 disclaimer in the hero — split so the bold lead can stay separate.
+  // Wave-1 disclaimer in the hero - split so the bold lead can stay separate.
   'ielts.speaking.hero.notice.lead': {
     en: 'Wave 1, transcript-based.',
     ar: 'Wave 1، مبني على النص.',
@@ -63,8 +63,8 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
     ar: 'عندك 60 ثانية للتحضير، وبعدها تتكلم لين 2 دقيقة. غطِّ كل النقاط.',
   },
   'ielts.speaking.prompt.desc.other': {
-    en: 'Answer each question as you would in the real interview — aim for full, developed answers.',
-    ar: 'جاوب على كل سؤال مثل ما بتسوي في المقابلة الحقيقية — خلِّ إجاباتك كاملة ومتوسّعة.',
+    en: 'Answer each question as you would in the real interview - aim for full, developed answers.',
+    ar: 'جاوب على كل سؤال مثل ما بتسوي في المقابلة الحقيقية - خلِّ إجاباتك كاملة ومتوسّعة.',
   },
 
   // ─── Part 2 timer ──────────────────────────────────────────────────────────
@@ -72,8 +72,8 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
   'ielts.speaking.timer.heading.idle': { en: 'Ready when you are', ar: 'جاهز متى ما تبي' },
   'ielts.speaking.timer.heading.prep': { en: 'Preparation time', ar: 'وقت التحضير' },
   'ielts.speaking.timer.heading.speaking': {
-    en: 'Speaking — your long turn',
-    ar: 'تتكلم — حديثك الطويل',
+    en: 'Speaking - your long turn',
+    ar: 'تتكلم - حديثك الطويل',
   },
   'ielts.speaking.timer.heading.done': { en: 'Time complete', ar: 'انتهى الوقت' },
   // Phase helper lines (60s / 2-minute kept numeric)
@@ -113,8 +113,8 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
   'ielts.speaking.recorder.btn.discard': { en: 'Discard', ar: 'احذف' },
   // Self-review note under the controls
   'ielts.speaking.recorder.note': {
-    en: 'Recording is for your own self-review only — your audio stays on this device and is never uploaded. Listen back, then type what you said below so we can give you band feedback.',
-    ar: 'التسجيل لمراجعتك الذاتية بس — الصوت مالك يبقى على هذا الجهاز وما يترفع أبداً. اسمعه، وبعدها اكتب اللي قلته تحت عشان نعطيك تقييم Band.',
+    en: 'Recording is for your own self-review only - your audio stays on this device and is never uploaded. Listen back, then type what you said below so we can give you band feedback.',
+    ar: 'التسجيل لمراجعتك الذاتية بس - الصوت مالك يبقى على هذا الجهاز وما يترفع أبداً. اسمعه، وبعدها اكتب اللي قلته تحت عشان نعطيك تقييم Band.',
   },
   // Unsupported-browser notice
   'ielts.speaking.recorder.unsupported.title': {
@@ -122,8 +122,8 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
     ar: 'التسجيل مو متاح في هذا المتصفح',
   },
   'ielts.speaking.recorder.unsupported.body': {
-    en: 'No problem — you can still type or paste what you said in the transcript box below and get full band feedback. For audio self-review, try a recent version of Chrome, Edge, Firefox or Safari.',
-    ar: 'ما يخالف — تقدر تكتب أو تلصق اللي قلته في خانة النص تحت وتاخذ تقييم Band كامل. لمراجعة الصوت، جرّب نسخة حديثة من Chrome أو Edge أو Firefox أو Safari.',
+    en: 'No problem - you can still type or paste what you said in the transcript box below and get full band feedback. For audio self-review, try a recent version of Chrome, Edge, Firefox or Safari.',
+    ar: 'ما يخالف - تقدر تكتب أو تلصق اللي قلته في خانة النص تحت وتاخذ تقييم Band كامل. لمراجعة الصوت، جرّب نسخة حديثة من Chrome أو Edge أو Firefox أو Safari.',
   },
   // Permission/error messages
   'ielts.speaking.recorder.error.denied': {
@@ -145,21 +145,21 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
 
   // ─── Transcript + submit ───────────────────────────────────────────────────
   'ielts.speaking.transcript.label': {
-    en: 'Type or paste what you said — we’ll give band feedback (auto-transcription coming soon)',
-    ar: 'اكتب أو الصق اللي قلته — بنعطيك تقييم Band (التفريغ التلقائي قريب)',
+    en: 'Type or paste what you said - we’ll give band feedback (auto-transcription coming soon)',
+    ar: 'اكتب أو الصق اللي قلته - بنعطيك تقييم Band (التفريغ التلقائي قريب)',
   },
   'ielts.speaking.transcript.placeholder': {
-    en: 'Write out, as closely as you can, what you actually said. Include your hesitations (um, you know) if you noticed them — it helps the fluency estimate be realistic.',
-    ar: 'اكتب، على قد ما تقدر، اللي قلته فعلاً. حط ترددك (um، you know) إذا انتبهت له — هذا يخلّي تقدير Fluency واقعي.',
+    en: 'Write out, as closely as you can, what you actually said. Include your hesitations (um, you know) if you noticed them - it helps the fluency estimate be realistic.',
+    ar: 'اكتب، على قد ما تقدر، اللي قلته فعلاً. حط ترددك (um، you know) إذا انتبهت له - هذا يخلّي تقدير Fluency واقعي.',
   },
-  // Word counter: "{n} word" / "{n} words" — number stays a digit.
+  // Word counter: "{n} word" / "{n} words" - number stays a digit.
   'ielts.speaking.transcript.word': { en: 'word', ar: 'كلمة' },
   'ielts.speaking.transcript.words': { en: 'words', ar: 'كلمة' },
 
   // Submit-row helper + button
   'ielts.speaking.submit.helper': {
-    en: 'This gives an AI band estimate from your transcript — not an official IELTS result.',
-    ar: 'هذا يعطيك تقدير Band بالذكاء الاصطناعي من النص مالك — مو نتيجة IELTS رسمية.',
+    en: 'This gives an AI band estimate from your transcript - not an official IELTS result.',
+    ar: 'هذا يعطيك تقدير Band بالذكاء الاصطناعي من النص مالك - مو نتيجة IELTS رسمية.',
   },
   'ielts.speaking.submit.assessing': { en: 'Assessing…', ar: 'يقيّم…' },
   'ielts.speaking.submit.btn': { en: 'Get band feedback', ar: 'خذ تقييم Band' },
@@ -205,8 +205,8 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
   // Criteria breakdown
   'ielts.speaking.results.criteria.title': { en: 'Criteria breakdown', ar: 'تفصيل المعايير' },
   'ielts.speaking.results.criteria.desc': {
-    en: 'Each criterion is scored 0–9. Pronunciation is a transcript-based proxy in this version.',
-    ar: 'كل معيار يتقيّم من 0–9. Pronunciation في هذي النسخة مؤشر مبني على النص.',
+    en: 'Each criterion is scored 0-9. Pronunciation is a transcript-based proxy in this version.',
+    ar: 'كل معيار يتقيّم من 0-9. Pronunciation في هذي النسخة مؤشر مبني على النص.',
   },
   // Strengths
   'ielts.speaking.results.strengths.title': { en: 'What you did well', ar: 'الشي اللي سويته زين' },
@@ -221,13 +221,13 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
     ar: 'عبارات ترفع مستوى هذي الإجابة',
   },
   'ielts.speaking.results.pointers.desc': {
-    en: 'Example language for this topic — adapt it into your own words.',
-    ar: 'أمثلة لغوية لهذا الموضوع — طوّعها بأسلوبك.',
+    en: 'Example language for this topic - adapt it into your own words.',
+    ar: 'أمثلة لغوية لهذا الموضوع - طوّعها بأسلوبك.',
   },
   // Results actions
   'ielts.speaking.results.action.helper': {
-    en: 'AI estimate — practice guidance, not a guarantee.',
-    ar: 'تقدير بالذكاء الاصطناعي — توجيه للتدريب، مو ضمان.',
+    en: 'AI estimate - practice guidance, not a guarantee.',
+    ar: 'تقدير بالذكاء الاصطناعي - توجيه للتدريب، مو ضمان.',
   },
   'ielts.speaking.results.action.try_again': { en: 'Try another answer', ar: 'جرّب إجابة ثانية' },
 

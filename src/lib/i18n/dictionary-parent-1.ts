@@ -1,5 +1,5 @@
 /**
- * Parent dictionary — part 1 of 2 (Bucket A, Tier-2).
+ * Parent dictionary - part 1 of 2 (Bucket A, Tier-2).
  *
  * Covers the FIRST alphabetical half of the `parent.*` namespace
  * (`parent.account` … `parent.linked_child`). Part 2 picks up from
@@ -8,12 +8,12 @@
  * EN authored fresh against the consuming parent pages/components
  * (the prior `dictionary-audit-fix.ts` values for these keys were
  * placeholder junk and were NOT copied). Tone: plain, warm and
- * reassuring — these screens are for parents tracking a child's
+ * reassuring - these screens are for parents tracking a child's
  * GCSE/IGCSE English revision.
  *
  * Khaleeji AR uses a natural Gulf register consistent with
  * `src/lib/eal/curriculum.ts` (e.g. وايد، اللي، تقدر، خلّ، نبّهك)
- * — not MSA, not literal, not clinical.
+ * - not MSA, not literal, not clinical.
  *
  * Screenshot-fixes keys that already carry genuine Khaleeji
  * (`ar !== en`) are intentionally omitted: avg_quiz_score,
@@ -43,8 +43,8 @@ export const PARENT_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'التصحيح يشتغل عبر مزوّد ذكاء اصطناعي موثوق وضمن اتفاقية بيانات صارمة. شغل طفلك ما يُستخدم أبدًا لتدريب نماذج الذكاء الاصطناعي.',
   },
   'parent.ai_a_what_sees': {
-    en: 'Only the essay or answer your child submits for feedback — never their name, email or any account details.',
-    ar: 'بس المقال أو الإجابة اللي يرسلها طفلك عشان ياخذ ملاحظات — أبدًا ما يشوف اسمه ولا إيميله ولا أي تفاصيل حساب.',
+    en: 'Only the essay or answer your child submits for feedback - never their name, email or any account details.',
+    ar: 'بس المقال أو الإجابة اللي يرسلها طفلك عشان ياخذ ملاحظات - أبدًا ما يشوف اسمه ولا إيميله ولا أي تفاصيل حساب.',
   },
   'parent.ai_explainer_link': {
     en: 'Read how AI marking works',
@@ -82,8 +82,8 @@ export const PARENT_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'تفصيل واضح للاختبارات والقصائد والتقدّم',
   },
   'parent.benefit_read_only': {
-    en: "A safe, read-only view — you can't change your child's work",
-    ar: 'عرض آمن للقراءة فقط — ما تقدر تعدّل شغل طفلك',
+    en: "A safe, read-only view - you can't change your child's work",
+    ar: 'عرض آمن للقراءة فقط - ما تقدر تعدّل شغل طفلك',
   },
   'parent.benefit_weekly_reports': {
     en: 'A weekly progress email straight to your inbox',

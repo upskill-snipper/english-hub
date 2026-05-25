@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 24) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 24) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across two
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — methods to restoration
+// which-paragraph (Passage 2) and Matching Features - methods to restoration
 // techniques (Passage 3), alongside the usual mix of True/False/Not Given,
 // multiple choice and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_24: ReadingTest[] = [
   {
     id: 'rd-academic-024',
-    title: 'Academic Reading — Practice Test 24',
+    title: 'Academic Reading - Practice Test 24',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -34,7 +34,7 @@ export const READING_SET_24: ReadingTest[] = [
 
 The maps of the ancient and medieval world were rarely meant to show what a traveller would actually see. Many were diagrams of meaning rather than guides to distance. A famous example is the medieval European world map that placed the holy city of Jerusalem at the very centre of the earth, with the known continents arranged symmetrically around it and unknown lands filled in with monsters and marvels. Such maps were never wrong by the standards of their makers, because they were not trying to be accurate in the modern sense; they expressed how the world was understood to be ordered, not how far one place lay from another.
 
-The shift towards measurement began in earnest when sailors needed to know not just the shape of a coast but their own position upon the open sea. Latitude, the distance north or south of the equator, had long been simple enough to find: one had only to measure the height of the sun at noon or of certain stars at night. Longitude, the east–west position, was a far crueller problem. Because the earth turns, the local time at any place depends on how far east or west it lies, so in principle a navigator who knew the time both at home and at the ship's present location could convert the difference into a distance. The difficulty was keeping accurate home time on a heaving, damp deck through months at sea, when the pendulum clocks of the age were hopelessly disturbed by the motion.
+The shift towards measurement began in earnest when sailors needed to know not just the shape of a coast but their own position upon the open sea. Latitude, the distance north or south of the equator, had long been simple enough to find: one had only to measure the height of the sun at noon or of certain stars at night. Longitude, the east-west position, was a far crueller problem. Because the earth turns, the local time at any place depends on how far east or west it lies, so in principle a navigator who knew the time both at home and at the ship's present location could convert the difference into a distance. The difficulty was keeping accurate home time on a heaving, damp deck through months at sea, when the pendulum clocks of the age were hopelessly disturbed by the motion.
 
 The eventual answer was mechanical rather than astronomical. After decades of patient work, an English clockmaker built a sealed, spring-driven timepiece, later called a chronometer, that kept good time despite the rolling of a ship and the swings of temperature on a long voyage. Carrying such a clock, a navigator could read off the home time at a glance, compare it with local noon, and fix longitude with an accuracy that had eluded the finest minds for two hundred years. Maps of the world's coastlines could at last be assembled from positions that were genuinely known rather than guessed, and the great blank distortions of earlier sea charts slowly disappeared.
 
@@ -48,10 +48,10 @@ The most recent transformation has come from above. A constellation of satellite
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Binding a nation together with triangles' },
-              { key: 'ii', label: 'A clock that solved the east–west problem' },
+              { key: 'ii', label: 'A clock that solved the east-west problem' },
               { key: 'iii', label: 'The bold ambition behind every map' },
               { key: 'iv', label: 'How printing spread maps to ordinary people' },
               { key: 'v', label: 'Early maps as pictures of meaning, not distance' },
@@ -68,7 +68,7 @@ The most recent transformation has come from above. A constellation of satellite
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'A frames map-making as "a quiet act of ambition" to shrink the earth onto a sheet (iii). B argues early maps "were diagrams of meaning rather than guides to distance" (v). C sets out why "Longitude, the east–west position, was a far crueller problem" at sea (vii). D describes the chronometer that let navigators "fix longitude" (ii). E explains triangulation binding "an entire nation... in a rigid lattice" (i). F covers satellites and GIS, the map as "a living database" (vi). Heading iv (printing for ordinary people) and heading viii (first explorers to circle the globe) are distractors never discussed.',
+              'A frames map-making as "a quiet act of ambition" to shrink the earth onto a sheet (iii). B argues early maps "were diagrams of meaning rather than guides to distance" (v). C sets out why "Longitude, the east-west position, was a far crueller problem" at sea (vii). D describes the chronometer that let navigators "fix longitude" (ii). E explains triangulation binding "an entire nation... in a rigid lattice" (i). F covers satellites and GIS, the map as "a living database" (vi). Heading iv (printing for ordinary people) and heading viii (first explorers to circle the globe) are distractors never discussed.',
           },
           {
             id: 'rd-024-p1-q2',
@@ -166,7 +166,7 @@ The clearest evidence for the importance of sleep comes, paradoxically, from goi
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has five paragraphs, A–E. Which paragraph contains the following information? Write the correct letter, A–E. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has five paragraphs, A-E. Which paragraph contains the following information? Write the correct letter, A-E. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -296,13 +296,13 @@ The clearest evidence for the importance of sleep comes, paradoxically, from goi
 
 When the surrounding water grows too warm, even by a degree or two for a sustained period, the relationship breaks down. The stressed polyps expel the algae living within them, and because those algae supply both colour and most of the coral's nourishment, the coral turns a stark, ghostly white and begins to starve. This is the process known as bleaching. A bleached coral is not yet dead, and if cooler conditions return quickly the algae can recolonise and the coral may recover. But if the heat persists, the starving colonies die, and a reef that took centuries to grow can be reduced to rubble within a single hot season. As ocean temperatures climb, such events have grown more frequent and more severe, and the search for ways to help reefs recover has become urgent.
 
-The oldest and most widely used response is a technique often called coral gardening. Small fragments are broken from healthy colonies—corals naturally regrow from such pieces—and are tied to underwater frames or ropes in sheltered nurseries, where they grow far faster than they would on an open reef exposed to predators and competition. Once the fragments have grown large enough, divers carry them out and cement them onto damaged reef, much as a gardener raises seedlings in trays before planting them out. The method is simple and effective, but it has a serious limitation: because every fragment is a clone of its parent, a garden raised this way may contain very little genetic variety, leaving the replanted reef no better able to withstand heat than the corals that were lost.
+The oldest and most widely used response is a technique often called coral gardening. Small fragments are broken from healthy colonies-corals naturally regrow from such pieces-and are tied to underwater frames or ropes in sheltered nurseries, where they grow far faster than they would on an open reef exposed to predators and competition. Once the fragments have grown large enough, divers carry them out and cement them onto damaged reef, much as a gardener raises seedlings in trays before planting them out. The method is simple and effective, but it has a serious limitation: because every fragment is a clone of its parent, a garden raised this way may contain very little genetic variety, leaving the replanted reef no better able to withstand heat than the corals that were lost.
 
-A second technique aims to restore that lost variety by working with the way corals breed in the wild. Once a year, on cues of temperature and moonlight, many corals spawn at once, releasing eggs and sperm into the water in a synchronised mass event that turns the sea cloudy for a night or two. The timing is so precise that whole stretches of reef may release their spawn within the same hour, a spectacle that researchers wait all year to witness. They can collect this spawn at sea, allow it to fertilise, and rear the resulting larvae in protected tanks or floating enclosures, safe from the currents and predators that destroy almost all of them in nature. The young corals are then released, or settled onto tiles and placed on the reef. Because each larva is the product of two parents, this approach—known as larval reseeding—restocks a reef with genetically varied young, giving the new generation a far better chance of including individuals that can cope with a warmer sea.
+A second technique aims to restore that lost variety by working with the way corals breed in the wild. Once a year, on cues of temperature and moonlight, many corals spawn at once, releasing eggs and sperm into the water in a synchronised mass event that turns the sea cloudy for a night or two. The timing is so precise that whole stretches of reef may release their spawn within the same hour, a spectacle that researchers wait all year to witness. They can collect this spawn at sea, allow it to fertilise, and rear the resulting larvae in protected tanks or floating enclosures, safe from the currents and predators that destroy almost all of them in nature. The young corals are then released, or settled onto tiles and placed on the reef. Because each larva is the product of two parents, this approach-known as larval reseeding-restocks a reef with genetically varied young, giving the new generation a far better chance of including individuals that can cope with a warmer sea.
 
 The most ambitious and most debated idea goes a step further and tries to make corals tougher in advance. Known as assisted evolution, it seeks to speed up the natural process by which a population adapts to stress. In one version, researchers breed together corals that have survived previous heatwaves, in the hope that their offspring will inherit the same resilience. In another, the focus is on the algae rather than the coral: strains of the partner algae are cultured for many generations at higher temperatures, selecting those that tolerate heat best, so that corals stocked with these hardened partners may resist bleaching. Such methods raise difficult questions, since deliberately altering wild populations could carry unforeseen consequences, and even their supporters stress that no reef intervention can succeed unless the warming of the oceans is itself brought under control. Restoration can buy a threatened reef precious time, but it cannot, on its own, remove the cause of the danger.`,
         questions: [
-          // ── Matching Features — methods to restoration techniques (5 items) = 5 marks ──
+          // ── Matching Features - methods to restoration techniques (5 items) = 5 marks ──
           {
             id: 'rd-024-p3-q1',
             type: 'matching',

@@ -17,15 +17,15 @@
  * British Council / IELTS partner and NOT an accredited UCAS / university
  * recruitment agent. Every reference to those programmes is framed as
  * roadmap / intent ("نسعى لـ / نشتغل على / نتماشى مع"), and the explicit
- * "not currently…" caveat blocks are translated in full — NOT softened or
- * dropped — in the *.caveat keys below.
+ * "not currently…" caveat blocks are translated in full - NOT softened or
+ * dropped - in the *.caveat keys below.
  */
 
 import type { Dictionary } from './dictionary'
 
 export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   // ══════════════════════════════════════════════════════════════════════
-  // /ielts/partners — overview
+  // /ielts/partners - overview
   // ══════════════════════════════════════════════════════════════════════
 
   // ─── Hero ────────────────────────────────────────────────────────────
@@ -38,8 +38,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'وفّر لطلابك تحضير IELTS مع تصحيح بالذكاء الاصطناعي',
   },
   'ielts.partners.overview.hero.lede': {
-    en: 'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies — with bulk access, a centre dashboard, bilingual English / Arabic delivery and instant AI band feedback.',
-    ar: 'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم — مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة فورية للـ band بالذكاء الاصطناعي.',
+    en: 'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies - with bulk access, a centre dashboard, bilingual English / Arabic delivery and instant AI band feedback.',
+    ar: 'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم - مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة فورية للـ band بالذكاء الاصطناعي.',
   },
   'ielts.partners.overview.hero.cta_primary': {
     en: 'Talk to us about partnering',
@@ -61,7 +61,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     en: 'Education agencies',
     ar: 'وكالات التعليم',
   },
-  // Latin/Arabic bilingual pill — keep the dual-script form in both locales.
+  // Latin/Arabic bilingual pill - keep the dual-script form in both locales.
   'ielts.partners.overview.hero.pill_bilingual': {
     en: 'English / العربية',
     ar: 'English / العربية',
@@ -77,16 +77,16 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'منصّة تحضير IELTS متكاملة، جاهزة لدفعتك',
   },
   'ielts.partners.overview.offer.lede': {
-    en: 'Everything in the Wave 1 learning loop, packaged for institutional delivery — so your learners practise the whole Academic test and you can see how they are progressing.',
-    ar: 'كل شي في حلقة التعلّم Wave 1، مجهّز للتقديم المؤسسي — عشان طلابك يتدرّبون على امتحان Academic كامل وإنت تشوف شلون يتقدّمون.',
+    en: 'Everything in the Wave 1 learning loop, packaged for institutional delivery - so your learners practise the whole Academic test and you can see how they are progressing.',
+    ar: 'كل شي في حلقة التعلّم Wave 1، مجهّز للتقديم المؤسسي - عشان طلابك يتدرّبون على امتحان Academic كامل وإنت تشوف شلون يتقدّمون.',
   },
   'ielts.partners.overview.offer.bulk.title': {
     en: 'Bulk learner access',
     ar: 'وصول جماعي للطلاب',
   },
   'ielts.partners.overview.offer.bulk.body': {
-    en: 'Onboard a cohort in one step and assign the full IELTS Academic learning loop — diagnostic, study plan, four-skill practice and mock tests — to every learner under one agreement.',
-    ar: 'سجّل الدفعة بخطوة وحدة وعيّن حلقة تعلّم IELTS Academic الكاملة — التشخيص، وخطة الدراسة، وتدريب المهارات الأربع، والامتحانات التجريبية — لكل طالب تحت اتفاقية وحدة.',
+    en: 'Onboard a cohort in one step and assign the full IELTS Academic learning loop - diagnostic, study plan, four-skill practice and mock tests - to every learner under one agreement.',
+    ar: 'سجّل الدفعة بخطوة وحدة وعيّن حلقة تعلّم IELTS Academic الكاملة - التشخيص، وخطة الدراسة، وتدريب المهارات الأربع، والامتحانات التجريبية - لكل طالب تحت اتفاقية وحدة.',
   },
   'ielts.partners.overview.offer.dashboard.title': {
     en: 'A centre dashboard',
@@ -109,8 +109,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'تغذية راجعة فورية للـ band بالذكاء الاصطناعي',
   },
   'ielts.partners.overview.offer.feedback.body': {
-    en: 'Writing and Speaking responses are scored against the official band descriptors in seconds, with targeted next steps — extending your teachers rather than replacing them.',
-    ar: 'إجابات Writing و Speaking تتصحّح حسب واصفات الـ band الرسمية بثواني، مع خطوات تالية محدّدة — تعزّز مدرّسينك بدل ما تستبدلهم.',
+    en: 'Writing and Speaking responses are scored against the official band descriptors in seconds, with targeted next steps - extending your teachers rather than replacing them.',
+    ar: 'إجابات Writing و Speaking تتصحّح حسب واصفات الـ band الرسمية بثواني، مع خطوات تالية محدّدة - تعزّز مدرّسينك بدل ما تستبدلهم.',
   },
   'ielts.partners.overview.offer.progress.title': {
     en: 'Progress you can report on',
@@ -125,8 +125,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'امتحانات تجريبية كاملة ومؤقّتة',
   },
   'ielts.partners.overview.offer.mocks.body': {
-    en: 'Learners sit complete Academic mocks under exam conditions, so the jump to the real test feels familiar — and your centre gets a defensible predicted band.',
-    ar: 'الطلاب يقدّمون امتحانات Academic تجريبية كاملة بظروف الامتحان، عشان الانتقال للامتحان الحقيقي يصير مألوف — ومركزك يحصل على band متوقّع يقدر يدافع عنه.',
+    en: 'Learners sit complete Academic mocks under exam conditions, so the jump to the real test feels familiar - and your centre gets a defensible predicted band.',
+    ar: 'الطلاب يقدّمون امتحانات Academic تجريبية كاملة بظروف الامتحان، عشان الانتقال للامتحان الحقيقي يصير مألوف - ومركزك يحصل على band متوقّع يقدر يدافع عنه.',
   },
 
   // ─── Audiences section ───────────────────────────────────────────────
@@ -147,8 +147,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'IELTS للصفوف الثانوية والمدارس الدولية',
   },
   'ielts.partners.overview.audience.schools.body': {
-    en: 'Add a structured, AI-marked IELTS pathway alongside your existing English provision — ideal for GCC schools preparing students for English-medium universities.',
-    ar: 'ضِف مسار IELTS منظّم ومصحّح بالذكاء الاصطناعي جنب برنامج الإنجليزي الموجود عندك — مثالي لمدارس الخليج اللي تحضّر الطلاب لجامعات بلغة دراسة إنجليزية.',
+    en: 'Add a structured, AI-marked IELTS pathway alongside your existing English provision - ideal for GCC schools preparing students for English-medium universities.',
+    ar: 'ضِف مسار IELTS منظّم ومصحّح بالذكاء الاصطناعي جنب برنامج الإنجليزي الموجود عندك - مثالي لمدارس الخليج اللي تحضّر الطلاب لجامعات بلغة دراسة إنجليزية.',
   },
   'ielts.partners.overview.audience.schools.cta': {
     en: 'For schools',
@@ -209,16 +209,16 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'مبنية ثنائية اللغة لطلاب الخليج',
   },
   'ielts.partners.overview.why.bilingual.body': {
-    en: 'English / Arabic throughout — purpose-built for the schools, centres and agencies we work with across the Gulf.',
-    ar: 'إنجليزي / عربي من البداية للنهاية — مبنية خصّيصاً للمدارس والمراكز والوكالات اللي نشتغل معها بالخليج.',
+    en: 'English / Arabic throughout - purpose-built for the schools, centres and agencies we work with across the Gulf.',
+    ar: 'إنجليزي / عربي من البداية للنهاية - مبنية خصّيصاً للمدارس والمراكز والوكالات اللي نشتغل معها بالخليج.',
   },
   'ielts.partners.overview.why.loop.title': {
     en: 'A complete, repeatable loop',
     ar: 'حلقة متكاملة تتكرّر',
   },
   'ielts.partners.overview.why.loop.body': {
-    en: 'Diagnose, plan, practise, get feedback, mock, predict — one loop your learners run until they hit their target band.',
-    ar: 'تشخيص، وتخطيط، وتدريب، وتغذية راجعة، وامتحان تجريبي، وتوقّع — حلقة وحدة يكرّرها طلابك لين يوصلون للـ band المستهدف.',
+    en: 'Diagnose, plan, practise, get feedback, mock, predict - one loop your learners run until they hit their target band.',
+    ar: 'تشخيص، وتخطيط، وتدريب، وتغذية راجعة، وامتحان تجريبي، وتوقّع - حلقة وحدة يكرّرها طلابك لين يوصلون للـ band المستهدف.',
   },
 
   // ─── Roadmap section (INTENT framing) ────────────────────────────────
@@ -231,8 +231,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'المعايير اللي نشتغل عشان نوصلها',
   },
   'ielts.partners.overview.roadmap.lede': {
-    en: 'We hold ourselves to recognised standards as we grow. The accreditations and relationships below are routes we are actively pursuing — not affiliations we currently hold.',
-    ar: 'نلتزم بمعايير معترف فيها ونحن نكبر. الاعتمادات والعلاقات اللي تحت طُرق نسعى لها بجدّ — مو ارتباطات نملكها الحين.',
+    en: 'We hold ourselves to recognised standards as we grow. The accreditations and relationships below are routes we are actively pursuing - not affiliations we currently hold.',
+    ar: 'نلتزم بمعايير معترف فيها ونحن نكبر. الاعتمادات والعلاقات اللي تحت طُرق نسعى لها بجدّ - مو ارتباطات نملكها الحين.',
   },
   'ielts.partners.overview.roadmap.panel_eyebrow': {
     en: 'Pursuing & aligning to',
@@ -266,7 +266,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     en: 'We are pursuing relationships with UK universities and their recruitment teams, with the goal of supporting applicants through a recognised, standards-aligned preparation route.',
     ar: 'نسعى لعلاقات مع جامعات بريطانية وفِرَق الاستقطاب عندها، بهدف ندعم المتقدّمين من خلال مسار تحضير معترف فيه ومتماشي مع المعايير.',
   },
-  // CRITICAL caveat — translated in full, "not currently…" disclaimers kept.
+  // CRITICAL caveat - translated in full, "not currently…" disclaimers kept.
   'ielts.partners.overview.roadmap.caveat': {
     en: 'The English Hub is an independent IELTS preparation provider. We are not currently an official British Council or IELTS partner, and we are not an accredited UCAS or university recruitment agent. References to the British Council UK Agent Hub, the IELTS Partnership Programme and university recruitment relationships describe standards we align to and routes we are pursuing, and do not imply any existing affiliation, accreditation or endorsement.',
     ar: 'The English Hub مزوّد مستقل لتحضير IELTS. إحنا لسنا الحين شريك رسمي لـ British Council أو IELTS، ولسنا وكيل استقطاب معتمد لـ UCAS أو للجامعات. الإشارات إلى British Council UK Agent Hub و IELTS Partnership Programme وعلاقات الاستقطاب مع الجامعات توصف معايير نتماشى معها وطُرق نسعى لها، وما تعني وجود أي ارتباط أو اعتماد أو تأييد قائم.',
@@ -304,16 +304,16 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'هل The English Hub شريك رسمي لـ British Council أو IELTS؟',
   },
   'ielts.partners.overview.faq.a1': {
-    en: 'Not currently. The English Hub is an independent IELTS Academic preparation platform. Official British Council and IELTS partnerships are routes we are actively pursuing and standards we align our content and assessment practice to — we will only describe ourselves as holding an affiliation once it is formally granted.',
-    ar: 'مو الحين. The English Hub منصّة مستقلة لتحضير IELTS Academic. الشراكات الرسمية مع British Council و IELTS طُرق نسعى لها بجدّ ومعايير نتماشى معها بمحتوانا وممارسة التقييم عندنا — وما بنوصف نفسنا إننا نملك ارتباط إلا بعد ما يُمنح رسمياً.',
+    en: 'Not currently. The English Hub is an independent IELTS Academic preparation platform. Official British Council and IELTS partnerships are routes we are actively pursuing and standards we align our content and assessment practice to - we will only describe ourselves as holding an affiliation once it is formally granted.',
+    ar: 'مو الحين. The English Hub منصّة مستقلة لتحضير IELTS Academic. الشراكات الرسمية مع British Council و IELTS طُرق نسعى لها بجدّ ومعايير نتماشى معها بمحتوانا وممارسة التقييم عندنا - وما بنوصف نفسنا إننا نملك ارتباط إلا بعد ما يُمنح رسمياً.',
   },
   'ielts.partners.overview.faq.q2': {
     en: 'Do you deliver the IELTS test itself?',
     ar: 'هل تقدّمون امتحان IELTS نفسه؟',
   },
   'ielts.partners.overview.faq.a2': {
-    en: 'No. We provide preparation — diagnostic placement, a personalised study plan, four-skill practice, AI band feedback and full mock tests. The official IELTS test is sat through authorised test centres.',
-    ar: 'لا. إحنا نوفّر التحضير — تشخيص لتحديد المستوى، وخطة دراسة مخصّصة، وتدريب المهارات الأربع، وتغذية راجعة للـ band بالذكاء الاصطناعي، وامتحانات تجريبية كاملة. امتحان IELTS الرسمي يتقدّم من خلال مراكز امتحان معتمدة.',
+    en: 'No. We provide preparation - diagnostic placement, a personalised study plan, four-skill practice, AI band feedback and full mock tests. The official IELTS test is sat through authorised test centres.',
+    ar: 'لا. إحنا نوفّر التحضير - تشخيص لتحديد المستوى، وخطة دراسة مخصّصة، وتدريب المهارات الأربع، وتغذية راجعة للـ band بالذكاء الاصطناعي، وامتحانات تجريبية كاملة. امتحان IELTS الرسمي يتقدّم من خلال مراكز امتحان معتمدة.',
   },
   'ielts.partners.overview.faq.q3': {
     en: 'What does a partnership give our learners?',
@@ -362,8 +362,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'مسار IELTS يقدر قسمك يشغّله بثقة',
   },
   'ielts.partners.schools.hero.lede': {
-    en: 'Give your students AI-marked IELTS Academic preparation, give your teachers their time back, and give your coordinators a clear view of who is on track — bilingual in English and Arabic throughout.',
-    ar: 'وفّر لطلابك تحضير IELTS Academic مصحّح بالذكاء الاصطناعي، ورجّع لمدرّسينك وقتهم، واعطِ منسّقينك رؤية واضحة لمين على المسار — ثنائي اللغة إنجليزي وعربي من البداية للنهاية.',
+    en: 'Give your students AI-marked IELTS Academic preparation, give your teachers their time back, and give your coordinators a clear view of who is on track - bilingual in English and Arabic throughout.',
+    ar: 'وفّر لطلابك تحضير IELTS Academic مصحّح بالذكاء الاصطناعي، ورجّع لمدرّسينك وقتهم، واعطِ منسّقينك رؤية واضحة لمين على المسار - ثنائي اللغة إنجليزي وعربي من البداية للنهاية.',
   },
   'ielts.partners.schools.hero.cta_primary': {
     en: 'Book a pilot conversation',
@@ -414,8 +414,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'سجّل دفعة كاملة',
   },
   'ielts.partners.schools.features.cohort.body': {
-    en: 'Assign the full IELTS Academic learning loop — diagnostic, plan, four-skill practice and mocks — to every student under a single agreement.',
-    ar: 'عيّن حلقة تعلّم IELTS Academic الكاملة — التشخيص، والخطة، وتدريب المهارات الأربع، والامتحانات التجريبية — لكل طالب تحت اتفاقية وحدة.',
+    en: 'Assign the full IELTS Academic learning loop - diagnostic, plan, four-skill practice and mocks - to every student under a single agreement.',
+    ar: 'عيّن حلقة تعلّم IELTS Academic الكاملة - التشخيص، والخطة، وتدريب المهارات الأربع، والامتحانات التجريبية - لكل طالب تحت اتفاقية وحدة.',
   },
   'ielts.partners.schools.features.feedback.title': {
     en: 'Instant AI band feedback',
@@ -430,8 +430,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'لوحة تحكّم للمنسّق',
   },
   'ielts.partners.schools.features.dashboard.body': {
-    en: 'See starting bands, practice activity and predicted overall bands across the cohort — so you spot the students who need support before test day.',
-    ar: 'شوف الـ bands الابتدائية، ونشاط التدريب، والـ band الإجمالي المتوقّع عبر الدفعة — عشان تكتشف الطلاب اللي يحتاجون دعم قبل يوم الامتحان.',
+    en: 'See starting bands, practice activity and predicted overall bands across the cohort - so you spot the students who need support before test day.',
+    ar: 'شوف الـ bands الابتدائية، ونشاط التدريب، والـ band الإجمالي المتوقّع عبر الدفعة - عشان تكتشف الطلاب اللي يحتاجون دعم قبل يوم الامتحان.',
   },
   'ielts.partners.schools.features.bilingual.title': {
     en: 'Bilingual English / Arabic',
@@ -468,8 +468,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'ثلاث طُرق لنشر المنصّة',
   },
   'ielts.partners.schools.usecase.sixthform.label': {
-    en: 'Sixth form / Year 12–13',
-    ar: 'الصف الثانوي / السنة 12–13',
+    en: 'Sixth form / Year 12-13',
+    ar: 'الصف الثانوي / السنة 12-13',
   },
   'ielts.partners.schools.usecase.sixthform.headline': {
     en: 'A university-entry IELTS pathway',
@@ -544,8 +544,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'هل هذا يستبدل مدرّسينا؟',
   },
   'ielts.partners.schools.faq.a2': {
-    en: 'No — it extends them. Automatic marking and AI band feedback handle the repetitive load so your teachers can spend their time on instruction, feedback conversations and intervention.',
-    ar: 'لا — يعزّزهم. التصحيح الآلي وتغذية الـ band الراجعة بالذكاء الاصطناعي تتولّى الشغل المتكرّر عشان مدرّسينك يصرفون وقتهم على التدريس، وجلسات التغذية الراجعة، والتدخّل.',
+    en: 'No - it extends them. Automatic marking and AI band feedback handle the repetitive load so your teachers can spend their time on instruction, feedback conversations and intervention.',
+    ar: 'لا - يعزّزهم. التصحيح الآلي وتغذية الـ band الراجعة بالذكاء الاصطناعي تتولّى الشغل المتكرّر عشان مدرّسينك يصرفون وقتهم على التدريس، وجلسات التغذية الراجعة، والتدخّل.',
   },
   'ielts.partners.schools.faq.q3': {
     en: 'Is it suitable for Arabic-speaking students?',
@@ -578,8 +578,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'خلّ المتقدّمين اللي تنسّب لهم جاهزين لـ IELTS',
   },
   'ielts.partners.agencies.hero.lede': {
-    en: 'Give the students you are placing AI-marked IELTS Academic preparation and a credible predicted band — bilingual in English and Arabic, reachable from anywhere, with a roadmap aligned to recognised standards.',
-    ar: 'وفّر للطلاب اللي تنسّب لهم تحضير IELTS Academic مصحّح بالذكاء الاصطناعي و band متوقّع موثوق — ثنائي اللغة إنجليزي وعربي، يوصلون له من أي مكان، مع خارطة طريق متماشية مع معايير معترف فيها.',
+    en: 'Give the students you are placing AI-marked IELTS Academic preparation and a credible predicted band - bilingual in English and Arabic, reachable from anywhere, with a roadmap aligned to recognised standards.',
+    ar: 'وفّر للطلاب اللي تنسّب لهم تحضير IELTS Academic مصحّح بالذكاء الاصطناعي و band متوقّع موثوق - ثنائي اللغة إنجليزي وعربي، يوصلون له من أي مكان، مع خارطة طريق متماشية مع معايير معترف فيها.',
   },
   'ielts.partners.agencies.hero.cta_primary': {
     en: 'Talk to us about your applicants',
@@ -630,8 +630,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'وصول جماعي للمتقدّمين',
   },
   'ielts.partners.agencies.features.bulk.body': {
-    en: 'Enrol the students you are placing in one step and give each the full IELTS Academic learning loop — diagnostic, plan, practice and mocks.',
-    ar: 'سجّل الطلاب اللي تنسّب لهم بخطوة وحدة واعطِ كل واحد حلقة تعلّم IELTS Academic الكاملة — التشخيص، والخطة، والتدريب، والامتحانات التجريبية.',
+    en: 'Enrol the students you are placing in one step and give each the full IELTS Academic learning loop - diagnostic, plan, practice and mocks.',
+    ar: 'سجّل الطلاب اللي تنسّب لهم بخطوة وحدة واعطِ كل واحد حلقة تعلّم IELTS Academic الكاملة - التشخيص، والخطة، والتدريب، والامتحانات التجريبية.',
   },
   'ielts.partners.agencies.features.evidence.title': {
     en: 'Predicted band evidence',
@@ -753,7 +753,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     en: 'Pursuing UK university recruitment relationships',
     ar: 'نسعى لعلاقات استقطاب مع جامعات بريطانية',
   },
-  // CRITICAL caveat — translated in full, "not currently…" disclaimers kept.
+  // CRITICAL caveat - translated in full, "not currently…" disclaimers kept.
   'ielts.partners.agencies.standards.caveat': {
     en: 'The English Hub is an independent IELTS preparation provider. We are not currently an official British Council or IELTS partner, and we are not an accredited UCAS or university recruitment agent. References to the British Council UK Agent Hub, the IELTS Partnership Programme and university recruitment relationships describe standards we align to and routes we are pursuing, and do not imply any existing affiliation, accreditation or endorsement.',
     ar: 'The English Hub مزوّد مستقل لتحضير IELTS. إحنا لسنا الحين شريك رسمي لـ British Council أو IELTS، ولسنا وكيل استقطاب معتمد لـ UCAS أو للجامعات. الإشارات إلى British Council UK Agent Hub و IELTS Partnership Programme وعلاقات الاستقطاب مع الجامعات توصف معايير نتماشى معها وطُرق نسعى لها، وما تعني وجود أي ارتباط أو اعتماد أو تأييد قائم.',
@@ -791,8 +791,8 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     ar: 'هل The English Hub وكيل استقطاب جامعي معتمد؟',
   },
   'ielts.partners.agencies.faq.a1': {
-    en: 'No. The English Hub is an independent IELTS preparation platform, not a UCAS or university recruitment agent. We support the preparation side — getting applicants IELTS-ready — and we describe any recruitment or accreditation routes we are pursuing as exactly that: routes we are pursuing, not affiliations we hold.',
-    ar: 'لا. The English Hub منصّة مستقلة لتحضير IELTS، مو وكيل استقطاب لـ UCAS أو للجامعات. إحنا ندعم جانب التحضير — نخلّي المتقدّمين جاهزين لـ IELTS — ونوصف أي طُرق استقطاب أو اعتماد نسعى لها بالضبط كذا: طُرق نسعى لها، مو ارتباطات نملكها.',
+    en: 'No. The English Hub is an independent IELTS preparation platform, not a UCAS or university recruitment agent. We support the preparation side - getting applicants IELTS-ready - and we describe any recruitment or accreditation routes we are pursuing as exactly that: routes we are pursuing, not affiliations we hold.',
+    ar: 'لا. The English Hub منصّة مستقلة لتحضير IELTS، مو وكيل استقطاب لـ UCAS أو للجامعات. إحنا ندعم جانب التحضير - نخلّي المتقدّمين جاهزين لـ IELTS - ونوصف أي طُرق استقطاب أو اعتماد نسعى لها بالضبط كذا: طُرق نسعى لها، مو ارتباطات نملكها.',
   },
   'ielts.partners.agencies.faq.q2': {
     en: 'How does this help our placements?',

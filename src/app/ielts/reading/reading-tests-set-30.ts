@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 30) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 30) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — statements to people
+// which-paragraph (Passage 2) and Matching Features - statements to people
 // (Passage 3), alongside the usual mix of True/False/Not Given, multiple choice
 // and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_30: ReadingTest[] = [
   {
     id: 'rd-academic-030',
-    title: 'Academic Reading — Practice Test 30',
+    title: 'Academic Reading - Practice Test 30',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -36,11 +36,11 @@ The mould belonged to the genus Penicillium, and Fleming named the active substa
 
 The breakthrough came at the end of the 1930s from a team at the University of Oxford led by Howard Florey, an Australian, and Ernst Chain, a refugee chemist from Germany. Where Fleming had observed, they engineered. Through painstaking chemistry they managed to concentrate penicillin and to test it properly, first in mice deliberately infected with lethal bacteria and then, cautiously, in human patients. The early results were dramatic but also heartbreaking, because the drug was so scarce that supplies sometimes ran out before a patient was cured. The Oxford team even recycled penicillin from the urine of treated patients to stretch their meagre stocks. It was clear that the substance worked; what nobody yet knew was how to make enough of it.
 
-The answer lay across the Atlantic. With Britain at war and its laboratories under strain, Florey carried samples of the mould to the United States in 1941 and sought help from American laboratories and companies. There, researchers hunted for more productive strains of the mould — famously isolating a far better one from a mouldy melon in a market — and developed deep-tank fermentation, growing the Penicillium in great vats rather than on the surface of trays. Output soared. By the time of the Normandy landings in 1944, penicillin was being manufactured on an industrial scale and was saving the lives of wounded soldiers who, in any earlier war, would have died of infected wounds. A discovery born of an untidy bench had become one of the most important drugs in history.
+The answer lay across the Atlantic. With Britain at war and its laboratories under strain, Florey carried samples of the mould to the United States in 1941 and sought help from American laboratories and companies. There, researchers hunted for more productive strains of the mould - famously isolating a far better one from a mouldy melon in a market - and developed deep-tank fermentation, growing the Penicillium in great vats rather than on the surface of trays. Output soared. By the time of the Normandy landings in 1944, penicillin was being manufactured on an industrial scale and was saving the lives of wounded soldiers who, in any earlier war, would have died of infected wounds. A discovery born of an untidy bench had become one of the most important drugs in history.
 
 How do such drugs work? Antibiotics exploit the differences between bacterial cells and our own. Some, like penicillin itself, attack the tough outer wall that surrounds a bacterium, a structure that human cells simply do not possess; without it the bacterium swells and bursts. Others jam the machinery a microbe uses to copy its genetic material or to build the proteins it needs to live. Because they target features peculiar to bacteria, antibiotics can kill the invader while leaving the patient's own tissues largely untouched. This is also why they are useless against the common cold or influenza, which are caused by viruses, organisms built on entirely different lines that an antibiotic has no purchase on.
 
-There is, however, a sting in the tale. Bacteria reproduce with astonishing speed, and among the billions in any infection there will occasionally be one whose chance mutations let it survive a dose of the drug. When the others die, that survivor inherits the field and passes its resistance to its descendants. Each time an antibiotic is used — and especially each time it is used carelessly, in too small a dose or for an infection it cannot cure — the bacteria that withstand it are favoured. Over the decades this relentless selection has produced strains resistant to one drug after another, and the medical community now warns that some infections are again becoming difficult to treat. The remedy, ironically, is restraint: using these precious medicines sparingly, so that the very weapon Fleming stumbled upon is not blunted by overuse.`,
+There is, however, a sting in the tale. Bacteria reproduce with astonishing speed, and among the billions in any infection there will occasionally be one whose chance mutations let it survive a dose of the drug. When the others die, that survivor inherits the field and passes its resistance to its descendants. Each time an antibiotic is used - and especially each time it is used carelessly, in too small a dose or for an infection it cannot cure - the bacteria that withstand it are favoured. Over the decades this relentless selection has produced strains resistant to one drug after another, and the medical community now warns that some infections are again becoming difficult to treat. The remedy, ironically, is restraint: using these precious medicines sparingly, so that the very weapon Fleming stumbled upon is not blunted by overuse.`,
         questions: [
           // ── Matching Headings (6 items, 8 options → 2 distractors) = 6 marks ──
           {
@@ -48,7 +48,7 @@ There is, however, a sting in the tale. Bacteria reproduce with astonishing spee
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Turning a curiosity into a tested medicine' },
               { key: 'ii', label: 'How antibiotics tell friend from foe' },
@@ -143,7 +143,7 @@ There is, however, a sting in the tale. Bacteria reproduce with astonishing spee
               'Resistant strains of bacteria have become more common because antibiotics are sometimes used carelessly.',
             answer: 'true',
             explanation:
-              'Paragraph F states that "each time it is used carelessly, in too small a dose or for an infection it cannot cure — the bacteria that withstand it are favoured," producing resistant strains. This matches the statement, so it is True.',
+              'Paragraph F states that "each time it is used carelessly, in too small a dose or for an infection it cannot cure - the bacteria that withstand it are favoured," producing resistant strains. This matches the statement, so it is True.',
           },
         ],
       },
@@ -169,7 +169,7 @@ Not everyone is persuaded that the forest is quite so harmonious, and a note of 
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -303,11 +303,11 @@ The decisive change came from an engineer named John Smeaton, who rebuilt the Ed
 
 A tower, however sturdy, was only as good as the light it carried, and here the old open flame remained a weakness. The transformation of the light itself owed most to a French physicist, Augustin Fresnel, who in the 1820s devised a new kind of lens. A solid glass lens big enough to gather the light of a lighthouse lamp would have been impossibly heavy, so Fresnel replaced it with a set of concentric glass rings, each angled to bend the light, surrounding a central lens. This arrangement caught light that would otherwise have scattered uselessly into the sky or the sea and bent it into a single concentrated beam. The Fresnel lens, far lighter than a solid one yet vastly more powerful, could throw a beam many miles out to sea, and it was soon adopted in lighthouses across the world.
 
-The character of a lighthouse beam also became a language in its own right. Two lights burning steadily on the same coast can be confused, so engineers gave each station its own signature, a distinct rhythm of flashes and pauses produced by rotating the lens or screening the lamp. A navigator consulting a chart could identify exactly which light lay ahead from the pattern alone — so many flashes in so many seconds — and so fix the ship's position. The lighthouse thus did more than warn of danger; read correctly, it told a sailor where on the map the vessel actually was.
+The character of a lighthouse beam also became a language in its own right. Two lights burning steadily on the same coast can be confused, so engineers gave each station its own signature, a distinct rhythm of flashes and pauses produced by rotating the lens or screening the lamp. A navigator consulting a chart could identify exactly which light lay ahead from the pattern alone - so many flashes in so many seconds - and so fix the ship's position. The lighthouse thus did more than warn of danger; read correctly, it told a sailor where on the map the vessel actually was.
 
 For generations every lighthouse needed keepers, men who lived in these lonely towers and tended the lamp through the night, trimming wicks and winding the clockwork that turned the lens. It was an isolated and sometimes perilous life. In the twentieth century, however, the keepers' days were numbered. Electric lamps replaced oil, automatic switches and timers took over the routine of lighting and rotation, and eventually remote monitoring allowed a distant office to watch over a light that no longer needed a human hand. One by one the keepers were withdrawn, and the towers fell silent of human presence. The lights still turn, but the satellite and the electronic chart have taken over much of their old work, and the lighthouse, once the very emblem of safety at sea, has quietly become more a monument than a necessity.`,
         questions: [
-          // ── Matching Features — statements to people (5 items) = 5 marks ──
+          // ── Matching Features - statements to people (5 items) = 5 marks ──
           {
             id: 'rd-030-p3-q1',
             type: 'matching',

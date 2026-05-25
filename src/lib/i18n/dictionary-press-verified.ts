@@ -3,7 +3,7 @@
  *
  * Both pages pull their text through `tMany([...])` from the dictionary
  * chain. Earlier dictionary fills auto-derived these keys from path
- * segments — so `press.hero.title` ended up as `"Title"`, `press.hero.eyebrow`
+ * segments - so `press.hero.title` ended up as `"Title"`, `press.hero.eyebrow`
  * as `"Eyebrow"`, `about.verified.h1` as `"H1"`, etc. The two pages
  * therefore rendered visibly broken on prod.
  *
@@ -11,7 +11,7 @@
  * into the lookup chain BEFORE `AUDIT_FIX_DICTIONARY` so it wins on
  * collision.
  *
- * AR values mirror EN as a graceful fallback — far better than rendering
+ * AR values mirror EN as a graceful fallback - far better than rendering
  * lazy Arabic translations of "Eyebrow" or "Body Pre" to an Arabic
  * visitor. ar_translator can replace with proper Khaleeji on the next
  * translation sweep.
@@ -87,15 +87,15 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
 
   'press.facts.founded.label': { en: 'Founded', ar: 'Founded' },
   'press.facts.founded.year': {
-    en: '2024 — operating from 2026',
-    ar: '2024 — operating from 2026',
+    en: '2024 - operating from 2026',
+    ar: '2024 - operating from 2026',
   },
   'press.facts.founded.bootstrapped': {
     en: 'Bootstrapped. No outside investment to date.',
     ar: 'Bootstrapped. No outside investment to date.',
   },
 
-  // Key stats — the StatPlaceholder component renders "coming in 2026"
+  // Key stats - the StatPlaceholder component renders "coming in 2026"
   // copy regardless of these labels, but the labels still need to be real.
   'press.stats.eyebrow': { en: 'Key facts', ar: 'Key facts' },
   'press.stats.title': { en: 'At a glance', ar: 'At a glance' },
@@ -151,8 +151,8 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
   },
   'press.product.pricing.founding_strong': { en: 'Schools', ar: 'Schools' },
   'press.product.pricing.founding_body': {
-    en: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2–3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
-    ar: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2–3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
+    en: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2-3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
+    ar: 'Founding School Pilot from £4,000/year for the first 10 schools (recurring annual licence, locked for 2-3 years). Standard School Licence from £8,000/year thereafter. MAT and international group pricing on a custom annual licence.',
   },
   'press.product.pricing.gbp_note': {
     en: 'All prices are in GBP and exclude VAT where applicable.',
@@ -161,20 +161,20 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
 
   'press.product.distinct.h3': { en: 'What is distinctive', ar: 'What is distinctive' },
   'press.product.distinct.boards': {
-    en: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE — students see the materials matched to their actual board, not generic English content.',
-    ar: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE — students see the materials matched to their actual board, not generic English content.',
+    en: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE - students see the materials matched to their actual board, not generic English content.',
+    ar: 'Specification-aligned content for AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE - students see the materials matched to their actual board, not generic English content.',
   },
   'press.product.distinct.plain_english': {
     en: 'Plain English explanations of assessment objectives, mark-scheme language and exam structure for students who find existing revision sites dense or jargon-heavy.',
     ar: 'Plain English explanations of assessment objectives, mark-scheme language and exam structure for students who find existing revision sites dense or jargon-heavy.',
   },
   'press.product.distinct.board_selection': {
-    en: "A persistent board picker — once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
-    ar: "A persistent board picker — once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
+    en: "A persistent board picker - once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
+    ar: "A persistent board picker - once a student or school selects their exam board, every page on the platform re-skins to that board's specification.",
   },
   'press.product.distinct.childrens_code': {
-    en: 'Designed with the UK Age-Appropriate Design Code in mind — no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
-    ar: 'Designed with the UK Age-Appropriate Design Code in mind — no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
+    en: 'Designed with the UK Age-Appropriate Design Code in mind - no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
+    ar: 'Designed with the UK Age-Appropriate Design Code in mind - no third-party advertising, no tracking pixels, role-based access for school accounts and a published data-processing policy.',
   },
 
   // Press contact
@@ -213,8 +213,8 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
   },
   'press.kit.download_disabled': { en: 'Available on request', ar: 'Available on request' },
   'press.kit.download_title': {
-    en: 'Brand assets pack — coming soon. Email the press desk for the current files.',
-    ar: 'Brand assets pack — coming soon. Email the press desk for the current files.',
+    en: 'Brand assets pack - coming soon. Email the press desk for the current files.',
+    ar: 'Brand assets pack - coming soon. Email the press desk for the current files.',
   },
 
   // Recent coverage
@@ -261,9 +261,9 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
     ar: 'The English Hub uses AI to support practice, feedback and revision, but English content must still be accurate, traceable and trustworthy. Our content verification process is designed to reduce hallucinated analysis, incorrect quotations, unsupported claims and unclear exam guidance.',
   },
 
-  // Numbers section — the page renders six stat tiles. We keep the
-  // existing stats (108 texts, 36 quotes, etc.) — those reflect actual
-  // counts of content reviewed — but with proper labels.
+  // Numbers section - the page renders six stat tiles. We keep the
+  // existing stats (108 texts, 36 quotes, etc.) - those reflect actual
+  // counts of content reviewed - but with proper labels.
   'about.verified.numbers.h2': {
     en: 'Where verification has been applied',
     ar: 'Where verification has been applied',
@@ -320,8 +320,8 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
     ar: 'BBC and broadsheet archives',
   },
   'about.verified.sources.bbc_body': {
-    en: 'For context — biographical, historical, social — we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
-    ar: 'For context — biographical, historical, social — we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
+    en: 'For context - biographical, historical, social - we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
+    ar: 'For context - biographical, historical, social - we cross-check against named published sources. We prefer the BBC, the major broadsheets and academic publishers over open-web summaries.',
   },
   'about.verified.sources.board_strong': {
     en: 'Public exam-board specifications',
@@ -339,32 +339,32 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
     ar: 'Not all content carries the same weight of evidence. We use four internal confidence labels so a reader can tell what stands behind a specific page.',
   },
   'about.verified.confidence.highest_label': {
-    en: 'Highest — quote checked + human reviewed',
-    ar: 'Highest — quote checked + human reviewed',
+    en: 'Highest - quote checked + human reviewed',
+    ar: 'Highest - quote checked + human reviewed',
   },
   'about.verified.confidence.highest_body': {
     en: 'Quotations cross-referenced against a public-domain source. Analysis read end-to-end by a human editor. Used for set-text pages and exemplar essays.',
     ar: 'Quotations cross-referenced against a public-domain source. Analysis read end-to-end by a human editor. Used for set-text pages and exemplar essays.',
   },
   'about.verified.confidence.high_label': {
-    en: 'High — human reviewed',
-    ar: 'High — human reviewed',
+    en: 'High - human reviewed',
+    ar: 'High - human reviewed',
   },
   'about.verified.confidence.high_body': {
     en: 'AI-drafted then read end-to-end by a human editor. Used for theme-level analysis, contextual notes and revision summaries.',
     ar: 'AI-drafted then read end-to-end by a human editor. Used for theme-level analysis, contextual notes and revision summaries.',
   },
   'about.verified.confidence.medium_label': {
-    en: 'Medium — AI-drafted, awaiting review',
-    ar: 'Medium — AI-drafted, awaiting review',
+    en: 'Medium - AI-drafted, awaiting review',
+    ar: 'Medium - AI-drafted, awaiting review',
   },
   'about.verified.confidence.medium_body': {
     en: 'AI-generated content surfaced as a learning aid but not yet signed off by a human editor. We mark this clearly so students know what they are looking at.',
     ar: 'AI-generated content surfaced as a learning aid but not yet signed off by a human editor. We mark this clearly so students know what they are looking at.',
   },
   'about.verified.confidence.low_label': {
-    en: 'Formative — practice feedback only',
-    ar: 'Formative — practice feedback only',
+    en: 'Formative - practice feedback only',
+    ar: 'Formative - practice feedback only',
   },
   'about.verified.confidence.low_body': {
     en: 'AI-generated essay feedback and grade indications. Useful for practice and pattern-spotting, but not official marking. Always to be discussed with a teacher before being acted on.',

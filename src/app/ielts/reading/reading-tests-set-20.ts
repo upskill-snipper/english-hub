@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 20) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 20) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across two
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — statements to researchers
+// which-paragraph (Passage 2) and Matching Features - statements to researchers
 // (Passage 3), alongside the usual mix of True/False/Not Given, multiple choice
 // and sentence/summary completion.
 //
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_20: ReadingTest[] = [
   {
     id: 'rd-academic-020',
-    title: 'Academic Reading — Practice Test 20',
+    title: 'Academic Reading - Practice Test 20',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -49,7 +49,7 @@ The consequences reached far beyond the plant itself. A grain that could be stor
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A brittle stalk versus one that holds on' },
               { key: 'ii', label: 'The hidden selection that reshaped the plant' },
@@ -69,7 +69,7 @@ The consequences reached far beyond the plant itself. A grain that could be stor
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'A introduces wheat as a world-shaping crop descended from "unpromising weeds" (iii). B describes hunter-gatherers harvesting wild stands before they were farmers (iv). C contrasts the brittle wild rachis that shatters with the rare plant whose rachis "stays intact, holding its grain on the stem" (i). D explains the "quiet mechanism of domestication" — harvesters unwittingly saving the non-shattering form (ii). E covers the loss of dormancy, readier germination and larger grain size (vii). F traces stored grain through surpluses to "the first cities" (vi). Heading v (spread by ship to every continent) is a distractor never stated; heading viii (modern scientific breeding) is a distractor — the passage stresses selection was unconscious, not modern science.',
+              'A introduces wheat as a world-shaping crop descended from "unpromising weeds" (iii). B describes hunter-gatherers harvesting wild stands before they were farmers (iv). C contrasts the brittle wild rachis that shatters with the rare plant whose rachis "stays intact, holding its grain on the stem" (i). D explains the "quiet mechanism of domestication" - harvesters unwittingly saving the non-shattering form (ii). E covers the loss of dormancy, readier germination and larger grain size (vii). F traces stored grain through surpluses to "the first cities" (vi). Heading v (spread by ship to every continent) is a distractor never stated; heading viii (modern scientific breeding) is a distractor - the passage stresses selection was unconscious, not modern science.',
           },
           {
             id: 'rd-020-p1-q2',
@@ -131,7 +131,7 @@ The consequences reached far beyond the plant itself. A grain that could be stor
             id: 'rd-020-p1-q7',
             type: 'gap',
             prompt:
-              'Complete the sentence with ONE word from the passage: Wild seeds often remain _______ through a season of cold or drought, sprouting only later — a trait that farming gradually reduced.',
+              'Complete the sentence with ONE word from the passage: Wild seeds often remain _______ through a season of cold or drought, sprouting only later - a trait that farming gradually reduced.',
             acceptableAnswers: ['dormant'],
             explanation:
               'Paragraph E says wild seeds "germinate only after lying dormant through a season of cold or drought." The required word is "dormant".',
@@ -169,7 +169,7 @@ The variation runs deeper still when other species are considered, which is why 
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -294,7 +294,7 @@ The variation runs deeper still when other species are considered, which is why 
       {
         id: 'rd-academic-020-p3',
         title: 'The Long Reach of the Telescope',
-        body: `The telescope is one of those inventions whose origin is oddly hard to pin to a single mind. The earliest firm record dates from the autumn of 1608, when a spectacle-maker in the Dutch Republic, Hans Lippershey, applied to the authorities for a patent on a device for seeing distant things as though they were near. The patent was refused, partly because officials judged that the idea was already too widely known to belong to any one man; rival craftsmen were said to be making similar instruments at much the same time. What is certain is that the basic arrangement — a convex lens at the front and a concave lens at the eye — spread with remarkable speed across Europe within months, carried by word of mouth and by the brisk trade in spectacle lenses.
+        body: `The telescope is one of those inventions whose origin is oddly hard to pin to a single mind. The earliest firm record dates from the autumn of 1608, when a spectacle-maker in the Dutch Republic, Hans Lippershey, applied to the authorities for a patent on a device for seeing distant things as though they were near. The patent was refused, partly because officials judged that the idea was already too widely known to belong to any one man; rival craftsmen were said to be making similar instruments at much the same time. What is certain is that the basic arrangement - a convex lens at the front and a concave lens at the eye - spread with remarkable speed across Europe within months, carried by word of mouth and by the brisk trade in spectacle lenses.
 
 News of the Dutch instrument reached Italy the following year, and there it fell into the hands of a man who would transform it. Galileo Galilei did not invent the telescope, but on hearing a description he quickly worked out the principle and ground his own lenses, steadily improving the magnification until his instruments far outperformed the toys being sold in the markets. More importantly, he turned the device away from earthly views and pointed it at the night sky. What he saw overturned centuries of assumption: mountains and craters on a Moon that philosophers had held to be a perfect smooth sphere, four bright points circling the planet Jupiter like a miniature system, and countless faint stars invisible to the naked eye. The heavens, it appeared, were neither perfect nor unchanging, and the Earth was not obviously the centre around which all things turned.
 
@@ -304,9 +304,9 @@ For three centuries the contest between lenses and mirrors drove the science for
 
 The obvious if costly answer was to leave the atmosphere behind altogether. A telescope placed in orbit looks out at a sky that is perfectly steady and unimaginably dark, free of both the blurring of the air and the glow of city lights. The most celebrated of these orbiting observatories returned images of such clarity that they reshaped public understanding of the universe, peering at galaxies so distant that their light had been travelling for most of the age of the cosmos. Because looking far into space is also looking far back in time, such instruments are in effect machines for studying the past, capturing light that set out long before the Earth itself existed.
 
-Telescopes have also long since outgrown the part of light that human eyes can see. Visible light is only a sliver of a vast spectrum, and the sky glows in radiation our eyes cannot register — radio waves, infrared, ultraviolet, X-rays and more. Instruments tuned to these invisible bands have revealed objects and events that no ordinary telescope could show: the cold clouds where stars are born, the violent jets flung out by black holes, the faint afterglow left over from the birth of the universe. Each new window on the spectrum has brought surprises, a reminder that for four centuries the telescope has done more than magnify the visible. It has repeatedly revealed that most of what is out there had simply been beyond our senses all along.`,
+Telescopes have also long since outgrown the part of light that human eyes can see. Visible light is only a sliver of a vast spectrum, and the sky glows in radiation our eyes cannot register - radio waves, infrared, ultraviolet, X-rays and more. Instruments tuned to these invisible bands have revealed objects and events that no ordinary telescope could show: the cold clouds where stars are born, the violent jets flung out by black holes, the faint afterglow left over from the birth of the universe. Each new window on the spectrum has brought surprises, a reminder that for four centuries the telescope has done more than magnify the visible. It has repeatedly revealed that most of what is out there had simply been beyond our senses all along.`,
         questions: [
-          // ── Matching Features — statements to scientists (5 items) = 5 marks ──
+          // ── Matching Features - statements to scientists (5 items) = 5 marks ──
           {
             id: 'rd-020-p3-q1',
             type: 'matching',

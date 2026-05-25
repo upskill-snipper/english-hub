@@ -34,7 +34,7 @@ import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnos
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
 // ielts.plan.* keys live in the dictionary-ielts-diagnostic shard, which isn't
-// wired into the global lookup() chain — resolve them here against the live
+// wired into the global lookup() chain - resolve them here against the live
 // locale, falling back to the shared useT() for cross-module ielts.* keys.
 // `vars` interpolates {token} placeholders so the prioritised-step copy
 // (skill labels, bands, gaps) stays translatable as a whole phrase.

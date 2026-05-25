@@ -1,23 +1,23 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 13) ──────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 13) ──────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary/note completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, programmes),
 // plus one longer general-interest article. This file ships ONE complete,
 // carefully-checked GT test scaled to a full sitting (~40 marks):
-//   • Section 1 — a notice and timetable for a leisure centre's swimming pool
+//   • Section 1 - a notice and timetable for a leisure centre's swimming pool
 //     and fitness classes. Includes a Matching (features) question worth 5
 //     marks asking which session each statement describes; options may be
 //     reused.
-//   • Section 2 — a workplace travel & expenses policy covering what can be
+//   • Section 2 - a workplace travel & expenses policy covering what can be
 //     claimed, receipts, approval and submission deadlines.
-//   • Section 3 — a general-interest article on the benefits of reading for
+//   • Section 3 - a general-interest article on the benefits of reading for
 //     pleasure. Includes a Matching (headings) question covering paragraphs
-//     B–F with two distractor headings, worth 5 marks.
+//     B-F with two distractor headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
 // giving 40 marks in total. Every answer is verifiable from the text and every
 // item carries an explanation. All ids are unique ('rd-gen-013-…').
@@ -28,18 +28,18 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_13: ReadingTest[] = [
   {
     id: 'rd-general-013',
-    title: 'General Training Reading — Practice Test 13',
+    title: 'General Training Reading - Practice Test 13',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — leisure-centre pool & fitness notice +
+      // ── Section 1: EVERYDAY / SOCIAL - leisure-centre pool & fitness notice +
       // a timetable of classes. A Matching (features) question (5 marks) asks
       // which of the five fitness classes each statement describes; options may
       // be reused.
       {
         id: 'rd-gen-013-p1',
         title: 'Riverbank Leisure Centre: Swimming Pool & Fitness Class Notice',
-        body: `PART 1 — RIVERBANK LEISURE CENTRE: USING THE POOL
+        body: `PART 1 - RIVERBANK LEISURE CENTRE: USING THE POOL
 
 The pool at Riverbank Leisure Centre is open every day except Christmas Day. From Monday to Friday the pool opens at 6.30 a.m. and closes at 9 p.m.; at the weekend it opens later, at 8 a.m., and closes at 6 p.m. The last swimmers are asked to leave the water fifteen minutes before closing so that the lifeguards can clear the pool on time.
 
@@ -52,23 +52,23 @@ During the school holidays the whole pool is given over to family swimming from 
 WHAT TO BRING AND FEES
 A single swim costs £4.50 for an adult and £2.50 for a child; under-threes swim free. Lockers take a £1 coin, which is returned when you collect your belongings. Please bring your own padlock for the lockers in the dry changing village, as we no longer sell them at reception. Outdoor shoes must be left in the lobby, and a swimming cap is required in the lane-swimming lanes but not during family sessions.
 
-PART 2 — FITNESS CLASS TIMETABLE
+PART 2 - FITNESS CLASS TIMETABLE
 
 The centre runs five regular fitness classes each week, listed below. All classes must be booked through the centre's app or at reception; a place is held for ten minutes after the start time, after which it may be given to someone on the waiting list. Members pay nothing extra for classes; non-members pay £6 per class.
 
-CLASS 1 — AQUA FIT
+CLASS 1 - AQUA FIT
 A gentle workout in the shallow end of the pool, set to music, suitable for all ages and abilities. Held on Monday and Thursday at 11 a.m. No swimming ability is needed, as your feet stay on the pool floor throughout, but please bring a towel and a water bottle.
 
-CLASS 2 — SUNRISE YOGA
+CLASS 2 - SUNRISE YOGA
 A calm stretching and breathing class in Studio 1, held on Tuesday and Friday at 7 a.m. Mats are provided, though you may bring your own. The room is kept warm, so light clothing is best. The class is not suitable in the later stages of pregnancy without a doctor's note.
 
-CLASS 3 — SPIN
+CLASS 3 - SPIN
 A fast indoor cycling class in Studio 2, held on Wednesday and Saturday at 6 p.m. The bikes are adjusted for you by the instructor at your first class, so arrive ten minutes early if it is your first time. This class is for ages eighteen and over.
 
-CLASS 4 — CIRCUIT TRAINING
+CLASS 4 - CIRCUIT TRAINING
 A series of strength and fitness stations in the main hall, held on Monday and Wednesday at 6.30 p.m. Trainers must be clean indoor shoes; you will be turned away in outdoor footwear. The class is busy, so booking ahead is strongly advised.
 
-CLASS 5 — STEADY STEPS
+CLASS 5 - STEADY STEPS
 A low-impact class designed for older adults and anyone returning to exercise, held on Tuesday and Thursday at 2 p.m. in Studio 1. A chair is available for anyone who needs support, and the pace is set by the group. Carers may attend with a participant free of charge.`,
         questions: [
           {
@@ -150,13 +150,13 @@ A low-impact class designed for older adults and anyone returning to exercise, h
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the five fitness classes, 1–5. For each statement below, choose the class it describes. Write the correct number, 1–5. (Each class may be chosen more than once.)',
+              'Look at the five fitness classes, 1-5. For each statement below, choose the class it describes. Write the correct number, 1-5. (Each class may be chosen more than once.)',
             options: [
-              { key: '1', label: 'Class 1 — Aqua Fit' },
-              { key: '2', label: 'Class 2 — Sunrise Yoga' },
-              { key: '3', label: 'Class 3 — Spin' },
-              { key: '4', label: 'Class 4 — Circuit Training' },
-              { key: '5', label: 'Class 5 — Steady Steps' },
+              { key: '1', label: 'Class 1 - Aqua Fit' },
+              { key: '2', label: 'Class 2 - Sunrise Yoga' },
+              { key: '3', label: 'Class 3 - Spin' },
+              { key: '4', label: 'Class 4 - Circuit Training' },
+              { key: '5', label: 'Class 5 - Steady Steps' },
             ],
             items: [
               {
@@ -190,17 +190,17 @@ A low-impact class designed for older adults and anyone returning to exercise, h
           },
         ],
       },
-      // ── Section 2: WORKPLACE — travel & expenses policy ─────────────────────
+      // ── Section 2: WORKPLACE - travel & expenses policy ─────────────────────
       {
         id: 'rd-gen-013-p2',
-        title: 'Travel and Expenses Policy — Staff Guide',
+        title: 'Travel and Expenses Policy - Staff Guide',
         body: `This guide explains how staff should arrange business travel and claim back the money they spend while working away from their usual place of work. It applies to everyone, whatever their grade. A full copy of the policy, including the current mileage and meal rates, is on the staff portal, and the finance team is happy to answer questions before you travel rather than after.
 
 BEFORE YOU TRAVEL
 All business travel costing more than £100 must be approved by your line manager in advance, using the travel request form on the portal. Wherever possible, book trains and accommodation through the company's booking system, which secures lower rates and means you do not have to pay first and wait to be repaid. Standard-class rail travel is the norm; first-class tickets are not refunded unless they were genuinely cheaper than the standard fare at the time of booking, and you must keep proof of that. Taxis should be used only where public transport is not practical, for example late at night or when carrying heavy equipment.
 
 WHAT YOU CAN CLAIM
-You may claim the actual cost of travel, accommodation and meals while away on business, within the daily limits set out on the portal. If you drive your own car, you may claim a fixed rate for each mile rather than the cost of fuel. Meals are reimbursed up to a daily cap, but alcoholic drinks are never refunded, even as part of a meal. Personal costs such as newspapers, films in a hotel room, or fines for parking in the wrong place cannot be claimed. Where a meal is already provided — for instance, breakfast included with your room — you cannot also claim for buying one elsewhere.
+You may claim the actual cost of travel, accommodation and meals while away on business, within the daily limits set out on the portal. If you drive your own car, you may claim a fixed rate for each mile rather than the cost of fuel. Meals are reimbursed up to a daily cap, but alcoholic drinks are never refunded, even as part of a meal. Personal costs such as newspapers, films in a hotel room, or fines for parking in the wrong place cannot be claimed. Where a meal is already provided - for instance, breakfast included with your room - you cannot also claim for buying one elsewhere.
 
 RECEIPTS AND PROOF
 Every claim must be supported by an itemised receipt; a card statement on its own is not enough, as it does not show what was bought. Photograph or scan each receipt and attach it to your online claim. The only exception is mileage, for which you record the journey and the distance instead of a receipt. If a receipt is genuinely lost, complete the missing-receipt form and have your manager sign it; this should be the rare exception, not a habit.
@@ -321,15 +321,15 @@ Claims must be submitted within thirty days of the date you spent the money. A c
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — the benefits of reading for
-      // pleasure. Six labelled paragraphs (A–F). A Matching Headings question
-      // (with two distractor headings) covers paragraphs B–F and is worth 5
+      // ── Section 3: LONGER GENERAL-INTEREST - the benefits of reading for
+      // pleasure. Six labelled paragraphs (A-F). A Matching Headings question
+      // (with two distractor headings) covers paragraphs B-F and is worth 5
       // marks.
       {
         id: 'rd-gen-013-p3',
         title: 'Lost in a Book: Why Reading for Pleasure Matters',
         body: `Paragraph A
-For many people, reading is something done out of necessity — a report at work, the instructions on a packet, the news on a screen. Reading for pleasure is different. It is the reading we choose freely, for no reward beyond the experience itself, whether that means a novel, a magazine about cycling, or the long article we save for a quiet evening. It can look like an idle pastime, easily squeezed out by busier-seeming demands. Yet a growing body of research suggests that this freely chosen reading does us a surprising amount of good, in ways that reach well beyond the hour we spend with the book.
+For many people, reading is something done out of necessity - a report at work, the instructions on a packet, the news on a screen. Reading for pleasure is different. It is the reading we choose freely, for no reward beyond the experience itself, whether that means a novel, a magazine about cycling, or the long article we save for a quiet evening. It can look like an idle pastime, easily squeezed out by busier-seeming demands. Yet a growing body of research suggests that this freely chosen reading does us a surprising amount of good, in ways that reach well beyond the hour we spend with the book.
 
 Paragraph B
 The clearest benefit, and the easiest to measure, is the effect on language. People who read widely for pleasure meet far more words, and a far greater variety of them, than they ever would in everyday speech, and they meet those words in context, which is how vocabulary is best learned. This matters at every age. Children who read for pleasure tend to have larger vocabularies and to do better at school across all subjects, not only in English, because so much of learning depends on the ability to read and understand. The gain is quiet and cumulative: no single book transforms a reader, but the habit, kept up over years, builds a richer command of language than schooling alone can provide.
@@ -341,17 +341,17 @@ Paragraph D
 Perhaps the most intriguing finding concerns other people. Fiction, in particular, asks us to spend hours inside the thoughts and feelings of characters quite unlike ourselves, and several studies suggest that regular readers of fiction are better than non-readers at sensing what others are feeling and seeing a situation from another point of view. This is not the same as saying that readers are kinder, and the research is still young. But it makes a certain sense: a habit of imagining your way into other minds, page after page, may be quiet practice for doing the same in real life.
 
 Paragraph E
-Given all this, it is worth asking why so many adults who once read for pleasure have stopped. The usual answer is a lack of time, but the deeper problem is often the sense that reading must be earned, fitted in only once everything else is done — by which point the day is gone. The reader who waits for a free hour rarely finds one. Those who keep the habit tend to be the ones who treat reading not as a reward but as an ordinary part of the day, like a meal, and who keep a book within easy reach.
+Given all this, it is worth asking why so many adults who once read for pleasure have stopped. The usual answer is a lack of time, but the deeper problem is often the sense that reading must be earned, fitted in only once everything else is done - by which point the day is gone. The reader who waits for a free hour rarely finds one. Those who keep the habit tend to be the ones who treat reading not as a reward but as an ordinary part of the day, like a meal, and who keep a book within easy reach.
 
 Paragraph F
-Building the habit back is more a matter of small, practical changes than of willpower. Choose books you actually want to read rather than the ones you feel you ought to, and give yourself full permission to abandon any book that bores you. Carry something to read, on paper or on a phone, so that the minutes spent waiting become reading time. Set a modest, regular slot — ten minutes before sleep is plenty to begin with — and protect it. Joining a library or a reading group helps too, less for the books than for the gentle expectation that you will turn up with something to talk about. None of these steps is dramatic, but together, over a few weeks, they can turn reading from a good intention into a settled pleasure.`,
+Building the habit back is more a matter of small, practical changes than of willpower. Choose books you actually want to read rather than the ones you feel you ought to, and give yourself full permission to abandon any book that bores you. Carry something to read, on paper or on a phone, so that the minutes spent waiting become reading time. Set a modest, regular slot - ten minutes before sleep is plenty to begin with - and protect it. Joining a library or a reading group helps too, less for the books than for the gentle expectation that you will turn up with something to talk about. None of these steps is dramatic, but together, over a few weeks, they can turn reading from a good intention into a settled pleasure.`,
         questions: [
           {
             id: 'rd-gen-013-p3-q21',
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. Practical ways to rebuild the habit' },
               { key: 'ii', label: 'ii. A boost to vocabulary and learning' },
@@ -369,7 +369,7 @@ Building the habit back is more a matter of small, practical changes than of wil
               { id: 'pF', text: 'Paragraph F', answer: 'i' },
             ],
             explanation:
-              'Paragraph B is about "the effect on language" — larger vocabularies and doing better at school — heading ii. Paragraph C reports the study showing reading is "unusually good at calming the mind" and easing stress — heading vi. Paragraph D concerns sensing what others feel and seeing another point of view — heading v (understanding other people). Paragraph E asks "why so many adults who once read for pleasure have stopped" — heading iii. Paragraph F gives "small, practical changes" to build the habit back — heading i. Headings iv (the decline of the printed book) and vii (how publishers choose what to print) are distractors that are not used.',
+              'Paragraph B is about "the effect on language" - larger vocabularies and doing better at school - heading ii. Paragraph C reports the study showing reading is "unusually good at calming the mind" and easing stress - heading vi. Paragraph D concerns sensing what others feel and seeing another point of view - heading v (understanding other people). Paragraph E asks "why so many adults who once read for pleasure have stopped" - heading iii. Paragraph F gives "small, practical changes" to build the habit back - heading i. Headings iv (the decline of the printed book) and vii (how publishers choose what to print) are distractors that are not used.',
           },
           {
             id: 'rd-gen-013-p3-q22',

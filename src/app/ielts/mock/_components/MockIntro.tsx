@@ -5,7 +5,7 @@
 // vs General Training, persisted via useIeltsTrack), reads exactly how the real
 // exam is structured and timed, sees what THIS mock contains for the chosen
 // track, and starts. It owns the single <h1> for the route. Starting the mock
-// is a deliberate, one-way commitment — the copy makes the timed, no-going-back
+// is a deliberate, one-way commitment - the copy makes the timed, no-going-back
 // nature explicit so it is not a surprise.
 // ────────────────────────────────────────────────────────────────────────────
 

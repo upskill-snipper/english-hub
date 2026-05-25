@@ -95,7 +95,7 @@ export default function IeltsReadingPage() {
     [testsForTrack, selectedTestId],
   )
 
-  // Flat, ordered list of every question across all passages — drives numbering,
+  // Flat, ordered list of every question across all passages - drives numbering,
   // marking and the results review.
   const allQuestions = useMemo<ObjectiveQuestion[]>(
     () => (test ? test.passages.flatMap((p) => p.questions) : []),
@@ -112,7 +112,7 @@ export default function IeltsReadingPage() {
     setAnswers({})
   }, [track])
   // Stable 1-based START number per question, accumulating MARKS so a matching
-  // question reserves a numbered range (e.g. 14–18) and the next question follows.
+  // question reserves a numbered range (e.g. 14-18) and the next question follows.
   const questionStart = useMemo(() => questionStartNumbers(allQuestions), [allQuestions])
 
   // Defensive: if there are no tests at all for this track, fail gracefully.
@@ -325,7 +325,7 @@ export default function IeltsReadingPage() {
                           </span>
                           <span className="font-mono text-xs text-muted-foreground">
                             {questionMarks(q) > 1
-                              ? `Q${questionStart[q.id]}–${questionStart[q.id] + questionMarks(q) - 1}`
+                              ? `Q${questionStart[q.id]}-${questionStart[q.id] + questionMarks(q) - 1}`
                               : `Q${questionStart[q.id]}`}
                           </span>
                           <span className="flex-1 font-medium text-foreground">{q.prompt}</span>
@@ -480,7 +480,7 @@ function PassageBlock({
   const t = useT()
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      {/* Passage — sticky on large screens so questions scroll alongside it */}
+      {/* Passage - sticky on large screens so questions scroll alongside it */}
       <div className="lg:sticky lg:top-16 lg:self-start">
         <div className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
           <Badge variant="outline" className="mb-3">
@@ -525,7 +525,7 @@ function QuestionCard({
   const t = useT()
   const value = answers[question.id]
   const marks = questionMarks(question)
-  const numberLabel = marks > 1 ? `${startNumber}–${startNumber + marks - 1}` : String(startNumber)
+  const numberLabel = marks > 1 ? `${startNumber}-${startNumber + marks - 1}` : String(startNumber)
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">

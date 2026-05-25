@@ -1,18 +1,18 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 7) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 7) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, training
 // material), plus one longer general-interest article. This file ships ONE
 // complete, carefully-checked GT test scaled to a full sitting:
-//   • Section 1 — a leisure-centre class timetable + a lost-property & car-park
+//   • Section 1 - a leisure-centre class timetable + a lost-property & car-park
 //     notice. Includes a Matching (features) question worth 5 marks.
-//   • Section 2 — a workplace expenses & business-travel policy.
-//   • Section 3 — a general-interest article on the rise of adult evening
+//   • Section 2 - a workplace expenses & business-travel policy.
+//   • Section 3 - a general-interest article on the rise of adult evening
 //     classes. Includes a Matching (headings) question with two distractor
 //     headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
@@ -25,33 +25,33 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_7: ReadingTest[] = [
   {
     id: 'rd-general-007',
-    title: 'General Training Reading — Practice Test 7',
+    title: 'General Training Reading - Practice Test 7',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — timetable + notice ──────────────────
+      // ── Section 1: EVERYDAY / SOCIAL - timetable + notice ──────────────────
       // Two short texts. A Matching (features) question (5 marks) asks which of
       // the four classes each statement describes; options may be reused.
       {
         id: 'rd-gen-007-p1',
-        title: 'Maple Park Leisure Centre — Spring Class Timetable & Centre Notices',
-        body: `PART 1 — SPRING CLASS TIMETABLE
+        title: 'Maple Park Leisure Centre - Spring Class Timetable & Centre Notices',
+        body: `PART 1 - SPRING CLASS TIMETABLE
 
 Maple Park Leisure Centre runs four bookable classes this term. Places are limited, so please book online or at the front desk before you arrive. The descriptions below tell you what to expect from each class.
 
-CLASS A — Early Birds Swim Fitness
+CLASS A - Early Birds Swim Fitness
 A gentle water-based workout held in the main pool before it opens to the public. Suitable for all ages and abilities, including those who are recovering from injury. The instructor stays at the poolside throughout, so you do not need to be a confident swimmer. Sessions run Monday, Wednesday and Friday at 7.00 a.m. and last 45 minutes. No equipment is needed; floats are provided.
 
-CLASS B — Studio Cycling
+CLASS B - Studio Cycling
 A high-energy indoor cycling class set to music in Studio 2. This class is fast and demanding, and is not recommended for complete beginners or for anyone with a heart condition unless a doctor has approved it. Towels and a water bottle are essential. Sessions run Tuesday and Thursday evenings at 6.30 p.m. and last one hour.
 
-CLASS C — Gentle Yoga
+CLASS C - Gentle Yoga
 A slow, relaxing class in the carpeted Studio 1, focused on breathing and easy stretches. It is especially popular with older members and with anyone who finds busier classes off-putting. Mats are available to borrow, but many people prefer to bring their own. Sessions run on Saturday mornings at 10.00 a.m. and last 75 minutes.
 
-CLASS D — Junior Trampoline
+CLASS D - Junior Trampoline
 A supervised session on the sprung floor for children aged six to twelve only. An adult must remain in the building for the whole session but does not take part. Children must wear grip socks, which can be bought at the front desk for £2. Sessions run on Sunday afternoons at 2.00 p.m. and last 50 minutes.
 
-PART 2 — CENTRE NOTICES
+PART 2 - CENTRE NOTICES
 
 LOST PROPERTY
 Items left behind in the changing rooms or studios are collected each evening and kept at the front desk for fourteen days. After that, anything unclaimed is given to a local charity. To collect an item, you must describe it accurately before it is handed over; we cannot release property to anyone who is unable to do so. Valuables such as phones, watches and jewellery are logged in a separate book and stored in the office safe, and proof of identity is required to claim them.
@@ -137,12 +137,12 @@ The centre car park is free for the first two hours for everyone. After two hour
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the four classes in the timetable, A–D. For each statement below, choose the class it describes. Write the correct letter, A–D. (Each class may be chosen more than once.)',
+              'Look at the four classes in the timetable, A-D. For each statement below, choose the class it describes. Write the correct letter, A-D. (Each class may be chosen more than once.)',
             options: [
-              { key: 'A', label: 'Class A — Early Birds Swim Fitness' },
-              { key: 'B', label: 'Class B — Studio Cycling' },
-              { key: 'C', label: 'Class C — Gentle Yoga' },
-              { key: 'D', label: 'Class D — Junior Trampoline' },
+              { key: 'A', label: 'Class A - Early Birds Swim Fitness' },
+              { key: 'B', label: 'Class B - Studio Cycling' },
+              { key: 'C', label: 'Class C - Gentle Yoga' },
+              { key: 'D', label: 'Class D - Junior Trampoline' },
             ],
             items: [
               {
@@ -172,21 +172,21 @@ The centre car park is free for the first two hours for everyone. After two hour
               },
             ],
             explanation:
-              'i1: Class D is "for children aged six to twelve only" — a fixed age range. i2: Class B is not recommended for anyone with a heart condition "unless a doctor has approved it." i3: Class A is suitable for "those who are recovering from injury." i4: Class C is held "in the carpeted Studio 1" (a soft floor covering). i5: Class D says "An adult must remain in the building for the whole session but does not take part." (Class D is chosen twice, which the instruction allows.)',
+              'i1: Class D is "for children aged six to twelve only" - a fixed age range. i2: Class B is not recommended for anyone with a heart condition "unless a doctor has approved it." i3: Class A is suitable for "those who are recovering from injury." i4: Class C is held "in the carpeted Studio 1" (a soft floor covering). i5: Class D says "An adult must remain in the building for the whole session but does not take part." (Class D is chosen twice, which the instruction allows.)',
           },
         ],
       },
-      // ── Section 2: WORKPLACE — expenses & business-travel policy ───────────
+      // ── Section 2: WORKPLACE - expenses & business-travel policy ───────────
       {
         id: 'rd-gen-007-p2',
-        title: 'Company Policy — Business Travel and Expense Claims',
+        title: 'Company Policy - Business Travel and Expense Claims',
         body: `This policy explains how to arrange business travel and how to claim back money you spend while working away from your usual workplace. Please read it before you book anything, as claims that fall outside these rules may be refused.
 
 BOOKING TRAVEL
 Wherever possible, flights and rail tickets must be booked through the company's approved travel agent rather than purchased directly, because the agent obtains discounted rates the company has negotiated. Standard-class rail travel should be chosen for any journey under three hours. For longer journeys, or where a first-class ticket is no more expensive than standard once booked in advance, first class may be used. Air travel must be in economy class unless the flight is longer than six hours, in which case premium economy is permitted; business class requires written approval from a director.
 
 ACCOMMODATION
-When an overnight stay is necessary, you may book a hotel up to the nightly limit set for the city you are visiting; these limits are listed on the company intranet. Breakfast may be included in the room rate, but other meals taken at the hotel must be claimed separately under the meals allowance. You should not book a room above the limit on the assumption that the difference will be refunded — it will not be, unless no room within the limit was available and you have kept written evidence of this.
+When an overnight stay is necessary, you may book a hotel up to the nightly limit set for the city you are visiting; these limits are listed on the company intranet. Breakfast may be included in the room rate, but other meals taken at the hotel must be claimed separately under the meals allowance. You should not book a room above the limit on the assumption that the difference will be refunded - it will not be, unless no room within the limit was available and you have kept written evidence of this.
 
 MEALS AND INCIDENTALS
 While travelling on business you may claim for meals up to a daily allowance, which varies by country. You do not need receipts for amounts under £10, but for anything above this a receipt must be attached to your claim. Alcohol is not reimbursed under any circumstances. Reasonable incidental costs, such as parking, tolls and short taxi journeys to and from stations, may also be claimed with receipts.
@@ -260,7 +260,7 @@ All claims must be submitted through the expenses system within thirty days of t
               'If an employee books a hotel above the city limit, the extra cost is always refunded.',
             answer: 'false',
             explanation:
-              'The Accommodation section says you should not book above the limit assuming the difference will be refunded — "it will not be, unless no room within the limit was available" and evidence is kept. Because refunds are not automatic, "always refunded" is False.',
+              'The Accommodation section says you should not book above the limit assuming the difference will be refunded - "it will not be, unless no room within the limit was available" and evidence is kept. Because refunds are not automatic, "always refunded" is False.',
           },
           {
             id: 'rd-gen-007-p2-q16b',
@@ -309,9 +309,9 @@ All claims must be submitted through the expenses system within thirty days of t
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — adult evening classes ─────────
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - adult evening classes ─────────
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-007-p3',
         title: 'Learning After Dark: The Quiet Boom in Adult Evening Classes',
@@ -328,7 +328,7 @@ Paragraph D
 That social dimension may be the most important of all. Researchers who study wellbeing in later life have repeatedly found that loneliness does as much harm to health as many physical ailments, and that regular, low-pressure contact with others offers real protection. An evening class provides exactly this: a weekly meeting, a common task and a reason to talk to people one would never otherwise meet. Several councils, noticing the pattern, have begun to fund classes not as education in the narrow sense but as a cheap and cheerful way of keeping their residents connected and well.
 
 Paragraph E
-The teachers themselves are part of the appeal. Many are practitioners first and instructors second — a working potter, a retired accountant, a chef who still cooks for a living — and they bring to the classroom a store of practical knowledge that no textbook can match. Because adult students choose to be there and pay for the privilege, the atmosphere tends to be relaxed and good-humoured, free of the reluctance that can shadow a compulsory school lesson. Tutors often say they enjoy these evening groups more than any other teaching they do.
+The teachers themselves are part of the appeal. Many are practitioners first and instructors second - a working potter, a retired accountant, a chef who still cooks for a living - and they bring to the classroom a store of practical knowledge that no textbook can match. Because adult students choose to be there and pay for the privilege, the atmosphere tends to be relaxed and good-humoured, free of the reluctance that can shadow a compulsory school lesson. Tutors often say they enjoy these evening groups more than any other teaching they do.
 
 Paragraph F
 The revival is not without its difficulties. Suitable rooms are not always easy to find, insurance and heating cost more than they once did, and a class that fails to attract enough students must usually be cancelled, sometimes at short notice. Funding, where it exists at all, can be withdrawn with little warning when budgets are squeezed. Even so, the appetite is plainly there. As long as people wish to learn something new, to make a change or simply to spend an evening in good company, the adult class seems likely to keep its lights burning.`,
@@ -338,7 +338,7 @@ The revival is not without its difficulties. Suitable rooms are not always easy 
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. The hurdles that still stand in the way' },
               { key: 'ii', label: 'ii. Choosing a course that leads to a qualification' },
@@ -356,7 +356,7 @@ The revival is not without its difficulties. Suitable rooms are not always easy 
               { id: 'pF', text: 'Paragraph F', answer: 'i' },
             ],
             explanation:
-              'Paragraph B describes evening courses as "an affordable way to test an interest" and to "retrain without giving up the income" — heading iii (a flexible route to changing careers). Paragraph C stresses students who enrol "for reasons that have nothing to do with work" — heading iv. Paragraph D links classes to loneliness and "regular, low-pressure contact" — heading v (health and the value of company). Paragraph E is about the tutors and what they "bring to the classroom" — heading vi. Paragraph F lists the "difficulties" of the revival — heading i. Headings ii (a qualification) and vii (building classrooms) are distractors that are not used.',
+              'Paragraph B describes evening courses as "an affordable way to test an interest" and to "retrain without giving up the income" - heading iii (a flexible route to changing careers). Paragraph C stresses students who enrol "for reasons that have nothing to do with work" - heading iv. Paragraph D links classes to loneliness and "regular, low-pressure contact" - heading v (health and the value of company). Paragraph E is about the tutors and what they "bring to the classroom" - heading vi. Paragraph F lists the "difficulties" of the revival - heading i. Headings ii (a qualification) and vii (building classrooms) are distractors that are not used.',
           },
           {
             id: 'rd-gen-007-p3-q21',

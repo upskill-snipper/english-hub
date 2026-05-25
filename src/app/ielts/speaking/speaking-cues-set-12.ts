@@ -1,19 +1,19 @@
-// ─── IELTS Speaking cues · Set 12 (Academic, Parts 1–3) ────────────────────
+// ─── IELTS Speaking cues · Set 12 (Academic, Parts 1-3) ────────────────────
 // A twelfth batch of original IELTS-preparation practice prompts for the async
 // Speaking module. Same shape and conventions as SPEAKING_CUES, with fresh
 // everyday topics so learners can keep rotating through material without
 // repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (arts & culture, travel & tourism).
 //
 // Set 12 covers music and public transport in Part 1, cue cards on a book or
 // story you enjoyed and a place you would like to visit, and Part 3 discussions
 // that broaden those themes into arts & culture and travel & tourism.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids carry an `s12` marker so the
 // coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -21,7 +21,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_12: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-s12-music',
     part: 'speaking-part-1',
@@ -47,7 +47,7 @@ export const SPEAKING_SET_12: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-s12-book',
     part: 'speaking-part-2',
@@ -79,7 +79,7 @@ export const SPEAKING_SET_12: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-s12-arts-culture',
     part: 'speaking-part-3',

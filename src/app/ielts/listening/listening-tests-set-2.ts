@@ -1,12 +1,12 @@
-// ─── IELTS Academic Listening — practice test data (Set 2) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 2) ─────────────────
 // A parallel-authored expansion of the Listening item bank. This file ships ONE
 // original two-section practice test that mirrors the conventions established in
 // `listening-tests.ts`:
-//   • Section 1 — an everyday transactional dialogue (here: a phone enquiry about
+//   • Section 1 - an everyday transactional dialogue (here: a phone enquiry about
 //     renting a room), assessed with form / note completion + a multiple-choice
 //     item. A surname is spelled and a number is dictated so spelling/number
 //     questions have a clear basis in the "audio".
-//   • Section 2 — an informational monologue (here: a sports-centre orientation),
+//   • Section 2 - an informational monologue (here: a sports-centre orientation),
 //     assessed with note/sentence completion + multiple choice, carrying signpost
 //     language ("first", "next", "finally") that the questions track in order.
 //
@@ -24,12 +24,12 @@ import type { ListeningTest } from '@/lib/ielts/types'
 export const LISTENING_SET_2: ListeningTest[] = [
   {
     id: 'ls-acad-s2-1',
-    title: 'Practice Test 3 — Renting a Room & A Leisure Centre Orientation',
+    title: 'Practice Test 3 - Renting a Room & A Leisure Centre Orientation',
     estimatedMinutes: 15,
     sections: [
       {
         id: 'ls-acad-s2-1-s1',
-        title: 'Section 1 — Enquiring about a room to rent',
+        title: 'Section 1 - Enquiring about a room to rent',
         // ~225 words. Transactional dialogue (Section 1 style): a caller enquiring
         // about a spare room advertised online. A surname is spelled and a phone
         // number is dictated; one detail (the deposit) follows from a stated rent,
@@ -45,7 +45,7 @@ MAN: It's Owen Whitaker. Whitaker is spelled W-H-I-T-A-K-E-R.
 
 WOMAN: Thank you, Owen. And a contact number?
 
-MAN: Of course — it's oh-seven-nine-double-two, four-one-six, oh-three-eight.
+MAN: Of course - it's oh-seven-nine-double-two, four-one-six, oh-three-eight.
 
 WOMAN: Lovely, I've got that. So, the room is a large double on the first floor, fully furnished, and it comes with its own washbasin. The rent is five hundred and forty pounds a month, and that includes water and internet, though not electricity.
 
@@ -72,7 +72,7 @@ WOMAN: Wonderful. See you on Thursday.`,
               'Complete the enquiry form. Write ONE WORD for the answer.\n\nCaller surname: ____________',
             acceptableAnswers: ['Whitaker', 'whitaker'],
             explanation:
-              'The caller gives his name as “Owen Whitaker” and spells the surname out: W-H-I-T-A-K-E-R. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Owen Whitaker” and spells the surname out: W-H-I-T-A-K-E-R. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-acad-s2-1-s1-q2',
@@ -80,7 +80,7 @@ WOMAN: Wonderful. See you on Thursday.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07922416038', '0792 2416038', '07922 416 038', '079 22 416 038'],
             explanation:
-              'The number is dictated as “oh-seven-nine-double-two, four-one-six, oh-three-eight”, which is 07922416038. “Double two” means two 2s, and “oh” means zero — spacing is not penalised but every digit must be correct.',
+              'The number is dictated as “oh-seven-nine-double-two, four-one-six, oh-three-eight”, which is 07922416038. “Double two” means two 2s, and “oh” means zero - spacing is not penalised but every digit must be correct.',
           },
           {
             id: 'ls-acad-s2-1-s1-q3',
@@ -88,7 +88,7 @@ WOMAN: Wonderful. See you on Thursday.`,
             prompt: 'The room is a large double on the ____________ floor. Write ONE WORD.',
             acceptableAnswers: ['first', '1st'],
             explanation:
-              'She describes it as “a large double on the first floor”. Listen for the ordinal — “first” maps to 1st; the room being “double” is a separate detail (its size, not its location).',
+              'She describes it as “a large double on the first floor”. Listen for the ordinal - “first” maps to 1st; the room being “double” is a separate detail (its size, not its location).',
           },
           {
             id: 'ls-acad-s2-1-s1-q4',
@@ -105,7 +105,7 @@ WOMAN: Wonderful. See you on Thursday.`,
             options: ['Water', 'Internet', 'Electricity', 'Heating'],
             correctIndex: 2,
             explanation:
-              'She states the rent “includes water and internet, though not electricity.” The word “though” flags the exception — electricity is the bill left out. Heating is never mentioned, so it is a distractor.',
+              'She states the rent “includes water and internet, though not electricity.” The word “though” flags the exception - electricity is the bill left out. Heating is never mentioned, so it is a distractor.',
           },
           {
             id: 'ls-acad-s2-1-s1-q6',
@@ -113,7 +113,7 @@ WOMAN: Wonderful. See you on Thursday.`,
             prompt: 'The deposit is the same as one month’s rent: £ ____________. Write A NUMBER.',
             acceptableAnswers: ['540', 'five hundred and forty', 'five hundred forty'],
             explanation:
-              'She explains the deposit “is equal to one month’s rent, so the same figure again.” Because the rent is 540 (Q4), the deposit is also 540 — Section 1 often makes one detail depend on an earlier one.',
+              'She explains the deposit “is equal to one month’s rent, so the same figure again.” Because the rent is 540 (Q4), the deposit is also 540 - Section 1 often makes one detail depend on an earlier one.',
           },
           {
             id: 'ls-acad-s2-1-s1-q7',
@@ -122,26 +122,26 @@ WOMAN: Wonderful. See you on Thursday.`,
               'The room is available from the first of ____________. Write ONE WORD (a month).',
             acceptableAnswers: ['July'],
             explanation:
-              'She says the current tenant “leaves at the end of June, so it’s available from the first of July.” The availability date is July — note that “June” is mentioned only as the move-out month, a classic near-miss distractor.',
+              'She says the current tenant “leaves at the end of June, so it’s available from the first of July.” The availability date is July - note that “June” is mentioned only as the move-out month, a classic near-miss distractor.',
           },
         ],
       },
       {
         id: 'ls-acad-s2-1-s2',
-        title: 'Section 2 — Leisure centre orientation talk',
+        title: 'Section 2 - Leisure centre orientation talk',
         // ~235 words. Informational monologue (Section 2 style): a single speaker
         // welcoming new members to a sports centre. Uses sequencing/signpost
         // language ("first", "after that", "finally") that the questions follow in
         // order, with a note/sentence-completion + multiple-choice mix.
         transcript: `Good evening, everyone, and welcome to Brookvale Leisure Centre. My name is Ravi, and I'm the duty manager this week. Before you start using the facilities, let me run through a few practical points.
 
-First, the changing rooms. These are on the ground floor, just past reception on your left. We've recently installed lockers that are completely free — you simply choose any empty one and set your own four-digit code. Please don't bring your own padlock, as those will be removed by staff.
+First, the changing rooms. These are on the ground floor, just past reception on your left. We've recently installed lockers that are completely free - you simply choose any empty one and set your own four-digit code. Please don't bring your own padlock, as those will be removed by staff.
 
 After that, let me mention the pool. It's open from six in the morning until ten at night, but please be aware that the first hour, until seven, is reserved for lane swimming only, so it's not suitable if you're bringing children.
 
-Next, our most popular feature: the fitness classes. These are included in your membership at no extra charge, with one exception — the personal training sessions, which must be booked and paid for separately. You can reserve any class through our app up to a week ahead.
+Next, our most popular feature: the fitness classes. These are included in your membership at no extra charge, with one exception - the personal training sessions, which must be booked and paid for separately. You can reserve any class through our app up to a week ahead.
 
-Finally, a word about the café upstairs. It serves hot meals until eight, but the coffee bar stays open as long as the centre does. One last thing worth knowing: members get a ten per cent discount on everything there, as long as you show your membership card at the till. That's all from me — enjoy the centre, and do ask any member of staff if you need help.`,
+Finally, a word about the café upstairs. It serves hot meals until eight, but the coffee bar stays open as long as the centre does. One last thing worth knowing: members get a ten per cent discount on everything there, as long as you show your membership card at the till. That's all from me - enjoy the centre, and do ask any member of staff if you need help.`,
         questions: [
           {
             id: 'ls-acad-s2-1-s2-q8',
@@ -155,7 +155,7 @@ Finally, a word about the café upstairs. It serves hot meals until eight, but t
             ],
             correctIndex: 1,
             explanation:
-              'He says the lockers are “completely free — you simply choose any empty one and set your own four-digit code,” and adds that personal padlocks will be removed. Option B matches; the others contradict the talk (the changing rooms are on the ground floor).',
+              'He says the lockers are “completely free - you simply choose any empty one and set your own four-digit code,” and adds that personal padlocks will be removed. Option B matches; the others contradict the talk (the changing rooms are on the ground floor).',
           },
           {
             id: 'ls-acad-s2-1-s2-q9',
@@ -164,7 +164,7 @@ Finally, a word about the café upstairs. It serves hot meals until eight, but t
               'To use a locker, each member sets their own ____________ code. Write A NUMBER followed by ONE WORD (e.g. “four-digit”).',
             acceptableAnswers: ['four-digit', 'four digit', '4-digit', '4 digit'],
             explanation:
-              'He explains you “set your own four-digit code.” The answer is “four-digit”. Note completion often targets a precise specification like this — write exactly what you hear.',
+              'He explains you “set your own four-digit code.” The answer is “four-digit”. Note completion often targets a precise specification like this - write exactly what you hear.',
           },
           {
             id: 'ls-acad-s2-1-s2-q10',
@@ -200,7 +200,7 @@ Finally, a word about the café upstairs. It serves hot meals until eight, but t
             ],
             correctIndex: 1,
             explanation:
-              'Fitness classes are “included in your membership at no extra charge, with one exception — the personal training sessions, which must be booked and paid for separately.” The phrase “with one exception” flags personal training as the paid extra.',
+              'Fitness classes are “included in your membership at no extra charge, with one exception - the personal training sessions, which must be booked and paid for separately.” The phrase “with one exception” flags personal training as the paid extra.',
           },
           {
             id: 'ls-acad-s2-1-s2-q13',

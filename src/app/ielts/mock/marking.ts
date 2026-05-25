@@ -1,6 +1,6 @@
-// ─── IELTS Mock Test — objective marking (delegates to the shared module) ───
+// ─── IELTS Mock Test - objective marking (delegates to the shared module) ───
 // Marking now lives in @/lib/ielts/objective so the Mock and the standalone
-// Reading page score identically — including multi-mark `matching` questions
+// Reading page score identically - including multi-mark `matching` questions
 // (one mark per item, exactly like the real exam). These thin re-exports keep
 // the mock's existing call sites stable while making them matching-aware:
 //   • countCorrect / countAnswered now count MARKS, not array length.

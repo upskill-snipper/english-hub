@@ -1,16 +1,16 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 10) ──────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 10) ──────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/note completion, and Matching). Framed as "IELTS preparation"
-// only — no official affiliation is implied. General Training track.
+// only - no official affiliation is implied. General Training track.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (Section 1), WORKPLACE texts
 // (Section 2) and one longer GENERAL-INTEREST article (Section 3). This file
 // ships ONE complete, carefully-checked GT test:
-//   Section 1 — a sports-club membership guide + a kerbside recycling notice
-//   Section 2 — a staff data-security training guide (incl. a Matching question)
-//   Section 3 — a general-interest article on the benefits of walking
+//   Section 1 - a sports-club membership guide + a kerbside recycling notice
+//   Section 2 - a staff data-security training guide (incl. a Matching question)
+//   Section 3 - a general-interest article on the benefits of walking
 // Total: 40 marks. Every gap answer appears verbatim in its passage and obeys
 // the stated word limit; every matching item's answer is a valid option key.
 // ────────────────────────────────────────────────────────────────────────────
@@ -20,7 +20,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_10: ReadingTest[] = [
   {
     id: 'rd-general-010',
-    title: 'General Training Reading — Practice Test 10',
+    title: 'General Training Reading - Practice Test 10',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
@@ -29,8 +29,8 @@ export const GT_READING_SET_10: ReadingTest[] = [
       // kerbside recycling / collection notice. 13 questions (13 marks).
       {
         id: 'rd-general-010-p1',
-        title: 'Oakmere Sports Club — Membership Guide & Lindale Kerbside Collection Notice',
-        body: `TEXT A — OAKMERE SPORTS CLUB: A GUIDE FOR NEW MEMBERS
+        title: 'Oakmere Sports Club - Membership Guide & Lindale Kerbside Collection Notice',
+        body: `TEXT A - OAKMERE SPORTS CLUB: A GUIDE FOR NEW MEMBERS
 
 Thank you for joining Oakmere Sports Club. This guide explains how your membership works so that you can make the most of the courts, the gym and the swimming pool from your very first week.
 
@@ -46,7 +46,7 @@ Tennis and squash courts may be booked up to seven days ahead, either through th
 USING THE POOL
 The pool is reserved for lane swimming before 9.00 a.m. on weekdays. Family sessions, during which children may use floats and other equipment, run from 4.00 p.m. to 6.00 p.m. on weekends only. For reasons of hygiene, swimmers are asked to shower before entering the water.
 
-TEXT B — LINDALE DISTRICT COUNCIL: KERBSIDE COLLECTION NOTICE
+TEXT B - LINDALE DISTRICT COUNCIL: KERBSIDE COLLECTION NOTICE
 
 From Monday 1 June, the way your household waste is collected in the Lindale district will change. Please read this notice carefully and keep it for reference.
 
@@ -309,13 +309,13 @@ Information must not be kept for longer than it is needed. Paper records that ar
             type: 'matching',
             variant: 'features',
             prompt:
-              'The training guide describes five tools or methods, A–E. For each statement below, choose the tool or method it describes. Write the correct letter, A–E. (Each option is used once.)',
+              'The training guide describes five tools or methods, A-E. For each statement below, choose the tool or method it describes. Write the correct letter, A-E. (Each option is used once.)',
             options: [
-              { key: 'A', label: 'A — The approved password manager' },
-              { key: 'B', label: 'B — The "Report Phishing" button' },
-              { key: 'C', label: 'C — A privacy filter' },
-              { key: 'D', label: 'D — The company VPN' },
-              { key: 'E', label: 'E — The locked confidential-waste bins' },
+              { key: 'A', label: 'A - The approved password manager' },
+              { key: 'B', label: 'B - The "Report Phishing" button' },
+              { key: 'C', label: 'C - A privacy filter' },
+              { key: 'D', label: 'D - The company VPN' },
+              { key: 'E', label: 'E - The locked confidential-waste bins' },
             ],
             items: [
               {
@@ -350,8 +350,8 @@ Information must not be kept for longer than it is needed. Paper records that ar
         ],
       },
       // ── Section 3: GENERAL-INTEREST ARTICLE ────────────────────────────────
-      // Six labelled paragraphs (A–F) so a Matching Headings question can cover
-      // B–F. 14 questions (14 marks): headings matching (5) + mcq + tfng + gap.
+      // Six labelled paragraphs (A-F) so a Matching Headings question can cover
+      // B-F. 14 questions (14 marks): headings matching (5) + mcq + tfng + gap.
       {
         id: 'rd-general-010-p3',
         title: 'One Foot in Front of the Other: The Quiet Power of Walking',
@@ -378,7 +378,7 @@ None of this means that walking is a cure for every ill, and its champions are c
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–viii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-viii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. A boost to clear and creative thought' },
               { key: 'ii', label: 'ii. The high cost of staying fit' },
@@ -397,7 +397,7 @@ None of this means that walking is a cure for every ill, and its champions are c
               { id: 'pF', text: 'Paragraph F', answer: 'iv' },
             ],
             explanation:
-              'Paragraph B describes the physical benefits while stressing that walking places "far less strain on the knees and ankles than running" — heading iii (good for the body, and gentle with it). Paragraph C covers the effects on mood and the mind — heading v. Paragraph D argues that walking "sharpens the way we think" and aids creativity — heading i. Paragraph E explains how walking "folds into an ordinary day" — heading vii. Paragraph F warns that "walking is not a cure for every ill" and is "careful not to overstate the case" — heading iv. Headings ii, vi and viii are distractors that are not used.',
+              'Paragraph B describes the physical benefits while stressing that walking places "far less strain on the knees and ankles than running" - heading iii (good for the body, and gentle with it). Paragraph C covers the effects on mood and the mind - heading v. Paragraph D argues that walking "sharpens the way we think" and aids creativity - heading i. Paragraph E explains how walking "folds into an ordinary day" - heading vii. Paragraph F warns that "walking is not a cure for every ill" and is "careful not to overstate the case" - heading iv. Headings ii, vi and viii are distractors that are not used.',
           },
           {
             id: 'rd-gen-010-p3-q25',
@@ -513,7 +513,7 @@ None of this means that walking is a cure for every ill, and its champions are c
             ],
             correctIndex: 1,
             explanation:
-              'Paragraph F is careful "not to overstate the case" but argues that "as one part of a fuller picture of good health, its appeal is hard to beat" — free, widely available and possible at any age. Option B reflects this balanced conclusion.',
+              'Paragraph F is careful "not to overstate the case" but argues that "as one part of a fuller picture of good health, its appeal is hard to beat" - free, widely available and possible at any age. Option B reflects this balanced conclusion.',
           },
           {
             id: 'rd-gen-010-p3-q36',

@@ -27,7 +27,7 @@ import { t } from '@/lib/i18n/t'
 // COMPLIANCE (hard requirement): The English Hub is NOT an accredited UCAS or
 // university recruitment agent and NOT an official British Council / IELTS
 // partner. Any reference to those routes is framed as intent / alignment with
-// the standards we hold ourselves to — never as a held affiliation. The caveat
+// the standards we hold ourselves to - never as a held affiliation. The caveat
 // block near the foot of the page reinforces this.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -111,7 +111,7 @@ const USE_CASES = [
   },
 ]
 
-// Standards strip bullets — framed as INTENT (see caveat block below).
+// Standards strip bullets - framed as INTENT (see caveat block below).
 const STANDARDS_BULLET_KEYS = [
   'ielts.partners.agencies.standards.bullet_criteria',
   'ielts.partners.agencies.standards.bullet_bc',
@@ -119,14 +119,14 @@ const STANDARDS_BULLET_KEYS = [
   'ielts.partners.agencies.standards.bullet_uni',
 ]
 
-// JSON-LD source — kept English (structured data, not visible UI). No visible
+// JSON-LD source - kept English (structured data, not visible UI). No visible
 // FAQ accordion renders here; bilingual ielts.partners.agencies.faq.* keys
 // exist in the dictionary for parity.
 const FAQS = [
   {
     question: 'Is The English Hub an accredited university recruitment agent?',
     answer:
-      'No. The English Hub is an independent IELTS preparation platform, not a UCAS or university recruitment agent. We support the preparation side — getting applicants IELTS-ready — and we describe any recruitment or accreditation routes we are pursuing as exactly that: routes we are pursuing, not affiliations we hold.',
+      'No. The English Hub is an independent IELTS preparation platform, not a UCAS or university recruitment agent. We support the preparation side - getting applicants IELTS-ready - and we describe any recruitment or accreditation routes we are pursuing as exactly that: routes we are pursuing, not affiliations we hold.',
   },
   {
     question: 'How does this help our placements?',
@@ -280,7 +280,7 @@ export default async function IeltsPartnersForAgenciesPage() {
         </div>
       </section>
 
-      {/* 4. Use cases — across the placement journey */}
+      {/* 4. Use cases - across the placement journey */}
       <section
         aria-labelledby="usecase-heading"
         className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
@@ -313,7 +313,7 @@ export default async function IeltsPartnersForAgenciesPage() {
         </div>
       </section>
 
-      {/* 5. Standards & compliance — framed as intent */}
+      {/* 5. Standards & compliance - framed as intent */}
       <section
         aria-labelledby="standards-heading"
         className="border-y border-border/60 bg-muted/30"
@@ -345,7 +345,7 @@ export default async function IeltsPartnersForAgenciesPage() {
             </ul>
           </GlassPanel>
 
-          {/* Explicit compliance caveat — required. Translated in full (AR keeps
+          {/* Explicit compliance caveat - required. Translated in full (AR keeps
               every "not currently…" disclaimer; see dictionary-ielts-partners.ts). */}
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
             {await t('ielts.partners.agencies.standards.caveat')}

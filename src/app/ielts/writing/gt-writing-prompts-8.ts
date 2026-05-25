@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (a complaint to a hotel, a repair
+//     The register varies by prompt - formal (a complaint to a hotel, a repair
 //     request to a landlord) or semi-formal/informal (helping a colleague plan
 //     a farewell). The situation and the three bullets live inside `prompt`.
 //     minWords 150, suggestedMinutes 20.
@@ -20,7 +20,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_8: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter of complaint to a hotel ────────────────────
+  // ── Task 1 · A - FORMAL letter of complaint to a hotel ────────────────────
   {
     id: 'wt1-gt8-hotel-complaint',
     task: 'writing-task-1',
@@ -45,7 +45,7 @@ export const GT_WRITING_SET_8: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — SEMI-FORMAL letter to a colleague (farewell event) ───────
+  // ── Task 1 · B - SEMI-FORMAL letter to a colleague (farewell event) ───────
   {
     id: 'wt1-gt8-farewell-event',
     task: 'writing-task-1',
@@ -70,7 +70,7 @@ export const GT_WRITING_SET_8: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — FORMAL letter to a landlord requesting repairs ───────────
+  // ── Task 1 · C - FORMAL letter to a landlord requesting repairs ───────────
   {
     id: 'wt1-gt8-repairs-request',
     task: 'writing-task-1',
@@ -95,7 +95,7 @@ export const GT_WRITING_SET_8: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree / disagree) ───────────────────────────────
+  // ── Task 2 · A - opinion (agree / disagree) ───────────────────────────────
   {
     id: 'wt2-gt8-free-transport',
     task: 'writing-task-2',
@@ -114,7 +114,7 @@ export const GT_WRITING_SET_8: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — two-part direct question ─────────────────────────────────
+  // ── Task 2 · B - two-part direct question ─────────────────────────────────
   {
     id: 'wt2-gt8-buying-things',
     task: 'writing-task-2',
@@ -133,7 +133,7 @@ export const GT_WRITING_SET_8: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — two-part direct question ─────────────────────────────────
+  // ── Task 2 · C - two-part direct question ─────────────────────────────────
   {
     id: 'wt2-gt8-children-outdoors',
     task: 'writing-task-2',

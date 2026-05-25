@@ -5,7 +5,7 @@
 // questions (passage sticky on large screens, exactly like the standalone
 // Reading page). On submit or timer expiry every answer is auto-marked and the
 // raw score is converted with objectiveToBand('reading', correct, total, track)
-// — the track matters because Academic and General Training use different band
+// - the track matters because Academic and General Training use different band
 // boundaries. The result is handed up; the runner then advances to Writing.
 // ────────────────────────────────────────────────────────────────────────────
 

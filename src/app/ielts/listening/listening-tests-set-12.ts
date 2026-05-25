@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 12) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 12) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to a
 //     sports centre to book a tennis court and arrange coaching), assessed with
 //     form / note completion + a multiple-choice item. A surname is spelled and
 //     a membership number is dictated, and one detail (the price per session)
 //     depends on a stated choice (which type of coaching the caller picks).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk for visitors at a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk for visitors at a
 //     planetarium), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "after that", "finally") that the
 //     questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor in a
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor in a
 //     tutorial planning a literature essay on a novel), assessed with multiple
 //     choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of the
+//   • Section 4 - an academic LECTURE / monologue (here: the history of the
 //     calendar, from lunar months to the Gregorian reform), assessed with
 //     note/sentence completion + multiple choice, including one True/False/Not
 //     Given item.
@@ -29,7 +29,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -40,12 +40,12 @@ export const LISTENING_SET_12: ListeningTest[] = [
   {
     id: 'ls-academic-12',
     title:
-      'Practice Test 12 — Booking a Tennis Court & Coaching, A Planetarium Welcome, Planning a Literature Essay & The History of the Calendar',
+      'Practice Test 12 - Booking a Tennis Court & Coaching, A Planetarium Welcome, Planning a Literature Essay & The History of the Calendar',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-12-s1',
-        title: 'Section 1 — Booking a tennis court and coaching',
+        title: 'Section 1 - Booking a tennis court and coaching',
         // ~285 words. Transactional dialogue (Section 1 style): a caller phoning a
         // sports centre to book a tennis court and arrange lessons. A surname is
         // spelled and a membership number is dictated; one detail (the price per
@@ -72,9 +72,9 @@ WOMAN: Let me check. Yes, we have one of the outdoor courts available at half pa
 
 MAN: The outdoor one is fine. How much is that?
 
-WOMAN: For members it's nine pounds an hour. Now, you mentioned coaching — we run two options. There's a group session, which is twelve pounds, or a one-to-one lesson with a private coach at twenty-five pounds.
+WOMAN: For members it's nine pounds an hour. Now, you mentioned coaching - we run two options. There's a group session, which is twelve pounds, or a one-to-one lesson with a private coach at twenty-five pounds.
 
-MAN: I'll go for the one-to-one — I really want to fix my serve.
+MAN: I'll go for the one-to-one - I really want to fix my serve.
 
 WOMAN: A good choice. Our head coach, Sandra, takes those, and she's excellent with technique. One thing to remember: please bring your own racket, as we only lend them to complete beginners.
 
@@ -93,7 +93,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nMember surname: ____________',
             acceptableAnswers: ['Hartley', 'hartley'],
             explanation:
-              'The caller gives his name as “Oliver Hartley” and spells the surname out: H-A-R-T-L-E-Y. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Oliver Hartley” and spells the surname out: H-A-R-T-L-E-Y. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-012-s1-q2',
@@ -101,7 +101,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
             prompt: 'Membership number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['427116', '427 11 6', '42711 6', '427-11-6'],
             explanation:
-              'The number is dictated as “four-two-seven, double-one, six”, which is 427116. “Double one” means two 1s — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “four-two-seven, double-one, six”, which is 427116. “Double one” means two 1s - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-012-s1-q3',
@@ -132,7 +132,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
             prompt: 'Cost of the court for members: £ ____________ an hour. Write A NUMBER.',
             acceptableAnswers: ['9', 'nine'],
             explanation:
-              'She says, “For members it’s nine pounds an hour.” The answer is 9 — the coaching prices come later and are deliberate distractors.',
+              'She says, “For members it’s nine pounds an hour.” The answer is 9 - the coaching prices come later and are deliberate distractors.',
           },
           {
             id: 'ls-012-s1-q6',
@@ -146,7 +146,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
             ],
             correctIndex: 1,
             explanation:
-              'A group session is “twelve pounds”, but a “one-to-one lesson with a private coach” is “twenty-five pounds.” Because he says, “I’ll go for the one-to-one — I really want to fix my serve,” he pays £25. The distractors reuse the real figures but give the wrong reason.',
+              'A group session is “twelve pounds”, but a “one-to-one lesson with a private coach” is “twenty-five pounds.” Because he says, “I’ll go for the one-to-one - I really want to fix my serve,” he pays £25. The distractors reuse the real figures but give the wrong reason.',
           },
           {
             id: 'ls-012-s1-q7',
@@ -155,7 +155,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
               'The man chooses one-to-one coaching because he wants to fix his ____________. Write ONE WORD.',
             acceptableAnswers: ['serve'],
             explanation:
-              'He says, “I’ll go for the one-to-one — I really want to fix my serve.” The answer is “serve”.',
+              'He says, “I’ll go for the one-to-one - I really want to fix my serve.” The answer is “serve”.',
           },
           {
             id: 'ls-012-s1-q8',
@@ -187,7 +187,7 @@ WOMAN: You're welcome. We'll see you on Wednesday.`,
       },
       {
         id: 'ls-academic-12-s2',
-        title: 'Section 2 — A welcome talk at a planetarium',
+        title: 'Section 2 - A welcome talk at a planetarium',
         // ~275 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a planetarium and explaining the timetable,
         // facilities and rules. Uses sequencing/signpost language ("first", "after
@@ -201,7 +201,7 @@ After that, those who wish can join a short observing session on the rooftop ter
 
 A word about the building. Our gift shop, on the ground floor, stocks books, models and posters, and it stays open until nine, so there's no rush. The café, however, closes earlier, at eight, so do get any refreshments before the show rather than after.
 
-Now, a couple of rules. Inside the dome, please switch your phones off completely — not merely to silent — because even a small screen is very distracting in the dark. And flash photography is not permitted at any point during the show.
+Now, a couple of rules. Inside the dome, please switch your phones off completely - not merely to silent - because even a small screen is very distracting in the dark. And flash photography is not permitted at any point during the show.
 
 Finally, if you enjoy tonight, do ask about our membership scheme at the desk. Members get free entry to every show for a year and a generous discount in the shop. Right, if you'd like to follow me, the theatre is just through the doors to my left.`,
         questions: [
@@ -281,7 +281,7 @@ Finally, if you enjoy tonight, do ask about our membership scheme at the desk. M
             ],
             correctIndex: 1,
             explanation:
-              'He says, “please switch your phones off completely — not merely to silent — because even a small screen is very distracting in the dark.” Option B matches; silent mode is explicitly NOT enough.',
+              'He says, “please switch your phones off completely - not merely to silent - because even a small screen is very distracting in the dark.” Option B matches; silent mode is explicitly NOT enough.',
           },
           {
             id: 'ls-012-s2-q18',
@@ -319,7 +319,7 @@ Finally, if you enjoy tonight, do ask about our membership scheme at the desk. M
       },
       {
         id: 'ls-academic-12-s3',
-        title: 'Section 3 — Tutorial: planning a literature essay',
+        title: 'Section 3 - Tutorial: planning a literature essay',
         // ~290 words. Academic discussion (Section 3 style): two students (Leila and
         // Sam) and a tutor (Dr Mason) plan an essay on a novel (the original work
         // "The Lighthouse Keeper"). Speakers debate the question to answer, a focus,
@@ -327,13 +327,13 @@ Finally, if you enjoy tonight, do ask about our membership scheme at the desk. M
         // choice (decisions/opinions) with completion (concrete details).
         transcript: `DR MASON: Right, Leila and Sam, let's talk through the essay you're planning on the novel "The Lighthouse Keeper". Have you settled on a question yet?
 
-LEILA: We have. We're going to write about how the author uses the setting — the remote island — to reflect the main character's feelings of isolation.
+LEILA: We have. We're going to write about how the author uses the setting - the remote island - to reflect the main character's feelings of isolation.
 
 DR MASON: That's a strong angle. The landscape as a mirror of the mind. Sam, do you agree?
 
 SAM: I do, though at first I wanted to focus on the relationships between the characters. But Leila convinced me that the setting is really what drives the whole book.
 
-DR MASON: I think that's the wiser choice — the relationships are important, but the setting is more original and easier to argue clearly. Now, how are you planning to structure it?
+DR MASON: I think that's the wiser choice - the relationships are important, but the setting is more original and easier to argue clearly. Now, how are you planning to structure it?
 
 LEILA: We thought we'd take three key scenes, one from the beginning, middle and end, and trace how the description of the island changes alongside the character's mood.
 
@@ -341,7 +341,7 @@ DR MASON: Excellent. A focused close reading of three scenes is far better than 
 
 SAM: We've found a couple of critical essays in the library, but to be honest we weren't sure how many to use.
 
-DR MASON: For an essay of this length, two or three good sources are plenty. Quality matters more than quantity — engage with them properly rather than just listing them. One more thing: make sure you quote directly from the novel to support each point.
+DR MASON: For an essay of this length, two or three good sources are plenty. Quality matters more than quantity - engage with them properly rather than just listing them. One more thing: make sure you quote directly from the novel to support each point.
 
 LEILA: We will. And when is it due?
 
@@ -369,7 +369,7 @@ SAM: That's really helpful. Thank you.`,
             ],
             correctIndex: 0,
             explanation:
-              'Leila says, “We’re going to write about how the author uses the setting — the remote island — to reflect the main character’s feelings of isolation.” Option A matches; relationships were considered but rejected.',
+              'Leila says, “We’re going to write about how the author uses the setting - the remote island - to reflect the main character’s feelings of isolation.” Option A matches; relationships were considered but rejected.',
           },
           {
             id: 'ls-012-s3-q23',
@@ -466,20 +466,20 @@ SAM: That's really helpful. Thank you.`,
       },
       {
         id: 'ls-academic-12-s4',
-        title: 'Section 4 — Lecture: the history of the calendar',
+        title: 'Section 4 - Lecture: the history of the calendar',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the history of the calendar, from
         // early lunar months to the Julian and Gregorian reforms. Dense, factual and
         // signposted ("let me begin", "by contrast", "finally"), with the note/
         // sentence-completion + multiple-choice mix typical of Section 4, including
         // one True/False/Not Given item.
-        transcript: `Good afternoon. Today I'd like to trace how human beings came to measure the year — the long story of the calendar. It's a tale of astronomy, politics and a stubborn mathematical problem.
+        transcript: `Good afternoon. Today I'd like to trace how human beings came to measure the year - the long story of the calendar. It's a tale of astronomy, politics and a stubborn mathematical problem.
 
-Let me begin with the most basic unit after the day: the month. The earliest calendars were lunar, meaning they were based on the cycle of the Moon, which takes roughly twenty-nine and a half days to complete its phases. The trouble is that twelve such months add up to about three hundred and fifty-four days, which is some eleven days short of the solar year — the time the Earth takes to orbit the Sun. So a purely lunar calendar slowly drifts out of step with the seasons.
+Let me begin with the most basic unit after the day: the month. The earliest calendars were lunar, meaning they were based on the cycle of the Moon, which takes roughly twenty-nine and a half days to complete its phases. The trouble is that twelve such months add up to about three hundred and fifty-four days, which is some eleven days short of the solar year - the time the Earth takes to orbit the Sun. So a purely lunar calendar slowly drifts out of step with the seasons.
 
 The Egyptians were among the first to base their calendar on the Sun instead, giving a year of three hundred and sixty-five days. But even this is not quite right, because the true solar year is about a quarter of a day longer.
 
-This is where the Romans come in. In the famous reform of forty-six BC, Julius Caesar introduced the system we call the Julian calendar, which added an extra day every four years — what we now call a leap year — to absorb those quarter-days.
+This is where the Romans come in. In the famous reform of forty-six BC, Julius Caesar introduced the system we call the Julian calendar, which added an extra day every four years - what we now call a leap year - to absorb those quarter-days.
 
 Clever as it was, the Julian system was still slightly too long, by about eleven minutes a year. Over centuries, these minutes accumulated, and by the sixteenth century the calendar was ten days out. So in fifteen eighty-two, Pope Gregory the Thirteenth introduced a refinement: the Gregorian calendar, which simply skips a few leap years to keep things accurate. That is the calendar most of the world still uses today. Next week, we'll look at how different cultures number their years.`,
         questions: [
@@ -544,7 +544,7 @@ Clever as it was, the Julian system was still slightly too long, by about eleven
             ],
             correctIndex: 1,
             explanation:
-              'The speaker says the Julian calendar “added an extra day every four years — what we now call a leap year — to absorb those quarter-days.” Option B matches.',
+              'The speaker says the Julian calendar “added an extra day every four years - what we now call a leap year - to absorb those quarter-days.” Option B matches.',
           },
           {
             id: 'ls-012-s4-q37',

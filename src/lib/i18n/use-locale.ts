@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * useLocale — reads the eh-lang cookie on the client and re-renders
+ * useLocale - reads the eh-lang cookie on the client and re-renders
  * whenever the LanguageToggle dispatches the `eh-lang-change` custom
  * event. Same pattern used by `useT()`, kept as a standalone hook
  * for components that don't need the full dictionary lookup.
  *
- * Two-mode after May 2026 — 'en' or 'ar'. Bilingual mode was removed
+ * Two-mode after May 2026 - 'en' or 'ar'. Bilingual mode was removed
  * because the stacked EN+AR layout didn't render reliably on dense
  * pages. Legacy `bi` cookie values are coerced to 'en' here and by
  * middleware on the next request.
@@ -17,7 +17,7 @@ export type Locale = 'en' | 'ar'
 
 function readCookie(): Locale {
   if (typeof document === 'undefined') return 'en'
-  // Match legacy 'bi' too, then coerce — old sessions upgrade cleanly.
+  // Match legacy 'bi' too, then coerce - old sessions upgrade cleanly.
   const m = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
   const raw = m?.[1]
   if (raw === 'ar') return 'ar'
@@ -33,7 +33,7 @@ export function useLocale(): Locale {
       if (detail === 'ar') {
         setLocale('ar')
       } else if (detail === 'en' || detail === 'bi') {
-        // 'bi' is legacy — fold to 'en' (no bilingual mode anymore).
+        // 'bi' is legacy - fold to 'en' (no bilingual mode anymore).
         setLocale('en')
       } else {
         setLocale(readCookie())

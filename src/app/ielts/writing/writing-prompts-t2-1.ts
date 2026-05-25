@@ -1,7 +1,7 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-1 ───────────────────────
 // A dedicated bank of EIGHT Academic Writing Task 2 questions (argument /
 // opinion essays). Task 2 carries no visual, so none of these prompts define a
-// `chart`, `imageSrc` or `imageAlt` field — the writing page renders the
+// `chart`, `imageSrc` or `imageAlt` field - the writing page renders the
 // question text from `prompt` alone.
 //
 // The eight cover the full range of Task 2 question formats (at least one of
@@ -9,7 +9,7 @@
 // & solution / causes & solutions, two-part / direct question, and advantages
 // & disadvantages. Topics are deliberately spread across education, the
 // environment, technology, work, health, society, globalisation and
-// media/culture, and are distinct from the Wave 1–3 banks so this set
+// media/culture, and are distinct from the Wave 1-3 banks so this set
 // complements rather than duplicates them.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

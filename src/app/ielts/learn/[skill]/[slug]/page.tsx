@@ -32,7 +32,7 @@ import { IELTS_LEARN_DICTIONARY } from '@/lib/i18n/dictionary-ielts-learn'
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
 // ielts.learn.* keys live in the dictionary-ielts-learn shard, which isn't wired
-// into the global lookup() chain — resolve them here against the live locale,
+// into the global lookup() chain - resolve them here against the live locale,
 // falling back to the shared useT() for any cross-module ielts.* key. `vars`
 // interpolates {token} placeholders (minutes, skill labels) so wrapping phrases
 // stay translatable as a whole. Modelled on usePlanT() in app/ielts/plan/page.tsx.
@@ -61,7 +61,7 @@ function useLearnT(): LearnTFn {
 
 // ─── IELTS lesson page ─────────────────────────────────────────────────────
 // Renders one self-study lesson: title + est. minutes + level badge, the
-// Markdown body (via the safe in-house ./_components/Markdown renderer — the
+// Markdown body (via the safe in-house ./_components/Markdown renderer - the
 // repo has no markdown lib in use), a "Mark complete" button (persists to the
 // localStorage-backed completion store), prev/next navigation within the same
 // skill (ordered by unit, then by position in the unit), and CTAs to practise

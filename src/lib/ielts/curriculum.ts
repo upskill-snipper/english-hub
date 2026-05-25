@@ -1,5 +1,5 @@
 // ─── IELTS readiness curriculum spine ──────────────────────────────────────
-// The leveled program backbone — from "new to IELTS / basic English" through to
+// The leveled program backbone - from "new to IELTS / basic English" through to
 // an exam-ready top band. Mirrors the GCSE/IGCSE learner model (levels + units +
 // lessons) but adds an explicit beginner→ready ladder the GCSE side doesn't have.
 //
@@ -26,7 +26,7 @@ export const LEVELS: {
   {
     id: 'foundation',
     label: 'Foundation',
-    cefr: 'A2–B1',
+    cefr: 'A2-B1',
     bandRange: 'Pre-IELTS → 5.0',
     blurb:
       'Start here if IELTS (or exam English) is new to you. Learn the format, the band scale, and the core language the test assumes.',
@@ -35,8 +35,8 @@ export const LEVELS: {
   {
     id: 'intermediate',
     label: 'Intermediate',
-    cefr: 'B1–B2',
-    bandRange: '5.0 – 6.0',
+    cefr: 'B1-B2',
+    bandRange: '5.0 - 6.0',
     blurb:
       'Meet every question type and build a reliable method for each. Reach a competent, consistent band.',
     order: 2,
@@ -44,17 +44,17 @@ export const LEVELS: {
   {
     id: 'advanced',
     label: 'Advanced',
-    cefr: 'B2–C1',
-    bandRange: '6.5 – 7.5',
+    cefr: 'B2-C1',
+    bandRange: '6.5 - 7.5',
     blurb: 'Sharpen technique, accuracy and range under time pressure for a strong band.',
     order: 3,
   },
   {
     id: 'mastery',
     label: 'Mastery',
-    cefr: 'C1–C2',
-    bandRange: '8.0 – 9.0',
-    blurb: 'Polish for a top band — precision, natural range, and complete exam control.',
+    cefr: 'C1-C2',
+    bandRange: '8.0 - 9.0',
+    blurb: 'Polish for a top band - precision, natural range, and complete exam control.',
     order: 4,
   },
 ]
@@ -86,8 +86,8 @@ export const UNITS: Unit[] = [
   {
     id: 'found-bands',
     skill: 'foundation',
-    title: 'How IELTS is scored — the band scale',
-    blurb: 'What bands 4–9 mean and how the overall band is worked out.',
+    title: 'How IELTS is scored - the band scale',
+    blurb: 'What bands 4-9 mean and how the overall band is worked out.',
     order: 2,
   },
   {

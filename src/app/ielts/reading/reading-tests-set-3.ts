@@ -1,11 +1,11 @@
-// ─── IELTS Academic Reading — practice item bank (Set 3) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 3) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
 // reproductions of any official IELTS past paper, and no official affiliation is
 // implied. Academic track.
 //
-// Domain for this set: HISTORY / ARCHAEOLOGY / SOCIETY & CULTURE — kept distinct
+// Domain for this set: HISTORY / ARCHAEOLOGY / SOCIETY & CULTURE - kept distinct
 // from the transport, memory, lighthouse and honeybee themes used elsewhere in
 // the bank so that learners meet fresh subject matter.
 // ────────────────────────────────────────────────────────────────────────────
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_3: ReadingTest[] = [
   {
     id: 'rd-acad-s3-001',
-    title: 'Academic Reading — Practice Test 5',
+    title: 'Academic Reading - Practice Test 5',
     track: 'academic',
     estimatedMinutes: 20,
     passages: [
@@ -119,7 +119,7 @@ What made the coffee house genuinely novel, though, was its openness. In a socie
 
 The authorities were not always comfortable with all this talk. At one point an attempt was made to close the coffee houses altogether, on the grounds that they bred discontent and spread rumours. The measure was abandoned within days, partly because it proved impossible to enforce and partly because the houses had already become too useful to too many people to be swept away.
 
-Historians have sometimes called the coffee house the first true public sphere — a place where private individuals could come together to discuss the affairs of the day on something approaching equal terms. The coffee itself, in the end, was almost incidental. What people were really buying was the company, and the conversation, of strangers.`,
+Historians have sometimes called the coffee house the first true public sphere - a place where private individuals could come together to discuss the affairs of the day on something approaching equal terms. The coffee itself, in the end, was almost incidental. What people were really buying was the company, and the conversation, of strangers.`,
         questions: [
           {
             id: 'rd-acad-s3-001-p2-q8',

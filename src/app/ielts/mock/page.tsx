@@ -1,6 +1,6 @@
 'use client'
 
-// ─── IELTS Mock Test — runner (orchestrator) ────────────────────────────────
+// ─── IELTS Mock Test - runner (orchestrator) ────────────────────────────────
 // The headline "timed, accurate mock tests" feature. This client page assembles
 // ONE complete mock for the chosen track and sequences the candidate through the
 // four sections in the real exam order under realistic per-section countdowns,
@@ -87,7 +87,7 @@ export default function IeltsMockPage() {
         date: new Date().toISOString(),
       })
     } catch {
-      /* non-fatal — the report still shows the band */
+      /* non-fatal - the report still shows the band */
     }
     setResults((prev) => ({ ...prev, listening: result }))
     setPhase('reading')

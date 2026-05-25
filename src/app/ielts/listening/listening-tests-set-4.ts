@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 4) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 4) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, LISTENING_SET_4, …)
@@ -7,14 +7,14 @@
 // Unlike the earlier shorter warm-up sets, this set ships ONE *full-length*
 // original practice test that mirrors the real four-section IELTS Listening
 // paper (4 sections / ~40 questions, ~30 minutes):
-//   • Section 1 — an everyday TRANSACTIONAL DIALOGUE (here: booking a holiday
+//   • Section 1 - an everyday TRANSACTIONAL DIALOGUE (here: booking a holiday
 //     cottage by phone). A surname is spelled and several numbers are dictated
 //     so spelling/number gap answers have a clear basis in the audio.
-//   • Section 2 — an everyday MONOLOGUE (here: a museum visitor-centre
+//   • Section 2 - an everyday MONOLOGUE (here: a museum visitor-centre
 //     announcement / tour briefing) with signpost language the questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a field-study report), assessed with note completion + MCQ.
-//   • Section 4 — an academic LECTURE (here: a talk on the science of sleep).
+//   • Section 4 - an academic LECTURE (here: a talk on the science of sleep).
 //
 // Question conventions (shared contract from @/lib/ielts/types):
 //   • 'gap'  → completion items. `acceptableAnswers` are matched case-insensitively
@@ -23,7 +23,7 @@
 //              both digit and word variants (e.g. ['12','twelve']).
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given; used sparingly.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only; it has
 // no affiliation with or endorsement by the official IELTS test owners.
@@ -35,16 +35,16 @@ export const LISTENING_SET_4: ListeningTest[] = [
   {
     id: 'ls-academic-4',
     title:
-      'Practice Test 4 — Holiday Cottage Booking, Museum Tour, Field Study & The Science of Sleep',
+      'Practice Test 4 - Holiday Cottage Booking, Museum Tour, Field Study & The Science of Sleep',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-4-s1',
-        title: 'Section 1 — Booking a holiday cottage',
+        title: 'Section 1 - Booking a holiday cottage',
         // ~290 words. Transactional dialogue (Section 1 style): a customer phoning
         // a holiday-letting agency. A surname is spelled, a phone number, a date,
         // a number of nights and a deposit are all dictated, and one detail (the
-        // total price) depends on a stated choice — mirroring the form/note
+        // total price) depends on a stated choice - mirroring the form/note
         // completion + multiple-choice mix of a real Section 1.
         transcript: `WOMAN: Good morning, Lakeview Cottage Lettings, Sophie speaking. How can I help?
 
@@ -78,7 +78,7 @@ WOMAN: Perfect, so that's seventy a night. To secure the booking we ask for a de
 
 MAN: That's fine. Is there parking?
 
-WOMAN: Yes, there's space for two cars in the courtyard. One more thing — the nearest shop is a fifteen-minute drive away, so do bring supplies with you.
+WOMAN: Yes, there's space for two cars in the courtyard. One more thing - the nearest shop is a fifteen-minute drive away, so do bring supplies with you.
 
 MAN: Good to know. Thank you very much.
 
@@ -91,7 +91,7 @@ WOMAN: You're welcome. I'll email your confirmation today.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Whitlock', 'whitlock'],
             explanation:
-              'The caller gives his name as “Gregory Whitlock” and spells the surname: W-H-I-T-L-O-C-K. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Gregory Whitlock” and spells the surname: W-H-I-T-L-O-C-K. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-004-s1-q2',
@@ -124,7 +124,7 @@ WOMAN: You're welcome. I'll email your confirmation today.`,
             prompt: 'Number of nights: ____________. Write A NUMBER.',
             acceptableAnswers: ['4', 'four'],
             explanation:
-              'He plans to “stay for four nights”, so the answer is 4. This figure also triggers the cheaper midweek rate in the next question — Section 1 details often connect.',
+              'He plans to “stay for four nights”, so the answer is 4. This figure also triggers the cheaper midweek rate in the next question - Section 1 details often connect.',
           },
           {
             id: 'ls-004-s1-q6',
@@ -138,7 +138,7 @@ WOMAN: You're welcome. I'll email your confirmation today.`,
             ],
             correctIndex: 1,
             explanation:
-              'The standard rate is ninety pounds, but “if you book for four nights or more, the midweek rate applies, which is seventy pounds a night.” Because he stays four nights (Q5), he pays seventy. The distractors reuse real numbers (ninety, fifty, six) with the wrong reason — listen for the condition, not just the keyword.',
+              'The standard rate is ninety pounds, but “if you book for four nights or more, the midweek rate applies, which is seventy pounds a night.” Because he stays four nights (Q5), he pays seventy. The distractors reuse real numbers (ninety, fifty, six) with the wrong reason - listen for the condition, not just the keyword.',
           },
           {
             id: 'ls-004-s1-q7',
@@ -179,22 +179,22 @@ WOMAN: You're welcome. I'll email your confirmation today.`,
       },
       {
         id: 'ls-academic-4-s2',
-        title: 'Section 2 — Museum visitor-centre briefing',
+        title: 'Section 2 - Museum visitor-centre briefing',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // briefing visitors at a museum. Uses sequencing/signpost language
         // ("to begin", "next", "after that", "finally") that the questions follow
         // in order, with a sentence-completion + multiple-choice mix.
         transcript: `Good morning, everyone, and a warm welcome to the Harbourton Maritime Museum. My name is Owen, and I'm one of the visitor guides. Before you explore, let me give you a quick briefing so you make the most of your visit.
 
-To begin with, a note about tickets. Your wristband covers all the permanent galleries, but the temporary exhibition on the top floor — currently a display of antique diving equipment — requires a separate ticket, which you can buy at the desk for an extra four pounds.
+To begin with, a note about tickets. Your wristband covers all the permanent galleries, but the temporary exhibition on the top floor - currently a display of antique diving equipment - requires a separate ticket, which you can buy at the desk for an extra four pounds.
 
 Next, the layout. We're standing in the entrance hall on the ground floor. The largest gallery, which holds our restored fishing boats, is straight ahead. I'd suggest starting there, because it gets very busy after about eleven o'clock when the school groups arrive.
 
-After that, take the stairs or the lift to the first floor, where you'll find the exhibition on local trade and the interactive map room — that's especially popular with children, who can steer a virtual ship across the bay.
+After that, take the stairs or the lift to the first floor, where you'll find the exhibition on local trade and the interactive map room - that's especially popular with children, who can steer a virtual ship across the bay.
 
 A word about photography: you're very welcome to take photos throughout the museum, but please switch off your flash in the model gallery, as the bright light can damage the delicate paintwork on the older models.
 
-Finally, if you'd like a guided talk, these run every day at half past two and last around forty minutes; just gather by the ship's wheel near the café. And speaking of the café — it serves hot lunches until two o'clock, so do plan around that if you're hungry. Enjoy your visit, and please don't hesitate to ask any of our guides if you need directions.`,
+Finally, if you'd like a guided talk, these run every day at half past two and last around forty minutes; just gather by the ship's wheel near the café. And speaking of the café - it serves hot lunches until two o'clock, so do plan around that if you're hungry. Enjoy your visit, and please don't hesitate to ask any of our guides if you need directions.`,
         questions: [
           {
             id: 'ls-004-s2-q11',
@@ -240,7 +240,7 @@ Finally, if you'd like a guided talk, these run every day at half past two and l
               'On the first floor, children can steer a virtual ship across the bay in the interactive ____________ room. Write ONE WORD.',
             acceptableAnswers: ['map'],
             explanation:
-              'He mentions “the interactive map room — that’s especially popular with children, who can steer a virtual ship across the bay.” The answer is “map”.',
+              'He mentions “the interactive map room - that’s especially popular with children, who can steer a virtual ship across the bay.” The answer is “map”.',
           },
           {
             id: 'ls-004-s2-q15',
@@ -280,7 +280,7 @@ Finally, if you'd like a guided talk, these run every day at half past two and l
             prompt: 'Each guided talk lasts around ____________ minutes. Write A NUMBER.',
             acceptableAnswers: ['40', 'forty'],
             explanation:
-              'The talks “last around forty minutes”, so the answer is 40. Note the distinction from the start time in the previous question — Section 2 often pairs a time with a duration.',
+              'The talks “last around forty minutes”, so the answer is 40. Note the distinction from the start time in the previous question - Section 2 often pairs a time with a duration.',
           },
           {
             id: 'ls-004-s2-q19',
@@ -303,7 +303,7 @@ Finally, if you'd like a guided talk, these run every day at half past two and l
       },
       {
         id: 'ls-academic-4-s3',
-        title: 'Section 3 — Planning a field-study report',
+        title: 'Section 3 - Planning a field-study report',
         // ~300 words. Academic discussion (Section 3 style): two students and a
         // tutor planning a coastal field-study report. Multiple speakers, with the
         // mix of opinion/agreement and procedural detail that Section 3 favours;
@@ -313,7 +313,7 @@ Finally, if you'd like a guided talk, these run every day at half past two and l
 
 MAYA: Good, mostly. We measured water salinity at six points along the channel, and the readings were more varied than I expected.
 
-DANIEL: Yes — I think that's actually our most interesting finding. The salinity dropped sharply near the river mouth, much more than the textbook suggested.
+DANIEL: Yes - I think that's actually our most interesting finding. The salinity dropped sharply near the river mouth, much more than the textbook suggested.
 
 TUTOR: That's a promising angle. Have you thought about what's driving that variation?
 
@@ -323,13 +323,13 @@ TUTOR: A fair point. For the report, I'd recommend you're upfront about that lim
 
 DANIEL: Agreed. Maya, should we add a second sampling day before the deadline?
 
-MAYA: I'd love to, but the tide times next week are awkward — we'd have to be there before six in the morning.
+MAYA: I'd love to, but the tide times next week are awkward - we'd have to be there before six in the morning.
 
 TUTOR: It would strengthen the study, but don't let it derail you. A clearly discussed single-day data set is better than a rushed second visit.
 
 DANIEL: Okay. Then let's focus on the analysis. I'll handle the graphs, since I've got the spreadsheet set up.
 
-MAYA: And I'll draft the methods section — I took the most detailed field notes.
+MAYA: And I'll draft the methods section - I took the most detailed field notes.
 
 TUTOR: Good division of labour. One more thing: your introduction should set out a clear research question. At the moment it reads more like a general description.
 
@@ -396,7 +396,7 @@ DANIEL: Great, thank you. We'll have it to you by Friday.`,
             ],
             correctIndex: 1,
             explanation:
-              'Maya notes the tide times “are awkward — we’d have to be there before six in the morning,” and the tutor advises, “A clearly discussed single-day data set is better than a rushed second visit.” Option B captures the reasoning; the tutor permits but does not forbid a second visit.',
+              'Maya notes the tide times “are awkward - we’d have to be there before six in the morning,” and the tutor advises, “A clearly discussed single-day data set is better than a rushed second visit.” Option B captures the reasoning; the tutor permits but does not forbid a second visit.',
           },
           {
             id: 'ls-004-s3-q26',
@@ -413,7 +413,7 @@ DANIEL: Great, thank you. We'll have it to you by Friday.`,
             prompt: 'Maya will write the ____________ section of the report. Write ONE WORD.',
             acceptableAnswers: ['methods', 'methodology', 'method'],
             explanation:
-              'Maya says, “I’ll draft the methods section — I took the most detailed field notes.” The answer is “methods” (methodology accepted).',
+              'Maya says, “I’ll draft the methods section - I took the most detailed field notes.” The answer is “methods” (methodology accepted).',
           },
           {
             id: 'ls-004-s3-q28',
@@ -450,7 +450,7 @@ DANIEL: Great, thank you. We'll have it to you by Friday.`,
       },
       {
         id: 'ls-academic-4-s4',
-        title: 'Section 4 — Lecture: the science of sleep',
+        title: 'Section 4 - Lecture: the science of sleep',
         // ~300 words. Academic lecture (Section 4 style): a single speaker
         // delivering a structured talk on sleep science. Dense factual content with
         // signpost language ("first", "in addition", "finally"); assessed mostly
@@ -460,11 +460,11 @@ DANIEL: Great, thank you. We'll have it to you by Friday.`,
 
 Let's start with the structure of a night's sleep. Rather than being uniform, sleep cycles through several stages, and one full cycle lasts roughly ninety minutes. Within each cycle we move from light sleep into deep sleep, and then into a stage called REM, which stands for rapid eye movement. It's during REM that most vivid dreaming occurs.
 
-Each stage seems to serve a different purpose. Deep sleep, which dominates the earlier part of the night, is when the body carries out most of its physical repair — tissue is rebuilt and the immune system is strengthened. REM sleep, which becomes longer towards morning, appears to be especially important for memory. In particular, the brain seems to consolidate, or store, what we have learned during the day.
+Each stage seems to serve a different purpose. Deep sleep, which dominates the earlier part of the night, is when the body carries out most of its physical repair - tissue is rebuilt and the immune system is strengthened. REM sleep, which becomes longer towards morning, appears to be especially important for memory. In particular, the brain seems to consolidate, or store, what we have learned during the day.
 
 In addition, there's growing evidence about waste removal. Recent research suggests that during deep sleep the brain clears out certain harmful proteins that build up while we are awake. A long-term shortage of sleep may therefore be linked to a higher risk of memory disorders later in life.
 
-So how much do we need? For most adults, the recommended amount is between seven and nine hours a night, though the exact figure varies from person to person. What matters is not only the quantity but the regularity — going to bed at roughly the same time each night helps the body's internal clock.
+So how much do we need? For most adults, the recommended amount is between seven and nine hours a night, though the exact figure varies from person to person. What matters is not only the quantity but the regularity - going to bed at roughly the same time each night helps the body's internal clock.
 
 Finally, a practical point. One of the biggest disruptors of sleep is light from screens in the evening, because it suppresses melatonin, the hormone that signals to the body that it's time to rest.`,
         questions: [
@@ -500,7 +500,7 @@ Finally, a practical point. One of the biggest disruptors of sleep is light from
               'Deep sleep is when the body carries out most of its physical ____________. Write ONE WORD.',
             acceptableAnswers: ['repair', 'repairs'],
             explanation:
-              'He says deep sleep “is when the body carries out most of its physical repair — tissue is rebuilt and the immune system is strengthened.” The answer is “repair”.',
+              'He says deep sleep “is when the body carries out most of its physical repair - tissue is rebuilt and the immune system is strengthened.” The answer is “repair”.',
           },
           {
             id: 'ls-004-s4-q35',
@@ -547,10 +547,10 @@ Finally, a practical point. One of the biggest disruptors of sleep is light from
             id: 'ls-004-s4-q39',
             type: 'gap',
             prompt:
-              'Besides quantity, the lecturer stresses the importance of ____________ — going to bed at roughly the same time each night. Write ONE WORD.',
+              'Besides quantity, the lecturer stresses the importance of ____________ - going to bed at roughly the same time each night. Write ONE WORD.',
             acceptableAnswers: ['regularity', 'consistency', 'routine'],
             explanation:
-              'He says “What matters is not only the quantity but the regularity — going to bed at roughly the same time each night helps the body’s internal clock.” The answer is “regularity” (consistency/routine accepted as synonyms).',
+              'He says “What matters is not only the quantity but the regularity - going to bed at roughly the same time each night helps the body’s internal clock.” The answer is “regularity” (consistency/routine accepted as synonyms).',
           },
           {
             id: 'ls-004-s4-q40',

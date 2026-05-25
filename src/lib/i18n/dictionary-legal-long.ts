@@ -1,7 +1,7 @@
 /**
  * Long-form legal / compliance dictionary entries (legal_long.*).
  *
- * IMPORTANT — FORMAL MSA (الفصحى) ONLY in this module.
+ * IMPORTANT - FORMAL MSA (الفصحى) ONLY in this module.
  *
  * Regulators, school DPOs, and diligence reviewers may quote this
  * text verbatim. Khaleeji conventions used elsewhere in the product
@@ -29,17 +29,17 @@
  * lookup chain in dictionary.ts.
  *
  * Namespaces:
- *   legal_long.ai_gov.body.*           — /legal/ai-governance body
- *   legal_long.privacy.body.*          — /legal/privacy body
- *   legal_long.data_processing.body.*  — /data-processing body
- *   legal_long.ai_transparency.body.*  — /legal/ai-transparency body
+ *   legal_long.ai_gov.body.*           - /legal/ai-governance body
+ *   legal_long.privacy.body.*          - /legal/privacy body
+ *   legal_long.data_processing.body.*  - /data-processing body
+ *   legal_long.ai_transparency.body.*  - /legal/ai-transparency body
  */
 
 import type { Dictionary } from './dictionary'
 
 export const LEGAL_LONG_DICTIONARY: Dictionary = {
   // ────────────────────────────────────────────────────────────────
-  // /legal/ai-governance — body
+  // /legal/ai-governance - body
   // ────────────────────────────────────────────────────────────────
   'legal_long.ai_gov.h1': {
     en: 'AI Governance & Ethics',
@@ -50,8 +50,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'The English Hub',
   },
   'legal_long.ai_gov.operator_mid': {
-    en: ' — operated by Upskill Energy Limited',
-    ar: ' — تُشغّلها شركة Upskill Energy Limited',
+    en: ' - operated by Upskill Energy Limited',
+    ar: ' - تُشغّلها شركة Upskill Energy Limited',
   },
   'legal_long.ai_gov.review_stamp': {
     en: 'Last reviewed: 12 May 2026 · Next review: November 2026',
@@ -76,7 +76,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   'legal_long.ai_gov.s1.t.col3': { en: 'Why', ar: 'السبب' },
   'legal_long.ai_gov.s1.t.r1.c1': {
     en: 'PDPPL (Law 13/2016)',
-    ar: 'قانون حماية خصوصية البيانات الشخصية (PDPPL — قانون 13/2016)',
+    ar: 'قانون حماية خصوصية البيانات الشخصية (PDPPL - قانون 13/2016)',
   },
   'legal_long.ai_gov.s1.t.r1.c2': {
     en: 'Yes, for data of individuals in Qatar',
@@ -103,8 +103,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'إرشادات الذكاء الاصطناعي لمصرف قطر المركزي (سبتمبر 2024)',
   },
   'legal_long.ai_gov.s1.t.r3.c2': {
-    en: 'No — we hold no QCB licence',
-    ar: 'لا — لا نحمل ترخيصاً من مصرف قطر المركزي',
+    en: 'No - we hold no QCB licence',
+    ar: 'لا - لا نحمل ترخيصاً من مصرف قطر المركزي',
   },
   'legal_long.ai_gov.s1.t.r3.c3': {
     en: 'Used voluntarily as a reference standard',
@@ -114,7 +114,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     en: 'NCSA AI Guidelines v1.0 (Feb 2024)',
     ar: 'إرشادات الذكاء الاصطناعي للوكالة الوطنية للأمن السيبراني NCSA إصدار 1.0 (فبراير 2024)',
   },
-  'legal_long.ai_gov.s1.t.r4.c2': { en: 'No — voluntary', ar: 'لا — طوعية' },
+  'legal_long.ai_gov.s1.t.r4.c2': { en: 'No - voluntary', ar: 'لا - طوعية' },
   'legal_long.ai_gov.s1.t.r4.c3': {
     en: 'Treated as expected practice; alignment in progress',
     ar: 'تُعامَل بوصفها ممارسة متوقّعة، والمواءمة قيد التنفيذ',
@@ -123,15 +123,15 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     en: 'MCIT Ethical AI Principles (2025)',
     ar: 'مبادئ الذكاء الاصطناعي الأخلاقي لوزارة الاتصالات وتكنولوجيا المعلومات (MCIT) لعام 2025',
   },
-  'legal_long.ai_gov.s1.t.r5.c2': { en: 'No — voluntary', ar: 'لا — طوعية' },
+  'legal_long.ai_gov.s1.t.r5.c2': { en: 'No - voluntary', ar: 'لا - طوعية' },
   'legal_long.ai_gov.s1.t.r5.c3': {
     en: 'Adopted as our internal ethical baseline',
     ar: 'اعتُمدت بوصفها المعيار الأخلاقي الداخلي لدينا',
   },
   'legal_long.ai_gov.s1.t.r6.c1': { en: 'NIA / NIMF / NDCP', ar: 'NIA / NIMF / NDCP' },
   'legal_long.ai_gov.s1.t.r6.c2': {
-    en: 'No — not CNI, not government',
-    ar: 'لا — لسنا منشأة حيوية ولا جهة حكومية',
+    en: 'No - not CNI, not government',
+    ar: 'لا - لسنا منشأة حيوية ولا جهة حكومية',
   },
   'legal_long.ai_gov.s1.t.r6.c3': { en: 'Tracked but not implemented', ar: 'مُتابعة دون تطبيق' },
   'legal_long.ai_gov.s1.t.r7.c1': {
@@ -139,8 +139,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'إطار سياسة الحوسبة السحابية',
   },
   'legal_long.ai_gov.s1.t.r7.c2': {
-    en: 'No — not a licensed Qatari cloud provider',
-    ar: 'لا — لسنا مزوّد حوسبة سحابية مرخّصاً في قطر',
+    en: 'No - not a licensed Qatari cloud provider',
+    ar: 'لا - لسنا مزوّد حوسبة سحابية مرخّصاً في قطر',
   },
   'legal_long.ai_gov.s1.t.r7.c3': {
     en: 'Referenced when selecting subprocessors',
@@ -151,8 +151,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'لائحة حماية البيانات لمركز قطر للمال لعام 2021',
   },
   'legal_long.ai_gov.s1.t.r8.c2': {
-    en: 'No — not QFC-registered',
-    ar: 'لا — لسنا مسجّلين في مركز قطر للمال',
+    en: 'No - not QFC-registered',
+    ar: 'لا - لسنا مسجّلين في مركز قطر للمال',
   },
   'legal_long.ai_gov.s1.t.r8.c3': { en: 'Separate jurisdiction', ar: 'اختصاص قضائي منفصل' },
   'legal_long.ai_gov.s1.outro': {
@@ -162,8 +162,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 2
   'legal_long.ai_gov.s2.h2': {
-    en: '2. PDPPL — where we comply, where there are gaps',
-    ar: '2. قانون حماية خصوصية البيانات الشخصية (PDPPL) — أين نمتثل، وأين توجد ثغرات',
+    en: '2. PDPPL - where we comply, where there are gaps',
+    ar: '2. قانون حماية خصوصية البيانات الشخصية (PDPPL) - أين نمتثل، وأين توجد ثغرات',
   },
   'legal_long.ai_gov.s2.p1': {
     en: 'PDPPL is narrower than GDPR. It requires a lawful basis, transparency, purpose limitation, security, and explicit consent for sensitive data. It does not grant a GDPR-style Article 22 right against solely-automated decisions, but it does class children’s data as sensitive.',
@@ -218,11 +218,11 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 3
   'legal_long.ai_gov.s3.h2': {
-    en: '3. Cybercrime Law — relevance for AI-generated content',
-    ar: '3. قانون مكافحة الجرائم الإلكترونية — صلته بالمحتوى المُولَّد بالذكاء الاصطناعي',
+    en: '3. Cybercrime Law - relevance for AI-generated content',
+    ar: '3. قانون مكافحة الجرائم الإلكترونية - صلته بالمحتوى المُولَّد بالذكاء الاصطناعي',
   },
   'legal_long.ai_gov.s3.p1': {
-    en: 'Law 14/2014 criminalises, among other things, content that infringes social values, public order, or the reputation of others, and content that is false or misleading. Because our platform generates explanatory content, model answers, and feedback using LLMs, an autonomous agent producing such material is not a defence — the operator carries the risk.',
+    en: 'Law 14/2014 criminalises, among other things, content that infringes social values, public order, or the reputation of others, and content that is false or misleading. Because our platform generates explanatory content, model answers, and feedback using LLMs, an autonomous agent producing such material is not a defence - the operator carries the risk.',
     ar: 'يُجرّم قانون 14/2014، فيما يُجرّم، المحتوى الذي يمسّ القيم الاجتماعية أو النظام العام أو سمعة الغير، والمحتوى الكاذب أو المُضلِّل. ولمّا كانت منصّتنا تُنتج محتوى شارحاً، وإجابات نموذجية، وملاحظات تقييمية عبر نماذج اللغة الكبيرة (LLMs)، فإن كون المحتوى صادراً عن وكيل ذكي مستقل لا يُعدّ دفعاً قانونياً؛ إذ تقع المسؤولية على المُشغّل.',
   },
   'legal_long.ai_gov.s3.h3_do': { en: 'What we do', ar: 'الإجراءات التي نتّخذها' },
@@ -255,8 +255,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 4
   'legal_long.ai_gov.s4.h2': {
-    en: '4. NCSA AI Guidelines — voluntary alignment status',
-    ar: '4. إرشادات الذكاء الاصطناعي للوكالة الوطنية للأمن السيبراني (NCSA) — حالة المواءمة الطوعية',
+    en: '4. NCSA AI Guidelines - voluntary alignment status',
+    ar: '4. إرشادات الذكاء الاصطناعي للوكالة الوطنية للأمن السيبراني (NCSA) - حالة المواءمة الطوعية',
   },
   'legal_long.ai_gov.s4.p1': {
     en: 'NCSA v1.0 covers the AI lifecycle: design, data, development, deployment, monitoring, decommissioning. We treat it as a self-assessment checklist.',
@@ -269,40 +269,40 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'التصميم (الاستخدام المقصود، فئة المخاطر)',
   },
   'legal_long.ai_gov.s4.t.r1.c2': {
-    en: 'Partial — informal, not documented',
-    ar: 'جزئي — غير رسمي وغير موثَّق',
+    en: 'Partial - informal, not documented',
+    ar: 'جزئي - غير رسمي وغير موثَّق',
   },
   'legal_long.ai_gov.s4.t.r2.c1': {
     en: 'Data governance (sourcing, quality, bias)',
     ar: 'حوكمة البيانات (المصادر، الجودة، التحيّز)',
   },
   'legal_long.ai_gov.s4.t.r2.c2': {
-    en: 'Partial — curriculum content is sourced and reviewed; third-party training data is out of our control',
-    ar: 'جزئي — يُصدَر محتوى المناهج من مصادر مُعتمَدة ويُراجَع، أما بيانات التدريب الخاصة بالأطراف الثالثة فخارج نطاق سيطرتنا',
+    en: 'Partial - curriculum content is sourced and reviewed; third-party training data is out of our control',
+    ar: 'جزئي - يُصدَر محتوى المناهج من مصادر مُعتمَدة ويُراجَع، أما بيانات التدريب الخاصة بالأطراف الثالثة فخارج نطاق سيطرتنا',
   },
   'legal_long.ai_gov.s4.t.r3.c1': {
     en: 'Development (testing, validation)',
     ar: 'التطوير (الاختبار، التحقّق)',
   },
   'legal_long.ai_gov.s4.t.r3.c2': {
-    en: 'Partial — manual QA, no formal eval set',
-    ar: 'جزئي — ضمان جودة يدوي، دون مجموعة تقييم رسمية',
+    en: 'Partial - manual QA, no formal eval set',
+    ar: 'جزئي - ضمان جودة يدوي، دون مجموعة تقييم رسمية',
   },
   'legal_long.ai_gov.s4.t.r4.c1': {
     en: 'Deployment (human oversight, fallbacks)',
     ar: 'النشر (الرقابة البشرية، خيارات الاحتياط)',
   },
   'legal_long.ai_gov.s4.t.r4.c2': {
-    en: 'Yes — humans review flagged outputs',
-    ar: 'نعم — يُراجع المختصّون المُخرَجات المُحدَّدة',
+    en: 'Yes - humans review flagged outputs',
+    ar: 'نعم - يُراجع المختصّون المُخرَجات المُحدَّدة',
   },
   'legal_long.ai_gov.s4.t.r5.c1': {
     en: 'Monitoring (drift, incident response)',
     ar: 'الرصد (الانحراف، الاستجابة للحوادث)',
   },
   'legal_long.ai_gov.s4.t.r5.c2': {
-    en: 'Partial — Sentry catches errors but not model-quality drift',
-    ar: 'جزئي — يلتقط نظام Sentry الأخطاء ولكن لا يرصد الانحراف في جودة النموذج',
+    en: 'Partial - Sentry catches errors but not model-quality drift',
+    ar: 'جزئي - يلتقط نظام Sentry الأخطاء ولكن لا يرصد الانحراف في جودة النموذج',
   },
   'legal_long.ai_gov.s4.t.r6.c1': { en: 'Decommissioning', ar: 'الإيقاف' },
   'legal_long.ai_gov.s4.t.r6.c2': { en: 'Not documented', ar: 'غير موثَّق' },
@@ -319,8 +319,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 5
   'legal_long.ai_gov.s5.h2': {
-    en: '5. MCIT Ethical AI Principles — alignment status',
-    ar: '5. مبادئ الذكاء الاصطناعي الأخلاقي لوزارة الاتصالات وتكنولوجيا المعلومات (MCIT) — حالة المواءمة',
+    en: '5. MCIT Ethical AI Principles - alignment status',
+    ar: '5. مبادئ الذكاء الاصطناعي الأخلاقي لوزارة الاتصالات وتكنولوجيا المعلومات (MCIT) - حالة المواءمة',
   },
   'legal_long.ai_gov.s5.p1': {
     en: 'Six principles. Honest scoring below.',
@@ -333,8 +333,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_gov.s5.li2_strong': { en: 'Safety and reliability. ', ar: 'السلامة والموثوقية. ' },
   'legal_long.ai_gov.s5.li2_text': {
-    en: 'We do not yet publish accuracy or failure-mode statistics. Partial — see Remediation 4.',
-    ar: 'لا ننشر بعدُ إحصاءات الدقة أو أنماط الإخفاق. جزئي — يُراجَع الإجراء التصحيحي 4.',
+    en: 'We do not yet publish accuracy or failure-mode statistics. Partial - see Remediation 4.',
+    ar: 'لا ننشر بعدُ إحصاءات الدقة أو أنماط الإخفاق. جزئي - يُراجَع الإجراء التصحيحي 4.',
   },
   'legal_long.ai_gov.s5.li3_strong': { en: 'Fairness. ', ar: 'الإنصاف. ' },
   'legal_long.ai_gov.s5.li3_text': {
@@ -353,13 +353,13 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_gov.s5.li6_strong': { en: 'Transparency. ', ar: 'الشفافية. ' },
   'legal_long.ai_gov.s5.li6_text': {
-    en: 'AI essay-feedback panels, marking results, AI-generated revision material and AI-authored blog posts now carry a consistent visible "Made with AI — review before relying on it" label that links to this page. Remaining gap: a small number of statically pre-authored AI-assisted study pages may not yet display the label, and a pre-publication content classifier is still in progress (see Remediation 3).',
-    ar: 'تحمل الآن لوحات تقييم المقالات بالذكاء الاصطناعي ونتائج التصحيح والمواد المراجعة المُولَّدة والمقالات المُؤلَّفة بالذكاء الاصطناعي علامة ظاهرة ومتّسقة بنصّ "صُنع بمساعدة الذكاء الاصطناعي — يُرجى المراجعة قبل الاعتماد عليه" مرتبطة بهذه الصفحة. ثغرة متبقّية: قد لا تعرض بعض صفحات الدراسة المُعدّة مسبقاً العلامة بعد، ولا يزال مُصنِّف المحتوى قبل النشر قيد التنفيذ (يُراجَع الإجراء التصحيحي 3).',
+    en: 'AI essay-feedback panels, marking results, AI-generated revision material and AI-authored blog posts now carry a consistent visible "Made with AI - review before relying on it" label that links to this page. Remaining gap: a small number of statically pre-authored AI-assisted study pages may not yet display the label, and a pre-publication content classifier is still in progress (see Remediation 3).',
+    ar: 'تحمل الآن لوحات تقييم المقالات بالذكاء الاصطناعي ونتائج التصحيح والمواد المراجعة المُولَّدة والمقالات المُؤلَّفة بالذكاء الاصطناعي علامة ظاهرة ومتّسقة بنصّ "صُنع بمساعدة الذكاء الاصطناعي - يُرجى المراجعة قبل الاعتماد عليه" مرتبطة بهذه الصفحة. ثغرة متبقّية: قد لا تعرض بعض صفحات الدراسة المُعدّة مسبقاً العلامة بعد، ولا يزال مُصنِّف المحتوى قبل النشر قيد التنفيذ (يُراجَع الإجراء التصحيحي 3).',
   },
   'legal_long.ai_gov.s5.rem6_strong': { en: 'Remediation (6): ', ar: 'الإجراء التصحيحي (6): ' },
   'legal_long.ai_gov.s5.rem6_text': {
-    en: 'Add a visible “Generated with AI — review before relying on” label on every AI-produced essay-feedback panel, model answer, and auto-generated blog post.',
-    ar: 'إضافة علامة ظاهرة بنصّ "مُولَّد بالذكاء الاصطناعي — يُرجى المراجعة قبل الاعتماد عليه" على كل لوحة تقييم مُولَّدة بالذكاء الاصطناعي، وكل إجابة نموذجية، وكل تدوينة تُولَّد آلياً.',
+    en: 'Add a visible “Generated with AI - review before relying on” label on every AI-produced essay-feedback panel, model answer, and auto-generated blog post.',
+    ar: 'إضافة علامة ظاهرة بنصّ "مُولَّد بالذكاء الاصطناعي - يُرجى المراجعة قبل الاعتماد عليه" على كل لوحة تقييم مُولَّدة بالذكاء الاصطناعي، وكل إجابة نموذجية، وكل تدوينة تُولَّد آلياً.',
   },
   'legal_long.ai_gov.s5.rem7_strong': { en: 'Remediation (7): ', ar: 'الإجراء التصحيحي (7): ' },
   'legal_long.ai_gov.s5.rem7_text': {
@@ -369,8 +369,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 6
   'legal_long.ai_gov.s6.h2': {
-    en: '6. QCB / NIA / NDCP / Cloud Policy — when these apply to us',
-    ar: '6. إرشادات QCB / NIA / NDCP / إطار سياسة الحوسبة السحابية — متى تنطبق علينا',
+    en: '6. QCB / NIA / NDCP / Cloud Policy - when these apply to us',
+    ar: '6. إرشادات QCB / NIA / NDCP / إطار سياسة الحوسبة السحابية - متى تنطبق علينا',
   },
   'legal_long.ai_gov.s6.li1_strong': {
     en: 'QCB AI Guideline ',
@@ -486,11 +486,11 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
 
   // Section 8
   'legal_long.ai_gov.s8.h2': {
-    en: '8. Children’s data — special call-out',
-    ar: '8. بيانات الأطفال — تنبيه خاص',
+    en: '8. Children’s data - special call-out',
+    ar: '8. بيانات الأطفال - تنبيه خاص',
   },
   'legal_long.ai_gov.s8.p1': {
-    en: 'Our core audience is GCSE and IGCSE students, the vast majority of whom are aged 14–17 and therefore minors under both Qatari and most international frameworks. PDPPL classes children’s data as sensitive personal data, which requires explicit, informed consent — and for minors, that consent must come from a parent or legal guardian.',
+    en: 'Our core audience is GCSE and IGCSE students, the vast majority of whom are aged 14-17 and therefore minors under both Qatari and most international frameworks. PDPPL classes children’s data as sensitive personal data, which requires explicit, informed consent - and for minors, that consent must come from a parent or legal guardian.',
     ar: 'يتمثّل جمهورنا الأساسي في طلاب شهادتَي GCSE وIGCSE، وتتراوح أعمار الغالبية العظمى منهم بين 14 و17 عاماً، وهم بذلك قاصرون وفق النظام القطري ومعظم الأطر الدولية. ويُصنّف قانون حماية خصوصية البيانات الشخصية (PDPPL) بيانات الأطفال ضمن البيانات الشخصية الحساسة، التي تستلزم موافقة صريحة ومستنيرة. وبالنسبة للقاصرين، يجب أن تصدر هذه الموافقة عن أحد الوالدين أو الولي الشرعي.',
   },
   'legal_long.ai_gov.s8.h3_short': {
@@ -578,7 +578,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: '11. نتائج التدقيق الداخلي (مايو 2026)',
   },
   'legal_long.ai_gov.s11.p1': {
-    en: 'This page is paired with an internal compliance audit completed 12 May 2026. The findings below are reproduced verbatim — these are real gaps we have identified in our own code, not theoretical risks. We are publishing them rather than hiding them because the framework rewards transparency and a candid roadmap.',
+    en: 'This page is paired with an internal compliance audit completed 12 May 2026. The findings below are reproduced verbatim - these are real gaps we have identified in our own code, not theoretical risks. We are publishing them rather than hiding them because the framework rewards transparency and a candid roadmap.',
     ar: 'تقترن هذه الصفحة بتدقيق امتثال داخلي اكتمل في 12 مايو 2026. والنتائج الواردة أدناه مُستنسَخة حرفياً، وهي ثغرات فعلية رصدناها في برمجيّاتنا الخاصة، لا مخاطر افتراضية. ونحن ننشرها بدلاً من إخفائها لأن الإطار التنظيمي يُكافئ الشفافية ووجود خارطة طريق صريحة.',
   },
   'legal_long.ai_gov.s11.a_h3': {
@@ -594,15 +594,15 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'لا تحتوي استمارة التواصل على خانة موافقة، ولا على رابط مدمج لسياسة الخصوصية.',
   },
   'legal_long.ai_gov.s11.b_h3': {
-    en: 'B. Children’s data — material legal risk',
-    ar: 'ب. بيانات الأطفال — مخاطرة قانونية جوهرية',
+    en: 'B. Children’s data - material legal risk',
+    ar: 'ب. بيانات الأطفال - مخاطرة قانونية جوهرية',
   },
   'legal_long.ai_gov.s11.b_li1': {
     en: '16- and 17-year-olds bypass guardian consent entirely and self-onboard. PDPPL treats all under-18s as minors requiring guardian consent. This is the single biggest legal exposure for a GCSE/IGCSE platform marketed in Qatar.',
     ar: 'يتجاوز من تبلغ أعمارهم 16 و17 عاماً موافقة وليّ الأمر كليّاً ويُكملون التسجيل ذاتياً. ويُعامِل قانون PDPPL كل من تقلّ أعمارهم عن 18 عاماً بوصفهم قاصرين تستلزم بياناتهم موافقة وليّ الأمر. وهذه أكبر مخاطرة قانونية مفردة تواجه منصة تُسوَّق لطلاب GCSE/IGCSE في قطر.',
   },
   'legal_long.ai_gov.s11.b_li2': {
-    en: 'For 13–15 the flow collects a guardian email and fires a non-blocking parent-notify. Signup completes regardless of whether the guardian ever responds. This is “notice” rather than “verifiable parental consent”.',
+    en: 'For 13-15 the flow collects a guardian email and fires a non-blocking parent-notify. Signup completes regardless of whether the guardian ever responds. This is “notice” rather than “verifiable parental consent”.',
     ar: 'بالنسبة للفئة العمرية بين 13 و15 عاماً، يجمع المسار بريد وليّ الأمر الإلكتروني ويُرسل إخطاراً لوليّ الأمر دون أن يحجب التسجيل. ويكتمل التسجيل بصرف النظر عن استجابة وليّ الأمر من عدمها. وهذا "إخطار" لا "موافقة قابلة للتحقّق من وليّ الأمر".',
   },
   'legal_long.ai_gov.s11.c_h3': {
@@ -622,8 +622,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'يُدرَج سكربت Rewardful التابع لطرف ثالث ضمن قائمة السماح في سياسة أمان المحتوى (CSP) بلا شرط، إلا أنه غير مُقيَّد بعلَم موافقة الكوكيز الذي يحمي GA4 وPostHog.',
   },
   'legal_long.ai_gov.s11.d_h3': {
-    en: 'D. Right of human review — policy without UI',
-    ar: 'د. حقّ المراجعة البشرية — سياسة دون واجهة',
+    en: 'D. Right of human review - policy without UI',
+    ar: 'د. حقّ المراجعة البشرية - سياسة دون واجهة',
   },
   'legal_long.ai_gov.s11.d_p': {
     en: 'Our policy text promises a right to request human review of AI feedback. That button does not yet exist on the student-facing feedback component. A teacher-override surface exists for school accounts; an equivalent self-serve route for direct-to-consumer students does not.',
@@ -642,8 +642,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'و. تغطية وضع علامة الذكاء الاصطناعي',
   },
   'legal_long.ai_gov.s11.f_p': {
-    en: 'The essay-feedback panel and /legal/ai-transparency page do disclose AI use. Blog content—which is currently part-generated by our agent pipeline—is not flagged as AI-assisted on the public page. Remediation 6 covers this.',
-    ar: 'تُفصح لوحة التقييم المُولَّد للمقالات وصفحة /legal/ai-transparency عن استخدام الذكاء الاصطناعي. أمّا محتوى المدوّنة — الذي يُولَّد جزئياً حالياً عبر منظومة وكلائنا — فلا يحمل في الصفحة العامة علامة دالّة على الاستعانة بالذكاء الاصطناعي. ويُعالج الإجراء التصحيحي 6 هذه الثغرة.',
+    en: 'The essay-feedback panel and /legal/ai-transparency page do disclose AI use. Blog content-which is currently part-generated by our agent pipeline-is not flagged as AI-assisted on the public page. Remediation 6 covers this.',
+    ar: 'تُفصح لوحة التقييم المُولَّد للمقالات وصفحة /legal/ai-transparency عن استخدام الذكاء الاصطناعي. أمّا محتوى المدوّنة - الذي يُولَّد جزئياً حالياً عبر منظومة وكلائنا - فلا يحمل في الصفحة العامة علامة دالّة على الاستعانة بالذكاء الاصطناعي. ويُعالج الإجراء التصحيحي 6 هذه الثغرة.',
   },
   'legal_long.ai_gov.s11.outro': {
     en: 'We commit to refreshing this section on every material code change to the signup, consent, or AI surfaces. If you are reading this on a date more than three months from the “Last reviewed” stamp at the top of the page, please email us to ask whether the audit has been refreshed.',
@@ -657,7 +657,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_gov.s10.p1': {
     en: 'If you are a student, parent, or school in Qatar and want to exercise any of the rights available under PDPPL (access, correction, deletion, withdrawal of consent), or you want to raise a concern about an AI-generated output, contact us at:',
-    ar: 'إن كنتَ طالباً أو وليّ أمر أو مدرسة في قطر، وترغب في ممارسة أيّ من الحقوق المكفولة بموجب قانون حماية خصوصية البيانات الشخصية (PDPPL) — كحقوق الوصول، والتصحيح، والحذف، وسحب الموافقة — أو رغبتَ في إثارة مخاوف بشأن ناتج مُولَّد بالذكاء الاصطناعي، يُرجى التواصل معنا عبر:',
+    ar: 'إن كنتَ طالباً أو وليّ أمر أو مدرسة في قطر، وترغب في ممارسة أيّ من الحقوق المكفولة بموجب قانون حماية خصوصية البيانات الشخصية (PDPPL) - كحقوق الوصول، والتصحيح، والحذف، وسحب الموافقة - أو رغبتَ في إثارة مخاوف بشأن ناتج مُولَّد بالذكاء الاصطناعي، يُرجى التواصل معنا عبر:',
   },
   'legal_long.ai_gov.s10.email': {
     en: 'privacy@theenglishhub.app',
@@ -673,13 +673,13 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
 
   // ────────────────────────────────────────────────────────────────
-  // /legal/privacy — body
+  // /legal/privacy - body
   // ────────────────────────────────────────────────────────────────
   'legal_long.privacy.h1': { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
   'legal_long.privacy.brand_pre': { en: 'The English Hub', ar: 'The English Hub' },
   'legal_long.privacy.brand_mid': {
-    en: ' — a trading name of Upskill Energy Limited',
-    ar: ' — اسم تجاري لشركة Upskill Energy Limited',
+    en: ' - a trading name of Upskill Energy Limited',
+    ar: ' - اسم تجاري لشركة Upskill Energy Limited',
   },
   'legal_long.privacy.updated': { en: 'Last updated: 12 May 2026', ar: 'آخر تحديث: 12 مايو 2026' },
   'legal_long.privacy.summary_box': {
@@ -734,7 +734,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'ico.org.uk/make-a-complaint',
   },
   'legal_long.privacy.s1.complaint_post': {
-    en: ' or by calling 0303 123 1113. We would, however, appreciate the chance to address your concerns first — please contact our DPO above.',
+    en: ' or by calling 0303 123 1113. We would, however, appreciate the chance to address your concerns first - please contact our DPO above.',
     ar: ' أو بالاتصال على الرقم 0303 123 1113. غير أننا نُقدّر إتاحة الفرصة لنا أوّلاً لمعالجة مخاوفكم، ولذا يُرجى التواصل مع مسؤول حماية البيانات لدينا المذكور أعلاه.',
   },
 
@@ -1055,7 +1055,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.privacy.s5.m.r12.c1': { en: '12. Profiling', ar: '12. التصنيف' },
   'legal_long.privacy.s5.m.r12.c2': {
-    en: 'No behavioural profiling. AI marking is deterministic per essay — no cross-essay inference that affects feature access.',
+    en: 'No behavioural profiling. AI marking is deterministic per essay - no cross-essay inference that affects feature access.',
     ar: 'لا تصنيف سلوكي. والتصحيح بالذكاء الاصطناعي حتميّ لكل مقال، ولا يُجرى استنتاج عبر المقالات يؤثّر في إتاحة الخصائص.',
   },
   'legal_long.privacy.s5.m.r13.c1': { en: '13. Nudge techniques', ar: '13. أساليب التحفيز' },
@@ -1068,8 +1068,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: '14. الألعاب والأجهزة المتّصلة',
   },
   'legal_long.privacy.s5.m.r14.c2': {
-    en: 'Not applicable — The English Hub is a web + mobile SaaS.',
-    ar: 'غير منطبق — The English Hub خدمة برمجية عبر الويب والهاتف.',
+    en: 'Not applicable - The English Hub is a web + mobile SaaS.',
+    ar: 'غير منطبق - The English Hub خدمة برمجية عبر الويب والهاتف.',
   },
   'legal_long.privacy.s5.m.r15.c1': { en: '15. Online tools', ar: '15. الأدوات الإلكترونية' },
   'legal_long.privacy.s5.m.r15.c2': {
@@ -1140,14 +1140,14 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   'legal_long.privacy.s7.li1_strong': { en: 'Export your data: ', ar: 'تصدير بياناتكم: ' },
   'legal_long.privacy.s7.li1_path': { en: '/account/data-export', ar: '/account/data-export' },
   'legal_long.privacy.s7.li1_post': {
-    en: ' — download a structured, machine-readable copy (JSON/CSV) of your account, learning progress, and submissions.',
-    ar: ' — تنزيل نسخة مُهيكَلة قابلة للقراءة آلياً (JSON/CSV) من حسابكم وتقدّمكم التعلّمي وإسهاماتكم.',
+    en: ' - download a structured, machine-readable copy (JSON/CSV) of your account, learning progress, and submissions.',
+    ar: ' - تنزيل نسخة مُهيكَلة قابلة للقراءة آلياً (JSON/CSV) من حسابكم وتقدّمكم التعلّمي وإسهاماتكم.',
   },
   'legal_long.privacy.s7.li2_strong': { en: 'Delete your account: ', ar: 'حذف حسابكم: ' },
   'legal_long.privacy.s7.li2_path': { en: '/account/delete', ar: '/account/delete' },
   'legal_long.privacy.s7.li2_post': {
-    en: ' — permanently remove your account and associated learning data, subject to legal retention obligations.',
-    ar: ' — إزالة حسابكم والبيانات التعلّمية المرتبطة به نهائياً، رهناً بالتزامات الاحتفاظ القانونية.',
+    en: ' - permanently remove your account and associated learning data, subject to legal retention obligations.',
+    ar: ' - إزالة حسابكم والبيانات التعلّمية المرتبطة به نهائياً، رهناً بالتزامات الاحتفاظ القانونية.',
   },
   'legal_long.privacy.s7.li3_strong': { en: 'Correct your data: ', ar: 'تصحيح بياناتكم: ' },
   'legal_long.privacy.s7.li3_text': {
@@ -1163,7 +1163,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'في حال تعذّر استخدام أدوات المنتج الداخلية، يُرجى مراسلة ',
   },
   'legal_long.privacy.s7.li4_post': {
-    en: '. We will respond within one calendar month, extendable by a further two months for complex requests — we will let you know within the first month if an extension applies.',
+    en: '. We will respond within one calendar month, extendable by a further two months for complex requests - we will let you know within the first month if an extension applies.',
     ar: '. وسنردّ في غضون شهر تقويمي واحد، قابل للتمديد شهرين إضافيين للطلبات المعقّدة، وسنُخطركم خلال الشهر الأول في حال انطباق التمديد.',
   },
   'legal_long.privacy.s7.li5_strong': { en: 'For child accounts: ', ar: 'لحسابات الأطفال: ' },
@@ -1288,7 +1288,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
 
   // ────────────────────────────────────────────────────────────────
-  // /data-processing — body
+  // /data-processing - body
   // ────────────────────────────────────────────────────────────────
   'legal_long.data_processing.s1.h2': { en: '1. Introduction', ar: '1. مقدّمة' },
   'legal_long.data_processing.s1.p1': {
@@ -1567,7 +1567,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.data_processing.s6.r7.c3': { en: 'UK (UK South)', ar: 'المملكة المتحدة (UK South)' },
   'legal_long.data_processing.s6.p_outro': {
-    en: 'Essay content submitted to Anthropic’s Claude API for marking is processed under Anthropic’s commercial API terms, which state that input data is not used to train their models. We do not send student names or email addresses to the AI model — only the essay text and marking criteria.',
+    en: 'Essay content submitted to Anthropic’s Claude API for marking is processed under Anthropic’s commercial API terms, which state that input data is not used to train their models. We do not send student names or email addresses to the AI model - only the essay text and marking criteria.',
     ar: 'يُعالَج محتوى المقالات المُرسَل إلى واجهة Claude البرمجية الخاصة بـ Anthropic للتصحيح بموجب شروط Anthropic التجارية لواجهة البرمجة، التي تنصّ على عدم استخدام بيانات المُدخَلات لتدريب نماذجهم. ولا نُرسل أسماء الطلاب أو عناوين بريدهم الإلكتروني إلى نموذج الذكاء الاصطناعي، بل نُرسل نصّ المقال ومعايير التصحيح حصراً.',
   },
   // Section 7
@@ -1741,7 +1741,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
 
   // ────────────────────────────────────────────────────────────────
-  // /legal/ai-transparency — body
+  // /legal/ai-transparency - body
   // ────────────────────────────────────────────────────────────────
   'legal_long.ai_transparency.h1': {
     en: 'How Our AI Works',
@@ -1749,8 +1749,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_transparency.brand_pre': { en: 'The English Hub', ar: 'The English Hub' },
   'legal_long.ai_transparency.brand_mid': {
-    en: ' — operated by Upskill Energy Limited',
-    ar: ' — تُشغّلها شركة Upskill Energy Limited',
+    en: ' - operated by Upskill Energy Limited',
+    ar: ' - تُشغّلها شركة Upskill Energy Limited',
   },
   'legal_long.ai_transparency.updated': {
     en: 'Last updated: 22 March 2026',
@@ -1784,27 +1784,27 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_transparency.s1.l3_s': { en: 'Suggests improvements ', ar: 'يقترح تحسينات ' },
   'legal_long.ai_transparency.s1.l3_t': {
-    en: '— specific things you could change to make your writing stronger',
-    ar: '— أمور محدّدة يمكنك تغييرها لجعل كتابتك أكثر قوّة',
+    en: '- specific things you could change to make your writing stronger',
+    ar: '- أمور محدّدة يمكنك تغييرها لجعل كتابتك أكثر قوّة',
   },
   'legal_long.ai_transparency.s1.l4_s': {
     en: 'Gives you a practice score ',
     ar: 'يمنحك درجة تدريبية ',
   },
   'legal_long.ai_transparency.s1.l4_t': {
-    en: '— an estimate to help you track progress. It is not an official grade and should never be treated as one.',
-    ar: '— تقديراً يُعينك على متابعة التقدّم. وهي ليست درجة رسمية ولا يجوز التعامل معها بوصفها كذلك بحال من الأحوال.',
+    en: '- an estimate to help you track progress. It is not an official grade and should never be treated as one.',
+    ar: '- تقديراً يُعينك على متابعة التقدّم. وهي ليست درجة رسمية ولا يجوز التعامل معها بوصفها كذلك بحال من الأحوال.',
   },
   'legal_long.ai_transparency.s1.p_outro': {
-    en: 'Think of it like a spell-checker that has been upgraded significantly. It can spot patterns and offer suggestions, but it is a tool to help you learn — not a replacement for your teacher.',
+    en: 'Think of it like a spell-checker that has been upgraded significantly. It can spot patterns and offer suggestions, but it is a tool to help you learn - not a replacement for your teacher.',
     ar: 'تصوّره مدقّقاً إملائياً جرى تطويره تطويراً ملحوظاً. فبإمكانه رصد الأنماط وتقديم الاقتراحات، غير أنه أداة تُعينك على التعلّم، لا بديلاً عن معلّمك.',
   },
   // S2
   'legal_long.ai_transparency.s2.h2': { en: '2. How Does It Work?', ar: '2. كيف يعمل؟' },
   'legal_long.ai_transparency.s2.l1_s': { en: 'Training: ', ar: 'التدريب: ' },
   'legal_long.ai_transparency.s2.l1_t': {
-    en: 'The AI was trained on large collections of high-quality English writing. It learned patterns — what strong grammar looks like, how good arguments are structured, what effective vocabulary choices look like.',
-    ar: 'دُرِّب الذكاء الاصطناعي على مجموعات كبيرة من الكتابة الإنجليزية العالية الجودة. وقد تعلّم الأنماط — كيف تبدو القواعد النحوية المتينة، وكيف تُبنى الحجج الجيدة، وكيف تبدو خيارات المفردات الفعّالة.',
+    en: 'The AI was trained on large collections of high-quality English writing. It learned patterns - what strong grammar looks like, how good arguments are structured, what effective vocabulary choices look like.',
+    ar: 'دُرِّب الذكاء الاصطناعي على مجموعات كبيرة من الكتابة الإنجليزية العالية الجودة. وقد تعلّم الأنماط - كيف تبدو القواعد النحوية المتينة، وكيف تُبنى الحجج الجيدة، وكيف تبدو خيارات المفردات الفعّالة.',
   },
   'legal_long.ai_transparency.s2.l2_s': {
     en: 'Natural Language Processing (NLP): ',
@@ -1993,8 +1993,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   // S7
   'legal_long.ai_transparency.s7.h2': {
-    en: '7. Data Protection — What Happens to Your Essays',
-    ar: '7. حماية البيانات — ما الذي يحدث لمقالاتكم',
+    en: '7. Data Protection - What Happens to Your Essays',
+    ar: '7. حماية البيانات - ما الذي يحدث لمقالاتكم',
   },
   'legal_long.ai_transparency.s7.h3_collect': { en: 'What We Collect', ar: 'ما الذي نجمعه' },
   'legal_long.ai_transparency.s7.c_li1': {
@@ -2055,8 +2055,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'نجمع فقط ما نحتاجه لتقديم الملاحظات إليك',
   },
   'legal_long.ai_transparency.s7.kid_li3': {
-    en: 'Your essays and feedback are private by default — nothing is shared publicly',
-    ar: 'مقالاتك وملاحظاتك خاصة افتراضياً — لا يُشارَك شيء منها علناً',
+    en: 'Your essays and feedback are private by default - nothing is shared publicly',
+    ar: 'مقالاتك وملاحظاتك خاصة افتراضياً - لا يُشارَك شيء منها علناً',
   },
   'legal_long.ai_transparency.s7.kid_li4': {
     en: 'Parents and guardians can request access to their child’s data',

@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 31) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 31) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test is MATCHING-RICH. It contains four matching questions across all
 // four variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2), Matching Features — statements to scales
+// which-paragraph (Passage 2), Matching Features - statements to scales
 // (Passage 3) and Matching Sentence Endings (Passage 3), alongside the usual mix
 // of True/False/Not Given, multiple choice and sentence/summary completion.
 //
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_31: ReadingTest[] = [
   {
     id: 'rd-academic-031',
-    title: 'Academic Reading — Practice Test 31',
+    title: 'Academic Reading - Practice Test 31',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -35,13 +35,13 @@ export const READING_SET_31: ReadingTest[] = [
 
 The trail leads to the wide, treeless plains known as the steppe, a belt of grassland stretching from the plains north of the Black Sea eastward into Central Asia. Here, around five and a half thousand years ago, a herding people left behind clues that have intrigued researchers ever since. Among the most suggestive is the sheer quantity of horse bones at certain settlements, far outnumbering those of other animals and hinting that horses were being kept in numbers rather than merely chased down in the occasional hunt. A concentration of bones, however, proves only that people ate a great deal of horse meat; on its own it cannot show whether the animals were tame or wild, and for years that ambiguity left the question open.
 
-The decisive evidence came not from bones in general but from teeth in particular. When a horse is controlled by a bit — the bar placed in its mouth and joined to the reins — the animal habitually chews and grinds against it, and over time this wears a distinctive band of damage on the surface of certain teeth. Archaeologists examining horse teeth from the steppe found exactly this pattern of wear on specimens far older than any previously accepted date for riding. Because nothing in a wild horse's life would produce such marks, the worn teeth were taken as a fingerprint of harnessing, pushing the likely origin of horse control back by centuries and anchoring it firmly on the steppe.
+The decisive evidence came not from bones in general but from teeth in particular. When a horse is controlled by a bit - the bar placed in its mouth and joined to the reins - the animal habitually chews and grinds against it, and over time this wears a distinctive band of damage on the surface of certain teeth. Archaeologists examining horse teeth from the steppe found exactly this pattern of wear on specimens far older than any previously accepted date for riding. Because nothing in a wild horse's life would produce such marks, the worn teeth were taken as a fingerprint of harnessing, pushing the likely origin of horse control back by centuries and anchoring it firmly on the steppe.
 
 Other lines of inquiry have since converged on the same region. Chemical traces absorbed into the clay of ancient pottery suggest that the people of the steppe were not only eating horses but milking them, a practice that makes little sense unless the animals were tame enough to be approached and handled daily. The very shape of the settlements offered further hints: enclosures and post-holes consistent with pens or corrals, the kind of structures used to confine a herd rather than store the spoils of a hunt. No single clue was conclusive, but together the bones, the teeth, the milk residues and the corrals built a picture far more persuasive than any one of them alone.
 
 Once tamed, the horse changed human life with startling speed. A rider could cover in a day a distance that would take a walker the better part of a week, so that herders could manage far larger flocks across far wider territories, and news, goods and people moved as never before. Languages and customs spread along the routes the riders opened, knitting together communities that had been effectively isolated. The horse became an engine of contact, carrying not only its rider but ideas, trade and occasionally disease across distances that had previously swallowed such things whole.
 
-Nowhere was the impact more dramatic than in war. A mounted warrior enjoyed height, speed and reach over an opponent on foot, and the later marriage of the horse to the wheel — in the form of the light, fast chariot — produced a mobile fighting platform that dominated the battlefields of the ancient world for centuries. Empires rose and fell on the strength of their cavalry, and peoples who mastered the horse could project power over enormous areas. It is no exaggeration to say that for the better part of five thousand years, from the steppe herders to the eve of the machine age, the reach of a society was measured in good part by the reach of its horses.`,
+Nowhere was the impact more dramatic than in war. A mounted warrior enjoyed height, speed and reach over an opponent on foot, and the later marriage of the horse to the wheel - in the form of the light, fast chariot - produced a mobile fighting platform that dominated the battlefields of the ancient world for centuries. Empires rose and fell on the strength of their cavalry, and peoples who mastered the horse could project power over enormous areas. It is no exaggeration to say that for the better part of five thousand years, from the steppe herders to the eve of the machine age, the reach of a society was measured in good part by the reach of its horses.`,
         questions: [
           // ── Matching Headings (6 items, 8 options → 2 distractors) = 6 marks ──
           {
@@ -49,7 +49,7 @@ Nowhere was the impact more dramatic than in war. A mounted warrior enjoyed heig
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Teeth that betray the bit' },
               { key: 'ii', label: 'A late arrival among tamed animals' },
@@ -157,9 +157,9 @@ The instrument that records these waves is the seismograph. In its classic form 
 
 The size of an earthquake can be described in two quite different ways, a distinction that is often blurred in everyday speech. The first is magnitude, a measure of the total energy released at the source. The best-known magnitude scale was devised in the 1930s and is logarithmic, meaning that each whole step up the scale represents roughly a tenfold increase in the amplitude of the recorded waves and far more than that in actual energy. A single, fixed number, the magnitude is the same regardless of where it is measured, because it refers to the event itself rather than to its effects in any one place.
 
-Intensity is a different thing altogether. Rather than the energy at the source, it measures how strongly the shaking was felt and how much damage was done at a particular location, and it is gauged not by instruments but by observation — cracked plaster, fallen chimneys, the reports of people who felt the ground move. A single earthquake therefore has only one magnitude but many intensities, high near the epicentre and fading with distance, and shaped as well by the local geology. Soft, water-logged ground can amplify the shaking dramatically, so that two towns the same distance from the source may suffer very unequally depending on what lies beneath their foundations.
+Intensity is a different thing altogether. Rather than the energy at the source, it measures how strongly the shaking was felt and how much damage was done at a particular location, and it is gauged not by instruments but by observation - cracked plaster, fallen chimneys, the reports of people who felt the ground move. A single earthquake therefore has only one magnitude but many intensities, high near the epicentre and fading with distance, and shaped as well by the local geology. Soft, water-logged ground can amplify the shaking dramatically, so that two towns the same distance from the source may suffer very unequally depending on what lies beneath their foundations.
 
-Because the destructive surface waves travel more slowly than the first tremors, a narrow but precious window of warning exists. Modern early-warning systems exploit it: a dense network of sensors detects the fast, relatively harmless primary waves as they radiate from the source, instantly estimates the earthquake's size and location, and transmits an alert electronically — far faster than the damaging waves themselves can travel. The warning may amount only to seconds, occasionally a little more, but even that can be enough for trains to brake, gas valves to close and people to take cover. Such systems cannot predict an earthquake before it begins; what they do is race the slower waves across the intervening ground and, now and then, win.`,
+Because the destructive surface waves travel more slowly than the first tremors, a narrow but precious window of warning exists. Modern early-warning systems exploit it: a dense network of sensors detects the fast, relatively harmless primary waves as they radiate from the source, instantly estimates the earthquake's size and location, and transmits an alert electronically - far faster than the damaging waves themselves can travel. The warning may amount only to seconds, occasionally a little more, but even that can be enough for trains to brake, gas valves to close and people to take cover. Such systems cannot predict an earthquake before it begins; what they do is race the slower waves across the intervening ground and, now and then, win.`,
         questions: [
           // ── Matching Information / which-paragraph (5 items) = 5 marks ──
           {
@@ -167,7 +167,7 @@ Because the destructive surface waves travel more slowly than the first tremors,
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (Each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (Each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -295,7 +295,7 @@ Because the destructive surface waves travel more slowly than the first tremors,
 
 The pigment in question is chlorophyll, the green substance that allows a plant to make food. Using the energy of sunlight, chlorophyll drives the process by which a leaf combines water and carbon dioxide into sugars, the fuel on which the whole tree runs. Chlorophyll is abundant in a working leaf and is constantly being broken down and remade, so that through spring and summer the leaf stays a vivid green. It is this ceaseless renewal, rather than any permanence of the pigment itself, that keeps the summer canopy its familiar colour, and it is the failure of that renewal that sets the autumn display in motion.
 
-As the days shorten and the nights cool, a deciduous tree prepares to shed its leaves, and the first step is to stop maintaining the chlorophyll. Production ceases, the existing pigment continues to break down and is not replaced, and the green steadily drains away. What is revealed is a class of pigments that were in the leaf throughout the summer but hidden beneath the green: the carotenoids, which colour the leaf yellow and orange. Because these pigments were there all along, the yellows of autumn are in a sense merely uncovered rather than created — the green curtain is simply drawn back to show colours that the leaf possessed the whole time.
+As the days shorten and the nights cool, a deciduous tree prepares to shed its leaves, and the first step is to stop maintaining the chlorophyll. Production ceases, the existing pigment continues to break down and is not replaced, and the green steadily drains away. What is revealed is a class of pigments that were in the leaf throughout the summer but hidden beneath the green: the carotenoids, which colour the leaf yellow and orange. Because these pigments were there all along, the yellows of autumn are in a sense merely uncovered rather than created - the green curtain is simply drawn back to show colours that the leaf possessed the whole time.
 
 The fiery reds and purples are a different and more puzzling matter. Unlike the carotenoids, the pigments responsible, called anthocyanins, are not unmasked but manufactured afresh in the dying leaf, often in the very last weeks of its life. This is curious, for it costs the tree energy to make a pigment in a leaf it is about to discard, and biologists have proposed several explanations. One leading idea is that the red pigment acts as a kind of sunscreen, shielding the leaf from bright autumn light while the tree withdraws and stores the last of its valuable nutrients before the leaf falls. The brightest red displays tend to follow bright, cool, dry autumn days, conditions that fit this protective explanation rather neatly.
 
@@ -303,7 +303,7 @@ Why a tree should go to the trouble of dropping its leaves at all becomes clear 
 
 Because the display is tuned so finely to weather, it is sensitive to a changing climate. Warmer autumns can delay the breakdown of chlorophyll and push the whole spectacle later in the year, and unusual patterns of temperature and rainfall can mute the brilliance of the reds or cut the season short. Scientists who monitor the timing of natural events have noted that in many places the onset of autumn colour has shifted in recent decades. The annual turning of the leaves, long treated as one of the fixed certainties of the calendar, is turning out to be a surprisingly delicate indicator of the warming world.`,
         questions: [
-          // ── Matching Features — statements to scientific terms (5 items) = 5 marks ──
+          // ── Matching Features - statements to scientific terms (5 items) = 5 marks ──
           {
             id: 'rd-031-p3-q1',
             type: 'matching',
@@ -351,7 +351,7 @@ Because the display is tuned so finely to weather, it is sensitive to a changing
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence with the correct ending, A–F, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A–F.',
+              'Complete each sentence with the correct ending, A-F, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A-F.',
             options: [
               { key: 'A', label: 'because the existing pigment is no longer replaced.' },
               { key: 'B', label: 'because they were present in the leaf throughout the summer.' },

@@ -2,10 +2,10 @@
 // The repo has no markdown renderer in use (no react-markdown / markdown util;
 // next-mdx-remote is installed but only for build-time MDX, not runtime strings),
 // so this renders the SAFE subset that IELTS lesson bodies actually use:
-// headings (#–###), paragraphs, bold/italic, inline code, links, blockquotes,
+// headings (#-###), paragraphs, bold/italic, inline code, links, blockquotes,
 // ordered + unordered lists, and GFM-style tables.
 //
-// It builds React elements directly from the source string — it NEVER uses
+// It builds React elements directly from the source string - it NEVER uses
 // dangerouslySetInnerHTML, so untrusted HTML in the source can't execute. Links
 // are restricted to http/https/mailto/relative and open external targets safely.
 // Presentational only; styling mirrors the Tailwind "prose" look used elsewhere.
@@ -67,7 +67,7 @@ function applyPattern(
 }
 
 function parseInline(text: string): React.ReactNode[] {
-  // 1. Inline code — captured first so **/* inside it stays literal.
+  // 1. Inline code - captured first so **/* inside it stays literal.
   let nodes: Inline[] = applyPattern([text], /`([^`]+)`/, (m) => (
     <code
       key={nextKey('code')}

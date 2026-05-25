@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 8) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 8) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_8: ReadingTest[] = [
   {
     id: 'rd-academic-008',
-    title: 'Academic Reading — Practice Test 8',
+    title: 'Academic Reading - Practice Test 8',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [

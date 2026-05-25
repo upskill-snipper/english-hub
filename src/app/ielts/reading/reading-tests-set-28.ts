@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 28) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 28) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — statements to vaccine
+// which-paragraph (Passage 2) and Matching Features - statements to vaccine
 // types is replaced by statements to people/wreck types (Passage 3), alongside
 // the usual mix of True/False/Not Given, multiple choice and sentence/summary
 // completion.
@@ -24,7 +24,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_28: ReadingTest[] = [
   {
     id: 'rd-academic-028',
-    title: 'Academic Reading — Practice Test 28',
+    title: 'Academic Reading - Practice Test 28',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -50,7 +50,7 @@ Faced with these pressures, planners have moved away from the old dream of stopp
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Why people are pulled and pushed towards cities' },
               { key: 'ii', label: 'Building for oneself where the state cannot keep up' },
@@ -160,7 +160,7 @@ The first time the body meets a particular pathogen, this process is dangerously
 
 A vaccine exploits this memory without requiring the person to suffer the disease first. It introduces the antigens of a dangerous microbe into the body in a form that cannot cause serious illness, tricking the immune system into mounting its slow first response and, crucially, into laying down memory cells. The person feels little or nothing, perhaps a sore arm or a mild fever, but emerges with the same lasting protection they would have gained from surviving the real infection. In effect, the vaccine lets the body rehearse the battle against a harmless stand-in, so that the real fight, if it ever comes, is won before it has begun.
 
-Vaccines achieve this in several different ways, and the distinctions matter. The oldest kind uses whole microbes that have been either killed outright or weakened so severely that they can no longer cause disease; because the whole organism is present, such vaccines often produce a strong and durable response, though weakened-microbe versions are not always suitable for people with fragile immune systems. A second approach abandons the whole microbe and uses only a fragment of it — a single characteristic protein, for instance — which is enough to teach the immune system the antigen without introducing anything that could ever multiply. The newest methods go further still: rather than delivering the antigen itself, they deliver a set of genetic instructions that prompt the person's own cells to manufacture the antigen for a short time, after which the immune system responds to it as though to an invader.
+Vaccines achieve this in several different ways, and the distinctions matter. The oldest kind uses whole microbes that have been either killed outright or weakened so severely that they can no longer cause disease; because the whole organism is present, such vaccines often produce a strong and durable response, though weakened-microbe versions are not always suitable for people with fragile immune systems. A second approach abandons the whole microbe and uses only a fragment of it - a single characteristic protein, for instance - which is enough to teach the immune system the antigen without introducing anything that could ever multiply. The newest methods go further still: rather than delivering the antigen itself, they deliver a set of genetic instructions that prompt the person's own cells to manufacture the antigen for a short time, after which the immune system responds to it as though to an invader.
 
 The benefits of vaccination reach beyond the individual who receives the dose. When a large enough fraction of a population is immune, a chain of infection struggles to spread, because most of the people an infectious person meets cannot catch and pass on the disease. This indirect shield is known as herd immunity, and it protects even those who are not themselves vaccinated, including newborn babies too young for certain vaccines and people whose immune systems are too weak to be immunised safely. The exact proportion that must be immune for herd immunity to take hold varies from disease to disease, being higher for those that spread most easily. It is for this reason that gaps in vaccination coverage can allow a disease once thought banished to return, and why public health depends not only on individual choices but on the protection a community builds together.`,
         questions: [
@@ -170,7 +170,7 @@ The benefits of vaccination reach beyond the individual who receives the dose. W
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -297,9 +297,9 @@ The benefits of vaccination reach beyond the individual who receives the dose. W
       {
         id: 'rd-academic-028-p3',
         title: 'Reading the Wrecks Beneath the Sea',
-        body: `When a ship goes down, it carries with it a sealed record of the moment it sank. Unlike a settlement on land, which is built, rebuilt, robbed and rearranged over centuries, a wreck is created in an instant and then, in the best cases, left undisturbed for hundreds of years. Everything aboard at the fatal hour — the cargo, the crew's possessions, the tools, the food in the galley — settles together onto the seabed as a single closed group of objects, all of the same date. For this reason archaeologists prize wrecks as 'time capsules', and the study of them has become one of the most revealing branches of their science.
+        body: `When a ship goes down, it carries with it a sealed record of the moment it sank. Unlike a settlement on land, which is built, rebuilt, robbed and rearranged over centuries, a wreck is created in an instant and then, in the best cases, left undisturbed for hundreds of years. Everything aboard at the fatal hour - the cargo, the crew's possessions, the tools, the food in the galley - settles together onto the seabed as a single closed group of objects, all of the same date. For this reason archaeologists prize wrecks as 'time capsules', and the study of them has become one of the most revealing branches of their science.
 
-The sea, perhaps surprisingly, can be a far kinder guardian of the past than the land. The chief enemy of buried wood and metal is oxygen, which feeds the bacteria and chemical reactions that rot and corrode. On the open seabed, currents and burrowing creatures keep this destruction going, and an exposed wreck may be picked apart within a few decades. But where a wreck is quickly buried in fine mud or sand, the sediment seals it off from oxygen-rich water, and decay slows almost to a halt. Under such conditions materials that would have vanished long ago on land — timber hulls, leather shoes, coils of rope, even baskets of fruit — can survive in astonishing condition, because the very thing that destroys them has been shut out.
+The sea, perhaps surprisingly, can be a far kinder guardian of the past than the land. The chief enemy of buried wood and metal is oxygen, which feeds the bacteria and chemical reactions that rot and corrode. On the open seabed, currents and burrowing creatures keep this destruction going, and an exposed wreck may be picked apart within a few decades. But where a wreck is quickly buried in fine mud or sand, the sediment seals it off from oxygen-rich water, and decay slows almost to a halt. Under such conditions materials that would have vanished long ago on land - timber hulls, leather shoes, coils of rope, even baskets of fruit - can survive in astonishing condition, because the very thing that destroys them has been shut out.
 
 Finding and recording a wreck is painstaking work, carried out in a hostile environment where divers can stay down only for limited periods. The first task is to map the site precisely before anything is touched, since the position of each object relative to its neighbours is itself a vital piece of evidence. Archaeologists lay out a grid of lines across the seabed and record the location of every visible item within it, building up a detailed plan of the wreck as it lies. Only when this map is complete does careful excavation begin, often using a gentle suction device that lifts away sediment without disturbing the fragile objects beneath. The guiding rule is that an excavation destroys the very thing it studies, so nothing may be moved until its exact position has been written down.
 
@@ -307,7 +307,7 @@ The cargo of a wreck can tell historians far more than the simple fact of what w
 
 Raising an object from the sea is not the end of its journey but the beginning of a new and urgent struggle. An item that has lain waterlogged for centuries has reached a fragile equilibrium with its surroundings, and hauling it suddenly into the air can be catastrophic. Waterlogged wood, for example, may look solid but is often a soft, sodden sponge held together only by the water filling it; allowed to dry in the open, it shrinks, cracks and crumbles into fragments within days. To prevent this, conservators keep such timbers wet and replace the water inside them, over months or years, with a special wax that supports the cell walls so the wood can at last be dried without collapsing. Metal objects pose their own problem, having absorbed corrosive salts from the seawater that must be slowly washed out before the artefact can be stable in a museum. The work is so lengthy and costly that some experts argue many wrecks are better left where they lie, safe on the seabed, until the resources exist to treat properly whatever is brought up.`,
         questions: [
-          // ── Matching Features — statements to categories (5 items) = 5 marks ──
+          // ── Matching Features - statements to categories (5 items) = 5 marks ──
           {
             id: 'rd-028-p3-q1',
             type: 'matching',

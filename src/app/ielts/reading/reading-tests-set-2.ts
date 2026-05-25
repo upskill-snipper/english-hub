@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 2) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 2) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
@@ -14,7 +14,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_2: ReadingTest[] = [
   {
     id: 'rd-acad-s2-001',
-    title: 'Academic Reading — Practice Test 3 (Natural Sciences)',
+    title: 'Academic Reading - Practice Test 3 (Natural Sciences)',
     track: 'academic',
     estimatedMinutes: 20,
     passages: [
@@ -114,7 +114,7 @@ This unusual way of living gives lichens an unusual way of feeding. Lacking the 
 
 It is this helplessness that has made lichens unexpectedly useful to scientists. Because they cannot shut out pollutants, the chemicals present in a region's air become concentrated within their tissues over months and years. Researchers can therefore gather lichens, measure the substances trapped inside them, and build a picture of air quality that no single instrument reading could provide. A network of growing lichens acts, in effect, as a vast array of slow but tireless monitors, recording conditions across a whole landscape rather than at a few fixed points.
 
-Lichens reveal pollution in a second way as well. Different species tolerate contamination to very different degrees, and the most sensitive of them vanish from places where the air is foul. In heavily polluted industrial cities of the past, the bark of trees was often bare of lichen altogether, while the same species flourished in the clean air of the surrounding countryside. By recording simply which kinds are present and which are missing, an observer can estimate the health of the air without any laboratory at all — a survey that requires patience and a sharp eye, but almost no equipment.`,
+Lichens reveal pollution in a second way as well. Different species tolerate contamination to very different degrees, and the most sensitive of them vanish from places where the air is foul. In heavily polluted industrial cities of the past, the bark of trees was often bare of lichen altogether, while the same species flourished in the clean air of the surrounding countryside. By recording simply which kinds are present and which are missing, an observer can estimate the health of the air without any laboratory at all - a survey that requires patience and a sharp eye, but almost no equipment.`,
         questions: [
           {
             id: 'rd-acad-s2-001-p2-q8',

@@ -1,7 +1,7 @@
 /**
- * dictionary-teacher.ts — Bucket A Tier-2b, `teacher.*` namespace.
+ * dictionary-teacher.ts - Bucket A Tier-2b, `teacher.*` namespace.
  *
- * Covers the authed TEACHER dashboard i18n namespace — the
+ * Covers the authed TEACHER dashboard i18n namespace - the
  * `teacher.home.*`, `teacher.layout.*`, `teacher.nav.*`,
  * `teacher.analytics.*`, `teacher.assignments.*`, `teacher.students.*`
  * and `teacher.resources.*` keys consumed by:
@@ -15,7 +15,7 @@
  * Before this file every one of these keys resolved ONLY via the
  * auto-generated dictionary-audit-fix.ts, whose entries are lazy
  * path-fragment placeholders ("Title", "Subtitle", "Heading", "Lead")
- * paired with broken machine Arabic — so the AR-mode teacher dashboard
+ * paired with broken machine Arabic - so the AR-mode teacher dashboard
  * rendered English junk / mojibake. The `teacher.nav.*`,
  * `teacher.analytics.skill.*` and `teacher.analytics.concern.*` keys
  * (referenced via `labelKey` / `skillKey` / `concernKey` indirection)
@@ -24,14 +24,14 @@
  * EN here is authored from the actual rendering position in the
  * components above (teacher-SaaS dashboard register), NOT copied from
  * the audit-fix junk. Arabic is genuine Khaleeji (Gulf) matching the
- * teacher/admin tone of src/lib/eal/curriculum.ts — not MSA, not
- * machine output. Education/exam terms (GCSE, IGCSE, AO1–AO4, AQA,
+ * teacher/admin tone of src/lib/eal/curriculum.ts - not MSA, not
+ * machine output. Education/exam terms (GCSE, IGCSE, AO1-AO4, AQA,
  * OCR, Edexcel, CIE, AFOREST) and the brand "The English Hub" stay in
  * Latin script per Gulf convention.
  *
  * Distinct from the `school.*` namespace (dictionary-school-1/2) and
  * the curated `teacher.dash.*` / `teacher.resource.*` keys already in
- * dictionary.ts — those are NOT duplicated here.
+ * dictionary.ts - those are NOT duplicated here.
  *
  * Merged into the master lookup() in ./dictionary.ts as a curated
  * override tier (BEFORE the placeholder/audit supplements).
@@ -62,8 +62,8 @@ export const TEACHER_DICTIONARY: Dictionary = {
   },
   'teacher.layout.topbar_title': { en: `Teacher Dashboard`, ar: `لوحة المعلّم` },
   'teacher.layout.preview_title': {
-    en: `Teacher tools — preview`,
-    ar: `أدوات المعلّم — نسخة تجريبية`,
+    en: `Teacher tools - preview`,
+    ar: `أدوات المعلّم - نسخة تجريبية`,
   },
   'teacher.layout.preview_body_before': {
     en: `You're previewing the teacher dashboard with sample data. For early access with your real classes, get in touch at `,
@@ -74,7 +74,7 @@ export const TEACHER_DICTIONARY: Dictionary = {
     ar: ` وإحنا نجهّزك.`,
   },
 
-  // ── Sidebar nav (layout.tsx — referenced via item.labelKey) ────────────
+  // ── Sidebar nav (layout.tsx - referenced via item.labelKey) ────────────
   'teacher.nav.dashboard': { en: `Dashboard`, ar: `اللوحة` },
   'teacher.nav.students': { en: `Students`, ar: `الطلاب` },
   'teacher.nav.assignments': { en: `Assignments`, ar: `الواجبات` },
@@ -120,8 +120,8 @@ export const TEACHER_DICTIONARY: Dictionary = {
     ar: `تابع التقدّم، اكتشف الاتجاهات، ولقّط الطلاب اللي يبغون دعم.`,
   },
   'teacher.analytics.export_soon': {
-    en: `Export is coming soon — analytics download isn't available yet.`,
-    ar: `التصدير قريب — تنزيل التحليلات لسّا ما هو متاح.`,
+    en: `Export is coming soon - analytics download isn't available yet.`,
+    ar: `التصدير قريب - تنزيل التحليلات لسّا ما هو متاح.`,
   },
   'teacher.analytics.export': { en: `Export`, ar: `تصدير` },
   'teacher.analytics.scores_over_time': { en: `Scores over time`, ar: `الدرجات عبر الوقت` },
@@ -142,8 +142,8 @@ export const TEACHER_DICTIONARY: Dictionary = {
   'teacher.analytics.skill.exam': { en: `Exam technique`, ar: `أسلوب الامتحان` },
   'teacher.analytics.at_risk_title': { en: `Students needing support`, ar: `طلاب يحتاجون دعم` },
   'teacher.analytics.all_ok': {
-    en: `No students flagged — everyone's on track.`,
-    ar: `ما في طلاب مرفوعين — الكل ماشي زين.`,
+    en: `No students flagged - everyone's on track.`,
+    ar: `ما في طلاب مرفوعين - الكل ماشي زين.`,
   },
   'teacher.analytics.trend.declining': { en: `Declining`, ar: `ينزل` },
   'teacher.analytics.trend.stagnant': { en: `Stalled`, ar: `واقف` },
@@ -233,8 +233,8 @@ export const TEACHER_DICTIONARY: Dictionary = {
   'teacher.students.add_modal.title': { en: `Add a student`, ar: `أضف طالب` },
   'teacher.students.add_modal.close': { en: `Close`, ar: `سكّر` },
   'teacher.students.add_modal.help': {
-    en: `Enter the student's email and pick a class — we'll send them an invite.`,
-    ar: `حُطّ إيميل الطالب واختر صف — وإحنا نرسل له دعوة.`,
+    en: `Enter the student's email and pick a class - we'll send them an invite.`,
+    ar: `حُطّ إيميل الطالب واختر صف - وإحنا نرسل له دعوة.`,
   },
   'teacher.students.add_modal.input_placeholder': {
     en: `Student email address`,

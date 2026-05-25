@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 16) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 16) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a caller enrolling
+//   • Section 1 - an everyday transactional DIALOGUE (here: a caller enrolling
 //     in an evening pottery class at a community arts centre), assessed with
 //     form / note completion + a multiple-choice item. A surname is spelled and
 //     a phone number is dictated, and one detail (the total course fee) depends
 //     on a stated choice (which course length is booked).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk to visitors at a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk to visitors at a
 //     wetland nature reserve), assessed with sentence completion + multiple
 //     choice, carrying signpost language ("to start with", "after that",
 //     "finally") that the questions track in order.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor in a
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor in a
 //     tutorial reviewing a biology field study of woodland small mammals),
 //     assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the technology and
+//   • Section 4 - an academic LECTURE / monologue (here: the technology and
 //     history of deep-ocean exploration, from the bathysphere to modern
 //     autonomous vehicles), assessed with note/sentence completion + multiple
 //     choice, including one True/False/Not Given item.
@@ -29,9 +29,9 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
-// Question numbering is CONTINUOUS q1–q40 across the four sections, mirroring the
+// Question numbering is CONTINUOUS q1-q40 across the four sections, mirroring the
 // real paper. All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -41,12 +41,12 @@ export const LISTENING_SET_16: ListeningTest[] = [
   {
     id: 'ls-academic-16',
     title:
-      'Practice Test 16 — Joining an Evening Pottery Class, A Wetland Nature Reserve Talk, A Biology Field Study & Deep-Ocean Exploration',
+      'Practice Test 16 - Joining an Evening Pottery Class, A Wetland Nature Reserve Talk, A Biology Field Study & Deep-Ocean Exploration',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-16-s1',
-        title: 'Section 1 — Joining an evening pottery class',
+        title: 'Section 1 - Joining an evening pottery class',
         // ~300 words. Transactional dialogue (Section 1 style): a caller phoning a
         // community arts centre to enrol in an evening pottery class. A surname is
         // spelled and a mobile number is dictated; one detail (the total course fee)
@@ -56,31 +56,31 @@ export const LISTENING_SET_16: ListeningTest[] = [
 
 MAN: Hi there. I saw a leaflet about your evening pottery classes and I'd like to sign up, if there's still room.
 
-WOMAN: There is, yes — we've a few places left on the new term. Let me take some details. Could I have your name, please?
+WOMAN: There is, yes - we've a few places left on the new term. Let me take some details. Could I have your name, please?
 
 MAN: It's Peter Hargreaves. Hargreaves is spelled H-A-R-G-R-E-A-V-E-S.
 
 WOMAN: Thank you, Peter. And the best number to reach you on?
 
-MAN: It's my mobile — 07788 615 240.
+MAN: It's my mobile - 07788 615 240.
 
 WOMAN: Let me read that back: 07788 615 240. Lovely. Now, have you done any pottery before?
 
 MAN: A little at school, but that was years ago, so I'd call myself a complete beginner.
 
-WOMAN: That's no problem at all — the Tuesday class is aimed at beginners. We meet from seven until nine in the evening, in the studio on the first floor.
+WOMAN: That's no problem at all - the Tuesday class is aimed at beginners. We meet from seven until nine in the evening, in the studio on the first floor.
 
 MAN: And how long does the course run?
 
 WOMAN: You've a choice. There's a short course of six weeks, which costs ninety pounds, or the full course of twelve weeks at a hundred and sixty pounds. The longer one works out cheaper per session, and you get to try the potter's wheel as well as hand-building.
 
-MAN: I'll take the full course, then — I'd really like to have a go on the wheel.
+MAN: I'll take the full course, then - I'd really like to have a go on the wheel.
 
 WOMAN: Good choice. One thing to note: all the clay and tools are provided, but please wear an apron, as it does get rather messy.
 
 MAN: Will do. Is there anything I need to bring on the first night?
 
-WOMAN: Just yourself and the apron. Oh — and do arrive a few minutes early so I can show you where to store your finished work to dry.
+WOMAN: Just yourself and the apron. Oh - and do arrive a few minutes early so I can show you where to store your finished work to dry.
 
 MAN: Perfect. Thank you so much.
 
@@ -93,7 +93,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
               'Complete the enrolment form. Write ONE WORD for the answer.\n\nApplicant surname: ____________',
             acceptableAnswers: ['Hargreaves', 'hargreaves'],
             explanation:
-              'The caller gives his name as “Peter Hargreaves” and spells the surname: H-A-R-G-R-E-A-V-E-S. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Peter Hargreaves” and spells the surname: H-A-R-G-R-E-A-V-E-S. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-016-s1-q2',
@@ -102,7 +102,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
               'Contact (mobile) number: ____________. Write the number exactly as you hear it.',
             acceptableAnswers: ['07788 615 240', '07788615240', '07788 615240', '07788615 240'],
             explanation:
-              'He dictates his mobile as “07788 615 240”, which the assistant reads back to confirm. Spacing is not penalised, but every digit must be correct — confirmation read-backs are a common Section 1 cue.',
+              'He dictates his mobile as “07788 615 240”, which the assistant reads back to confirm. Spacing is not penalised, but every digit must be correct - confirmation read-backs are a common Section 1 cue.',
           },
           {
             id: 'ls-016-s1-q3',
@@ -120,7 +120,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
               'The class runs from seven until ____________ in the evening. Write A NUMBER (a time).',
             acceptableAnswers: ['9', 'nine', '9pm', '9 pm', "9 o'clock", 'nine o’clock'],
             explanation:
-              'She says the class meets “from seven until nine in the evening.” The end time is nine — listen for “until”, which signals the finish.',
+              'She says the class meets “from seven until nine in the evening.” The end time is nine - listen for “until”, which signals the finish.',
           },
           {
             id: 'ls-016-s1-q5',
@@ -142,7 +142,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
             ],
             correctIndex: 1,
             explanation:
-              'He says, “I’ll take the full course, then — I’d really like to have a go on the wheel.” The distractors reuse real words from the audio (cheaper, beginner) but none matches his stated reason. Listen for the reason, not just the keyword.',
+              'He says, “I’ll take the full course, then - I’d really like to have a go on the wheel.” The distractors reuse real words from the audio (cheaper, beginner) but none matches his stated reason. Listen for the reason, not just the keyword.',
           },
           {
             id: 'ls-016-s1-q7',
@@ -150,7 +150,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
             prompt: 'Total cost of the chosen course: £ ____________. Write A NUMBER.',
             acceptableAnswers: ['160', 'one hundred and sixty', 'a hundred and sixty'],
             explanation:
-              'The full course is “twelve weeks at a hundred and sixty pounds.” Because he selects the full course (Q6), this is the fee that applies — Section 1 often makes one detail depend on an earlier choice.',
+              'The full course is “twelve weeks at a hundred and sixty pounds.” Because he selects the full course (Q6), this is the fee that applies - Section 1 often makes one detail depend on an earlier choice.',
           },
           {
             id: 'ls-016-s1-q8',
@@ -158,7 +158,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
             prompt: 'The short (six-week) course would have cost £ ____________. Write A NUMBER.',
             acceptableAnswers: ['90', 'ninety'],
             explanation:
-              'She describes “a short course of six weeks, which costs ninety pounds.” Even though the man does not choose it, the price is stated explicitly — Section 1 often asks you to note an option the speaker rejects.',
+              'She describes “a short course of six weeks, which costs ninety pounds.” Even though the man does not choose it, the price is stated explicitly - Section 1 often asks you to note an option the speaker rejects.',
           },
           {
             id: 'ls-016-s1-q9',
@@ -188,7 +188,7 @@ WOMAN: You're welcome. See you on Tuesday.`,
       },
       {
         id: 'ls-academic-16-s2',
-        title: 'Section 2 — A talk at a wetland nature reserve',
+        title: 'Section 2 - A talk at a wetland nature reserve',
         // ~290 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a wetland nature reserve. Uses sequencing/signpost
         // language ("to start with", "after that", "finally") that the questions
@@ -201,7 +201,7 @@ After that, let me point you towards the hides. A hide, in case the word is new 
 
 Now, a word of warning about the season. From April to July, the ground-nesting birds are raising their young, so during those months we ask all visitors to keep strictly to the marked paths and to keep dogs on a lead at all times. Disturbing a nest can cause the parents to abandon it.
 
-Finally, if you'd like to learn more, our volunteers run a free guided walk every Saturday morning, leaving from the visitor centre at ten o'clock. There's no need to book — simply turn up. And do call in at the centre afterwards, where a hot drink and a slice of cake are waiting. Enjoy your visit.`,
+Finally, if you'd like to learn more, our volunteers run a free guided walk every Saturday morning, leaving from the visitor centre at ten o'clock. There's no need to book - simply turn up. And do call in at the centre afterwards, where a hot drink and a slice of cake are waiting. Enjoy your visit.`,
         questions: [
           {
             id: 'ls-016-s2-q11',
@@ -296,7 +296,7 @@ Finally, if you'd like to learn more, our volunteers run a free guided walk ever
             ],
             correctIndex: 1,
             explanation:
-              'He says volunteers “run a free guided walk every Saturday morning, leaving from the visitor centre at ten o’clock … There’s no need to book — simply turn up.” Option B matches all three details; the others contradict the audio.',
+              'He says volunteers “run a free guided walk every Saturday morning, leaving from the visitor centre at ten o’clock … There’s no need to book - simply turn up.” Option B matches all three details; the others contradict the audio.',
           },
           {
             id: 'ls-016-s2-q20',
@@ -311,7 +311,7 @@ Finally, if you'd like to learn more, our volunteers run a free guided walk ever
       },
       {
         id: 'ls-academic-16-s3',
-        title: 'Section 3 — Tutorial: a biology field study of woodland mammals',
+        title: 'Section 3 - Tutorial: a biology field study of woodland mammals',
         // ~310 words. Academic discussion (Section 3 style): two students (Hana and
         // Joel) and a tutor (Dr Pryce) review a biology field study of small mammals
         // in a woodland, discussing method, findings and write-up. Assessed with a
@@ -319,7 +319,7 @@ Finally, if you'd like to learn more, our volunteers run a free guided walk ever
         // answers are anchored in who says what.
         transcript: `DR PRYCE: So, Hana and Joel, you've finished the fieldwork for your small-mammal study in Ashcombe Wood. How did the trapping go?
 
-HANA: Quite well. We used live traps — the humane kind that catch the animal without harming it — and set out forty in a grid across the study area.
+HANA: Quite well. We used live traps - the humane kind that catch the animal without harming it - and set out forty in a grid across the study area.
 
 DR PRYCE: Forty is sensible. What did you bait them with?
 
@@ -331,21 +331,21 @@ HANA: Every morning at dawn, and again at dusk. We didn't want any animal left i
 
 DR PRYCE: Exactly right. And what did you catch?
 
-JOEL: Mostly wood mice — they made up about three-quarters of the captures. We also got a few bank voles, and, to our surprise, a single shrew.
+JOEL: Mostly wood mice - they made up about three-quarters of the captures. We also got a few bank voles, and, to our surprise, a single shrew.
 
 DR PRYCE: Did you mark the animals so you'd recognise recaptures?
 
-HANA: We did. We clipped a tiny patch of fur — it's painless and grows back — rather than using ear tags, which we felt were too invasive for animals that small.
+HANA: We did. We clipped a tiny patch of fur - it's painless and grows back - rather than using ear tags, which we felt were too invasive for animals that small.
 
 DR PRYCE: A reasonable choice. Any trouble with the weather?
 
-JOEL: The rain on the third night was a nuisance — it set off a couple of empty traps — but otherwise conditions held.
+JOEL: The rain on the third night was a nuisance - it set off a couple of empty traps - but otherwise conditions held.
 
 DR PRYCE: For the write-up, what's your main finding?
 
 JOEL: That the mice were far more common near the dense undergrowth than in the open clearings. We think the cover protects them from owls.
 
-DR PRYCE: A strong argument. Just make sure you present it as a hypothesis — your study shows the pattern, but you haven't tested the cause directly. And don't forget to add a map of the trap grid; the examiner will expect to see exactly where each one sat.`,
+DR PRYCE: A strong argument. Just make sure you present it as a hypothesis - your study shows the pattern, but you haven't tested the cause directly. And don't forget to add a map of the trap grid; the examiner will expect to see exactly where each one sat.`,
         questions: [
           {
             id: 'ls-016-s3-q21',
@@ -386,7 +386,7 @@ DR PRYCE: A strong argument. Just make sure you present it as a hypothesis — y
             options: ['Bank voles', 'Shrews', 'Wood mice', 'Owls'],
             correctIndex: 2,
             explanation:
-              'Joel reports, “Mostly wood mice — they made up about three-quarters of the captures.” Bank voles and a shrew were caught in much smaller numbers; owls are mentioned later only as predators.',
+              'Joel reports, “Mostly wood mice - they made up about three-quarters of the captures.” Bank voles and a shrew were caught in much smaller numbers; owls are mentioned later only as predators.',
           },
           {
             id: 'ls-016-s3-q25',
@@ -418,7 +418,7 @@ DR PRYCE: A strong argument. Just make sure you present it as a hypothesis — y
               'On the third night, ____________ was a nuisance because it set off a couple of empty traps. Write ONE WORD.',
             acceptableAnswers: ['rain'],
             explanation:
-              'Joel mentions, “The rain on the third night was a nuisance — it set off a couple of empty traps.” The answer is “rain”.',
+              'Joel mentions, “The rain on the third night was a nuisance - it set off a couple of empty traps.” The answer is “rain”.',
           },
           {
             id: 'ls-016-s3-q28',
@@ -441,7 +441,7 @@ DR PRYCE: A strong argument. Just make sure you present it as a hypothesis — y
             ],
             correctIndex: 1,
             explanation:
-              'He says, “make sure you present it as a hypothesis — your study shows the pattern, but you haven’t tested the cause directly.” Option B captures this advice; the others are not what he recommends.',
+              'He says, “make sure you present it as a hypothesis - your study shows the pattern, but you haven’t tested the cause directly.” Option B captures this advice; the others are not what he recommends.',
           },
           {
             id: 'ls-016-s3-q30',
@@ -456,21 +456,21 @@ DR PRYCE: A strong argument. Just make sure you present it as a hypothesis — y
       },
       {
         id: 'ls-academic-16-s4',
-        title: 'Section 4 — Lecture: deep-ocean exploration',
+        title: 'Section 4 - Lecture: deep-ocean exploration',
         // ~310 words. Academic lecture (Section 4 style): a single speaker delivers a
         // structured lecture on the history and technology of deep-ocean exploration,
         // from the bathysphere to modern autonomous vehicles. Dense and factual, with
         // signpost language; assessed with note/sentence completion + multiple choice,
         // including one True/False/Not Given item anchored in an explicit statement.
-        transcript: `Good afternoon. Today I want to take you down into the deep ocean — the vast, dark world below about two hundred metres, where almost no sunlight reaches. It is the largest living space on Earth, yet for most of history it was completely beyond our reach. The story of how we got there is really a story of engineering.
+        transcript: `Good afternoon. Today I want to take you down into the deep ocean - the vast, dark world below about two hundred metres, where almost no sunlight reaches. It is the largest living space on Earth, yet for most of history it was completely beyond our reach. The story of how we got there is really a story of engineering.
 
-The central problem is pressure. For every ten metres you descend, the pressure increases by roughly one atmosphere, so at the deepest point of the ocean — almost eleven thousand metres down — it is more than a thousand times the pressure at the surface. Any vessel must be built to withstand that crushing force.
+The central problem is pressure. For every ten metres you descend, the pressure increases by roughly one atmosphere, so at the deepest point of the ocean - almost eleven thousand metres down - it is more than a thousand times the pressure at the surface. Any vessel must be built to withstand that crushing force.
 
 The first real breakthrough came in the nineteen-thirties with the bathysphere, a hollow steel ball lowered from a ship on a cable. It was simple but dangerous, because if the cable broke there was no way back. The solution arrived in nineteen-sixty, when a vessel called a bathyscaphe reached the very bottom of the ocean. Unlike the bathysphere, it carried its own buoyancy and could rise on its own, without depending on a cable.
 
 For decades after that, deep exploration relied on crewed submersibles. These are remarkable machines, but they are expensive, and carrying people adds enormous risk. So the field gradually shifted towards robots. Today, much of the work is done by remotely operated vehicles, which are controlled from a ship through a long cable, and increasingly by autonomous vehicles, which carry no cable at all and follow a programmed route on their own.
 
-What have these tools revealed? Perhaps the greatest surprise was the discovery, in the nineteen-seventies, of hydrothermal vents — cracks in the sea floor that release superheated, mineral-rich water. Around them thrive whole communities of creatures that depend not on sunlight, but on chemicals from the Earth's interior. That single finding changed how biologists think about where life can exist.`,
+What have these tools revealed? Perhaps the greatest surprise was the discovery, in the nineteen-seventies, of hydrothermal vents - cracks in the sea floor that release superheated, mineral-rich water. Around them thrive whole communities of creatures that depend not on sunlight, but on chemicals from the Earth's interior. That single finding changed how biologists think about where life can exist.`,
         questions: [
           {
             id: 'ls-016-s4-q31',

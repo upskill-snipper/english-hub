@@ -9,7 +9,7 @@ import { useT } from '@/lib/i18n/use-t'
 // ─── AudioPlayer (Wave 1 TTS stand-in) ─────────────────────────────────────
 // Plays a Listening section's `transcript` aloud using the browser's Web Speech
 // API (window.speechSynthesis + SpeechSynthesisUtterance). This is a deliberate
-// Wave 1 substitute for recorded audio — see the module page / report for the
+// Wave 1 substitute for recorded audio - see the module page / report for the
 // Phase 2 plan to swap in real `audioSrc` assets.
 //
 // Behaviour:
@@ -32,7 +32,7 @@ import { useT } from '@/lib/i18n/use-t'
 type PlaybackState = 'idle' | 'playing' | 'paused'
 
 interface AudioPlayerProps {
-  /** The section's transcript — spoken aloud. */
+  /** The section's transcript - spoken aloud. */
   transcript: string
   /** Human label for the section, used in the status line. */
   sectionTitle: string
@@ -55,7 +55,7 @@ function speechSupported(): boolean {
 
 export default function AudioPlayer({ transcript, sectionTitle, resetKey }: AudioPlayerProps) {
   const t = useT()
-  // Resolve support after mount only — this avoids a hydration mismatch, since
+  // Resolve support after mount only - this avoids a hydration mismatch, since
   // the server can't know whether the client has the API.
   const [supported, setSupported] = useState<boolean | null>(null)
   const [state, setState] = useState<PlaybackState>('idle')
@@ -72,7 +72,7 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
       try {
         window.speechSynthesis.cancel()
       } catch {
-        // non-fatal — some browsers throw if synthesis is mid-teardown
+        // non-fatal - some browsers throw if synthesis is mid-teardown
       }
     }
     utteranceRef.current = null
@@ -106,7 +106,7 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
     synth.cancel()
 
     const utterance = new SpeechSynthesisUtterance(transcript)
-    utterance.rate = 0.95 // a touch slower than default — closer to exam pace
+    utterance.rate = 0.95 // a touch slower than default - closer to exam pace
     utterance.pitch = 1
     utterance.lang = 'en-GB'
     utterance.onend = () => {

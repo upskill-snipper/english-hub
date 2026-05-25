@@ -4,12 +4,12 @@
 //   • src/app/ielts/page.tsx           → ielts.hubx.*  (SEO hub landing)
 //   • src/app/ielts/progress/page.tsx  → ielts.progress.* (band dashboard)
 //
-// SCOPE: interface copy only — section headings, marketing detail lines, skill
+// SCOPE: interface copy only - section headings, marketing detail lines, skill
 // blurbs, badge chips, dashboard labels, callouts and empty states. No test
 // CONTENT lives here (IELTS is an English exam). Cross-module strings already
 // carried by ./dictionary-ielts.ts (ielts.hub.*, ielts.loop.*, ielts.skill.*,
 // ielts.cta.*, ielts.band.*, ielts.estimate_note, ielts.nav) are REUSED, not
-// duplicated — these new keys cover only the formerly-inline English.
+// duplicated - these new keys cover only the formerly-inline English.
 //
 // NB: namespaced `ielts.hubx.*` (not `ielts.hub.*`) on purpose so the hub keys
 // never collide with the existing curated `ielts.hub.*` entries.
@@ -24,7 +24,7 @@
 
 export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
   // ══════════════════════════════════════════════════════════════════════════
-  // HUB  (src/app/ielts/page.tsx — server component, await t('ielts.hubx.*'))
+  // HUB  (src/app/ielts/page.tsx - server component, await t('ielts.hubx.*'))
   // ══════════════════════════════════════════════════════════════════════════
 
   // ─── Hero: secondary CTA + badge chips ───────────────────────────────────
@@ -73,16 +73,16 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
     ar: 'تدريب أسئلة قسم قسم مع تصحيح فوري وBand من درجتك الخام.',
   },
   'ielts.hubx.skill.reading.blurb': {
-    en: 'Academic passages with True/False/Not Given, matching and completion — marked the moment you finish.',
-    ar: 'نصوص Academic فيها True/False/Not Given ومطابقة وإكمال — تتصحّح أول ما تخلّص.',
+    en: 'Academic passages with True/False/Not Given, matching and completion - marked the moment you finish.',
+    ar: 'نصوص Academic فيها True/False/Not Given ومطابقة وإكمال - تتصحّح أول ما تخلّص.',
   },
   'ielts.hubx.skill.writing.blurb': {
     en: 'Task 1 data responses and Task 2 essays scored on all four criteria, with fixes you can action.',
     ar: 'إجابات بيانات Task 1 ومقالات Task 2 تتقيّم على المعايير الأربعة كلها، مع تصحيحات تقدر تطبّقها.',
   },
   'ielts.hubx.skill.speaking.blurb': {
-    en: 'Parts 1–3 with cue cards and follow-ups, assessed for fluency, vocabulary, grammar and pronunciation.',
-    ar: 'الأجزاء 1–3 مع بطاقات أسئلة وأسئلة متابعة، تتقيّم على الطلاقة والمفردات والقواعد والنطق.',
+    en: 'Parts 1-3 with cue cards and follow-ups, assessed for fluency, vocabulary, grammar and pronunciation.',
+    ar: 'الأجزاء 1-3 مع بطاقات أسئلة وأسئلة متابعة، تتقيّم على الطلاقة والمفردات والقواعد والنطق.',
   },
 
   // ─── Section 2: the learning loop ─────────────────────────────────────────
@@ -92,8 +92,8 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
     ar: 'مسار واحد، يتكرّر لين تصير جاهز للامتحان',
   },
   'ielts.hubx.loop.body': {
-    en: 'Every cycle moves you up a band. Diagnose where you are, follow the plan, practise, get feedback, then prove it — and repeat.',
-    ar: 'كل دورة ترفعك Band. شخّص وين أنت، اتبع الخطة، تدرّب، خذ تقييم، وبعدها أثبتها — وكرّر.',
+    en: 'Every cycle moves you up a band. Diagnose where you are, follow the plan, practise, get feedback, then prove it - and repeat.',
+    ar: 'كل دورة ترفعك Band. شخّص وين أنت، اتبع الخطة، تدرّب، خذ تقييم، وبعدها أثبتها - وكرّر.',
   },
 
   // ─── Section 3: the four skills ───────────────────────────────────────────
@@ -103,15 +103,15 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
     ar: 'تدرّب على كل جزء من اختبار Academic',
   },
   'ielts.hubx.skills.body': {
-    en: 'Listening and Reading are marked automatically. Writing and Speaking are scored by AI against the official band descriptors — so you always know where you stand.',
-    ar: 'Listening وReading يتصحّحون تلقائياً. Writing وSpeaking يتقيّمون بالـ AI حسب أوصاف Band الرسمية — عشان دايماً تعرف وين موقفك.',
+    en: 'Listening and Reading are marked automatically. Writing and Speaking are scored by AI against the official band descriptors - so you always know where you stand.',
+    ar: 'Listening وReading يتصحّحون تلقائياً. Writing وSpeaking يتقيّمون بالـ AI حسب أوصاف Band الرسمية - عشان دايماً تعرف وين موقفك.',
   },
 
   // ─── Section 4: why The English Hub ───────────────────────────────────────
   'ielts.hubx.why.eyebrow': { en: 'Why The English Hub', ar: 'ليش The English Hub' },
   'ielts.hubx.why.heading': {
-    en: 'Feedback that used to need a tutor — instantly',
-    ar: 'تقييم كان يحتاج مدرّس قبل — الحين فوري',
+    en: 'Feedback that used to need a tutor - instantly',
+    ar: 'تقييم كان يحتاج مدرّس قبل - الحين فوري',
   },
   'ielts.hubx.why.instant.title': {
     en: 'Instant AI band feedback',
@@ -166,8 +166,8 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
 
   // ─── Section 5: closing CTA ───────────────────────────────────────────────
   'ielts.hubx.cta.heading': {
-    en: 'Find your band today — for free',
-    ar: 'لاقِ Band مالك اليوم — ببلاش',
+    en: 'Find your band today - for free',
+    ar: 'لاقِ Band مالك اليوم - ببلاش',
   },
   'ielts.hubx.cta.body': {
     en: 'Take the placement test, get your personalised plan, and start closing the gap to your target band.',
@@ -181,8 +181,8 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
     ar: 'كل اللي تحتاجه، في مكان واحد',
   },
   'ielts.hubx.program.body': {
-    en: 'From your first lesson to a full timed mock — follow the path, or jump straight to what you need today.',
-    ar: 'من أول درس لين اختبار تجريبي كامل ومؤقّت — اتبع المسار، أو انتقل طول لاللي تحتاجه اليوم.',
+    en: 'From your first lesson to a full timed mock - follow the path, or jump straight to what you need today.',
+    ar: 'من أول درس لين اختبار تجريبي كامل ومؤقّت - اتبع المسار، أو انتقل طول لاللي تحتاجه اليوم.',
   },
   'ielts.hubx.program.learn.title': { en: 'Learn the method', ar: 'تعلّم الطريقة' },
   'ielts.hubx.program.learn.body': {
@@ -191,8 +191,8 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
   },
   'ielts.hubx.program.dashboard.title': { en: 'Your dashboard', ar: 'لوحتك' },
   'ielts.hubx.program.dashboard.body': {
-    en: 'Predicted band, streak and what to study next — all at a glance.',
-    ar: 'Band المتوقع وسلسلة أيامك وشنو تدرس بعدها — كله بلمحة.',
+    en: 'Predicted band, streak and what to study next - all at a glance.',
+    ar: 'Band المتوقع وسلسلة أيامك وشنو تدرس بعدها - كله بلمحة.',
   },
   'ielts.hubx.program.planner.title': { en: 'Study planner', ar: 'مخطّط الدراسة' },
   'ielts.hubx.program.planner.body': {
@@ -211,7 +211,7 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // PROGRESS  (src/app/ielts/progress/page.tsx — client, t('ielts.progress.*'))
+  // PROGRESS  (src/app/ielts/progress/page.tsx - client, t('ielts.progress.*'))
   // ══════════════════════════════════════════════════════════════════════════
 
   // ─── Header ───────────────────────────────────────────────────────────────
@@ -223,8 +223,8 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
 
   // ─── Empty state ──────────────────────────────────────────────────────────
   'ielts.progress.empty.title': {
-    en: 'No band yet — let’s find yours',
-    ar: 'ما في Band بعد — خلّنا نلاقي مالك',
+    en: 'No band yet - let’s find yours',
+    ar: 'ما في Band بعد - خلّنا نلاقي مالك',
   },
   'ielts.progress.empty.body': {
     en: 'Take the placement test to estimate your band across all four skills. Your overall band, progress and recent attempts will appear here as you practise.',
@@ -233,10 +233,10 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
   'ielts.progress.empty.explore': { en: 'Explore IELTS', ar: 'استكشف IELTS' },
 
   // ─── Overall band: locked-until-complete copy (split around the count) ─────
-  // Renders as: "Keep going — you are {n} of 4 there."
+  // Renders as: "Keep going - you are {n} of 4 there."
   'ielts.progress.overall.locked_lead': {
-    en: 'Your overall band unlocks once you have at least one result in every skill. Keep going — you are',
-    ar: 'Band الكلي مالك ينفتح أول ما تكون عندك نتيجة وحدة على الأقل في كل مهارة. كمّل — أنت',
+    en: 'Your overall band unlocks once you have at least one result in every skill. Keep going - you are',
+    ar: 'Band الكلي مالك ينفتح أول ما تكون عندك نتيجة وحدة على الأقل في كل مهارة. كمّل - أنت',
   },
   'ielts.progress.overall.locked_tail': { en: 'of 4 there.', ar: 'من 4 وصلت.' },
 
@@ -245,7 +245,7 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
   // BandChip sublabels (passed in as props from this client page).
   'ielts.progress.chip.not_attempted': { en: 'Not attempted', ar: 'ما جُرّبت' },
   'ielts.progress.chip.attempt_one': { en: '1 attempt', ar: 'محاولة وحدة' },
-  // Plural form — "{n} attempts". Count stays a digit outside the string.
+  // Plural form - "{n} attempts". Count stays a digit outside the string.
   'ielts.progress.chip.attempts_other': { en: 'attempts', ar: 'محاولات' },
 
   // ─── Weakest-skill callout (skill name comes from SKILL_META.label) ────────

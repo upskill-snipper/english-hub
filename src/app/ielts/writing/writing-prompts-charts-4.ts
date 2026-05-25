@@ -1,14 +1,14 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 4 ────────────────────────────
 // A fourth bank of Academic Task 1 prompts that each render a REAL visual via
 // the structured `chart` spec (see src/lib/ielts/types.ts → WritingChartSpec,
-// drawn by src/app/ielts/writing/_components/WritingChart.tsx). As in sets 1–2
-// the prompt text is INSTRUCTION ONLY — it never quotes the numbers, because
+// drawn by src/app/ielts/writing/_components/WritingChart.tsx). As in sets 1-2
+// the prompt text is INSTRUCTION ONLY - it never quotes the numbers, because
 // the data lives entirely in `chart` and is shown to the candidate as a chart,
 // graph, table or diagram (a single source of truth).
 //
 // Authoring rules followed throughout (mirroring the committed worked examples
-// in writing-prompts.ts and chart sets 1–2):
-//   • bar / line — every series.values length === categories.length, and each
+// in writing-prompts.ts and chart sets 1-2):
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -17,7 +17,7 @@
 //
 // Chart kinds are varied across the six: a table, a STACKED bar, a TWO-dataset
 // comparison pie, a multi-series line, a linear process and a grouped bar.
-// Topics are deliberately fresh — distinct from every other entry in the chart
+// Topics are deliberately fresh - distinct from every other entry in the chart
 // bank (renewable mix, tourist arrivals, freshwater use, internet-by-age, water
 // cycle, enrolment, household spending, electricity sources, recycled materials,
 // butterfly life cycle, coffee production, online grocery, paper recycling,
@@ -34,7 +34,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_4: WritingPrompt[] = [
-  // ── 1 · table — share of households owning mobile-phone features over time ─
+  // ── 1 · table - share of households owning mobile-phone features over time ─
   {
     id: 'wt1c4-phone-features',
     task: 'writing-task-1',
@@ -50,7 +50,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     chart: {
       kind: 'table',
       unit: '%',
-      caption: 'Share of mobile phone owners whose phone had each feature (%), 2005–2023.',
+      caption: 'Share of mobile phone owners whose phone had each feature (%), 2005-2023.',
       columns: ['Phone feature', '2005', '2014', '2023'],
       rows: [
         { label: 'Camera', cells: [22, 81, 99] },
@@ -64,7 +64,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 2 · STACKED bar — average weekly screen time by activity, four years ───
+  // ── 2 · STACKED bar - average weekly screen time by activity, four years ───
   {
     id: 'wt1c4-screen-time',
     task: 'writing-task-1',
@@ -82,7 +82,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
       stacked: true,
       unit: 'hours/week',
       yAxisLabel: 'Hours per week',
-      caption: 'Average weekly screen time per adult by activity (hours), 2011–2023.',
+      caption: 'Average weekly screen time per adult by activity (hours), 2011-2023.',
       categories: ['2011', '2015', '2019', '2023'],
       series: [
         { name: 'Streaming video', values: [4, 9, 15, 21] },
@@ -95,7 +95,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 3 · TWO pies — how household waste is disposed of, two years compared ──
+  // ── 3 · TWO pies - how household waste is disposed of, two years compared ──
   {
     id: 'wt1c4-waste-disposal',
     task: 'writing-task-1',
@@ -139,7 +139,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 4 · line — life expectancy at birth in four countries over decades ─────
+  // ── 4 · line - life expectancy at birth in four countries over decades ─────
   {
     id: 'wt1c4-life-expectancy',
     task: 'writing-task-1',
@@ -156,7 +156,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
       kind: 'line',
       unit: 'years',
       yAxisLabel: 'Life expectancy (years)',
-      caption: 'Average life expectancy at birth (years), 1960–2020.',
+      caption: 'Average life expectancy at birth (years), 1960-2020.',
       categories: ['1960', '1975', '1990', '2005', '2020'],
       series: [
         { name: 'Japan', values: [68, 75, 79, 82, 84] },
@@ -169,7 +169,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 5 · process · LINEAR — treating and purifying drinking water ───────────
+  // ── 5 · process · LINEAR - treating and purifying drinking water ───────────
   {
     id: 'wt1c4-water-treatment',
     task: 'writing-task-1',
@@ -222,7 +222,7 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 6 · grouped bar — weekly spending on leisure by age group ──────────────
+  // ── 6 · grouped bar - weekly spending on leisure by age group ──────────────
   {
     id: 'wt1c4-leisure-spending',
     task: 'writing-task-1',
@@ -242,8 +242,8 @@ export const WRITING_CHARTS_4: WritingPrompt[] = [
       caption: 'Average weekly spending on leisure activities by age group (£), 2023.',
       categories: ['Eating out', 'Cinema & concerts', 'Sport & fitness', 'Streaming subscriptions'],
       series: [
-        { name: 'Aged 18–29', values: [24, 19, 16, 14] },
-        { name: 'Aged 30–49', values: [38, 14, 22, 11] },
+        { name: 'Aged 18-29', values: [24, 19, 16, 14] },
+        { name: 'Aged 30-49', values: [38, 14, 22, 11] },
         { name: 'Aged 50+', values: [29, 9, 12, 5] },
       ],
     },

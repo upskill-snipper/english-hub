@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 21) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 21) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test uses the Matching question type three times: Matching Headings
 // (Passage 1), Matching Information / which-paragraph (Passage 2), and Matching
-// Features — statements to named people (Passage 3) — alongside the usual mix of
+// Features - statements to named people (Passage 3) - alongside the usual mix of
 // True/False/Not Given, multiple choice and sentence/summary completion.
 //
 // One complete, carefully-checked test: 3 passages, 40 marks (each matching item
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_21: ReadingTest[] = [
   {
     id: 'rd-academic-021',
-    title: 'Academic Reading — Practice Test 21',
+    title: 'Academic Reading - Practice Test 21',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ It is tempting to regard these properties as happy accidents, but they are bette
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A familiar exception to a general rule' },
               { key: 'ii', label: 'How a method of measuring density was discovered' },
@@ -68,7 +68,7 @@ It is tempting to regard these properties as happy accidents, but they are bette
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vii' },
             ],
             explanation:
-              'A points out that solid water floating is something "we take entirely for granted" although "for the great majority of materials the opposite is true" — a familiar exception (i). B describes the molecule as a "wide V" whose charges form a "weak link known as a hydrogen bond" (iii). C explains that on freezing the molecules "lock into a fixed, open framework" that is more spacious and so less dense (v). D works through how a floating "lid of ice" insulates the water so creatures "survive the winter" (iv). E lists water\'s other habits — high heat capacity, surface tension and solvent power — all from the same bonds (vi). F argues these are "the ordinary consequences of a particular molecular shape" with results on which "much depends" (vii). Heading ii (a method of measuring density) and heading viii (purifying drinking water) are distractors the passage never discusses.',
+              'A points out that solid water floating is something "we take entirely for granted" although "for the great majority of materials the opposite is true" - a familiar exception (i). B describes the molecule as a "wide V" whose charges form a "weak link known as a hydrogen bond" (iii). C explains that on freezing the molecules "lock into a fixed, open framework" that is more spacious and so less dense (v). D works through how a floating "lid of ice" insulates the water so creatures "survive the winter" (iv). E lists water\'s other habits - high heat capacity, surface tension and solvent power - all from the same bonds (vi). F argues these are "the ordinary consequences of a particular molecular shape" with results on which "much depends" (vii). Heading ii (a method of measuring density) and heading viii (purifying drinking water) are distractors the passage never discusses.',
           },
           {
             id: 'rd-021-p1-q2',
@@ -160,7 +160,7 @@ It is tempting to regard these properties as happy accidents, but they are bette
 
 The solution was money: some commodity that everyone in a society agreed to accept, not because they wanted it for its own sake but because they knew others would take it in turn. Many things have served this purpose, including cattle, salt, shells and bars of grain, but metals proved especially convenient. Gold and silver are durable, easy to divide into smaller amounts, and valuable enough that a worthwhile sum is light to carry. At first such metal changed hands as rough lumps that had to be weighed and tested at every transaction. The decisive refinement, which appeared independently in several ancient societies, was the coin: a piece of metal of standard weight and purity, stamped by an authority to certify its value, so that it could be counted rather than weighed.
 
-Coins solved many problems but created a new one, for precious metal is heavy and risky to move in quantity over long distances. Merchants travelling between distant cities were reluctant to carry chests of gold along roads where robbers waited. An elegant answer emerged in several trading civilisations: the merchant deposited coin with a trusted party in one city and received a written note promising that the same sum could be collected from an associate in another. The note, not the metal, then made the journey. This was the seed of paper money, and it rested entirely on trust — on the confidence that the promise written on the paper would be honoured.
+Coins solved many problems but created a new one, for precious metal is heavy and risky to move in quantity over long distances. Merchants travelling between distant cities were reluctant to carry chests of gold along roads where robbers waited. An elegant answer emerged in several trading civilisations: the merchant deposited coin with a trusted party in one city and received a written note promising that the same sum could be collected from an associate in another. The note, not the metal, then made the journey. This was the seed of paper money, and it rested entirely on trust - on the confidence that the promise written on the paper would be honoured.
 
 From safekeeping it was a short step to lending, and with lending the bank in its modern sense was born. Those who stored other people's gold soon noticed that depositors rarely came to reclaim it all at once; on any given day, only a fraction was withdrawn while the rest lay idle in the vault. A storekeeper of gold could therefore lend out much of what was deposited, charging interest, while keeping back enough to satisfy the few who came to withdraw. This practice, in which a bank holds only a portion of its deposits in reserve and lends the remainder, is the foundation of banking to this day. It allows savings to be put to productive use rather than sitting uselessly in a strongbox, and in effect it creates new money, since both the original depositor and the borrower now have funds to spend.
 
@@ -174,7 +174,7 @@ Money has continued to grow more abstract with each stage of this history. It be
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -302,9 +302,9 @@ Money has continued to grow more abstract with each stage of this history. It be
       {
         id: 'rd-academic-021-p3',
         title: 'Into the Deep',
-        body: `For most of human history the deep ocean was less a place than a void, imagined as a lightless, lifeless abyss beneath the reach of any sounding line. The sea floor that covers most of the planet remained, until astonishingly recently, more obscure to us than the surface of the Moon. The reason is not lack of interest but the sheer hostility of the environment. Sunlight fades to nothing within a few hundred metres of the surface, and below that the water is utterly dark, close to freezing, and crushed under a pressure that climbs by roughly one atmosphere for every ten metres of depth. At the bottom of the deepest trenches the weight of water overhead is more than a thousand times that at the surface — enough, the engineer Marcus Devi observes, to flatten any vessel not built as a thick, near-perfect sphere, since that shape alone distributes such a load evenly.
+        body: `For most of human history the deep ocean was less a place than a void, imagined as a lightless, lifeless abyss beneath the reach of any sounding line. The sea floor that covers most of the planet remained, until astonishingly recently, more obscure to us than the surface of the Moon. The reason is not lack of interest but the sheer hostility of the environment. Sunlight fades to nothing within a few hundred metres of the surface, and below that the water is utterly dark, close to freezing, and crushed under a pressure that climbs by roughly one atmosphere for every ten metres of depth. At the bottom of the deepest trenches the weight of water overhead is more than a thousand times that at the surface - enough, the engineer Marcus Devi observes, to flatten any vessel not built as a thick, near-perfect sphere, since that shape alone distributes such a load evenly.
 
-The first systematic attempt to learn what lay below came in the nineteenth century, when a converted warship spent more than three years dragging nets and lowering weighted lines across the world's oceans. The expedition hauled up thousands of previously unknown creatures and produced the first rough map of the sea floor, overturning the widespread assumption that nothing could live in the cold and dark of the depths. The marine biologist Helen Sato regards that voyage as the true beginning of the science, not because its equipment was sophisticated — it was crude, and much was guessed at — but because it replaced speculation with specimens. After it, she argues, the deep sea could no longer be dismissed as empty; it had become a place with inhabitants, however strange, that demanded explanation.
+The first systematic attempt to learn what lay below came in the nineteenth century, when a converted warship spent more than three years dragging nets and lowering weighted lines across the world's oceans. The expedition hauled up thousands of previously unknown creatures and produced the first rough map of the sea floor, overturning the widespread assumption that nothing could live in the cold and dark of the depths. The marine biologist Helen Sato regards that voyage as the true beginning of the science, not because its equipment was sophisticated - it was crude, and much was guessed at - but because it replaced speculation with specimens. After it, she argues, the deep sea could no longer be dismissed as empty; it had become a place with inhabitants, however strange, that demanded explanation.
 
 Reaching the bottom in person took longer. In the mid-twentieth century a specially built vessel, in essence a heavy steel sphere slung beneath a float, carried two people to the floor of the deepest known trench, almost eleven kilometres down. It was a feat of extraordinary daring, but the craft could barely manoeuvre and the visit was brief, and for decades afterwards almost no one returned. Manned descents of this kind, Devi points out, are spectacular but enormously expensive and risky, and they keep a human being in danger for the sake of a few hours on the bottom. The future of exploration, in his view, belongs largely to machines.
 
@@ -314,7 +314,7 @@ What those fragments reveal has overturned an old assumption about the basis of 
 
 The deep ocean therefore occupies a curious position in science: it is at once the least explored part of our own planet and a rehearsal for the exploration of others. Reyes is fond of noting that we have far better maps of the surface of Mars than of our own sea floor, much of which has never been seen at the fine scale at which the land has long been charted. The instruments improve year by year, and each expedition fills in a little more of the blank. But the deep remains, for now, the great unexplored country of the Earth, vast and dark and full of life we are only beginning to suspect.`,
         questions: [
-          // ── Matching Features — statements to people (5 items) = 5 marks ──
+          // ── Matching Features - statements to people (5 items) = 5 marks ──
           {
             id: 'rd-021-p3-q1',
             type: 'matching',
@@ -378,7 +378,7 @@ The deep ocean therefore occupies a curious position in science: it is at once t
             ],
             correctIndex: 2,
             explanation:
-              'Paragraph B says the voyage mattered "not because its equipment was sophisticated — it was crude... but because it replaced speculation with specimens." Option C states this; the manned descent to the trench is a separate, later event (paragraph C).',
+              'Paragraph B says the voyage mattered "not because its equipment was sophisticated - it was crude... but because it replaced speculation with specimens." Option C states this; the manned descent to the trench is a separate, later event (paragraph C).',
           },
           {
             id: 'rd-021-p3-q4',

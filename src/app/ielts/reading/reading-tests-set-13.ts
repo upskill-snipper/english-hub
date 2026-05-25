@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 13) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 13) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (Matching
 // Headings / Features / Sentence Endings, MCQ, True/False/Not Given, and
@@ -17,7 +17,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_13: ReadingTest[] = [
   {
     id: 'rd-academic-013',
-    title: 'Academic Reading — Practice Test 13',
+    title: 'Academic Reading - Practice Test 13',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -81,7 +81,7 @@ The most extreme creation of the acoustician is a room designed to have no echo 
               },
             ],
             explanation:
-              'Paragraph 1 describes how a vibrating object squeezes the air into a pattern that ripples outward as a wave (ii). Paragraph 3 explains that the speed of sound depends on the medium it travels through (iii). Paragraph 4 contrasts reflection and absorption — what bouncing and soaking up sound depend on (vi). Paragraph 6 says acoustics "demands a careful balance" of reflection to suit a hall or a lecture theatre (v). Paragraph 7 describes the anechoic chamber, a room that gives almost nothing back (i). Headings iv and vii are distractors not matching any paragraph.',
+              'Paragraph 1 describes how a vibrating object squeezes the air into a pattern that ripples outward as a wave (ii). Paragraph 3 explains that the speed of sound depends on the medium it travels through (iii). Paragraph 4 contrasts reflection and absorption - what bouncing and soaking up sound depend on (vi). Paragraph 6 says acoustics "demands a careful balance" of reflection to suit a hall or a lecture theatre (v). Paragraph 7 describes the anechoic chamber, a room that gives almost nothing back (i). Headings iv and vii are distractors not matching any paragraph.',
           },
           {
             id: 'rd-013-p1-q2',
@@ -123,7 +123,7 @@ The most extreme creation of the acoustician is a room designed to have no echo 
             prompt: 'According to the passage, what does the frequency of a sound wave determine?',
             options: [
               'How loud the sound is perceived to be',
-              'The pitch of the sound — how high or low it seems',
+              'The pitch of the sound - how high or low it seems',
               'How far the sound is able to travel',
               'Whether the sound can pass through a solid',
             ],
@@ -172,15 +172,15 @@ The most extreme creation of the acoustician is a room designed to have no echo 
 
 The decisive innovations occurred in China. By the early centuries of the second millennium, merchants in the south-western province of Sichuan, burdened by the weight of the iron coinage then in local use, had begun depositing their cash with trusted establishments and accepting handwritten receipts in return. These receipts could be passed from hand to hand and redeemed for the coins they represented, and so a piece of paper came to stand in for the metal it named. The convenience was immense, and the practice spread. In time the imperial government took control of the system and began issuing the notes itself, producing what is generally regarded as the world's first true government paper currency.
 
-The crucial conceptual leap was the idea that the paper need not be valuable in itself. A banknote was, at bottom, a promise — an undertaking that the holder could exchange the note for a fixed quantity of metal on demand. So long as people believed the promise would be honoured, the note circulated as readily as the coins behind it, and far more conveniently. This trust was the foundation on which the whole edifice rested. Where it held firm, paper money lubricated trade as metal never could; where it failed, the notes became worthless scraps overnight.
+The crucial conceptual leap was the idea that the paper need not be valuable in itself. A banknote was, at bottom, a promise - an undertaking that the holder could exchange the note for a fixed quantity of metal on demand. So long as people believed the promise would be honoured, the note circulated as readily as the coins behind it, and far more conveniently. This trust was the foundation on which the whole edifice rested. Where it held firm, paper money lubricated trade as metal never could; where it failed, the notes became worthless scraps overnight.
 
 That fragility revealed itself with depressing regularity. Because notes were so much cheaper to produce than coins were to mine, the temptation to print more of them, particularly to meet the costs of war, proved difficult for governments to resist. When the quantity of paper raced ahead of the goods and metal that supposedly backed it, prices climbed and the value of each note shrank, a process we now call inflation. Several early Chinese experiments collapsed in exactly this way, and the resulting disorder was severe enough that the authorities eventually abandoned paper currency for a time and returned to metal.
 
-Europe came to the idea far later and by a different route. Travellers had brought back astonished descriptions of the Chinese notes, but it was the goldsmiths of seventeenth-century London who supplied the practical model. Possessing strong vaults, they had taken to storing other people's gold for safe keeping and issuing written receipts for the deposits. They soon noticed that depositors rarely reclaimed all their gold at once, and that the receipts themselves were circulating as money. From this observation grew a momentous and risky practice: the goldsmiths began lending out receipts for more gold than they actually held, confident that not everyone would demand repayment simultaneously. This was the seed of modern banking, and it multiplied the money available for trade — but it also meant that a sudden rush of depositors all wanting their gold at once could ruin a lender, an event known as a run.
+Europe came to the idea far later and by a different route. Travellers had brought back astonished descriptions of the Chinese notes, but it was the goldsmiths of seventeenth-century London who supplied the practical model. Possessing strong vaults, they had taken to storing other people's gold for safe keeping and issuing written receipts for the deposits. They soon noticed that depositors rarely reclaimed all their gold at once, and that the receipts themselves were circulating as money. From this observation grew a momentous and risky practice: the goldsmiths began lending out receipts for more gold than they actually held, confident that not everyone would demand repayment simultaneously. This was the seed of modern banking, and it multiplied the money available for trade - but it also meant that a sudden rush of depositors all wanting their gold at once could ruin a lender, an event known as a run.
 
 For two centuries the value of a banknote remained, in principle, anchored to metal, and the most famous expression of this link was the gold standard, under which a currency could be exchanged for a fixed weight of gold. The arrangement imposed a useful discipline, for a government could not print more notes than its reserves of gold would support. Yet the same discipline became a cage in times of crisis, when a state needed to spend freely and its supply of gold would not stretch. Under the immense financial strain of the twentieth century's wars and economic shocks, one country after another cut the link, until eventually no major currency could be exchanged for gold at all.
 
-What remains is money of a wholly different nature. Modern notes are described as fiat currency, from the Latin for "let it be done": they are legal tender by government decree, backed not by any commodity but solely by confidence in the issuing state and its central bank. Such a system grants governments great flexibility, but it places the entire weight of a currency's value on the careful management of its supply, for nothing now stands behind the paper except trust. In this sense the modern economy has returned to the very principle the Sichuan merchants stumbled upon a thousand years ago — that money, in the end, is a promise people agree to believe.`,
+What remains is money of a wholly different nature. Modern notes are described as fiat currency, from the Latin for "let it be done": they are legal tender by government decree, backed not by any commodity but solely by confidence in the issuing state and its central bank. Such a system grants governments great flexibility, but it places the entire weight of a currency's value on the careful management of its supply, for nothing now stands behind the paper except trust. In this sense the modern economy has returned to the very principle the Sichuan merchants stumbled upon a thousand years ago - that money, in the end, is a promise people agree to believe.`,
         questions: [
           {
             id: 'rd-013-p2-q10',
@@ -238,7 +238,7 @@ What remains is money of a wholly different nature. Modern notes are described a
             ],
             correctIndex: 1,
             explanation:
-              'The third paragraph states that "the crucial conceptual leap was the idea that the paper need not be valuable in itself" — a banknote was "a promise" to exchange it for metal. Option B is correct.',
+              'The third paragraph states that "the crucial conceptual leap was the idea that the paper need not be valuable in itself" - a banknote was "a promise" to exchange it for metal. Option B is correct.',
           },
           {
             id: 'rd-013-p2-q16',
@@ -273,7 +273,7 @@ What remains is money of a wholly different nature. Modern notes are described a
             type: 'matching',
             variant: 'features',
             prompt:
-              'Match each event or development (1–5) with the place it is associated with in the passage (A–C). NB You may use any letter more than once.',
+              'Match each event or development (1-5) with the place it is associated with in the passage (A-C). NB You may use any letter more than once.',
             options: [
               { key: 'A', label: 'China' },
               { key: 'B', label: 'London / England' },
@@ -316,9 +316,9 @@ What remains is money of a wholly different nature. Modern notes are described a
         title: 'The Grooves of the Mind',
         body: `Consider how much of an ordinary day passes without conscious thought. A person rises, reaches for the toothbrush, follows the same route to work, and switches on a familiar machine, performing each act so automatically that the mind is free to wander elsewhere. These are habits: behaviours that have been repeated so often that they no longer require deliberate decision. Far from being a sign of laziness, this automation is one of the brain's most valuable economies. The conscious mind is a slow and effortful instrument, easily exhausted, and by handing routine actions over to automatic control it conserves its limited energy for the genuinely new.
 
-Psychologists who study this process describe most habits as following a simple three-part structure. First comes a cue, a trigger that the brain learns to associate with a particular response — a time of day, a place, an emotional state, or the action that immediately precedes it. The cue prompts a routine, the behaviour itself, which in turn delivers a reward, some outcome the brain finds satisfying. Crucially, the brain remembers the connection, so that the next time the cue appears it anticipates the reward and the routine follows with less and less thought. Repeated often enough, this loop wears a kind of groove into behaviour, and the action becomes a habit.
+Psychologists who study this process describe most habits as following a simple three-part structure. First comes a cue, a trigger that the brain learns to associate with a particular response - a time of day, a place, an emotional state, or the action that immediately precedes it. The cue prompts a routine, the behaviour itself, which in turn delivers a reward, some outcome the brain finds satisfying. Crucially, the brain remembers the connection, so that the next time the cue appears it anticipates the reward and the routine follows with less and less thought. Repeated often enough, this loop wears a kind of groove into behaviour, and the action becomes a habit.
 
-The reward is the engine of the whole arrangement, but its role is more subtle than it first appears. Researchers have found that as a habit takes hold, the spike of pleasure in the brain shifts backwards in time. At first the satisfaction arrives with the reward itself; later it arrives at the moment the cue is noticed, in eager anticipation of the reward to come. This anticipation is experienced as craving, and it is craving, rather than the reward itself, that drives the behaviour forward. It explains why the mere sight of a cue — a notification, a vending machine, a particular doorway — can produce a pull that is felt long before any reward is obtained.
+The reward is the engine of the whole arrangement, but its role is more subtle than it first appears. Researchers have found that as a habit takes hold, the spike of pleasure in the brain shifts backwards in time. At first the satisfaction arrives with the reward itself; later it arrives at the moment the cue is noticed, in eager anticipation of the reward to come. This anticipation is experienced as craving, and it is craving, rather than the reward itself, that drives the behaviour forward. It explains why the mere sight of a cue - a notification, a vending machine, a particular doorway - can produce a pull that is felt long before any reward is obtained.
 
 This machinery is strikingly indifferent to whether its results are good for us. The same loop that fixes a healthy routine, such as a morning walk, will just as faithfully entrench a harmful one, such as reaching for a cigarette whenever stress appears. The brain does not weigh the long-term wisdom of a behaviour; it simply notices that a cue was followed by a reward and strengthens the link. This is why bad habits are so stubborn. A person may sincerely wish to stop and yet find that, in the presence of the old cue, the routine unfolds almost before they are aware of having chosen it.
 
@@ -326,14 +326,14 @@ If habits cannot easily be erased, the more promising strategy is to redirect th
 
 The surrounding environment turns out to matter at least as much as personal resolve. Because cues are so powerful, the simplest way to weaken an unwanted habit is often to remove its triggers from sight, and the simplest way to build a desirable one is to make its cue obvious and its routine easy. Keeping sweets out of the house, or laying out running clothes the night before, sounds trivial, yet such adjustments work precisely because they act on the cue rather than relying on the willpower that habits are so good at evading. This is also why people frequently manage to change long-standing habits when they move house or start a new job: the old web of cues is swept away at a stroke, and for a brief window behaviour becomes unusually open to redirection.
 
-None of this means that change is easy. Studies that have tried to measure how long a new behaviour takes to become automatic report figures ranging from a few weeks to the better part of a year, depending on the person and the complexity of the act. There is no fixed point at which a habit is suddenly formed. What the research does suggest is that change is less a matter of heroic self-discipline than of patient design — of arranging one's cues, routines and rewards so that the brain's relentless machinery, which will build habits regardless, is gently steered towards building the right ones.`,
+None of this means that change is easy. Studies that have tried to measure how long a new behaviour takes to become automatic report figures ranging from a few weeks to the better part of a year, depending on the person and the complexity of the act. There is no fixed point at which a habit is suddenly formed. What the research does suggest is that change is less a matter of heroic self-discipline than of patient design - of arranging one's cues, routines and rewards so that the brain's relentless machinery, which will build habits regardless, is gently steered towards building the right ones.`,
         questions: [
           {
             id: 'rd-013-p3-q19',
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence (1–5) with the correct ending (A–G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all. Write the correct letter for each sentence.',
+              'Complete each sentence (1-5) with the correct ending (A-G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all. Write the correct letter for each sentence.',
             options: [
               {
                 key: 'A',
@@ -444,7 +444,7 @@ None of this means that change is easy. Studies that have tried to measure how l
             ],
             correctIndex: 1,
             explanation:
-              'The second paragraph describes the structure as "a cue, a trigger... prompts a routine, the behaviour itself, which in turn delivers a reward." The correct order is cue, routine, reward — Option B.',
+              'The second paragraph describes the structure as "a cue, a trigger... prompts a routine, the behaviour itself, which in turn delivers a reward." The correct order is cue, routine, reward - Option B.',
           },
           {
             id: 'rd-013-p3-q25',
@@ -492,7 +492,7 @@ None of this means that change is easy. Studies that have tried to measure how l
               "Complete the summary with ONE word from the passage: The research suggests that lasting change is less a matter of heroic self-discipline than of patient _______ of one's cues, routines and rewards.",
             acceptableAnswers: ['design'],
             explanation:
-              'The final paragraph states that change is "less a matter of heroic self-discipline than of patient design — of arranging one\'s cues, routines and rewards." The required word is "design".',
+              'The final paragraph states that change is "less a matter of heroic self-discipline than of patient design - of arranging one\'s cues, routines and rewards." The required word is "design".',
           },
         ],
       },

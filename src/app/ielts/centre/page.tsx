@@ -10,7 +10,7 @@
 //
 // GRACEFUL throughout: the `ielts_attempts` table may be unmigrated in some
 // environments, so every read of it is wrapped in try/catch and degrades to
-// empty bands ("—"). Logged-out / DB-down requests redirect out cleanly.
+// empty bands ("-"). Logged-out / DB-down requests redirect out cleanly.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { redirect } from 'next/navigation'
@@ -51,7 +51,7 @@ async function skillLabels(): Promise<Record<IeltsSkill, string>> {
   return { listening, reading, writing, speaking }
 }
 
-// 0–9 / 0.5-step union guard for Float bands read off the DB.
+// 0-9 / 0.5-step union guard for Float bands read off the DB.
 const VALID_BANDS: ReadonlySet<number> = new Set([
   0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9,
 ])
@@ -75,9 +75,9 @@ interface CentreData {
 }
 
 function formatDate(iso: string | null): string {
-  if (!iso) return '—'
+  if (!iso) return '-'
   const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return '—'
+  if (Number.isNaN(d.getTime())) return '-'
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 

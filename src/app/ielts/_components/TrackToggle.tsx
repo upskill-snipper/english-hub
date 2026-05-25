@@ -9,7 +9,7 @@
 // localStorage so it carries across pages and sessions.
 //
 // `useIeltsTrack()` is SSR-safe: it returns 'academic' on the server and during
-// the first client render, then syncs to the stored value after mount — this
+// the first client render, then syncs to the stored value after mount - this
 // avoids a hydration mismatch (the server has no localStorage).
 //
 // The control is modelled on LanguageToggle (role=group + aria-pressed
@@ -35,7 +35,7 @@ function readStoredTrack(): IeltsTrack {
     const stored = window.localStorage.getItem(STORAGE_KEY)
     return isTrack(stored) ? stored : DEFAULT_TRACK
   } catch {
-    // localStorage can throw (private mode / disabled storage) — fall back.
+    // localStorage can throw (private mode / disabled storage) - fall back.
     return DEFAULT_TRACK
   }
 }

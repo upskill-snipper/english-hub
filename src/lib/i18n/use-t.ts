@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * useT() — client-side translation hook.
+ * useT() - client-side translation hook.
  *
  * Reads the `eh-lang` cookie via document.cookie (mirrors the
  * server-side x-lang resolution) and returns a memoised lookup
@@ -18,7 +18,7 @@
  *       return <button>{t('action.continue')}</button>
  *     }
  *
- * Legacy bilingual mode ('bi') was removed in May 2026 — the stacked
+ * Legacy bilingual mode ('bi') was removed in May 2026 - the stacked
  * EN+AR layout didn't render reliably on dense pages. Old cookies
  * with `eh-lang=bi` are coerced to 'en' here and by the middleware
  * so sessions upgrade transparently.

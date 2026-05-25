@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (to a manager / a company),
+//     The register varies by prompt - formal (to a manager / a company),
 //     semi-formal, or informal (to a neighbour / friend). The situation and the
 //     three bullets live inside `prompt`.
 //     minWords 150, suggestedMinutes 20.
@@ -20,7 +20,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_6: WritingPrompt[] = [
-  // ── Task 1 · A — INFORMAL letter to a neighbour about noise ────────────────
+  // ── Task 1 · A - INFORMAL letter to a neighbour about noise ────────────────
   {
     id: 'wt1-gt6-neighbour-noise',
     task: 'writing-task-1',
@@ -45,7 +45,7 @@ export const GT_WRITING_SET_6: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — FORMAL letter to a manager requesting time off ────────────
+  // ── Task 1 · B - FORMAL letter to a manager requesting time off ────────────
   {
     id: 'wt1-gt6-time-off',
     task: 'writing-task-1',
@@ -70,7 +70,7 @@ export const GT_WRITING_SET_6: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — FORMAL complaint to a company about a faulty product ──────
+  // ── Task 1 · C - FORMAL complaint to a company about a faulty product ──────
   {
     id: 'wt1-gt6-faulty-product',
     task: 'writing-task-1',
@@ -95,7 +95,7 @@ export const GT_WRITING_SET_6: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree / disagree) ───────────────────────────────
+  // ── Task 2 · A - opinion (agree / disagree) ───────────────────────────────
   {
     id: 'wt2-gt6-community-work',
     task: 'writing-task-2',
@@ -114,7 +114,7 @@ export const GT_WRITING_SET_6: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — two-part direct question ─────────────────────────────────
+  // ── Task 2 · B - two-part direct question ─────────────────────────────────
   {
     id: 'wt2-gt6-family-meals',
     task: 'writing-task-2',
@@ -133,7 +133,7 @@ export const GT_WRITING_SET_6: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — problem and solution ─────────────────────────────────────
+  // ── Task 2 · C - problem and solution ─────────────────────────────────────
   {
     id: 'wt2-gt6-car-use',
     task: 'writing-task-2',

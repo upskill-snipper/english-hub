@@ -3,7 +3,7 @@
 // ─── IELTS Speaking Practice (async, Wave 1) ────────────────────────────────
 // Pick a cue (Part 1 / 2 / 3). For Part 2 we run the standard 60s preparation
 // countdown then an up-to-120s "long turn" countdown. The learner records audio
-// for their OWN self-review (never uploaded — see Recorder) and types what they
+// for their OWN self-review (never uploaded - see Recorder) and types what they
 // said into a transcript box. Submitting the transcript POSTs to
 // /api/ielts/speaking-feedback and renders TaskFeedback (overall band + the four
 // criteria + strengths / improvements / model pointers). The attempt is saved
@@ -11,7 +11,7 @@
 //
 // Wave 1 is transcript-based: there is NO live auto-transcription and NO true
 // acoustic pronunciation scoring yet (Phase 2). Pronunciation is a best-effort
-// proxy and fluency is inferred from the transcript — surfaced to the user.
+// proxy and fluency is inferred from the transcript - surfaced to the user.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

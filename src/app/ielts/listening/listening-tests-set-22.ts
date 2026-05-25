@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 22) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 22) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …, LISTENING_SET_22)
@@ -7,21 +7,21 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions / 40 marks) that mirror the real IELTS Listening paper, with
 // topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a member of the
+//   • Section 1 - an everyday transactional DIALOGUE (here: a member of the
 //     public enquiring about joining a book club at a public library), assessed
 //     with form / note completion + multiple choice. A surname is spelled and a
 //     phone number is dictated, and the total membership fee depends on a stated
 //     choice (which membership type is selected).
-//   • Section 2 — an everyday MONOLOGUE (here: an induction talk for new
-//     volunteers at a wildlife park — duties, safety rules, shifts and
+//   • Section 2 - an everyday MONOLOGUE (here: an induction talk for new
+//     volunteers at a wildlife park - duties, safety rules, shifts and
 //     training), assessed with sentence completion, multiple choice and a
 //     matching task (which day each duty happens), with signpost language.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor in a
-//     tutorial preparing a history essay — choosing the question, primary vs
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor in a
+//     tutorial preparing a history essay - choosing the question, primary vs
 //     secondary sources, referencing and the deadline), assessed with multiple
 //     choice, completion and a matching task (classifying sources).
-//   • Section 4 — an academic LECTURE / monologue (here: the science of
-//     nutrition — macronutrients, vitamins and minerals, energy balance and
+//   • Section 4 - an academic LECTURE / monologue (here: the science of
+//     nutrition - macronutrients, vitamins and minerals, energy balance and
 //     common misconceptions), assessed with note/sentence completion + multiple
 //     choice, including one True/False/Not Given item.
 //
@@ -34,7 +34,7 @@
 //   • 'tfng'     → True / False / Not Given.
 //   • 'matching' → each item is one numbered sub-question worth ONE mark; the
 //                  container `id` is always distinct from every `items[].id`.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -45,12 +45,12 @@ export const LISTENING_SET_22: ListeningTest[] = [
   {
     id: 'ls-academic-022',
     title:
-      'Practice Test 22 — Joining a Library Book Club, A Wildlife Park Volunteer Induction, Planning a History Essay & The Science of Nutrition',
+      'Practice Test 22 - Joining a Library Book Club, A Wildlife Park Volunteer Induction, Planning a History Essay & The Science of Nutrition',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-022-s1',
-        title: 'Section 1 — Joining a book club at a public library',
+        title: 'Section 1 - Joining a book club at a public library',
         // ~300 words. Transactional dialogue (Section 1 style): a member of the
         // public phones a public library to join its book club. A surname is
         // spelled and a mobile number is dictated; the total membership fee
@@ -61,7 +61,7 @@ export const LISTENING_SET_22: ListeningTest[] = [
 
 MAN: Hello. I've seen a poster about your book club, and I'd like to join, if I can.
 
-WOMAN: You certainly can — we'd love to have you. Let me take a few details. Could I have your name, please?
+WOMAN: You certainly can - we'd love to have you. Let me take a few details. Could I have your name, please?
 
 MAN: Yes, it's Thomas Bradley. Bradley is spelled B-R-A-D-L-E-Y.
 
@@ -73,11 +73,11 @@ WOMAN: Lovely. Now, the club meets twice a month, on the first and third Wednesd
 
 MAN: Wednesday evenings suit me well. Where exactly do you meet?
 
-WOMAN: We gather in the reading room on the second floor — not the main hall, which trips a few people up.
+WOMAN: We gather in the reading room on the second floor - not the main hall, which trips a few people up.
 
 MAN: Good to know. And how are the books chosen?
 
-WOMAN: That's the nice part — every member suggests a title, and then we vote, so the whole group decides together. No one person picks.
+WOMAN: That's the nice part - every member suggests a title, and then we vote, so the whole group decides together. No one person picks.
 
 MAN: I like that. Is there a fee?
 
@@ -85,11 +85,11 @@ WOMAN: There's a small annual membership. Standard membership is twelve pounds a
 
 MAN: I'm a student, actually, so that's the eight-pound rate.
 
-WOMAN: Perfect, I'll put you down for that. One last thing — to complete the form, what's your date of birth?
+WOMAN: Perfect, I'll put you down for that. One last thing - to complete the form, what's your date of birth?
 
 MAN: The fourteenth of March, nineteen ninety-nine.
 
-WOMAN: Thank you. I'll email you this month's book so you can start reading. We meet next on the third Wednesday — do bring a notebook if you like to jot down your thoughts.
+WOMAN: Thank you. I'll email you this month's book so you can start reading. We meet next on the third Wednesday - do bring a notebook if you like to jot down your thoughts.
 
 MAN: I will. Thanks very much for your help.`,
         questions: [
@@ -100,7 +100,7 @@ MAN: I will. Thanks very much for your help.`,
               'Complete the membership form. Write ONE WORD for the answer.\n\nMember surname: ____________',
             acceptableAnswers: ['Bradley', 'bradley'],
             explanation:
-              'The caller gives his name as “Thomas Bradley” and spells the surname: B-R-A-D-L-E-Y. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Thomas Bradley” and spells the surname: B-R-A-D-L-E-Y. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-022-s1-q2',
@@ -108,7 +108,7 @@ MAN: I will. Thanks very much for your help.`,
             prompt: 'Contact phone number: ____________. Write the number exactly as you hear it.',
             acceptableAnswers: ['07933 44102', '0793344102', '07933 441 02', '07933441 02'],
             explanation:
-              'He dictates the number as “oh-seven-nine-three-three, double four, one-oh-two” — that is 07933 44102. “Double four” means two 4s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
+              'He dictates the number as “oh-seven-nine-three-three, double four, one-oh-two” - that is 07933 44102. “Double four” means two 4s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-022-s1-q3',
@@ -140,7 +140,7 @@ MAN: I will. Thanks very much for your help.`,
             prompt: 'The group meets in the ____________ room on the second floor. Write ONE WORD.',
             acceptableAnswers: ['reading'],
             explanation:
-              'She says, “We gather in the reading room on the second floor — not the main hall.” The answer is “reading” (the main hall is a distractor).',
+              'She says, “We gather in the reading room on the second floor - not the main hall.” The answer is “reading” (the main hall is a distractor).',
           },
           {
             id: 'ls-022-s1-q6',
@@ -207,7 +207,7 @@ MAN: I will. Thanks very much for your help.`,
       },
       {
         id: 'ls-academic-022-s2',
-        title: 'Section 2 — Induction talk for new wildlife park volunteers',
+        title: 'Section 2 - Induction talk for new wildlife park volunteers',
         // ~320 words. Informational monologue (Section 2 style): a single speaker
         // gives an induction talk to new volunteers at a wildlife park, covering
         // duties, safety rules, shifts and training. Uses sequencing/signpost
@@ -215,15 +215,15 @@ MAN: I will. Thanks very much for your help.`,
         // matching task in which each weekday is paired with a regular duty.
         transcript: `Hello, everyone, and welcome to your induction day here at Greenfields Wildlife Park. My name's Marcus, and I'm the volunteer coordinator. Over the next half hour I'll run through what you'll be doing, the rules that keep you safe, and how your training works.
 
-Let me start with your duties, because they follow a weekly pattern. On Mondays, the team helps with feeding the animals — you'll work alongside a keeper, never alone. On Wednesdays, the focus shifts to maintenance: mending fences, clearing paths and that sort of thing. And on Fridays, you'll mostly be helping visitors, answering questions and giving directions at the front gate.
+Let me start with your duties, because they follow a weekly pattern. On Mondays, the team helps with feeding the animals - you'll work alongside a keeper, never alone. On Wednesdays, the focus shifts to maintenance: mending fences, clearing paths and that sort of thing. And on Fridays, you'll mostly be helping visitors, answering questions and giving directions at the front gate.
 
-Now, safety — and this is the part I really need you to remember. The single most important rule is this: never, under any circumstances, put your hand or anything else inside an enclosure. Even with the gentlest-looking animal, that rule is absolute. You'll also be given a high-visibility jacket, and you must wear it at all times while you're on site, so that staff and visitors can see you clearly.
+Now, safety - and this is the part I really need you to remember. The single most important rule is this: never, under any circumstances, put your hand or anything else inside an enclosure. Even with the gentlest-looking animal, that rule is absolute. You'll also be given a high-visibility jacket, and you must wear it at all times while you're on site, so that staff and visitors can see you clearly.
 
-A word about shifts. A standard volunteer shift lasts four hours, and we ask everyone to commit to at least one shift a week. If you can't make a shift, the most important thing is to telephone us the day before — please don't just email, because the office checks the phone first thing.
+A word about shifts. A standard volunteer shift lasts four hours, and we ask everyone to commit to at least one shift a week. If you can't make a shift, the most important thing is to telephone us the day before - please don't just email, because the office checks the phone first thing.
 
 As for training, you won't be thrown in at the deep end. Every new volunteer is paired with an experienced mentor for the first month, and there's a short first-aid course that everyone completes before they start working with the public.
 
-Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, but please bring your own food, as the café can get very busy. Right — let's go and meet some animals.`,
+Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, but please bring your own food, as the café can get very busy. Right - let's go and meet some animals.`,
         questions: [
           {
             id: 'ls-022-s2-q11',
@@ -238,7 +238,7 @@ Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, bu
             type: 'matching',
             variant: 'features',
             prompt:
-              'Which day of the week is each volunteer duty carried out on? Choose your answer from the list and match it to each duty (Questions 12–14).',
+              'Which day of the week is each volunteer duty carried out on? Choose your answer from the list and match it to each duty (Questions 12-14).',
             options: [
               { key: 'mon', label: 'Monday' },
               { key: 'wed', label: 'Wednesday' },
@@ -298,7 +298,7 @@ Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, bu
             ],
             correctIndex: 1,
             explanation:
-              'He says, “the most important thing is to telephone us the day before — please don’t just email, because the office checks the phone first thing.” Option B matches; emailing is the option he warns against.',
+              'He says, “the most important thing is to telephone us the day before - please don’t just email, because the office checks the phone first thing.” Option B matches; emailing is the option he warns against.',
           },
           {
             id: 'ls-022-s2-q19',
@@ -327,9 +327,9 @@ Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, bu
       },
       {
         id: 'ls-academic-022-s3',
-        title: 'Section 3 — Tutorial: planning a history essay',
+        title: 'Section 3 - Tutorial: planning a history essay',
         // ~315 words. Academic discussion (Section 3 style): two students (Hannah
-        // and Daniel) and a tutor (Dr Okafor) discuss planning a history essay —
+        // and Daniel) and a tutor (Dr Okafor) discuss planning a history essay -
         // choosing the question, distinguishing primary from secondary sources,
         // referencing and the deadline. The questions mix multiple choice
         // (decisions/opinions) and completion (concrete details) with a matching
@@ -338,13 +338,13 @@ Finally, lunch. There's a free hot drink for volunteers in the staff kitchen, bu
 
 HANNAH: We were torn between two. One was about the causes of the First World War, but that felt enormous, so we've gone with a narrower one: how propaganda posters were used to recruit soldiers.
 
-DR OKAFOR: Much more manageable, and a richer one for the sources. Speaking of which — do you understand the difference between primary and secondary sources?
+DR OKAFOR: Much more manageable, and a richer one for the sources. Speaking of which - do you understand the difference between primary and secondary sources?
 
 DANIEL: I think so. A primary source is something from the time itself, and a secondary source is a later interpretation, like a historian's book.
 
 DR OKAFOR: Exactly. So let's test that. The recruitment posters themselves?
 
-HANNAH: Those are primary — they're from the period.
+HANNAH: Those are primary - they're from the period.
 
 DR OKAFOR: Correct. What about a soldier's diary from nineteen sixteen?
 
@@ -352,17 +352,17 @@ DANIEL: Also primary, since it was written at the time.
 
 DR OKAFOR: Good. And a modern textbook chapter analysing the posters?
 
-HANNAH: That one's secondary — it's a later interpretation.
+HANNAH: That one's secondary - it's a later interpretation.
 
 DR OKAFOR: Spot on. Now, referencing. Which system are you using?
 
 DANIEL: We were going to use footnotes, but the department guide says history essays here should use the Harvard system, so we'll switch to that.
 
-DR OKAFOR: Yes, please do — Harvard is the standard for this module, and marks are lost for getting it wrong. One tip: keep a record of every source as you read it, not at the end. Leaving your bibliography to the last minute is the classic mistake.
+DR OKAFOR: Yes, please do - Harvard is the standard for this module, and marks are lost for getting it wrong. One tip: keep a record of every source as you read it, not at the end. Leaving your bibliography to the last minute is the classic mistake.
 
 HANNAH: Noted. And when is it due?
 
-DR OKAFOR: The deadline is the twelfth of May, submitted online by midday. Don't leave it late — the system locks at twelve exactly, and a late essay is capped.
+DR OKAFOR: The deadline is the twelfth of May, submitted online by midday. Don't leave it late - the system locks at twelve exactly, and a late essay is capped.
 
 DANIEL: Understood. We'll aim to finish a few days early.`,
         questions: [
@@ -399,7 +399,7 @@ DANIEL: Understood. We'll aim to finish a few days early.`,
             type: 'matching',
             variant: 'features',
             prompt:
-              'In the tutorial, the speakers classify each source as either a primary or a secondary source. Match each source to its type (Questions 23–25).',
+              'In the tutorial, the speakers classify each source as either a primary or a secondary source. Match each source to its type (Questions 23-25).',
             options: [
               { key: 'primary', label: 'A primary source' },
               { key: 'secondary', label: 'A secondary source' },
@@ -414,7 +414,7 @@ DANIEL: Understood. We'll aim to finish a few days early.`,
               },
             ],
             explanation:
-              'Hannah says the posters “are primary — they’re from the period”; Daniel says the 1916 diary is “also primary, since it was written at the time”; and Hannah says the modern textbook chapter is “secondary — it’s a later interpretation.” Each item is worth one mark (Questions 23, 24 and 25).',
+              'Hannah says the posters “are primary - they’re from the period”; Daniel says the 1916 diary is “also primary, since it was written at the time”; and Hannah says the modern textbook chapter is “secondary - it’s a later interpretation.” Each item is worth one mark (Questions 23, 24 and 25).',
           },
           {
             id: 'ls-022-s3-q26',
@@ -474,7 +474,7 @@ DANIEL: Understood. We'll aim to finish a few days early.`,
       },
       {
         id: 'ls-academic-022-s4',
-        title: 'Section 4 — Lecture: the science of nutrition',
+        title: 'Section 4 - Lecture: the science of nutrition',
         // ~315 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the science of nutrition,
         // covering the three macronutrients, vitamins and minerals, energy balance
@@ -482,15 +482,15 @@ DANIEL: Understood. We'll aim to finish a few days early.`,
         // begin", "next", "finally"), with the note/sentence-completion +
         // multiple-choice mix typical of Section 4, including one True/False/Not
         // Given item.
-        transcript: `Good morning. Today's lecture is on the science of nutrition — what our food is actually made of, how our bodies use it, and a few myths I'd like to clear up along the way.
+        transcript: `Good morning. Today's lecture is on the science of nutrition - what our food is actually made of, how our bodies use it, and a few myths I'd like to clear up along the way.
 
-Let me begin with the macronutrients, the three classes of substance we need in large amounts. The first is carbohydrates, which are the body's main source of energy. The second is protein, whose primary job is the building and repair of body tissue, especially muscle. The third is fat. Now, fat has a poor reputation, but it's essential — it stores energy and, crucially, it allows us to absorb certain vitamins.
+Let me begin with the macronutrients, the three classes of substance we need in large amounts. The first is carbohydrates, which are the body's main source of energy. The second is protein, whose primary job is the building and repair of body tissue, especially muscle. The third is fat. Now, fat has a poor reputation, but it's essential - it stores energy and, crucially, it allows us to absorb certain vitamins.
 
 Next, the micronutrients: vitamins and minerals, which we need only in tiny quantities, but which are vital. Take a single example: the mineral iron. Its main role is in the blood, where it helps to carry oxygen around the body. A shortage of iron is one of the most common deficiencies worldwide.
 
 Now to energy. The energy in food is measured in a unit called the calorie. The central principle of body weight is what we call energy balance: very simply, if you consistently take in more energy than you use, you gain weight, and if you use more than you take in, you lose it.
 
-Finally, let me tackle two misconceptions. The first is that all fat is bad — as I've said, the body genuinely needs some fat to function. The second concerns sugar. People often assume that so-called natural sugar, in fruit juice for instance, is automatically healthier than ordinary sugar. In fact, to the body, the sugar molecule is essentially the same whatever its source. Next week we'll look at how the digestive system breaks these nutrients down.`,
+Finally, let me tackle two misconceptions. The first is that all fat is bad - as I've said, the body genuinely needs some fat to function. The second concerns sugar. People often assume that so-called natural sugar, in fruit juice for instance, is automatically healthier than ordinary sugar. In fact, to the body, the sugar molecule is essentially the same whatever its source. Next week we'll look at how the digestive system breaks these nutrients down.`,
         questions: [
           {
             id: 'ls-022-s4-q31',

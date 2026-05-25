@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 13) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 13) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to
 //     report a lost item for an insurance claim), assessed with form / note
 //     completion + a multiple-choice item. A surname is spelled and a claim
 //     reference is dictated, and one detail (the payout figure) depends on a
 //     stated choice (the cover level on the policy).
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome talk to visitors at a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome talk to visitors at a
 //     farmers' market), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "next", "finally") that the
 //     questions track in order.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor going
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor going
 //     through the method for a chemistry experiment), assessed with multiple
 //     choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: glaciers), assessed
+//   • Section 4 - an academic LECTURE / monologue (here: glaciers), assessed
 //     with note/sentence completion + multiple choice.
 //
 // Question conventions (shared contract from @/lib/ielts/types):
@@ -27,7 +27,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -38,12 +38,12 @@ export const LISTENING_SET_13: ListeningTest[] = [
   {
     id: 'ls-academic-13',
     title:
-      'Practice Test 13 — Reporting a Lost Item, A Farmers’ Market, A Chemistry Experiment & Glaciers',
+      'Practice Test 13 - Reporting a Lost Item, A Farmers’ Market, A Chemistry Experiment & Glaciers',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-13-s1',
-        title: 'Section 1 — Reporting a lost item for an insurance claim',
+        title: 'Section 1 - Reporting a lost item for an insurance claim',
         // ~285 words. Transactional dialogue (Section 1 style): a caller phoning
         // her insurer to report a lost camera and open a claim. A surname is
         // spelled and a claim reference is dictated; one detail (the payout
@@ -60,7 +60,7 @@ WOMAN: Yes, it's Helen Asquith. Asquith is spelled A-S-Q-U-I-T-H.
 
 MAN: Thank you, Ms Asquith. And which item are you claiming for?
 
-WOMAN: It's a camera. A digital camera — I left it on a train.
+WOMAN: It's a camera. A digital camera - I left it on a train.
 
 MAN: Right. Can you tell me roughly what it was worth?
 
@@ -68,13 +68,13 @@ WOMAN: I bought it last year for three hundred and forty pounds.
 
 MAN: Noted. Now, your policy records standard cover, which means a single item is paid out at its current value rather than the original price, so that would be two hundred and ten pounds in this case.
 
-WOMAN: I see — that's less than I'd hoped, but I understand.
+WOMAN: I see - that's less than I'd hoped, but I understand.
 
 MAN: I'll give you your claim reference now. Please write it down: it's J as in Juliet, then four seven two nine.
 
 WOMAN: J four seven two nine. Got it.
 
-MAN: To process the claim, we'll need two things from you. First, any proof of purchase — a receipt is ideal. And second, you must report the loss to the train company and get a reference from them too.
+MAN: To process the claim, we'll need two things from you. First, any proof of purchase - a receipt is ideal. And second, you must report the loss to the train company and get a reference from them too.
 
 WOMAN: That's fine. How long will the claim take?
 
@@ -91,7 +91,7 @@ MAN: You're welcome. We'll be in touch by email.`,
               'Complete the claim form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Asquith', 'asquith'],
             explanation:
-              'The caller gives her name as “Helen Asquith” and spells the surname out: A-S-Q-U-I-T-H. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives her name as “Helen Asquith” and spells the surname out: A-S-Q-U-I-T-H. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-013-s1-q2',
@@ -99,7 +99,7 @@ MAN: You're welcome. We'll be in touch by email.`,
             prompt: 'Item being claimed for: a digital ____________. Write ONE WORD.',
             acceptableAnswers: ['camera'],
             explanation:
-              'She says, “It’s a camera. A digital camera — I left it on a train.” The lost item is a camera.',
+              'She says, “It’s a camera. A digital camera - I left it on a train.” The lost item is a camera.',
           },
           {
             id: 'ls-013-s1-q3',
@@ -107,7 +107,7 @@ MAN: You're welcome. We'll be in touch by email.`,
             prompt: 'Original purchase price of the item: £ ____________. Write A NUMBER.',
             acceptableAnswers: ['340', 'three hundred and forty'],
             explanation:
-              'She states, “I bought it last year for three hundred and forty pounds.” The original price is 340 — numbers said as words still count, but writing the digits is safest.',
+              'She states, “I bought it last year for three hundred and forty pounds.” The original price is 340 - numbers said as words still count, but writing the digits is safest.',
           },
           {
             id: 'ls-013-s1-q4',
@@ -129,7 +129,7 @@ MAN: You're welcome. We'll be in touch by email.`,
             prompt: 'Amount that will be paid out: £ ____________. Write A NUMBER.',
             acceptableAnswers: ['210', 'two hundred and ten'],
             explanation:
-              'Because the policy has standard cover (Q4), the camera is paid at its current value: “that would be two hundred and ten pounds in this case.” The payout is 210 — Section 1 often makes one figure depend on an earlier detail.',
+              'Because the policy has standard cover (Q4), the camera is paid at its current value: “that would be two hundred and ten pounds in this case.” The payout is 210 - Section 1 often makes one figure depend on an earlier detail.',
           },
           {
             id: 'ls-013-s1-q6',
@@ -144,10 +144,10 @@ MAN: You're welcome. We'll be in touch by email.`,
             id: 'ls-013-s1-q7',
             type: 'gap',
             prompt:
-              'To support the claim, the customer should send a proof of purchase — ideally a ____________. Write ONE WORD.',
+              'To support the claim, the customer should send a proof of purchase - ideally a ____________. Write ONE WORD.',
             acceptableAnswers: ['receipt'],
             explanation:
-              'He asks for “any proof of purchase — a receipt is ideal.” The specific example requested is a receipt.',
+              'He asks for “any proof of purchase - a receipt is ideal.” The specific example requested is a receipt.',
           },
           {
             id: 'ls-013-s1-q8',
@@ -180,14 +180,14 @@ MAN: You're welcome. We'll be in touch by email.`,
       },
       {
         id: 'ls-academic-13-s2',
-        title: 'Section 2 — A welcome talk at a farmers’ market',
+        title: 'Section 2 - A welcome talk at a farmers’ market',
         // ~265 words. Informational monologue (Section 2 style): a single speaker
         // welcoming shoppers to a weekly farmers' market. Uses sequencing/signpost
         // language ("to start", "next", "finally") that the questions follow in
         // order, with a sentence-completion + multiple-choice mix.
         transcript: `Good morning, everyone, and welcome to Ashfield Farmers' Market. My name is Grace, and I'm the market manager. Before you start exploring, let me share a few things that will help you make the most of your visit.
 
-To start with, a word about who sells here. Every stallholder must grow, bake, or make their goods within thirty miles of this town — that's our golden rule. So when you buy here, you really are buying local, and your money stays in the community.
+To start with, a word about who sells here. Every stallholder must grow, bake, or make their goods within thirty miles of this town - that's our golden rule. So when you buy here, you really are buying local, and your money stays in the community.
 
 Next, let me point you towards the layout. As you came in, you'll have noticed the fruit and vegetable stalls on your left. Straight ahead, beyond the flower stand, you'll find the bakery and the cheese counter, which are always the busiest, so I'd suggest visiting those early before the queues build up.
 
@@ -195,7 +195,7 @@ A quick note on payment. Most stalls now take cards, but a few of the smaller pr
 
 I should also mention that we don't provide plastic bags any more. We're trying to cut down on waste, so please do bring your own bag, or you can buy a reusable cloth one from the information desk for a pound.
 
-Finally, if you have children with you, there's a free face-painting tent at the far end, running until one o'clock. And every Saturday at eleven, one of our farmers gives a short cookery demonstration using market produce. That's all from me — please enjoy the market.`,
+Finally, if you have children with you, there's a free face-painting tent at the far end, running until one o'clock. And every Saturday at eleven, one of our farmers gives a short cookery demonstration using market produce. That's all from me - please enjoy the market.`,
         questions: [
           {
             id: 'ls-013-s2-q11',
@@ -209,7 +209,7 @@ Finally, if you have children with you, there's a free face-painting tent at the
             ],
             correctIndex: 1,
             explanation:
-              'She says, “Every stallholder must grow, bake, or make their goods within thirty miles of this town — that’s our golden rule.” Option B matches; the other ideas are not stated as the rule.',
+              'She says, “Every stallholder must grow, bake, or make their goods within thirty miles of this town - that’s our golden rule.” Option B matches; the other ideas are not stated as the rule.',
           },
           {
             id: 'ls-013-s2-q12',
@@ -305,13 +305,13 @@ Finally, if you have children with you, there's a free face-painting tent at the
       },
       {
         id: 'ls-academic-13-s3',
-        title: 'Section 3 — Planning a chemistry experiment',
+        title: 'Section 3 - Planning a chemistry experiment',
         // ~290 words. Academic discussion (Section 3 style): two students and a
         // tutor going through the method for a titration experiment before they
         // run it. Assessed with multiple choice + completion, with opinions and
         // decisions signalled by discussion markers ("I think", "we decided",
         // "make sure").
-        transcript: `TUTOR: Right, Priya and Sam — let's go through your plan for the titration before you start in the lab. What exactly are you measuring?
+        transcript: `TUTOR: Right, Priya and Sam - let's go through your plan for the titration before you start in the lab. What exactly are you measuring?
 
 PRIYA: We're finding the concentration of an unknown acid by reacting it with sodium hydroxide of a known concentration.
 
@@ -319,7 +319,7 @@ TUTOR: Good. And which indicator have you chosen?
 
 SAM: We were going to use litmus at first, but we decided on phenolphthalein instead, because the colour change at the end point is much sharper.
 
-TUTOR: Sensible choice. Now, a common mistake — how will you make sure your readings are accurate?
+TUTOR: Sensible choice. Now, a common mistake - how will you make sure your readings are accurate?
 
 PRIYA: We'll rinse the burette with the acid before we fill it, so any water left inside doesn't dilute the solution.
 
@@ -331,11 +331,11 @@ TUTOR: Correct. Now, you mustn't rely on a single reading. How many titrations a
 
 PRIYA: We'll do one rough run first to find the approximate volume, and then three accurate ones, and take an average of those.
 
-TUTOR: Good. And remember, the readings should agree within nought point one of a millilitre, or you repeat them. One more thing — safety. What are you wearing?
+TUTOR: Good. And remember, the readings should agree within nought point one of a millilitre, or you repeat them. One more thing - safety. What are you wearing?
 
 SAM: Goggles, obviously, and a lab coat. The sodium hydroxide is corrosive.
 
-TUTOR: Quite. If any gets on your skin, rinse it with plenty of water straight away and tell me. Finally, when you write this up, don't just list the numbers — explain any sources of error.
+TUTOR: Quite. If any gets on your skin, rinse it with plenty of water straight away and tell me. Finally, when you write this up, don't just list the numbers - explain any sources of error.
 
 PRIYA: We will. Mainly judging the exact moment of the colour change.
 
@@ -440,7 +440,7 @@ TUTOR: Precisely. That's the hardest part. Off you go.`,
             ],
             correctIndex: 1,
             explanation:
-              'The tutor says, “when you write this up, don’t just list the numbers — explain any sources of error.” Option B matches; listing the numbers alone is what he tells them NOT to do.',
+              'The tutor says, “when you write this up, don’t just list the numbers - explain any sources of error.” Option B matches; listing the numbers alone is what he tells them NOT to do.',
           },
           {
             id: 'ls-013-s3-q30',
@@ -455,13 +455,13 @@ TUTOR: Precisely. That's the hardest part. Off you go.`,
       },
       {
         id: 'ls-academic-13-s4',
-        title: 'Section 4 — A lecture on glaciers',
+        title: 'Section 4 - A lecture on glaciers',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
-        // lecturer presenting on glaciers — how they form, how they move, the
+        // lecturer presenting on glaciers - how they form, how they move, the
         // landforms they create, and why they are studied today. Densely factual,
         // with note/sentence completion + multiple choice. Signpost phrases
         // ("firstly", "another", "finally") help the listener track the structure.
-        transcript: `Good morning. In today's lecture we'll turn to glaciers — vast, slow-moving rivers of ice that have shaped much of the landscape we live in. I'll look at how they form, how they move, the landforms they leave behind, and why scientists study them so closely today.
+        transcript: `Good morning. In today's lecture we'll turn to glaciers - vast, slow-moving rivers of ice that have shaped much of the landscape we live in. I'll look at how they form, how they move, the landforms they leave behind, and why scientists study them so closely today.
 
 Let's begin with how a glacier is born. It starts not with ice but with snow. Where more snow falls each winter than melts in summer, layers build up year after year. The weight of the upper layers gradually compresses the snow beneath, squeezing out the air until, after many decades, it turns into dense glacial ice. So the key condition is simple: accumulation must exceed melting.
 
@@ -469,7 +469,7 @@ Next, how do glaciers move? Although they appear motionless, glaciers flow stead
 
 Now, the landforms. As a glacier moves, it acts like a giant sheet of sandpaper, scraping rock from the valley floor and sides. This carves the steep, U-shaped valleys that are so characteristic of glaciated regions, quite unlike the V-shaped valleys cut by rivers. When the ice finally melts, it dumps the rock and debris it was carrying in ridges called moraines.
 
-Finally, why study them? Glaciers are sensitive indicators of climate. By measuring how far they have retreated, scientists can track warming with great precision — which is the theme we'll develop next week.`,
+Finally, why study them? Glaciers are sensitive indicators of climate. By measuring how far they have retreated, scientists can track warming with great precision - which is the theme we'll develop next week.`,
         questions: [
           {
             id: 'ls-013-s4-q31',

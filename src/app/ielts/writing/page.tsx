@@ -1,6 +1,6 @@
 'use client'
 
-// ─── IELTS Academic Writing — AI band feedback ───────────────────────────────
+// ─── IELTS Academic Writing - AI band feedback ───────────────────────────────
 // Pick a Task 1 or Task 2 prompt, write a response (live word count + min-word
 // indicator + optional countdown), submit to /api/ielts/writing-feedback, and
 // render the returned TaskFeedback (overall band, per-criterion bands +
@@ -103,7 +103,7 @@ export default function IeltsWritingPage() {
   const [feedback, setFeedback] = useState<TaskFeedback | null>(null)
   const [disclaimer, setDisclaimer] = useState<string>('')
 
-  // Children's Code AI opt-out — gate the whole tool client-side, then the API
+  // Children's Code AI opt-out - gate the whole tool client-side, then the API
   // enforces it authoritatively server-side too.
   const [aiOff, setAiOff] = useState(false)
   useEffect(() => {
@@ -255,7 +255,7 @@ export default function IeltsWritingPage() {
           date: new Date().toISOString(),
         })
       } catch {
-        /* non-fatal — feedback is still shown even if persistence fails */
+        /* non-fatal - feedback is still shown even if persistence fails */
       }
 
       setIsSubmitting(false)
@@ -566,7 +566,7 @@ function FeedbackView({
       <Card className={`border ${bandBgColour(band)}`}>
         <CardContent className="flex flex-col items-center gap-2 py-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            {t('ielts.writing.results.predicted_overall')} — {promptTitle}
+            {t('ielts.writing.results.predicted_overall')} - {promptTitle}
           </span>
           <span className={`font-heading text-6xl font-extrabold leading-none ${bandColour(band)}`}>
             {bandLabel(band)}

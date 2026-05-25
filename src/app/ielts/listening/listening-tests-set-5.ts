@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 5) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 5) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,17 +6,17 @@
 // Unlike the earlier two-section warm-ups, this set ships ONE original FULL-LENGTH
 // practice test: all four sections (~40 questions) that mirror the real IELTS
 // Listening paper, with topics deliberately distinct from the other sets:
-//   • Section 1 — an everyday transactional DIALOGUE (here: booking places on a
+//   • Section 1 - an everyday transactional DIALOGUE (here: booking places on a
 //     weekend photography workshop), assessed with form / note completion + a
 //     multiple-choice item. A surname is spelled and a phone number is dictated,
 //     and one detail (the price) depends on a stated choice.
-//   • Section 2 — an everyday MONOLOGUE (here: a welcome announcement / tour of a
+//   • Section 2 - an everyday MONOLOGUE (here: a welcome announcement / tour of a
 //     wildlife park), assessed with sentence completion + multiple choice, carrying
 //     signpost language ("first", "next", "finally") that the questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor reviewing
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor reviewing
 //     a group field-study project on urban rivers), assessed with multiple choice
 //     + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the science of sleep),
+//   • Section 4 - an academic LECTURE / monologue (here: the science of sleep),
 //     assessed with note/sentence completion + multiple choice.
 //
 // Question conventions (shared contract from @/lib/ielts/types):
@@ -25,7 +25,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -36,12 +36,12 @@ export const LISTENING_SET_5: ListeningTest[] = [
   {
     id: 'ls-academic-5',
     title:
-      'Practice Test 5 — Photography Workshop, Wildlife Park, Urban Rivers & The Science of Sleep',
+      'Practice Test 5 - Photography Workshop, Wildlife Park, Urban Rivers & The Science of Sleep',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-5-s1',
-        title: 'Section 1 — Booking a weekend photography workshop',
+        title: 'Section 1 - Booking a weekend photography workshop',
         // ~270 words. Transactional dialogue (Section 1 style): a caller booking
         // places on a workshop over the phone. A surname is spelled and a mobile
         // number is dictated; one detail (the total price) depends on a stated
@@ -61,7 +61,7 @@ MAN: It's oh-seven-eight-double-three, five-nine-two, one-four-six.
 
 WOMAN: Lovely, I've got that. Now, which workshop did you have in mind?
 
-MAN: The Landscape one — I think it's running on the Saturday.
+MAN: The Landscape one - I think it's running on the Saturday.
 
 WOMAN: That's right, the Landscape workshop. We actually offer it twice a month, and the next one is on the eighth. It runs from nine in the morning until about four in the afternoon, with a break for lunch.
 
@@ -71,7 +71,7 @@ WOMAN: It's sixty pounds for one person, but if you book two or more places toge
 
 MAN: In that case, could I book two? My sister wants to come as well.
 
-WOMAN: Certainly — so that's two places at the lower rate. One more thing: you'll need to bring your own camera, but we provide the tripods.
+WOMAN: Certainly - so that's two places at the lower rate. One more thing: you'll need to bring your own camera, but we provide the tripods.
 
 MAN: Perfect. Is there anything else I should know?
 
@@ -88,7 +88,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Mercer', 'mercer'],
             explanation:
-              'The caller gives his name as “Jacob Mercer” and spells the surname out: M-E-R-C-E-R. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Jacob Mercer” and spells the surname out: M-E-R-C-E-R. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-005-s1-q2',
@@ -96,7 +96,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
             prompt: 'Mobile number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07833592146', '0783 3592146', '07833 592 146', '078 33 592 146'],
             explanation:
-              'The number is dictated as “oh-seven-eight-double-three, five-nine-two, one-four-six”, which is 07833592146. “Double three” means two 3s and “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-eight-double-three, five-nine-two, one-four-six”, which is 07833592146. “Double three” means two 3s and “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-005-s1-q3',
@@ -112,7 +112,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
             prompt: 'Date of the next workshop: the ____________. Write A NUMBER.',
             acceptableAnswers: ['8', 'eighth', '8th'],
             explanation:
-              'She says “the next one is on the eighth”, and confirms at the end “See you on the eighth.” The date is the 8th — ordinal numbers said aloud (eighth) map to the digits 8.',
+              'She says “the next one is on the eighth”, and confirms at the end “See you on the eighth.” The date is the 8th - ordinal numbers said aloud (eighth) map to the digits 8.',
           },
           {
             id: 'ls-005-s1-q5',
@@ -120,7 +120,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
             prompt: 'The workshop finishes at about ____________ in the afternoon. Write A NUMBER.',
             acceptableAnswers: ['4', 'four'],
             explanation:
-              'She says it “runs from nine in the morning until about four in the afternoon.” The finish time is 4 — listen for “until”, which signals the end point, versus “from”, which signals the start.',
+              'She says it “runs from nine in the morning until about four in the afternoon.” The finish time is 4 - listen for “until”, which signals the end point, versus “from”, which signals the start.',
           },
           {
             id: 'ls-005-s1-q6',
@@ -143,7 +143,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
               'Participants must bring their own ____________, but the tripods are provided. Write ONE WORD.',
             acceptableAnswers: ['camera'],
             explanation:
-              'She says, “you’ll need to bring your own camera, but we provide the tripods.” The answer is “camera” — the tripods are what the company supplies, a classic near-miss distractor.',
+              'She says, “you’ll need to bring your own camera, but we provide the tripods.” The answer is “camera” - the tripods are what the company supplies, a classic near-miss distractor.',
           },
           {
             id: 'ls-005-s1-q8',
@@ -175,7 +175,7 @@ WOMAN: You're very welcome. See you on the eighth.`,
       },
       {
         id: 'ls-academic-5-s2',
-        title: 'Section 2 — Welcome talk at a wildlife park',
+        title: 'Section 2 - Welcome talk at a wildlife park',
         // ~265 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors to a wildlife park and explaining the layout and
         // rules. Uses sequencing/signpost language ("first", "after that",
@@ -191,7 +191,7 @@ Next comes the woodland walk, where you'll find the deer and the wolves. A quick
 
 One feature visitors always enjoy is the daily talks. Our keepers give a short presentation at each major enclosure, and the most popular by far is the penguin feeding, which takes place at half past two. I'd recommend arriving a few minutes early to get a good view.
 
-Finally, a note on facilities. There's a café next to the gift shop near the exit, and it serves hot food until four. If the weather turns — and it often does here — there's a covered picnic area beside the woodland walk where you can shelter. That's everything from me. Enjoy your visit.`,
+Finally, a note on facilities. There's a café next to the gift shop near the exit, and it serves hot food until four. If the weather turns - and it often does here - there's a covered picnic area beside the woodland walk where you can shelter. That's everything from me. Enjoy your visit.`,
         questions: [
           {
             id: 'ls-005-s2-q11',
@@ -214,7 +214,7 @@ Finally, a note on facilities. There's a café next to the gift shop near the ex
               'The full walk around the park is about ____________ kilometres long. Write A NUMBER.',
             acceptableAnswers: ['3', 'three'],
             explanation:
-              'He describes the loop as “about three kilometres long.” The answer is 3 — note that the walk also “takes around two hours”, so two is a distractor (a time, not a distance).',
+              'He describes the loop as “about three kilometres long.” The answer is 3 - note that the walk also “takes around two hours”, so two is a distractor (a time, not a distance).',
           },
           {
             id: 'ls-005-s2-q13',
@@ -293,7 +293,7 @@ Finally, a note on facilities. There's a café next to the gift shop near the ex
               'The café next to the gift shop serves hot food until ____________. Write A NUMBER.',
             acceptableAnswers: ['4', 'four'],
             explanation:
-              'He says the café “serves hot food until four.” The answer is 4 — “until” again signals the closing time.',
+              'He says the café “serves hot food until four.” The answer is 4 - “until” again signals the closing time.',
           },
           {
             id: 'ls-005-s2-q20',
@@ -308,7 +308,7 @@ Finally, a note on facilities. There's a café next to the gift shop near the ex
       },
       {
         id: 'ls-academic-5-s3',
-        title: 'Section 3 — Tutorial: a field study of an urban river',
+        title: 'Section 3 - Tutorial: a field study of an urban river',
         // ~290 words. Academic discussion (Section 3 style): two students (Priya
         // and Sam) and a tutor (Dr Lawson) review a group field-study project on a
         // local river. Speakers debate methods and findings, so the questions mix
@@ -319,7 +319,7 @@ PRIYA: Mostly well, but we did change our plan. We'd intended to sample the wate
 
 DR LAWSON: That's fine, as long as you explain why in your report. Sam, what were you measuring at each point?
 
-SAM: Three things, mainly. The temperature, the speed of the flow, and the level of dissolved oxygen — which is the key indicator of how healthy the water is for fish.
+SAM: Three things, mainly. The temperature, the speed of the flow, and the level of dissolved oxygen - which is the key indicator of how healthy the water is for fish.
 
 DR LAWSON: Good. And what did you find?
 
@@ -327,15 +327,15 @@ SAM: The most striking result was downstream of the old factory. The oxygen leve
 
 PRIYA: We think the sediment on the riverbed is still releasing pollutants. That would explain why the effect hasn't gone away.
 
-DR LAWSON: That's a sensible interpretation, though you'll need to be careful — you've measured a correlation, not proved a cause. What about the wildlife survey?
+DR LAWSON: That's a sensible interpretation, though you'll need to be careful - you've measured a correlation, not proved a cause. What about the wildlife survey?
 
 PRIYA: That was the part I enjoyed most. We counted the different species of insect larvae, because certain types only survive in clean water. Downstream of the factory, we found almost none.
 
-DR LAWSON: Which supports your oxygen findings nicely. Now, for the write-up, my main advice is this: don't just present the numbers. The strongest reports explain what the figures mean. And do include a map — examiners always want to see exactly where each sample was taken.
+DR LAWSON: Which supports your oxygen findings nicely. Now, for the write-up, my main advice is this: don't just present the numbers. The strongest reports explain what the figures mean. And do include a map - examiners always want to see exactly where each sample was taken.
 
 SAM: Should we mention the flooded path as a limitation?
 
-DR LAWSON: Absolutely. Acknowledging the limits of your method shows good scientific judgement. Right — when can you have a first draft to me?
+DR LAWSON: Absolutely. Acknowledging the limits of your method shows good scientific judgement. Right - when can you have a first draft to me?
 
 PRIYA: Would the end of next week be all right?
 
@@ -362,7 +362,7 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
               'In the end, the students sampled the water at ____________ points. Write A NUMBER.',
             acceptableAnswers: ['4', 'four'],
             explanation:
-              'Priya says they had planned five points but “only managed four.” The number actually sampled is 4 — five is the planned figure, a deliberate distractor.',
+              'Priya says they had planned five points but “only managed four.” The number actually sampled is 4 - five is the planned figure, a deliberate distractor.',
           },
           {
             id: 'ls-005-s3-q23',
@@ -371,7 +371,7 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
               'At each point the students measured temperature, flow speed, and the level of dissolved ____________. Write ONE WORD.',
             acceptableAnswers: ['oxygen'],
             explanation:
-              'Sam lists “the temperature, the speed of the flow, and the level of dissolved oxygen — which is the key indicator of how healthy the water is for fish.” The third measurement is dissolved “oxygen”.',
+              'Sam lists “the temperature, the speed of the flow, and the level of dissolved oxygen - which is the key indicator of how healthy the water is for fish.” The third measurement is dissolved “oxygen”.',
           },
           {
             id: 'ls-005-s3-q24',
@@ -408,7 +408,7 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
             ],
             correctIndex: 1,
             explanation:
-              'Dr Lawson warns, “you’ll need to be careful — you’ve measured a correlation, not proved a cause.” Option B captures the caution exactly.',
+              'Dr Lawson warns, “you’ll need to be careful - you’ve measured a correlation, not proved a cause.” Option B captures the caution exactly.',
           },
           {
             id: 'ls-005-s3-q27',
@@ -440,7 +440,7 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
               'Dr Lawson insists the report should include a ____________ showing where each sample was taken. Write ONE WORD.',
             acceptableAnswers: ['map'],
             explanation:
-              'He says, “do include a map — examiners always want to see exactly where each sample was taken.” The answer is “map”.',
+              'He says, “do include a map - examiners always want to see exactly where each sample was taken.” The answer is “map”.',
           },
           {
             id: 'ls-005-s3-q30',
@@ -455,7 +455,7 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
       },
       {
         id: 'ls-academic-5-s4',
-        title: 'Section 4 — Lecture: the science of sleep',
+        title: 'Section 4 - Lecture: the science of sleep',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on sleep science. Dense, factual,
         // and signposted ("to begin", "the next stage", "finally"), with the
@@ -464,9 +464,9 @@ DR LAWSON: That's perfect. I'll read it over the weekend.`,
 
 Let me begin with the structure of sleep. Across a typical night, we don't sleep at one constant depth. Instead, we cycle through several stages, and one full cycle lasts roughly ninety minutes. A healthy adult goes through four or five of these cycles each night.
 
-Broadly, sleep divides into two kinds. The first is what scientists call non-REM sleep, which includes the deepest, most restful stages. The second is REM sleep — REM stands for "rapid eye movement" — and this is the stage in which most vivid dreaming occurs. Interestingly, although the brain is highly active during REM, the body's muscles are almost completely paralysed, which probably stops us from physically acting out our dreams.
+Broadly, sleep divides into two kinds. The first is what scientists call non-REM sleep, which includes the deepest, most restful stages. The second is REM sleep - REM stands for "rapid eye movement" - and this is the stage in which most vivid dreaming occurs. Interestingly, although the brain is highly active during REM, the body's muscles are almost completely paralysed, which probably stops us from physically acting out our dreams.
 
-So why do we need it? Research points to several functions. The most well established is memory. During deep sleep, the brain appears to transfer information from short-term to long-term storage — which is exactly why students who sleep well after studying remember more than those who stay up all night.
+So why do we need it? Research points to several functions. The most well established is memory. During deep sleep, the brain appears to transfer information from short-term to long-term storage - which is exactly why students who sleep well after studying remember more than those who stay up all night.
 
 A second, more recent discovery concerns waste. During sleep, the spaces between brain cells widen, allowing fluid to flush out waste products that build up during the day. Some scientists believe this nightly cleaning may help protect against certain diseases of the brain.
 
@@ -492,7 +492,7 @@ Finally, a word on how much we need. Although the figure varies between individu
             prompt: 'One full sleep cycle lasts roughly ____________ minutes. Write A NUMBER.',
             acceptableAnswers: ['90', 'ninety'],
             explanation:
-              'She says “one full cycle lasts roughly ninety minutes.” The answer is 90 — numbers said as words still count, but writing the digits is safest.',
+              'She says “one full cycle lasts roughly ninety minutes.” The answer is 90 - numbers said as words still count, but writing the digits is safest.',
           },
           {
             id: 'ls-005-s4-q33',

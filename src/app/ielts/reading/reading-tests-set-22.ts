@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 22) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 22) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 // nature).
 //
 // This test SHOWCASES the Matching question type across all three passages:
-// Matching Headings (Passage 1), Matching Features — statements to thinkers
+// Matching Headings (Passage 1), Matching Features - statements to thinkers
 // (Passage 2), and Matching Information / which-paragraph (Passage 3), alongside
 // the usual mix of True/False/Not Given, multiple choice and sentence/summary
 // completion.
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_22: ReadingTest[] = [
   {
     id: 'rd-academic-022',
-    title: 'Academic Reading — Practice Test 22',
+    title: 'Academic Reading - Practice Test 22',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ None of this means we are helplessly irrational. The very fact that our biases a
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Why our mental shortcuts make evolutionary sense' },
               { key: 'ii', label: 'How wording alone can flip a decision' },
@@ -159,7 +159,7 @@ None of this means we are helplessly irrational. The very fact that our biases a
       {
         id: 'rd-academic-022-p2',
         title: 'The Rise of the Novel',
-        body: `The novel feels so natural a form today that it is easy to forget how recent and how strange an invention it was. Long prose narratives existed in the ancient and medieval worlds, but the novel as we now understand it — a lengthy fictional story about ordinary, believable people moving through a recognisable everyday world — took shape only in the seventeenth and eighteenth centuries, and its arrival was greeted with as much suspicion as delight. Part of the difficulty is simply one of definition, for no single feature neatly separates a novel from the epics, fables and romances that came before it. Scholars still argue about where and when it truly began, and several thinkers have offered competing accounts of how this most familiar of literary forms came to be.
+        body: `The novel feels so natural a form today that it is easy to forget how recent and how strange an invention it was. Long prose narratives existed in the ancient and medieval worlds, but the novel as we now understand it - a lengthy fictional story about ordinary, believable people moving through a recognisable everyday world - took shape only in the seventeenth and eighteenth centuries, and its arrival was greeted with as much suspicion as delight. Part of the difficulty is simply one of definition, for no single feature neatly separates a novel from the epics, fables and romances that came before it. Scholars still argue about where and when it truly began, and several thinkers have offered competing accounts of how this most familiar of literary forms came to be.
 
 The literary historian Margaret Doody insists that the novel is far older than the conventional story allows. She traces a continuous tradition of long fictional prose back to the romances of the ancient Greek and Roman world, stories of lovers separated by shipwreck and reunited after many trials, and argues that the supposedly modern novel simply revived and refined a form that had never wholly disappeared. To call the novel an invention of recent centuries, in her view, is to ignore two thousand years of storytelling that share its essential features.
 
@@ -169,9 +169,9 @@ The economic dimension that Watt touches on is developed more fully by the book 
 
 These approaches are not as opposed as they first appear, and a fourth scholar, the comparative critic Franco Moretti, has tried to hold them together by studying the novel not as a sequence of masterpieces but as a mass of thousands of forgotten titles. By counting and mapping rather than close reading, Moretti shows how particular kinds of novel rose and fell in popularity like biological species, flourishing for a generation before being displaced. A type of story that gripped one decade of readers, he notes, could seem hopelessly old-fashioned to the next, swept aside by a newer fashion in much the way a species is outcompeted. The famous works that survive in the classroom, he argues, are a tiny and unrepresentative sample, and to understand the form we must look at the enormous bulk of ordinary books that readers actually consumed and then forgot.
 
-Whatever its origins, the early novel had to fight for respectability. Conservative critics warned that these long, absorbing tales of invented people would corrupt the young, fill idle heads with unrealistic expectations and lure readers, especially women, away from more improving books. The very qualities that made the novel popular — its emotional immediacy and its capacity to make a reader inhabit another life — were precisely what its opponents feared. That anxiety now seems quaint, but it is a reminder that no dominant form arrives without resistance. Much the same alarm would later greet the cinema, the comic and the video game, each accused in its turn of rotting young minds and each eventually absorbed into respectable culture. The novel won its place not by permission but by sheer popularity, and in doing so it changed what readers expected a story to be.`,
+Whatever its origins, the early novel had to fight for respectability. Conservative critics warned that these long, absorbing tales of invented people would corrupt the young, fill idle heads with unrealistic expectations and lure readers, especially women, away from more improving books. The very qualities that made the novel popular - its emotional immediacy and its capacity to make a reader inhabit another life - were precisely what its opponents feared. That anxiety now seems quaint, but it is a reminder that no dominant form arrives without resistance. Much the same alarm would later greet the cinema, the comic and the video game, each accused in its turn of rotting young minds and each eventually absorbed into respectable culture. The novel won its place not by permission but by sheer popularity, and in doing so it changed what readers expected a story to be.`,
         questions: [
-          // ── Matching Features — statements to thinkers (5 items) = 5 marks ──
+          // ── Matching Features - statements to thinkers (5 items) = 5 marks ──
           {
             id: 'rd-022-p2-q1',
             type: 'matching',
@@ -303,11 +303,11 @@ Whatever its origins, the early novel had to fight for respectability. Conservat
       {
         id: 'rd-academic-022-p3',
         title: 'Learning from Nature: The Promise of Biomimicry',
-        body: `Nature has been running experiments for almost four billion years, discarding designs that fail and refining those that work. Faced with the same problems that confront human engineers — how to stay cool, move efficiently, stick to a surface or build a strong structure from weak materials — living things have arrived at solutions of remarkable elegance. Biomimicry, the practice of studying these natural designs and adapting their underlying principles to human technology, treats the living world not as a storehouse of raw materials to be consumed but as a library of tested ideas to be learned from. It is an old impulse given a new name and a new rigour. Inventors have always glanced sideways at the living world, but recent decades have brought the tools to read its solutions in fine molecular detail, and with them a more systematic effort to translate biology into engineering.
+        body: `Nature has been running experiments for almost four billion years, discarding designs that fail and refining those that work. Faced with the same problems that confront human engineers - how to stay cool, move efficiently, stick to a surface or build a strong structure from weak materials - living things have arrived at solutions of remarkable elegance. Biomimicry, the practice of studying these natural designs and adapting their underlying principles to human technology, treats the living world not as a storehouse of raw materials to be consumed but as a library of tested ideas to be learned from. It is an old impulse given a new name and a new rigour. Inventors have always glanced sideways at the living world, but recent decades have brought the tools to read its solutions in fine molecular detail, and with them a more systematic effort to translate biology into engineering.
 
 The textbook example involves a fast Japanese train. When its engineers found that their high-speed train produced a thunderous boom each time it burst from a tunnel, they turned, perhaps surprisingly, to a bird. The kingfisher dives from air into water, a far denser medium, with scarcely a splash, and the secret lies in the long, tapered shape of its beak, which parts the water smoothly rather than pushing a wall of it ahead. Engineers reshaped the nose of the train to imitate that profile. The redesigned train was not only quieter but also faster and used less electricity, a reminder that a good natural solution often solves several problems at once.
 
-Some of the most valuable lessons concern not shape but materials. The abalone, a humble sea snail, builds a shell whose inner layer is twice as tough as any ceramic engineers can manufacture, yet it does so in cold seawater without furnaces or harsh chemicals. The toughness comes not from any exotic substance — the shell is mostly ordinary chalk — but from its architecture: microscopic tiles of mineral are stacked like bricks and glued with a thin layer of protein, so that a crack trying to spread is repeatedly deflected and loses its energy. Materials scientists who once chased ever more exotic ingredients are increasingly studying this principle, in which clever structure, rather than rare matter, delivers strength.
+Some of the most valuable lessons concern not shape but materials. The abalone, a humble sea snail, builds a shell whose inner layer is twice as tough as any ceramic engineers can manufacture, yet it does so in cold seawater without furnaces or harsh chemicals. The toughness comes not from any exotic substance - the shell is mostly ordinary chalk - but from its architecture: microscopic tiles of mineral are stacked like bricks and glued with a thin layer of protein, so that a crack trying to spread is repeatedly deflected and loses its energy. Materials scientists who once chased ever more exotic ingredients are increasingly studying this principle, in which clever structure, rather than rare matter, delivers strength.
 
 Other researchers have been captivated by the question of how a gecko walks up a pane of glass. For a long time it was assumed that the lizard must secrete some kind of glue, but the truth proved stranger and more useful. The toe of a gecko is covered in millions of microscopic hairs, each splitting into still finer tips, and these make such intimate contact with a surface that faint molecular forces, individually negligible, add up to a powerful grip. Because the mechanism is purely physical, the foot leaves no residue and can be peeled away effortlessly and reused. The dream of a dry adhesive that grips like tape but never wears out has inspired a generation of laboratories.
 
@@ -321,7 +321,7 @@ For all its appeal, biomimicry is harder than the success stories suggest, and i
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -358,7 +358,7 @@ For all its appeal, biomimicry is harder than the success stories suggest, and i
               },
             ],
             explanation:
-              'Item 1 → F: "Evolution... does not aim at perfection; it settles for whatever is good enough to survive and reproduce." Item 2 → D, the gecko, whose grip comes from "faint molecular forces" rather than the glue once assumed. Item 3 → A, which defines biomimicry as treating the living world "as a library of tested ideas to be learned from." Item 4 → B, the kingfisher-inspired train that was "quieter but also faster and used less electricity" — solving "several problems at once." Item 5 → C, the abalone shell whose toughness "comes not from any exotic substance... but from its architecture."',
+              'Item 1 → F: "Evolution... does not aim at perfection; it settles for whatever is good enough to survive and reproduce." Item 2 → D, the gecko, whose grip comes from "faint molecular forces" rather than the glue once assumed. Item 3 → A, which defines biomimicry as treating the living world "as a library of tested ideas to be learned from." Item 4 → B, the kingfisher-inspired train that was "quieter but also faster and used less electricity" - solving "several problems at once." Item 5 → C, the abalone shell whose toughness "comes not from any exotic substance... but from its architecture."',
           },
           {
             id: 'rd-022-p3-q2',

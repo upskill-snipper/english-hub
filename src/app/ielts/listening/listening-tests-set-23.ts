@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 23) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 23) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,22 +6,22 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions, 10 per section = 40 marks) that mirror the real IELTS
 // Listening paper, with topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a customer phoning a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a customer phoning a
 //     catering company to arrange the food for an office anniversary party),
 //     assessed with form / note completion + a multiple-choice item. A surname
 //     is spelled and the guest number, menu choices, date and a per-head price
 //     are dictated; the total cost depends on the stated guest number × the
 //     stated price per head, so two Section 1 details connect.
-//   • Section 2 — an everyday MONOLOGUE (here: a talk introducing a new city
+//   • Section 2 - an everyday MONOLOGUE (here: a talk introducing a new city
 //     cycle-hire scheme: how to hire, docking stations, costs and rules),
 //     assessed with sentence completion, multiple choice and a matching task,
 //     carrying signpost language ("first", "next", "finally") the questions
 //     track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
-//     reviewing a science lab report — aim, method, results, what went wrong and
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
+//     reviewing a science lab report - aim, method, results, what went wrong and
 //     the deadline), assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: ocean currents and
-//     climate — how currents form, the "conveyor belt" and the effect on
+//   • Section 4 - an academic LECTURE / monologue (here: ocean currents and
+//     climate - how currents form, the "conveyor belt" and the effect on
 //     weather), assessed with note/sentence completion + multiple choice,
 //     including one True/False/Not Given item.
 //
@@ -33,7 +33,7 @@
 //   • 'tfng'     → True / False / Not Given.
 //   • 'matching' → each item scores ONE mark; container id is distinct from
 //                  every item id (anti-collision).
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -44,12 +44,12 @@ export const LISTENING_SET_23: ListeningTest[] = [
   {
     id: 'ls-academic-023',
     title:
-      'Practice Test 23 — Arranging Catering for an Office Party, A City Cycle-Hire Scheme, Reviewing a Science Lab Report & Ocean Currents and Climate',
+      'Practice Test 23 - Arranging Catering for an Office Party, A City Cycle-Hire Scheme, Reviewing a Science Lab Report & Ocean Currents and Climate',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-023-s1',
-        title: 'Section 1 — Arranging catering for an office party',
+        title: 'Section 1 - Arranging catering for an office party',
         // ~290 words. Transactional dialogue (Section 1 style): a customer phoning
         // a catering company to arrange the food for an office anniversary party. A
         // surname is spelled and the guest number, menu choices, date and a per-head
@@ -78,7 +78,7 @@ MAN: There'll be forty of us in total.
 
 WOMAN: Right, forty. And do you have a date in mind?
 
-MAN: Yes — Friday the twelfth of June.
+MAN: Yes - Friday the twelfth of June.
 
 WOMAN: That's free, good. Now, for a group that size I'd suggest our buffet rather than a sit-down meal. We have three menus: the Classic, the Vegetarian, and the Deluxe.
 
@@ -86,13 +86,13 @@ MAN: What's the difference in price?
 
 WOMAN: The Classic is eighteen pounds a head, the Vegetarian is the same, and the Deluxe is twenty-two pounds a head.
 
-MAN: Let's go with the Deluxe — it's a special occasion.
+MAN: Let's go with the Deluxe - it's a special occasion.
 
 WOMAN: Excellent choice. So that's the Deluxe buffet for forty guests. I'll work the total out for you in a moment. Is there anything we should know about dietary needs?
 
 MAN: Yes, three of the guests can't eat nuts, so please make sure there's a nut-free option.
 
-WOMAN: Noted — we'll label everything clearly. One last thing: we ask for a deposit of fifty pounds to confirm the booking, and you can pay the balance on the day.
+WOMAN: Noted - we'll label everything clearly. One last thing: we ask for a deposit of fifty pounds to confirm the booking, and you can pay the balance on the day.
 
 MAN: That's fine. Thank you very much.`,
         questions: [
@@ -103,7 +103,7 @@ MAN: That's fine. Thank you very much.`,
               'Complete the booking form. Write ONE WORD for the answer.\n\nCustomer surname: ____________',
             acceptableAnswers: ['Broso', 'broso'],
             explanation:
-              'The caller gives his name as “Martin Broso” and spells the surname twice: B-R-O-S-O. In Section 1, an unusual surname is always spelled aloud — write it letter by letter.',
+              'The caller gives his name as “Martin Broso” and spells the surname twice: B-R-O-S-O. In Section 1, an unusual surname is always spelled aloud - write it letter by letter.',
           },
           {
             id: 'ls-023-s1-q2',
@@ -119,7 +119,7 @@ MAN: That's fine. Thank you very much.`,
             prompt: 'Number of guests expected: ____________. Write A NUMBER.',
             acceptableAnswers: ['40', 'forty'],
             explanation:
-              'He says, “There’ll be forty of us in total.” The number of guests is 40. This figure is also used to calculate the total cost later — Section 1 details often connect.',
+              'He says, “There’ll be forty of us in total.” The number of guests is 40. This figure is also used to calculate the total cost later - Section 1 details often connect.',
           },
           {
             id: 'ls-023-s1-q4',
@@ -145,7 +145,7 @@ MAN: That's fine. Thank you very much.`,
             prompt: 'The customer chooses the ____________ buffet menu. Write ONE WORD.',
             acceptableAnswers: ['Deluxe', 'deluxe'],
             explanation:
-              'He says, “Let’s go with the Deluxe — it’s a special occasion.” The answer is “Deluxe” (the Classic and Vegetarian menus are distractors).',
+              'He says, “Let’s go with the Deluxe - it’s a special occasion.” The answer is “Deluxe” (the Classic and Vegetarian menus are distractors).',
           },
           {
             id: 'ls-023-s1-q7',
@@ -191,22 +191,22 @@ MAN: That's fine. Thank you very much.`,
       },
       {
         id: 'ls-academic-023-s2',
-        title: 'Section 2 — A new city cycle-hire scheme',
+        title: 'Section 2 - A new city cycle-hire scheme',
         // ~300 words. Informational monologue (Section 2 style): a single speaker
-        // introducing a new city cycle-hire scheme — how to hire a bike, where the
+        // introducing a new city cycle-hire scheme - how to hire a bike, where the
         // docking stations are, the costs and the rules. Uses sequencing/signpost
         // language ("first", "next", "finally") that the questions follow, with a
         // sentence-completion + multiple-choice + matching mix. The matching task
         // pairs three landmarks with the docking stations nearest them.
         transcript: `Hello, everyone, and thanks for coming along to find out about CityCycle, our brand-new bike-hire scheme, which launches across the city next month. I'm Tom from the transport team, and I'll explain how it all works.
 
-So, how do you hire a bike? It couldn't be simpler. First, download the CityCycle app and create an account. Then, when you reach any docking station, you scan the code on the bike with your phone, the lock releases, and you ride away. When you've finished, you return the bike to any station — not necessarily the one you started from — and push it firmly into an empty dock until you hear it click.
+So, how do you hire a bike? It couldn't be simpler. First, download the CityCycle app and create an account. Then, when you reach any docking station, you scan the code on the bike with your phone, the lock releases, and you ride away. When you've finished, you return the bike to any station - not necessarily the one you started from - and push it firmly into an empty dock until you hear it click.
 
 Now, the cost. The first thirty minutes of every journey are completely free, which is plenty for most trips across the centre. After that, it's one pound for each additional half hour. There's also an annual membership at sixty pounds, which we'd recommend for daily commuters, as it removes all per-trip charges under two hours.
 
 A word about where to find the bikes. We're opening sixty docking stations at launch, and I'd like to highlight three that are handy for popular destinations. For the railway station, your nearest dock is on Bridge Street. For the university campus, use the dock on Park Lane. And for the shopping centre, the closest one is in Market Square.
 
-Finally, a few rules. Helmets aren't provided, but we strongly recommend bringing your own. You must be at least sixteen to hire a bike. And please don't lock the bikes to railings or leave them anywhere other than a docking station — you'll keep being charged until the bike is properly returned. That's it. Happy cycling!`,
+Finally, a few rules. Helmets aren't provided, but we strongly recommend bringing your own. You must be at least sixteen to hire a bike. And please don't lock the bikes to railings or leave them anywhere other than a docking station - you'll keep being charged until the bike is properly returned. That's it. Happy cycling!`,
         questions: [
           {
             id: 'ls-023-s2-q11',
@@ -238,7 +238,7 @@ Finally, a few rules. Helmets aren't provided, but we strongly recommend bringin
             ],
             correctIndex: 1,
             explanation:
-              'He says you return the bike “to any station — not necessarily the one you started from.” Option B matches; the start-station option is explicitly ruled out.',
+              'He says you return the bike “to any station - not necessarily the one you started from.” Option B matches; the start-station option is explicitly ruled out.',
           },
           {
             id: 'ls-023-s2-q14',
@@ -272,7 +272,7 @@ Finally, a few rules. Helmets aren't provided, but we strongly recommend bringin
             type: 'matching',
             variant: 'features',
             prompt:
-              'Which docking station is nearest to each destination? Choose the correct station (A–D) for each destination. You may use each station only once.',
+              'Which docking station is nearest to each destination? Choose the correct station (A-D) for each destination. You may use each station only once.',
             options: [
               { key: 'A', label: 'Bridge Street' },
               { key: 'B', label: 'Park Lane' },
@@ -285,7 +285,7 @@ Finally, a few rules. Helmets aren't provided, but we strongly recommend bringin
               { id: 's2-m-shopping', text: 'The shopping centre', answer: 'C' },
             ],
             explanation:
-              'The speaker pairs each destination with its nearest dock: “For the railway station, your nearest dock is on Bridge Street” (A); “For the university campus, use the dock on Park Lane” (B); “for the shopping centre, the closest one is in Market Square” (C). Station Road (D) is never mentioned — a distractor.',
+              'The speaker pairs each destination with its nearest dock: “For the railway station, your nearest dock is on Bridge Street” (A); “For the university campus, use the dock on Park Lane” (B); “for the shopping centre, the closest one is in Market Square” (C). Station Road (D) is never mentioned - a distractor.',
           },
           {
             id: 'ls-023-s2-q20',
@@ -305,16 +305,16 @@ Finally, a few rules. Helmets aren't provided, but we strongly recommend bringin
       },
       {
         id: 'ls-academic-023-s3',
-        title: 'Section 3 — Reviewing a science lab report',
+        title: 'Section 3 - Reviewing a science lab report',
         // ~300 words. Academic discussion (Section 3 style): two students (Hannah and
-        // Oscar) and a tutor (Dr Park) review the students' science lab report — its
+        // Oscar) and a tutor (Dr Park) review the students' science lab report - its
         // aim, method, results, what went wrong and the submission deadline. Speakers
         // discuss the experiment's purpose, the equipment, a measurement error, the
         // outcome and how to fix the write-up, so the questions mix multiple choice
         // (decisions/problems) with completion (concrete details).
         transcript: `DR PARK: Come in, Hannah and Oscar. Let's go through your lab report on the enzyme experiment. First, remind me of the aim.
 
-HANNAH: The aim was to find out how temperature affects the rate of reaction of the enzyme — basically, at what temperature it works fastest.
+HANNAH: The aim was to find out how temperature affects the rate of reaction of the enzyme - basically, at what temperature it works fastest.
 
 DR PARK: Good. And what was your method, briefly?
 
@@ -324,19 +324,19 @@ DR PARK: How did you measure the gas?
 
 OSCAR: With a gas syringe. We recorded the volume in millilitres.
 
-DR PARK: Fine. Now, your results — what did you find?
+DR PARK: Fine. Now, your results - what did you find?
 
 HANNAH: The reaction was fastest at forty degrees, and then it dropped off sharply at higher temperatures, which fits the theory that the enzyme is denatured by heat.
 
 DR PARK: That's a clear result. But I noticed something odd in your data table for the twenty-degree run.
 
-OSCAR: Yes — that's the bit that went wrong. We think the water bath wasn't holding a steady temperature, so that one reading is too high. It doesn't fit the pattern at all.
+OSCAR: Yes - that's the bit that went wrong. We think the water bath wasn't holding a steady temperature, so that one reading is too high. It doesn't fit the pattern at all.
 
 DR PARK: So what will you do about it?
 
 HANNAH: We'll repeat just that temperature next session to get a reliable figure, and explain the anomaly in the report.
 
-DR PARK: Sensible. Don't simply delete it — discuss why it happened. Now, presentation. Your graph is good, but your conclusion is far too short. Expand it to link back to the aim properly. And remember the report is due on the fifteenth, so you've got just under a week.
+DR PARK: Sensible. Don't simply delete it - discuss why it happened. Now, presentation. Your graph is good, but your conclusion is far too short. Expand it to link back to the aim properly. And remember the report is due on the fifteenth, so you've got just under a week.
 
 OSCAR: Understood. We'll have it in by then.`,
         questions: [
@@ -352,7 +352,7 @@ OSCAR: Understood. We'll have it in by then.`,
             ],
             correctIndex: 0,
             explanation:
-              'Hannah says the aim was “to find out how temperature affects the rate of reaction of the enzyme — basically, at what temperature it works fastest.” Option A matches.',
+              'Hannah says the aim was “to find out how temperature affects the rate of reaction of the enzyme - basically, at what temperature it works fastest.” Option A matches.',
           },
           {
             id: 'ls-023-s3-q22',
@@ -429,7 +429,7 @@ OSCAR: Understood. We'll have it in by then.`,
             ],
             correctIndex: 1,
             explanation:
-              'Hannah proposes repeating that temperature and explaining the anomaly, and Dr Park agrees: “Don’t simply delete it — discuss why it happened.” Option B matches; deleting it is explicitly discouraged.',
+              'Hannah proposes repeating that temperature and explaining the anomaly, and Dr Park agrees: “Don’t simply delete it - discuss why it happened.” Option B matches; deleting it is explicitly discouraged.',
           },
           {
             id: 'ls-023-s3-q29',
@@ -453,14 +453,14 @@ OSCAR: Understood. We'll have it in by then.`,
       },
       {
         id: 'ls-academic-023-s4',
-        title: 'Section 4 — Lecture: ocean currents and climate',
+        title: 'Section 4 - Lecture: ocean currents and climate',
         // ~305 words. Academic lecture / monologue (Section 4 style): a single
-        // speaker delivers a structured lecture on ocean currents and climate — how
+        // speaker delivers a structured lecture on ocean currents and climate - how
         // currents form, the global "conveyor belt", and the effect on regional
         // weather. Dense, factual and signposted ("let me start", "next", "finally"),
         // with the note/sentence-completion + multiple-choice mix typical of Section
         // 4, including one True/False/Not Given item.
-        transcript: `Good morning. Today we're looking at ocean currents and the powerful role they play in shaping our climate. The oceans are not still — vast rivers of water move constantly within them — and understanding why is key to understanding weather around the world.
+        transcript: `Good morning. Today we're looking at ocean currents and the powerful role they play in shaping our climate. The oceans are not still - vast rivers of water move constantly within them - and understanding why is key to understanding weather around the world.
 
 Let me start with how surface currents form. The main driver is the wind. As steady winds blow across the sea, friction drags the surface water along with them, setting it in motion. The direction is then bent by the rotation of the Earth, an effect known as the Coriolis effect, which is why the great ocean currents curve into huge loops rather than flowing in straight lines.
 

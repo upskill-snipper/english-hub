@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 10) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 10) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_10: ReadingTest[] = [
   {
     id: 'rd-academic-010',
-    title: 'Academic Reading — Practice Test 10',
+    title: 'Academic Reading - Practice Test 10',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -192,7 +192,7 @@ The decisive advance is usually credited to the English doctor Edward Jenner, wo
 
 That explanation depended on the slow acceptance of the germ theory of disease. Through the second half of the nineteenth century, the work of researchers such as Louis Pasteur in France and Robert Koch in Germany established that many illnesses are caused by specific microorganisms. Pasteur went further, discovering almost by accident that bacteria weakened in the laboratory could be injected to confer immunity without causing serious illness, and he extended the principle to diseases far beyond smallpox. The understanding that a vaccine trains the body's own defences to recognise an invader, so that a later encounter is met with a swift and crushing response, gave the practice a firm scientific foundation for the first time.
 
-The twentieth century turned this foundation into one of the most successful enterprises in the history of medicine. Vaccines were developed against diphtheria, tetanus, whooping cough, polio and measles, among many others, and where they were widely used the diseases retreated dramatically. The campaign against smallpox was the most ambitious of all. Coordinated internationally and reaching into the remotest communities, it pursued the virus until, in 1980, the disease was declared eradicated — the only human infection ever to have been deliberately wiped from the planet. For a disease that had killed hundreds of millions, this was an achievement without parallel.
+The twentieth century turned this foundation into one of the most successful enterprises in the history of medicine. Vaccines were developed against diphtheria, tetanus, whooping cough, polio and measles, among many others, and where they were widely used the diseases retreated dramatically. The campaign against smallpox was the most ambitious of all. Coordinated internationally and reaching into the remotest communities, it pursued the virus until, in 1980, the disease was declared eradicated - the only human infection ever to have been deliberately wiped from the planet. For a disease that had killed hundreds of millions, this was an achievement without parallel.
 
 Success, paradoxically, brought a new difficulty. As terrifying illnesses vanished from everyday experience, the public memory of their horror faded, and the rare side effects of vaccines began to loom larger in people's minds than the diseases they prevented. Doubts spread, sometimes fuelled by false claims that circulated faster than the evidence to correct them, and in several countries vaccination rates fell far enough for once-vanquished diseases to return. The mathematics that governs an epidemic is unforgiving: protection depends not only on the individual but on a sufficiently high proportion of the surrounding population being immune, a condition that breaks down quickly when confidence is lost.
 
@@ -342,7 +342,7 @@ The story of vaccination is therefore not a simple march of progress but a conti
         title: 'Vertical Farming and the Future of Food',
         body: `As the world's population climbs and its cities swell, a familiar question grows more urgent: how will we feed everyone without clearing yet more forest for fields? One answer, increasingly visible in disused warehouses and purpose-built towers, is to abandon the horizontal field altogether and grow food upward. Vertical farming stacks crops in tiers, sometimes dozens high, inside climate-controlled buildings where every variable that a plant experiences is set by machines rather than the weather. Its advocates present it not as a curiosity but as a serious response to the limits of conventional agriculture.
 
-The appeal becomes clear once the inefficiencies of the open field are spelled out. Traditional farming is at the mercy of season, drought and pest, and it consumes enormous quantities of land and fresh water. A vertical farm, by contrast, can operate in any climate and at any latitude, untroubled by frost or flood, and it can harvest crop after crop throughout the year. Because the plants are grown without soil — their roots bathed in a nutrient solution, or suspended in air and misted at intervals — water that would otherwise drain away is captured and recirculated. Such systems can use a small fraction of the water demanded by a conventional crop, an advantage that grows more compelling as fresh water becomes scarcer. Sited within or beside the cities they supply, these farms also cut the long journeys that wilt produce and burn fuel, delivering leaves to a shop the same day they are picked.
+The appeal becomes clear once the inefficiencies of the open field are spelled out. Traditional farming is at the mercy of season, drought and pest, and it consumes enormous quantities of land and fresh water. A vertical farm, by contrast, can operate in any climate and at any latitude, untroubled by frost or flood, and it can harvest crop after crop throughout the year. Because the plants are grown without soil - their roots bathed in a nutrient solution, or suspended in air and misted at intervals - water that would otherwise drain away is captured and recirculated. Such systems can use a small fraction of the water demanded by a conventional crop, an advantage that grows more compelling as fresh water becomes scarcer. Sited within or beside the cities they supply, these farms also cut the long journeys that wilt produce and burn fuel, delivering leaves to a shop the same day they are picked.
 
 The decisive technology, and the source of the industry's greatest difficulty, is light. Indoor crops cannot rely on the sun, and for decades artificial lighting was simply too expensive and too inefficient to make the idea workable. The breakthrough came with the light-emitting diode, or LED, which converts electricity into light with far less waste heat than older lamps and, crucially, can be tuned to emit only those wavelengths a plant actually uses for photosynthesis. Engineers found that delivering chiefly red and blue light, the parts of the spectrum plants absorb most readily, could drive rapid growth while wasting little energy on colours the crop largely ignores. Even so, supplying the light that the sun would otherwise provide for free remains the heaviest cost a vertical farm must bear, and the electricity bill can decide whether the whole enterprise turns a profit.
 
@@ -382,7 +382,7 @@ What seems most likely is that vertical farming will become one tool among many 
               'Complete the sentence with ONE word from the passage: In a vertical farm the plants are grown without _______, with their roots in a nutrient solution or misted in the air.',
             acceptableAnswers: ['soil'],
             explanation:
-              'The second paragraph says the plants are "grown without soil — their roots bathed in a nutrient solution, or suspended in air and misted at intervals." The missing word is "soil".',
+              'The second paragraph says the plants are "grown without soil - their roots bathed in a nutrient solution, or suspended in air and misted at intervals." The missing word is "soil".',
           },
           {
             id: 'rd-010-p3-q4',

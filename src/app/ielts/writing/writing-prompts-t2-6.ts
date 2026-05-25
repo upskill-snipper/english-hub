@@ -1,17 +1,17 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-6 ───────────────────────
 // A sixth dedicated bank of SIX Academic Writing Task 2 questions (argument /
 // opinion essays). As with every Task 2 prompt, none carries a visual, so no
-// prompt defines a `chart`, `imageSrc` or `imageAlt` field — the writing page
+// prompt defines a `chart`, `imageSrc` or `imageAlt` field - the writing page
 // renders the question text from `prompt` alone.
 //
 // The six deliberately vary the question format across the set rather than
 // repeating one type: discussion (both views + opinion) for crime and for
-// work–life balance and for television; problem & solution for an ageing
+// work-life balance and for television; problem & solution for an ageing
 // population; opinion (agree/disagree) for advertising; and advantages &
-// disadvantages for space exploration. Topics — prison versus rehabilitation,
+// disadvantages for space exploration. Topics - prison versus rehabilitation,
 // the challenges of an ageing population, the influence of advertising, whether
 // long hours signal dedication or poor planning, public spending on space, and
-// whether television educates or entertains — are kept distinct from the other
+// whether television educates or entertains - are kept distinct from the other
 // Task 2 banks so this set complements rather than duplicates them.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

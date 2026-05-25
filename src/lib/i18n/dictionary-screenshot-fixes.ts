@@ -137,7 +137,7 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
   'header.nav.eal': { en: 'EAL', ar: 'EAL' },
 
   // ─── Mobile-sheet labels (added in mobile-RTL audit wave) ────────
-  // The mobile menu sheet previously hardcoded EN — Arabic users got
+  // The mobile menu sheet previously hardcoded EN - Arabic users got
   // an EN sheet behind an AR site. Keys map every visible label.
   'header.nav.account': { en: 'Account', ar: 'الحساب' },
   'header.nav.school_dashboard': { en: 'School Dashboard', ar: 'لوحة المدرسة' },

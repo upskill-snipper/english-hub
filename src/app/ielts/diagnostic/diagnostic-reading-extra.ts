@@ -1,15 +1,15 @@
-// ─── IELTS placement diagnostic — extra Reading passages ───────────────────
+// ─── IELTS placement diagnostic - extra Reading passages ───────────────────
 // Three ADDITIONAL original Academic-track Reading passages that extend the
 // placement diagnostic so it can produce a genuinely discriminating baseline
 // band. The lead aggregates `DIAGNOSTIC_READING_EXTRA` alongside the existing
-// single passage in diagnostic-items.ts — this file owns only the extra content
+// single passage in diagnostic-items.ts - this file owns only the extra content
 // and edits nothing else.
 //
 // The three passages are deliberately GRADED by difficulty so the set spreads
 // candidates across the band range:
-//   • Passage 1 — EASIER  : accessible topic, plainer language (≈ Band 4–6).
-//   • Passage 2 — MEDIUM  : academic register (≈ Band 5.5–7).
-//   • Passage 3 — HARDER  : denser, more abstract argument (Band 7+ discrimination).
+//   • Passage 1 - EASIER  : accessible topic, plainer language (≈ Band 4-6).
+//   • Passage 2 - MEDIUM  : academic register (≈ Band 5.5-7).
+//   • Passage 3 - HARDER  : denser, more abstract argument (Band 7+ discrimination).
 //
 // Every passage body is 100% original, written for this test only, with no
 // official IELTS affiliation. Question shapes come from @/lib/ielts/types:
@@ -28,7 +28,7 @@
 import type { ReadingPassage } from '@/lib/ielts/types'
 
 export const DIAGNOSTIC_READING_EXTRA: ReadingPassage[] = [
-  // ─── Passage 1 — EASIER : The return of urban beekeeping ──────────────────
+  // ─── Passage 1 - EASIER : The return of urban beekeeping ──────────────────
   {
     id: 'diag-r2-p1-bees',
     title: 'Bees in the City',
@@ -128,12 +128,12 @@ Supporters argue that the benefits are worth the effort. A well-kept hive can te
           'The writer claims that urban beekeeping has definitely saved the world’s bee population.',
         answer: 'false',
         explanation:
-          'The writer is deliberately cautious, saying "Whether or not it makes a real difference to the global bee population" — so the text does not claim it has definitely saved bees.',
+          'The writer is deliberately cautious, saying "Whether or not it makes a real difference to the global bee population" - so the text does not claim it has definitely saved bees.',
       },
     ],
   },
 
-  // ─── Passage 2 — MEDIUM : The science of sleep ────────────────────────────
+  // ─── Passage 2 - MEDIUM : The science of sleep ────────────────────────────
   {
     id: 'diag-r2-p2-sleep',
     title: 'Why We Sleep',
@@ -260,17 +260,17 @@ Why sleep should be so vital remains, in part, an open question. One influential
     ],
   },
 
-  // ─── Passage 3 — HARDER : Why languages disappear ─────────────────────────
+  // ─── Passage 3 - HARDER : Why languages disappear ─────────────────────────
   {
     id: 'diag-r2-p3-languages',
     title: 'The Silence of Vanishing Tongues',
-    body: `Of the roughly seven thousand languages spoken today, linguists estimate that nearly half may fall silent before the century is out. A language is generally considered endangered when children cease to learn it as their mother tongue, for once an unbroken chain of transmission from one generation to the next is severed, the remaining speakers — however fluent — become the last custodians of a system that will not outlive them. The arithmetic is sobering: a tongue spoken by a few hundred elderly people is, in the most meaningful sense, already in its twilight.
+    body: `Of the roughly seven thousand languages spoken today, linguists estimate that nearly half may fall silent before the century is out. A language is generally considered endangered when children cease to learn it as their mother tongue, for once an unbroken chain of transmission from one generation to the next is severed, the remaining speakers - however fluent - become the last custodians of a system that will not outlive them. The arithmetic is sobering: a tongue spoken by a few hundred elderly people is, in the most meaningful sense, already in its twilight.
 
-The causes of this attrition are rarely as straightforward as outright suppression, though coercive policies have certainly played their part. More often the process is gradual and, paradoxically, voluntary. Faced with the overwhelming economic and social gravity of a dominant language — one that promises access to schooling, employment and a wider community — parents make the entirely rational decision to raise their children in it instead. Each such choice is individually sensible; collectively, they can doom a language within a few generations. The shift is lubricated by the simple fact that bilingualism, the natural waystation between one language and another, tends not to be stable. The minority tongue is reserved for an ever-narrowing range of domestic settings until it is no longer passed on at all.
+The causes of this attrition are rarely as straightforward as outright suppression, though coercive policies have certainly played their part. More often the process is gradual and, paradoxically, voluntary. Faced with the overwhelming economic and social gravity of a dominant language - one that promises access to schooling, employment and a wider community - parents make the entirely rational decision to raise their children in it instead. Each such choice is individually sensible; collectively, they can doom a language within a few generations. The shift is lubricated by the simple fact that bilingualism, the natural waystation between one language and another, tends not to be stable. The minority tongue is reserved for an ever-narrowing range of domestic settings until it is no longer passed on at all.
 
-It is tempting to regard this as merely sentimental loss, the linguistic equivalent of an old building falling into disrepair. Some commentators argue, not without force, that a reduction in the number of languages eases communication and that nostalgia should not stand in the way of practical advantage. Yet this position underestimates what a language is. Every language encodes a distinct way of carving up experience: its vocabulary may distinguish concepts that another language blurs, and its grammar may oblige speakers to attend to features of the world — the source of a piece of information, say, or the precise spatial relation between objects — that speakers of other languages can comfortably ignore. When a language dies, that particular lens is lost, and with it an irreplaceable record of how one human community made sense of its surroundings.
+It is tempting to regard this as merely sentimental loss, the linguistic equivalent of an old building falling into disrepair. Some commentators argue, not without force, that a reduction in the number of languages eases communication and that nostalgia should not stand in the way of practical advantage. Yet this position underestimates what a language is. Every language encodes a distinct way of carving up experience: its vocabulary may distinguish concepts that another language blurs, and its grammar may oblige speakers to attend to features of the world - the source of a piece of information, say, or the precise spatial relation between objects - that speakers of other languages can comfortably ignore. When a language dies, that particular lens is lost, and with it an irreplaceable record of how one human community made sense of its surroundings.
 
-Efforts to reverse such decline have met with uneven success. The revival of Hebrew as an everyday spoken language is frequently cited as proof that a dormant tongue can be restored to vigour, but it was an exceptional case, sustained by powerful religious and political currents that few endangered languages can call upon. More typically, revitalisation programmes must content themselves with documentation — recording the speech of the last fluent generation so that scholars, and perhaps future descendants, retain some access to it. Whether such an archive constitutes a living language or merely its embalmed remains is a question that divides even those who undertake the work.
+Efforts to reverse such decline have met with uneven success. The revival of Hebrew as an everyday spoken language is frequently cited as proof that a dormant tongue can be restored to vigour, but it was an exceptional case, sustained by powerful religious and political currents that few endangered languages can call upon. More typically, revitalisation programmes must content themselves with documentation - recording the speech of the last fluent generation so that scholars, and perhaps future descendants, retain some access to it. Whether such an archive constitutes a living language or merely its embalmed remains is a question that divides even those who undertake the work.
 
 What is seldom disputed is that the losses are accelerating, and that they fall disproportionately on the smallest and most marginal communities. The disappearance of a language attracts none of the public alarm that greets the extinction of a species, perhaps because its consequences are harder to photograph. But the underlying logic is similar: once gone, neither can be reconstructed from first principles. In this respect the world's linguistic diversity, like its biological diversity, may prove to be a resource we appreciate fully only in its absence.`,
     questions: [
@@ -374,7 +374,7 @@ What is seldom disputed is that the losses are accelerating, and that they fall 
         ],
         correctIndex: 1,
         explanation:
-          'The text says that "More typically, revitalisation programmes must content themselves with documentation — recording the speech of the last fluent generation".',
+          'The text says that "More typically, revitalisation programmes must content themselves with documentation - recording the speech of the last fluent generation".',
       },
       {
         id: 'diag-r2-p3-q10',
@@ -392,7 +392,7 @@ What is seldom disputed is that the losses are accelerating, and that they fall 
           'The writer claims that the public reacts more strongly to a language dying than to a species becoming extinct.',
         answer: 'false',
         explanation:
-          'The passage says the disappearance of a language "attracts none of the public alarm that greets the extinction of a species" — the reverse of the statement.',
+          'The passage says the disappearance of a language "attracts none of the public alarm that greets the extinction of a species" - the reverse of the statement.',
       },
       {
         id: 'diag-r2-p3-q12',

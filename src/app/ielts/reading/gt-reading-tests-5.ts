@@ -1,7 +1,7 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 5) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 5) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
-// purely to practise the GT Reading question formats — True/False/Not Given,
+// purely to practise the GT Reading question formats - True/False/Not Given,
 // multiple choice, sentence/summary completion (gap) AND the matching formats
 // (Matching Features, Matching Headings). Framed as "IELTS preparation" only;
 // no official affiliation is implied. General Training track.
@@ -21,28 +21,28 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_5: ReadingTest[] = [
   {
     id: 'rd-general-005',
-    title: 'General Training Reading — Practice Test 5',
+    title: 'General Training Reading - Practice Test 5',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — community noticeboard ───────────────
+      // ── Section 1: EVERYDAY / SOCIAL - community noticeboard ───────────────
       // Events + a lost-property notice + a bus-timetable change. Includes a
       // Matching Features question (notices → statements) worth 5 marks.
       {
         id: 'rd-gen-005-p1',
-        title: 'Hollowbrook Community Centre — Noticeboard',
+        title: 'Hollowbrook Community Centre - Noticeboard',
         body: `Welcome to the Hollowbrook Community Centre noticeboard. Please take a moment to read the notices below before you leave the foyer.
 
-NOTICE A — SPRING REPAIR CAFÉ
+NOTICE A - SPRING REPAIR CAFÉ
 On the last Saturday of every month, from 10 a.m. to 1 p.m., our volunteers will mend small household items free of charge in the main hall. Bring along broken lamps, jammed zips, wobbly chairs or torn clothing and watch our menders at work. We cannot repair anything that runs on mains gas, and large furniture will not fit through the hall doors, so please leave these items at home. There is no need to book; simply arrive and add your name to the list when you get here.
 
-NOTICE B — EVENING POTTERY CLASSES
+NOTICE B - EVENING POTTERY CLASSES
 Beginning the second week of April, a six-week pottery course runs every Tuesday evening from 7 p.m. to 9 p.m. in the craft room upstairs. The course is suitable for complete beginners, and all clay and tools are provided. Places are limited to ten people, and the fee of £60 covers the whole course; we are unable to offer single sessions. To secure a place you must pay in advance at the centre's reception desk by 5 April, as we cannot hold a place for anyone who has not paid.
 
-NOTICE C — LOST PROPERTY
+NOTICE C - LOST PROPERTY
 A set of house keys on a bright red ribbon was handed in last Thursday after the afternoon yoga class. It is now being kept in the office safe. If you think the keys are yours, please describe the ribbon and the number of keys to a member of staff before they are returned to you. Any items not claimed within four weeks are passed to a local charity or, in the case of keys and documents, securely destroyed. The office is staffed between 9 a.m. and 4 p.m. on weekdays only.
 
-NOTICE D — CHANGE TO THE NUMBER 12 BUS
+NOTICE D - CHANGE TO THE NUMBER 12 BUS
 From Monday 6 April, the route of the number 12 bus will change. It will no longer stop directly outside the community centre on Mill Lane. Instead, the nearest stop will be on Bridge Road, a three-minute walk away, beside the chemist. The first morning service will leave ten minutes earlier than before, at 6.50 a.m., but the evening timetable is unchanged. Printed timetables showing the new times are available from the reception desk.`,
         questions: [
           {
@@ -129,12 +129,12 @@ From Monday 6 April, the route of the number 12 bus will change. It will no long
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the four notices on the noticeboard, A–D. For each statement below, choose the notice it refers to. Write the correct letter, A–D. (Each notice may be chosen more than once.)',
+              'Look at the four notices on the noticeboard, A-D. For each statement below, choose the notice it refers to. Write the correct letter, A-D. (Each notice may be chosen more than once.)',
             options: [
-              { key: 'A', label: 'Notice A — Spring Repair Café' },
-              { key: 'B', label: 'Notice B — Evening Pottery Classes' },
-              { key: 'C', label: 'Notice C — Lost Property' },
-              { key: 'D', label: 'Notice D — Change to the Number 12 Bus' },
+              { key: 'A', label: 'Notice A - Spring Repair Café' },
+              { key: 'B', label: 'Notice B - Evening Pottery Classes' },
+              { key: 'C', label: 'Notice C - Lost Property' },
+              { key: 'D', label: 'Notice D - Change to the Number 12 Bus' },
             ],
             items: [
               {
@@ -168,14 +168,14 @@ From Monday 6 April, the route of the number 12 bus will change. It will no long
           },
         ],
       },
-      // ── Section 2: WORKPLACE — health & safety / annual-leave policy ───────
+      // ── Section 2: WORKPLACE - health & safety / annual-leave policy ───────
       {
         id: 'rd-gen-005-p2',
-        title: 'Staff Policy — Health, Safety and Time Away from Work',
+        title: 'Staff Policy - Health, Safety and Time Away from Work',
         body: `This policy explains your responsibilities for health and safety at work and how the company manages annual leave and sick leave. All employees are asked to read it within their first week and to confirm to their manager that they have done so.
 
 WORKING SAFELY
-Every member of staff has a duty to work in a way that does not put themselves or others at risk. You must report any accident, however minor, in the accident book kept at the main reception, and you should tell your supervisor straight away. Near misses — events that could have caused harm but did not — must also be reported, because they help us prevent more serious incidents later. Fire drills are held twice a year without prior warning; when the alarm sounds you must leave the building by the nearest marked exit and gather at the assembly point in the rear car park. Do not stop to collect personal belongings.
+Every member of staff has a duty to work in a way that does not put themselves or others at risk. You must report any accident, however minor, in the accident book kept at the main reception, and you should tell your supervisor straight away. Near misses - events that could have caused harm but did not - must also be reported, because they help us prevent more serious incidents later. Fire drills are held twice a year without prior warning; when the alarm sounds you must leave the building by the nearest marked exit and gather at the assembly point in the rear car park. Do not stop to collect personal belongings.
 
 DISPLAY SCREEN EQUIPMENT
 Staff who spend most of the working day at a computer are entitled to a free workstation assessment. This checks that your chair, desk and screen are correctly adjusted. We recommend a short break away from the screen of five to ten minutes in every hour; this need not be a rest break, as changing to a different task also counts. If you experience discomfort in your eyes, neck or wrists, tell your manager, who can arrange an eye test at the company's expense.
@@ -320,7 +320,7 @@ If you are unwell and cannot come to work, you must contact your manager by tele
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — cycling to work ───────────────
+      // ── Section 3: LONGER GENERAL-INTEREST - cycling to work ───────────────
       // Includes a Matching Headings question (with two distractor headings)
       // worth 5 marks, plus MCQ / TFNG / gap.
       {
@@ -349,7 +349,7 @@ The change now under way is therefore less a sudden revolution than a gradual re
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. Money saved by leaving the car at home' },
               { key: 'ii', label: 'ii. Fitness gained as part of the daily trip' },
@@ -367,7 +367,7 @@ The change now under way is therefore less a sudden revolution than a gradual re
               { id: 'pF', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'B is about cost ("The clearest attraction is cost") → i. C is about health "without any special effort", built into the journey → ii. D describes the "wider payoff for the towns themselves" → iv. E sets out the limits ("not the answer for everyone") and the "ways round them" → v. F frames the trend as "a gradual rediscovery" of an old habit for new reasons → vi. Headings iii (the change has NOT been slow — it is a comeback) and vii (the article never explains how to choose or maintain a bike) are the unused distractors.',
+              'B is about cost ("The clearest attraction is cost") → i. C is about health "without any special effort", built into the journey → ii. D describes the "wider payoff for the towns themselves" → iv. E sets out the limits ("not the answer for everyone") and the "ways round them" → v. F frames the trend as "a gradual rediscovery" of an old habit for new reasons → vi. Headings iii (the change has NOT been slow - it is a comeback) and vii (the article never explains how to choose or maintain a bike) are the unused distractors.',
           },
           {
             id: 'rd-gen-005-p3-q17',

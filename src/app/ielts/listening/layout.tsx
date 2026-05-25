@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 // component ('use client' can't export metadata), so this sibling server layout
 // supplies the unique <title> and canonical URL.
 export const metadata: Metadata = {
-  title: 'IELTS Academic Listening Practice — The English Hub',
+  title: 'IELTS Academic Listening Practice - The English Hub',
   description:
     'Practise IELTS Academic Listening with original two-section tests: form and note completion plus multiple choice, instant auto-marking, a predicted band score, and full transcripts with explanations in the review.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/listening' },

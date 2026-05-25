@@ -5,7 +5,7 @@ import type { Band } from '@/lib/ielts/types'
 // ─── BandChip ──────────────────────────────────────────────────────────────
 // Small, dependency-free band display. Used for per-skill bands on the
 // progress dashboard. Colours come straight from bands.ts so the whole IELTS
-// surface stays consistent. Presentational only — safe in server or client.
+// surface stays consistent. Presentational only - safe in server or client.
 // ────────────────────────────────────────────────────────────────────────────
 
 export interface BandChipProps {
@@ -25,7 +25,7 @@ export interface BandChipProps {
   notAttemptedLabel?: string
   /** Singular attempts label, e.g. "1 attempt". */
   attemptOneLabel?: string
-  /** Plural attempts noun, e.g. "attempts" — rendered as "{n} attempts". */
+  /** Plural attempts noun, e.g. "attempts" - rendered as "{n} attempts". */
   attemptsOtherLabel?: string
   className?: string
 }

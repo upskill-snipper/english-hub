@@ -1,20 +1,20 @@
 /**
- * Parent-namespace dictionary — Bucket A, Tier-2, SECOND alphabetical half.
+ * Parent-namespace dictionary - Bucket A, Tier-2, SECOND alphabetical half.
  *
  * Covers `parent.linked_child` → `parent.your_password_placeholder`
  * (the ~127 keys after the alphabetical median; the FIRST half lives in a
- * sibling dictionary-parent-1.ts authored by a parallel agent — split point
+ * sibling dictionary-parent-1.ts authored by a parallel agent - split point
  * is between `parent.link_your_child_desc` and `parent.linked_child` so the
  * two files are exact complements with zero overlap).
  *
  * English authored fresh against the real consuming components under
- * src/app/parent/** and src/components/parent — the dictionary-audit-fix.ts
+ * src/app/parent/** and src/components/parent - the dictionary-audit-fix.ts
  * source for these keys is title-cased junk and was NOT copied. Arabic is
  * genuine warm Khaleeji (Gulf) register for parents, matching the voice of
  * src/lib/eal/curriculum.ts and the existing parent.weekly.* entries.
  *
  * Screenshot-fixes keys whose ar already differs from en (already correct
- * Khaleeji) are intentionally OMITTED here — they remain owned by
+ * Khaleeji) are intentionally OMITTED here - they remain owned by
  * dictionary-screenshot-fixes.ts.
  *
  * Imported and chained into lookup() in ./dictionary.ts.
@@ -42,8 +42,8 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'parent.log_in': { en: 'Log in', ar: 'تسجيل الدخول' },
   'parent.manage_billing': { en: 'Manage billing', ar: 'إدارة الفوترة' },
   'parent.network_error': {
-    en: 'Network problem — please check your connection and try again.',
-    ar: 'في مشكلة بالاتصال — تأكّد من الإنترنت وجرّب مرّة ثانية.',
+    en: 'Network problem - please check your connection and try again.',
+    ar: 'في مشكلة بالاتصال - تأكّد من الإنترنت وجرّب مرّة ثانية.',
   },
   'parent.new_password': { en: 'New password', ar: 'كلمة المرور الجديدة' },
   'parent.no_account_prompt': {
@@ -53,8 +53,8 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   // ─── Empty states ────────────────────────────────────────────────
   'parent.no_activity_yet': {
-    en: 'No activity yet — it will appear here as your child studies.',
-    ar: 'ما في نشاط لين الحين — بيظهر هنا أول ما يبدأ طفلك يذاكر.',
+    en: 'No activity yet - it will appear here as your child studies.',
+    ar: 'ما في نشاط لين الحين - بيظهر هنا أول ما يبدأ طفلك يذاكر.',
   },
   'parent.no_games_yet': {
     en: 'No games played yet.',

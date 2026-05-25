@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 20) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 20) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,17 +6,17 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions, 10 per section) that mirror the real IELTS Listening paper,
 // with topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a caller enrolling
+//   • Section 1 - an everyday transactional DIALOGUE (here: a caller enrolling
 //     in an evening adult-education course at a community college), assessed
 //     with form/note completion + multiple choice. A surname is spelled and one
 //     detail (the total fee) depends on a stated choice (course + materials).
-//   • Section 2 — an everyday MONOLOGUE (here: a guided tour of a botanic
+//   • Section 2 - an everyday MONOLOGUE (here: a guided tour of a botanic
 //     garden), assessed with sentence completion, multiple choice and a
 //     matching task (garden zones → features), carrying signpost language.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a marine-biology fieldwork assignment), assessed with multiple
 //     choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of
+//   • Section 4 - an academic LECTURE / monologue (here: the history of
 //     photography, from the camera obscura to the digital shift), assessed with
 //     note/sentence completion + multiple choice, including one True/False/Not
 //     Given item.
@@ -28,7 +28,7 @@
 //   • 'mcq'      → single best answer; `correctIndex` is 0-based.
 //   • 'matching' → each item scores ONE mark; `item.answer` is an option `key`.
 //   • 'tfng'     → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -39,18 +39,18 @@ export const LISTENING_SET_20: ListeningTest[] = [
   {
     id: 'ls-academic-020',
     title:
-      'Practice Test 20 — Enrolling in an Evening Course, A Botanic Garden Tour, Planning a Marine-Biology Assignment & The History of Photography',
+      'Practice Test 20 - Enrolling in an Evening Course, A Botanic Garden Tour, Planning a Marine-Biology Assignment & The History of Photography',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-020-s1',
-        title: 'Section 1 — Registering for an evening adult-education course',
+        title: 'Section 1 - Registering for an evening adult-education course',
         // ~300 words. Transactional dialogue (Section 1 style): a caller phoning a
         // community college to register for an evening adult-education course. A
         // surname is spelled and a date is dictated; one detail (the total fee)
         // depends on stated choices (which course, plus a materials pack), mirroring
         // the form-completion + multiple-choice mix of a real Section 1.
-        transcript: `WOMAN: Good afternoon, Brookfield Community College, evening courses — Sandra speaking.
+        transcript: `WOMAN: Good afternoon, Brookfield Community College, evening courses - Sandra speaking.
 
 MAN: Hi, I'd like to sign up for one of your evening classes, if there's still room.
 
@@ -70,7 +70,7 @@ WOMAN: Lovely. Pottery is a ten-week course and the fee is ninety pounds.
 
 MAN: And does that include the clay and tools?
 
-WOMAN: The tools are provided in class, but there's an optional materials pack — that's the clay and a glaze set — for fifteen pounds. Most beginners take it.
+WOMAN: The tools are provided in class, but there's an optional materials pack - that's the clay and a glaze set - for fifteen pounds. Most beginners take it.
 
 MAN: I'll add the pack, then.
 
@@ -78,7 +78,7 @@ WOMAN: So that's ninety plus fifteen. Now, when would you like to start? The nex
 
 MAN: The third of October is fine.
 
-WOMAN: Great. One thing to bring on the first evening is an apron — the studio can get messy. And do arrive a few minutes early to find the room; pottery is in the Maple building, room four.
+WOMAN: Great. One thing to bring on the first evening is an apron - the studio can get messy. And do arrive a few minutes early to find the room; pottery is in the Maple building, room four.
 
 MAN: Maple building, room four. Got it. Do I pay today?
 
@@ -91,7 +91,7 @@ WOMAN: You can pay at the first class. We just ask that you register online befo
               'Complete the registration form. Write ONE WORD for the answer.\n\nStudent surname: ____________',
             acceptableAnswers: ['Pryce', 'pryce'],
             explanation:
-              'The caller gives his name as “Martin Pryce” and spells the surname: P-R-Y-C-E. In Section 1, names are almost always spelled aloud — write them down letter by letter.',
+              'The caller gives his name as “Martin Pryce” and spells the surname: P-R-Y-C-E. In Section 1, names are almost always spelled aloud - write them down letter by letter.',
           },
           {
             id: 'ls-020-s1-q2',
@@ -143,7 +143,7 @@ WOMAN: You can pay at the first class. We just ask that you register online befo
             ],
             correctIndex: 1,
             explanation:
-              'The course is ninety pounds and the man adds the fifteen-pound materials pack, so the assistant confirms “ninety plus fifteen” — a total of £105. Option B matches; the distractors drop the pack or the course fee.',
+              'The course is ninety pounds and the man adds the fifteen-pound materials pack, so the assistant confirms “ninety plus fifteen” - a total of £105. Option B matches; the distractors drop the pack or the course fee.',
           },
           {
             id: 'ls-020-s1-q7',
@@ -160,7 +160,7 @@ WOMAN: You can pay at the first class. We just ask that you register online befo
             prompt: 'On the first evening, the man should bring an ____________. Write ONE WORD.',
             acceptableAnswers: ['apron'],
             explanation:
-              'The assistant says, “One thing to bring on the first evening is an apron — the studio can get messy.” The answer is “apron”.',
+              'The assistant says, “One thing to bring on the first evening is an apron - the studio can get messy.” The answer is “apron”.',
           },
           {
             id: 'ls-020-s1-q9',
@@ -189,15 +189,15 @@ WOMAN: You can pay at the first class. We just ask that you register online befo
       },
       {
         id: 'ls-academic-020-s2',
-        title: 'Section 2 — A guided tour of a botanic garden',
+        title: 'Section 2 - A guided tour of a botanic garden',
         // ~310 words. Informational monologue (Section 2 style): a single speaker
         // welcoming visitors and describing the layout and programme of a botanic
-        // garden — zones, the glasshouse, the café, events and accessibility. Uses
+        // garden - zones, the glasshouse, the café, events and accessibility. Uses
         // sequencing/signpost language and includes a matching task (zone → feature)
         // alongside completion and multiple choice.
         transcript: `Hello everyone, and welcome to Greenvale Botanic Garden. My name's Tom, and I'll give you a quick orientation before you set off to explore on your own.
 
-Let me walk you through the main zones, starting from where we're standing at the main gate. Straight ahead of you is the Rose Garden, which is at its absolute best right now in early summer — that's the one area I'd urge you not to miss today. To your left is the Woodland Walk, a shaded loop that's particularly popular with families, as there's a small wooden adventure playground tucked among the trees. Over to your right is the Water Garden, with its ponds and a lovely collection of dragonflies in the warmer months.
+Let me walk you through the main zones, starting from where we're standing at the main gate. Straight ahead of you is the Rose Garden, which is at its absolute best right now in early summer - that's the one area I'd urge you not to miss today. To your left is the Woodland Walk, a shaded loop that's particularly popular with families, as there's a small wooden adventure playground tucked among the trees. Over to your right is the Water Garden, with its ponds and a lovely collection of dragonflies in the warmer months.
 
 Now, our star attraction is the Tropical Glasshouse, at the far end of the gardens. Inside it's kept warm and humid all year round, so I'd suggest leaving any coats in the lockers by the entrance. A word of warning: the glasshouse is reached by a fairly steep path, so if you'd prefer step-free access, take the level route signposted past the café instead.
 
@@ -205,7 +205,7 @@ Speaking of the café, it's in the old stable block near the car park, and today
 
 As for events, there's a free guided bird walk leaving from this spot at eleven, and a plant sale running all afternoon in the courtyard. Do note that the bird walk involves a lot of standing still and quiet, so it's really aimed at adults.
 
-Finally, on accessibility — wheelchairs can be borrowed free of charge from the ticket office, and assistance dogs are welcome everywhere except inside the glasshouse. Enjoy your visit!`,
+Finally, on accessibility - wheelchairs can be borrowed free of charge from the ticket office, and assistance dogs are welcome everywhere except inside the glasshouse. Enjoy your visit!`,
         questions: [
           {
             id: 'ls-020-s2-q11',
@@ -276,7 +276,7 @@ Finally, on accessibility — wheelchairs can be borrowed free of charge from th
             type: 'matching',
             variant: 'features',
             prompt:
-              'Match each area of the garden (Questions 17–20) to the feature the guide associates with it. Choose your answer from the list A–F. You will not need every option.',
+              'Match each area of the garden (Questions 17-20) to the feature the guide associates with it. Choose your answer from the list A-F. You will not need every option.',
             options: [
               { key: 'A', label: 'A shaded loop with an adventure playground' },
               { key: 'B', label: 'Ponds and a collection of dragonflies' },
@@ -298,7 +298,7 @@ Finally, on accessibility — wheelchairs can be borrowed free of charge from th
       },
       {
         id: 'ls-academic-020-s3',
-        title: 'Section 3 — Tutorial: planning a marine-biology assignment',
+        title: 'Section 3 - Tutorial: planning a marine-biology assignment',
         // ~315 words. Academic discussion (Section 3 style): two students (Hannah and
         // Yusuf) and a tutor (Dr Carter) plan a marine-biology fieldwork assignment on
         // a rocky shore. They settle the research question, the sampling method, a
@@ -310,7 +310,7 @@ HANNAH: We have. We're investigating how the number of limpets on the rocky shor
 
 DR CARTER: A nice, measurable question. And how will you actually count them?
 
-YUSUF: We thought about counting every limpet on the whole shore, but that's obviously impossible, so we're going to use quadrats — those square frames you place on the rock and count what's inside.
+YUSUF: We thought about counting every limpet on the whole shore, but that's obviously impossible, so we're going to use quadrats - those square frames you place on the rock and count what's inside.
 
 DR CARTER: Good. And how will you position them?
 
@@ -320,11 +320,11 @@ DR CARTER: That's exactly the right approach. How many quadrats are you planning
 
 YUSUF: We're aiming for twenty in total, which should give us enough data without taking all day.
 
-DR CARTER: Sensible. Now, fieldwork on a rocky shore — I have to stress safety. What's your main concern?
+DR CARTER: Sensible. Now, fieldwork on a rocky shore - I have to stress safety. What's your main concern?
 
 HANNAH: The rocks get very slippery with seaweed, so we'll all wear proper boots with a good grip rather than trainers.
 
-DR CARTER: Absolutely essential. And one thing students always forget — check the tide times before you go, and start at low tide so you're working your way back up as the water returns. Never get cut off.
+DR CARTER: Absolutely essential. And one thing students always forget - check the tide times before you go, and start at low tide so you're working your way back up as the water returns. Never get cut off.
 
 YUSUF: We've already got the tide timetable, don't worry.
 
@@ -353,7 +353,7 @@ HANNAH: Week nine for the data, week ten for the report. Understood.`,
               'To count the limpets, the students will use square frames called ____________. Write ONE WORD.',
             acceptableAnswers: ['quadrats', 'quadrat'],
             explanation:
-              'Yusuf says they will “use quadrats — those square frames you place on the rock and count what’s inside.” The answer is “quadrats”.',
+              'Yusuf says they will “use quadrats - those square frames you place on the rock and count what’s inside.” The answer is “quadrats”.',
           },
           {
             id: 'ls-020-s3-q23',
@@ -443,18 +443,18 @@ HANNAH: Week nine for the data, week ten for the report. Understood.`,
       },
       {
         id: 'ls-academic-020-s4',
-        title: 'Section 4 — Lecture: the history of photography',
+        title: 'Section 4 - Lecture: the history of photography',
         // ~315 words. Academic lecture / monologue (Section 4 style): a single speaker
         // delivers a structured lecture on the history of photography, from the camera
         // obscura through early chemical processes and roll film to the digital shift.
         // Dense, factual and signposted ("let me begin", "next", "finally"), with the
         // note/sentence-completion + multiple-choice mix typical of Section 4, including
         // one True/False/Not Given item.
-        transcript: `Good morning. Today I'll trace the history of photography — how we moved from a simple optical trick to the billions of digital images taken every day. I'll work through four main stages.
+        transcript: `Good morning. Today I'll trace the history of photography - how we moved from a simple optical trick to the billions of digital images taken every day. I'll work through four main stages.
 
-Let me begin with the idea behind the camera, which is far older than photography itself. For centuries, artists used a device called the camera obscura — Latin for "dark chamber". This was simply a darkened room, or later a box, with a tiny hole in one side; light passing through the hole projected an upside-down image of the outside scene onto the opposite wall. Crucially, it could not record that image — someone still had to trace it by hand.
+Let me begin with the idea behind the camera, which is far older than photography itself. For centuries, artists used a device called the camera obscura - Latin for "dark chamber". This was simply a darkened room, or later a box, with a tiny hole in one side; light passing through the hole projected an upside-down image of the outside scene onto the opposite wall. Crucially, it could not record that image - someone still had to trace it by hand.
 
-The breakthrough came in the early nineteenth century, when inventors found ways to fix an image chemically. The first practical process, announced in 1839, was the daguerreotype, named after its French inventor. It produced a sharp, detailed picture on a silvered copper plate. Its great drawback, though, was that each photograph was unique — you could not make copies from it.
+The breakthrough came in the early nineteenth century, when inventors found ways to fix an image chemically. The first practical process, announced in 1839, was the daguerreotype, named after its French inventor. It produced a sharp, detailed picture on a silvered copper plate. Its great drawback, though, was that each photograph was unique - you could not make copies from it.
 
 That problem was solved by the negative. A rival process recorded the image as a negative on paper, from which any number of positive prints could be made. This negative-to-positive principle would dominate photography for the next century and a half.
 
@@ -469,7 +469,7 @@ Finally, the digital shift. Instead of film, a digital camera uses an electronic
               'For centuries, artists used a device called the camera ____________, Latin for "dark chamber". Write ONE WORD.',
             acceptableAnswers: ['obscura'],
             explanation:
-              'The lecturer says artists used “a device called the camera obscura — Latin for ‘dark chamber’.” The answer is “obscura”.',
+              'The lecturer says artists used “a device called the camera obscura - Latin for ‘dark chamber’.” The answer is “obscura”.',
           },
           {
             id: 'ls-020-s4-q32',
@@ -483,7 +483,7 @@ Finally, the digital shift. Instead of film, a digital camera uses an electronic
             ],
             correctIndex: 1,
             explanation:
-              'The lecturer stresses that the camera obscura “could not record that image — someone still had to trace it by hand.” Option B matches.',
+              'The lecturer stresses that the camera obscura “could not record that image - someone still had to trace it by hand.” Option B matches.',
           },
           {
             id: 'ls-020-s4-q33',
@@ -515,7 +515,7 @@ Finally, the digital shift. Instead of film, a digital camera uses an electronic
             ],
             correctIndex: 0,
             explanation:
-              'The lecturer says of the daguerreotype, “each photograph was unique — you could not make copies from it.” Option A matches.',
+              'The lecturer says of the daguerreotype, “each photograph was unique - you could not make copies from it.” Option A matches.',
           },
           {
             id: 'ls-020-s4-q36',

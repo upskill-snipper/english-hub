@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (to an official / a newspaper / a
+//     The register varies by prompt - formal (to an official / a newspaper / a
 //     landlord), semi-formal (to a course tutor / a committee) or informal (to
 //     a friend). The situation and the three bullets live inside `prompt`.
 //     minWords 150, suggestedMinutes 20.
@@ -21,7 +21,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_4: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter to a newspaper editor ──────────────────────
+  // ── Task 1 · A - FORMAL letter to a newspaper editor ──────────────────────
   {
     id: 'gt4-wt1-park-closure',
     task: 'writing-task-1',
@@ -44,7 +44,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — FORMAL letter to a landlord about repairs ────────────────
+  // ── Task 1 · B - FORMAL letter to a landlord about repairs ────────────────
   {
     id: 'gt4-wt1-roof-leak',
     task: 'writing-task-1',
@@ -67,7 +67,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — SEMI-FORMAL letter to a course tutor ─────────────────────
+  // ── Task 1 · C - SEMI-FORMAL letter to a course tutor ─────────────────────
   {
     id: 'gt4-wt1-deadline-extension',
     task: 'writing-task-1',
@@ -90,7 +90,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · D — INFORMAL letter inviting a friend to an event ────────────
+  // ── Task 1 · D - INFORMAL letter inviting a friend to an event ────────────
   {
     id: 'gt4-wt1-surprise-party',
     task: 'writing-task-1',
@@ -113,7 +113,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — two-part direct question ─────────────────────────────────
+  // ── Task 2 · A - two-part direct question ─────────────────────────────────
   {
     id: 'gt4-wt2-reading-less',
     task: 'writing-task-2',
@@ -132,7 +132,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — opinion (agree / disagree) ───────────────────────────────
+  // ── Task 2 · B - opinion (agree / disagree) ───────────────────────────────
   {
     id: 'gt4-wt2-lifelong-learning',
     task: 'writing-task-2',
@@ -151,7 +151,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — discussion (both views + opinion) ────────────────────────
+  // ── Task 2 · C - discussion (both views + opinion) ────────────────────────
   {
     id: 'gt4-wt2-pets-in-cities',
     task: 'writing-task-2',
@@ -170,7 +170,7 @@ export const GT_WRITING_SET_4: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · D — advantages / disadvantages ───────────────────────────────
+  // ── Task 2 · D - advantages / disadvantages ───────────────────────────────
   {
     id: 'gt4-wt2-tourism-towns',
     task: 'writing-task-2',

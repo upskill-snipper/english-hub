@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 26) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 26) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_26: ReadingTest[] = [
   {
     id: 'rd-academic-026',
-    title: 'Academic Reading — Practice Test 26',
+    title: 'Academic Reading - Practice Test 26',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -49,7 +49,7 @@ Yet the distribution of all these advantages is rarely even, and this has become
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Shade and transpiration: two ways plants cool the air' },
               { key: 'ii', label: 'Why a city runs hotter than the countryside' },
@@ -69,7 +69,7 @@ Yet the distribution of all these advantages is rarely even, and this has become
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'iv' },
             ],
             explanation:
-              'A describes the shift from treating green space "as decoration" to seeing it as "infrastructure" (iii). B explains the urban heat island — why "a large city can run several degrees warmer than the fields around it" (ii). C sets out shade and transpiration as the two ways "Vegetation pushes back against this warming" (i). D lists benefits "beyond comfort" — air, flooding, health and wildlife (vii). E argues for "green corridors" linking isolated patches (vi). F covers the uneven distribution of green space and who "loses out" (iv). Heading v (parks raising the value of every nearby home) is a distractor — the passage instead warns rising rents can displace residents; heading viii (the cost of maintenance) is a distractor never developed.',
+              'A describes the shift from treating green space "as decoration" to seeing it as "infrastructure" (iii). B explains the urban heat island - why "a large city can run several degrees warmer than the fields around it" (ii). C sets out shade and transpiration as the two ways "Vegetation pushes back against this warming" (i). D lists benefits "beyond comfort" - air, flooding, health and wildlife (vii). E argues for "green corridors" linking isolated patches (vi). F covers the uneven distribution of green space and who "loses out" (iv). Heading v (parks raising the value of every nearby home) is a distractor - the passage instead warns rising rents can displace residents; heading viii (the cost of maintenance) is a distractor never developed.',
           },
           {
             id: 'rd-026-p1-q2',
@@ -169,7 +169,7 @@ The crust is a different story, governed by a reaction that needs much higher te
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -296,15 +296,15 @@ The crust is a different story, governed by a reaction that needs much higher te
       {
         id: 'rd-academic-026-p3',
         title: 'Why We Forget',
-        body: `Memory is so much a part of who we are that it is easy to imagine it as a kind of recording, a faithful library in which every experience is filed away and can, in principle, be played back. Decades of research have shown that this picture is almost entirely wrong. Memory is not a recording but a reconstruction, an active and rather unreliable process, and forgetting — far from being simply a fault in the machine — turns out to be one of its most important features. To understand why, it helps to break remembering down into the three stages that psychologists have long used to describe it.
+        body: `Memory is so much a part of who we are that it is easy to imagine it as a kind of recording, a faithful library in which every experience is filed away and can, in principle, be played back. Decades of research have shown that this picture is almost entirely wrong. Memory is not a recording but a reconstruction, an active and rather unreliable process, and forgetting - far from being simply a fault in the machine - turns out to be one of its most important features. To understand why, it helps to break remembering down into the three stages that psychologists have long used to describe it.
 
 The first stage is encoding, the process by which a fleeting experience is converted into a form the brain can keep. Encoding is highly selective: of the flood of sensory information arriving at any moment, only a small fraction is ever registered deeply enough to last, and attention is the gatekeeper. Information that is merely glimpsed, or attended to only weakly, may never be encoded at all, which is why we so often fail to recall a name we were told moments earlier. Crucially, material that is processed for its meaning, and linked to things we already know, is encoded far more strongly than material rehearsed only as empty sound. This is the single most useful fact about memory for any student: understanding something is a more powerful aid to remembering it than mere repetition.
 
-The second stage is storage, the retention of encoded information over time, and it is here that the famous pattern of forgetting reveals itself. In the nineteenth century a German researcher, Hermann Ebbinghaus, ran a long and patient series of experiments on himself, memorising lists of nonsense syllables and then testing how much he could recall after various intervals. The curve he plotted has been confirmed many times since. Forgetting is rapid at first — a great deal is lost within the first hours and days — and then levels off, so that whatever survives the initial steep decline tends to endure far longer. This shape, the so-called forgetting curve, explains why information reviewed soon after it is first learned, before that early drop has run its course, is so much more likely to stick.
+The second stage is storage, the retention of encoded information over time, and it is here that the famous pattern of forgetting reveals itself. In the nineteenth century a German researcher, Hermann Ebbinghaus, ran a long and patient series of experiments on himself, memorising lists of nonsense syllables and then testing how much he could recall after various intervals. The curve he plotted has been confirmed many times since. Forgetting is rapid at first - a great deal is lost within the first hours and days - and then levels off, so that whatever survives the initial steep decline tends to endure far longer. This shape, the so-called forgetting curve, explains why information reviewed soon after it is first learned, before that early drop has run its course, is so much more likely to stick.
 
 The third stage, retrieval, is the act of bringing a stored memory back into awareness, and it is far less reliable than it feels. A memory does not sit waiting to be read off a shelf; it is rebuilt each time it is recalled, assembled from fragments and patched with assumptions about what must have happened. Retrieval also depends heavily on cues. A memory that cannot be summoned in one setting may surface readily when the right reminder is present, which is why returning to a place, or catching a particular smell, can suddenly unlock recollections that seemed long gone. The information had not vanished; what was missing was the cue to reach it.
 
-This reconstructive quality has a striking and unsettling consequence: memories can be not merely lost but false, recollections of events that never happened at all, held with complete sincerity. Because retrieval rebuilds rather than replays, a memory can absorb details suggested afterwards — by a leading question, a photograph, or another person's account — and weave them seamlessly into the original, with no inner signal to flag the join. Laboratory studies have repeatedly shown how readily confident, detailed memories of fictitious events can be planted in willing volunteers. The implications reach well beyond the laboratory, not least for the criminal courts, where the confident testimony of an eyewitness has long carried great weight and has sometimes proved to be sincerely, disastrously mistaken.
+This reconstructive quality has a striking and unsettling consequence: memories can be not merely lost but false, recollections of events that never happened at all, held with complete sincerity. Because retrieval rebuilds rather than replays, a memory can absorb details suggested afterwards - by a leading question, a photograph, or another person's account - and weave them seamlessly into the original, with no inner signal to flag the join. Laboratory studies have repeatedly shown how readily confident, detailed memories of fictitious events can be planted in willing volunteers. The implications reach well beyond the laboratory, not least for the criminal courts, where the confident testimony of an eyewitness has long carried great weight and has sometimes proved to be sincerely, disastrously mistaken.
 
 Given all this fallibility, it is tempting to regard forgetting as a pure defect, a failing to be corrected if only we could. The deeper truth is the opposite. A memory that retained everything would be not a blessing but a burden, clogged with the trivial and the outdated and unable to find what matters amid the clutter. Forgetting is, in large part, the mind's way of discarding the irrelevant and keeping the general lessons of experience while shedding the useless particulars. The rare individuals who genuinely cannot forget often describe their condition as exhausting rather than enviable. Far from being the enemy of a good memory, a certain amount of forgetting is what makes a useful one possible.`,
         questions: [
@@ -314,7 +314,7 @@ Given all this fallibility, it is tempting to regard forgetting as a pure defect
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence with the correct ending, A–H, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A–H.',
+              'Complete each sentence with the correct ending, A-H, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A-H.',
             options: [
               { key: 'A', label: 'is processed for its meaning and linked to existing knowledge.' },
               { key: 'B', label: 'can be planted in willing volunteers in laboratory studies.' },

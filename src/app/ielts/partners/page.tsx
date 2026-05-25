@@ -23,7 +23,7 @@ import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
-// ─── /ielts/partners — partnerships & institutional overview ────────────────
+// ─── /ielts/partners - partnerships & institutional overview ────────────────
 // SEO landing page for schools, exam centres and education agencies considering
 // partnering WITH The English Hub to deliver IELTS Academic preparation. Server
 // component so the marketing copy renders statically for SEO/AI answer engines.
@@ -31,7 +31,7 @@ import { t } from '@/lib/i18n/t'
 //
 // COMPLIANCE (hard requirement): the British Council UK Agent Hub, the IELTS
 // Partnership Programme and UK university recruitment relationships are
-// described as routes we are PURSUING and standards we ALIGN TO — never as
+// described as routes we are PURSUING and standards we ALIGN TO - never as
 // affiliations already held. No third-party logos or trademarked marks are
 // used. All copy original.
 // ────────────────────────────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ const OFFERINGS = [
   },
 ]
 
-// Who this is for — three institutional audiences, two with their own deep
+// Who this is for - three institutional audiences, two with their own deep
 // landing page.
 const AUDIENCES = [
   {
@@ -132,7 +132,7 @@ const ROADMAP = [
   },
 ]
 
-// Differentiators — short "why us" strip.
+// Differentiators - short "why us" strip.
 const WHY = [
   {
     icon: Sparkles,
@@ -151,19 +151,19 @@ const WHY = [
   },
 ]
 
-// JSON-LD source — kept English (structured data, not visible UI). This page
+// JSON-LD source - kept English (structured data, not visible UI). This page
 // has no visible FAQ accordion; the bilingual ielts.partners.overview.faq.*
 // keys exist in the dictionary for parity with the per-audience pages.
 const FAQS = [
   {
     question: 'Is The English Hub an official British Council or IELTS partner?',
     answer:
-      'Not currently. The English Hub is an independent IELTS Academic preparation platform. Official British Council and IELTS partnerships are routes we are actively pursuing and standards we align our content and assessment practice to — we will only describe ourselves as holding an affiliation once it is formally granted.',
+      'Not currently. The English Hub is an independent IELTS Academic preparation platform. Official British Council and IELTS partnerships are routes we are actively pursuing and standards we align our content and assessment practice to - we will only describe ourselves as holding an affiliation once it is formally granted.',
   },
   {
     question: 'Do you deliver the IELTS test itself?',
     answer:
-      'No. We provide preparation — diagnostic placement, a personalised study plan, four-skill practice, AI band feedback and full mock tests. The official IELTS test is sat through authorised test centres.',
+      'No. We provide preparation - diagnostic placement, a personalised study plan, four-skill practice, AI band feedback and full mock tests. The official IELTS test is sat through authorised test centres.',
   },
   {
     question: 'What does a partnership give our learners?',
@@ -222,7 +222,7 @@ export default async function IeltsPartnersPage() {
       body: await t(r.bodyKey),
     })),
   )
-  // Resolved once — same "Pursuing" badge on every roadmap row (can't await
+  // Resolved once - same "Pursuing" badge on every roadmap row (can't await
   // inside the .map() callback below).
   const roadmapBadge = await t('ielts.partners.overview.roadmap.badge')
 
@@ -405,7 +405,7 @@ export default async function IeltsPartnersPage() {
         </div>
       </section>
 
-      {/* 5. Partnership roadmap — framed as INTENT, with explicit caveat */}
+      {/* 5. Partnership roadmap - framed as INTENT, with explicit caveat */}
       <section aria-labelledby="roadmap-heading" className="border-y border-border/60 bg-muted/30">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
@@ -454,7 +454,7 @@ export default async function IeltsPartnersPage() {
             </GlassPanel>
           </div>
 
-          {/* Explicit compliance caveat — required. Translated in full (AR keeps
+          {/* Explicit compliance caveat - required. Translated in full (AR keeps
               every "not currently…" disclaimer; see dictionary-ielts-partners.ts). */}
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
             {await t('ielts.partners.overview.roadmap.caveat')}

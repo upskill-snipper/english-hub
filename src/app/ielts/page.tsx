@@ -26,7 +26,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { SkillCard } from './_components/SkillCard'
 import { LoopStep } from './_components/LoopStep'
 
-// ─── IELTS hub — SEO landing page ──────────────────────────────────────────
+// ─── IELTS hub - SEO landing page ──────────────────────────────────────────
 // The entry point to the IELTS Academic learning loop. Server component so the
 // hero copy, loop labels and CTAs render statically for SEO and resolve the
 // learner's locale (en/ar) per request via the server `t()` helper. Exactly
@@ -42,7 +42,7 @@ export default async function IeltsHubPage() {
   const practiseNow = await t('ielts.cta.practise_now')
   const estimateNote = await t('ielts.estimate_note')
 
-  // Localised skill names — keyed to match IELTS_SKILLS order downstream.
+  // Localised skill names - keyed to match IELTS_SKILLS order downstream.
   const skillLabel: Record<(typeof IELTS_SKILLS)[number], string> = {
     listening: await t('ielts.skill.listening'),
     reading: await t('ielts.skill.reading'),
@@ -116,7 +116,7 @@ export default async function IeltsHubPage() {
     },
   ]
 
-  // "Beyond practice" cards — links resolved up front (server component can't
+  // "Beyond practice" cards - links resolved up front (server component can't
   // await inside the JSX .map()).
   const moreCards = [
     {
@@ -139,7 +139,7 @@ export default async function IeltsHubPage() {
     },
   ]
 
-  // "Your readiness program" — direct entry points to the new program surfaces
+  // "Your readiness program" - direct entry points to the new program surfaces
   // (learn / dashboard / planner / mock / guide). Resolved up front like moreCards.
   const programEyebrow = await t('ielts.hubx.program.eyebrow')
   const programHeading = await t('ielts.hubx.program.heading')
@@ -177,7 +177,7 @@ export default async function IeltsHubPage() {
     },
   ]
 
-  // Remaining standalone hub copy — section eyebrows, headings, bodies, the
+  // Remaining standalone hub copy - section eyebrows, headings, bodies, the
   // secondary CTA, hero badge chips and inline link labels.
   const viewProgress = await t('ielts.hubx.view_progress')
   const exploreLabel = await t('ielts.hubx.more.explore')
@@ -260,7 +260,7 @@ export default async function IeltsHubPage() {
         </div>
       </section>
 
-      {/* 1b. The readiness program — direct entry points */}
+      {/* 1b. The readiness program - direct entry points */}
       <section aria-labelledby="program-heading" className="border-b border-border/60 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
@@ -407,7 +407,7 @@ export default async function IeltsHubPage() {
         </div>
       </section>
 
-      {/* 4b. Beyond practice — admissions, educators, partners */}
+      {/* 4b. Beyond practice - admissions, educators, partners */}
       <section aria-labelledby="more-heading" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">

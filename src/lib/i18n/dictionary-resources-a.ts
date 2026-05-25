@@ -1,5 +1,5 @@
 /**
- * Khaleeji translations — `resources` namespace, Bucket A wave 4
+ * Khaleeji translations - `resources` namespace, Bucket A wave 4
  * (real-EN subset, source: dictionary-placeholder-fix-may15.ts)
  *
  * Public SEO resource/revision pages rendered in AR mode. The EN here
@@ -10,7 +10,7 @@
  * verbatim because students must recognise it in the exam.
  *
  * 99 keys. Wired into the lookup chain from dictionary.ts (do NOT
- * edit dictionary.ts from this file — wiring is handled separately).
+ * edit dictionary.ts from this file - wiring is handled separately).
  */
 
 export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> = {
@@ -21,8 +21,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'كل مصادر المراجعة في رفّ واحد',
   },
   'resources.hub.subtitle': {
-    en: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs — sorted by category.',
-    ar: 'أدلة مراجعة، إجابات نموذجية، أوراق تلخيص للتقنيات، قوائم مفردات، وشرح خطوة بخطوة لأوراق الامتحان — كلها مرتّبة حسب التصنيف.',
+    en: 'Study guides, model answers, technique cheatsheets, vocabulary lists and exam-paper walkthroughs - sorted by category.',
+    ar: 'أدلة مراجعة، إجابات نموذجية، أوراق تلخيص للتقنيات، قوائم مفردات، وشرح خطوة بخطوة لأوراق الامتحان - كلها مرتّبة حسب التصنيف.',
   },
   'resources.hub.stat.study_guides': { en: 'Study guides', ar: 'أدلة مراجعة' },
   'resources.hub.stat.categories': { en: 'Categories', ar: 'تصنيفات' },
@@ -33,8 +33,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.hub.quick.revision_notes.title': { en: 'Revision notes', ar: 'ملاحظات المراجعة' },
   'resources.hub.quick.revision_notes.desc': {
-    en: 'Concise summaries of plot, character, theme and context — written for revision, not first reading.',
-    ar: 'تلخيصات مركّزة للأحداث والشخصيات والثيمات والسياق — مكتوبة عشان المراجعة، مو عشان أول قراءة.',
+    en: 'Concise summaries of plot, character, theme and context - written for revision, not first reading.',
+    ar: 'تلخيصات مركّزة للأحداث والشخصيات والثيمات والسياق - مكتوبة عشان المراجعة، مو عشان أول قراءة.',
   },
   'resources.hub.quick.writing_skills.title': { en: 'Writing skills', ar: 'مهارات الكتابة' },
   'resources.hub.quick.writing_skills.desc': {
@@ -88,8 +88,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.poetry.skill.techniques.tag': { en: 'Technique', ar: 'تقنية' },
   'resources.poetry.skill.techniques.title': { en: 'Poetic techniques', ar: 'التقنيات الشعرية' },
   'resources.poetry.skill.techniques.desc': {
-    en: "Identifying form, structure and language devices — what they're called and what effects they create.",
-    ar: 'تتعرّف على الشكل والهيكلة وأدوات اللغة — وش أسمائها ووش الأثر اللي تخلّقه.',
+    en: "Identifying form, structure and language devices - what they're called and what effects they create.",
+    ar: 'تتعرّف على الشكل والهيكلة وأدوات اللغة - وش أسمائها ووش الأثر اللي تخلّقه.',
   },
   'resources.poetry.skill.unseen.tag': { en: 'Unseen', ar: 'غير مرئي' },
   'resources.poetry.skill.unseen.title': { en: 'Unseen poetry', ar: 'الشعر غير المرئي' },
@@ -132,8 +132,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'السياق يجيب AO3، مو الحكاية الجانبية',
   },
   'resources.poetry.tip.context.text': {
-    en: "AO3 wants ideas linked back to the poem's effect — never an essay about the poet's life detached from the lines.",
-    ar: 'AO3 يبي أفكار مربوطة برجعها لأثر القصيدة — مو مقال عن حياة الشاعر منفصل عن الأبيات.',
+    en: "AO3 wants ideas linked back to the poem's effect - never an essay about the poet's life detached from the lines.",
+    ar: 'AO3 يبي أفكار مربوطة برجعها لأثر القصيدة - مو مقال عن حياة الشاعر منفصل عن الأبيات.',
   },
   'resources.poetry.tip.structure.title': {
     en: "Read the poem's shape first",
@@ -161,12 +161,12 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'حلّل اللغة والشكل والهيكلة بمصطلحات المادة',
   },
   'resources.poetry.ao.ao2.tip': {
-    en: "For every technique you name, write the EFFECT it creates — that's where the marks live.",
-    ar: 'مع كل تقنية تسمّيها، اكتب الأثر اللي تخلّقه — هني وين الدرجات.',
+    en: "For every technique you name, write the EFFECT it creates - that's where the marks live.",
+    ar: 'مع كل تقنية تسمّيها، اكتب الأثر اللي تخلّقه - هني وين الدرجات.',
   },
   'resources.poetry.ao.ao3.detail': {
-    en: 'Contextual links — ideas, beliefs and conditions the poem reflects',
-    ar: 'روابط سياقية — أفكار ومعتقدات وظروف تعكسها القصيدة',
+    en: 'Contextual links - ideas, beliefs and conditions the poem reflects',
+    ar: 'روابط سياقية - أفكار ومعتقدات وظروف تعكسها القصيدة',
   },
   'resources.poetry.ao.ao3.tip': {
     en: "Tie context to a specific line, not just the poet's biography in general.",
@@ -176,8 +176,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   // ─── Resources / study tools (/resources/study-tools) ────────────
   'resources.study_tools.title': { en: 'Study tools', ar: 'أدوات المراجعة' },
   'resources.study_tools.subtitle': {
-    en: 'Plan revision, drill recall, and time your past papers — every tool below saves to your account.',
-    ar: 'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة — كل أداة تحت تنحفظ في حسابك.',
+    en: 'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
+    ar: 'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في حسابك.',
   },
   'resources.study_tools.cta.open': { en: 'Open tool', ar: 'افتح الأداة' },
   'resources.study_tools.rp.title': { en: 'Revision planner', ar: 'مخطّط المراجعة' },
@@ -215,8 +215,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.study_tools.qt.feat.score': { en: 'Score tracking', ar: 'تتبّع النتيجة' },
   'resources.study_tools.cl.title': { en: 'Exam checklist', ar: 'قائمة تحقّق الامتحان' },
   'resources.study_tools.cl.desc': {
-    en: 'Tick off every topic on your spec — board-specific, autosaves to your account.',
-    ar: 'علّم على كل موضوع في منهجك — خاص بكل مجلس، ويتحفظ تلقائياً في حسابك.',
+    en: 'Tick off every topic on your spec - board-specific, autosaves to your account.',
+    ar: 'علّم على كل موضوع في منهجك - خاص بكل مجلس، ويتحفظ تلقائياً في حسابك.',
   },
   'resources.study_tools.cl.feat.aqa': { en: 'AQA spec coverage', ar: 'تغطية منهج AQA' },
   'resources.study_tools.cl.feat.edexcel': {
@@ -237,8 +237,8 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'ابدأ بالمخطّط',
   },
   'resources.study_tools.tip.start.body': {
-    en: 'A schedule is the difference between revising and panic-revising — set yours up first.',
-    ar: 'الجدول هو الفرق بين إنك تراجع وإنك تراجع وانت مهلوع — سوّ جدولك أول شي.',
+    en: 'A schedule is the difference between revising and panic-revising - set yours up first.',
+    ar: 'الجدول هو الفرق بين إنك تراجع وإنك تراجع وانت مهلوع - سوّ جدولك أول شي.',
   },
   'resources.study_tools.tip.daily.label': {
     en: 'Daily, not weekend-only',
@@ -250,7 +250,7 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.study_tools.tip.track.label': { en: "Track what's hard", ar: 'تابع الشي الصعب' },
   'resources.study_tools.tip.track.body': {
-    en: "The flashcard hard-card focus shows you what's actually not sticking — go review the underlying notes for those.",
-    ar: 'تركيز البطاقات الصعبة يوريك وش الشي اللي فعلاً ما يثبت — روح راجع الملاحظات الأصلية لهالأشياء.',
+    en: "The flashcard hard-card focus shows you what's actually not sticking - go review the underlying notes for those.",
+    ar: 'تركيز البطاقات الصعبة يوريك وش الشي اللي فعلاً ما يثبت - روح راجع الملاحظات الأصلية لهالأشياء.',
   },
 }

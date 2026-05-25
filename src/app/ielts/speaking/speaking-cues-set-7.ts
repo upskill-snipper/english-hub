@@ -1,15 +1,15 @@
-// ─── IELTS Speaking cues · Set 7 (Academic, Parts 1–3) ─────────────────────
+// ─── IELTS Speaking cues · Set 7 (Academic, Parts 1-3) ─────────────────────
 // A seventh batch of original IELTS-preparation practice prompts for the async
 // Speaking module. Same shape and conventions as SPEAKING_CUES, with fresh
 // everyday topics so learners can rotate through more material without repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (goals & ambition, traditions &
 //     cultural change, possessions & consumerism, news & the media).
 //
-// Topics here are deliberately distinct from the base cues and Sets 2–5 (which
+// Topics here are deliberately distinct from the base cues and Sets 2-5 (which
 // already cover home/area, daily routine, food, weather, transport, hometown,
 // music, weekends, technology, shopping, books/reading, sport, sleep, clothes,
 // the internet, festivals, animals, plus cue cards on a skill, journey, useful
@@ -20,7 +20,7 @@
 // your workspace, plus cue cards on a goal, a tradition, a useful object and a
 // piece of news.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids use the `sp-007-` prefix so
 // the coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -28,7 +28,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_7: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp-007-p1-neighbours',
     part: 'speaking-part-1',
@@ -50,7 +50,7 @@ export const SPEAKING_SET_7: SpeakingCue[] = [
       'How many languages can you speak, even a little?',
       'When did you first start learning a foreign language?',
       'Do you find learning a new language easy or quite a challenge?',
-      'Which part of learning a language do you enjoy the most — speaking, listening or something else?',
+      'Which part of learning a language do you enjoy the most - speaking, listening or something else?',
       'Is there another language you would love to be able to speak one day?',
       'Do you think it is better to learn a language in a classroom or by living abroad?',
     ],
@@ -80,7 +80,7 @@ export const SPEAKING_SET_7: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp-007-p2-goal-working-towards',
     part: 'speaking-part-2',
@@ -142,7 +142,7 @@ export const SPEAKING_SET_7: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp-007-p3-goals-ambition',
     part: 'speaking-part-3',

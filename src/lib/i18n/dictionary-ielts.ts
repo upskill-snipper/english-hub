@@ -10,8 +10,8 @@ export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
   'ielts.nav': { en: 'IELTS', ar: 'IELTS' },
   'ielts.hub.eyebrow': { en: 'IELTS Academic', ar: 'IELTS أكاديمي' },
   'ielts.hub.title': {
-    en: 'IELTS Academic — from starter to exam-ready',
-    ar: 'IELTS أكاديمي — من البداية للجاهزية للامتحان',
+    en: 'IELTS Academic - from starter to exam-ready',
+    ar: 'IELTS أكاديمي - من البداية للجاهزية للامتحان',
   },
   'ielts.hub.subtitle': {
     en: 'One learning loop: find your level, follow a personalised plan, practise all four skills, get instant AI band feedback, then prove it on a full mock test.',
@@ -50,6 +50,6 @@ export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
     en: 'Predicted bands are practice estimates, not official results.',
     ar: 'الـ Band المتوقع تقديري للتدريب، مو نتيجة رسمية.',
   },
-  'ielts.task1': { en: 'Writing Task 1', ar: 'الكتابة — المهمة 1' },
-  'ielts.task2': { en: 'Writing Task 2', ar: 'الكتابة — المهمة 2' },
+  'ielts.task1': { en: 'Writing Task 1', ar: 'الكتابة - المهمة 1' },
+  'ielts.task2': { en: 'Writing Task 2', ar: 'الكتابة - المهمة 2' },
 }

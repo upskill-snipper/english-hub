@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-4 ───────────────────────
 // A fourth dedicated bank of EIGHT Academic Writing Task 2 questions (argument /
 // opinion essays). As with every Task 2 prompt, none carries a visual, so no
-// prompt defines a `chart`, `imageSrc` or `imageAlt` field — the writing page
+// prompt defines a `chart`, `imageSrc` or `imageAlt` field - the writing page
 // renders the question text from `prompt` alone.
 //
 // The eight cover the full range of Task 2 question formats (at least one of
 // each): opinion (agree/disagree), discussion (both views + opinion), problem
 // & solution / causes & solutions, two-part / direct question, and advantages
 // & disadvantages. Topics are deliberately fresh and distinct from sets T2-1,
-// T2-2 and T2-3 and the Wave 1–3 banks — funding space versus ocean research,
+// T2-2 and T2-3 and the Wave 1-3 banks - funding space versus ocean research,
 // children owning smartphones, the decline of local shops, museums charging
 // entry fees, competitive versus non-competitive school sport, public funding
 // of the arts, the effect of tourism on local cultures, and the four-day
-// working week — so this set complements rather than duplicates the existing
+// working week - so this set complements rather than duplicates the existing
 // item bank.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 9) ───────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 9) ───────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats (MCQ,
 // True/False/Not Given, and sentence/summary completion). They are NOT
@@ -15,7 +15,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_9: ReadingTest[] = [
   {
     id: 'rd-academic-009',
-    title: 'Academic Reading — Practice Test 9',
+    title: 'Academic Reading - Practice Test 9',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -357,7 +357,7 @@ A particular source of unease is the way such work is supervised. Although gig w
 
 Governments have struggled to respond, partly because the work fits awkwardly into laws written for an older world. Courts in several countries have reached opposite conclusions about whether particular gig workers should count as employees, and platforms have warned that extending full employment rights would raise costs and reduce the very flexibility that workers prize. Some jurisdictions have begun to experiment with a middle path, granting gig workers certain protections without classifying them as full employees, but no settled answer has yet emerged, and the legal ground continues to shift from one ruling to the next.
 
-What seems clear is that the change is not a passing fashion. The forces behind it — cheap computing, instant communication and a steady appetite for convenience — show no sign of weakening, and the share of people earning at least part of their living this way continues to rise. The question is no longer whether such work will exist, but on what terms. Whether the gig economy comes to be remembered as a liberation from the rigid job or as an erosion of hard-won rights will depend less on the technology itself than on the rules societies choose to place around it.`,
+What seems clear is that the change is not a passing fashion. The forces behind it - cheap computing, instant communication and a steady appetite for convenience - show no sign of weakening, and the share of people earning at least part of their living this way continues to rise. The question is no longer whether such work will exist, but on what terms. Whether the gig economy comes to be remembered as a liberation from the rigid job or as an erosion of hard-won rights will depend less on the technology itself than on the rules societies choose to place around it.`,
         questions: [
           {
             id: 'rd-009-p3-q1',

@@ -37,8 +37,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'Towards a World Unknown',
   },
   'poetry_hub.ocr.hero_lead': {
-    en: 'The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems each. For your exam, you only need to study one cluster — the one chosen by your school or teacher.',
-    ar: 'مختارات الشعر OCR فيها ٦٠ قصيدة مقسّمة على ٤ مجموعات موضوعية، كل وحدة فيها ١٥ قصيدة. للامتحان، بس تذاكر مجموعة وحدة — اللي اختارتها مدرستك ولا معلمك.',
+    en: 'The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems each. For your exam, you only need to study one cluster - the one chosen by your school or teacher.',
+    ar: 'مختارات الشعر OCR فيها ٦٠ قصيدة مقسّمة على ٤ مجموعات موضوعية، كل وحدة فيها ١٥ قصيدة. للامتحان، بس تذاكر مجموعة وحدة - اللي اختارتها مدرستك ولا معلمك.',
   },
   'poetry_hub.ocr.which_cluster': {
     en: 'Which cluster do I study?',
@@ -56,8 +56,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'حول صفحات المذاكرة هاي',
   },
   'poetry_hub.ocr.about_pages_body': {
-    en: 'For older, public-domain poems we provide full interactive study pages with annotations, context, and quotation analysis. For poems still in copyright, we provide context, themes, and key quotation analysis only — you will need a copy of the OCR anthology (Towards a World Unknown, ISBN 9781398384408) to read the full text.',
-    ar: 'القصائد الأقدم اللي بالمجال العام نوفّر صفحات مذاكرة كاملة وتفاعلية فيها الشروحات والسياق وتحليل الاقتباسات. القصائد اللي محفوظة حقوقها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس — بتحتاج نسخة من مختارات OCR (Towards a World Unknown، ISBN 9781398384408) عشان تقرا النص كامل.',
+    en: 'For older, public-domain poems we provide full interactive study pages with annotations, context, and quotation analysis. For poems still in copyright, we provide context, themes, and key quotation analysis only - you will need a copy of the OCR anthology (Towards a World Unknown, ISBN 9781398384408) to read the full text.',
+    ar: 'القصائد الأقدم اللي بالمجال العام نوفّر صفحات مذاكرة كاملة وتفاعلية فيها الشروحات والسياق وتحليل الاقتباسات. القصائد اللي محفوظة حقوقها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس - بتحتاج نسخة من مختارات OCR (Towards a World Unknown، ISBN 9781398384408) عشان تقرا النص كامل.',
   },
   'poetry_hub.ocr.different_board_title': {
     en: 'Studying a different exam board?',
@@ -118,8 +118,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'ليش بعض القصائد مقفولة؟',
   },
   'poetry_hub.ocr.why_locked_body': {
-    en: 'Older poems are public domain so we provide full annotated study pages. More recent poems are still in copyright — for those we offer context, themes and key quotation analysis only. You will need a copy of the OCR Towards a World Unknown anthology to read the full text.',
-    ar: 'القصائد الأقدم بالمجال العام ولهذا نوفّر صفحات مذاكرة كاملة مع شروحات. القصائد الأحدث محفوظة حقوقها — ولها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس. بتحتاج نسخة من مختارات OCR Towards a World Unknown عشان تقرا النص كامل.',
+    en: 'Older poems are public domain so we provide full annotated study pages. More recent poems are still in copyright - for those we offer context, themes and key quotation analysis only. You will need a copy of the OCR Towards a World Unknown anthology to read the full text.',
+    ar: 'القصائد الأقدم بالمجال العام ولهذا نوفّر صفحات مذاكرة كاملة مع شروحات. القصائد الأحدث محفوظة حقوقها - ولها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس. بتحتاج نسخة من مختارات OCR Towards a World Unknown عشان تقرا النص كامل.',
   },
   'poetry_hub.ocr.rights_notice_label': { en: 'Rights notice.', ar: 'تنبيه الحقوق.' },
   'poetry_hub.ocr.prelude_version_title': {
@@ -127,8 +127,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'ملاحظة النسخة: The Prelude (نسخة ١٧٩٩ المؤلّفة من جزأين)',
   },
   'poetry_hub.ocr.prelude_version_body': {
-    en: "OCR prescribes the 1799 two-part Prelude, drafted in Wordsworth's lifetime but unpublished until 1973. The boat-stealing episode appears in Part First, lines 81–129. AQA prescribes the 1850 posthumous Prelude (edited by Wordsworth's widow Mary). The wording is materially different between the two editions — never cross-quote between versions. If you are revising for OCR, use only the 1799 text.",
-    ar: 'OCR يقرّر نسخة The Prelude ١٧٩٩ المؤلّفة من جزأين، اللي كتبها Wordsworth في حياته بس ما انتشرت إلا عام ١٩٧٣. مشهد سرقة القارب يطلع في Part First، الأسطر ٨١–١٢٩. AQA يقرّر نسخة The Prelude ١٨٥٠ اللي انتشرت بعد موته (حرّرتها أرملته Mary). الكلام بين النسختين مختلف جوهرياً — لا تنقل اقتباسات بين النسختين أبداً. لو تراجع لـ OCR، استخدم نص ١٧٩٩ بس.',
+    en: "OCR prescribes the 1799 two-part Prelude, drafted in Wordsworth's lifetime but unpublished until 1973. The boat-stealing episode appears in Part First, lines 81-129. AQA prescribes the 1850 posthumous Prelude (edited by Wordsworth's widow Mary). The wording is materially different between the two editions - never cross-quote between versions. If you are revising for OCR, use only the 1799 text.",
+    ar: 'OCR يقرّر نسخة The Prelude ١٧٩٩ المؤلّفة من جزأين، اللي كتبها Wordsworth في حياته بس ما انتشرت إلا عام ١٩٧٣. مشهد سرقة القارب يطلع في Part First، الأسطر ٨١-١٢٩. AQA يقرّر نسخة The Prelude ١٨٥٠ اللي انتشرت بعد موته (حرّرتها أرملته Mary). الكلام بين النسختين مختلف جوهرياً - لا تنقل اقتباسات بين النسختين أبداً. لو تراجع لـ OCR، استخدم نص ١٧٩٩ بس.',
   },
   'poetry_hub.ocr.explore_other_clusters': {
     en: 'Explore other clusters',
@@ -265,8 +265,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'مختارات شعر Edexcel',
   },
   'poetry_hub.edexcel.hero_lead': {
-    en: 'The Edexcel anthology contains two themed collections of fifteen poems each. You only study one cluster — either Conflict or Time and Place. Pick yours below and start with annotated study pages, key quotations and comparison practice.',
-    ar: 'مختارات Edexcel فيها مجموعتين موضوعيتين، كل وحدة فيها خمستعش قصيدة. تذاكر مجموعة وحدة بس — يا Conflict يا Time and Place. اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
+    en: 'The Edexcel anthology contains two themed collections of fifteen poems each. You only study one cluster - either Conflict or Time and Place. Pick yours below and start with annotated study pages, key quotations and comparison practice.',
+    ar: 'مختارات Edexcel فيها مجموعتين موضوعيتين، كل وحدة فيها خمستعش قصيدة. تذاكر مجموعة وحدة بس - يا Conflict يا Time and Place. اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
   },
   'poetry_hub.edexcel.info_note': {
     en: 'Edexcel poetry is assessed in Paper 2, Section A. You will answer one comparison question on a named anthology poem and one of your own choice from the same cluster, plus an unseen poetry question.',
@@ -276,8 +276,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   'poetry_hub.edexcel.fifteen_poems': { en: '15 poems', ar: '١٥ قصيدة' },
   'poetry_hub.edexcel.cluster.conflict.title': { en: 'Conflict', ar: 'الصراع' },
   'poetry_hub.edexcel.cluster.conflict.desc': {
-    en: 'Poems exploring the many faces of conflict — war and bloodshed, personal and political battles, family tensions, prejudice, and inner emotional turmoil. Includes Blake, Owen, Byron, Tennyson, Hardy, Rossetti, Agard and Zephaniah.',
-    ar: 'قصائد تستكشف وجوه الصراع المختلفة — الحرب والدم، المعارك الشخصية والسياسية، توتّرات العائلة، التحيّز، والاضطراب العاطفي الداخلي. تشمل Blake و Owen و Byron و Tennyson و Hardy و Rossetti و Agard و Zephaniah.',
+    en: 'Poems exploring the many faces of conflict - war and bloodshed, personal and political battles, family tensions, prejudice, and inner emotional turmoil. Includes Blake, Owen, Byron, Tennyson, Hardy, Rossetti, Agard and Zephaniah.',
+    ar: 'قصائد تستكشف وجوه الصراع المختلفة - الحرب والدم، المعارك الشخصية والسياسية، توتّرات العائلة، التحيّز، والاضطراب العاطفي الداخلي. تشمل Blake و Owen و Byron و Tennyson و Hardy و Rossetti و Agard و Zephaniah.',
   },
   'poetry_hub.edexcel.cluster.conflict.cta': {
     en: 'Study the Conflict cluster',
@@ -285,8 +285,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   },
   'poetry_hub.edexcel.cluster.tp.title': { en: 'Time and Place', ar: 'الزمان والمكان' },
   'poetry_hub.edexcel.cluster.tp.desc': {
-    en: 'Poems rooted in landscape, memory and journeys — from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The cluster explores how place shapes identity and how time alters our relationship with where we have lived.',
-    ar: 'قصائد جذورها في الطبيعة والذكرى والرحلات — من Keats و Wordsworth إلى Dickinson و Hardy و Fanthorpe و Grace Nichols. المجموعة تستكشف شلون المكان يشكّل الهوية وشلون الزمن يغيّر علاقتنا بالمكان اللي عشنا فيه.',
+    en: 'Poems rooted in landscape, memory and journeys - from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The cluster explores how place shapes identity and how time alters our relationship with where we have lived.',
+    ar: 'قصائد جذورها في الطبيعة والذكرى والرحلات - من Keats و Wordsworth إلى Dickinson و Hardy و Fanthorpe و Grace Nichols. المجموعة تستكشف شلون المكان يشكّل الهوية وشلون الزمن يغيّر علاقتنا بالمكان اللي عشنا فيه.',
   },
   'poetry_hub.edexcel.cluster.tp.cta': {
     en: 'Study the Time and Place cluster',
@@ -314,8 +314,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   },
   'poetry_hub.edexcel.conflict.hero_title': { en: 'Conflict Cluster', ar: 'مجموعة Conflict' },
   'poetry_hub.edexcel.conflict.hero_lead': {
-    en: 'All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms — war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
-    ar: 'كل الـ١٥ قصيدة في مختارات Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة — الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
+    en: 'All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms - war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
+    ar: 'كل الـ١٥ قصيدة في مختارات Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة - الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
   },
   'poetry_hub.edexcel.tp.hero_title': {
     en: 'Time and Place Cluster',
@@ -385,8 +385,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'مرتكز مقارنة فيكتوري',
   },
   'poetry_hub.eduqas.love_betrayal_body': {
-    en: 'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers — a strong cluster pairing for the comparison question.',
-    ar: 'Sonnet 29 (Barrett Browning) و Cousin Kate (Rossetti) كلاهما فيكتوري، كلاهما من متحدّثات نساء، وكلاهما عن حبيب غائب أو مفقود — زوج قوي في المجموعة لسؤال المقارنة.',
+    en: 'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers - a strong cluster pairing for the comparison question.',
+    ar: 'Sonnet 29 (Barrett Browning) و Cousin Kate (Rossetti) كلاهما فيكتوري، كلاهما من متحدّثات نساء، وكلاهما عن حبيب غائب أو مفقود - زوج قوي في المجموعة لسؤال المقارنة.',
   },
   'poetry_hub.eduqas.war_identity_title': {
     en: 'War & identity pair',
@@ -405,16 +405,16 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'ملاحظة: Drummer Hodge قصيدة حرب البوير (١٨٩٩)، مو الحرب العالمية الأولى.',
   },
   'poetry_hub.eduqas.copyright_only': {
-    en: 'In copyright — study notes only (short fair-dealing extracts)',
-    ar: 'حقوق محفوظة — ملاحظات مذاكرة بس (مقاطع قصيرة بحدود الاستخدام العادل)',
+    en: 'In copyright - study notes only (short fair-dealing extracts)',
+    ar: 'حقوق محفوظة - ملاحظات مذاكرة بس (مقاطع قصيرة بحدود الاستخدام العادل)',
   },
   'poetry_hub.eduqas.pd_soon': {
-    en: 'Public domain — study page coming soon',
-    ar: 'مجال عام — صفحة المذاكرة قريباً',
+    en: 'Public domain - study page coming soon',
+    ar: 'مجال عام - صفحة المذاكرة قريباً',
   },
   'poetry_hub.eduqas.in_copyright_aria': {
-    en: 'In copyright — study notes only',
-    ar: 'حقوق محفوظة — ملاحظات مذاكرة بس',
+    en: 'In copyright - study notes only',
+    ar: 'حقوق محفوظة - ملاحظات مذاكرة بس',
   },
   'poetry_hub.eduqas.theme.childhood_nature': {
     en: 'Childhood & Nature',
@@ -509,8 +509,8 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     ar: 'قارن الأساليب، مو بس المحتوى',
   },
   'poetry_hub.lr.tip_quotes_title': {
-    en: 'Learn 2–3 key quotes per poem',
-    ar: 'احفظ ٢–٣ اقتباسات أساسية لكل قصيدة',
+    en: 'Learn 2-3 key quotes per poem',
+    ar: 'احفظ ٢-٣ اقتباسات أساسية لكل قصيدة',
   },
   'poetry_hub.lr.ready_explore_title': {
     en: 'Ready to explore more poetry?',

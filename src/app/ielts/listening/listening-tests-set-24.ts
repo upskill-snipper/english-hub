@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 24) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 24) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …, LISTENING_SET_24)
@@ -7,21 +7,21 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions / 40 marks) that mirror the real IELTS Listening paper, with
 // topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a parent phoning a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a parent phoning a
 //     holiday activity camp to register two children), assessed with form / note
 //     completion + multiple choice. A surname is spelled and a phone number is
 //     dictated, and the total cost depends on a stated choice (how many children
 //     and which week are booked).
-//   • Section 2 — an everyday MONOLOGUE (here: a guided tour of a historic
-//     country house, Harewell Hall — its rooms, history, café, gardens and tour
+//   • Section 2 - an everyday MONOLOGUE (here: a guided tour of a historic
+//     country house, Harewell Hall - its rooms, history, café, gardens and tour
 //     times), assessed with sentence completion, multiple choice and a matching
 //     task (which room is used for what), with signpost language.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor planning
-//     a sociology survey project — the research question, the sample, the
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor planning
+//     a sociology survey project - the research question, the sample, the
 //     questionnaire, ethics and the deadline), assessed with multiple choice,
 //     completion and a matching task (matching each survey section to its focus).
-//   • Section 4 — an academic LECTURE / monologue (here: the migration of early
-//     humans out of Africa — the evidence, the routes and what drove the
+//   • Section 4 - an academic LECTURE / monologue (here: the migration of early
+//     humans out of Africa - the evidence, the routes and what drove the
 //     movement), assessed with note/sentence completion + multiple choice,
 //     including one True/False/Not Given item.
 //
@@ -34,7 +34,7 @@
 //   • 'tfng'     → True / False / Not Given.
 //   • 'matching' → each item is one numbered sub-question worth ONE mark; the
 //                  container `id` is always distinct from every `items[].id`.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -45,12 +45,12 @@ export const LISTENING_SET_24: ListeningTest[] = [
   {
     id: 'ls-academic-024',
     title:
-      'Practice Test 24 — Registering for a Holiday Activity Camp, A Tour of Harewell Hall, Planning a Sociology Survey & The Migration of Early Humans',
+      'Practice Test 24 - Registering for a Holiday Activity Camp, A Tour of Harewell Hall, Planning a Sociology Survey & The Migration of Early Humans',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-024-s1',
-        title: 'Section 1 — Registering children for a holiday activity camp',
+        title: 'Section 1 - Registering children for a holiday activity camp',
         // ~305 words. Transactional dialogue (Section 1 style): a parent phones a
         // holiday activity camp to register her two children. A surname is spelled
         // and a mobile number is dictated; the total cost depends on a stated
@@ -70,7 +70,7 @@ WOMAN: It's oh-seven-six-three-two, double five, eight-one-four.
 
 MAN: Lovely. And how many children would you like to book in?
 
-WOMAN: Two — my son and my daughter. They're eight and ten.
+WOMAN: Two - my son and my daughter. They're eight and ten.
 
 MAN: Right, both of them are in our main age range, so they'd be together in the Explorers group. Now, which week were you thinking of?
 
@@ -78,7 +78,7 @@ WOMAN: What are the options?
 
 MAN: We run three weeks. Week one is our adventure week, week two is all about arts and crafts, and week three is sports. They're hugely popular, so I'd book soon.
 
-WOMAN: My two love being outdoors, so let's go for the adventure week — that's week one.
+WOMAN: My two love being outdoors, so let's go for the adventure week - that's week one.
 
 MAN: Good choice. The camp runs each day from nine in the morning until half past three.
 
@@ -88,7 +88,7 @@ MAN: It's eighty pounds per child for the week, but for a second child from the 
 
 WOMAN: So that's a hundred and fifty for the two of them.
 
-MAN: Exactly. One last thing — please pack a waterproof coat each day, whatever the forecast, because a lot of the activities are outside.
+MAN: Exactly. One last thing - please pack a waterproof coat each day, whatever the forecast, because a lot of the activities are outside.
 
 WOMAN: Will do. Do they need to bring lunch?
 
@@ -101,7 +101,7 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
               'Complete the registration form. Write ONE WORD for the answer.\n\nParent surname: ____________',
             acceptableAnswers: ['Prentice', 'prentice'],
             explanation:
-              'The caller gives her name as “Helen Prentice” and spells the surname: P-R-E-N-T-I-C-E. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives her name as “Helen Prentice” and spells the surname: P-R-E-N-T-I-C-E. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-024-s1-q2',
@@ -109,7 +109,7 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
             prompt: 'Contact phone number: ____________. Write the number exactly as you hear it.',
             acceptableAnswers: ['07632 55814', '0763255814', '07632 558 14', '07632558 14'],
             explanation:
-              'She dictates the number as “oh-seven-six-three-two, double five, eight-one-four” — that is 07632 55814. “Double five” means two 5s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
+              'She dictates the number as “oh-seven-six-three-two, double five, eight-one-four” - that is 07632 55814. “Double five” means two 5s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-024-s1-q3',
@@ -117,7 +117,7 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
             prompt: 'Number of children being registered: ____________. Write A NUMBER.',
             acceptableAnswers: ['2', 'two'],
             explanation:
-              'She says, “Two — my son and my daughter.” The number of children is 2. This figure also triggers the second-child discount in a later question — Section 1 details often connect.',
+              'She says, “Two - my son and my daughter.” The number of children is 2. This figure also triggers the second-child discount in a later question - Section 1 details often connect.',
           },
           {
             id: 'ls-024-s1-q4',
@@ -139,7 +139,7 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
             ],
             correctIndex: 0,
             explanation:
-              'She says, “My two love being outdoors, so let’s go for the adventure week — that’s week one.” Option A matches; weeks two and three (arts and crafts, sports) are the distractors she rejects.',
+              'She says, “My two love being outdoors, so let’s go for the adventure week - that’s week one.” Option A matches; weeks two and three (arts and crafts, sports) are the distractors she rejects.',
           },
           {
             id: 'ls-024-s1-q6',
@@ -208,7 +208,7 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
       },
       {
         id: 'ls-academic-024-s2',
-        title: 'Section 2 — A guided tour of Harewell Hall',
+        title: 'Section 2 - A guided tour of Harewell Hall',
         // ~320 words. Informational monologue (Section 2 style): a single speaker
         // gives a guided tour of a historic country house, covering its history,
         // rooms, café, gardens and tour times. Uses sequencing/signpost language
@@ -216,13 +216,13 @@ MAN: No, a hot lunch is provided. Just let us know about any allergies when you 
         // task in which each named room is paired with its present-day use.
         transcript: `Good morning, everyone, and welcome to Harewell Hall. My name's Sophie, and I'll be your guide this morning. Before we go in, a little history. The hall was built in sixteen forty by a wealthy wool merchant, and it stayed in the same family for almost three hundred years before being given to the National Trust in nineteen thirty-two.
 
-Now, let me walk you through the rooms we'll see, because each one is used differently today. To begin, we enter through the Great Hall — that's the grand room with the high ceiling, and it now houses the ticket desk and a small exhibition on the house's history. Next, just off the hall, is the old library, which has been carefully restored and is the one room where, I'm afraid, photography is not allowed, to protect the rare books. After that we'll pass through the dining room, which the family still lays out exactly as it was for a Victorian dinner. And finally, upstairs, the long gallery — once used for exercise on rainy days — is now hung with the family's portrait collection.
+Now, let me walk you through the rooms we'll see, because each one is used differently today. To begin, we enter through the Great Hall - that's the grand room with the high ceiling, and it now houses the ticket desk and a small exhibition on the house's history. Next, just off the hall, is the old library, which has been carefully restored and is the one room where, I'm afraid, photography is not allowed, to protect the rare books. After that we'll pass through the dining room, which the family still lays out exactly as it was for a Victorian dinner. And finally, upstairs, the long gallery - once used for exercise on rainy days - is now hung with the family's portrait collection.
 
 A word about refreshments. The café is not in the main house but in the old stable block across the courtyard, and I'd recommend the homemade scones. It's open until half past four.
 
 The gardens are really the highlight for many visitors. Do leave time for the walled rose garden, which was replanted last spring and is at its best in June.
 
-Finally, tour times. Guided tours like this one leave the Great Hall every hour, on the hour. The last tour of the day is at four o'clock, and the house itself closes at five. Right — let's head inside and begin.`,
+Finally, tour times. Guided tours like this one leave the Great Hall every hour, on the hour. The last tour of the day is at four o'clock, and the house itself closes at five. Right - let's head inside and begin.`,
         questions: [
           {
             id: 'ls-024-s2-q11',
@@ -246,7 +246,7 @@ Finally, tour times. Guided tours like this one leave the Great Hall every hour,
             type: 'matching',
             variant: 'features',
             prompt:
-              'What is each room in the hall used for today? Choose your answer from the list and match it to each room (Questions 13–16).',
+              'What is each room in the hall used for today? Choose your answer from the list and match it to each room (Questions 13-16).',
             options: [
               { key: 'tickets', label: 'The ticket desk and a history exhibition' },
               { key: 'books', label: 'A restored room of rare books' },
@@ -301,7 +301,7 @@ Finally, tour times. Guided tours like this one leave the Great Hall every hour,
       },
       {
         id: 'ls-academic-024-s3',
-        title: 'Section 3 — Tutorial: planning a sociology survey project',
+        title: 'Section 3 - Tutorial: planning a sociology survey project',
         // ~315 words. Academic discussion (Section 3 style): two students (Lauren
         // and Sam) and a tutor (Dr Bashir) plan a sociology survey project,
         // covering the research question, the sample, the questionnaire structure,
@@ -310,21 +310,21 @@ Finally, tour times. Guided tours like this one leave the Great Hall every hour,
         // task that pairs each section of the questionnaire with its focus.
         transcript: `DR BASHIR: Come in, Lauren, Sam. Let's plan your sociology survey project. Have you decided on a research question?
 
-LAUREN: We have. We're looking at how students get to campus — specifically, what makes them choose cycling over driving or the bus.
+LAUREN: We have. We're looking at how students get to campus - specifically, what makes them choose cycling over driving or the bus.
 
 DR BASHIR: A nice, answerable question. Now, your sample. Who exactly are you going to survey?
 
 SAM: We were going to survey the whole university, but that's thousands of people, so we've narrowed it to first-year undergraduates only. There are about four hundred of them.
 
-DR BASHIR: Sensible — a defined group is far easier to interpret. And how big a sample are you aiming for?
+DR BASHIR: Sensible - a defined group is far easier to interpret. And how big a sample are you aiming for?
 
 LAUREN: We'd like a hundred completed responses, which should be representative enough.
 
-DR BASHIR: That's a good target. Now, the questionnaire itself — how is it structured?
+DR BASHIR: That's a good target. Now, the questionnaire itself - how is it structured?
 
-SAM: It's in three sections. The first section gathers basic background details — age, year, where they live. The second asks about their actual travel habits, like how often they cycle. And the third explores their attitudes — what would persuade them to cycle more.
+SAM: It's in three sections. The first section gathers basic background details - age, year, where they live. The second asks about their actual travel habits, like how often they cycle. And the third explores their attitudes - what would persuade them to cycle more.
 
-DR BASHIR: Good logical order. One thing I must stress is ethics. Because you're collecting personal data, every respondent must give informed consent, and you must promise them anonymity — no names attached to answers.
+DR BASHIR: Good logical order. One thing I must stress is ethics. Because you're collecting personal data, every respondent must give informed consent, and you must promise them anonymity - no names attached to answers.
 
 LAUREN: We've drafted a consent form already.
 
@@ -348,7 +348,7 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
             ],
             correctIndex: 0,
             explanation:
-              'Lauren says they are looking at “how students get to campus — specifically, what makes them choose cycling over driving or the bus.” Option A matches the research question.',
+              'Lauren says they are looking at “how students get to campus - specifically, what makes them choose cycling over driving or the bus.” Option A matches the research question.',
           },
           {
             id: 'ls-024-s3-q22',
@@ -377,7 +377,7 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
             type: 'matching',
             variant: 'features',
             prompt:
-              'The questionnaire has three sections. Match each section to what it focuses on (Questions 24–26).',
+              'The questionnaire has three sections. Match each section to what it focuses on (Questions 24-26).',
             options: [
               { key: 'background', label: 'Basic background details' },
               { key: 'habits', label: 'Actual travel habits' },
@@ -389,7 +389,7 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
               { id: 's3-m-third', text: 'The third section', answer: 'attitudes' },
             ],
             explanation:
-              'Sam says, “The first section gathers basic background details — age, year, where they live. The second asks about their actual travel habits, like how often they cycle. And the third explores their attitudes — what would persuade them to cycle more.” Each item is worth one mark (Questions 24, 25 and 26).',
+              'Sam says, “The first section gathers basic background details - age, year, where they live. The second asks about their actual travel habits, like how often they cycle. And the third explores their attitudes - what would persuade them to cycle more.” Each item is worth one mark (Questions 24, 25 and 26).',
           },
           {
             id: 'ls-024-s3-q27',
@@ -407,7 +407,7 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
               'The students must also promise respondents ____________, so that no names are attached to answers. Write ONE WORD.',
             acceptableAnswers: ['anonymity'],
             explanation:
-              'The tutor says they “must promise them anonymity — no names attached to answers.” The answer is “anonymity”.',
+              'The tutor says they “must promise them anonymity - no names attached to answers.” The answer is “anonymity”.',
           },
           {
             id: 'ls-024-s3-q29',
@@ -436,10 +436,10 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
       },
       {
         id: 'ls-academic-024-s4',
-        title: 'Section 4 — Lecture: the migration of early humans',
+        title: 'Section 4 - Lecture: the migration of early humans',
         // ~320 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the migration of early humans
-        // out of Africa — the evidence, the routes and what drove the movement.
+        // out of Africa - the evidence, the routes and what drove the movement.
         // Dense, factual and signposted ("let me begin", "next", "finally"), with
         // the note/sentence-completion + multiple-choice mix typical of Section 4,
         // including one True/False/Not Given item.
@@ -447,7 +447,7 @@ LAUREN: Will do. We'll aim to close the survey a week before that.`,
 
 Let me begin with the origin. The overwhelming consensus is that our species, Homo sapiens, first arose in Africa, and that every human alive outside Africa today descends from groups who left that continent. The main wave of this migration is generally dated to around sixty thousand years ago.
 
-Now, the evidence. Historically, the picture was built almost entirely from fossils — actual bones found in the ground. But in recent decades the most powerful tool has been genetics. By comparing the DNA of living populations, researchers can trace how groups are related and roughly when they separated. It's worth stressing that genetic and fossil evidence largely agree, which gives us real confidence in the overall story.
+Now, the evidence. Historically, the picture was built almost entirely from fossils - actual bones found in the ground. But in recent decades the most powerful tool has been genetics. By comparing the DNA of living populations, researchers can trace how groups are related and roughly when they separated. It's worth stressing that genetic and fossil evidence largely agree, which gives us real confidence in the overall story.
 
 Next, the routes. There were two principal ones. The first, often called the southern route, hugged the coastline of southern Asia, and people may have moved surprisingly fast along it, living off the rich resources of the shore. The second was a northern route, leading up into Europe and across the plains of central Asia.
 
@@ -478,13 +478,13 @@ Finally, what drove this movement? The single most important factor, most resear
               'According to the lecture, what was the historical picture of migration built from?',
             options: [
               'Genetic data from living people',
-              'Fossils — actual bones found in the ground',
+              'Fossils - actual bones found in the ground',
               'Written historical records',
               'Ancient cave paintings',
             ],
             correctIndex: 1,
             explanation:
-              'The speaker says, “Historically, the picture was built almost entirely from fossils — actual bones found in the ground.” Option B matches; genetics is described as the recent tool, not the historical one.',
+              'The speaker says, “Historically, the picture was built almost entirely from fossils - actual bones found in the ground.” Option B matches; genetics is described as the recent tool, not the historical one.',
           },
           {
             id: 'ls-024-s4-q34',

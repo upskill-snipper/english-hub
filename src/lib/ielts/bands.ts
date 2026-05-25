@@ -134,21 +134,21 @@ export function overallBand(bands: (Band | null)[]): Band | null {
   return roundToBand(result)
 }
 
-/** Display a band as "7", "6.5", or "—" when not yet assessed. */
+/** Display a band as "7", "6.5", or "-" when not yet assessed. */
 export function bandLabel(band: Band | null): string {
-  if (band === null) return '—'
+  if (band === null) return '-'
   return band % 1 === 0 ? String(band) : band.toFixed(1)
 }
 
 /** Plain-English / CEFR-ish tier for the "starter → exam-ready" framing. */
 export function bandTier(band: Band | null): string {
   if (band === null) return 'Not yet assessed'
-  if (band >= 8) return 'Very good to expert user (C1–C2)'
+  if (band >= 8) return 'Very good to expert user (C1-C2)'
   if (band >= 7) return 'Good user (C1)'
   if (band >= 6) return 'Competent user (B2)'
   if (band >= 5) return 'Modest user (B1)'
-  if (band >= 4) return 'Limited user (A2–B1)'
-  return 'Foundation (A1–A2)'
+  if (band >= 4) return 'Limited user (A2-B1)'
+  return 'Foundation (A1-A2)'
 }
 
 /** Colour helpers for band chips (Tailwind classes), matching site palette. */

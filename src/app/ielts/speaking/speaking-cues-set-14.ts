@@ -1,21 +1,21 @@
-// ─── IELTS Speaking cues · Set 14 (Academic, Parts 1–3) ────────────────────
+// ─── IELTS Speaking cues · Set 14 (Academic, Parts 1-3) ────────────────────
 // A fourteenth batch of original IELTS-preparation practice prompts for the
 // async Speaking module. Same shape and conventions as SPEAKING_CUES, with
 // fresh everyday topics so learners can keep rotating through material without
 // repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (memory, photos and the past; older and
 //     younger generations).
 //
-// Set 14 centres on two paired themes — language(s) and photographs / taking
+// Set 14 centres on two paired themes - language(s) and photographs / taking
 // photos in Part 1, the cue cards "a photograph or picture you like" and "an
 // interesting older person you know", and Part 3 discussions on memory, photos
 // and the past, plus older and younger generations.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids carry an `s14` marker so the
 // coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -23,7 +23,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_14: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp1-s14-languages',
     part: 'speaking-part-1',
@@ -49,7 +49,7 @@ export const SPEAKING_SET_14: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp2-s14-photograph',
     part: 'speaking-part-2',
@@ -81,7 +81,7 @@ export const SPEAKING_SET_14: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp3-s14-memory-past',
     part: 'speaking-part-3',

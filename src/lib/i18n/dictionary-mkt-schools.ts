@@ -1,8 +1,8 @@
 /**
- * dictionary-mkt-schools.ts — /schools institutional marketing page.
+ * dictionary-mkt-schools.ts - /schools institutional marketing page.
  * EN + Khaleeji (Gulf) Arabic.
  *
- * Covers EVERY user-visible string on src/app/schools/page.tsx — the
+ * Covers EVERY user-visible string on src/app/schools/page.tsx - the
  * primary public conversion surface for school leaders + the Qatar Expo
  * audience. Server component, looked up via the server-side `t()` helper.
  *
@@ -17,24 +17,24 @@
  *     OCR, Eduqas, Cambridge, AO, CEFR, AI, EAL, KS3, MAT, The English Hub.
  *   - Numerals: Western digits (90, 11, etc).
  *   - Khaleeji markers in use: وايد, الحين, إحنا, شوف, دوّر, ما, مو, شنو.
- *   - Khaleeji avoids: شو, بحكي, كيفك, ليش (Levantine — banned).
+ *   - Khaleeji avoids: شو, بحكي, كيفك, ليش (Levantine - banned).
  *
  * Wired into the master lookup chain centrally by dictionary.ts
- * (the orchestrator). DO NOT edit dictionary.ts here — a parallel
+ * (the orchestrator). DO NOT edit dictionary.ts here - a parallel
  * agent owns the wiring.
  */
 
 export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ───────────────────────────────────────────────────────────────────
-  // Metadata (title / description) — used by generateMetadata()
+  // Metadata (title / description) - used by generateMetadata()
   // ───────────────────────────────────────────────────────────────────
   'mkt.schools.meta.title': {
-    en: 'The English Hub for Schools — assessment, intervention & reporting',
-    ar: 'The English Hub للمدارس — تقييم وتدخّل وتقارير',
+    en: 'The English Hub for Schools - assessment, intervention & reporting',
+    ar: 'The English Hub للمدارس - تقييم وتدخّل وتقارير',
   },
   'mkt.schools.meta.description': {
     en: 'A school-ready English platform helping teachers save time, students improve faster and leaders understand where support is needed across English Language, Literature and EAL.',
-    ar: 'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب يتحسّنون أسرع، والقادة يفهمون وين يحتاج الدعم — في English Language وLiterature وEAL.',
+    ar: 'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب يتحسّنون أسرع، والقادة يفهمون وين يحتاج الدعم - في English Language وLiterature وEAL.',
   },
   'mkt.schools.meta.og_title': {
     en: 'The English Hub for Schools',
@@ -50,7 +50,7 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
 
   // ───────────────────────────────────────────────────────────────────
-  // Breadcrumb (JSON-LD names — kept English for structured-data hygiene)
+  // Breadcrumb (JSON-LD names - kept English for structured-data hygiene)
   // (BreadcrumbJsonLd values are NOT externalised; see report.)
   // ───────────────────────────────────────────────────────────────────
 
@@ -330,8 +330,8 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'شوفها وهي تشتغل',
   },
   'mkt.schools.demo.lede': {
-    en: 'Browse the school dashboard, the teacher workspace and the student experience as a guest — no sign-up.',
-    ar: 'تصفّح لوحة المدرسة، ومساحة عمل المعلّم، وتجربة الطالب كزائر — بدون تسجيل.',
+    en: 'Browse the school dashboard, the teacher workspace and the student experience as a guest - no sign-up.',
+    ar: 'تصفّح لوحة المدرسة، ومساحة عمل المعلّم، وتجربة الطالب كزائر - بدون تسجيل.',
   },
   'mkt.schools.demo.card.school.title': {
     en: 'School dashboard',

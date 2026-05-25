@@ -1,10 +1,10 @@
 ﻿/**
- * Master i18n dictionary — English + Khaleeji (Gulf) Arabic.
+ * Master i18n dictionary - English + Khaleeji (Gulf) Arabic.
  *
  * EVERY user-facing string on the site should ultimately route through
  * this dictionary. The `t()` helper (server) and `useT()` hook (client)
  * both look up by key and fall back to English when an Arabic entry
- * is missing — graceful degradation while the dictionary fills in.
+ * is missing - graceful degradation while the dictionary fills in.
  *
  * Khaleeji conventions enforced across the AR column:
  *   شنو       not   ماذا
@@ -20,20 +20,20 @@
  *   ببلاش     not   مجاناً
  *   لحظة      not   جاري التحميل
  *
- * BANNED (Levantine — do not introduce):
+ * BANNED (Levantine - do not introduce):
  *   شو, بحكي, كيفك, ليش
  *
  * Brand + technical terms stay in Latin script even within Arabic
  * text (standard Gulf convention): The English Hub, GCSE, IGCSE,
  * KS3, AO1-AO6, AQA, OCR, Edexcel, Cambridge, WJEC, GDPR, PDPPL.
  *
- * Keys are dotted-namespace strings — header.nav.students, ks3.lesson.task,
- * etc. — so new translators can add a section without reading the whole
+ * Keys are dotted-namespace strings - header.nav.students, ks3.lesson.task,
+ * etc. - so new translators can add a section without reading the whole
  * file.
  */
 
 // Toolkit-namespaced supplement (tools.*, quiz_build.*, lesson_build.*,
-// grade_predict.*, essay_check.*) — see ./dictionary-toolkit.ts for
+// grade_predict.*, essay_check.*) - see ./dictionary-toolkit.ts for
 // the full set. Consulted by lookup() as a fallback after DICTIONARY.
 import { TOOLKIT_DICTIONARY } from './dictionary-toolkit'
 import { SCHOOL_COMP_DICTIONARY } from './dictionary-school-comp'
@@ -89,7 +89,7 @@ import { IELTS_SPEAKING_DICTIONARY } from './dictionary-ielts-speaking'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from './dictionary-ielts-diagnostic'
 import { IELTS_HUBPROGRESS_DICTIONARY } from './dictionary-ielts-hubprogress'
 import { IELTS_GUIDE_DICTIONARY } from './dictionary-ielts-guide'
-// 2026-05-25: IELTS bilingual shards (Wave 2 — admissions, partners, centre).
+// 2026-05-25: IELTS bilingual shards (Wave 2 - admissions, partners, centre).
 import { IELTS_ADMISSIONS_DICTIONARY } from './dictionary-ielts-admissions'
 import { IELTS_PARTNERS_DICTIONARY } from './dictionary-ielts-partners'
 import { IELTS_CENTRE_DICTIONARY } from './dictionary-ielts-centre'
@@ -131,16 +131,16 @@ export const DICTIONARY: Dictionary = {
   'lang.bi': { en: 'Bilingual mode', ar: 'إنجليزي وعربي' },
   'lang.ar': { en: 'Arabic mode', ar: 'عربي بس' },
   'lang.en.tooltip': {
-    en: 'English mode — content in English',
-    ar: 'الوضع الإنجليزي — المحتوى بالإنجليزي بس',
+    en: 'English mode - content in English',
+    ar: 'الوضع الإنجليزي - المحتوى بالإنجليزي بس',
   },
   'lang.bi.tooltip': {
-    en: 'Bilingual mode — English + Arabic together',
-    ar: 'الوضع ثنائي اللغة — إنجليزي وعربي مع بعض',
+    en: 'Bilingual mode - English + Arabic together',
+    ar: 'الوضع ثنائي اللغة - إنجليزي وعربي مع بعض',
   },
   'lang.ar.tooltip': {
-    en: 'Arabic mode — content in Arabic (Gulf Khaleeji)',
-    ar: 'الوضع العربي — المحتوى بالعربي (خليجي)',
+    en: 'Arabic mode - content in Arabic (Gulf Khaleeji)',
+    ar: 'الوضع العربي - المحتوى بالعربي (خليجي)',
   },
   'nav.main': { en: 'Main navigation', ar: 'القائمة الرئيسية' },
   'nav.mobile': { en: 'Mobile navigation', ar: 'قائمة الموبايل' },
@@ -221,12 +221,12 @@ export const DICTIONARY: Dictionary = {
   'ks3.year_overview': { en: 'Year overview', ar: 'نظرة عامة على السنة' },
   'ks3.pages': { en: 'Pages', ar: 'الصفحات' },
   'ks3.ai_marking_panel.title': {
-    en: 'AI marking — try this with the English Hub feedback engine',
-    ar: 'تصحيح بالذكاء الاصطناعي — جرّب محرّك التغذية الراجعة من The English Hub',
+    en: 'AI marking - try this with the English Hub feedback engine',
+    ar: 'تصحيح بالذكاء الاصطناعي - جرّب محرّك التغذية الراجعة من The English Hub',
   },
   'ks3.ai_marking_panel.body': {
-    en: 'Students can submit their independent paragraph to the AI feedback engine for AO-aligned commentary. Their teacher sees the same feedback alongside their own marking. The task is auto-loaded into the practice surface — students just write and submit.',
-    ar: 'يقدر الطلاب يرسلون فقرتهم المستقلة لمحرّك التغذية الراجعة بالذكاء الاصطناعي عشان يحصلون على ملاحظات على أساس معايير AO. والمعلم بيشوف نفس الملاحظات مع تصحيحه. المهمة بتنحمل تلقائياً في صفحة التدريب — الطالب بس يكتب ويرسل.',
+    en: 'Students can submit their independent paragraph to the AI feedback engine for AO-aligned commentary. Their teacher sees the same feedback alongside their own marking. The task is auto-loaded into the practice surface - students just write and submit.',
+    ar: 'يقدر الطلاب يرسلون فقرتهم المستقلة لمحرّك التغذية الراجعة بالذكاء الاصطناعي عشان يحصلون على ملاحظات على أساس معايير AO. والمعلم بيشوف نفس الملاحظات مع تصحيحه. المهمة بتنحمل تلقائياً في صفحة التدريب - الطالب بس يكتب ويرسل.',
   },
   'ks3.ai_marking_panel.cta': {
     en: 'Open the marking surface with this task pre-loaded →',
@@ -286,8 +286,8 @@ export const DICTIONARY: Dictionary = {
   'home.cta.try_free': { en: 'Try it free', ar: 'جرّبه ببلاش' },
   'home.cta.no_card': { en: 'No card needed', ar: 'من غير بطاقة' },
   'home.trust_line': {
-    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers',
-    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي',
+    en: 'AI-supported English revision for GCSE and IGCSE - built by English teachers',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE - من إعداد معلمي إنجليزي',
   },
   'home.boards_supported': {
     en: 'Built for AQA, Edexcel, OCR, Cambridge, WJEC',
@@ -313,20 +313,20 @@ export const DICTIONARY: Dictionary = {
   },
   'home.why_us': { en: 'Why The English Hub', ar: 'ليش The English Hub' },
   'home.how_it_works': { en: 'How it works', ar: 'شلون يشتغل' },
-  'home.step1': { en: 'Step 1 — Pick your exam board', ar: 'الخطوة ١ — اختر بورد الامتحان مالك' },
+  'home.step1': { en: 'Step 1 - Pick your exam board', ar: 'الخطوة ١ - اختر بورد الامتحان مالك' },
   'home.step2': {
-    en: 'Step 2 — Practice with real past-paper questions',
-    ar: 'الخطوة ٢ — تمرّن على أسئلة من امتحانات سابقة حقيقية',
+    en: 'Step 2 - Practice with real past-paper questions',
+    ar: 'الخطوة ٢ - تمرّن على أسئلة من امتحانات سابقة حقيقية',
   },
   'home.step3': {
-    en: 'Step 3 — Get AI marking against the actual mark scheme',
-    ar: 'الخطوة ٣ — احصل على تصحيح بالذكاء الاصطناعي حسب نموذج التصحيح الرسمي',
+    en: 'Step 3 - Get AI marking against the actual mark scheme',
+    ar: 'الخطوة ٣ - احصل على تصحيح بالذكاء الاصطناعي حسب نموذج التصحيح الرسمي',
   },
   'home.faq.title': { en: 'Frequently asked questions', ar: 'الأسئلة اللي يسألونها وايد' },
   'home.faq.q1': { en: 'Is the AI marking accurate?', ar: 'تصحيح الذكاء الاصطناعي دقيق؟' },
   'home.faq.a1': {
-    en: 'Yes — trained on AQA, Edexcel, OCR mark schemes.',
-    ar: 'إي — مدرَّب على نماذج التصحيح مال AQA و Edexcel و OCR.',
+    en: 'Yes - trained on AQA, Edexcel, OCR mark schemes.',
+    ar: 'إي - مدرَّب على نماذج التصحيح مال AQA و Edexcel و OCR.',
   },
   'home.faq.q2': { en: 'Can my child use this safely?', ar: 'عيالي يقدرون يستخدمونه بأمان؟' },
   'home.faq.a2': {
@@ -335,8 +335,8 @@ export const DICTIONARY: Dictionary = {
   },
   'home.faq.q3': { en: 'Do I need to be in the UK?', ar: 'لازم أكون في بريطانيا؟' },
   'home.faq.a3': {
-    en: 'No — students in the Gulf use The English Hub for British exams every day.',
-    ar: 'لا — طلاب وايد بالخليج يستخدمون The English Hub لامتحانات بريطانيا كل يوم.',
+    en: 'No - students in the Gulf use The English Hub for British exams every day.',
+    ar: 'لا - طلاب وايد بالخليج يستخدمون The English Hub لامتحانات بريطانيا كل يوم.',
   },
   'home.trusted_by_count': {
     en: 'A new GCSE and IGCSE revision platform built by English teachers',
@@ -502,8 +502,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ثغرات صريحة + خارطة طريق للمعالجة',
   },
   'legal.children_data': {
-    en: "Children's data — special call-out",
-    ar: 'بيانات الأطفال — تنبيه خاص',
+    en: "Children's data - special call-out",
+    ar: 'بيانات الأطفال - تنبيه خاص',
   },
   'legal.ai_disclosure': { en: 'AI use disclosure', ar: 'الإفصاح عن استخدام الذكاء الاصطناعي' },
   'legal.contact_dsr': {
@@ -512,8 +512,8 @@ export const DICTIONARY: Dictionary = {
   },
   'legal.audit_findings': { en: 'Internal audit findings', ar: 'نتائج التدقيق الداخلي' },
   'legal.data_flow': {
-    en: 'Actual data flow — by activity and jurisdiction',
-    ar: 'التدفق الفعلي للبيانات — حسب النشاط والاختصاص القضائي',
+    en: 'Actual data flow - by activity and jurisdiction',
+    ar: 'التدفق الفعلي للبيانات - حسب النشاط والاختصاص القضائي',
   },
   'legal.cross_border': {
     en: 'Cross-border transfer mechanisms',
@@ -641,12 +641,12 @@ export const DICTIONARY: Dictionary = {
   'footer.link.faqs': { en: 'FAQs', ar: 'الأسئلة الشائعة' },
   'footer.board_badge.studying': { en: 'Studying', ar: 'تدرس' },
   'footer.brand_tagline': {
-    en: 'GCSE & IGCSE English revision, courses, and exam prep — built for students, teachers, and schools.',
-    ar: 'مراجعة وكورسات وتحضير امتحانات إنجليزي GCSE و IGCSE — مصمَّمة للطلاب والمعلمين والمدارس.',
+    en: 'GCSE & IGCSE English revision, courses, and exam prep - built for students, teachers, and schools.',
+    ar: 'مراجعة وكورسات وتحضير امتحانات إنجليزي GCSE و IGCSE - مصمَّمة للطلاب والمعلمين والمدارس.',
   },
   'footer.edtech_impact_note': {
-    en: 'Reviewed on EdTech Impact (4.x ★ — listing live Q3 2026)',
-    ar: 'مراجَع على EdTech Impact (٤.x ★ — القائمة بتنزل Q3 ٢٠٢٦)',
+    en: 'Reviewed on EdTech Impact (4.x ★ - listing live Q3 2026)',
+    ar: 'مراجَع على EdTech Impact (٤.x ★ - القائمة بتنزل Q3 ٢٠٢٦)',
   },
   'footer.manage_cookies': { en: 'Manage Cookies', ar: 'إدارة الكوكيز' },
   'footer.copyright_suffix': {
@@ -667,29 +667,29 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Homepage hero / marketing additions ─────────────────────────
   'home.hero.badge': {
-    en: 'First Month Free — No Card Required',
-    ar: 'أول شهر ببلاش — من غير بطاقة',
+    en: 'First Month Free - No Card Required',
+    ar: 'أول شهر ببلاش - من غير بطاقة',
   },
   'home.hero.title_line1': { en: 'Master English.', ar: 'أتقن الإنجليزي.' },
   'home.hero.title_line2': { en: 'Ace Your Exams.', ar: 'وانجح في امتحاناتك.' },
   'home.hero.subtitle': {
-    en: 'The all-in-one GCSE English platform. Structured courses, AI essay feedback, mock exams, and revision tools — all mapped to your exam board. AQA, Edexcel, OCR, WJEC, IGCSE & KS3.',
-    ar: 'منصة GCSE للإنجليزي شاملة. كورسات مرتّبة وملاحظات ذكاء اصطناعي على مقالاتك وامتحانات تجريبية وأدوات مراجعة — كلها على أساس بورد الامتحان مالك. AQA و Edexcel و OCR و WJEC و IGCSE و KS3.',
+    en: 'The all-in-one GCSE English platform. Structured courses, AI essay feedback, mock exams, and revision tools - all mapped to your exam board. AQA, Edexcel, OCR, WJEC, IGCSE & KS3.',
+    ar: 'منصة GCSE للإنجليزي شاملة. كورسات مرتّبة وملاحظات ذكاء اصطناعي على مقالاتك وامتحانات تجريبية وأدوات مراجعة - كلها على أساس بورد الامتحان مالك. AQA و Edexcel و OCR و WJEC و IGCSE و KS3.',
   },
   'home.hero.trust.teachers': {
     en: 'Written by expert teachers',
     ar: 'مكتوب على إيد معلمين خبراء',
   },
-  'home.hero.trust.grading': { en: 'GCSE 1–9 grading', ar: 'تقييم GCSE من ١ إلى ٩' },
+  'home.hero.trust.grading': { en: 'GCSE 1-9 grading', ar: 'تقييم GCSE من ١ إلى ٩' },
   'home.hero.cta_start_free': {
-    en: 'Start Free — No Card Needed',
-    ar: 'ابدأ ببلاش — من غير بطاقة',
+    en: 'Start Free - No Card Needed',
+    ar: 'ابدأ ببلاش - من غير بطاقة',
   },
   'home.hero.cta_browse': { en: 'Browse Courses', ar: 'تصفّح الكورسات' },
   'home.hero.cta_demo': { en: 'Try Interactive Demo', ar: 'جرّب الديمو التفاعلي' },
   'home.social_proof.heading': {
-    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers',
-    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي',
+    en: 'AI-supported English revision for GCSE and IGCSE - built by English teachers',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE - من إعداد معلمي إنجليزي',
   },
   'home.stat.lessons': { en: 'Structured Lessons', ar: 'دروس مرتّبة' },
   'home.stat.mocks': { en: 'Mock Papers', ar: 'أوراق تجريبية' },
@@ -699,20 +699,20 @@ export const DICTIONARY: Dictionary = {
   'home.stat.grading': { en: 'Grade Tracking', ar: 'متابعة الدرجات' },
   'home.tip.label': { en: 'Top Tip:', ar: 'نصيحة مهمة:' },
   'home.tip.plan': {
-    en: 'Always plan before you write — even 3 minutes of planning can boost your grade by a full band.',
-    ar: 'دايماً خطّط قبل ما تكتب — حتى ٣ دقايق تخطيط يقدرون يرفعون درجتك بمستوى كامل.',
+    en: 'Always plan before you write - even 3 minutes of planning can boost your grade by a full band.',
+    ar: 'دايماً خطّط قبل ما تكتب - حتى ٣ دقايق تخطيط يقدرون يرفعون درجتك بمستوى كامل.',
   },
   'home.tip.vocab': {
-    en: 'Top marks reward precise vocabulary — swap "good" for "compelling", "bad" for "detrimental".',
-    ar: 'أعلى الدرجات تنعطى للمفردات الدقيقة — بدّل "good" بـ "compelling"، و "bad" بـ "detrimental".',
+    en: 'Top marks reward precise vocabulary - swap "good" for "compelling", "bad" for "detrimental".',
+    ar: 'أعلى الدرجات تنعطى للمفردات الدقيقة - بدّل "good" بـ "compelling"، و "bad" بـ "detrimental".',
   },
   'home.tip.reread': {
     en: 'Re-read the question after every paragraph to make sure you’re still answering it.',
     ar: 'اقرا السؤال مرة ثانية بعد كل فقرة عشان تتأكد إنك لازلت تجاوب عليه.',
   },
   'home.tip.context': {
-    en: 'Embed context naturally — don’t bolt it on as a separate paragraph. Weave it into your analysis.',
-    ar: 'دمج السياق طبيعي — لا تحطه كفقرة منفصلة. ادمجه داخل تحليلك.',
+    en: 'Embed context naturally - don’t bolt it on as a separate paragraph. Weave it into your analysis.',
+    ar: 'دمج السياق طبيعي - لا تحطه كفقرة منفصلة. ادمجه داخل تحليلك.',
   },
   'home.tip.quotes': {
     en: 'Use short, punchy quotes and analyse individual word choices for top marks in any exam board.',
@@ -738,8 +738,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'من الاتجاهات للدفعة، إلى الطالب الواحد.',
   },
   'home.cin.schools.desc': {
-    en: 'Department analytics that drill from year-level trends to a flagged student in four clicks — with every essay, mock and AO score attached, plus the intervention that closed the gap.',
-    ar: 'تحليلات قسم تنزل من اتجاهات السنة لطالب محدَّد بأربع نقرات — مع كل مقال وامتحان تجريبي ودرجة AO، والتدخّل اللي سكّر الفجوة.',
+    en: 'Department analytics that drill from year-level trends to a flagged student in four clicks - with every essay, mock and AO score attached, plus the intervention that closed the gap.',
+    ar: 'تحليلات قسم تنزل من اتجاهات السنة لطالب محدَّد بأربع نقرات - مع كل مقال وامتحان تجريبي ودرجة AO، والتدخّل اللي سكّر الفجوة.',
   },
   'home.cin.schools.cta_call': { en: 'Book a call', ar: 'احجز مكالمة' },
   'home.cin.schools.cta_demo': { en: 'See the demo', ar: 'شوف الديمو' },
@@ -749,8 +749,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مصحّح ذكاء اصطناعي · ٣٠٠ مورد',
   },
   'home.cin.teachers.kicker': {
-    en: 'Plan · teach · mark — in one hour, not ten',
-    ar: 'خطّط · علِّم · صحِّح — في ساعة، مو عشرة',
+    en: 'Plan · teach · mark - in one hour, not ten',
+    ar: 'خطّط · علِّم · صحِّح - في ساعة، مو عشرة',
   },
   'home.cin.teachers.title': {
     en: 'An AI marker that reads like you do.',
@@ -776,10 +776,10 @@ export const DICTIONARY: Dictionary = {
     ar: 'كل اللي تحتاجه عشان تطلّع الدرجة اللي تبغاها.',
   },
   'home.cin.students.desc': {
-    en: 'Structured courses you can actually follow. AI feedback that reads like a teacher’s. Flashcards, mocks and grade-predicting games — all mapped to your exam board.',
-    ar: 'كورسات مرتّبة تقدر فعلاً تتابعها. ملاحظات ذكاء اصطناعي تقرا مثل ملاحظات المعلم. بطاقات مراجعة وامتحانات تجريبية وألعاب تتوقّع درجتك — كلها على أساس بورد الامتحان مالك.',
+    en: 'Structured courses you can actually follow. AI feedback that reads like a teacher’s. Flashcards, mocks and grade-predicting games - all mapped to your exam board.',
+    ar: 'كورسات مرتّبة تقدر فعلاً تتابعها. ملاحظات ذكاء اصطناعي تقرا مثل ملاحظات المعلم. بطاقات مراجعة وامتحانات تجريبية وألعاب تتوقّع درجتك - كلها على أساس بورد الامتحان مالك.',
   },
-  'home.cin.students.cta_start': { en: 'Start free — no card', ar: 'ابدأ ببلاش — من غير بطاقة' },
+  'home.cin.students.cta_start': { en: 'Start free - no card', ar: 'ابدأ ببلاش - من غير بطاقة' },
   'home.cin.students.cta_browse': { en: 'Browse courses', ar: 'تصفّح الكورسات' },
   'home.cin.parents.label': { en: 'Parents', ar: 'أهل' },
   'home.cin.parents.subtitle': { en: 'Progress · plain English', ar: 'تقدّم · بلغة واضحة' },
@@ -792,8 +792,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ثقتهم في نفسهم، على لوحة تقدر تقراها بسهولة.',
   },
   'home.cin.parents.desc': {
-    en: 'Weekly progress summaries. Streaks, focus areas and predicted grades in plain English. 7-day free trial on any paid plan — card required, cancel before day 7.',
-    ar: 'ملخصات أسبوعية للتقدّم. سلاسل الأيام ومجالات التركيز والدرجات المتوقّعة بلغة واضحة. تجربة ٧ أيام ببلاش على أي باقة مدفوعة — البطاقة مطلوبة، ألغِ قبل اليوم السابع.',
+    en: 'Weekly progress summaries. Streaks, focus areas and predicted grades in plain English. 7-day free trial on any paid plan - card required, cancel before day 7.',
+    ar: 'ملخصات أسبوعية للتقدّم. سلاسل الأيام ومجالات التركيز والدرجات المتوقّعة بلغة واضحة. تجربة ٧ أيام ببلاش على أي باقة مدفوعة - البطاقة مطلوبة، ألغِ قبل اليوم السابع.',
   },
   'home.cin.parents.cta_trial': { en: 'Start 7-day trial', ar: 'ابدأ تجربة ٧ أيام' },
   'home.cin.parents.cta_guide': { en: 'Read the parent guide', ar: 'اقرا دليل الأهل' },
@@ -808,8 +808,8 @@ export const DICTIONARY: Dictionary = {
   },
   'home.hiw.step2.title': { en: 'Follow structured courses', ar: 'اتبع كورسات مرتّبة' },
   'home.hiw.step2.desc': {
-    en: 'Work through expert-written lessons in a logical sequence — no guessing what to study next.',
-    ar: 'تابع دروس مكتوبة على إيد خبراء بترتيب منطقي — من غير ما تخمّن شنو الدرس الجاي.',
+    en: 'Work through expert-written lessons in a logical sequence - no guessing what to study next.',
+    ar: 'تابع دروس مكتوبة على إيد خبراء بترتيب منطقي - من غير ما تخمّن شنو الدرس الجاي.',
   },
   'home.hiw.step3.title': {
     en: 'Practice with real exam questions',
@@ -842,8 +842,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'في تجربة ببلاش؟ ولازم بطاقة؟',
   },
   'home.faq_full.a_trial': {
-    en: 'Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 from your account settings and you won’t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) so you can demo the product before putting a card down.',
-    ar: 'شيئين. كل باقة مدفوعة تبدأ بتجربة ٧ أيام ببلاش — وهذي تحتاج تسجيل كامل ببطاقة شغّالة. ألغِ قبل اليوم السابع من إعدادات حسابك وما بنخصم شي. ومنفصل عن ذلك، كل حساب مسجَّل ياخذ ٣ استخدامات ببلاش لمعظم الميزات المميزة (تصحيح بالذكاء الاصطناعي، امتحانات تجريبية، خطط دروس، إلخ) عشان تجرّب المنتج قبل ما تدخل بطاقة.',
+    en: 'Two things. Every paid plan starts with a 7-day free trial - that requires full sign-up with a valid card. Cancel before day 7 from your account settings and you won’t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) so you can demo the product before putting a card down.',
+    ar: 'شيئين. كل باقة مدفوعة تبدأ بتجربة ٧ أيام ببلاش - وهذي تحتاج تسجيل كامل ببطاقة شغّالة. ألغِ قبل اليوم السابع من إعدادات حسابك وما بنخصم شي. ومنفصل عن ذلك، كل حساب مسجَّل ياخذ ٣ استخدامات ببلاش لمعظم الميزات المميزة (تصحيح بالذكاء الاصطناعي، امتحانات تجريبية، خطط دروس، إلخ) عشان تجرّب المنتج قبل ما تدخل بطاقة.',
   },
   'home.faq_full.q_boards': {
     en: 'What exam boards do you cover?',
@@ -858,8 +858,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'شلون تشتغل ملاحظات الذكاء الاصطناعي على المقالات؟',
   },
   'home.faq_full.a_ai_feedback': {
-    en: 'Submit any essay and receive instant, detailed feedback scored against real GCSE mark schemes. You get an estimated grade band, assessment objective scores, specific strengths with direct quotes, and actionable suggestions to improve — like having a tutor available 24/7.',
-    ar: 'سلّم أي مقال واحصل على ملاحظات مفصّلة فورية مقيَّمة على أساس نماذج تصحيح GCSE الحقيقية. تاخذ تقدير للدرجة ودرجات الأهداف التقييمية ونقاط القوة باقتباسات مباشرة، واقتراحات عملية للتحسين — مثل ما عندك مدرّس خاص متوفر ٢٤/٧.',
+    en: 'Submit any essay and receive instant, detailed feedback scored against real GCSE mark schemes. You get an estimated grade band, assessment objective scores, specific strengths with direct quotes, and actionable suggestions to improve - like having a tutor available 24/7.',
+    ar: 'سلّم أي مقال واحصل على ملاحظات مفصّلة فورية مقيَّمة على أساس نماذج تصحيح GCSE الحقيقية. تاخذ تقدير للدرجة ودرجات الأهداف التقييمية ونقاط القوة باقتباسات مباشرة، واقتراحات عملية للتحسين - مثل ما عندك مدرّس خاص متوفر ٢٤/٧.',
   },
   'home.faq_full.q_youtube': {
     en: 'How is this different from YouTube?',
@@ -871,8 +871,8 @@ export const DICTIONARY: Dictionary = {
   },
   'home.faq_full.q_cancel': { en: 'Can I cancel my subscription?', ar: 'أقدر ألغي اشتراكي؟' },
   'home.faq_full.a_cancel': {
-    en: "Yes — cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
-    ar: 'إي — ألغِ أي وقت من إعدادات حسابك. ما في عقود ولا رسوم مخفية. بتظل عندك الخدمة لين نهاية فترة الفوترة.',
+    en: "Yes - cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
+    ar: 'إي - ألغِ أي وقت من إعدادات حسابك. ما في عقود ولا رسوم مخفية. بتظل عندك الخدمة لين نهاية فترة الفوترة.',
   },
   'home.faq_full.q_teachers': {
     en: 'Is there a version for teachers and schools?',
@@ -892,13 +892,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'شنو الدرجات اللي تغطّونها؟',
   },
   'home.faq_full.a_grades': {
-    en: 'All content uses the GCSE 1–9 grading system. Every student gets a Working At Grade, Predicted Grade, and Target Grade so you always know where you stand and what to work on next. For KS3 students, we adapt the tracking to match your year group.',
+    en: 'All content uses the GCSE 1-9 grading system. Every student gets a Working At Grade, Predicted Grade, and Target Grade so you always know where you stand and what to work on next. For KS3 students, we adapt the tracking to match your year group.',
     ar: 'كل المحتوى يستخدم نظام تقييم GCSE من ١ إلى ٩. كل طالب يحصل على درجة الأداء الحالي ودرجة متوقّعة ودرجة هدف، عشان تعرف الحين وين أنت وشنو لازم تشتغل عليه. لطلاب KS3، نعدّل المتابعة على أساس سنتك.',
   },
   'home.final_cta.heading': { en: 'Start your anthology.', ar: 'ابدأ أنطولوجيتك.' },
   'home.final_cta.body': {
-    en: 'Join thousands of students raising their grade with The English Hub. Demo free without a card — then a 7-day trial when you’re ready.',
-    ar: 'انضم لآلاف الطلاب اللي يرفعون درجاتهم مع The English Hub. جرّب ببلاش من غير بطاقة — وبعدين تجربة ٧ أيام لمّا تكون جاهز.',
+    en: 'Join thousands of students raising their grade with The English Hub. Demo free without a card - then a 7-day trial when you’re ready.',
+    ar: 'انضم لآلاف الطلاب اللي يرفعون درجاتهم مع The English Hub. جرّب ببلاش من غير بطاقة - وبعدين تجربة ٧ أيام لمّا تكون جاهز.',
   },
   'home.final_cta.button': { en: 'Start for free', ar: 'ابدأ ببلاش' },
   'home.cta_banner.heading': { en: 'Ready to Raise Your Grade?', ar: 'جاهز ترفع درجتك؟' },
@@ -953,8 +953,8 @@ export const DICTIONARY: Dictionary = {
   },
   'audience.teacher.headline': { en: 'Plan less. Teach more.', ar: 'خطّط أقل. درّس أكثر.' },
   'audience.teacher.feat.lesson_builder': {
-    en: 'AI lesson builder — board-aligned in seconds',
-    ar: 'منشئ الدروس بالذكاء الاصطناعي — متوافق مع البورد في ثواني',
+    en: 'AI lesson builder - board-aligned in seconds',
+    ar: 'منشئ الدروس بالذكاء الاصطناعي - متوافق مع البورد في ثواني',
   },
   'audience.teacher.feat.analytics': {
     en: 'Student analytics dashboard',
@@ -992,8 +992,8 @@ export const DICTIONARY: Dictionary = {
   'audience.school.feat.admin_portal': { en: 'Teacher admin portal', ar: 'بوابة إدارة المعلمين' },
   'audience.school.feat.cpd': { en: 'CPD resources included', ar: 'موارد التطوير المهني مشمولة' },
   'audience.school.feat.founding_locked': {
-    en: 'Founding programme — locked rates for 2-3 yrs',
-    ar: 'برنامج المؤسسين — أسعار مثبّتة لمدة ٢-٣ سنوات',
+    en: 'Founding programme - locked rates for 2-3 yrs',
+    ar: 'برنامج المؤسسين - أسعار مثبّتة لمدة ٢-٣ سنوات',
   },
   'audience.student.benefit.ai_feedback.title': {
     en: 'AI-Powered Essay Feedback',
@@ -1008,8 +1008,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مواد مراجعة حسب بورد امتحانك',
   },
   'audience.student.benefit.board_specific.desc': {
-    en: 'Tailored content for AQA, Edexcel, OCR, and WJEC — study only what your exam board requires.',
-    ar: 'محتوى مفصّل لـ AQA و Edexcel و OCR و WJEC — ادرس بس اللي يطلبه بورد امتحانك.',
+    en: 'Tailored content for AQA, Edexcel, OCR, and WJEC - study only what your exam board requires.',
+    ar: 'محتوى مفصّل لـ AQA و Edexcel و OCR و WJEC - ادرس بس اللي يطلبه بورد امتحانك.',
   },
   'audience.student.benefit.practice.title': {
     en: 'Practice Questions with Model Answers',
@@ -1045,8 +1045,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'لوحة تحليلات الطلاب',
   },
   'audience.teacher.benefit.analytics.desc': {
-    en: 'See how every student is progressing at a glance — completion rates, grades, strengths, and gaps.',
-    ar: 'شوف تقدّم كل طالب بنظرة واحدة — نسب الإنجاز والدرجات ونقاط القوة والثغرات.',
+    en: 'See how every student is progressing at a glance - completion rates, grades, strengths, and gaps.',
+    ar: 'شوف تقدّم كل طالب بنظرة واحدة - نسب الإنجاز والدرجات ونقاط القوة والثغرات.',
   },
   'audience.teacher.benefit.ai_marking.title': {
     en: 'AI Essay Marking for Whole Classes',
@@ -1069,8 +1069,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'إدارة الصفوف وتحديد الواجبات',
   },
   'audience.teacher.benefit.classes.desc': {
-    en: 'Create classes, set assignments, track submissions, and manage homework — all in one place.',
-    ar: 'سوِّ صفوف وحدّد واجبات وتابع التسليم وأدِر الواجب البيتي — كله في مكان واحد.',
+    en: 'Create classes, set assignments, track submissions, and manage homework - all in one place.',
+    ar: 'سوِّ صفوف وحدّد واجبات وتابع التسليم وأدِر الواجب البيتي - كله في مكان واحد.',
   },
   'audience.teacher.benefit.printables.title': {
     en: 'Printable Worksheets & Resources',
@@ -1089,17 +1089,17 @@ export const DICTIONARY: Dictionary = {
     ar: 'منصة English لكامل القسم للمدارس البريطانية',
   },
   'audience.schools.hero.sub': {
-    en: "Bulk onboarding, teacher dashboards, AI essay marking, and Head's Reports — see what every department gets when they join.",
-    ar: 'تسجيل جماعي، لوحات معلمين، تصحيح المقال بالذكاء الاصطناعي، وتقارير لرئيس القسم — شوف شنو يحصل عليه كل قسم لما ينضم.',
+    en: "Bulk onboarding, teacher dashboards, AI essay marking, and Head's Reports - see what every department gets when they join.",
+    ar: 'تسجيل جماعي، لوحات معلمين، تصحيح المقال بالذكاء الاصطناعي، وتقارير لرئيس القسم - شوف شنو يحصل عليه كل قسم لما ينضم.',
   },
   'audience.schools.cta.see_pricing': { en: 'See pricing', ar: 'شوف الأسعار' },
   'audience.schools.banner.badge': {
-    en: 'FIRST 10 SCHOOLS — FOUNDING PARTNER PRICING',
-    ar: 'أول ١٠ مدارس — أسعار الشريك المؤسس',
+    en: 'FIRST 10 SCHOOLS - FOUNDING PARTNER PRICING',
+    ar: 'أول ١٠ مدارس - أسعار الشريك المؤسس',
   },
   'audience.schools.banner.desc': {
-    en: 'We are partnering with the first 10 schools to sign as founding partners to shape the future of English teaching. This is not a free trial — it is a strategic partnership. Founding schools receive heavily discounted pricing, early features, direct product input, and locked preferential rates for 2-3 years. Schools joining after the founding cohort are welcome at our standard rates.',
-    ar: 'إحنا نتشارك مع أول ١٠ مدارس تنضم كشركاء مؤسسين عشان نشكّل مستقبل تدريس English. هذي مو تجربة مجانية — هذي شراكة استراتيجية. المدارس المؤسِّسة تحصل على أسعار مخفّضة وايد وميزات مبكرة ورأي مباشر في المنتج وأسعار تفضيلية مثبّتة لمدة ٢-٣ سنوات. المدارس اللي تنضم بعد فوج المؤسسين حياها الله بالأسعار القياسية.',
+    en: 'We are partnering with the first 10 schools to sign as founding partners to shape the future of English teaching. This is not a free trial - it is a strategic partnership. Founding schools receive heavily discounted pricing, early features, direct product input, and locked preferential rates for 2-3 years. Schools joining after the founding cohort are welcome at our standard rates.',
+    ar: 'إحنا نتشارك مع أول ١٠ مدارس تنضم كشركاء مؤسسين عشان نشكّل مستقبل تدريس English. هذي مو تجربة مجانية - هذي شراكة استراتيجية. المدارس المؤسِّسة تحصل على أسعار مخفّضة وايد وميزات مبكرة ورأي مباشر في المنتج وأسعار تفضيلية مثبّتة لمدة ٢-٣ سنوات. المدارس اللي تنضم بعد فوج المؤسسين حياها الله بالأسعار القياسية.',
   },
   'audience.schools.what_receive': {
     en: 'What founding schools receive',
@@ -1112,7 +1112,7 @@ export const DICTIONARY: Dictionary = {
   },
   'audience.schools.demo.title': {
     en: 'Explore the Full Platform -- No Signup Required',
-    ar: 'استكشف المنصة كاملة — بلا تسجيل',
+    ar: 'استكشف المنصة كاملة - بلا تسجيل',
   },
   'audience.schools.demo.sub': {
     en: 'Navigate a complete school dashboard with sample data. Click through students, classes, analytics, and reports. See exactly what your school gets.',
@@ -1143,11 +1143,11 @@ export const DICTIONARY: Dictionary = {
   },
   'audience.teachers.hero.sub': {
     en: 'Premium academic infrastructure, not a cheap app. AI-powered lesson building, instant essay marking, and real-time progress analytics -- built specifically for English teachers.',
-    ar: 'بنية تحتية أكاديمية متقدّمة، مو تطبيق رخيص. بناء دروس بالذكاء الاصطناعي، تصحيح فوري للمقال، وتحليلات تقدّم لحظية — مصمَّم خصيصاً لمعلمي English.',
+    ar: 'بنية تحتية أكاديمية متقدّمة، مو تطبيق رخيص. بناء دروس بالذكاء الاصطناعي، تصحيح فوري للمقال، وتحليلات تقدّم لحظية - مصمَّم خصيصاً لمعلمي English.',
   },
   'audience.teachers.hero.demo_note': {
     en: 'Every feature available to try -- 3 free uses per tool. No credit card required.',
-    ar: 'كل ميزة متاحة للتجربة — ٣ استخدامات ببلاش لكل أداة. ما تحتاج بطاقة ائتمان.',
+    ar: 'كل ميزة متاحة للتجربة - ٣ استخدامات ببلاش لكل أداة. ما تحتاج بطاقة ائتمان.',
   },
   'audience.teachers.cta.start_free': { en: 'Start Free', ar: 'ابدأ ببلاش' },
   'audience.teachers.cta.try_demo': { en: 'Try the Demo', ar: 'جرّب الديمو' },
@@ -1158,8 +1158,8 @@ export const DICTIONARY: Dictionary = {
   },
   'audience.parents.hero.title_emphasis': { en: 'IGCSE English', ar: 'IGCSE English' },
   'audience.parents.hero.sub': {
-    en: "Get real-time insights into your child's revision progress, exam readiness, and areas for improvement. No more guessing — see exactly what they're learning and where they need help.",
-    ar: 'احصل على رؤى لحظية لتقدّم طفلك في المراجعة وجاهزيته للامتحان والمجالات اللي يحتاج يحسّنها. بلا تخمين — شوف بالضبط شنو يتعلّم ووين يحتاج مساعدة.',
+    en: "Get real-time insights into your child's revision progress, exam readiness, and areas for improvement. No more guessing - see exactly what they're learning and where they need help.",
+    ar: 'احصل على رؤى لحظية لتقدّم طفلك في المراجعة وجاهزيته للامتحان والمجالات اللي يحتاج يحسّنها. بلا تخمين - شوف بالضبط شنو يتعلّم ووين يحتاج مساعدة.',
   },
   'audience.parents.cta.start_trial': {
     en: "Start Your Child's Free Trial",
@@ -1214,8 +1214,8 @@ export const DICTIONARY: Dictionary = {
   'auth.no_account_q': { en: "Don't have an account?", ar: 'ما عندك حساب؟' },
   'auth.start_free_trial': { en: 'Start Free Trial', ar: 'ابدأ تجربتك المجانية' },
   'auth.login.subtitle': {
-    en: 'Sign in to your English Hub account. New here? Sign up below — it takes 30 seconds.',
-    ar: 'سجّل دخولك لحسابك في The English Hub. أول مرة هنا؟ سوّ حساب تحت — يستغرق ٣٠ ثانية بس.',
+    en: 'Sign in to your English Hub account. New here? Sign up below - it takes 30 seconds.',
+    ar: 'سجّل دخولك لحسابك في The English Hub. أول مرة هنا؟ سوّ حساب تحت - يستغرق ٣٠ ثانية بس.',
   },
   'auth.login.email_not_confirmed_prompt': {
     en: 'Email not confirmed yet?',
@@ -1226,16 +1226,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'صار خطأ في تأكيد حسابك. جرّب مرة ثانية أو اطلب رابط جديد.',
   },
   'auth.error.signin_failed': {
-    en: "We couldn't sign you in. Double-check your email and password — or if you've just signed up, the verification link in your inbox might still be needed.",
-    ar: 'ما قدرنا نسجّل دخولك. تأكد من الإيميل والرمز السري — وإذا للتو سوّيت حساب، يمكن لازم تضغط رابط التأكيد في الإيميل أول.',
+    en: "We couldn't sign you in. Double-check your email and password - or if you've just signed up, the verification link in your inbox might still be needed.",
+    ar: 'ما قدرنا نسجّل دخولك. تأكد من الإيميل والرمز السري - وإذا للتو سوّيت حساب، يمكن لازم تضغط رابط التأكيد في الإيميل أول.',
   },
   'auth.legacy_account_help_before': {
     en: "If your account was created before 28 April 2026 and you can't sign in, contact",
     ar: 'إذا حسابك صار قبل ٢٨ أبريل ٢٠٢٦ وما تقدر تدخل، راسلنا على',
   },
   'auth.legacy_account_help_after': {
-    en: "— we'll sort it manually.",
-    ar: '— بنحل المسألة يدوياً.',
+    en: "- we'll sort it manually.",
+    ar: '- بنحل المسألة يدوياً.',
   },
   'auth.forgot.title': { en: 'Reset your password', ar: 'غيّر الرمز السري' },
   'auth.forgot.subtitle': {
@@ -1283,23 +1283,23 @@ export const DICTIONARY: Dictionary = {
   },
   'auth.resend.title': { en: 'Resend your verification email', ar: 'ارسل إيميل التأكيد مرة ثانية' },
   'auth.resend.subtitle': {
-    en: "Pop your email in below. We'll send a fresh link to your inbox — check spam too.",
-    ar: 'اكتب إيميلك تحت. بنرسل لك رابط جديد — شيك على الـ spam بعد.',
+    en: "Pop your email in below. We'll send a fresh link to your inbox - check spam too.",
+    ar: 'اكتب إيميلك تحت. بنرسل لك رابط جديد - شيك على الـ spam بعد.',
   },
   'auth.resend.sending': { en: 'Sending fresh link...', ar: 'لحظة، نرسل رابط جديد...' },
   'auth.resend.cta': { en: 'Send me a fresh link', ar: 'ارسل لي رابط جديد' },
   'auth.resend.sent_title': { en: 'Sent', ar: 'تم الإرسال' },
   'auth.resend.sent_body': {
-    en: 'Check your inbox — including spam — for an email from The English Hub.',
-    ar: 'شيك على الإيميل — بما فيه الـ spam — على إيميل من The English Hub.',
+    en: 'Check your inbox - including spam - for an email from The English Hub.',
+    ar: 'شيك على الإيميل - بما فيه الـ spam - على إيميل من The English Hub.',
   },
   'auth.resend.still_no_email': {
     en: 'Still no email? Contact',
     ar: 'لسا ما وصل الإيميل؟ راسلنا على',
   },
   'auth.resend.manual_confirm': {
-    en: "— we'll confirm you manually.",
-    ar: '— بنأكد حسابك يدوياً.',
+    en: "- we'll confirm you manually.",
+    ar: '- بنأكد حسابك يدوياً.',
   },
   'auth.resend.troubleshoot_title': {
     en: 'Tried twice and still no email?',
@@ -1307,8 +1307,8 @@ export const DICTIONARY: Dictionary = {
   },
   'auth.resend.use_google': { en: 'Sign in with Google instead', ar: 'سجّل دخول بـ Google بدال' },
   'auth.resend.use_google_help': {
-    en: "— Google verifies your email for us, so you don't need our link.",
-    ar: '— Google يأكد إيميلك بدالنا، فما تحتاج رابطنا.',
+    en: "- Google verifies your email for us, so you don't need our link.",
+    ar: '- Google يأكد إيميلك بدالنا، فما تحتاج رابطنا.',
   },
   'auth.resend.verified_other_tab': {
     en: 'Already verified your link in another tab?',
@@ -1317,13 +1317,13 @@ export const DICTIONARY: Dictionary = {
   'auth.resend.just_sign_in': { en: 'Just sign in', ar: 'سجّل دخول مباشرة' },
   'auth.resend.contact_before': { en: 'Contact us at', ar: 'راسلنا على' },
   'auth.resend.contact_after': {
-    en: "— we'll confirm your email manually within a few hours.",
-    ar: '— بنأكد إيميلك يدوياً خلال ساعات.',
+    en: "- we'll confirm your email manually within a few hours.",
+    ar: '- بنأكد إيميلك يدوياً خلال ساعات.',
   },
   'auth.resend.already_verified_q': { en: 'Already verified?', ar: 'تأكد الإيميل؟' },
   'auth.resend.already_verified': {
-    en: 'This email is already verified — sign in or reset your password.',
-    ar: 'هذا الإيميل متأكد من قبل — سجّل دخول أو غيّر الرمز السري.',
+    en: 'This email is already verified - sign in or reset your password.',
+    ar: 'هذا الإيميل متأكد من قبل - سجّل دخول أو غيّر الرمز السري.',
   },
   'auth.register.teacher_banner_q': { en: 'Are you a teacher?', ar: 'أنت معلم؟' },
   'auth.register.teacher_banner_body': {
@@ -1358,8 +1358,8 @@ export const DICTIONARY: Dictionary = {
     ar: '٣ استخدامات مجانية لكل أداة ذكاء اصطناعي (التصحيح وخطط الدروس وأكثر)',
   },
   'auth.register.included_upgrade': {
-    en: "Upgrade when you're ready — 7-day free trial (card required)",
-    ar: 'اشترك لما تكون جاهز — تجربة مجانية ٧ أيام (تحتاج بطاقة)',
+    en: "Upgrade when you're ready - 7-day free trial (card required)",
+    ar: 'اشترك لما تكون جاهز - تجربة مجانية ٧ أيام (تحتاج بطاقة)',
   },
   'auth.register.i_am_a': { en: 'I am a', ar: 'أنا' },
   'auth.register.student': { en: 'Student', ar: 'طالب' },
@@ -1373,16 +1373,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'حياك الله في The English Hub. رسّلنا رابط تأكيد سريع على',
   },
   'auth.register.welcome_suffix': {
-    en: 'so we can keep your account safe — but you can keep exploring while you wait. The link will let you log back in next time.',
-    ar: 'عشان نحافظ على أمان حسابك — بس تقدر تكمّل تتصفح وأنت تنتظر. الرابط بيخليك تدخل المرة الجاية.',
+    en: 'so we can keep your account safe - but you can keep exploring while you wait. The link will let you log back in next time.',
+    ar: 'عشان نحافظ على أمان حسابك - بس تقدر تكمّل تتصفح وأنت تنتظر. الرابط بيخليك تدخل المرة الجاية.',
   },
   'auth.register.trial_ready_lead': {
     en: 'Your free trial is ready.',
     ar: 'تجربتك المجانية جاهزة.',
   },
   'auth.register.trial_ready_body': {
-    en: 'You have 3 free uses of every premium feature — AI marking, lesson plans, and more.',
-    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم — التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
+    en: 'You have 3 free uses of every premium feature - AI marking, lesson plans, and more.',
+    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
   },
   'auth.register.teacher_after_verify': {
     en: "Once verified, you'll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.",
@@ -1408,8 +1408,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'وفّر ٥ ساعات أو أكثر بالأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي. ٣ استخدامات مجانية لكل أداة. اشترك للوصول بلا حدود.',
   },
   'auth.teacher.pricing_line': {
-    en: 'From £7.99/month — 7-day free trial, card required, cancel before day 7',
-    ar: 'من ٧٫٩٩ جنيه بالشهر — تجربة مجانية ٧ أيام، تحتاج بطاقة، ألغِ قبل اليوم السابع',
+    en: 'From £7.99/month - 7-day free trial, card required, cancel before day 7',
+    ar: 'من ٧٫٩٩ جنيه بالشهر - تجربة مجانية ٧ أيام، تحتاج بطاقة، ألغِ قبل اليوم السابع',
   },
   'auth.teacher.signup_takes': {
     en: 'Sign-up takes under a minute. No card required.',
@@ -1450,13 +1450,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'رسّلنا رابط تأكيد سريع على',
   },
   'auth.teacher.welcome_suffix': {
-    en: 'so we can keep your account safe — but you can keep exploring while you wait.',
-    ar: 'عشان نحافظ على أمان حسابك — بس تقدر تكمّل تتصفح وأنت تنتظر.',
+    en: 'so we can keep your account safe - but you can keep exploring while you wait.',
+    ar: 'عشان نحافظ على أمان حسابك - بس تقدر تكمّل تتصفح وأنت تنتظر.',
   },
   'auth.teacher.demo_ready_lead': { en: 'Demo access ready.', ar: 'الوصول للديمو جاهز.' },
   'auth.teacher.demo_ready_body': {
-    en: "You have 3 free uses of every premium feature — AI marking, lesson plans, and more. When you're ready, start a 7-day free trial from £7.99/month (card required, cancel before day 7).",
-    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم — التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لما تكون جاهز، ابدأ تجربة مجانية ٧ أيام من ٧٫٩٩ جنيه بالشهر (تحتاج بطاقة، ألغِ قبل اليوم السابع).',
+    en: "You have 3 free uses of every premium feature - AI marking, lesson plans, and more. When you're ready, start a 7-day free trial from £7.99/month (card required, cancel before day 7).",
+    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لما تكون جاهز، ابدأ تجربة مجانية ٧ أيام من ٧٫٩٩ جنيه بالشهر (تحتاج بطاقة، ألغِ قبل اليوم السابع).',
   },
   'auth.teacher.open_preview': {
     en: 'Open the teacher dashboard preview',
@@ -1606,12 +1606,12 @@ export const DICTIONARY: Dictionary = {
   },
   'ks3.landing.title': { en: 'The full KS3 English curriculum', ar: 'منهج إنجليزي KS3 الكامل' },
   'ks3.landing.lead': {
-    en: 'Years 7, 8 and 9 of secondary English mapped end-to-end. Yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression and the British National Curriculum end-of-KS3 standard — all wired to The English Hub’s reading diagnostics, AI marking, and bilingual (English / Arabic) content layer.',
-    ar: 'السنوات السابعة والثامنة والتاسعة من الإنجليزي الثانوي محدّدة من الألف للياء. التوقعات السنوية، خطط الفصول، إطار الدروس الأسبوعية، معايير التصحيح، تدرّج المهارات، ومعيار نهاية KS3 من المنهج الوطني البريطاني — كلها موصولة بأدوات تشخيص القراءة والتصحيح بالذكاء الاصطناعي وطبقة المحتوى ثنائي اللغة في The English Hub.',
+    en: 'Years 7, 8 and 9 of secondary English mapped end-to-end. Yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression and the British National Curriculum end-of-KS3 standard - all wired to The English Hub’s reading diagnostics, AI marking, and bilingual (English / Arabic) content layer.',
+    ar: 'السنوات السابعة والثامنة والتاسعة من الإنجليزي الثانوي محدّدة من الألف للياء. التوقعات السنوية، خطط الفصول، إطار الدروس الأسبوعية، معايير التصحيح، تدرّج المهارات، ومعيار نهاية KS3 من المنهج الوطني البريطاني - كلها موصولة بأدوات تشخيص القراءة والتصحيح بالذكاء الاصطناعي وطبقة المحتوى ثنائي اللغة في The English Hub.',
   },
   'ks3.landing.arc_heading': {
-    en: 'The KS3 arc — Foundations → Development → Mastery',
-    ar: 'مسار KS3 — الأساسيات ← التطوير ← الإتقان',
+    en: 'The KS3 arc - Foundations → Development → Mastery',
+    ar: 'مسار KS3 - الأساسيات ← التطوير ← الإتقان',
   },
   'ks3.landing.reading_progression_intro': {
     en: 'Reading progression at a glance:',
@@ -1636,8 +1636,8 @@ export const DICTIONARY: Dictionary = {
   'ks3.landing.three_years_heading': { en: 'The three years', ar: 'السنوات الثلاث' },
   'ks3.landing.view_year': { en: 'View Year', ar: 'شوف السنة' },
   'ks3.landing.weekly_framework_heading': {
-    en: 'Weekly framework — the same 5 lessons every week',
-    ar: 'الإطار الأسبوعي — نفس الـ٥ دروس كل أسبوع',
+    en: 'Weekly framework - the same 5 lessons every week',
+    ar: 'الإطار الأسبوعي - نفس الـ٥ دروس كل أسبوع',
   },
   'ks3.landing.weekly_framework_intro': {
     en: 'Every week in KS3 follows the same shape so students build reflexes, not anxiety. Teachers adapt the text, the focus and the scaffolding; the framework holds steady.',
@@ -1660,13 +1660,13 @@ export const DICTIONARY: Dictionary = {
   },
   'ks3.landing.lesson4_label': { en: 'Application.', ar: 'التطبيق.' },
   'ks3.landing.lesson4_desc': {
-    en: 'Guided practice — reading → writing transfer with a heavy scaffold.',
-    ar: 'تدريب موجَّه — نقل من القراءة للكتابة مع دعم قوي.',
+    en: 'Guided practice - reading → writing transfer with a heavy scaffold.',
+    ar: 'تدريب موجَّه - نقل من القراءة للكتابة مع دعم قوي.',
   },
   'ks3.landing.lesson5_label': { en: 'Independent Outcome.', ar: 'الإنتاج المستقل.' },
   'ks3.landing.lesson5_desc': {
-    en: 'Independent assessable piece — written under the scaffolds removed.',
-    ar: 'قطعة مستقلة قابلة للتقييم — تُكتب بعد إزالة الدعم.',
+    en: 'Independent assessable piece - written under the scaffolds removed.',
+    ar: 'قطعة مستقلة قابلة للتقييم - تُكتب بعد إزالة الدعم.',
   },
   'ks3.landing.non_negotiables_heading': {
     en: 'Non-negotiables across KS3',
@@ -1717,32 +1717,32 @@ export const DICTIONARY: Dictionary = {
   'ks3.landing.how_to_use_skills': { en: 'Skill codes at', ar: 'رموز المهارات في' },
   'ks3.landing.how_to_use_end_of_ks3': { en: 'End of KS3 standard at', ar: 'معيار نهاية KS3 في' },
   'ks3.landing.bilingual_heading': {
-    en: 'Bilingual — English / Arabic',
-    ar: 'ثنائي اللغة — إنجليزي / عربي',
+    en: 'Bilingual - English / Arabic',
+    ar: 'ثنائي اللغة - إنجليزي / عربي',
   },
   'ks3.landing.bilingual_body': {
-    en: "Every page here can render in three modes via the language toggle in the site header: English only, English + Arabic stacked, or Arabic only. Curriculum copy is translated to Khaleeji (Gulf) Arabic — the register that reads naturally to parents and students across the Gulf. Translation coverage is being progressively filled by the round-trip QA pipeline; English-only sections fall back gracefully where Arabic isn't yet ready.",
-    ar: 'كل صفحة هنا تقدر تعرض بثلاث أوضاع عبر زر تغيير اللغة في رأس الموقع: إنجليزي بس، إنجليزي وعربي مع بعض، أو عربي بس. نصوص المنهج مترجمة بالعربي الخليجي — اللهجة اللي يقراها الأهالي والطلاب في الخليج بشكل طبيعي. تغطية الترجمة تتعبّى بالتدريج عبر سلسلة المراجعة، والأقسام الإنجليزية تظهر بأمان لما الترجمة العربية ما تكون جاهزة بعد.',
+    en: "Every page here can render in three modes via the language toggle in the site header: English only, English + Arabic stacked, or Arabic only. Curriculum copy is translated to Khaleeji (Gulf) Arabic - the register that reads naturally to parents and students across the Gulf. Translation coverage is being progressively filled by the round-trip QA pipeline; English-only sections fall back gracefully where Arabic isn't yet ready.",
+    ar: 'كل صفحة هنا تقدر تعرض بثلاث أوضاع عبر زر تغيير اللغة في رأس الموقع: إنجليزي بس، إنجليزي وعربي مع بعض، أو عربي بس. نصوص المنهج مترجمة بالعربي الخليجي - اللهجة اللي يقراها الأهالي والطلاب في الخليج بشكل طبيعي. تغطية الترجمة تتعبّى بالتدريج عبر سلسلة المراجعة، والأقسام الإنجليزية تظهر بأمان لما الترجمة العربية ما تكون جاهزة بعد.',
   },
   'ks3.landing.hooked_heading': {
     en: 'Hooked into the rest of the site',
     ar: 'مربوط مع باقي الموقع',
   },
   'ks3.landing.hooked_ai_marking': {
-    en: 'AI marking — the Independent Outcome lesson on every week page links to the existing essay-feedback system. A student writes their independent paragraph, submits, and gets AO-aligned AI feedback within minutes.',
-    ar: 'تصحيح بالذكاء الاصطناعي — درس الإنتاج المستقل في كل صفحة أسبوع موصول بنظام ملاحظات المقالات الموجود. الطالب يكتب فقرته المستقلة، يرسلها، ويحصل على ملاحظات بالذكاء الاصطناعي على أساس معايير AO خلال دقايق.',
+    en: 'AI marking - the Independent Outcome lesson on every week page links to the existing essay-feedback system. A student writes their independent paragraph, submits, and gets AO-aligned AI feedback within minutes.',
+    ar: 'تصحيح بالذكاء الاصطناعي - درس الإنتاج المستقل في كل صفحة أسبوع موصول بنظام ملاحظات المقالات الموجود. الطالب يكتب فقرته المستقلة، يرسلها، ويحصل على ملاحظات بالذكاء الاصطناعي على أساس معايير AO خلال دقايق.',
   },
   'ks3.landing.hooked_reading': {
     en: 'Reading-for-pleasure picks for each term link to the wider site library.',
     ar: 'اختيارات القراءة للمتعة في كل فصل موصولة بمكتبة الموقع الأوسع.',
   },
   'ks3.landing.hooked_vocab': {
-    en: 'Vocabulary drills integrate with the existing flashcards engine — every week’s key vocabulary is loadable as a deck.',
-    ar: 'تمارين المفردات مدمجة مع محرّك البطاقات الموجود — مفردات كل أسبوع تنحمل كمجموعة بطاقات.',
+    en: 'Vocabulary drills integrate with the existing flashcards engine - every week’s key vocabulary is loadable as a deck.',
+    ar: 'تمارين المفردات مدمجة مع محرّك البطاقات الموجود - مفردات كل أسبوع تنحمل كمجموعة بطاقات.',
   },
   'ks3.landing.hooked_mocks': {
-    en: 'Mock exams — KS3 mock-exam content (already on the site) is referenced from Year 9 Term 3 as the bridge to GCSE.',
-    ar: 'الامتحانات التجريبية — محتوى امتحانات KS3 التجريبية (موجود في الموقع) يُشار إليه من الفصل الثالث للسنة التاسعة كجسر لـ GCSE.',
+    en: 'Mock exams - KS3 mock-exam content (already on the site) is referenced from Year 9 Term 3 as the bridge to GCSE.',
+    ar: 'الامتحانات التجريبية - محتوى امتحانات KS3 التجريبية (موجود في الموقع) يُشار إليه من الفصل الثالث للسنة التاسعة كجسر لـ GCSE.',
   },
   'ks3.year.expected_intro': {
     en: 'Students working at the expected standard by the end of',
@@ -1762,8 +1762,8 @@ export const DICTIONARY: Dictionary = {
   },
   'ks3.term.vocab_themes_heading': { en: 'Vocabulary themes', ar: 'محاور المفردات' },
   'ks3.term.in_production': {
-    en: 'Weekly lesson plans for this half-term are in production — the KS3 lesson-planner agent is drafting them now. Yearly expectations and rubrics still apply.',
-    ar: 'خطط الدروس الأسبوعية لنصف الفصل هذا قيد الإعداد — وكيل تخطيط دروس KS3 يصيغها الحين. التوقعات السنوية ومعايير التصحيح لسا تنطبق.',
+    en: 'Weekly lesson plans for this half-term are in production - the KS3 lesson-planner agent is drafting them now. Yearly expectations and rubrics still apply.',
+    ar: 'خطط الدروس الأسبوعية لنصف الفصل هذا قيد الإعداد - وكيل تخطيط دروس KS3 يصيغها الحين. التوقعات السنوية ومعايير التصحيح لسا تنطبق.',
   },
   'ks3.term.week_label': { en: 'Week', ar: 'الأسبوع' },
   'ks3.rubrics.lead': {
@@ -1771,12 +1771,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'ثلاث سنوات × أربع محاور × أربع مستويات. كل خانة هي الوصف اللي المصحّح يقراه عشان يعطي المستوى. شارات رموز المهارات ترجعك لقائمة المهارات الرئيسية.',
   },
   'ks3.rubrics.www_ebi': {
-    en: 'As per school policy students should receive What Went Well (WWW) and Even Better If (EBI) feedback every 8 lessons — in English that means once every two weeks. Feedback is constructive and based on outcomes recently covered in class.',
-    ar: 'حسب سياسة المدرسة، الطلاب لازم يحصلون على ملاحظات What Went Well (WWW) و Even Better If (EBI) كل ٨ دروس — في الإنجليزي هذا يعني مرة كل أسبوعين. الملاحظات بنّاءة ومبنيّة على مخرجات الفصل اللي اتغطّت قريب.',
+    en: 'As per school policy students should receive What Went Well (WWW) and Even Better If (EBI) feedback every 8 lessons - in English that means once every two weeks. Feedback is constructive and based on outcomes recently covered in class.',
+    ar: 'حسب سياسة المدرسة، الطلاب لازم يحصلون على ملاحظات What Went Well (WWW) و Even Better If (EBI) كل ٨ دروس - في الإنجليزي هذا يعني مرة كل أسبوعين. الملاحظات بنّاءة ومبنيّة على مخرجات الفصل اللي اتغطّت قريب.',
   },
   'ks3.skills.heading': {
-    en: 'KS3 skill codes — progression Y7 → Y8 → Y9',
-    ar: 'رموز مهارات KS3 — تدرّج السنة 7 ← السنة 8 ← السنة 9',
+    en: 'KS3 skill codes - progression Y7 → Y8 → Y9',
+    ar: 'رموز مهارات KS3 - تدرّج السنة 7 ← السنة 8 ← السنة 9',
   },
   'ks3.skills.lead': {
     en: 'Every weekly lesson plan, every rubric cell, every AI marking comment maps to one of these codes. Reading the progression column reveals how a skill grows from foundation to mastery across the three years.',
@@ -1792,8 +1792,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'شنو يعني «مستوى متوقع بنهاية KS3»',
   },
   'ks3.endks3.expected_body': {
-    en: 'A student working at the expected standard at the end of Year 9 can do all of the following. This is the bridge to GCSE — students who hit these markers walk into Year 10 with the analytical, compositional and oracy reflexes their GCSE specifications already assume.',
-    ar: 'الطالب اللي يشتغل بالمستوى المتوقع بنهاية السنة التاسعة يقدر يسوّي كل اللي تحت. هذا هو الجسر لـ GCSE — الطلاب اللي يوصلون لهذي العلامات يدخلون السنة العاشرة وعندهم عادات التحليل والكتابة والتحدّث اللي مواصفات GCSE تفترضها أصلاً.',
+    en: 'A student working at the expected standard at the end of Year 9 can do all of the following. This is the bridge to GCSE - students who hit these markers walk into Year 10 with the analytical, compositional and oracy reflexes their GCSE specifications already assume.',
+    ar: 'الطالب اللي يشتغل بالمستوى المتوقع بنهاية السنة التاسعة يقدر يسوّي كل اللي تحت. هذا هو الجسر لـ GCSE - الطلاب اللي يوصلون لهذي العلامات يدخلون السنة العاشرة وعندهم عادات التحليل والكتابة والتحدّث اللي مواصفات GCSE تفترضها أصلاً.',
   },
   'ks3.endks3.reading_formula_heading': {
     en: 'Reading-progression formula',
@@ -1829,28 +1829,28 @@ export const DICTIONARY: Dictionary = {
     ar: 'اختر المرحلة اللي مدرستك تدرّسها، بعدين اختر الهيئة. تقدر تغيّرها بعدين من الإعدادات.',
   },
   'board.select.ks3_subtitle': {
-    en: 'Years 7–9, ages 11–14 — the curriculum before GCSE',
-    ar: 'السنوات 7–9، أعمار 11–14 — المنهج قبل الـ GCSE',
+    en: 'Years 7-9, ages 11-14 - the curriculum before GCSE',
+    ar: 'السنوات 7-9، أعمار 11-14 - المنهج قبل الـ GCSE',
   },
   'board.select.gcse_subtitle': {
-    en: 'Years 10–11, UK GCSE 9–1',
-    ar: 'السنة العاشرة والحادية عشرة — UK GCSE 9–1',
+    en: 'Years 10-11, UK GCSE 9-1',
+    ar: 'السنة العاشرة والحادية عشرة - UK GCSE 9-1',
   },
   'board.select.igcse_subtitle': {
-    en: 'International — Cambridge & Pearson Edexcel specifications',
-    ar: 'دولي — مواصفات Cambridge و Pearson Edexcel',
+    en: 'International - Cambridge & Pearson Edexcel specifications',
+    ar: 'دولي - مواصفات Cambridge و Pearson Edexcel',
   },
   'board.select.eal_subtitle': {
-    en: 'English as an Additional Language — runs alongside every board',
-    ar: 'الإنجليزي كلغة إضافية — يمشي جنب كل البوردات',
+    en: 'English as an Additional Language - runs alongside every board',
+    ar: 'الإنجليزي كلغة إضافية - يمشي جنب كل البوردات',
   },
   'board.desc.ks3': {
-    en: 'Year 7, 8 and 9 schemes of work — weekly lessons, set texts and assessments to prime students for GCSE English.',
-    ar: 'خطط دراسية للسنوات 7 و 8 و 9 — دروس أسبوعية ونصوص مقرّرة وتقييمات تجهّز الطالب لإنجليزي الـ GCSE.',
+    en: 'Year 7, 8 and 9 schemes of work - weekly lessons, set texts and assessments to prime students for GCSE English.',
+    ar: 'خطط دراسية للسنوات 7 و 8 و 9 - دروس أسبوعية ونصوص مقرّرة وتقييمات تجهّز الطالب لإنجليزي الـ GCSE.',
   },
   'board.desc.eal': {
-    en: 'Structured English support for EAL learners — vocabulary, reading fluency, comprehension and writing. Pairs with any board you study.',
-    ar: 'دعم منظم بالإنجليزي لمتعلّمي EAL — المفردات، طلاقة القراءة، الفهم والكتابة. يمشي جنب أي بورد تدرسه.',
+    en: 'Structured English support for EAL learners - vocabulary, reading fluency, comprehension and writing. Pairs with any board you study.',
+    ar: 'دعم منظم بالإنجليزي لمتعلّمي EAL - المفردات، طلاقة القراءة، الفهم والكتابة. يمشي جنب أي بورد تدرسه.',
   },
   'board.select.eal_supported': {
     en: 'EAL support included',
@@ -1886,8 +1886,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'قصائد مختارات Eduqas مع شروحات تفصيلية.',
   },
   'board.desc.cambridge_igcse': {
-    en: '0500 and 0990 — Reading, Composition, model answers.',
-    ar: '0500 و 0990 — قراءة، إنشاء، إجابات نموذجية.',
+    en: '0500 and 0990 - Reading, Composition, model answers.',
+    ar: '0500 و 0990 - قراءة، إنشاء، إجابات نموذجية.',
   },
   'board.desc.edexcel_igcse_lit': {
     en: 'Drama, Prose, Shakespeare, Unseen Poetry.',
@@ -1907,13 +1907,13 @@ export const DICTIONARY: Dictionary = {
     en: 'Building your English foundations',
     ar: 'تبني أساسيات الإنجليزي مالك',
   },
-  'board.level.gcse.years': { en: 'Years 10-11, UK', ar: 'السنة العاشرة والحادية عشرة — UK' },
+  'board.level.gcse.years': { en: 'Years 10-11, UK', ar: 'السنة العاشرة والحادية عشرة - UK' },
   'board.level.gcse.desc': { en: 'UK GCSE English 9-1', ar: 'UK GCSE English 9-1' },
   'board.level.igcse.years': { en: 'International', ar: 'دولي' },
   'board.level.igcse.desc': { en: 'Studying outside the UK', ar: 'تدرس خارج بريطانيا' },
   'board.level.a_level.years': {
     en: 'Years 12-13, UK',
-    ar: 'السنة الثانية عشرة والثالثة عشرة — UK',
+    ar: 'السنة الثانية عشرة والثالثة عشرة - UK',
   },
   'board.level.a_level.desc': {
     en: 'UK A-Level English Literature & Language',
@@ -1933,24 +1933,24 @@ export const DICTIONARY: Dictionary = {
   'board.body.heading.a_level': { en: 'Which UK A-Level board?', ar: 'أي هيئة UK A-Level؟' },
   'board.body.heading.ial': { en: 'Which awarding body?', ar: 'أي هيئة منح؟' },
   'board.body.subheading.gcse': {
-    en: "Pick your board — we'll show you only the poems, set texts, and papers you actually study.",
-    ar: 'اختر الهيئة مالتك — بنورّيك بس القصايد والنصوص والامتحانات اللي تدرسها فعلاً.',
+    en: "Pick your board - we'll show you only the poems, set texts, and papers you actually study.",
+    ar: 'اختر الهيئة مالتك - بنورّيك بس القصايد والنصوص والامتحانات اللي تدرسها فعلاً.',
   },
   'board.body.subheading.igcse': {
-    en: 'Choose your awarding body below — each one has different set texts and assessment.',
-    ar: 'اختر هيئة المنح من تحت — كل وحدة عندها نصوص مقررة وتقييم مختلف.',
+    en: 'Choose your awarding body below - each one has different set texts and assessment.',
+    ar: 'اختر هيئة المنح من تحت - كل وحدة عندها نصوص مقررة وتقييم مختلف.',
   },
   'board.body.subheading.a_level': {
-    en: "Pick your UK A-Level board — full A-Level content is on our roadmap; in the meantime we'll unlock the cross-board revision tools.",
-    ar: 'اختر هيئة UK A-Level مالتك — محتوى A-Level الكامل بخريطة الطريق مالنا؛ والحين بنفتح لك أدوات المراجعة المشتركة بين الهيئات.',
+    en: "Pick your UK A-Level board - full A-Level content is on our roadmap; in the meantime we'll unlock the cross-board revision tools.",
+    ar: 'اختر هيئة UK A-Level مالتك - محتوى A-Level الكامل بخريطة الطريق مالنا؛ والحين بنفتح لك أدوات المراجعة المشتركة بين الهيئات.',
   },
   'board.body.subheading.ial': {
     en: 'Select your awarding body to get started.',
     ar: 'اختر هيئة المنح عشان نبدأ.',
   },
   'board.body.not_sure_hint': {
-    en: 'Not sure which board you study? Check your exam timetable, ask your teacher, or pick the closest match — you can change it later from your settings.',
-    ar: 'مو متأكد أي هيئة تدرس؟ شوف جدول الامتحانات مالك، اسأل المدرس، أو اختر الأقرب — تقدر تغيّرها بعدين من الإعدادات.',
+    en: 'Not sure which board you study? Check your exam timetable, ask your teacher, or pick the closest match - you can change it later from your settings.',
+    ar: 'مو متأكد أي هيئة تدرس؟ شوف جدول الامتحانات مالك، اسأل المدرس، أو اختر الأقرب - تقدر تغيّرها بعدين من الإعدادات.',
   },
   'board.body_subtitle.aqa_gcse': {
     en: 'Power & Conflict, Love & Relationships, AIC, Macbeth',
@@ -2003,8 +2003,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'كل مواصفة تغطي مهارات ونصوص مختلفة. اختر اللي يطابق جدولك.',
   },
   'board.paper.not_sure_hint': {
-    en: 'Not sure which paper? Check your exam timetable or ask your teacher — you can always change it later.',
-    ar: 'مو متأكد أي ورقة؟ شوف جدول الامتحانات أو اسأل المدرس — تقدر تغيّرها أي وقت تبغى.',
+    en: 'Not sure which paper? Check your exam timetable or ask your teacher - you can always change it later.',
+    ar: 'مو متأكد أي ورقة؟ شوف جدول الامتحانات أو اسأل المدرس - تقدر تغيّرها أي وقت تبغى.',
   },
   'board.paper.literature': { en: 'Literature', ar: 'الأدب' },
   'board.paper.language': { en: 'Language', ar: 'اللغة' },
@@ -2019,23 +2019,23 @@ export const DICTIONARY: Dictionary = {
     ar: 'فهم القراءة والكتابة الوظيفية',
   },
   'board.paper_subtitle.cambridge_0500': {
-    en: 'First Language English — A*-G grading',
-    ar: 'اللغة الإنجليزية الأم — تقدير A*-G',
+    en: 'First Language English - A*-G grading',
+    ar: 'اللغة الإنجليزية الأم - تقدير A*-G',
   },
   'board.paper_subtitle.cambridge_0990': {
-    en: 'First Language English — 9-1 grading',
-    ar: 'اللغة الإنجليزية الأم — تقدير 9-1',
+    en: 'First Language English - 9-1 grading',
+    ar: 'اللغة الإنجليزية الأم - تقدير 9-1',
   },
   'board.paper_subtitle.cambridge_0475': {
-    en: 'Literature in English — prose, poetry & drama',
-    ar: 'الأدب الإنجليزي — نثر وشعر ودراما',
+    en: 'Literature in English - prose, poetry & drama',
+    ar: 'الأدب الإنجليزي - نثر وشعر ودراما',
   },
   'board.option.your_current': { en: 'Your current board', ar: 'الهيئة مالتك الحين' },
   'board.option.choose_papers': { en: 'Choose papers', ar: 'اختر الأوراق' },
   'board.option.choose_this': { en: 'Choose this board', ar: 'اختر هذي الهيئة' },
   'board.tagline.ks3': {
     en: 'Years 7-9 foundation English skills',
-    ar: 'مهارات أساسية للإنجليزي — السنة السابعة للتاسعة',
+    ar: 'مهارات أساسية للإنجليزي - السنة السابعة للتاسعة',
   },
   'board.tagline.aqa': {
     en: 'Power & Conflict, AIC, and Macbeth',
@@ -2070,8 +2070,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'اللغة الإنجليزية الأم (9-1)',
   },
   'board.tagline.cambridge_0475': {
-    en: 'Literature in English — prose, poetry & drama',
-    ar: 'الأدب الإنجليزي — نثر وشعر ودراما',
+    en: 'Literature in English - prose, poetry & drama',
+    ar: 'الأدب الإنجليزي - نثر وشعر ودراما',
   },
   'board.tagline.ial_edexcel': {
     en: 'International A-Level English',
@@ -2362,8 +2362,8 @@ export const DICTIONARY: Dictionary = {
   'pricing.trial_badge': { en: '7-day free trial', ar: 'تجربة مجانية ٧ أيام' },
   'pricing.title_simple_honest': { en: 'Simple, Honest Pricing', ar: 'أسعار بسيطة وصريحة' },
   'pricing.subtitle_demo_uses': {
-    en: 'Demo 3 free uses per feature (no card) before you commit. Every paid plan starts with a 7-day free trial — card required, cancel before day 7.',
-    ar: 'جرّب ٣ استخدامات ببلاش لكل ميزة (من غير بطاقة) قبل ما تلتزم. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام — البطاقة مطلوبة، ألغِ قبل اليوم ٧.',
+    en: 'Demo 3 free uses per feature (no card) before you commit. Every paid plan starts with a 7-day free trial - card required, cancel before day 7.',
+    ar: 'جرّب ٣ استخدامات ببلاش لكل ميزة (من غير بطاقة) قبل ما تلتزم. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام - البطاقة مطلوبة، ألغِ قبل اليوم ٧.',
   },
   'pricing.badge.most_popular': { en: 'Most Popular', ar: 'الأكثر طلباً' },
   'pricing.badge.for_educators': { en: 'For Educators', ar: 'للمعلمين' },
@@ -2393,16 +2393,16 @@ export const DICTIONARY: Dictionary = {
   'pricing.for_students': { en: 'For Students', ar: 'للطلاب' },
   'pricing.for_teachers': { en: 'For Teachers', ar: 'للمعلمين' },
   'pricing.student.tagline': {
-    en: 'Full access for learners — cancel anytime.',
-    ar: 'وصول كامل للطلاب — ألغِ أي وقت تبغى.',
+    en: 'Full access for learners - cancel anytime.',
+    ar: 'وصول كامل للطلاب - ألغِ أي وقت تبغى.',
   },
   'pricing.student.tagline_exams': {
     en: 'Everything you need to ace your exams.',
     ar: 'كل اللي تحتاجه عشان تتفوّق في امتحاناتك.',
   },
   'pricing.teacher.tagline': {
-    en: 'Plan, teach & track — all in one place.',
-    ar: 'خطّط ودرّس وتابع — كله في مكان واحد.',
+    en: 'Plan, teach & track - all in one place.',
+    ar: 'خطّط ودرّس وتابع - كله في مكان واحد.',
   },
   'pricing.teacher.tagline_hours': {
     en: 'AI-powered tools to save hours every week.',
@@ -2415,32 +2415,32 @@ export const DICTIONARY: Dictionary = {
   'pricing.school.custom_pricing': { en: 'Custom Pricing', ar: 'تسعير مخصّص' },
   'pricing.school.tailored': { en: 'Tailored to your school size', ar: 'مفصّل حسب حجم مدرستك' },
   'pricing.founding_schools_2026': {
-    en: 'Founding Schools Programme — 2026',
-    ar: 'برنامج المدارس المؤسِّسة — ٢٠٢٦',
+    en: 'Founding Schools Programme - 2026',
+    ar: 'برنامج المدارس المؤسِّسة - ٢٠٢٦',
   },
   'pricing.founding_schools.desc': {
     en: 'Limited to 10 schools. Heavily discounted pricing with locked preferential rates for 2-3 years.',
     ar: 'محدود بـ ١٠ مدارس. أسعار مخفّضة وايد مع تثبيت الأسعار التفضيلية لمدة ٢-٣ سنوات.',
   },
   'pricing.founding_banner.title': {
-    en: 'Founding Schools Programme — 2026. Limited to 10 schools.',
-    ar: 'برنامج المدارس المؤسِّسة — ٢٠٢٦. محدود بـ ١٠ مدارس.',
+    en: 'Founding Schools Programme - 2026. Limited to 10 schools.',
+    ar: 'برنامج المدارس المؤسِّسة - ٢٠٢٦. محدود بـ ١٠ مدارس.',
   },
   'pricing.founding_banner.desc': {
     en: 'Be one of the first 10 schools to join. Heavily discounted pricing, early features, direct product input, and locked preferential rates.',
     ar: 'كن من أول ١٠ مدارس تنضم. أسعار مخفّضة وايد، ميزات مبكرة، رأي مباشر في المنتج، وأسعار تفضيلية مثبّتة.',
   },
   'pricing.footer_demo_note': {
-    en: "Every feature includes 3 free uses — no card required for the demo. Every paid plan starts with a 7-day free trial (card required). Cancel before day 7 and you won't be charged.",
-    ar: 'كل ميزة فيها ٣ استخدامات ببلاش — ما تحتاج بطاقة للتجربة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (البطاقة مطلوبة). ألغِ قبل اليوم ٧ وما بنخصم شي.',
+    en: "Every feature includes 3 free uses - no card required for the demo. Every paid plan starts with a 7-day free trial (card required). Cancel before day 7 and you won't be charged.",
+    ar: 'كل ميزة فيها ٣ استخدامات ببلاش - ما تحتاج بطاقة للتجربة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (البطاقة مطلوبة). ألغِ قبل اليوم ٧ وما بنخصم شي.',
   },
   'pricing.student.feat.trial': {
     en: '7-day free trial on any paid plan (card required)',
     ar: 'تجربة مجانية ٧ أيام على أي خطة مدفوعة (البطاقة مطلوبة)',
   },
   'pricing.student.feat.demo_uses': {
-    en: '3 free uses per feature — demo without a card',
-    ar: '٣ استخدامات ببلاش لكل ميزة — جرّب من غير بطاقة',
+    en: '3 free uses per feature - demo without a card',
+    ar: '٣ استخدامات ببلاش لكل ميزة - جرّب من غير بطاقة',
   },
   'pricing.student.feat.courses': {
     en: 'All 470+ courses included',
@@ -2471,16 +2471,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'تتبّع التقدّم والتحليلات',
   },
   'pricing.student.feat.cancel': {
-    en: 'Cancel anytime — no contracts',
-    ar: 'ألغِ أي وقت — بلا عقود',
+    en: 'Cancel anytime - no contracts',
+    ar: 'ألغِ أي وقت - بلا عقود',
   },
   'pricing.teacher.feat.trial': {
     en: '7-day free trial on any paid plan (card required)',
     ar: 'تجربة مجانية ٧ أيام على أي خطة مدفوعة (البطاقة مطلوبة)',
   },
   'pricing.teacher.feat.demo_uses': {
-    en: '3 free uses per feature — demo without a card',
-    ar: '٣ استخدامات ببلاش لكل ميزة — جرّب من غير بطاقة',
+    en: '3 free uses per feature - demo without a card',
+    ar: '٣ استخدامات ببلاش لكل ميزة - جرّب من غير بطاقة',
   },
   'pricing.teacher.feat.everything_student': {
     en: 'Everything in Student, plus:',
@@ -2531,8 +2531,8 @@ export const DICTIONARY: Dictionary = {
   'pricing.anth.headline_emphasis': { en: 'honest', ar: 'صريحة' },
   'pricing.anth.headline_suffix': { en: 'pricing', ar: 'وبسيطة' },
   'pricing.anth.trial_blurb_prefix': {
-    en: '7-day free trial on every plan — card required, cancel before day 7. Students save £',
-    ar: 'تجربة مجانية ٧ أيام على كل خطة — البطاقة مطلوبة، ألغِ قبل اليوم ٧. الطلاب يوفّرون £',
+    en: '7-day free trial on every plan - card required, cancel before day 7. Students save £',
+    ar: 'تجربة مجانية ٧ أيام على كل خطة - البطاقة مطلوبة، ألغِ قبل اليوم ٧. الطلاب يوفّرون £',
   },
   'pricing.anth.trial_blurb_suffix': {
     en: 'on annual with any affiliate code or',
@@ -2548,8 +2548,8 @@ export const DICTIONARY: Dictionary = {
   'pricing.anth.save42': { en: 'save 42%', ar: 'وفّر ٤٢٪' },
   'pricing.anth.student.annual_prefix': { en: 'or', ar: 'أو' },
   'pricing.anth.student.desc': {
-    en: 'Full access for students. Monthly or annual — cancel any time.',
-    ar: 'وصول كامل للطلاب. شهري أو سنوي — ألغِ أي وقت تبغى.',
+    en: 'Full access for students. Monthly or annual - cancel any time.',
+    ar: 'وصول كامل للطلاب. شهري أو سنوي - ألغِ أي وقت تبغى.',
   },
   'pricing.anth.student.feat.lessons': {
     en: 'All 470+ structured lessons',
@@ -2617,12 +2617,12 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.anth.founding.only_prefix': { en: 'Only', ar: 'بس' },
   'pricing.anth.founding.places_locked': {
-    en: 'founding places — locked-in rate',
-    ar: 'مكان مؤسس — سعر مثبّت',
+    en: 'founding places - locked-in rate',
+    ar: 'مكان مؤسس - سعر مثبّت',
   },
   'pricing.anth.founding.desc': {
-    en: 'Whole-school licence at the founding rate — first 10 schools only.',
-    ar: 'رخصة لكامل المدرسة بسعر المؤسسين — أول ١٠ مدارس بس.',
+    en: 'Whole-school licence at the founding rate - first 10 schools only.',
+    ar: 'رخصة لكامل المدرسة بسعر المؤسسين - أول ١٠ مدارس بس.',
   },
   'pricing.anth.founding.feat.everything_teacher': {
     en: 'Everything in Teacher',
@@ -2667,12 +2667,12 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.hero.badge': { en: 'Pricing', ar: 'الأسعار' },
   'pricing.hero.title': {
-    en: 'AI-supported English revision for GCSE and IGCSE — built by English teachers.',
-    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE — من إعداد معلمي إنجليزي.',
+    en: 'AI-supported English revision for GCSE and IGCSE - built by English teachers.',
+    ar: 'مراجعة إنجليزي مدعومة بالذكاء الاصطناعي لـ GCSE و IGCSE - من إعداد معلمي إنجليزي.',
   },
   'pricing.hero.subtitle': {
-    en: 'Exam-board aligned revision, AI marking, lesson planning, and analytics — built for results.',
-    ar: 'مراجعة متوافقة مع بورد الامتحان، تصحيح بالذكاء الاصطناعي، تخطيط دروس، وتحليلات — مصمَّمة للنتايج.',
+    en: 'Exam-board aligned revision, AI marking, lesson planning, and analytics - built for results.',
+    ar: 'مراجعة متوافقة مع بورد الامتحان، تصحيح بالذكاء الاصطناعي، تخطيط دروس، وتحليلات - مصمَّمة للنتايج.',
   },
   'pricing.compare.title': { en: 'Compare to competitors', ar: 'قارن مع المنافسين' },
   'pricing.compare.subtitle': {
@@ -2758,8 +2758,8 @@ export const DICTIONARY: Dictionary = {
   'dash.retry': { en: 'Retry', ar: 'حاول مرة ثانية' },
   'dash.welcome.title': { en: 'Welcome to English Hub!', ar: 'حياك الله في The English Hub!' },
   'dash.welcome.body': {
-    en: "You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more. When you're ready, start a 7-day free trial — card required, cancel before day 7.",
-    ar: 'عندك ٣ استخدامات ببلاش لكل ميزة بريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، ابدأ تجربة ٧ أيام ببلاش — تحتاج بطاقة، وألغِ قبل اليوم السابع.',
+    en: "You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more. When you're ready, start a 7-day free trial - card required, cancel before day 7.",
+    ar: 'عندك ٣ استخدامات ببلاش لكل ميزة بريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، ابدأ تجربة ٧ أيام ببلاش - تحتاج بطاقة، وألغِ قبل اليوم السابع.',
   },
   'dash.welcome.dismiss': { en: 'Dismiss welcome banner', ar: 'سكّر بانر الترحيب' },
   'dash.teacher.account': { en: 'Teacher Account', ar: 'حساب معلم' },
@@ -2993,8 +2993,8 @@ export const DICTIONARY: Dictionary = {
   'account.billing.payment_one_time': { en: 'Purchased', ar: 'مشتراة' },
   'account.billing.payment_free': { en: 'Free', ar: 'ببلاش' },
   'account.billing.err_code_annual_only': {
-    en: 'Your code only applies to annual plans — Student Annual or Teacher Annual. Head to the pricing page to upgrade onto an annual plan, or remove the code to continue with this plan at the standard price.',
-    ar: 'كودك يشتغل بس مع الخطط السنوية — خطة الطالب السنوية أو خطة المعلم السنوية. روح صفحة الأسعار ورقّي على خطة سنوية، أو شيل الكود وكمّل بهذي الخطة بالسعر العادي.',
+    en: 'Your code only applies to annual plans - Student Annual or Teacher Annual. Head to the pricing page to upgrade onto an annual plan, or remove the code to continue with this plan at the standard price.',
+    ar: 'كودك يشتغل بس مع الخطط السنوية - خطة الطالب السنوية أو خطة المعلم السنوية. روح صفحة الأسعار ورقّي على خطة سنوية، أو شيل الكود وكمّل بهذي الخطة بالسعر العادي.',
   },
   'account.billing.err_code_generic': {
     en: "We couldn't apply that code right now. Please try again.",
@@ -3020,8 +3020,8 @@ export const DICTIONARY: Dictionary = {
   // ── /account/data-export ────────────────────────────────────────────
   'account.export.title': { en: 'Download my data', ar: 'نزّل بياناتي' },
   'account.export.subtitle': {
-    en: 'Get a copy of everything we hold about you — yours to keep, share, or move somewhere else.',
-    ar: 'احصل على نسخة من كل اللي عندنا عنك — لك إنت، تحتفظ فيها أو ترسلها أو تنقلها وين ما تبي.',
+    en: 'Get a copy of everything we hold about you - yours to keep, share, or move somewhere else.',
+    ar: 'احصل على نسخة من كل اللي عندنا عنك - لك إنت، تحتفظ فيها أو ترسلها أو تنقلها وين ما تبي.',
   },
   'account.export.what_in_file': { en: 'What’s in your file?', ar: 'شنو في ملفك؟' },
   'account.export.bundle_intro': {
@@ -3053,8 +3053,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'سجل بطلبات البيانات السابقة',
   },
   'account.export.success': {
-    en: 'Done — check your downloads folder for the JSON file.',
-    ar: 'خلصت — شوف مجلّد التنزيلات وبتلقى ملف JSON.',
+    en: 'Done - check your downloads folder for the JSON file.',
+    ar: 'خلصت - شوف مجلّد التنزيلات وبتلقى ملف JSON.',
   },
   'account.export.button': { en: 'Download my data', ar: 'نزّل بياناتي' },
   'account.export.button_preparing': {
@@ -3070,8 +3070,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ليش نخلّيك تسوّي هذا',
   },
   'account.export.legal_basis_body': {
-    en: 'UK GDPR gives you the right to a copy of your personal data (Article 15) and the right to take it with you in a portable format (Article 20). This page exists so you don’t have to email anyone — your data, your choice.',
-    ar: 'نظام GDPR البريطاني يعطيك الحق إنك تاخذ نسخة من بياناتك الشخصية (المادة ١٥) والحق إنك تنقلها معك بصيغة قابلة للنقل (المادة ٢٠). الصفحة هذي موجودة عشان ما تحتاج ترسل إيميل لأحد — بياناتك، واختيارك.',
+    en: 'UK GDPR gives you the right to a copy of your personal data (Article 15) and the right to take it with you in a portable format (Article 20). This page exists so you don’t have to email anyone - your data, your choice.',
+    ar: 'نظام GDPR البريطاني يعطيك الحق إنك تاخذ نسخة من بياناتك الشخصية (المادة ١٥) والحق إنك تنقلها معك بصيغة قابلة للنقل (المادة ٢٠). الصفحة هذي موجودة عشان ما تحتاج ترسل إيميل لأحد - بياناتك، واختيارك.',
   },
   'account.export.under13_heading': {
     en: 'What about under-13 accounts?',
@@ -3086,8 +3086,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'صفحة تنزيل بيانات الأهل',
   },
   'account.export.under13_body_suffix': {
-    en: '. That’s a Children’s Code requirement — the grown-up holds the keys until you’re old enough to do it yourself.',
-    ar: '. هذا شرط من قانون الأطفال — الكبير يمسك المفاتيح لين تكبر وتسوّيها بنفسك.',
+    en: '. That’s a Children’s Code requirement - the grown-up holds the keys until you’re old enough to do it yourself.',
+    ar: '. هذا شرط من قانون الأطفال - الكبير يمسك المفاتيح لين تكبر وتسوّيها بنفسك.',
   },
   'account.export.err_generic': {
     en: 'Something went wrong while preparing your data.',
@@ -3118,24 +3118,24 @@ export const DICTIONARY: Dictionary = {
   },
   'account.delete.bullet_profile_label': { en: 'Your profile', ar: 'ملفك الشخصي' },
   'account.delete.bullet_profile_body': {
-    en: ' — name, email, school, year group, exam board, password.',
-    ar: ' — الاسم، الإيميل، المدرسة، السنة الدراسية، بورد الامتحان، الرمز السري.',
+    en: ' - name, email, school, year group, exam board, password.',
+    ar: ' - الاسم، الإيميل، المدرسة، السنة الدراسية، بورد الامتحان، الرمز السري.',
   },
   'account.delete.bullet_scores_label': {
     en: 'Your scores and grades',
     ar: 'نتائجك ودرجاتك',
   },
   'account.delete.bullet_scores_body': {
-    en: ' — every quiz attempt, predicted grade, and progress record tied to your account.',
-    ar: ' — كل محاولات الكويزات والدرجات المتوقعة وسجل التقدّم المرتبط بحسابك.',
+    en: ' - every quiz attempt, predicted grade, and progress record tied to your account.',
+    ar: ' - كل محاولات الكويزات والدرجات المتوقعة وسجل التقدّم المرتبط بحسابك.',
   },
   'account.delete.bullet_essays_label': {
     en: 'Your essay history',
     ar: 'سجل مقالاتك',
   },
   'account.delete.bullet_essays_body': {
-    en: ' — essays you submitted, AI feedback, and saved drafts.',
-    ar: ' — المقالات اللي سلّمتها، ملاحظات الذكاء الاصطناعي، والمسوّدات المحفوظة.',
+    en: ' - essays you submitted, AI feedback, and saved drafts.',
+    ar: ' - المقالات اللي سلّمتها، ملاحظات الذكاء الاصطناعي، والمسوّدات المحفوظة.',
   },
   'account.delete.aggregate_label': {
     en: 'Aggregate analytics',
@@ -3224,8 +3224,8 @@ export const DICTIONARY: Dictionary = {
   'grade.gap.one_below': { en: '1 grade below target', ar: 'درجة وحدة دون الهدف' },
   'grade.gap.n_below': { en: 'grades below target', ar: 'درجات دون الهدف' },
   'grade.at_top': {
-    en: 'Working at Grade 9 — the highest level. Focus on maintaining excellence and supporting others.',
-    ar: 'أنت بدرجة ٩ — أعلى مستوى. ركّز على الحفاظ على التميّز ومساعدة غيرك.',
+    en: 'Working at Grade 9 - the highest level. Focus on maintaining excellence and supporting others.',
+    ar: 'أنت بدرجة ٩ - أعلى مستوى. ركّز على الحفاظ على التميّز ومساعدة غيرك.',
   },
   'grade.next_target': { en: 'Next Grade Target', ar: 'هدف الدرجة الجاية' },
   'grade.key_focus_areas': { en: 'Key Focus Areas', ar: 'مجالات التركيز الأساسية' },
@@ -3332,8 +3332,8 @@ export const DICTIONARY: Dictionary = {
   'parent.grade_plural': { en: 'grades', ar: 'درجات' },
   'parent.below_target_lead': { en: 'is', ar: 'متأخر' },
   'parent.below_target_tail': {
-    en: 'below target — see the Progress page for suggested focus areas.',
-    ar: 'دون الهدف — شوف صفحة التقدّم للمجالات اللي يحتاج يركّز عليها.',
+    en: 'below target - see the Progress page for suggested focus areas.',
+    ar: 'دون الهدف - شوف صفحة التقدّم للمجالات اللي يحتاج يركّز عليها.',
   },
 
   // Parent weekly activity chart (src/components/parent/WeeklyActivityChart.tsx)
@@ -3445,8 +3445,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'إجابتك فوق بنحللها',
   },
   'marking.ai_guide_disclaimer': {
-    en: "AI-generated feedback — use as a guide alongside your teacher's assessment.",
-    ar: 'ملاحظات بالذكاء الاصطناعي — استخدمها كدليل مع تقييم معلمك.',
+    en: "AI-generated feedback - use as a guide alongside your teacher's assessment.",
+    ar: 'ملاحظات بالذكاء الاصطناعي - استخدمها كدليل مع تقييم معلمك.',
   },
   'marking.ai_approximate_disclaimer': {
     en: 'AI feedback is approximate and should not replace teacher assessment.',
@@ -3454,8 +3454,8 @@ export const DICTIONARY: Dictionary = {
   },
   'marking.ai_generated_estimate': { en: 'AI-Generated Estimate', ar: 'تقدير من الذكاء الاصطناعي' },
   'marking.not_official_grade': {
-    en: "Not an official grade — use alongside your teacher's guidance.",
-    ar: 'هذي مو درجة رسمية — استخدمها مع إرشاد معلمك.',
+    en: "Not an official grade - use alongside your teacher's guidance.",
+    ar: 'هذي مو درجة رسمية - استخدمها مع إرشاد معلمك.',
   },
   'marking.ao_breakdown_title': { en: 'Marking Guide Breakdown', ar: 'تفصيل دليل التصحيح' },
   'marking.strengths': { en: 'Strengths', ar: 'نقاط القوة' },
@@ -3515,16 +3515,16 @@ export const DICTIONARY: Dictionary = {
   'marking.view_model_answer': { en: 'View Model Answer', ar: 'شوف الإجابة النموذجية' },
   'marking.what_markers_look_for': { en: 'What markers look for', ar: 'شنو يدوّر عليه المُصحِّح' },
   'marking.band_excellent': {
-    en: 'Excellent — original and convincing',
-    ar: 'ممتاز — أصيل ومقنع',
+    en: 'Excellent - original and convincing',
+    ar: 'ممتاز - أصيل ومقنع',
   },
-  'marking.band_strong': { en: 'Strong — detailed and well-developed', ar: 'قوي — مفصّل ومتطور' },
-  'marking.band_good': { en: 'Good — clear and on-topic', ar: 'جيد — واضح وفي صلب الموضوع' },
+  'marking.band_strong': { en: 'Strong - detailed and well-developed', ar: 'قوي - مفصّل ومتطور' },
+  'marking.band_good': { en: 'Good - clear and on-topic', ar: 'جيد - واضح وفي صلب الموضوع' },
   'marking.band_getting_there': {
-    en: 'Getting there — some good ideas',
-    ar: 'تتقدّم — في أفكار زينة',
+    en: 'Getting there - some good ideas',
+    ar: 'تتقدّم - في أفكار زينة',
   },
-  'marking.band_early': { en: 'Early stages — keep building', ar: 'بداية الطريق — كمّل وطوّر' },
+  'marking.band_early': { en: 'Early stages - keep building', ar: 'بداية الطريق - كمّل وطوّر' },
   'marking.marked_essay_title': { en: 'Your Marked Essay', ar: 'مقالتك المُصحَّحة' },
   'marking.click_highlight_hint': {
     en: 'Click a highlight to read the feedback.',
@@ -3543,7 +3543,7 @@ export const DICTIONARY: Dictionary = {
   'marking.score_moderate': { en: 'Moderate', ar: 'متوسطة' },
   'marking.score_developing': { en: 'Developing', ar: 'تتطور' },
   // Renders as "{High|Moderate|Developing} score (NN%)". This value is
-  // totalMarks/maxMarks — a score percentage, NOT model confidence.
+  // totalMarks/maxMarks - a score percentage, NOT model confidence.
   // Mislabelling it "confidence" overstated AI certainty (EU AI Act
   // Art 13 transparency / over-reliance on minors). See evals/ + doc 06.
   'marking.score_label': { en: 'score', ar: 'الدرجة' },
@@ -3566,8 +3566,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مو متأكد من ملاحظات الذكاء الاصطناعي؟ تقدر تطلب من شخص حقيقي يراجعها.',
   },
   'marking.human_review_privacy': {
-    en: "This is your right under UK data protection law — it's not a complaint, and there's no wrong reason to ask.",
-    ar: 'هذا حقّك حسب قانون حماية البيانات البريطاني — مو شكوى، وما في سبب غلط عشان تطلب.',
+    en: "This is your right under UK data protection law - it's not a complaint, and there's no wrong reason to ask.",
+    ar: 'هذا حقّك حسب قانون حماية البيانات البريطاني - مو شكوى، وما في سبب غلط عشان تطلب.',
   },
   'marking.request_human_review': { en: 'Request Human Review', ar: 'اطلب مراجعة بشرية' },
   'marking.dismiss': { en: 'Dismiss', ar: 'إخفاء' },
@@ -3635,7 +3635,7 @@ export const DICTIONARY: Dictionary = {
   'mock.stat_grades': { en: 'Grades 1-9', ar: 'درجات ١-٩' },
   'mock.stat_ai_feedback': { en: 'AI feedback', ar: 'ملاحظات من الذكاء الاصطناعي' },
   'mock.view_papers': { en: 'View Exam Papers', ar: 'شوف أوراق الامتحان' },
-  'mock.sample_coming_soon': { en: 'Sample paper — coming soon', ar: 'ورقة عيّنة — قريباً' },
+  'mock.sample_coming_soon': { en: 'Sample paper - coming soon', ar: 'ورقة عيّنة - قريباً' },
   'mock.how_it_works': { en: 'How It Works', ar: 'شلون يشتغل' },
   'mock.how_mocks_help': {
     en: 'How Mock Exams Help You Succeed',
@@ -3655,8 +3655,8 @@ export const DICTIONARY: Dictionary = {
   },
   'mock.step_time_title': { en: 'Build time management skills', ar: 'طوّر مهارات إدارة الوقت' },
   'mock.step_time_desc': {
-    en: 'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions — knowing when to move on is crucial.',
-    ar: 'تعلّم توزّع وقتك بشكل فعّال بين الأقسام. ورقة Language 1 تعطيك ساعة و٤٥ دقيقة لخمسة أسئلة — لازم تعرف متى تنتقل للسؤال اللي بعده.',
+    en: 'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions - knowing when to move on is crucial.',
+    ar: 'تعلّم توزّع وقتك بشكل فعّال بين الأقسام. ورقة Language 1 تعطيك ساعة و٤٥ دقيقة لخمسة أسئلة - لازم تعرف متى تنتقل للسؤال اللي بعده.',
   },
   'mock.step_track_title': { en: 'Track your progress in grades 1-9', ar: 'تابع تقدمك بدرجات ١-٩' },
   'mock.step_track_desc': {
@@ -3690,7 +3690,7 @@ export const DICTIONARY: Dictionary = {
   'mock.tab_all': { en: 'All Papers', ar: 'كل الأوراق' },
   'mock.language': { en: 'Language', ar: 'اللغة' },
   'mock.literature': { en: 'Literature', ar: 'الأدب' },
-  'mock.coming_soon_title': { en: 'mock exams — coming soon', ar: 'الامتحانات التجريبية — قريباً' },
+  'mock.coming_soon_title': { en: 'mock exams - coming soon', ar: 'الامتحانات التجريبية - قريباً' },
   'mock.your_board': { en: 'Your board', ar: 'هيئتك' },
   'mock.your_selected_board': { en: 'your selected board', ar: 'الهيئة اللي اخترتها' },
   'mock.coming_soon_prefix': {
@@ -3864,8 +3864,8 @@ export const DICTIONARY: Dictionary = {
   // ─── Courses ─────────────────────────────────────────────────────
   'course.breadcrumb': { en: 'Courses', ar: 'الكورسات' },
   'course.seo_h1': {
-    en: 'English Courses — KS3, GCSE, IGCSE',
-    ar: 'كورسات إنجليزي — KS3 و GCSE و IGCSE',
+    en: 'English Courses - KS3, GCSE, IGCSE',
+    ar: 'كورسات إنجليزي - KS3 و GCSE و IGCSE',
   },
   'course.seo_description': {
     en: 'Structured English courses across Language, Literature, Poetry, Drama and Exam Skills for every major UK exam board.',
@@ -3894,8 +3894,8 @@ export const DICTIONARY: Dictionary = {
   'course.cat_drama': { en: 'Drama', ar: 'الدراما' },
   'course.cat_exam_skills': { en: 'Exam Skills', ar: 'مهارات الامتحان' },
   'course.sort_recommended': { en: 'Recommended', ar: 'الموصى به' },
-  'course.sort_az': { en: 'A–Z', ar: 'أ–ي' },
-  'course.sort_za': { en: 'Z–A', ar: 'ي–أ' },
+  'course.sort_az': { en: 'A-Z', ar: 'أ-ي' },
+  'course.sort_za': { en: 'Z-A', ar: 'ي-أ' },
   'course.sort_modules': { en: 'Most Content', ar: 'الأكثر محتوى' },
   'course.sort_by': { en: 'Sort by', ar: 'ترتيب حسب' },
   'course.search_placeholder': { en: 'Search courses...', ar: 'دوّر كورس…' },
@@ -3947,8 +3947,8 @@ export const DICTIONARY: Dictionary = {
   'course.start_learning': { en: 'Start Learning', ar: 'ابدأ التعلّم' },
   'course.try_free_preview': { en: 'Try Free Preview', ar: 'جرّب معاينة ببلاش' },
   'course.try_free_preview_no_signup': {
-    en: 'Try Free Preview — No Sign-Up Needed',
-    ar: 'جرّب معاينة ببلاش — بدون تسجيل',
+    en: 'Try Free Preview - No Sign-Up Needed',
+    ar: 'جرّب معاينة ببلاش - بدون تسجيل',
   },
   'course.all_courses': { en: 'All courses', ar: 'كل الكورسات' },
   'course.about_course': { en: 'About This Course', ar: 'عن هذا الكورس' },
@@ -4060,8 +4060,8 @@ export const DICTIONARY: Dictionary = {
   'school.banner.active_until': { en: 'active until', ar: 'نشط لين' },
   'school.banner.days_remaining': { en: 'days remaining', ar: 'يوم باقي' },
   'school.banner.on_founder_access_renew': {
-    en: 'on your FOUNDER access — renew to keep access',
-    ar: 'على وصول FOUNDER مالك — جدِّد عشان تبقى مشترك',
+    en: 'on your FOUNDER access - renew to keep access',
+    ar: 'على وصول FOUNDER مالك - جدِّد عشان تبقى مشترك',
   },
   'school.banner.renew_now': { en: 'Renew now', ar: 'جدِّد الحين' },
   'school.banner.last_day': { en: 'Last day', ar: 'آخر يوم' },
@@ -4086,8 +4086,8 @@ export const DICTIONARY: Dictionary = {
   'school.banner.day_remaining_plural': { en: 'days remaining', ar: 'يوم باقي' },
   'school.banner.upgrade': { en: 'Upgrade to full access', ar: 'رقِّ للوصول الكامل' },
   'school.founder_banner.headline': {
-    en: 'Founding Schools Programme — only 10 places for 2026.',
-    ar: 'برنامج المدارس المؤسِّسة — بس ١٠ مقاعد لـ ٢٠٢٦.',
+    en: 'Founding Schools Programme - only 10 places for 2026.',
+    ar: 'برنامج المدارس المؤسِّسة - بس ١٠ مقاعد لـ ٢٠٢٦.',
   },
   'school.founder_banner.highlight': {
     en: 'Heavily discounted pricing + locked rates.',
@@ -4178,8 +4178,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'لحظة، يحمّل بيانات الأسئلة…',
   },
   'school.dash.hardest.empty': {
-    en: "No quiz data yet — your students' responses will appear here as they practise.",
-    ar: 'ما في بيانات اختبارات بعد — إجابات طلابك بتطلع هني لما يبدون يتدرّبون.',
+    en: "No quiz data yet - your students' responses will appear here as they practise.",
+    ar: 'ما في بيانات اختبارات بعد - إجابات طلابك بتطلع هني لما يبدون يتدرّبون.',
   },
   'school.dash.hardest.col.topic': { en: 'Topic', ar: 'الموضوع' },
   'school.dash.hardest.col.correct': { en: 'Correct', ar: 'صحيح' },
@@ -4496,12 +4496,12 @@ export const DICTIONARY: Dictionary = {
   'school.classes.detail.set_homework': { en: 'Set Homework', ar: 'عطِ واجب بيت' },
   'school.classes.detail.create_assignment': { en: 'Create Assignment', ar: 'سوِّ واجب' },
   'school.classes.detail.coming_soon_homework': {
-    en: 'Set Homework — coming soon!',
-    ar: 'عطِ واجب بيت — يي قريب!',
+    en: 'Set Homework - coming soon!',
+    ar: 'عطِ واجب بيت - يي قريب!',
   },
   'school.classes.detail.coming_soon_assignment': {
-    en: 'Create Assignment — coming soon!',
-    ar: 'سوِّ واجب — يي قريب!',
+    en: 'Create Assignment - coming soon!',
+    ar: 'سوِّ واجب - يي قريب!',
   },
   'school.classes.detail.tab.students': { en: 'Students', ar: 'الطلاب' },
   'school.classes.detail.tab.analytics': { en: 'Analytics', ar: 'التحليلات' },
@@ -4725,8 +4725,8 @@ export const DICTIONARY: Dictionary = {
   'study_tools.banner_prefix': { en: 'Revise', ar: 'راجع' },
   'study_tools.banner_suffix': { en: 'with AI', ar: 'بالذكاء الاصطناعي' },
   'study_tools.banner_blurb': {
-    en: 'Revision notes, quizzes, essay plans — personalised to your grade',
-    ar: 'ملاحظات مراجعة واختبارات وخطط مقالات — مخصصة لدرجتك',
+    en: 'Revision notes, quizzes, essay plans - personalised to your grade',
+    ar: 'ملاحظات مراجعة واختبارات وخطط مقالات - مخصصة لدرجتك',
   },
   'study_tools.generate_notes': { en: 'Generate Notes', ar: 'سوِّ الملاحظات' },
   'text_hub.who_says': { en: 'Who says', ar: 'مين قال' },
@@ -4756,8 +4756,8 @@ export const DICTIONARY: Dictionary = {
   },
   'text_hub.study_heading_prefix': { en: 'Study', ar: 'ادرس' },
   'text_hub.study_subheading': {
-    en: 'Everything you need in one place — read, revise, practise, and test yourself.',
-    ar: 'كل اللي تحتاجه في مكان واحد — اقرا وراجع وتدرب واختبر نفسك.',
+    en: 'Everything you need in one place - read, revise, practise, and test yourself.',
+    ar: 'كل اللي تحتاجه في مكان واحد - اقرا وراجع وتدرب واختبر نفسك.',
   },
   'text_hub.generate_personalised_notes': {
     en: 'Generate personalised notes',
@@ -4834,12 +4834,12 @@ export const DICTIONARY: Dictionary = {
   'quiz.working_at_grade': { en: 'Working at Grade', ar: 'مستواك درجة' },
   'quiz.excellent_understanding': { en: 'Excellent understanding!', ar: 'فهم ممتاز!' },
   'quiz.good_progress': {
-    en: 'Good progress — review the topics below',
-    ar: 'تقدّم زين — راجع المواضيع تحت',
+    en: 'Good progress - review the topics below',
+    ar: 'تقدّم زين - راجع المواضيع تحت',
   },
   'quiz.more_revision': {
-    en: 'More revision needed — try the revision notes tab',
-    ar: 'تحتاج مراجعة أكثر — جرّب تبويب ملاحظات المراجعة',
+    en: 'More revision needed - try the revision notes tab',
+    ar: 'تحتاج مراجعة أكثر - جرّب تبويب ملاحظات المراجعة',
   },
   'quiz.topic_breakdown': { en: 'Topic Breakdown', ar: 'تفصيل المواضيع' },
   'quiz.take_another': { en: 'Take another quiz', ar: 'سوِّ اختبار ثاني' },
@@ -4931,20 +4931,20 @@ export const DICTIONARY: Dictionary = {
     ar: 'باكدج موارد تدريس ببلاش لرواية An Inspector Calls',
   },
   'demo.free_resources.desc': {
-    en: 'Lesson plans, worksheets, and revision guides — ready to download.',
-    ar: 'خطط دروس، أوراق عمل، وأدلة مراجعة — جاهزة للتحميل.',
+    en: 'Lesson plans, worksheets, and revision guides - ready to download.',
+    ar: 'خطط دروس، أوراق عمل، وأدلة مراجعة - جاهزة للتحميل.',
   },
   'demo.free_resources.cta': { en: 'Download Free Pack', ar: 'حمّل الباكدج ببلاش' },
   'demo.bottom.title': { en: 'Ready to get started?', ar: 'جاهز تبدأ؟' },
   'demo.bottom.sub': {
-    en: 'Choose the plan that fits your needs. Schools get full access with the FOUNDER plan — completely free.',
-    ar: 'اختر الخطة اللي تناسبك. المدارس تحصل وصول كامل بخطة FOUNDER — ببلاش وايد.',
+    en: 'Choose the plan that fits your needs. Schools get full access with the FOUNDER plan - completely free.',
+    ar: 'اختر الخطة اللي تناسبك. المدارس تحصل وصول كامل بخطة FOUNDER - ببلاش وايد.',
   },
   'demo.bottom.cta_school': { en: 'Register School', ar: 'سجّل المدرسة' },
   'demo.bottom.school_badge': { en: 'FREE WITH FOUNDER', ar: 'ببلاش مع FOUNDER' },
   'demo.bottom.cta_teacher': { en: 'Teacher Free Trial', ar: 'تجربة المعلم ببلاش' },
   'demo.bottom.cta_student': { en: 'Student Free Trial', ar: 'تجربة الطالب ببلاش' },
-  'not_found.eyebrow': { en: '404 — page not found', ar: '٤٠٤ — الصفحة ما لقيناها' },
+  'not_found.eyebrow': { en: '404 - page not found', ar: '٤٠٤ - الصفحة ما لقيناها' },
   'not_found.title': { en: 'Page not found', ar: 'شكلك ضعت' },
   'not_found.intro': {
     en: "That URL doesn't exist on The English Hub. Try one of the popular pages below, or get in touch and we'll point you in the right direction.",
@@ -5001,7 +5001,7 @@ export const DICTIONARY: Dictionary = {
   'error.go_home': { en: 'Go home', ar: 'روح للرئيسية' },
   'error.contact_support': { en: 'Contact Support', ar: 'كلّم الدعم' },
 
-  // ─── error.<route>.* — per-route error boundaries ────────────────────
+  // ─── error.<route>.* - per-route error boundaries ────────────────────
   // Section error boundaries (the ones that surface "Failed to load X"
   // with a Back-to-section link). Each route gets its own title + body
   // so the message matches the surface the user was on.
@@ -5039,7 +5039,7 @@ export const DICTIONARY: Dictionary = {
   },
   'error.school.back': { en: 'Back to School', ar: 'رجوع للمدرسة' },
 
-  // Generic per-route boundary — shared "Something went wrong / Try again
+  // Generic per-route boundary - shared "Something went wrong / Try again
   // / Go home" template used across affiliate, assessment, board-select,
   // games, igcse, marking, parent, resources, revision, settings.
   'error.section.title': {
@@ -5053,13 +5053,13 @@ export const DICTIONARY: Dictionary = {
   'error.section.try_again': { en: 'Try again', ar: 'حاول مرة ثانية' },
   'error.section.go_home': { en: 'Go home', ar: 'روح للرئيسية' },
 
-  // ─── loading.<route>.* — fallback loading copy ───────────────────────
+  // ─── loading.<route>.* - fallback loading copy ───────────────────────
   // Only used by surfaces that show a literal "Loading…" string rather
   // than a skeleton (most loading.tsx files are skeleton-only and need
   // no translation).
   'loading.root.label': { en: 'Loading...', ar: 'لحظة…' },
 
-  // ─── not_found.<route>.* — per-route 404s ────────────────────────────
+  // ─── not_found.<route>.* - per-route 404s ────────────────────────────
   // Printable [slug] not-found
   'not_found.printable.title': {
     en: 'Printable not found',
@@ -5077,8 +5077,8 @@ export const DICTIONARY: Dictionary = {
 
   // Lesson plan [slug] not-found
   'not_found.lesson_plan.eyebrow': {
-    en: '404 — lesson plan not found',
-    ar: '٤٠٤ — ما لقينا خطة الدرس',
+    en: '404 - lesson plan not found',
+    ar: '٤٠٤ - ما لقينا خطة الدرس',
   },
   'not_found.lesson_plan.title': {
     en: "We couldn't find that lesson plan",
@@ -5105,8 +5105,8 @@ export const DICTIONARY: Dictionary = {
 
   // Blog article [slug] not-found
   'not_found.blog.eyebrow': {
-    en: '404 — article not found',
-    ar: '٤٠٤ — ما لقينا المقال',
+    en: '404 - article not found',
+    ar: '٤٠٤ - ما لقينا المقال',
   },
   'not_found.blog.title': {
     en: "We couldn't find that article",
@@ -5130,8 +5130,8 @@ export const DICTIONARY: Dictionary = {
   },
   'about.offer.h2': { en: 'What We Offer', ar: 'وش نقدّم' },
   'about.offer.body': {
-    en: 'We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and Literature. Our content is tailored to five major exam boards — AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE — so students always study material aligned to the exam board they are sitting. Each course is broken down into clear, manageable topics with lessons, practice activities, and revision resources designed to build confidence from the first lesson through to exam day.',
-    ar: 'إحنا نقدّم أكثر من ١٥ كورس منظَّم تغطي KS3 وGCSE وIGCSE في English Language و Literature. محتوانا مفصَّل لخمس بوردات رئيسية — AQA, Edexcel, OCR, WJEC Eduqas, و Cambridge IGCSE — عشان الطالب يدرس مادة متطابقة دايماً مع البورد اللي بيمتحن فيه. كل كورس مقسَّم لمواضيع واضحة وسهلة، فيها دروس وأنشطة تدريب وموارد مراجعة تبني الثقة من أول درس لين يوم الامتحان.',
+    en: 'We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and Literature. Our content is tailored to five major exam boards - AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE - so students always study material aligned to the exam board they are sitting. Each course is broken down into clear, manageable topics with lessons, practice activities, and revision resources designed to build confidence from the first lesson through to exam day.',
+    ar: 'إحنا نقدّم أكثر من ١٥ كورس منظَّم تغطي KS3 وGCSE وIGCSE في English Language و Literature. محتوانا مفصَّل لخمس بوردات رئيسية - AQA, Edexcel, OCR, WJEC Eduqas, و Cambridge IGCSE - عشان الطالب يدرس مادة متطابقة دايماً مع البورد اللي بيمتحن فيه. كل كورس مقسَّم لمواضيع واضحة وسهلة، فيها دروس وأنشطة تدريب وموارد مراجعة تبني الثقة من أول درس لين يوم الامتحان.',
   },
   'about.approach.h2': { en: 'Our Approach', ar: 'منهجنا' },
   'about.approach.intro': {
@@ -5169,7 +5169,7 @@ export const DICTIONARY: Dictionary = {
   },
   'about.who.h2': { en: "Who It's For", ar: 'لمين' },
   'about.who.body': {
-    en: 'The English Hub is designed for learners aged 13 and over (13–15 require parent/guardian consent) preparing for their English exams, but it supports the wider community around them too. Teachers use the platform to set homework, track progress, and supplement classroom teaching. Schools integrate our courses into their intervention and revision programmes. Parents gain visibility into what their child is studying and how they are progressing, giving them the confidence to support learning at home.',
+    en: 'The English Hub is designed for learners aged 13 and over (13-15 require parent/guardian consent) preparing for their English exams, but it supports the wider community around them too. Teachers use the platform to set homework, track progress, and supplement classroom teaching. Schools integrate our courses into their intervention and revision programmes. Parents gain visibility into what their child is studying and how they are progressing, giving them the confidence to support learning at home.',
     ar: 'The English Hub مصمَّم للمتعلّمين من عمر ١٣ سنة فأكثر (من ١٣ إلى ١٥ يحتاجون موافقة ولي الأمر) اللي يحضّرون لامتحانات English، بس يدعم كل المجتمع حولهم. المعلمين يستخدمون المنصة عشان يعطون واجبات، يتابعون التقدّم، ويكمّلون التدريس في الفصل. المدارس تدمج كورساتنا في برامج التدخّل والمراجعة. أولياء الأمور يشوفون وش يدرس طفلهم وكيف يتقدّم، عشان يكونون واثقين يدعمونه في البيت.',
   },
   'about.values.h2': { en: 'Our Values', ar: 'قيمنا' },
@@ -5222,25 +5222,25 @@ export const DICTIONARY: Dictionary = {
   },
   'about.compliance.h2': { en: 'Compliance', ar: 'الالتزام' },
   'about.compliance.dpia': {
-    en: 'Data Protection Impact Assessment — in preparation; not yet available for inspection.',
-    ar: 'تقييم أثر حماية البيانات — قيد الإعداد؛ غير متاح للاطّلاع بعد.',
+    en: 'Data Protection Impact Assessment - in preparation; not yet available for inspection.',
+    ar: 'تقييم أثر حماية البيانات - قيد الإعداد؛ غير متاح للاطّلاع بعد.',
   },
   'about.compliance.safeguard': { en: 'Safeguarding Policy (PDF)', ar: 'سياسة الحماية (PDF)' },
   'about.compliance.vpat': {
-    en: 'VPAT (Voluntary Product Accessibility Template) — no VPAT available yet.',
-    ar: 'VPAT (نموذج إمكانية الوصول الطوعي للمنتج) — لا يتوفّر VPAT بعد.',
+    en: 'VPAT (Voluntary Product Accessibility Template) - no VPAT available yet.',
+    ar: 'VPAT (نموذج إمكانية الوصول الطوعي للمنتج) - لا يتوفّر VPAT بعد.',
   },
   'about.compliance.access_statement': {
-    en: 'Accessibility Statement — we target WCAG 2.2 Level AA. This is currently a self-assessment, not an independently audited conformance claim, and no VPAT is available yet. Known limitations are listed on our Accessibility page.',
-    ar: 'بيان إمكانية الوصول — نستهدف WCAG 2.2 المستوى AA. هذا حالياً تقييم ذاتي، وليس ادّعاء مطابقة مُدقَّق بشكل مستقل، ولا يتوفّر VPAT بعد. القيود المعروفة مدرجة في صفحة إمكانية الوصول لدينا.',
+    en: 'Accessibility Statement - we target WCAG 2.2 Level AA. This is currently a self-assessment, not an independently audited conformance claim, and no VPAT is available yet. Known limitations are listed on our Accessibility page.',
+    ar: 'بيان إمكانية الوصول - نستهدف WCAG 2.2 المستوى AA. هذا حالياً تقييم ذاتي، وليس ادّعاء مطابقة مُدقَّق بشكل مستقل، ولا يتوفّر VPAT بعد. القيود المعروفة مدرجة في صفحة إمكانية الوصول لدينا.',
   },
   'about.compliance.cyber': {
-    en: 'Cyber Essentials — not currently held.',
-    ar: 'Cyber Essentials — غير حاصلين عليها حالياً.',
+    en: 'Cyber Essentials - not currently held.',
+    ar: 'Cyber Essentials - غير حاصلين عليها حالياً.',
   },
   'about.compliance.dpa': {
-    en: 'Data Processing Agreement — available to schools on request during procurement (legal@theenglishhub.app).',
-    ar: 'اتفاقية معالجة البيانات — متاحة للمدارس عند الطلب أثناء عملية الشراء (legal@theenglishhub.app).',
+    en: 'Data Processing Agreement - available to schools on request during procurement (legal@theenglishhub.app).',
+    ar: 'اتفاقية معالجة البيانات - متاحة للمدارس عند الطلب أثناء عملية الشراء (legal@theenglishhub.app).',
   },
   'about.compliance.coming_soon': { en: 'coming soon', ar: 'قريب' },
   'about.compliance.dpa_available': {
@@ -5380,8 +5380,8 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Macbeth analysis hub ─────────────────────────────────────────
   'analysis.macbeth.intro': {
-    en: 'Grade-9 Macbeth analysis from GCSE markers — 15 famous quotations, every major theme and character, and a step-by-step Grade 9 essay guide.',
-    ar: 'تحليل Macbeth بمستوى Grade 9 من مصححي GCSE — ١٥ اقتباس مشهور، كل ثيمة وشخصية رئيسية، ودليل خطوة بخطوة لمقال Grade 9.',
+    en: 'Grade-9 Macbeth analysis from GCSE markers - 15 famous quotations, every major theme and character, and a step-by-step Grade 9 essay guide.',
+    ar: 'تحليل Macbeth بمستوى Grade 9 من مصححي GCSE - ١٥ اقتباس مشهور، كل ثيمة وشخصية رئيسية، ودليل خطوة بخطوة لمقال Grade 9.',
   },
   'analysis.macbeth.how_to_use_body': {
     en: "Start with a quote you'd like to analyse or jump straight to a theme. Each page works as a standalone revision card, and the whole set links back to the full Macbeth revision guide for context.",
@@ -5401,20 +5401,20 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.macbeth.themes.h2': { en: 'Themes & characters', ar: 'الثيمات والشخصيات' },
   'analysis.macbeth.themes.body': {
-    en: "Every major theme in Macbeth — ambition, guilt, the supernatural, kingship and gender — plus character studies and Shakespeare's craft.",
-    ar: 'كل ثيمة رئيسية في Macbeth — الطموح، الذنب، الخوارق، الملكية، والنوع — مع دراسات للشخصيات وأسلوب Shakespeare.',
+    en: "Every major theme in Macbeth - ambition, guilt, the supernatural, kingship and gender - plus character studies and Shakespeare's craft.",
+    ar: 'كل ثيمة رئيسية في Macbeth - الطموح، الذنب، الخوارق، الملكية، والنوع - مع دراسات للشخصيات وأسلوب Shakespeare.',
   },
   'analysis.macbeth.foot.h2': { en: 'Revise Macbeth in full', ar: 'راجع Macbeth كامل' },
   'analysis.macbeth.foot.body': {
-    en: 'Move from analysis to revision with the full Macbeth study guide — scene summaries, all key quotes and Grade 9 model answers for every board.',
-    ar: 'انتقل من التحليل للمراجعة مع دليل دراسة Macbeth الكامل — ملخصات المشاهد، كل الاقتباسات المهمة، ونماذج إجابة Grade 9 لكل بورد.',
+    en: 'Move from analysis to revision with the full Macbeth study guide - scene summaries, all key quotes and Grade 9 model answers for every board.',
+    ar: 'انتقل من التحليل للمراجعة مع دليل دراسة Macbeth الكامل - ملخصات المشاهد، كل الاقتباسات المهمة، ونماذج إجابة Grade 9 لكل بورد.',
   },
   'analysis.macbeth.foot.cta': { en: 'Open Macbeth revision', ar: 'افتح مراجعة Macbeth' },
 
   // ─── Jekyll and Hyde analysis hub ─────────────────────────────────
   'analysis.jekyll.intro': {
-    en: "Stevenson's Gothic novella unpacked — Victorian duality, atavism, repression and the Carew murder, with line-by-line quote analysis and four character studies.",
-    ar: 'رواية Stevenson القوطية الصغيرة مفكَّكة — الازدواجية الفيكتورية، التراجع البدائي، الكبت، وجريمة Carew، مع تحليل سطر بسطر للاقتباسات وأربع دراسات للشخصيات.',
+    en: "Stevenson's Gothic novella unpacked - Victorian duality, atavism, repression and the Carew murder, with line-by-line quote analysis and four character studies.",
+    ar: 'رواية Stevenson القوطية الصغيرة مفكَّكة - الازدواجية الفيكتورية، التراجع البدائي، الكبت، وجريمة Carew، مع تحليل سطر بسطر للاقتباسات وأربع دراسات للشخصيات.',
   },
   'analysis.jekyll.cta.full_revision': { en: 'Full revision guide', ar: 'دليل المراجعة الكامل' },
   'analysis.jekyll.cta.notes': { en: 'Revision notes', ar: 'ملاحظات المراجعة' },
@@ -5436,8 +5436,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.jekyll.foot.h2': { en: 'Revise the whole novella', ar: 'راجع الرواية كاملة' },
   'analysis.jekyll.foot.body': {
-    en: 'Pair this analysis with the full Jekyll and Hyde revision guide — chapter summaries, every key quote and exam-ready essay plans.',
-    ar: 'اجمع هذا التحليل مع دليل مراجعة Jekyll and Hyde الكامل — ملخصات الفصول، كل الاقتباسات المهمة، وخطط مقال جاهزة للامتحان.',
+    en: 'Pair this analysis with the full Jekyll and Hyde revision guide - chapter summaries, every key quote and exam-ready essay plans.',
+    ar: 'اجمع هذا التحليل مع دليل مراجعة Jekyll and Hyde الكامل - ملخصات الفصول، كل الاقتباسات المهمة، وخطط مقال جاهزة للامتحان.',
   },
   'analysis.jekyll.foot.cta': {
     en: 'Open Jekyll and Hyde revision',
@@ -5446,8 +5446,8 @@ export const DICTIONARY: Dictionary = {
 
   // ─── A Christmas Carol analysis hub ───────────────────────────────
   'analysis.carol.intro': {
-    en: "Dickens's redemption story unpacked — Victorian poverty, Malthusian doctrine, allegorical ghosts, and the Cratchit family's moral weight.",
-    ar: 'قصة الفداء عند Dickens مفكَّكة — الفقر الفيكتوري، نظرية Malthus، الأشباح الرمزية، والثقل الأخلاقي لعائلة Cratchit.',
+    en: "Dickens's redemption story unpacked - Victorian poverty, Malthusian doctrine, allegorical ghosts, and the Cratchit family's moral weight.",
+    ar: 'قصة الفداء عند Dickens مفكَّكة - الفقر الفيكتوري، نظرية Malthus، الأشباح الرمزية، والثقل الأخلاقي لعائلة Cratchit.',
   },
   'analysis.carol.quotes.h2': { en: 'Key quote analysis', ar: 'تحليل الاقتباسات المهمة' },
   'analysis.carol.char.h2': {
@@ -5456,15 +5456,15 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.carol.foot.h2': { en: 'Revise A Christmas Carol', ar: 'راجع A Christmas Carol' },
   'analysis.carol.foot.body': {
-    en: 'Move from analysis to revision with the full A Christmas Carol revision hub — stave summaries, all key quotes and Grade 9 model answers.',
-    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة A Christmas Carol الكامل — ملخصات المقاطع، كل الاقتباسات المهمة، ونماذج إجابة Grade 9.',
+    en: 'Move from analysis to revision with the full A Christmas Carol revision hub - stave summaries, all key quotes and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة A Christmas Carol الكامل - ملخصات المقاطع، كل الاقتباسات المهمة، ونماذج إجابة Grade 9.',
   },
 
   // ─── An Inspector Calls analysis hub ──────────────────────────────
   'analysis.inspector.h1': { en: 'analysis hub', ar: 'مركز التحليل' },
   'analysis.inspector.intro': {
-    en: "Priestley's 1945 morality play unpacked for GCSE — collective responsibility, the Inspector's prophetic warning, class, gender and the Birling family's hypocrisy.",
-    ar: 'مسرحية Priestley الأخلاقية مالت ١٩٤٥ مفكَّكة لـ GCSE — المسؤولية الجماعية، التحذير النبوي للمفتش، الطبقة، النوع، ونفاق عائلة Birling.',
+    en: "Priestley's 1945 morality play unpacked for GCSE - collective responsibility, the Inspector's prophetic warning, class, gender and the Birling family's hypocrisy.",
+    ar: 'مسرحية Priestley الأخلاقية مالت ١٩٤٥ مفكَّكة لـ GCSE - المسؤولية الجماعية، التحذير النبوي للمفتش، الطبقة، النوع، ونفاق عائلة Birling.',
   },
   'analysis.inspector.quote.h2': {
     en: 'Quote-by-quote analysis',
@@ -5475,8 +5475,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الشخصيات والثيمات والسياق',
   },
   'analysis.inspector.how.body': {
-    en: "Each analysis is a standalone Grade 9 revision card. Aim to read three or four before your next mock — the Inspector's speeches reward density of analysis more than breadth of quotes.",
-    ar: 'كل تحليل بطاقة مراجعة Grade 9 مستقلة. اقرا ثلاث أو أربع قبل الـ mock الجاي — خطابات المفتش تكافئ عمق التحليل أكثر من عدد الاقتباسات.',
+    en: "Each analysis is a standalone Grade 9 revision card. Aim to read three or four before your next mock - the Inspector's speeches reward density of analysis more than breadth of quotes.",
+    ar: 'كل تحليل بطاقة مراجعة Grade 9 مستقلة. اقرا ثلاث أو أربع قبل الـ mock الجاي - خطابات المفتش تكافئ عمق التحليل أكثر من عدد الاقتباسات.',
   },
   'analysis.inspector.how.cta': { en: 'Open Grade 9 targets', ar: 'افتح أهداف Grade 9' },
   'analysis.inspector.rights_notice': {
@@ -5486,8 +5486,8 @@ export const DICTIONARY: Dictionary = {
 
   // ─── AQA Love and Relationships analysis hub ──────────────────────
   'analysis.love.intro': {
-    en: 'Grade-9 AQA Love and Relationships analysis from GCSE markers — side-by-side poem comparisons, every major theme, and the unseen comparison technique decoded.',
-    ar: 'تحليل AQA Love and Relationships بمستوى Grade 9 من مصححي GCSE — مقارنات بين القصائد جنباً إلى جنب، كل ثيمة رئيسية، وفكفكة لتقنية المقارنة على القصيدة المجهولة.',
+    en: 'Grade-9 AQA Love and Relationships analysis from GCSE markers - side-by-side poem comparisons, every major theme, and the unseen comparison technique decoded.',
+    ar: 'تحليل AQA Love and Relationships بمستوى Grade 9 من مصححي GCSE - مقارنات بين القصائد جنباً إلى جنب، كل ثيمة رئيسية، وفكفكة لتقنية المقارنة على القصيدة المجهولة.',
   },
   'analysis.love.how.body': {
     en: 'Pick a comparison pairing to drill, then read the corresponding theme essay to widen your evidence. Each page links back to the full Love and Relationships revision guide.',
@@ -5504,8 +5504,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.love.themes.h2': { en: 'Themes across the anthology', ar: 'الثيمات عبر الأنثولوجي' },
   'analysis.love.themes.body': {
-    en: 'Eight cross-anthology theme essays — romantic love, family love, lost love, possessive love, memory, time, nature and distance.',
-    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي — الحب الرومانسي، حب العائلة، الحب الضائع، الحب التملّكي، الذكرى، الوقت، الطبيعة، والمسافة.',
+    en: 'Eight cross-anthology theme essays - romantic love, family love, lost love, possessive love, memory, time, nature and distance.',
+    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي - الحب الرومانسي، حب العائلة، الحب الضائع، الحب التملّكي، الذكرى، الوقت، الطبيعة، والمسافة.',
   },
   'analysis.love.technique.h2': { en: 'Exam technique', ar: 'تقنية الامتحان' },
   'analysis.love.technique.body': {
@@ -5514,8 +5514,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.love.foot.h2': { en: 'Revise the full anthology', ar: 'راجع الأنثولوجي الكامل' },
   'analysis.love.foot.body': {
-    en: 'Move from analysis to revision with the full Love and Relationships revision hub — every poem, every key quote and Grade 9 model answers.',
-    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Love and Relationships الكامل — كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
+    en: 'Move from analysis to revision with the full Love and Relationships revision hub - every poem, every key quote and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Love and Relationships الكامل - كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
   },
   'analysis.love.foot.cta': {
     en: 'Open Love and Relationships revision',
@@ -5525,8 +5525,8 @@ export const DICTIONARY: Dictionary = {
   // ─── AQA Power and Conflict analysis hub ──────────────────────────
   'analysis.power.h1_suffix': { en: 'analysis & revision', ar: 'تحليل ومراجعة' },
   'analysis.power.intro': {
-    en: 'Grade-9 AQA Power and Conflict analysis from GCSE markers — poem comparisons, every major theme, key quotes and the comparison technique that hits Level 6.',
-    ar: 'تحليل AQA Power and Conflict بمستوى Grade 9 من مصححي GCSE — مقارنات بين القصائد، كل ثيمة رئيسية، الاقتباسات المهمة، وتقنية المقارنة اللي توصّل Level 6.',
+    en: 'Grade-9 AQA Power and Conflict analysis from GCSE markers - poem comparisons, every major theme, key quotes and the comparison technique that hits Level 6.',
+    ar: 'تحليل AQA Power and Conflict بمستوى Grade 9 من مصححي GCSE - مقارنات بين القصائد، كل ثيمة رئيسية، الاقتباسات المهمة، وتقنية المقارنة اللي توصّل Level 6.',
   },
   'analysis.power.how.body': {
     en: 'Start with a comparison pairing, then back it up with a theme essay. Every page links to the full Power and Conflict revision guide.',
@@ -5543,8 +5543,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.power.themes.h2': { en: 'Themes across the anthology', ar: 'الثيمات عبر الأنثولوجي' },
   'analysis.power.themes.body': {
-    en: 'Eight cross-anthology theme essays — power of nature, power of humans, reality of conflict, memory, identity, loss, suffering and corruption.',
-    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي — قوة الطبيعة، قوة البشر، حقيقة الصراع، الذكرى، الهوية، الفقد، المعاناة، والفساد.',
+    en: 'Eight cross-anthology theme essays - power of nature, power of humans, reality of conflict, memory, identity, loss, suffering and corruption.',
+    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي - قوة الطبيعة، قوة البشر، حقيقة الصراع، الذكرى، الهوية، الفقد، المعاناة، والفساد.',
   },
   'analysis.power.technique.h2': { en: 'Exam technique', ar: 'تقنية الامتحان' },
   'analysis.power.technique.body': {
@@ -5553,8 +5553,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.power.foot.h2': { en: 'Revise the full anthology', ar: 'راجع الأنثولوجي الكامل' },
   'analysis.power.foot.body': {
-    en: 'Move from analysis to revision with the full Power and Conflict revision hub — every poem, every key quote and Grade 9 model answers.',
-    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Power and Conflict الكامل — كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
+    en: 'Move from analysis to revision with the full Power and Conflict revision hub - every poem, every key quote and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Power and Conflict الكامل - كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
   },
   'analysis.power.foot.cta': {
     en: 'Open Power and Conflict revision',
@@ -5564,12 +5564,12 @@ export const DICTIONARY: Dictionary = {
   // ─── Language Paper analysis hub ──────────────────────────────────
   'analysis.lang.breadcrumb_current': { en: 'Language Paper', ar: 'ورقة Language' },
   'analysis.lang.h1': {
-    en: 'AQA Language Paper 1 & 2 — question-by-question technique',
-    ar: 'AQA Language Paper 1 و 2 — تقنية سؤال بسؤال',
+    en: 'AQA Language Paper 1 & 2 - question-by-question technique',
+    ar: 'AQA Language Paper 1 و 2 - تقنية سؤال بسؤال',
   },
   'analysis.lang.intro': {
-    en: 'Marker-written walkthroughs for every AQA English Language Paper 1 and Paper 2 question — Grade 9 model answers, timing strategy and the lexis examiners reward.',
-    ar: 'شروحات من مصححين لكل سؤال في AQA English Language Paper 1 و Paper 2 — نماذج إجابة Grade 9، خطة الوقت، والمصطلحات اللي يكافئها المصححون.',
+    en: 'Marker-written walkthroughs for every AQA English Language Paper 1 and Paper 2 question - Grade 9 model answers, timing strategy and the lexis examiners reward.',
+    ar: 'شروحات من مصححين لكل سؤال في AQA English Language Paper 1 و Paper 2 - نماذج إجابة Grade 9، خطة الوقت، والمصطلحات اللي يكافئها المصححون.',
   },
   'analysis.lang.how.body': {
     en: 'Pick a question you struggle with, work through the walkthrough, then attempt the model answer cold. Aim for two questions per study session.',
@@ -5578,8 +5578,8 @@ export const DICTIONARY: Dictionary = {
   'analysis.lang.how.cta': { en: 'Open Language revision', ar: 'افتح مراجعة Language' },
   'analysis.lang.p1q.h2': { en: 'Paper 1 questions', ar: 'أسئلة Paper 1' },
   'analysis.lang.p1q.body': {
-    en: 'Every Paper 1 question — list four things, language analysis, structure, evaluation and creative writing.',
-    ar: 'كل سؤال في Paper 1 — عدّد أربع أشياء، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
+    en: 'Every Paper 1 question - list four things, language analysis, structure, evaluation and creative writing.',
+    ar: 'كل سؤال في Paper 1 - عدّد أربع أشياء، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
   },
   'analysis.lang.p1t.h2': { en: 'Paper 1 writing technique', ar: 'تقنية الكتابة في Paper 1' },
   'analysis.lang.p1t.body': {
@@ -5588,8 +5588,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.lang.p2q.h2': { en: 'Paper 2 questions', ar: 'أسئلة Paper 2' },
   'analysis.lang.p2q.body': {
-    en: 'Every Paper 2 question — true/false, summary, language, comparison and transactional writing.',
-    ar: 'كل سؤال في Paper 2 — صح/خطأ، التلخيص، اللغة، المقارنة، والكتابة المعاملاتية.',
+    en: 'Every Paper 2 question - true/false, summary, language, comparison and transactional writing.',
+    ar: 'كل سؤال في Paper 2 - صح/خطأ، التلخيص، اللغة، المقارنة، والكتابة المعاملاتية.',
   },
   'analysis.lang.p2t.h2': { en: 'Paper 2 writing technique', ar: 'تقنية الكتابة في Paper 2' },
   'analysis.lang.p2t.body': {
@@ -5603,8 +5603,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.lang.foot.h2': { en: 'Revise the Language paper', ar: 'راجع ورقة Language' },
   'analysis.lang.foot.body': {
-    en: 'Pair this technique work with the full Language revision hub — practice extracts, mark schemes and Grade 9 model answers.',
-    ar: 'اجمع هذي التقنية مع مركز مراجعة Language الكامل — مقاطع للتدريب، schemes للتصحيح، ونماذج إجابة Grade 9.',
+    en: 'Pair this technique work with the full Language revision hub - practice extracts, mark schemes and Grade 9 model answers.',
+    ar: 'اجمع هذي التقنية مع مركز مراجعة Language الكامل - مقاطع للتدريب، schemes للتصحيح، ونماذج إجابة Grade 9.',
   },
   'analysis.lang.foot.cta': { en: 'Open Language revision', ar: 'افتح مراجعة Language' },
 
@@ -5623,8 +5623,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.revision.section.grade': { en: 'Grade targets', ar: 'أهداف الدرجات' },
   'analysis.revision.section.grade_body': {
-    en: 'How to hit Grade 9, 7 and 5 — plus boundaries, resits and pass-rate statistics.',
-    ar: 'كيف توصّل Grade 9 و 7 و 5 — مع الحدود، إعادة الامتحان، وإحصائيات النجاح.',
+    en: 'How to hit Grade 9, 7 and 5 - plus boundaries, resits and pass-rate statistics.',
+    ar: 'كيف توصّل Grade 9 و 7 و 5 - مع الحدود، إعادة الامتحان، وإحصائيات النجاح.',
   },
   'analysis.revision.section.planning': { en: 'Revision planning', ar: 'تخطيط المراجعة' },
   'analysis.revision.section.planning_body': {
@@ -5643,8 +5643,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.revision.footer.h2': { en: 'Get personalised feedback', ar: 'احصل على ملاحظات شخصية' },
   'analysis.revision.footer.body': {
-    en: 'Upload an essay and get marker-style feedback on your AOs in minutes — calibrated to your exam board.',
-    ar: 'ارفع مقال واحصل على ملاحظات بأسلوب المصححين على الـ AOs خلال دقائق — معايرة على بورد امتحانك.',
+    en: 'Upload an essay and get marker-style feedback on your AOs in minutes - calibrated to your exam board.',
+    ar: 'ارفع مقال واحصل على ملاحظات بأسلوب المصححين على الـ AOs خلال دقائق - معايرة على بورد امتحانك.',
   },
   'analysis.revision.footer.cta_primary': { en: 'Create a free account', ar: 'سوِّ حساب ببلاش' },
   'analysis.revision.footer.cta_secondary': {
@@ -5673,8 +5673,8 @@ export const DICTIONARY: Dictionary = {
   },
   'analysis.ai_feedback.foot.h2': { en: 'Get this on your essay', ar: 'احصل على هذا على مقالك' },
   'analysis.ai_feedback.foot.body': {
-    en: "Upload your own essay and we'll mark it three ways — AQA, Edexcel and OCR — so you can see exactly what your board rewards.",
-    ar: 'ارفع مقالك وإحنا بنصححه بثلاث طرق — AQA و Edexcel و OCR — عشان تشوف بالضبط شنو يكافئه بوردك.',
+    en: "Upload your own essay and we'll mark it three ways - AQA, Edexcel and OCR - so you can see exactly what your board rewards.",
+    ar: 'ارفع مقالك وإحنا بنصححه بثلاث طرق - AQA و Edexcel و OCR - عشان تشوف بالضبط شنو يكافئه بوردك.',
   },
   'analysis.ai_feedback.methodology': { en: 'Methodology', ar: 'المنهجية' },
 
@@ -5697,8 +5697,8 @@ export const DICTIONARY: Dictionary = {
   'analysis.slug.grade9_h2': { en: 'What Grade 9 answers do', ar: 'شنو تسوي إجابات Grade 9' },
   'analysis.slug.applying_to': { en: 'Applying this to', ar: 'تطبيق هذا على' },
   'analysis.slug.applying_body': {
-    en: 'Use the analysis above as a structural frame for your own response — pick two or three quotations, attach the methods analysis, and weave the assessment context into your conclusion.',
-    ar: 'استخدم التحليل فوق كقالب بناء لإجابتك — اختر اقتباسين أو ثلاثة، الصق تحليل الأسلوب، وادمج سياق التقييم في خاتمتك.',
+    en: 'Use the analysis above as a structural frame for your own response - pick two or three quotations, attach the methods analysis, and weave the assessment context into your conclusion.',
+    ar: 'استخدم التحليل فوق كقالب بناء لإجابتك - اختر اقتباسين أو ثلاثة، الصق تحليل الأسلوب، وادمج سياق التقييم في خاتمتك.',
   },
   'analysis.slug.cta_block_prompt': {
     en: 'Ready to test it on your own writing? Upload an essay and get marker-style feedback in minutes.',
@@ -5737,8 +5737,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'جاهز تراجع الرواية كاملة؟',
   },
   'analysis.subpage.jekyll_blurb': {
-    en: 'Get the complete Jekyll and Hyde study guide — chapter summaries, every key quotation, every theme, and exam-ready essay plans for AQA, Edexcel and OCR.',
-    ar: 'احصل على دليل دراسة Jekyll and Hyde الكامل — ملخصات الفصول، كل اقتباس مهم، كل ثيمة، وخطط مقال جاهزة للامتحان لـ AQA و Edexcel و OCR.',
+    en: 'Get the complete Jekyll and Hyde study guide - chapter summaries, every key quotation, every theme, and exam-ready essay plans for AQA, Edexcel and OCR.',
+    ar: 'احصل على دليل دراسة Jekyll and Hyde الكامل - ملخصات الفصول، كل اقتباس مهم، كل ثيمة، وخطط مقال جاهزة للامتحان لـ AQA و Edexcel و OCR.',
   },
   'analysis.subpage.jekyll_hub_link': { en: 'Jekyll & Hyde Analysis', ar: 'تحليل Jekyll & Hyde' },
   'analysis.subpage.jekyll_all_link': {
@@ -5842,8 +5842,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الحماية في The English Hub',
   },
   'legal_banner.safeguarding.body': {
-    en: "If you're worried about a child, don't wait — report a concern now.",
-    ar: 'إذا قلقان على سلامة طفل، لا تتأخر — بلّغ الحين.',
+    en: "If you're worried about a child, don't wait - report a concern now.",
+    ar: 'إذا قلقان على سلامة طفل، لا تتأخر - بلّغ الحين.',
   },
   'legal_banner.safeguarding.cta': { en: 'Report a concern', ar: 'بلّغ عن مخاوف' },
   'legal_banner.safeguarding.cta_href': { en: '/safeguarding/report', ar: '/safeguarding/report' },
@@ -6027,14 +6027,14 @@ export const DICTIONARY: Dictionary = {
   'admin.email.status_unknown': { en: 'unknown', ar: 'غير معروف' },
   'admin.email.send_test_title': { en: 'Send test email', ar: 'أرسل إيميل تجريبي' },
   'admin.email.send_test_body': {
-    en: 'Sends a "Test from The English Hub" email via the same Resend wrapper used by the app. If the domain isn\'t verified yet, Resend will accept the call but most inboxes will reject delivery — try sending to the Resend account holder\'s address first.',
-    ar: 'يرسل إيميل "Test from The English Hub" عبر نفس Resend اللي يستخدمه التطبيق. إذا الدومين ما تم التحقق منه، Resend راح يقبل الطلب بس أغلب الإيميلات راح ترفض الاستلام — جرّب ترسل لإيميل صاحب حساب Resend أولاً.',
+    en: 'Sends a "Test from The English Hub" email via the same Resend wrapper used by the app. If the domain isn\'t verified yet, Resend will accept the call but most inboxes will reject delivery - try sending to the Resend account holder\'s address first.',
+    ar: 'يرسل إيميل "Test from The English Hub" عبر نفس Resend اللي يستخدمه التطبيق. إذا الدومين ما تم التحقق منه، Resend راح يقبل الطلب بس أغلب الإيميلات راح ترفض الاستلام - جرّب ترسل لإيميل صاحب حساب Resend أولاً.',
   },
   'admin.email.recipient_label': { en: 'Recipient email', ar: 'إيميل المستلم' },
   'admin.email.recipient_placeholder': { en: 'you@example.com', ar: 'you@example.com' },
   'admin.email.token_label': {
-    en: 'x-admin-token (optional — only if ADMIN_DIAGNOSTIC_TOKEN is set on the server)',
-    ar: 'x-admin-token (اختياري — بس إذا ADMIN_DIAGNOSTIC_TOKEN معيّن على السيرفر)',
+    en: 'x-admin-token (optional - only if ADMIN_DIAGNOSTIC_TOKEN is set on the server)',
+    ar: 'x-admin-token (اختياري - بس إذا ADMIN_DIAGNOSTIC_TOKEN معيّن على السيرفر)',
   },
   'admin.email.token_placeholder': {
     en: 'leave blank if not configured',
@@ -6077,8 +6077,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'شيّك سجلات Supabase Auth.',
   },
   'admin.email.runbook.4_body': {
-    en: 'Project → Logs → "auth" — search for the user\'s email; look for "smtp" / "send" entries. If empty, Supabase didn\'t even attempt a send and SMTP credentials probably weren\'t saved cleanly.',
-    ar: 'Project → Logs → "auth" — دوّر على إيميل المستخدم؛ شوف إذا في "smtp" / "send". إذا فاضي، Supabase ما حاول يرسل أصلاً وغالباً بيانات SMTP ما انحفظت صح.',
+    en: 'Project → Logs → "auth" - search for the user\'s email; look for "smtp" / "send" entries. If empty, Supabase didn\'t even attempt a send and SMTP credentials probably weren\'t saved cleanly.',
+    ar: 'Project → Logs → "auth" - دوّر على إيميل المستخدم؛ شوف إذا في "smtp" / "send". إذا فاضي، Supabase ما حاول يرسل أصلاً وغالباً بيانات SMTP ما انحفظت صح.',
   },
   'admin.email.runbook.5_strong': {
     en: 'Check Supabase SMTP settings.',
@@ -6103,8 +6103,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'سجلات DNS في Cloudflare لـ theenglishhub.app',
   },
   'admin.email.dns_body_pre': {
-    en: 'Add these in Cloudflare DNS. Resend itself is the source of truth for the two DKIM CNAMEs — copy them from',
-    ar: 'ضِف هذي في Cloudflare DNS. Resend هو المرجع للـ DKIM CNAME الاثنين — انسخهم من',
+    en: 'Add these in Cloudflare DNS. Resend itself is the source of truth for the two DKIM CNAMEs - copy them from',
+    ar: 'ضِف هذي في Cloudflare DNS. Resend هو المرجع للـ DKIM CNAME الاثنين - انسخهم من',
   },
   'admin.email.dns_body_post': {
     en: 'after adding theenglishhub.app there.',
@@ -6120,8 +6120,8 @@ export const DICTIONARY: Dictionary = {
   'admin.email.dns.dkim2': { en: 'DKIM #2', ar: 'DKIM #2' },
   'admin.email.dns.dmarc': { en: 'DMARC', ar: 'DMARC' },
   'admin.email.dns.dkim_value_placeholder': {
-    en: '(value shown in Resend dashboard — copy verbatim)',
-    ar: '(القيمة معروضة في لوحة Resend — انسخها كما هي)',
+    en: '(value shown in Resend dashboard - copy verbatim)',
+    ar: '(القيمة معروضة في لوحة Resend - انسخها كما هي)',
   },
   'admin.email.dns_footer': {
     en: 'After adding the records, wait ~5 minutes and click "Verify DNS records" inside Resend. The Refresh button above will re-check live status.',
@@ -6149,8 +6149,8 @@ export const DICTIONARY: Dictionary = {
   'admin.verify.submitting': { en: 'Verifying...', ar: 'لحظة، نتحقّق…' },
   'admin.verify.submit': { en: 'Verify user manually', ar: 'تحقّق من المستخدم يدوياً' },
   'admin.verify.already_confirmed': {
-    en: 'Already verified — no change needed.',
-    ar: 'تم التحقق من قبل — ما في تغيير.',
+    en: 'Already verified - no change needed.',
+    ar: 'تم التحقق من قبل - ما في تغيير.',
   },
   'admin.verify.success': { en: 'User verified successfully.', ar: 'تم التحقق من المستخدم بنجاح.' },
   'admin.verify.dt.email': { en: 'Email', ar: 'الإيميل' },
@@ -6171,7 +6171,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'معاينة وثيقة الأنثولوجي',
   },
 
-  // ─── Marketing — infographic banner ────────────────────────────────
+  // ─── Marketing - infographic banner ────────────────────────────────
   'marketing.infographic.region_label': {
     en: 'Marketing infographic',
     ar: 'إنفوغرافيك تسويقي',
@@ -6485,8 +6485,8 @@ export const DICTIONARY: Dictionary = {
   },
   'poetry.eduqas.title': { en: 'Eduqas Poetry Anthology', ar: 'مختارات Eduqas الشِعرية' },
   'poetry.eduqas.description': {
-    en: "The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts.",
-    ar: 'مختارات Eduqas 2025 فيها ١٢ قصيدة كل الطلاب يذاكرونها. في الامتحان لازم تقارن بين قصيدتين — اختيار الزوج المناسب وايد مهم. ست قصايد من الـ١٢ لسّا تحت حقوق النشر؛ الاقتباسات قصيرة بحدود الاستخدام العادل.',
+    en: "The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam - strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts.",
+    ar: 'مختارات Eduqas 2025 فيها ١٢ قصيدة كل الطلاب يذاكرونها. في الامتحان لازم تقارن بين قصيدتين - اختيار الزوج المناسب وايد مهم. ست قصايد من الـ١٢ لسّا تحت حقوق النشر؛ الاقتباسات قصيرة بحدود الاستخدام العادل.',
   },
   'poetry.eduqas.view': { en: 'View Eduqas anthology', ar: 'شوف مختارات Eduqas' },
   'poetry.edexcel_igcse.title': {
@@ -6503,8 +6503,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما في مختارات شِعرية لبوردك',
   },
   'poetry.cambridge.description': {
-    en: "Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off.",
-    ar: 'Cambridge IGCSE First Language English ما فيه مختارات شِعرية. ركّز على مهارات القراءة في Paper 1 — هذا اللي يستاهل وقتك.',
+    en: "Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead - that's where your time pays off.",
+    ar: 'Cambridge IGCSE First Language English ما فيه مختارات شِعرية. ركّز على مهارات القراءة في Paper 1 - هذا اللي يستاهل وقتك.',
   },
   'poetry.cambridge.paper1_cta': { en: 'Go to Paper 1 reading', ar: 'روح لقراءة Paper 1' },
   'poetry.cambridge_lit.title': {
@@ -6524,8 +6524,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'Edexcel IGCSE Language A ما فيه مختارات شِعرية',
   },
   'poetry.edexcel_lang.description': {
-    en: 'The Language A spec (4EA1) focuses on non-fiction, transactional writing, and unseen prose — not a poetry anthology. Head to the Anthology section under Paper 1 for your prescribed texts.',
-    ar: 'مواصفات Language A (4EA1) تركّز على نصوص غير قصصية والكتابة الوظيفية والنثر غير المرئي — مو مختارات شِعرية. روح قسم Anthology تحت Paper 1 عشان نصوصك المقرّرة.',
+    en: 'The Language A spec (4EA1) focuses on non-fiction, transactional writing, and unseen prose - not a poetry anthology. Head to the Anthology section under Paper 1 for your prescribed texts.',
+    ar: 'مواصفات Language A (4EA1) تركّز على نصوص غير قصصية والكتابة الوظيفية والنثر غير المرئي - مو مختارات شِعرية. روح قسم Anthology تحت Paper 1 عشان نصوصك المقرّرة.',
   },
   'poetry.edexcel_lang.cta': { en: 'Go to Language A anthology', ar: 'روح لمختارات Language A' },
   'poetry.a_level.title': {
@@ -6578,19 +6578,19 @@ export const DICTIONARY: Dictionary = {
     ar: 'مراجعة بحسب المختارات',
   },
   'poetry.anthology_links.fallback_note': {
-    en: 'Your selected board does not have a dedicated anthology in this section. Other boards are listed below for reference — each is labelled with the board it belongs to.',
-    ar: 'بوردك ما عنده مختارات مخصّصة في هالقسم. تحت لك بقية البوردات للاسترشاد — كل وحدة مكتوب عليها البورد مالها.',
+    en: 'Your selected board does not have a dedicated anthology in this section. Other boards are listed below for reference - each is labelled with the board it belongs to.',
+    ar: 'بوردك ما عنده مختارات مخصّصة في هالقسم. تحت لك بقية البوردات للاسترشاد - كل وحدة مكتوب عليها البورد مالها.',
   },
   'poetry.cluster.open': { en: 'Open', ar: 'افتح' },
 
   // ─── Texts hub page (revision/texts top-level) ───────────────────────
   'texts.boardless.h2': {
-    en: 'GCSE English Literature set texts — revision library',
-    ar: 'النصوص المقرّرة لـ GCSE English Literature — مكتبة المراجعة',
+    en: 'GCSE English Literature set texts - revision library',
+    ar: 'النصوص المقرّرة لـ GCSE English Literature - مكتبة المراجعة',
   },
   'texts.boardless.intro': {
-    en: 'Choose a text to see full revision notes, character maps, theme trackers, model paragraphs, and past-paper practice. Each entry below is tagged with the boards that prescribe it — pick your exam board to filter to just yours.',
-    ar: 'اختر نص عشان تشوف ملاحظات المراجعة الكاملة وخرائط الشخصيات وتتبّع التيمات وفقرات نموذجية وتمارين من امتحانات سابقة. كل عنوان تحت مكتوب عليه البورد اللي يقرّره — اختر بوردك عشان نوريك مالك بس.',
+    en: 'Choose a text to see full revision notes, character maps, theme trackers, model paragraphs, and past-paper practice. Each entry below is tagged with the boards that prescribe it - pick your exam board to filter to just yours.',
+    ar: 'اختر نص عشان تشوف ملاحظات المراجعة الكاملة وخرائط الشخصيات وتتبّع التيمات وفقرات نموذجية وتمارين من امتحانات سابقة. كل عنوان تحت مكتوب عليه البورد اللي يقرّره - اختر بوردك عشان نوريك مالك بس.',
   },
   'texts.section.shakespeare': { en: 'Shakespeare', ar: 'شكسبير' },
   'texts.section.c19_novel': { en: '19th-century novel', ar: 'روايات القرن التاسع عشر' },
@@ -6602,7 +6602,7 @@ export const DICTIONARY: Dictionary = {
   },
   'texts.section.pearson_anthology_note': {
     en: 'Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel International GCSE English Language A specification.',
-    ar: 'Section A نصوص غير قصصية، Section B شِعر، و Section C نثر — لمواصفات Pearson Edexcel International GCSE English Language A.',
+    ar: 'Section A نصوص غير قصصية، Section B شِعر، و Section C نثر - لمواصفات Pearson Edexcel International GCSE English Language A.',
   },
   'texts.label.non_fiction': { en: 'Non-fiction:', ar: 'نصوص غير قصصية:' },
   'texts.label.poetry': { en: 'Poetry:', ar: 'شِعر:' },
@@ -6620,8 +6620,8 @@ export const DICTIONARY: Dictionary = {
   'anth_page.badge_paper': { en: 'Paper 1 Section A', ar: 'Paper 1 Section A' },
   'anth_page.badge_texts_count': { en: '10 texts', ar: '١٠ نصوص' },
   'anth_page.hero_title': {
-    en: 'Paper 1 Section A — Anthology Non-Fiction',
-    ar: 'Paper 1 Section A — نصوص غير قصصية من المختارات',
+    en: 'Paper 1 Section A - Anthology Non-Fiction',
+    ar: 'Paper 1 Section A - نصوص غير قصصية من المختارات',
   },
   'anth_page.hero_lead_pre': {
     en: 'Ten prescribed non-fiction texts for Edexcel IGCSE English Language A Paper 1. Each text has been analysed with',
@@ -6649,8 +6649,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'استخدم نسخة المختارات دايماً',
   },
   'anth_page.use_anthology_body': {
-    en: 'when answering Edexcel exam questions — examiners will mark against the anthology text, not the Guardian originals you may find on revision websites.',
-    ar: 'لما تجاوب أسئلة Edexcel — المصحّحون يصحّحون بناءً على نص المختارات، مو نسخ The Guardian اللي تلقاها في مواقع المراجعة.',
+    en: 'when answering Edexcel exam questions - examiners will mark against the anthology text, not the Guardian originals you may find on revision websites.',
+    ar: 'لما تجاوب أسئلة Edexcel - المصحّحون يصحّحون بناءً على نص المختارات، مو نسخ The Guardian اللي تلقاها في مواقع المراجعة.',
   },
   'anth_page.texts_heading': { en: 'All 10 Anthology Texts', ar: 'كل الـ١٠ نصوص من المختارات' },
   'anth_page.texts_intro': {
@@ -6660,8 +6660,8 @@ export const DICTIONARY: Dictionary = {
   'anth_page.text_index_prefix': { en: 'Text', ar: 'نص' },
   'anth_page.study_this_text': { en: 'Study this text', ar: 'ذاكر هذا النص' },
   'anth_page.expect_heading': {
-    en: 'Paper 1 Section A — What to Expect',
-    ar: 'Paper 1 Section A — شنو تتوقّع',
+    en: 'Paper 1 Section A - What to Expect',
+    ar: 'Paper 1 Section A - شنو تتوقّع',
   },
   'anth_page.expect_intro': {
     en: 'In Paper 1 Section A you will be given an extract from one of the ten anthology texts. You will answer three types of question:',
@@ -6669,18 +6669,18 @@ export const DICTIONARY: Dictionary = {
   },
   'anth_page.expect_q1_label': { en: 'Retrieval (Q1):', ar: 'الاسترجاع (Q1):' },
   'anth_page.expect_q1_body': {
-    en: '"List four things about..." — straightforward identification of information from the text. Worth 4 marks.',
-    ar: '"اذكر أربعة أشياء عن…" — استخراج مباشر للمعلومات من النص. القيمة ٤ درجات.',
+    en: '"List four things about..." - straightforward identification of information from the text. Worth 4 marks.',
+    ar: '"اذكر أربعة أشياء عن…" - استخراج مباشر للمعلومات من النص. القيمة ٤ درجات.',
   },
   'anth_page.expect_q2_label': { en: 'Language analysis (Q2):', ar: 'تحليل اللغة (Q2):' },
   'anth_page.expect_q2_body': {
-    en: '"How does the writer use language to..." — close analysis of specific techniques and their effects on the reader. Worth 12 marks.',
-    ar: '"كيف يستخدم الكاتب اللغة عشان…" — تحليل دقيق لتقنيات معيّنة وأثرها على القارئ. القيمة ١٢ درجة.',
+    en: '"How does the writer use language to..." - close analysis of specific techniques and their effects on the reader. Worth 12 marks.',
+    ar: '"كيف يستخدم الكاتب اللغة عشان…" - تحليل دقيق لتقنيات معيّنة وأثرها على القارئ. القيمة ١٢ درجة.',
   },
   'anth_page.expect_q3_label': { en: 'Structural analysis (Q3):', ar: 'تحليل البنية (Q3):' },
   'anth_page.expect_q3_body': {
-    en: '"How does the writer structure the text to..." — analysis of how the text is organised to engage and influence the reader. Worth 12 marks.',
-    ar: '"كيف يبني الكاتب النص عشان…" — تحليل كيف ينظّم النص ليجذب القارئ ويؤثّر فيه. القيمة ١٢ درجة.',
+    en: '"How does the writer structure the text to..." - analysis of how the text is organised to engage and influence the reader. Worth 12 marks.',
+    ar: '"كيف يبني الكاتب النص عشان…" - تحليل كيف ينظّم النص ليجذب القارئ ويؤثّر فيه. القيمة ١٢ درجة.',
   },
   'anth_page.study_all_note': {
     en: 'You should study all ten texts. You will not know which text will appear in the exam until you open the paper.',
@@ -6793,8 +6793,8 @@ export const DICTIONARY: Dictionary = {
   },
   'anth_text.section.key_extracts': { en: 'Key Extracts', ar: 'مقاطع مفتاحيّة' },
   'anth_text.section.language_analysis.guidance_intro': {
-    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review — for now, locate examples in your licensed anthology and apply the guidance below.',
-    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة — لحينه، حدّد الأمثلة في مختاراتك المرخّصة وطبّق الإرشاد أدناه.',
+    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in your licensed anthology and apply the guidance below.',
+    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة - لحينه، حدّد الأمثلة في مختاراتك المرخّصة وطبّق الإرشاد أدناه.',
   },
 
   // ─── Model answers (grade tabs + summary) ───────────────────────────
@@ -6861,8 +6861,8 @@ export const DICTIONARY: Dictionary = {
   'teacher_page.library.eyebrow_board_prefix': { en: 'For', ar: 'لـ' },
   'teacher_page.library.title': { en: 'Teacher Resources Library', ar: 'مكتبة موارد المعلم' },
   'teacher_page.library.subtitle': {
-    en: 'Free, classroom-ready teaching resources for GCSE English. Everything you need — planned, printable, and ready to use tomorrow. No sign-up required.',
-    ar: 'موارد تدريس ببلاش وجاهزة للفصل لـ GCSE English. كل اللي تحتاجه — مخطّط، قابل للطباعة، وجاهز تستخدمه بكرة. ما يحتاج تسجيل.',
+    en: 'Free, classroom-ready teaching resources for GCSE English. Everything you need - planned, printable, and ready to use tomorrow. No sign-up required.',
+    ar: 'موارد تدريس ببلاش وجاهزة للفصل لـ GCSE English. كل اللي تحتاجه - مخطّط، قابل للطباعة، وجاهز تستخدمه بكرة. ما يحتاج تسجيل.',
   },
   'teacher_page.library.badge.free': { en: '100% free', ar: 'ببلاش 100٪' },
   'teacher_page.library.badge.no_account': { en: 'No account needed', ar: 'ما يحتاج حساب' },
@@ -6914,15 +6914,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'حزم النصوص المقررة',
   },
   'teacher_page.library.cat.revision_packs.desc': {
-    en: 'Ready-made revision booklets by set text — quote banks, theme notes, character analysis, and essay plans.',
-    ar: 'كتيّبات مراجعة جاهزة لكل نص مقرر — بنوك اقتباسات، ملاحظات مواضيع، تحليل شخصيات، وخطط مقالات.',
+    en: 'Ready-made revision booklets by set text - quote banks, theme notes, character analysis, and essay plans.',
+    ar: 'كتيّبات مراجعة جاهزة لكل نص مقرر - بنوك اقتباسات، ملاحظات مواضيع، تحليل شخصيات، وخطط مقالات.',
   },
   'teacher_page.library.cat.starters.title': { en: 'Starter Activities', ar: 'أنشطة افتتاحية' },
   'teacher_page.library.cat.starters.kind': { en: 'Starter', ar: 'افتتاحية' },
   'teacher_page.library.cat.starters.count': { en: '20 starters', ar: '٢٠ نشاط افتتاحي' },
   'teacher_page.library.cat.starters.desc': {
-    en: '20 quick 5-minute starters to hook your class — vocabulary, retrieval practice, analysis warm-ups.',
-    ar: '٢٠ نشاط افتتاحي سريع ٥ دقائق يشد فصلك — مفردات، تدريب استرجاع، تسخين تحليل.',
+    en: '20 quick 5-minute starters to hook your class - vocabulary, retrieval practice, analysis warm-ups.',
+    ar: '٢٠ نشاط افتتاحي سريع ٥ دقائق يشد فصلك - مفردات، تدريب استرجاع، تسخين تحليل.',
   },
   'teacher_page.library.cat.homework.title': { en: 'Homework Tasks', ar: 'مهام منزلية' },
   'teacher_page.library.cat.homework.kind': { en: 'Homework', ar: 'واجب' },
@@ -6940,11 +6940,11 @@ export const DICTIONARY: Dictionary = {
   },
   'teacher_page.demo.welcome_prefix': { en: 'Welcome back,', ar: 'حياك الله،' },
   'teacher_page.demo.department_suffix': {
-    en: 'Department — Riverside Academy',
-    ar: 'القسم — Riverside Academy',
+    en: 'Department - Riverside Academy',
+    ar: 'القسم - Riverside Academy',
   },
   'teacher_page.demo.stat.classes': { en: 'Classes', ar: 'الفصول' },
-  'teacher_page.demo.stat.classes_sub': { en: 'Across Years 10-13', ar: 'في السنوات ١٠–١٣' },
+  'teacher_page.demo.stat.classes_sub': { en: 'Across Years 10-13', ar: 'في السنوات ١٠-١٣' },
   'teacher_page.demo.stat.students': { en: 'Students', ar: 'الطلاب' },
   'teacher_page.demo.stat.students_sub': { en: 'need attention', ar: 'يحتاجون انتباه' },
   'teacher_page.demo.stat.avg_score': { en: 'Avg Score', ar: 'متوسط الدرجات' },
@@ -6988,8 +6988,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'جاهز تستخدمها مع فصولك؟',
   },
   'teacher_page.demo.cta_body': {
-    en: 'Get real-time student analytics, AI-powered essay marking, and lesson planning tools — all in one place.',
-    ar: 'احصل على تحليلات طلاب لحظية، تصحيح مقالات بـ AI، وأدوات تخطيط دروس — كلها في مكان واحد.',
+    en: 'Get real-time student analytics, AI-powered essay marking, and lesson planning tools - all in one place.',
+    ar: 'احصل على تحليلات طلاب لحظية، تصحيح مقالات بـ AI، وأدوات تخطيط دروس - كلها في مكان واحد.',
   },
   'teacher_page.demo.cta_btn': { en: 'Start Your Free Trial', ar: 'ابدأ التجربة المجانية' },
 
@@ -7033,7 +7033,7 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Onboarding (/school/onboarding 5-step wizard) ────────────────────
   // Brief asks for `onboarding.*` namespace; this is the only onboarding
-  // surface that exists in the app. School-admin-only — addresses the
+  // surface that exists in the app. School-admin-only - addresses the
   // founder/admin (M default per binary gender policy).
   'onboarding.brand_suffix': { en: 'Setup', ar: 'الإعداد' },
   'onboarding.skip_to_dashboard': {
@@ -7049,7 +7049,7 @@ export const DICTIONARY: Dictionary = {
   'onboarding.step.classes': { en: 'Classes', ar: 'الفصول' },
   'onboarding.step.complete': { en: 'Complete', ar: 'تمام' },
 
-  // Step 1 — Welcome screen
+  // Step 1 - Welcome screen
   'onboarding.s1.founder_badge': { en: 'FOUNDER ACCESS', ar: 'وصول FOUNDER' },
   'onboarding.s1.welcome_prefix': {
     en: 'Welcome to The English Hub,',
@@ -7085,7 +7085,7 @@ export const DICTIONARY: Dictionary = {
   },
   'onboarding.s1.cta': { en: 'Get Started', ar: 'يلا نبدأ' },
 
-  // Step 2 — Add teachers
+  // Step 2 - Add teachers
   'onboarding.s2.title': { en: 'Add Your Teachers', ar: 'ضيف معلميك' },
   'onboarding.s2.subtitle': {
     en: 'Choose how you would like to bring your teaching staff on board.',
@@ -7094,8 +7094,8 @@ export const DICTIONARY: Dictionary = {
   'onboarding.s2.teachers_count_suffix': { en: 'teachers added', ar: 'معلم مضاف' },
   'onboarding.s2.teacher_added_singular': { en: 'teacher added', ar: 'معلم مضاف' },
   'onboarding.s2.option_a_title': {
-    en: 'Option A — Upload Excel / CSV',
-    ar: 'الخيار A — حمّل Excel / CSV',
+    en: 'Option A - Upload Excel / CSV',
+    ar: 'الخيار A - حمّل Excel / CSV',
   },
   'onboarding.s2.option_a_body': {
     en: 'Import many teachers at once from a spreadsheet.',
@@ -7103,8 +7103,8 @@ export const DICTIONARY: Dictionary = {
   },
   'onboarding.s2.go_to_import': { en: 'Go to Import Tool', ar: 'روح لأداة الاستيراد' },
   'onboarding.s2.option_b_title': {
-    en: 'Option B — Invite individually',
-    ar: 'الخيار B — ادعُ كل واحد على حدة',
+    en: 'Option B - Invite individually',
+    ar: 'الخيار B - ادعُ كل واحد على حدة',
   },
   'onboarding.s2.option_b_body': {
     en: 'Send email invitations to teachers one by one.',
@@ -7125,13 +7125,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'تم إرسال الدعوات. المعلمون بيوصلهم إيميل للانضمام.',
   },
   'onboarding.s2.option_c': {
-    en: 'Option C — skip for now and continue below.',
-    ar: 'الخيار C — تخطّ الحين وكمّل تحت.',
+    en: 'Option C - skip for now and continue below.',
+    ar: 'الخيار C - تخطّ الحين وكمّل تحت.',
   },
   'onboarding.s2.invite_failed': { en: 'Failed to send invites', ar: 'فشل إرسال الدعوات' },
   'onboarding.s2.generic_error': { en: 'Something went wrong', ar: 'صار في خطأ' },
 
-  // Step 3 — Add students
+  // Step 3 - Add students
   'onboarding.s3.title': { en: 'Add Your Students', ar: 'ضيف طلابك' },
   'onboarding.s3.subtitle': {
     en: 'Import a class list or share your school join code.',
@@ -7140,16 +7140,16 @@ export const DICTIONARY: Dictionary = {
   'onboarding.s3.students_count_suffix': { en: 'students added', ar: 'طالب مضاف' },
   'onboarding.s3.student_added_singular': { en: 'student added', ar: 'طالب مضاف' },
   'onboarding.s3.option_a_title': {
-    en: 'Option A — Upload Excel / CSV',
-    ar: 'الخيار A — حمّل Excel / CSV',
+    en: 'Option A - Upload Excel / CSV',
+    ar: 'الخيار A - حمّل Excel / CSV',
   },
   'onboarding.s3.option_a_body': {
     en: 'Import a full year group or class list from a spreadsheet.',
     ar: 'استورد سنة كاملة أو قائمة فصل من جدول بيانات.',
   },
   'onboarding.s3.option_b_title': {
-    en: 'Option B — Share your school join code',
-    ar: 'الخيار B — شارك كود انضمام المدرسة',
+    en: 'Option B - Share your school join code',
+    ar: 'الخيار B - شارك كود انضمام المدرسة',
   },
   'onboarding.s3.option_b_body': {
     en: 'Students enter this code to join your school instantly.',
@@ -7171,7 +7171,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'ويدخلون الكود فوق.',
   },
 
-  // Step 4 — Create first class
+  // Step 4 - Create first class
   'onboarding.s4.title': { en: 'Create Your First Class', ar: 'أنشئ أول فصل لك' },
   'onboarding.s4.subtitle': {
     en: 'Set up a class so you can assign resources and track progress.',
@@ -7202,10 +7202,10 @@ export const DICTIONARY: Dictionary = {
   'onboarding.s4.create_failed': { en: 'Failed to create class', ar: 'فشل إنشاء الفصل' },
   'onboarding.s4.skip_later': {
     en: "Skip - I'll do this later",
-    ar: 'تخطّ — راح أسوّيها لاحقاً',
+    ar: 'تخطّ - راح أسوّيها لاحقاً',
   },
 
-  // Step 5 — Done
+  // Step 5 - Done
   'onboarding.s5.title': { en: "You're All Set!", ar: 'كل شي جاهز!' },
   'onboarding.s5.subtitle': {
     en: 'Your school is configured and ready to go.',
@@ -7343,7 +7343,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'هذي أداة فحص أولي، مو تشخيص رسمي. تعطي عمر قراءة استرشادي يساعد في تحديد نقاط القوة ومجالات التطوير. للتشخيص الرسمي لصعوبات القراءة مثل عسر القراءة، لازم اختصاصي نفسي تربوي مؤهَّل أو معلّم متخصِّص. والنتائج تنفسَّر مع حكم المعلم ودلائل ثانية على القدرة في القراءة.',
   },
 
-  // ─── Reading assessment — landing page (what we measure + how) ──────
+  // ─── Reading assessment - landing page (what we measure + how) ──────
   'assessment.reading.landing.what_title': {
     en: 'What this test measures',
     ar: 'شنو يقيس هذا الاختبار',
@@ -7413,7 +7413,7 @@ export const DICTIONARY: Dictionary = {
   },
   'assessment.reading.landing.start_cta': { en: 'Start Assessment', ar: 'ابدأ التقييم' },
 
-  // ─── Reading assessment — test phases ──────────────────────────────
+  // ─── Reading assessment - test phases ──────────────────────────────
   'assessment.reading.test.breadcrumb.parent': { en: 'Reading Assessment', ar: 'تقييم القراءة' },
   'assessment.reading.test.breadcrumb.this': { en: 'Test', ar: 'الاختبار' },
   'assessment.reading.test.age.title': { en: 'Before we begin', ar: 'قبل لا نبدأ' },
@@ -7445,8 +7445,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'خلّصت القراءة',
   },
   'assessment.reading.test.passage.read_carefully': {
-    en: 'Read carefully — you cannot return once you start the questions.',
-    ar: 'اقرا بتركيز — ما تقدر ترجع للنص لمّا تبدأ الأسئلة.',
+    en: 'Read carefully - you cannot return once you start the questions.',
+    ar: 'اقرا بتركيز - ما تقدر ترجع للنص لمّا تبدأ الأسئلة.',
   },
   'assessment.reading.test.passage.unlock_prefix': {
     en: 'Take your time to read properly. Button unlocks in',
@@ -7467,8 +7467,8 @@ export const DICTIONARY: Dictionary = {
   },
   'assessment.reading.test.question.answer_aria': { en: 'Your answer', ar: 'جوابك' },
   'assessment.reading.test.question.from_memory_note': {
-    en: 'Answer from memory — you cannot return to the passage.',
-    ar: 'جاوب من ذاكرتك — ما تقدر ترجع للنص.',
+    en: 'Answer from memory - you cannot return to the passage.',
+    ar: 'جاوب من ذاكرتك - ما تقدر ترجع للنص.',
   },
   'assessment.reading.test.question.next_section': { en: 'Next Section', ar: 'القسم التالي' },
   'assessment.reading.test.question.next_question': { en: 'Next Question', ar: 'السؤال التالي' },
@@ -7555,7 +7555,7 @@ export const DICTIONARY: Dictionary = {
   'certificate.share.text_awarded': { en: 'awarded to', ar: 'ممنوحة إلى' },
   'certificate.not_found': { en: 'Certificate not found.', ar: 'ما لقينا الشهادة.' },
 
-  // ─── Safeguarding policy page (MSA — formal body) ──────────────────
+  // ─── Safeguarding policy page (MSA - formal body) ──────────────────
   'safeguard.page.meta_title': {
     en: 'Safeguarding Policy',
     ar: 'سياسة حماية الأطفال',
@@ -7611,7 +7611,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'يلتزم The English Hub بحماية جميع الأطفال والشباب الذين يستخدمون منصّتنا وتعزيز رفاههم. ونُدرك أنّ على كلّ فردٍ مسؤوليّةً في حماية الأطفال، ونتعامل مع هذه المسؤوليّة بجدّيّةٍ تامّة.',
   },
   'safeguard.s1.p2': {
-    en: 'We are committed to creating a safe online learning environment where young people aged 14–18 can develop their English language skills without risk of harm, abuse, or exploitation. We will always act in the best interests of the child and take all reasonable steps to ensure their safety and wellbeing.',
+    en: 'We are committed to creating a safe online learning environment where young people aged 14-18 can develop their English language skills without risk of harm, abuse, or exploitation. We will always act in the best interests of the child and take all reasonable steps to ensure their safety and wellbeing.',
     ar: 'نلتزم بإنشاء بيئة تعلُّمٍ إلكترونيّة آمنة يستطيع فيها الشباب من سنّ 14 إلى 18 تطوير مهاراتهم في اللغة الإنجليزيّة دون أيّ خطر إيذاءٍ أو إساءةٍ أو استغلال. وسنتصرّف دائمًا بما يحقِّق المصلحة الفُضلى للطفل، ونتّخذ كلّ الخطوات المعقولة لضمان سلامته ورفاهه.',
   },
   'safeguard.s1.p3': {
@@ -7638,7 +7638,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'أولياء الأمور والأوصياء ومُقدِّمي الرعاية للشباب المستخدمين للمنصّة',
   },
   'safeguard.s2.outro': {
-    en: 'The English Hub is an online education platform designed for learners aged 14–18. As such, safeguarding considerations are embedded into every aspect of our product design, content creation, and operational processes.',
+    en: 'The English Hub is an online education platform designed for learners aged 14-18. As such, safeguarding considerations are embedded into every aspect of our product design, content creation, and operational processes.',
     ar: 'The English Hub منصّة تعليمٍ إلكترونيّة مُصمَّمة للمتعلِّمين من سنّ 14 إلى 18. ولذا فإنّ اعتبارات الحماية مُدمجةٌ في كلّ جانبٍ من جوانب تصميم المنتج وإعداد المحتوى والعمليات التشغيليّة.',
   },
   // §3 DSL
@@ -7802,8 +7802,8 @@ export const DICTIONARY: Dictionary = {
   'safeguard.s6.li1_term': { en: 'Online reporting form:', ar: 'نموذج الإبلاغ الإلكتروني:' },
   'safeguard.s6.li1_link': { en: 'Submit a report', ar: 'أرسل بلاغًا' },
   'safeguard.s6.li1_post': {
-    en: '— available 24/7, anonymous reporting accepted',
-    ar: '— متاح على مدار الساعة طوال أيّام الأسبوع، ويُقبل البلاغ المجهول الهويّة',
+    en: '- available 24/7, anonymous reporting accepted',
+    ar: '- متاح على مدار الساعة طوال أيّام الأسبوع، ويُقبل البلاغ المجهول الهويّة',
   },
   'safeguard.s6.li2_term': { en: 'Email the DSL:', ar: 'البريد الإلكتروني لمسؤول الحماية:' },
   'safeguard.s6.provide': {
@@ -8008,7 +8008,7 @@ export const DICTIONARY: Dictionary = {
   },
   'safeguard.footer.return_home': { en: 'Return to Home', ar: 'رجوع للرئيسية' },
 
-  // ─── Safeguarding report form (Khaleeji — supportive CTAs) ─────────
+  // ─── Safeguarding report form (Khaleeji - supportive CTAs) ─────────
   'safeguard.report.support_title': {
     en: 'If you need to talk to someone right now',
     ar: 'إذا تبغى تكلّم أحد الحين',
@@ -8058,7 +8058,7 @@ export const DICTIONARY: Dictionary = {
   },
   'safeguard.report.page_subhead': {
     en: "Whether it's about you or someone else, we're here to help. You can tell us as much or as little as you feel comfortable with. You don't have to give your name.",
-    ar: 'سواء عنك أو عن شخص ثاني، إحنا هني لنساعدك. تقدر تكتب اللي يريحك — قليل أو وايد. وما يلزم تعطي اسمك.',
+    ar: 'سواء عنك أو عن شخص ثاني، إحنا هني لنساعدك. تقدر تكتب اللي يريحك - قليل أو وايد. وما يلزم تعطي اسمك.',
   },
   'safeguard.report.reassure_title': { en: 'Speaking up takes courage', ar: 'الكلام شجاعة' },
   'safeguard.report.reassure_body': {
@@ -8088,7 +8088,7 @@ export const DICTIONARY: Dictionary = {
   },
   'safeguard.report.field.description_help': {
     en: 'Take your time. Share as much or as little as you feel comfortable with.',
-    ar: 'خذ وقتك. اكتب اللي يريحك — قليل أو وايد.',
+    ar: 'خذ وقتك. اكتب اللي يريحك - قليل أو وايد.',
   },
   'safeguard.report.field.description_placeholder': {
     en: 'You can write freely here...',
@@ -8130,12 +8130,12 @@ export const DICTIONARY: Dictionary = {
   'revision_page.hero.heading_prefix_generic': { en: 'Your', ar: 'مالك' },
   'revision_page.hero.heading_prefix_board': { en: 'Your', ar: 'مالك' },
   'revision_page.hero.blurb_default': {
-    en: 'Your unified home for {board} English. Revision guides, AI study tools, progress tracking, and exam technique — all built around your specification.',
-    ar: 'بيتك الموحَّد لـ{board} English. أدلة مراجعة، أدوات دراسة بالذكاء الاصطناعي، تتبّع التقدّم، وتقنيات الامتحان — كله مبني على المنهج مالك.',
+    en: 'Your unified home for {board} English. Revision guides, AI study tools, progress tracking, and exam technique - all built around your specification.',
+    ar: 'بيتك الموحَّد لـ{board} English. أدلة مراجعة، أدوات دراسة بالذكاء الاصطناعي، تتبّع التقدّم، وتقنيات الامتحان - كله مبني على المنهج مالك.',
   },
   'revision_page.hero.blurb_cambridge': {
-    en: 'Your unified home for {board} First Language English. Revision, study tools, progress tracking, and exam technique — all built around your specification.',
-    ar: 'بيتك الموحَّد لـ{board} First Language English. مراجعة، أدوات دراسة، تتبّع التقدّم، وتقنيات الامتحان — كله مبني على المنهج مالك.',
+    en: 'Your unified home for {board} First Language English. Revision, study tools, progress tracking, and exam technique - all built around your specification.',
+    ar: 'بيتك الموحَّد لـ{board} First Language English. مراجعة، أدوات دراسة، تتبّع التقدّم، وتقنيات الامتحان - كله مبني على المنهج مالك.',
   },
   'revision_page.stats.subjects': { en: 'Subjects', ar: 'المواد' },
   'revision_page.stats.resources': { en: 'Resources', ar: 'المصادر' },
@@ -8145,8 +8145,8 @@ export const DICTIONARY: Dictionary = {
   'revision_page.snapshot.streak.label': { en: 'Streak', ar: 'سلسلة الدراسة' },
   'revision_page.snapshot.streak.title': { en: 'Your study streak', ar: 'سلسلة الدراسة مالك' },
   'revision_page.snapshot.streak.body': {
-    en: 'Keep going daily — every session you complete on a quiz, set text, or mock exam builds your streak.',
-    ar: 'كمّل يومي — كل جلسة تخلّصها على اختبار، نص مقرَّر، أو امتحان تجريبي تبني السلسلة مالك.',
+    en: 'Keep going daily - every session you complete on a quiz, set text, or mock exam builds your streak.',
+    ar: 'كمّل يومي - كل جلسة تخلّصها على اختبار، نص مقرَّر، أو امتحان تجريبي تبني السلسلة مالك.',
   },
   'revision_page.snapshot.streak.cta': { en: 'View full analytics', ar: 'شوف التحليلات الكاملة' },
   'revision_page.snapshot.progress.label': { en: 'Progress', ar: 'التقدّم' },
@@ -8166,8 +8166,8 @@ export const DICTIONARY: Dictionary = {
   'revision_page.study_plan.badge': { en: 'Personalised for {board}', ar: 'مفصّل لـ{board}' },
   'revision_page.study_plan.title': { en: 'Build your study plan', ar: 'سوِّ خطة الدراسة مالك' },
   'revision_page.study_plan.body': {
-    en: 'Answer a few quick questions and get a week-by-week revision plan tailored to your exam date, target grade, and weakest area — using {board} texts and papers.',
-    ar: 'جاوب على كم سؤال سريع وتاخذ خطة مراجعة أسبوع بأسبوع مفصّلة على تاريخ امتحانك، الدرجة المستهدفة، وأضعف مجال — باستخدام نصوص وأوراق {board}.',
+    en: 'Answer a few quick questions and get a week-by-week revision plan tailored to your exam date, target grade, and weakest area - using {board} texts and papers.',
+    ar: 'جاوب على كم سؤال سريع وتاخذ خطة مراجعة أسبوع بأسبوع مفصّلة على تاريخ امتحانك، الدرجة المستهدفة، وأضعف مجال - باستخدام نصوص وأوراق {board}.',
   },
   'revision_page.study_plan.cta': { en: 'Start diagnostic', ar: 'ابدأ التشخيص' },
   'revision_page.sections.heading': { en: 'Explore Sections', ar: 'استكشف الأقسام' },
@@ -8199,7 +8199,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'بقلم {author}. من أكثر النصوص اللي يدرسونها في المنهج مالك.',
   },
   'revision_page.featured.cta': { en: 'Open study guide', ar: 'افتح دليل الدراسة' },
-  // 2026-05-20: EAL companion panel — cross-cutting learner profile
+  // 2026-05-20: EAL companion panel - cross-cutting learner profile
   // surfaced inside the board-aware hub so EAL learners studying any
   // board can reach the dedicated EAL practice in one click.
   'revision_page.eal_companion.eyebrow': {
@@ -8211,8 +8211,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تدرس {board} كمتعلّم لغة إضافية؟',
   },
   'revision_page.eal_companion.body': {
-    en: 'EAL practice pairs with whichever board you are studying — vocabulary, reading fluency, comprehension, grammar and writing confidence, with Khaleeji-Arabic explanations for common transfer errors.',
-    ar: 'تدريب EAL يمشي جنب أي بورد تدرسه — المفردات، طلاقة القراءة، الفهم، القواعد، والثقة بالكتابة، مع شرح باللهجة الخليجية للأخطاء الشائعة في النقل بين اللغتين.',
+    en: 'EAL practice pairs with whichever board you are studying - vocabulary, reading fluency, comprehension, grammar and writing confidence, with Khaleeji-Arabic explanations for common transfer errors.',
+    ar: 'تدريب EAL يمشي جنب أي بورد تدرسه - المفردات، طلاقة القراءة، الفهم، القواعد، والثقة بالكتابة، مع شرح باللهجة الخليجية للأخطاء الشائعة في النقل بين اللغتين.',
   },
   'revision_page.eal_companion.cta': {
     en: 'Open EAL practice',
@@ -8289,14 +8289,14 @@ export const DICTIONARY: Dictionary = {
   'revision_page.section.mock_exams.stats': { en: 'Full papers', ar: 'أوراق كاملة' },
   'revision_page.section.practice.title': { en: 'Practice', ar: 'تطبيق' },
   'revision_page.section.practice.desc': {
-    en: 'Bite-sized practice tasks for every skill — analysis paragraphs, comparisons, creative writing prompts.',
-    ar: 'مهام تطبيقية صغيرة لكل مهارة — فقرات تحليل، مقارنات، ومواضيع كتابة إبداعية.',
+    en: 'Bite-sized practice tasks for every skill - analysis paragraphs, comparisons, creative writing prompts.',
+    ar: 'مهام تطبيقية صغيرة لكل مهارة - فقرات تحليل، مقارنات، ومواضيع كتابة إبداعية.',
   },
   'revision_page.section.practice.stats': { en: 'Daily drills', ar: 'تمارين يومية' },
   'revision_page.section.games.title': { en: 'Games', ar: 'ألعاب' },
   'revision_page.section.games.desc': {
-    en: 'Vocabulary, quote-match and terminology games — learn faster by playing.',
-    ar: 'ألعاب مفردات ومطابقة اقتباسات ومصطلحات — تعلّم أسرع باللعب.',
+    en: 'Vocabulary, quote-match and terminology games - learn faster by playing.',
+    ar: 'ألعاب مفردات ومطابقة اقتباسات ومصطلحات - تعلّم أسرع باللعب.',
   },
   'revision_page.section.games.stats': { en: 'Play to learn', ar: 'العب وتعلّم' },
   'revision_page.section.resources.title': { en: 'Resources Hub', ar: 'هاب المصادر' },
@@ -8307,8 +8307,8 @@ export const DICTIONARY: Dictionary = {
   'revision_page.section.resources.stats': { en: '300+ guides', ar: '٣٠٠+ دليل' },
   'revision_page.section.revision_notes.title': { en: 'Revision Notes', ar: 'ملخّصات المراجعة' },
   'revision_page.section.revision_notes.desc': {
-    en: 'Concise per-text revision notes you can skim before an exam — every set text, every key topic.',
-    ar: 'ملخّصات مراجعة مختصرة لكل نص تقدر تقراها بسرعة قبل الامتحان — كل نص مقرَّر، كل موضوع أساسي.',
+    en: 'Concise per-text revision notes you can skim before an exam - every set text, every key topic.',
+    ar: 'ملخّصات مراجعة مختصرة لكل نص تقدر تقراها بسرعة قبل الامتحان - كل نص مقرَّر، كل موضوع أساسي.',
   },
   'revision_page.section.revision_notes.stats': { en: '20+ texts', ar: '٢٠+ نص' },
   'revision_page.section.model_answers.title': { en: 'Model Answers', ar: 'الإجابات النموذجية' },
@@ -8334,14 +8334,14 @@ export const DICTIONARY: Dictionary = {
   'revision_page.section.vocabulary.stats': { en: '1000+ words', ar: '١٠٠٠+ كلمة' },
   'revision_page.section.writing_skills.title': { en: 'Writing Skills', ar: 'مهارات الكتابة' },
   'revision_page.section.writing_skills.desc': {
-    en: 'Creative, analytical, persuasive and grammar guides — the craft skills behind every paper.',
-    ar: 'أدلة الكتابة الإبداعية والتحليلية والإقناعية والقواعد — المهارات الحرفية وراء كل ورقة.',
+    en: 'Creative, analytical, persuasive and grammar guides - the craft skills behind every paper.',
+    ar: 'أدلة الكتابة الإبداعية والتحليلية والإقناعية والقواعد - المهارات الحرفية وراء كل ورقة.',
   },
   'revision_page.section.writing_skills.stats': { en: '4 skill areas', ar: '٤ مجالات مهارية' },
   'revision_page.section.common_errors.title': { en: 'Common Errors', ar: 'الأخطاء الشائعة' },
   'revision_page.section.common_errors.desc': {
-    en: '30 mistakes that cost marks — misquotations, wrong contexts, anthology version mix-ups. Verified against board specs.',
-    ar: '٣٠ غلطة تكلّفك درجات — اقتباسات غلط، سياقات خطأ، خلط بين نسخ المجموعات. مدقَّقة مع مواصفات البورد.',
+    en: '30 mistakes that cost marks - misquotations, wrong contexts, anthology version mix-ups. Verified against board specs.',
+    ar: '٣٠ غلطة تكلّفك درجات - اقتباسات غلط، سياقات خطأ، خلط بين نسخ المجموعات. مدقَّقة مع مواصفات البورد.',
   },
   'revision_page.section.common_errors.stats': { en: '30 verified flags', ar: '٣٠ تنبيه مدقَّق' },
   'revision_page.section.common_errors.tag': { en: 'New', ar: 'جديد' },
@@ -8361,8 +8361,8 @@ export const DICTIONARY: Dictionary = {
   'revision_page.toolkit.test_builder.tag': { en: 'AI', ar: 'AI' },
   'revision_page.toolkit.personalised.title': { en: 'Personalised Revision', ar: 'مراجعة مخصّصة' },
   'revision_page.toolkit.personalised.desc': {
-    en: 'A revision guide built from your data — targets weakest areas, then stretches you higher.',
-    ar: 'دليل مراجعة مبني من بياناتك — يستهدف نقاط الضعف، ثم يرفعك أعلى.',
+    en: 'A revision guide built from your data - targets weakest areas, then stretches you higher.',
+    ar: 'دليل مراجعة مبني من بياناتك - يستهدف نقاط الضعف، ثم يرفعك أعلى.',
   },
   'revision_page.toolkit.personalised.stats': { en: 'Data-driven', ar: 'مبني على البيانات' },
   'revision_page.toolkit.personalised.tag': { en: 'New', ar: 'جديد' },
@@ -8383,16 +8383,16 @@ export const DICTIONARY: Dictionary = {
   'vocab.hero.eyebrow': { en: 'Resources', ar: 'المصادر' },
   'vocab.hero.title': { en: 'Vocabulary Builder', ar: 'منشئ المفردات' },
   'vocab.hero.subtitle': {
-    en: 'Upgrade your vocabulary for every type of GCSE English writing. Academic essays, creative pieces, literary analysis, and persuasive texts — find the right word every time.',
-    ar: 'طوّر المفردات مالك لكل نوع كتابة GCSE English. مقالات أكاديمية، نصوص إبداعية، تحليل أدبي، ونصوص إقناعية — لقّ الكلمة الصح كل مرة.',
+    en: 'Upgrade your vocabulary for every type of GCSE English writing. Academic essays, creative pieces, literary analysis, and persuasive texts - find the right word every time.',
+    ar: 'طوّر المفردات مالك لكل نوع كتابة GCSE English. مقالات أكاديمية، نصوص إبداعية، تحليل أدبي، ونصوص إقناعية - لقّ الكلمة الصح كل مرة.',
   },
   'vocab.cta.academic': { en: 'Academic Words', ar: 'كلمات أكاديمية' },
   'vocab.cta.descriptive': { en: 'Descriptive Words', ar: 'كلمات وصفية' },
   'vocab.cta.analytical': { en: 'Analytical Words', ar: 'كلمات تحليلية' },
   'vocab.category.academic.title': { en: 'Academic Vocabulary', ar: 'المفردات الأكاديمية' },
   'vocab.category.academic.desc': {
-    en: "50+ tier 2 and tier 3 words for essay writing. Organised by function — analysis, evaluation, comparison, and description. Replace overused words like 'good', 'bad', and 'shows' with sophisticated alternatives.",
-    ar: '٥٠+ كلمة من tier 2 وtier 3 للمقالات. مرتَّبة حسب الوظيفة — تحليل، تقييم، مقارنة، ووصف. غيّر الكلمات المتكرّرة مثل good وbad وshows ببدائل أرقى.',
+    en: "50+ tier 2 and tier 3 words for essay writing. Organised by function - analysis, evaluation, comparison, and description. Replace overused words like 'good', 'bad', and 'shows' with sophisticated alternatives.",
+    ar: '٥٠+ كلمة من tier 2 وtier 3 للمقالات. مرتَّبة حسب الوظيفة - تحليل، تقييم، مقارنة، ووصف. غيّر الكلمات المتكرّرة مثل good وbad وshows ببدائل أرقى.',
   },
   'vocab.category.academic.count': { en: '50+', ar: '٥٠+' },
   'vocab.category.academic.topic.analysis': { en: 'Analysis words', ar: 'كلمات التحليل' },
@@ -8402,8 +8402,8 @@ export const DICTIONARY: Dictionary = {
   'vocab.category.academic.topic.replace': { en: 'Words to replace', ar: 'كلمات تستبدلها' },
   'vocab.category.descriptive.title': { en: 'Descriptive Vocabulary', ar: 'المفردات الوصفية' },
   'vocab.category.descriptive.desc': {
-    en: 'Build a rich bank of sensory, emotional, and atmospheric vocabulary for creative writing. 200+ words organised by category — senses, emotions, weather, character, and setting.',
-    ar: 'ابني بنك غني من المفردات الحسّية والعاطفية والجوّية للكتابة الإبداعية. ٢٠٠+ كلمة مرتَّبة حسب الفئة — الحواس، المشاعر، الجو، الشخصية، والمكان.',
+    en: 'Build a rich bank of sensory, emotional, and atmospheric vocabulary for creative writing. 200+ words organised by category - senses, emotions, weather, character, and setting.',
+    ar: 'ابني بنك غني من المفردات الحسّية والعاطفية والجوّية للكتابة الإبداعية. ٢٠٠+ كلمة مرتَّبة حسب الفئة - الحواس، المشاعر، الجو، الشخصية، والمكان.',
   },
   'vocab.category.descriptive.count': { en: '200+', ar: '٢٠٠+' },
   'vocab.category.descriptive.topic.sensory': { en: 'Sensory vocabulary', ar: 'مفردات حسّية' },
@@ -8489,8 +8489,8 @@ export const DICTIONARY: Dictionary = {
   'your_hub.cta.title': { en: 'Your Hub', ar: 'Hub مالك' },
   'your_hub.cta.badge': { en: 'Revision · Toolkit · Analytics', ar: 'مراجعة · أدوات · تحليلات' },
   'your_hub.cta.blurb': {
-    en: 'Your unified revision home — guides, AI tools, progress, and exam technique.',
-    ar: 'بيت المراجعة الموحَّد مالك — أدلة، أدوات ذكاء اصطناعي، تقدّم، وتقنيات الامتحان.',
+    en: 'Your unified revision home - guides, AI tools, progress, and exam technique.',
+    ar: 'بيت المراجعة الموحَّد مالك - أدلة، أدوات ذكاء اصطناعي، تقدّم، وتقنيات الامتحان.',
   },
 
   // ─── /for-students (student.*) ─────────────────────────────────────
@@ -8504,12 +8504,12 @@ export const DICTIONARY: Dictionary = {
     en: 'Personalised revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking.',
     ar: 'مراجعة مخصّصة على بورد الامتحان مالك. مقالات مصحَّحة بالذكاء الاصطناعي، أدلة المجموعات الشعرية، أوراق تجريبية، وتتبّع الدرجات.',
   },
-  'student.cta.start_free': { en: 'Start free — no card', ar: 'ابدأ ببلاش — بدون كرت' },
+  'student.cta.start_free': { en: 'Start free - no card', ar: 'ابدأ ببلاش - بدون كرت' },
   'student.cta.see_pricing': { en: 'See pricing', ar: 'شوف الأسعار' },
   'student.feature.all_in_one.title': { en: 'All-in-one learning', ar: 'تعلّم متكامل' },
   'student.feature.all_in_one.desc': {
-    en: 'Lessons, practice, mock exams, and revision notes for every skill — reading, writing, listening, speaking.',
-    ar: 'دروس، تطبيق، امتحانات تجريبية، وملخّصات مراجعة لكل مهارة — قراءة، كتابة، استماع، تحدّث.',
+    en: 'Lessons, practice, mock exams, and revision notes for every skill - reading, writing, listening, speaking.',
+    ar: 'دروس، تطبيق، امتحانات تجريبية، وملخّصات مراجعة لكل مهارة - قراءة، كتابة، استماع، تحدّث.',
   },
   'student.feature.personalised.title': { en: 'Personalised learning', ar: 'تعلّم مخصّص' },
   'student.feature.personalised.desc': {
@@ -8575,13 +8575,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'جاهز ترفّع مستوى الإنجليزي مالك؟',
   },
   'student.bottom.body': {
-    en: 'Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes — 3 free uses of every AI tool before you decide.',
-    ar: 'تجربة ببلاش، بدون كرت. ألغ في أي وقت. دورات وبطاقات وملخّصات مراجعة بلا حدود — ٣ استخدامات ببلاش لكل أداة ذكاء اصطناعي قبل ما تقرّر.',
+    en: 'Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes - 3 free uses of every AI tool before you decide.',
+    ar: 'تجربة ببلاش، بدون كرت. ألغ في أي وقت. دورات وبطاقات وملخّصات مراجعة بلا حدود - ٣ استخدامات ببلاش لكل أداة ذكاء اصطناعي قبل ما تقرّر.',
   },
   'student.bottom.cta_create': { en: 'Create free account', ar: 'سوِّ حساب ببلاش' },
   'student.bottom.cta_compare': { en: 'Compare plans', ar: 'قارن الباقات' },
 
-  // ─── Help Centre (/help) — Khaleeji UI strings ───────────────────────
+  // ─── Help Centre (/help) - Khaleeji UI strings ───────────────────────
   'help.title': { en: 'Help Centre', ar: 'مركز المساعدة' },
   'help.intro_lead': {
     en: "Find answers to your questions about The English Hub. Can't find what you're looking for?",
@@ -8591,8 +8591,8 @@ export const DICTIONARY: Dictionary = {
   'help.intro_or': { en: 'or', ar: 'أو' },
   'help.intro_get_in_touch': { en: 'get in touch', ar: 'تواصل معانا' },
   'help.search_placeholder': {
-    en: "Search for help — e.g. 'mock exam', 'cancel subscription', 'exam board'...",
-    ar: "دوّر على مساعدة — مثلاً 'امتحان تجريبي'، 'إلغاء الاشتراك'، 'بورد الامتحان'...",
+    en: "Search for help - e.g. 'mock exam', 'cancel subscription', 'exam board'...",
+    ar: "دوّر على مساعدة - مثلاً 'امتحان تجريبي'، 'إلغاء الاشتراك'، 'بورد الامتحان'...",
   },
   'help.no_results_pre': { en: 'No results found for', ar: 'ما في نتايج لـ' },
   'help.no_results_tail': { en: '. Try a different search term or', ar: '. جرّب كلمة ثانية أو' },
@@ -8615,8 +8615,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الإبلاغ عن ثغرات أمنية:',
   },
   'help.rt.security_value': {
-    en: 'acknowledgement within 24 hours, full triage within 5 working days —',
-    ar: 'تأكيد الاستلام خلال ٢٤ ساعة، فحص كامل خلال ٥ أيام عمل —',
+    en: 'acknowledgement within 24 hours, full triage within 5 working days -',
+    ar: 'تأكيد الاستلام خلال ٢٤ ساعة، فحص كامل خلال ٥ أيام عمل -',
   },
   'help.still_need_help_h2': { en: 'Still need help?', ar: 'لسا تحتاج مساعدة؟' },
   'help.still_need_help_body': {
@@ -8684,8 +8684,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'في تجربة مجانية؟ أحتاج بطاقة؟',
   },
   'help.gs.q4.a': {
-    en: "Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 and you won't be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.",
-    ar: 'شيئين. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام — تتطلب تسجيل كامل ببطاقة. ألغِ قبل اليوم السابع وما تنحاسب. وبشكل منفصل، كل حساب مسجل ياخذ ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...) بدون بطاقة، عشان تجرّب الأول.',
+    en: "Two things. Every paid plan starts with a 7-day free trial - that requires full sign-up with a valid card. Cancel before day 7 and you won't be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.",
+    ar: 'شيئين. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام - تتطلب تسجيل كامل ببطاقة. ألغِ قبل اليوم السابع وما تنحاسب. وبشكل منفصل، كل حساب مسجل ياخذ ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...) بدون بطاقة، عشان تجرّب الأول.',
   },
   'help.co.q1.q': { en: 'What courses are available?', ar: 'وش الكورسات المتوفرة؟' },
   'help.co.q1.a': {
@@ -8765,13 +8765,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'وين أشوف الأخطاء الشائعة اللي تخسّر درجات؟',
   },
   'help.pr.q4.a': {
-    en: 'We have two guides. Visit /revision/common-errors for the 30 most common factual errors — misquotations, wrong contexts, anthology version mix-ups — verified against board specifications and primary sources. For technique and craft mistakes (retelling the story, no terminology, vague effects), see /revision/exam-technique/common-mistakes.',
-    ar: 'عندنا دليلين. روح لـ /revision/common-errors عشان ٣٠ خطأ معلوماتي شائع — اقتباسات غلط، سياقات خاطئة، خلط نسخ الأنطولوجيا — متحقق منها مقابل مواصفات البوردات والمصادر الأساسية. لأخطاء الأسلوب والصنعة (إعادة سرد القصة، بدون مصطلحات، تأثيرات غامضة)، شوف /revision/exam-technique/common-mistakes.',
+    en: 'We have two guides. Visit /revision/common-errors for the 30 most common factual errors - misquotations, wrong contexts, anthology version mix-ups - verified against board specifications and primary sources. For technique and craft mistakes (retelling the story, no terminology, vague effects), see /revision/exam-technique/common-mistakes.',
+    ar: 'عندنا دليلين. روح لـ /revision/common-errors عشان ٣٠ خطأ معلوماتي شائع - اقتباسات غلط، سياقات خاطئة، خلط نسخ الأنطولوجيا - متحقق منها مقابل مواصفات البوردات والمصادر الأساسية. لأخطاء الأسلوب والصنعة (إعادة سرد القصة، بدون مصطلحات، تأثيرات غامضة)، شوف /revision/exam-technique/common-mistakes.',
   },
   'help.ab.q1.q': { en: 'How much does The English Hub cost?', ar: 'كم سعر The English Hub؟' },
   'help.ab.q1.a': {
-    en: 'Early Access / Founding pricing (locked until August 2026): Students £3.99/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Standard pricing from August 2026: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP.',
-    ar: 'أسعار Early Access / Founding (مثبتة حتى أغسطس ٢٠٢٦): الطلاب £3.99/شهر أو £29.99/سنة — و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية من أغسطس ٢٠٢٦: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (بطاقة مطلوبة). كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع، بدون بطاقة. ألغِ متى ما تبغى. الأسعار بـ GBP.',
+    en: 'Early Access / Founding pricing (locked until August 2026): Students £3.99/month or £29.99/year - and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Standard pricing from August 2026: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP.',
+    ar: 'أسعار Early Access / Founding (مثبتة حتى أغسطس ٢٠٢٦): الطلاب £3.99/شهر أو £29.99/سنة - و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية من أغسطس ٢٠٢٦: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (بطاقة مطلوبة). كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع، بدون بطاقة. ألغِ متى ما تبغى. الأسعار بـ GBP.',
   },
   'help.ab.q2.q': { en: 'Can I cancel my subscription?', ar: 'أقدر ألغي الاشتراك مالي؟' },
   'help.ab.q2.a': {
@@ -8793,8 +8793,8 @@ export const DICTIONARY: Dictionary = {
   },
   'help.st.q1.q': { en: 'Do you offer school plans?', ar: 'تقدّمون خطط للمدارس؟' },
   'help.st.q1.a': {
-    en: 'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year — anchored against projected Standard Pricing of £8,000/year from August 2026. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
-    ar: 'إيه! برنامج المدارس المؤسسة Founding Schools Programme شراكة استراتيجية محدودة لأول ١٠ مدارس. سعر التأسيس: £4,000/سنة — مرتبط بالأسعار العادية المتوقعة £8,000/سنة من أغسطس ٢٠٢٦. المدارس اللي انضمت في الموجة ١ بـ£3,000 محتفظة بسعرها. مدارس التأسيس تستلم وصول كامل، تأهيل بالأولوية، مميزات مبكرة، وأسعار تفضيلية مثبتة. شوف صفحة For Schools أو راسلنا على info@Upskillenergy.com.',
+    en: 'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year - anchored against projected Standard Pricing of £8,000/year from August 2026. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
+    ar: 'إيه! برنامج المدارس المؤسسة Founding Schools Programme شراكة استراتيجية محدودة لأول ١٠ مدارس. سعر التأسيس: £4,000/سنة - مرتبط بالأسعار العادية المتوقعة £8,000/سنة من أغسطس ٢٠٢٦. المدارس اللي انضمت في الموجة ١ بـ£3,000 محتفظة بسعرها. مدارس التأسيس تستلم وصول كامل، تأهيل بالأولوية، مميزات مبكرة، وأسعار تفضيلية مثبتة. شوف صفحة For Schools أو راسلنا على info@Upskillenergy.com.',
   },
   'help.st.q2.q': { en: 'Is there a teacher dashboard?', ar: 'في لوحة للمعلم؟' },
   'help.st.q2.a': {
@@ -8829,8 +8829,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'وش الأجهزة اللي أقدر أستخدم عليها The English Hub؟',
   },
   'help.te.q1.a': {
-    en: 'The English Hub works on any device with a modern web browser — laptops, desktops, tablets, and smartphones. No app download is required. We recommend Chrome, Safari, Firefox, or Edge for the best experience.',
-    ar: 'The English Hub يشتغل على أي جهاز فيه متصفح حديث — لابتوب، ديسكتوب، تابلت، موبايل. ما تحتاج تنزّل تطبيق. ننصح بـ Chrome أو Safari أو Firefox أو Edge للأفضل تجربة.',
+    en: 'The English Hub works on any device with a modern web browser - laptops, desktops, tablets, and smartphones. No app download is required. We recommend Chrome, Safari, Firefox, or Edge for the best experience.',
+    ar: 'The English Hub يشتغل على أي جهاز فيه متصفح حديث - لابتوب، ديسكتوب، تابلت، موبايل. ما تحتاج تنزّل تطبيق. ننصح بـ Chrome أو Safari أو Firefox أو Edge للأفضل تجربة.',
   },
   'help.te.q2.q': {
     en: "The site isn't loading properly. What should I do?",
@@ -8972,7 +8972,7 @@ export const DICTIONARY: Dictionary = {
   'help.report.browser_label': { en: 'Browser', ar: 'المتصفح' },
   'help.report.browser_placeholder': { en: 'Select browser', ar: 'اختر متصفح' },
   'help.report.email_label': { en: 'Your email', ar: 'إيميلك' },
-  'help.report.email_optional': { en: '(optional — for follow-up)', ar: '(اختياري — للمتابعة)' },
+  'help.report.email_optional': { en: '(optional - for follow-up)', ar: '(اختياري - للمتابعة)' },
   'help.report.submit': { en: 'Submit Report', ar: 'أرسل البلاغ' },
   'help.report.submitted_title': { en: 'Report Submitted', ar: 'تم إرسال البلاغ' },
   'help.report.submitted_body': {
@@ -9008,8 +9008,8 @@ export const DICTIONARY: Dictionary = {
   },
   'help.sug.email_label': { en: 'Your email', ar: 'إيميلك' },
   'help.sug.email_optional': {
-    en: '(optional — we may follow up)',
-    ar: '(اختياري — ممكن نتابع معاك)',
+    en: '(optional - we may follow up)',
+    ar: '(اختياري - ممكن نتابع معاك)',
   },
   'help.sug.submit': { en: 'Submit Suggestion', ar: 'أرسل الاقتراح' },
   'help.sug.thanks_title': { en: 'Thank You!', ar: 'شكراً!' },
@@ -9034,8 +9034,8 @@ export const DICTIONARY: Dictionary = {
   // ─── FAQs (/faqs) ─────────────────────────────────────────────────────
   'faqs.title': { en: 'Frequently asked questions', ar: 'الأسئلة الشائعة' },
   'faqs.intro_lead': {
-    en: 'Everything you need to know about The English Hub — GCSE and IGCSE English, AI marking, school licences, safeguarding, and more. For anything not covered here, visit our',
-    ar: 'كل اللي تحتاج تعرفه عن The English Hub — GCSE و IGCSE English، التصحيح بالـ AI، تراخيص المدارس، الحماية، وأكثر. لأي شي ما هو هنا، روح لـ',
+    en: 'Everything you need to know about The English Hub - GCSE and IGCSE English, AI marking, school licences, safeguarding, and more. For anything not covered here, visit our',
+    ar: 'كل اللي تحتاج تعرفه عن The English Hub - GCSE و IGCSE English، التصحيح بالـ AI، تراخيص المدارس، الحماية، وأكثر. لأي شي ما هو هنا، روح لـ',
   },
   'faqs.intro_help_link': { en: 'Help Centre', ar: 'مركز المساعدة' },
   'faqs.sections_aria': { en: 'FAQ sections', ar: 'أقسام الأسئلة الشائعة' },
@@ -9060,7 +9060,7 @@ export const DICTIONARY: Dictionary = {
   },
   'faqs.g2.q': { en: 'Who is The English Hub for?', ar: 'لمين The English Hub؟' },
   'faqs.g2.a': {
-    en: "The English Hub is built for GCSE and IGCSE English students (typically aged 14–16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
+    en: "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
     ar: 'The English Hub معمول لطلاب GCSE و IGCSE English (عادة ١٤-١٦ سنة)، لكن يستخدمه كمان طلاب KS3 اللي يبغون يتقدمون. المعلمين يستخدمون تراخيص المدارس عشان يكلّفون المهام ويتابعون تقدم الصف، وأولياء الأمور يقدرون يربطون حسابهم بحساب الولد للحصول على تقارير أسبوعية.',
   },
   'faqs.g3.q': { en: 'Which exam boards are supported?', ar: 'وش بوردات الامتحان المدعومة؟' },
@@ -9073,21 +9073,21 @@ export const DICTIONARY: Dictionary = {
     ar: 'The English Hub مناسب لـ IGCSE Cambridge 0500 و 0475؟',
   },
   'faqs.g4.a': {
-    en: 'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level — with board-specific mark schemes, assessment objectives, and set-text coverage.',
-    ar: 'إيه. نغطي Cambridge First Language English 0500 و Literature in English 0475 جنباً إلى جنب مع UK GCSE (AQA, Edexcel, Eduqas, OCR) و International A-Level — بمخططات تصحيح وأهداف تقييم ونصوص مقررة خاصة بكل بورد.',
+    en: 'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level - with board-specific mark schemes, assessment objectives, and set-text coverage.',
+    ar: 'إيه. نغطي Cambridge First Language English 0500 و Literature in English 0475 جنباً إلى جنب مع UK GCSE (AQA, Edexcel, Eduqas, OCR) و International A-Level - بمخططات تصحيح وأهداف تقييم ونصوص مقررة خاصة بكل بورد.',
   },
   'faqs.g5.q': {
     en: 'Does The English Hub cover AQA Power and Conflict?',
     ar: 'The English Hub يغطي AQA Power and Conflict؟',
   },
   'faqs.g5.a': {
-    en: 'Yes — full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
-    ar: 'إيه — ملاحظات مراجعة كاملة، فقرات نموذجية مع شروحات، وتدريب على الأوراق السابقة لكل الـ ١٥ قصيدة في أنطولوجيا AQA Power and Conflict، مع توزيع علامات AO1 / AO2 / AO3.',
+    en: 'Yes - full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
+    ar: 'إيه - ملاحظات مراجعة كاملة، فقرات نموذجية مع شروحات، وتدريب على الأوراق السابقة لكل الـ ١٥ قصيدة في أنطولوجيا AQA Power and Conflict، مع توزيع علامات AO1 / AO2 / AO3.',
   },
   'faqs.g6.q': { en: 'Do I need to download an app?', ar: 'محتاج أنزّل تطبيق؟' },
   'faqs.g6.a': {
-    en: 'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in — no downloads or installations required.',
-    ar: 'لا. The English Hub تطبيق ويب يشتغل على أي متصفح حديث على لابتوب، ديسكتوب، تابلت، وموبايل. بس روح theenglishhub.app وسجّل دخول — بدون تنزيل أو تثبيت.',
+    en: 'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in - no downloads or installations required.',
+    ar: 'لا. The English Hub تطبيق ويب يشتغل على أي متصفح حديث على لابتوب، ديسكتوب، تابلت، وموبايل. بس روح theenglishhub.app وسجّل دخول - بدون تنزيل أو تثبيت.',
   },
   'faqs.g7.q': {
     en: 'How is The English Hub different from other revision sites?',
@@ -9103,8 +9103,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'في تجربة مجانية؟ أحتاج بطاقة؟',
   },
   'faqs.p2.a': {
-    en: 'Yes. Every paid plan starts with a 7-day free trial. The trial requires full sign-up with a valid payment method — so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for 3 free uses without a card.',
-    ar: 'إيه. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام. التجربة تتطلب تسجيل كامل بطريقة دفع صالحة — عشان الاشتراك يتحوّل تلقائياً إذا ما ألغيت قبل اليوم ٧. وبشكل منفصل، تقدر تجرّب أغلب المميزات ٣ مرات مجاناً بدون بطاقة.',
+    en: 'Yes. Every paid plan starts with a 7-day free trial. The trial requires full sign-up with a valid payment method - so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for 3 free uses without a card.',
+    ar: 'إيه. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام. التجربة تتطلب تسجيل كامل بطريقة دفع صالحة - عشان الاشتراك يتحوّل تلقائياً إذا ما ألغيت قبل اليوم ٧. وبشكل منفصل، تقدر تجرّب أغلب المميزات ٣ مرات مجاناً بدون بطاقة.',
   },
   'faqs.p3.q': {
     en: 'What happens after my 7-day trial ends?',
@@ -9139,8 +9139,8 @@ export const DICTIONARY: Dictionary = {
   },
   'faqs.c2.q': { en: 'How do mock exams work?', ar: 'كيف تشتغل الامتحانات التجريبية؟' },
   'faqs.c2.a': {
-    en: 'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer — highlighting strengths and areas for improvement.',
-    ar: 'الامتحانات التجريبية مالنا تحاكي صيغة وتوقيت وأنماط أسئلة الامتحانات الحقيقية للبورد مالك. بعد ما تسلّم، الـ AI (المدرّب على مخططات تصحيح رسمية) يعطيك درجة وتقدير وملاحظات تفصيلية على كل إجابة — يبرز نقاط القوة والمواضع اللي تحتاج تحسين.',
+    en: 'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer - highlighting strengths and areas for improvement.',
+    ar: 'الامتحانات التجريبية مالنا تحاكي صيغة وتوقيت وأنماط أسئلة الامتحانات الحقيقية للبورد مالك. بعد ما تسلّم، الـ AI (المدرّب على مخططات تصحيح رسمية) يعطيك درجة وتقدير وملاحظات تفصيلية على كل إجابة - يبرز نقاط القوة والمواضع اللي تحتاج تحسين.',
   },
   'faqs.c3.q': { en: 'What are practice questions?', ar: 'وش هي أسئلة التدريب؟' },
   'faqs.c3.a': {
@@ -9162,21 +9162,21 @@ export const DICTIONARY: Dictionary = {
   },
   'faqs.a1.q': { en: 'How does the AI mark my essay?', ar: 'كيف الـ AI يصحّح مقالي؟' },
   'faqs.a1.a': {
-    en: 'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20–40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
+    en: 'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20-40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
     ar: 'Claude (من Anthropic) يقرأ المقال، يقارنه بأوصاف الـ AO المنشورة للبورد مالك، ويعطيك درجات مع ملاحظات تحسين محددة في ٢٠-٤٠ ثانية. كل رد عليه مستوى ثقة وممكن يراجعه إنسان عند الطلب.',
   },
   'faqs.a2.q': { en: 'What if the AI gets the mark wrong?', ar: 'وش لو الـ AI صحّح غلط؟' },
   'faqs.a2.a': {
-    en: "Every AI-marked essay has a one-click 'request human review' option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative — the mark scheme remains the examiner's.",
-    ar: "كل مقال صحّحه AI فيه خيار 'طلب مراجعة بشرية' بضغطة واحدة. مصحّح بشري يعيد التصحيح خلال ٤٨ ساعة. إحنا شفّافين إن تصحيح الـ AI استرشادي مو نهائي — مخطط التصحيح يضل ملك المصحّح.",
+    en: "Every AI-marked essay has a one-click 'request human review' option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative - the mark scheme remains the examiner's.",
+    ar: "كل مقال صحّحه AI فيه خيار 'طلب مراجعة بشرية' بضغطة واحدة. مصحّح بشري يعيد التصحيح خلال ٤٨ ساعة. إحنا شفّافين إن تصحيح الـ AI استرشادي مو نهائي - مخطط التصحيح يضل ملك المصحّح.",
   },
   'faqs.a3.q': {
     en: 'Do you mark essays in real time in class?',
     ar: 'تصحّحون المقالات في الفصل بشكل فوري؟',
   },
   'faqs.a3.a': {
-    en: 'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes — usually while the lesson is still running.',
-    ar: 'إيه. المعلمين يقدرون يسلّمون ٣٠ مقال دفعة واحدة ويستلمون ملاحظات حسب الـ AO لكل طالب في أقل من ١٠ دقايق — عادة وقت ما الدرس لسا شغّال.',
+    en: 'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes - usually while the lesson is still running.',
+    ar: 'إيه. المعلمين يقدرون يسلّمون ٣٠ مقال دفعة واحدة ويستلمون ملاحظات حسب الـ AO لكل طالب في أقل من ١٠ دقايق - عادة وقت ما الدرس لسا شغّال.',
   },
   'faqs.t1.q': {
     en: 'What browsers and devices are supported?',
@@ -9199,8 +9199,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الصفحة ما تفتح أو شكلها خربان. كيف أصلحها؟',
   },
   'faqs.t3.a': {
-    en: 'Try these steps: (1) clear your browser cache and cookies, (2) refresh the page, (3) try a different browser, (4) check your internet connection. If the problem persists, it may be a temporary issue on our end — try again in a few minutes or contact support.',
-    ar: 'جرّب الخطوات: (١) امسح cache و cookies من المتصفح، (٢) حدّث الصفحة، (٣) جرّب متصفح ثاني، (٤) شيك على الإنترنت. لو المشكلة استمرت، ممكن تكون مشكلة مؤقتة عندنا — جرّب بعد دقايق أو تواصل مع الدعم.',
+    en: 'Try these steps: (1) clear your browser cache and cookies, (2) refresh the page, (3) try a different browser, (4) check your internet connection. If the problem persists, it may be a temporary issue on our end - try again in a few minutes or contact support.',
+    ar: 'جرّب الخطوات: (١) امسح cache و cookies من المتصفح، (٢) حدّث الصفحة، (٣) جرّب متصفح ثاني، (٤) شيك على الإنترنت. لو المشكلة استمرت، ممكن تكون مشكلة مؤقتة عندنا - جرّب بعد دقايق أو تواصل مع الدعم.',
   },
   'faqs.t4.q': { en: 'How do I reset my password?', ar: 'كيف أعيد تعيين الباسوورد؟' },
   'faqs.t4.a': {
@@ -9238,8 +9238,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'أولياء الأمور يقدرون يتابعون تقدم الولد؟',
   },
   'faqs.pr4.a': {
-    en: "Yes — parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
-    ar: "إيه — أولياء الأمور يستلمون تقرير أسبوعي ولوحة مرتبطة بالولد. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
+    en: "Yes - parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
+    ar: "إيه - أولياء الأمور يستلمون تقرير أسبوعي ولوحة مرتبطة بالولد. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
   },
   'faqs.pr5.q': {
     en: "How do I link my parent account to my child's?",
@@ -9255,8 +9255,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تقدّمون تجربة مجانية للمدارس؟',
   },
   'faqs.s2.a': {
-    en: 'Yes — schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
-    ar: 'إيه — المدارس تاخذ تجربة مجانية ٧ أيام لـ ٦٠ طالب. احجز مكالمة ٢٠ دقيقة على /demo/school عشان نرتّبها.',
+    en: 'Yes - schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
+    ar: 'إيه - المدارس تاخذ تجربة مجانية ٧ أيام لـ ٦٠ طالب. احجز مكالمة ٢٠ دقيقة على /demo/school عشان نرتّبها.',
   },
   'faqs.s3.q': {
     en: 'How does the Founding Schools Programme work?',
@@ -9278,7 +9278,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'إيه. كل تراخيص المدارس فيها جلسة تأهيل مجانية نمشي فيها قسمك على المنصة ولوحة المعلم وميزات التكليفات. نقدّم كمان دعم مستمر ونقدر نرتّب تدريب إضافي عند الحاجة.',
   },
 
-  // ─── Cookie Policy (/cookie-policy) — formal MSA legal body ──────────
+  // ─── Cookie Policy (/cookie-policy) - formal MSA legal body ──────────
   'cookie_policy.last_updated_value': { en: 'March 2026', ar: 'مارس ٢٠٢٦' },
   'cookie_policy.s1.h2': {
     en: '1. What are cookies?',
@@ -9308,16 +9308,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'جلسة مصادقة Supabase',
   },
   'cookie_policy.s3.essential.li1_text': {
-    en: ' — maintains your signed-in state so you do not need to log in on every page.',
-    ar: ' — يحافظ على حالة تسجيل دخولك حتى لا تحتاج إلى تسجيل الدخول في كل صفحة.',
+    en: ' - maintains your signed-in state so you do not need to log in on every page.',
+    ar: ' - يحافظ على حالة تسجيل دخولك حتى لا تحتاج إلى تسجيل الدخول في كل صفحة.',
   },
   'cookie_policy.s3.essential.li2_strong': {
     en: 'CSRF protection token',
     ar: 'رمز الحماية من CSRF',
   },
   'cookie_policy.s3.essential.li2_text': {
-    en: ' — guards against cross-site request forgery attacks by validating that form submissions originate from our site.',
-    ar: ' — يحمي من هجمات تزوير الطلبات عبر المواقع، من خلال التحقق من أن طلبات النماذج صادرة من موقعنا.',
+    en: ' - guards against cross-site request forgery attacks by validating that form submissions originate from our site.',
+    ar: ' - يحمي من هجمات تزوير الطلبات عبر المواقع، من خلال التحقق من أن طلبات النماذج صادرة من موقعنا.',
   },
   'cookie_policy.s3.functional.h3': { en: '3.2 Functional cookies', ar: '٣.٢ الكوكيز الوظيفية' },
   'cookie_policy.s3.functional.p': {
@@ -9329,13 +9329,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'تفضيل اختيار البورد',
   },
   'cookie_policy.s3.functional.li1_text': {
-    en: ' — remembers your chosen exam board (e.g. AQA, Edexcel, OCR, WJEC Eduqas) so content is filtered appropriately across sessions.',
-    ar: ' — يتذكّر البورد الذي اخترته (مثل AQA أو Edexcel أو OCR أو WJEC Eduqas) لتصفية المحتوى بشكل ملائم عبر الجلسات.',
+    en: ' - remembers your chosen exam board (e.g. AQA, Edexcel, OCR, WJEC Eduqas) so content is filtered appropriately across sessions.',
+    ar: ' - يتذكّر البورد الذي اخترته (مثل AQA أو Edexcel أو OCR أو WJEC Eduqas) لتصفية المحتوى بشكل ملائم عبر الجلسات.',
   },
   'cookie_policy.s3.functional.li2_strong': { en: 'Theme preference', ar: 'تفضيل المظهر' },
   'cookie_policy.s3.functional.li2_text': {
-    en: ' — stores whether you prefer light or dark mode so the interface matches your choice on return visits.',
-    ar: ' — يخزّن ما إذا كنت تُفضّل الوضع الفاتح أم الداكن ليتطابق المظهر مع اختيارك عند الزيارات اللاحقة.',
+    en: ' - stores whether you prefer light or dark mode so the interface matches your choice on return visits.',
+    ar: ' - يخزّن ما إذا كنت تُفضّل الوضع الفاتح أم الداكن ليتطابق المظهر مع اختيارك عند الزيارات اللاحقة.',
   },
   'cookie_policy.s3.analytics.h3': {
     en: '3.3 Analytics and error-tracking cookies',
@@ -9355,8 +9355,8 @@ export const DICTIONARY: Dictionary = {
   },
   'cookie_policy.s3.third_party.li1_strong': { en: 'Stripe', ar: 'Stripe' },
   'cookie_policy.s3.third_party.li1_text_before': {
-    en: ' — our payment processor sets cookies to enable secure payment transactions, detect fraud, and remember payment session information. See ',
-    ar: ' — معالج المدفوعات لدينا يَضبط كوكيز لتمكين المعاملات الآمنة، واكتشاف الاحتيال، وتذكّر معلومات جلسة الدفع. راجع ',
+    en: ' - our payment processor sets cookies to enable secure payment transactions, detect fraud, and remember payment session information. See ',
+    ar: ' - معالج المدفوعات لدينا يَضبط كوكيز لتمكين المعاملات الآمنة، واكتشاف الاحتيال، وتذكّر معلومات جلسة الدفع. راجع ',
   },
   'cookie_policy.s3.third_party.li1_link': {
     en: "Stripe's Privacy Policy",
@@ -9364,8 +9364,8 @@ export const DICTIONARY: Dictionary = {
   },
   'cookie_policy.s3.third_party.li2_strong': { en: 'Rewardful', ar: 'Rewardful' },
   'cookie_policy.s3.third_party.li2_text_before': {
-    en: ' — our affiliate tracking service sets cookies to attribute referrals to the correct affiliate partner. These cookies record a referral identifier when you arrive via an affiliate link. See ',
-    ar: ' — خدمة تتبّع الشركاء التي نستخدمها تَضبط كوكيز لنسب الإحالات إلى الشريك الصحيح. وتسجّل هذه الكوكيز معرّف إحالة عند وصولك عبر رابط شريك. راجع ',
+    en: ' - our affiliate tracking service sets cookies to attribute referrals to the correct affiliate partner. These cookies record a referral identifier when you arrive via an affiliate link. See ',
+    ar: ' - خدمة تتبّع الشركاء التي نستخدمها تَضبط كوكيز لنسب الإحالات إلى الشريك الصحيح. وتسجّل هذه الكوكيز معرّف إحالة عند وصولك عبر رابط شريك. راجع ',
   },
   'cookie_policy.s3.third_party.li2_link': {
     en: "Rewardful's Privacy Policy",
@@ -9424,20 +9424,20 @@ export const DICTIONARY: Dictionary = {
     ar: 'يحافظ على حالة الجلسة لـ Google Analytics 4',
   },
   'cookie_policy.s4.purp_stripe_mid': {
-    en: 'Fraud prevention — unique identifier for the device',
-    ar: 'الوقاية من الاحتيال — معرّف فريد للجهاز',
+    en: 'Fraud prevention - unique identifier for the device',
+    ar: 'الوقاية من الاحتيال - معرّف فريد للجهاز',
   },
   'cookie_policy.s4.purp_stripe_sid': {
-    en: 'Fraud prevention — unique identifier for the browsing session',
-    ar: 'الوقاية من الاحتيال — معرّف فريد لجلسة التصفّح',
+    en: 'Fraud prevention - unique identifier for the browsing session',
+    ar: 'الوقاية من الاحتيال - معرّف فريد لجلسة التصفّح',
   },
   'cookie_policy.s4.purp_rewardful': {
     en: 'Stores the affiliate referral identifier to attribute sign-ups',
     ar: 'يخزّن معرّف إحالة الشريك لنسب التسجيلات',
   },
   'cookie_policy.s4.note_wildcard': {
-    en: 'Cookie names containing an asterisk (*) indicate a wildcard — the actual name includes your project reference and may vary.',
-    ar: 'تُشير أسماء الكوكيز التي تحتوي على علامة نجمية (*) إلى نمط متغيّر — الاسم الفعلي يتضمّن مرجع مشروعك وقد يختلف.',
+    en: 'Cookie names containing an asterisk (*) indicate a wildcard - the actual name includes your project reference and may vary.',
+    ar: 'تُشير أسماء الكوكيز التي تحتوي على علامة نجمية (*) إلى نمط متغيّر - الاسم الفعلي يتضمّن مرجع مشروعك وقد يختلف.',
   },
   'cookie_policy.s5.h2': {
     en: '5. Cookie duration and retention',
@@ -9527,8 +9527,8 @@ export const DICTIONARY: Dictionary = {
   },
   'cookie_policy.s8.p2_strong': { en: 'strictly necessary cookies', ar: 'الكوكيز الضرورية تماماً' },
   'cookie_policy.s8.p2_post': {
-    en: ' (essential cookies) without prior consent, as they are required for the service you have requested. For all other cookies — including functional, analytics, and third-party cookies — we obtain your consent before placing them on your device. You may withdraw your consent at any time by adjusting your browser settings or contacting us.',
-    ar: ' (الكوكيز الأساسية) دون موافقة مسبقة، لأنها مطلوبة لتقديم الخدمة التي طلبتها. أما بالنسبة لجميع الكوكيز الأخرى — بما فيها الوظيفية والتحليلية وكوكيز الأطراف الثالثة — فإننا نحصل على موافقتك قبل وضعها على جهازك. ويمكنك سحب موافقتك في أي وقت عن طريق ضبط إعدادات المتصفح أو الاتصال بنا.',
+    en: ' (essential cookies) without prior consent, as they are required for the service you have requested. For all other cookies - including functional, analytics, and third-party cookies - we obtain your consent before placing them on your device. You may withdraw your consent at any time by adjusting your browser settings or contacting us.',
+    ar: ' (الكوكيز الأساسية) دون موافقة مسبقة، لأنها مطلوبة لتقديم الخدمة التي طلبتها. أما بالنسبة لجميع الكوكيز الأخرى - بما فيها الوظيفية والتحليلية وكوكيز الأطراف الثالثة - فإننا نحصل على موافقتك قبل وضعها على جهازك. ويمكنك سحب موافقتك في أي وقت عن طريق ضبط إعدادات المتصفح أو الاتصال بنا.',
   },
   'cookie_policy.s8.p3_pre': {
     en: 'We regularly review and update our cookie practices to ensure continued compliance with applicable regulations. If you have questions about our use of cookies or wish to exercise your data rights, please contact us at ',
@@ -9549,7 +9549,7 @@ export const DICTIONARY: Dictionary = {
   },
   'cookie_policy.s10.p_link': { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
 
-  // ─── Refund Policy (/refund-policy) — formal MSA legal body ──────────
+  // ─── Refund Policy (/refund-policy) - formal MSA legal body ──────────
   'refund.title': { en: 'Refund Policy', ar: 'سياسة استرداد الأموال' },
   'refund.operated_by': {
     en: 'Operated by Upskill Energy Limited, trading as The English Hub',
@@ -9621,8 +9621,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'إذا ألغيت قبل نهاية اليوم السابع، فلن تتم محاسبتك ولن تُسحب أي دفعة.',
   },
   'refund.s4.p_outro': {
-    en: 'Because no payment is taken during the trial, there is nothing to refund if you cancel before day 7. Refund entitlement applies only after a charge has been taken — see the subscription cancellations and cooling-off sections above.',
-    ar: 'نظراً لعدم سحب أي دفعة خلال التجربة، فلا يوجد ما يُستردّ إذا ألغيت قبل اليوم السابع. ولا ينطبق حق الاسترداد إلا بعد سحب دفعة — راجع قسمَي إلغاءات الاشتراك وفترة التروّي أعلاه.',
+    en: 'Because no payment is taken during the trial, there is nothing to refund if you cancel before day 7. Refund entitlement applies only after a charge has been taken - see the subscription cancellations and cooling-off sections above.',
+    ar: 'نظراً لعدم سحب أي دفعة خلال التجربة، فلا يوجد ما يُستردّ إذا ألغيت قبل اليوم السابع. ولا ينطبق حق الاسترداد إلا بعد سحب دفعة - راجع قسمَي إلغاءات الاشتراك وفترة التروّي أعلاه.',
   },
   'refund.s5.h2': { en: '5. One-time course purchases', ar: '٥. عمليات الشراء لمرة واحدة للدورات' },
   'refund.s5.p_intro': {
@@ -9717,7 +9717,7 @@ export const DICTIONARY: Dictionary = {
   'refund.s11.email_label': { en: 'Email:', ar: 'البريد الإلكتروني:' },
   'refund.s11.contact_form_label': { en: 'Contact form:', ar: 'نموذج التواصل:' },
 
-  // ─── Terms of Service (/terms) — formal MSA legal body ────────────────
+  // ─── Terms of Service (/terms) - formal MSA legal body ────────────────
   'terms.title': { en: 'Terms of Service', ar: 'شروط الخدمة' },
   'terms.last_updated_value': { en: 'March 2026', ar: 'مارس ٢٠٢٦' },
   'terms.s1.h2': { en: '1. Introduction', ar: '١. مقدّمة' },
@@ -9752,19 +9752,19 @@ export const DICTIONARY: Dictionary = {
     en: 'The English Hub offers the following subscription plans for individual users (as of 21 April 2026). All plans renew automatically until cancelled. The prices listed below are "Early Access / Founding" rates and apply to all new sign-ups until 31 July 2026. From August 2026 the Standard rates shown in parentheses become the advertised price; existing subscribers who joined on an Early Access rate keep their rate until the subscription is cancelled or lapses.',
     ar: 'يُقدّم The English Hub خطط الاشتراك التالية للمستخدمين الأفراد (اعتباراً من ٢١ أبريل ٢٠٢٦). وتتجدّد جميع الخطط تلقائياً حتى إلغائها. والأسعار المُدرَجة أدناه هي أسعار "Early Access / Founding" وتنطبق على جميع المُسجَّلين الجدد حتى ٣١ يوليو ٢٠٢٦. واعتباراً من أغسطس ٢٠٢٦، تُصبح الأسعار العادية المُدرَجة بين قوسين هي السعر المُعلَن؛ ويحتفظ المشتركون الحاليون الذين انضمّوا بسعر Early Access بسعرهم حتى إلغاء الاشتراك أو انقضائه.',
   },
-  'terms.s4.li_sm_strong': { en: 'Student Plan — Monthly:', ar: 'خطة الطالب — شهرية:' },
+  'terms.s4.li_sm_strong': { en: 'Student Plan - Monthly:', ar: 'خطة الطالب - شهرية:' },
   'terms.s4.li_sm_text': {
     en: ' £3.99 per month, billed monthly on a recurring basis (Standard from August 2026: £7.99 per month). Full access to every feature on the platform.',
     ar: ' £3.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £7.99 شهرياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
   },
-  'terms.s4.li_sa_strong': { en: 'Student Plan — Annual:', ar: 'خطة الطالب — سنوية:' },
+  'terms.s4.li_sa_strong': { en: 'Student Plan - Annual:', ar: 'خطة الطالب - سنوية:' },
   'terms.s4.li_sa_text': {
     en: ' £29.99 per year, billed annually on a recurring basis (Standard from August 2026: £69.99 per year). Full access to every feature on the platform.',
     ar: ' £29.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £69.99 سنوياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
   },
   'terms.s4.li_sa_promo_strong': {
-    en: 'Student Plan — Annual with affiliate or promo code:',
-    ar: 'خطة الطالب — سنوية بكود شريك أو كود ترويجي:',
+    en: 'Student Plan - Annual with affiliate or promo code:',
+    ar: 'خطة الطالب - سنوية بكود شريك أو كود ترويجي:',
   },
   'terms.s4.li_sa_promo_text_pre': {
     en: ' £20 per year when the checkout includes a valid affiliate code, or the public promotional code ',
@@ -9774,19 +9774,19 @@ export const DICTIONARY: Dictionary = {
     en: '. Feature access is identical to the standard annual plan.',
     ar: '. صلاحية الوصول إلى الميزات مطابقة للخطة السنوية القياسية.',
   },
-  'terms.s4.li_tm_strong': { en: 'Teacher Plan — Monthly:', ar: 'خطة المعلم — شهرية:' },
+  'terms.s4.li_tm_strong': { en: 'Teacher Plan - Monthly:', ar: 'خطة المعلم - شهرية:' },
   'terms.s4.li_tm_text': {
     en: ' £6.99 per month, billed monthly on a recurring basis (Standard from August 2026: £11.99 per month). Includes AI lesson planning, worksheet builder, bulk essay marking, and class analytics in addition to all student features.',
     ar: ' £6.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £11.99 شهرياً). تشمل تخطيط الدروس بالذكاء الاصطناعي، وبناء أوراق العمل، وتصحيح المقالات بالجملة، وتحليلات الفصل، إضافةً إلى جميع ميزات الطالب.',
   },
-  'terms.s4.li_ta_strong': { en: 'Teacher Plan — Annual:', ar: 'خطة المعلم — سنوية:' },
+  'terms.s4.li_ta_strong': { en: 'Teacher Plan - Annual:', ar: 'خطة المعلم - سنوية:' },
   'terms.s4.li_ta_text': {
     en: ' £67.99 per year, billed annually on a recurring basis (Standard from August 2026: £99 per year). Same feature set as the Teacher Monthly plan.',
     ar: ' £67.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £99 سنوياً). نفس مجموعة الميزات الموجودة في خطة المعلم الشهرية.',
   },
   'terms.s4.li_fs_strong': { en: 'Founding Schools Programme:', ar: 'برنامج المدارس المؤسِّسة:' },
   'terms.s4.li_fs_text': {
-    en: ' £4,000 per year (Standard from August 2026: £8,000 per year). Strictly limited to the first 10 schools. Includes whole-school licence, bulk onboarding, teacher dashboards, and locked preferential pricing for 2–3 years. Schools who joined the programme in wave 1 at £3,000 per year are grandfathered at that rate.',
+    en: ' £4,000 per year (Standard from August 2026: £8,000 per year). Strictly limited to the first 10 schools. Includes whole-school licence, bulk onboarding, teacher dashboards, and locked preferential pricing for 2-3 years. Schools who joined the programme in wave 1 at £3,000 per year are grandfathered at that rate.',
     ar: ' £4,000 سنوياً (السعر العادي من أغسطس ٢٠٢٦: £8,000 سنوياً). يقتصر بشكل صارم على أول ١٠ مدارس. ويشمل ترخيصاً للمدرسة بأكملها، وتأهيلاً جماعياً، ولوحات للمعلمين، وأسعاراً تفضيلية مثبتة لمدة ٢-٣ سنوات. وتحتفظ المدارس التي انضمّت إلى البرنامج في الموجة الأولى بسعر £3,000 سنوياً بذلك السعر.',
   },
   'terms.s4.p_vat_strong': { en: 'VAT.', ar: 'ضريبة القيمة المضافة.' },
@@ -9906,8 +9906,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'وفقاً للائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣، يحقّ لك إلغاء اشتراك جديد أو شراء لمرة واحدة خلال ١٤ يوماً من تاريخ الشراء واسترداد المبلغ كاملاً، بشرط ألّا تكون قد استخدمت الخدمة استخداماً جوهرياً خلال تلك الفترة. وعند استخدامك الخدمة خلال فترة الإلغاء البالغة ١٤ يوماً، قد نَخصم مبلغاً تناسبياً يعكس الخدمات المُقدَّمة بالفعل.',
   },
   'terms.s10.p3': {
-    en: 'Cancellation outside the 14-day statutory period does not, by itself, entitle you to a refund of the current billing period; your access continues until the end of the period you have already paid for. Our full Refund Policy sets out the complete refund terms — including how cancellations, free trials and one-time course purchases are handled — and is the single source of refund detail. Where this section and the Refund Policy differ, the Refund Policy prevails.',
-    ar: 'لا يُخوّلك الإلغاء خارج فترة الإلغاء القانونية البالغة ١٤ يوماً، بحدّ ذاته، استرداد قيمة فترة الفوترة الحالية؛ وتستمرّ صلاحية وصولك حتى نهاية الفترة التي دفعت ثمنها بالفعل. وتُحدّد سياسة استرداد الأموال الكاملة شروط الاسترداد بالكامل — بما في ذلك كيفية التعامل مع الإلغاءات والتجارب المجانية وعمليات الشراء لمرة واحدة للدورات — وهي المرجع الوحيد لتفاصيل الاسترداد. وعند اختلاف هذا القسم عن سياسة استرداد الأموال، تكون الغلبة لسياسة استرداد الأموال.',
+    en: 'Cancellation outside the 14-day statutory period does not, by itself, entitle you to a refund of the current billing period; your access continues until the end of the period you have already paid for. Our full Refund Policy sets out the complete refund terms - including how cancellations, free trials and one-time course purchases are handled - and is the single source of refund detail. Where this section and the Refund Policy differ, the Refund Policy prevails.',
+    ar: 'لا يُخوّلك الإلغاء خارج فترة الإلغاء القانونية البالغة ١٤ يوماً، بحدّ ذاته، استرداد قيمة فترة الفوترة الحالية؛ وتستمرّ صلاحية وصولك حتى نهاية الفترة التي دفعت ثمنها بالفعل. وتُحدّد سياسة استرداد الأموال الكاملة شروط الاسترداد بالكامل - بما في ذلك كيفية التعامل مع الإلغاءات والتجارب المجانية وعمليات الشراء لمرة واحدة للدورات - وهي المرجع الوحيد لتفاصيل الاسترداد. وعند اختلاف هذا القسم عن سياسة استرداد الأموال، تكون الغلبة لسياسة استرداد الأموال.',
   },
   'terms.s10.p4': {
     en: 'The 7-day free trial requires a valid payment method and converts automatically to your chosen paid plan unless you cancel before it ends. If your trial converts and you did not intend to continue, the eligibility and timeframe for a refund of that first charge are governed by the Refund Policy. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
@@ -9968,7 +9968,7 @@ export const DICTIONARY: Dictionary = {
   },
 
   // ─── Trustpilot widget chrome ───────────────────────────────────────
-  // Brand name "Trustpilot" stays Latin even within Arabic copy — it is
+  // Brand name "Trustpilot" stays Latin even within Arabic copy - it is
   // a trademarked product label, not translatable content. See ARIA in
   // TrustBox.tsx and TrustpilotReviewLink.tsx.
   // Unscored review CTA removed pending a genuine, scored review base.
@@ -10007,7 +10007,7 @@ export const DICTIONARY: Dictionary = {
   'ui.toast.region_label': { en: 'Notifications', ar: 'الإشعارات' },
 
   // ─── UI: toggle a11y ───────────────────────────────────────────────
-  // Toggle.tsx takes label + description as props — these keys cover
+  // Toggle.tsx takes label + description as props - these keys cover
   // future internal a11y additions and anchor the namespace.
   'ui.toggle.on': { en: 'On', ar: 'مفعّل' },
   'ui.toggle.off': { en: 'Off', ar: 'مغلق' },
@@ -10049,7 +10049,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'باقة المعلم السنوية',
   },
 
-  // ─── Learn flow — course player + assessment ────────────────────────
+  // ─── Learn flow - course player + assessment ────────────────────────
   // Used by src/app/learn/[courseId]/[moduleId]/client-page.tsx and
   // src/app/learn/[courseId]/assessment/client-page.tsx.
   //
@@ -10060,7 +10060,7 @@ export const DICTIONARY: Dictionary = {
   // imperatives use Gulf verb forms that read naturally for both
   // genders (شوف, دوّر, روح, خلّص).
 
-  // Course shell — sidebar, header, breadcrumb
+  // Course shell - sidebar, header, breadcrumb
   'learn.sidebar.modules_count': {
     en: '{completed} / {total} modules',
     ar: '{completed} / {total} وحدات',
@@ -10112,7 +10112,7 @@ export const DICTIONARY: Dictionary = {
   'learn.preview.cta.start_trial': { en: 'Start Free Trial', ar: 'ابدأ التجربة ببلاش' },
   'learn.preview.cta.view_course': { en: 'View Full Course', ar: 'شوف الدورة كاملة' },
 
-  // Access gate — locked module
+  // Access gate - locked module
   'learn.gate.locked.title': { en: 'Upgrade to Continue', ar: 'رقِّ اشتراكك عشان تكمّل' },
   'learn.gate.locked.body': {
     en: 'This module requires a subscription. Try the free preview first, or subscribe to unlock all content.',
@@ -10226,14 +10226,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'باقي عندك {n} أسئلة ما جاوبت عليها. ترسل برضو؟',
   },
 
-  // Results — generic
+  // Results - generic
   'learn.assessment.result.passed_title': { en: 'Congratulations!', ar: 'مبروك!' },
   'learn.assessment.result.failed_title': { en: 'Assessment Complete', ar: 'الاختبار خَلَص' },
   'learn.assessment.result.passed_body': {
     en: 'You achieved {grade}! Well done.',
     ar: 'حصّلت {grade}! برافو عليك.',
   },
-  // Gendered variant — F. Used when profile.gender === 'f'.
+  // Gendered variant - F. Used when profile.gender === 'f'.
   'learn.assessment.result.passed_body.f': {
     en: 'You achieved {grade}! Well done.',
     ar: 'حصّلتي {grade}! برافو عليكِ.',
@@ -10257,13 +10257,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'انحسبت نتائجك بس ما قدرنا نحفظها. جرّب مرة ثانية لو سمحت.',
   },
 
-  // Results — breakdown
+  // Results - breakdown
   'learn.assessment.breakdown.title': { en: 'Question Breakdown', ar: 'تفصيل الأسئلة' },
   'learn.assessment.breakdown.your_answer': { en: 'Your answer: ', ar: 'جوابك: ' },
   'learn.assessment.breakdown.correct_answer': { en: 'Correct: ', ar: 'الصحّ: ' },
   'learn.assessment.breakdown.not_answered': { en: 'Not answered', ar: 'ما جاوبت' },
 
-  // Results — actions
+  // Results - actions
   'learn.assessment.actions.view_cert': { en: 'View Certificate', ar: 'شوف الشهادة' },
   'learn.assessment.actions.try_again': { en: 'Try Again', ar: 'جرّب مرة ثانية' },
   'learn.assessment.actions.back_to_course': { en: 'Back to Course', ar: 'رجوع للدورة' },
@@ -10287,8 +10287,8 @@ export const DICTIONARY: Dictionary = {
   'igcse.badge.international': { en: 'International GCSE', ar: 'International GCSE' },
   'igcse.badge.lit_lang': { en: 'Literature & Language', ar: 'الأدب واللغة' },
   'igcse.h1': {
-    en: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
-    ar: 'مراجعة IGCSE English — مناهج Pearson Edexcel وCambridge كلها معانا',
+    en: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
+    ar: 'مراجعة IGCSE English - مناهج Pearson Edexcel وCambridge كلها معانا',
   },
   'igcse.lead': {
     en: 'Choose your course to access full study guides, text analysis, exam technique and past paper resources.',
@@ -10299,8 +10299,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'المحتوى متوافق مع مناهج Pearson Edexcel وCambridge Assessment.',
   },
   'igcse.hub_title': {
-    en: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
-    ar: 'مراجعة IGCSE English — مناهج Pearson Edexcel وCambridge كلها معانا',
+    en: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
+    ar: 'مراجعة IGCSE English - مناهج Pearson Edexcel وCambridge كلها معانا',
   },
   'igcse.hub_lead': {
     en: 'Choose your course to access full study guides, text analysis, exam technique and past paper resources.',
@@ -10402,24 +10402,24 @@ export const DICTIONARY: Dictionary = {
   // Cambridge 0500 / 0990 syllabus card copy (paper codes stay Latin).
   'igcse.cambridge.0500.name': { en: 'IGCSE Language A', ar: 'IGCSE Language A' },
   'igcse.cambridge.0500.tagline': {
-    en: 'For students whose first language is English — graded A* to G',
-    ar: 'للطلاب اللي لغتهم الأولى إنجليزي — تقييم A* إلى G',
+    en: 'For students whose first language is English - graded A* to G',
+    ar: 'للطلاب اللي لغتهم الأولى إنجليزي - تقييم A* إلى G',
   },
   'igcse.cambridge.0500.description': {
     en: 'Two-paper qualification testing reading comprehension, summary writing, directed writing and extended composition. Graded A*-G and sat by thousands of students in international schools every year.',
     ar: 'مؤهّل بورقتين امتحان يختبر استيعاب القراءة، وكتابة الملخّص، والكتابة الموجَّهة، والإنشاء الموسّع. تقييمه A*-G ويأخذه آلاف الطلاب في المدارس الدولية كل سنة.',
   },
-  'igcse.cambridge.0500.grading': { en: 'A* – G', ar: 'A* – G' },
+  'igcse.cambridge.0500.grading': { en: 'A* - G', ar: 'A* - G' },
   'igcse.cambridge.0990.name': { en: 'IGCSE Language B', ar: 'IGCSE Language B' },
   'igcse.cambridge.0990.tagline': {
-    en: 'For students whose first language is English — graded 9 to 1',
-    ar: 'للطلاب اللي لغتهم الأولى إنجليزي — تقييم 9 إلى 1',
+    en: 'For students whose first language is English - graded 9 to 1',
+    ar: 'للطلاب اللي لغتهم الأولى إنجليزي - تقييم 9 إلى 1',
   },
   'igcse.cambridge.0990.description': {
     en: 'The 9-1 graded version of Cambridge First Language English. Identical content and assessment structure to Language A but reported on the numerical 9-1 scale.',
     ar: 'نسخة Cambridge First Language English بتقييم 9-1. نفس المحتوى ونفس بنية التقييم مثل Language A، بس النتيجة بمقياس رقمي من 9 إلى 1.',
   },
-  'igcse.cambridge.0990.grading': { en: '9 – 1', ar: '9 – 1' },
+  'igcse.cambridge.0990.grading': { en: '9 - 1', ar: '9 - 1' },
   'igcse.cambridge.duration_4h': { en: '4h total', ar: '٤ ساعات إجمالاً' },
   'igcse.cambridge.open_prefix': { en: 'Open', ar: 'افتح' },
   'igcse.cambridge.shared.h2': { en: 'Skills & Practice', ar: 'المهارات والتدريب' },
@@ -10437,7 +10437,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'الكتابة السردية والوصفية واستراتيجيات نظام التصحيح',
   },
 
-  // ─── Cambridge IGCSE — nested study pages (igcse.cambridge.*) ────────
+  // ─── Cambridge IGCSE - nested study pages (igcse.cambridge.*) ────────
   // Per-paper exam-technique, model answers, mark scheme breakdowns.
   // English model answers and extracts stay English by design; surrounding
   // pedagogical commentary and headings flip to Khaleeji Arabic when AR
@@ -10479,7 +10479,7 @@ export const DICTIONARY: Dictionary = {
   'igcse.cambridge.badge.paper_2_models': { en: 'Paper 2 models', ar: 'نماذج Paper 2' },
   'igcse.cambridge.badge.paper_2_section_b': {
     en: 'Paper 2 Section B',
-    ar: 'Paper 2 — Section B',
+    ar: 'Paper 2 - Section B',
   },
   'igcse.cambridge.badge.paper_1': { en: 'Paper 1', ar: 'Paper 1' },
   'igcse.cambridge.badge.question_types': {
@@ -10496,30 +10496,30 @@ export const DICTIONARY: Dictionary = {
   'igcse.cambridge.source_passage': { en: 'Source passage', ar: 'النص المصدر' },
   'igcse.cambridge.model_summary': { en: 'Model summary', ar: 'نموذج الملخّص' },
   'igcse.cambridge.aligns_paper_1_reading': {
-    en: 'Aligns with Cambridge syllabus 0500 — Paper 1 Reading',
-    ar: 'يتوافق مع منهج Cambridge 0500 — Paper 1 Reading',
+    en: 'Aligns with Cambridge syllabus 0500 - Paper 1 Reading',
+    ar: 'يتوافق مع منهج Cambridge 0500 - Paper 1 Reading',
   },
   'igcse.cambridge.aligns_paper_2_writing': {
-    en: 'Aligns with Cambridge syllabus 0500 — Paper 2 Writing',
-    ar: 'يتوافق مع منهج Cambridge 0500 — Paper 2 Writing',
+    en: 'Aligns with Cambridge syllabus 0500 - Paper 2 Writing',
+    ar: 'يتوافق مع منهج Cambridge 0500 - Paper 2 Writing',
   },
 
-  // ─── Paper 1 / Q3 — Summary writing ───────────────────────────────────
+  // ─── Paper 1 / Q3 - Summary writing ───────────────────────────────────
   'igcse.cambridge.summary.hero_title': {
     en: 'Summary writing (Q3)',
     ar: 'كتابة الملخّص (Q3)',
   },
   'igcse.cambridge.summary.hero_lead': {
-    en: 'Question 3 is worth 25 marks — the biggest single mark chunk in Paper 1. Fifteen marks are for reading (the points you find) and ten are for writing (how concisely and clearly you express them).',
-    ar: 'السؤال الثالث يساوي 25 درجة — أكبر مجموعة درجات في Paper 1. خمستعشر درجة لـ Reading (النقاط اللي تلقاها) وعشر درجات لـ Writing (مدى وضوحها واختصارها لمّا تعبّر عنها).',
+    en: 'Question 3 is worth 25 marks - the biggest single mark chunk in Paper 1. Fifteen marks are for reading (the points you find) and ten are for writing (how concisely and clearly you express them).',
+    ar: 'السؤال الثالث يساوي 25 درجة - أكبر مجموعة درجات في Paper 1. خمستعشر درجة لـ Reading (النقاط اللي تلقاها) وعشر درجات لـ Writing (مدى وضوحها واختصارها لمّا تعبّر عنها).',
   },
   'igcse.cambridge.summary.split_h2': {
     en: 'How the 25 marks split',
     ar: 'كيف توزّع الـ 25 درجة',
   },
   'igcse.cambridge.summary.reading_badge': {
-    en: 'Reading skills — 15 marks',
-    ar: 'مهارات القراءة — 15 درجة',
+    en: 'Reading skills - 15 marks',
+    ar: 'مهارات القراءة - 15 درجة',
   },
   'igcse.cambridge.summary.reading_h3': { en: 'Content points', ar: 'النقاط المحتوية' },
   'igcse.cambridge.summary.reading_body': {
@@ -10527,16 +10527,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'درجة لكل فكرة ذات صلة تلقاها في Texts A و C. أعلى الطلاب يلقّون حوالي 15 نقطة مختلفة.',
   },
   'igcse.cambridge.summary.writing_badge': {
-    en: 'Writing skills — 10 marks',
-    ar: 'مهارات الكتابة — 10 درجات',
+    en: 'Writing skills - 10 marks',
+    ar: 'مهارات الكتابة - 10 درجات',
   },
   'igcse.cambridge.summary.writing_h3': {
     en: 'Style, structure, own words',
     ar: 'الأسلوب، البناء، وكلامك الخاص',
   },
   'igcse.cambridge.summary.writing_body': {
-    en: 'Level 5 (9–10 marks): concise, fluent, cohesive, consistently in your own words. No lifting.',
-    ar: 'Level 5 (9–10 درجات): مختصر، سلس، مترابط، وبكلامك أنت طول الوقت. بدون نسخ من النص.',
+    en: 'Level 5 (9-10 marks): concise, fluent, cohesive, consistently in your own words. No lifting.',
+    ar: 'Level 5 (9-10 درجات): مختصر، سلس، مترابط، وبكلامك أنت طول الوقت. بدون نسخ من النص.',
   },
   'igcse.cambridge.summary.method_h2': {
     en: 'Five-step method',
@@ -10550,12 +10550,12 @@ export const DICTIONARY: Dictionary = {
   },
   'igcse.cambridge.summary.donts_h3': { en: "Don't", ar: 'لا تسوّي' },
   'igcse.cambridge.summary.donts_desc': {
-    en: 'These habits cap you in Level 2–3.',
-    ar: 'هالعادات تحبسك في Level 2–3.',
+    en: 'These habits cap you in Level 2-3.',
+    ar: 'هالعادات تحبسك في Level 2-3.',
   },
   'igcse.cambridge.summary.worked_h2': {
-    en: 'Worked opening — dangers of urban cycling',
-    ar: 'مقدمة مشروحة — أخطار ركوب الدراجة في المدينة',
+    en: 'Worked opening - dangers of urban cycling',
+    ar: 'مقدمة مشروحة - أخطار ركوب الدراجة في المدينة',
   },
   'igcse.cambridge.summary.worked_intro': {
     en: 'Imagine the question asks for the dangers faced by city cyclists. Here is an opening that covers six points in about 70 words:',
@@ -10566,7 +10566,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'لاحظ: بدون اقتباس، بدون رأي شخصي، كل جملة فيها نقطة جديدة، والصياغة من الطالب نفسه.',
   },
 
-  // ─── Paper 1 / Q2 — Language analysis ─────────────────────────────────
+  // ─── Paper 1 / Q2 - Language analysis ─────────────────────────────────
   'igcse.cambridge.lang.hero_title': {
     en: 'Language analysis (Q2)',
     ar: 'تحليل اللغة (Q2)',
@@ -10580,14 +10580,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'شنو يبغى المصحّحون',
   },
   'igcse.cambridge.lang.l5_badge': {
-    en: 'Level 5 (13–15)',
-    ar: 'Level 5 (13–15)',
+    en: 'Level 5 (13-15)',
+    ar: 'Level 5 (13-15)',
   },
   'igcse.cambridge.lang.l5_body': {
     en: 'Judicious and wide-ranging choices; precise explanation of connotations and effects across the whole response.',
     ar: 'اختيارات مدروسة وواسعة المدى؛ شرح دقيق للدلالات والتأثيرات في كل أجزاء الإجابة.',
   },
-  'igcse.cambridge.lang.l2_badge': { en: 'Level 2 (4–6)', ar: 'Level 2 (4–6)' },
+  'igcse.cambridge.lang.l2_badge': { en: 'Level 2 (4-6)', ar: 'Level 2 (4-6)' },
   'igcse.cambridge.lang.l2_body': {
     en: 'Limited range of choices; mostly paraphrase of meaning with little or no explanation of effect.',
     ar: 'اختيارات محدودة المدى؛ غالباً إعادة صياغة للمعنى مع شرح بسيط أو معدوم للتأثير.',
@@ -10607,14 +10607,14 @@ export const DICTIONARY: Dictionary = {
   },
   'igcse.cambridge.lang.mistakes_h2': { en: 'Common mistakes', ar: 'أخطاء شائعة' },
 
-  // ─── Paper 1 — Reading techniques ─────────────────────────────────────
+  // ─── Paper 1 - Reading techniques ─────────────────────────────────────
   'igcse.cambridge.reading_tech.hero_title': {
     en: 'Reading techniques',
     ar: 'تقنيات القراءة',
   },
   'igcse.cambridge.reading_tech.hero_lead': {
-    en: 'You have 2 hours and around 2,000 words of unseen text to read. Use the right technique for the right job — never read every passage at the same speed.',
-    ar: 'عندك ساعتين وحوالي 2000 كلمة من نصوص ما شفتها قبل. استخدم التقنية الصح للمهمة الصح — لا تقرأ كل النصوص بنفس السرعة.',
+    en: 'You have 2 hours and around 2,000 words of unseen text to read. Use the right technique for the right job - never read every passage at the same speed.',
+    ar: 'عندك ساعتين وحوالي 2000 كلمة من نصوص ما شفتها قبل. استخدم التقنية الصح للمهمة الصح - لا تقرأ كل النصوص بنفس السرعة.',
   },
   'igcse.cambridge.reading_tech.purpose_label': { en: 'Purpose:', ar: 'الهدف:' },
   'igcse.cambridge.reading_tech.how_label': { en: 'How to do it', ar: 'كيف تسوّيها' },
@@ -10631,8 +10631,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'اقرأ النصوص الثلاثة قراءة سريعة (Skim)',
   },
   'igcse.cambridge.reading_tech.step1_rest': {
-    en: ' quickly at the start. Do not try to remember details — just get the tone and topic.',
-    ar: ' بسرعة في البداية. لا تحاول تتذكّر التفاصيل — بس امسك النبرة والموضوع.',
+    en: ' quickly at the start. Do not try to remember details - just get the tone and topic.',
+    ar: ' بسرعة في البداية. لا تحاول تتذكّر التفاصيل - بس امسك النبرة والموضوع.',
   },
   'igcse.cambridge.reading_tech.step2_bold': {
     en: 'Read Q1 questions first',
@@ -10659,7 +10659,7 @@ export const DICTIONARY: Dictionary = {
     ar: ' عشان ملخّص Q3. سطّر تحت كل معلومة منفصلة.',
   },
 
-  // ─── Paper 1 — Model answers ──────────────────────────────────────────
+  // ─── Paper 1 - Model answers ──────────────────────────────────────────
   'igcse.cambridge.p1_models.hero_title': {
     en: 'Paper 1 model answers',
     ar: 'نماذج إجابات Paper 1',
@@ -10669,16 +10669,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'خمسة نماذج إجابات تغطّي أنواع أسئلة Paper 1 الثلاثة: الاستخراج (Q1)، تحليل اللغة (Q2 بمقارنة Grade C مع A* جنب بعض)، وكتابة الملخّص (Q3). كل إجابة فيها ملاحظات على طريقة المصحّح تشرح بالضبط شنو يجيب الدرجات.',
   },
   'igcse.cambridge.p1_models.q1_h2': {
-    en: 'Question 1 — Retrieval',
-    ar: 'السؤال الأول — الاستخراج',
+    en: 'Question 1 - Retrieval',
+    ar: 'السؤال الأول - الاستخراج',
   },
   'igcse.cambridge.p1_models.q1_intro': {
-    en: 'Question 1 tests your ability to locate and rephrase information from the passage. You are given a specific focus (e.g. "dangers" or "benefits") and must list relevant points in your own words. Short notes are acceptable. Aim for 12–15 points to be safe — the mark scheme rewards breadth of reading.',
-    ar: 'السؤال الأول يختبر قدرتك على إيجاد المعلومات في النص وإعادة صياغتها. يعطونك تركيز محدد (مثلاً "dangers" أو "benefits") ولازم تسرد النقاط ذات الصلة بكلامك. النقاط القصيرة مقبولة. صوّب على 12–15 نقطة عشان تأمّن نفسك — الـ Mark Scheme يكافئ سعة القراءة.',
+    en: 'Question 1 tests your ability to locate and rephrase information from the passage. You are given a specific focus (e.g. "dangers" or "benefits") and must list relevant points in your own words. Short notes are acceptable. Aim for 12-15 points to be safe - the mark scheme rewards breadth of reading.',
+    ar: 'السؤال الأول يختبر قدرتك على إيجاد المعلومات في النص وإعادة صياغتها. يعطونك تركيز محدد (مثلاً "dangers" أو "benefits") ولازم تسرد النقاط ذات الصلة بكلامك. النقاط القصيرة مقبولة. صوّب على 12-15 نقطة عشان تأمّن نفسك - الـ Mark Scheme يكافئ سعة القراءة.',
   },
   'igcse.cambridge.p1_models.q2_h2': {
-    en: 'Question 2 — Language analysis: Grade C vs A*',
-    ar: 'السؤال الثاني — تحليل اللغة: Grade C مقابل A*',
+    en: 'Question 2 - Language analysis: Grade C vs A*',
+    ar: 'السؤال الثاني - تحليل اللغة: Grade C مقابل A*',
   },
   'igcse.cambridge.p1_models.q2_intro': {
     en: 'Question 2 asks how the writer uses language to create meaning and effect. Below is the same passage analysed at Grade C and then at Grade A*, so you can see precisely what separates an average response from a top-band one.',
@@ -10701,15 +10701,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'Grade A* يميل لـ...',
   },
   'igcse.cambridge.p1_models.q3_h2': {
-    en: 'Question 3 — Summary',
-    ar: 'السؤال الثالث — الملخّص',
+    en: 'Question 3 - Summary',
+    ar: 'السؤال الثالث - الملخّص',
   },
   'igcse.cambridge.p1_models.q3_intro': {
     en: 'Question 3 asks you to summarise information from two passages into a single continuous paragraph of about 250 words. You are marked on content (how many relevant points you include) and language (how effectively you use your own words). No quotation, no opinion, no bullet points.',
     ar: 'السؤال الثالث يطلب منك تلخّص معلومات من نصّين في فقرة وحدة متّصلة حوالي 250 كلمة. تتقيّم على المحتوى (كم نقطة ذات صلة تذكر) واللغة (مدى فعالية استخدام كلامك). بدون اقتباس، بدون رأي، بدون نقاط منفصلة.',
   },
 
-  // ─── Paper 2 — Directed writing ───────────────────────────────────────
+  // ─── Paper 2 - Directed writing ───────────────────────────────────────
   'igcse.cambridge.dw.hero_title': { en: 'Directed writing', ar: 'الكتابة الموجَّهة' },
   'igcse.cambridge.dw.hero_lead': {
     en: 'Section A is worth 40 marks. Fifteen for how well you read the stimulus, twenty-five for how well you adapt tone and style to the required form. Getting the form wrong costs you half your writing marks, so the first thing to get right is the shape.',
@@ -10720,16 +10720,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'كيف توزّع الـ 40 درجة',
   },
   'igcse.cambridge.dw.reading_badge': {
-    en: 'Reading — 15 marks',
-    ar: 'Reading — 15 درجة',
+    en: 'Reading - 15 marks',
+    ar: 'Reading - 15 درجة',
   },
   'igcse.cambridge.dw.reading_body': {
     en: 'Select and develop relevant ideas from the stimulus text. Show that you understand implicit as well as explicit meanings.',
     ar: 'اختار وطوّر الأفكار ذات الصلة من النص المحفّز. بيّن إنك فاهم المعاني الصريحة والضمنية.',
   },
   'igcse.cambridge.dw.writing_badge': {
-    en: 'Writing — 25 marks',
-    ar: 'Writing — 25 درجة',
+    en: 'Writing - 25 marks',
+    ar: 'Writing - 25 درجة',
   },
   'igcse.cambridge.dw.writing_body': {
     en: 'Content and structure, style and accuracy. Register, form, tone, organisation, vocabulary, grammar, spelling and punctuation all count.',
@@ -10750,30 +10750,30 @@ export const DICTIONARY: Dictionary = {
     ar: 'سبع خطوات في الامتحان',
   },
 
-  // ─── Paper 2 — Descriptive writing ────────────────────────────────────
+  // ─── Paper 2 - Descriptive writing ────────────────────────────────────
   'igcse.cambridge.desc.hero_title': {
     en: 'Descriptive writing',
     ar: 'الكتابة الوصفية',
   },
   'igcse.cambridge.desc.hero_lead': {
-    en: 'Descriptive writing is not about lots of adjectives — it is about selecting the right details and layering them so the reader can step into the scene. Worth 40 marks in Section B.',
-    ar: 'الكتابة الوصفية مو عن كثرة الصفات — هي عن اختيار التفاصيل الصح وترتيبها بطبقات عشان القارئ يقدر يدخل المشهد. تساوي 40 درجة في Section B.',
+    en: 'Descriptive writing is not about lots of adjectives - it is about selecting the right details and layering them so the reader can step into the scene. Worth 40 marks in Section B.',
+    ar: 'الكتابة الوصفية مو عن كثرة الصفات - هي عن اختيار التفاصيل الصح وترتيبها بطبقات عشان القارئ يقدر يدخل المشهد. تساوي 40 درجة في Section B.',
   },
   'igcse.cambridge.desc.split_h2': {
     en: 'How the 40 marks split',
     ar: 'كيف توزّع الـ 40 درجة',
   },
   'igcse.cambridge.desc.cs_badge': {
-    en: 'Content & structure — 16',
-    ar: 'المحتوى والبناء — 16',
+    en: 'Content & structure - 16',
+    ar: 'المحتوى والبناء - 16',
   },
   'igcse.cambridge.desc.cs_body': {
     en: 'Originality of content, progression of ideas, sense of atmosphere and shape of the composition as a whole.',
     ar: 'أصالة المحتوى، تقدّم الأفكار، الإحساس بالأجواء، وشكل الإنشاء ككل.',
   },
   'igcse.cambridge.desc.sa_badge': {
-    en: 'Style & accuracy — 24',
-    ar: 'الأسلوب والدقة — 24',
+    en: 'Style & accuracy - 24',
+    ar: 'الأسلوب والدقة - 24',
   },
   'igcse.cambridge.desc.sa_body': {
     en: 'Range of vocabulary, precision of word choice, varied sentence structure, grammar, spelling and punctuation.',
@@ -10788,8 +10788,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'بناء من خمس مراحل',
   },
   'igcse.cambridge.desc.worked_h2': {
-    en: 'Worked opening — "Describe a busy marketplace"',
-    ar: 'مقدمة مشروحة — "Describe a busy marketplace"',
+    en: 'Worked opening - "Describe a busy marketplace"',
+    ar: 'مقدمة مشروحة - "Describe a busy marketplace"',
   },
   'igcse.cambridge.desc.worked_note': {
     en: 'Notice: wide opening, then zoom to the woman, then shift to sound, then another sense. Five lines, five moves.',
@@ -10797,30 +10797,30 @@ export const DICTIONARY: Dictionary = {
   },
   'igcse.cambridge.desc.mistakes_h2': { en: 'Common mistakes', ar: 'أخطاء شائعة' },
 
-  // ─── Paper 2 — Narrative writing ──────────────────────────────────────
+  // ─── Paper 2 - Narrative writing ──────────────────────────────────────
   'igcse.cambridge.narr.hero_title': {
     en: 'Narrative writing',
     ar: 'الكتابة السردية',
   },
   'igcse.cambridge.narr.hero_lead': {
-    en: 'A narrative composition is a short story — not a summary of a life. In 450 words you need one clear event, one developed character and one controlled shift in mood. Restraint is worth more than spectacle.',
-    ar: 'الإنشاء السردي قصة قصيرة — مو ملخّص حياة كاملة. في 450 كلمة تحتاج حدث وحد واضح، شخصية وحدة مطوَّرة، وتحوّل وحد منضبط في المزاج. الانضباط أفضل من الاستعراض.',
+    en: 'A narrative composition is a short story - not a summary of a life. In 450 words you need one clear event, one developed character and one controlled shift in mood. Restraint is worth more than spectacle.',
+    ar: 'الإنشاء السردي قصة قصيرة - مو ملخّص حياة كاملة. في 450 كلمة تحتاج حدث وحد واضح، شخصية وحدة مطوَّرة، وتحوّل وحد منضبط في المزاج. الانضباط أفضل من الاستعراض.',
   },
   'igcse.cambridge.narr.split_h2': {
     en: 'How the 40 marks split',
     ar: 'كيف توزّع الـ 40 درجة',
   },
   'igcse.cambridge.narr.cs_badge': {
-    en: 'Content & structure — 16',
-    ar: 'المحتوى والبناء — 16',
+    en: 'Content & structure - 16',
+    ar: 'المحتوى والبناء - 16',
   },
   'igcse.cambridge.narr.cs_body': {
     en: 'Originality, pacing, character development, sense of direction, satisfying shape.',
     ar: 'الأصالة، الإيقاع، تطوير الشخصية، الإحساس بالاتجاه، والشكل المُرضي.',
   },
   'igcse.cambridge.narr.sa_badge': {
-    en: 'Style & accuracy — 24',
-    ar: 'الأسلوب والدقة — 24',
+    en: 'Style & accuracy - 24',
+    ar: 'الأسلوب والدقة - 24',
   },
   'igcse.cambridge.narr.sa_body': {
     en: 'Precise vocabulary, varied sentence structure, tense consistency, dialogue punctuation, spelling, grammar.',
@@ -10845,15 +10845,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'الحوار أكثر مكان يخسر فيه الطلاب درجات الدقة.',
   },
   'igcse.cambridge.narr.worked_h2': {
-    en: 'Worked opening — "Write a story that begins with a phone call."',
-    ar: 'مقدمة مشروحة — "Write a story that begins with a phone call."',
+    en: 'Worked opening - "Write a story that begins with a phone call."',
+    ar: 'مقدمة مشروحة - "Write a story that begins with a phone call."',
   },
   'igcse.cambridge.narr.worked_note': {
     en: 'Notice: opens mid-action, one distinguishing habit (waiting), small specific detail (mattress, rain), dialogue doing double duty (revealing past and present).',
     ar: 'لاحظ: تبدأ في وسط الحركة، عادة مميزة وحدة (الانتظار)، تفصيل صغير محدد (المرتبة، المطر)، والحوار يسوّي شغلين (يكشف الماضي والحاضر).',
   },
 
-  // ─── Paper 2 — Model answers ──────────────────────────────────────────
+  // ─── Paper 2 - Model answers ──────────────────────────────────────────
   'igcse.cambridge.p2_models.hero_title': {
     en: 'Paper 2 model answers',
     ar: 'نماذج إجابات Paper 2',
@@ -10863,31 +10863,31 @@ export const DICTIONARY: Dictionary = {
     ar: 'خمسة نماذج إنشاء لـ Paper 2: ثلاث إجابات Directed Writing (رسالة، مقال، خطاب) واثنين إنشاء Section B (وصفي وسردي). كل فقرة فيها ملاحظات المصحّح تشرح شنو يجيب الدرجات العليا.',
   },
   'igcse.cambridge.p2_models.dw_h2': {
-    en: 'Section A — Directed writing',
-    ar: 'Section A — الكتابة الموجَّهة',
+    en: 'Section A - Directed writing',
+    ar: 'Section A - الكتابة الموجَّهة',
   },
   'igcse.cambridge.p2_models.dw_intro': {
     en: 'Directed writing asks you to respond to a reading passage in a specific form (letter, article, speech, report). You are marked on how well you use ideas from the passage, how effectively you write in the required form, and the quality of your language. The best answers adapt and extend the source material rather than simply copying it.',
     ar: 'الـ Directed Writing يطلب منك ترد على نص قراءة بشكل محدد (رسالة، مقال، خطاب، تقرير). تتقيّم على مدى استخدامك للأفكار من النص، ومدى فعاليّة كتابتك بالشكل المطلوب، وجودة لغتك. أفضل الإجابات تكيّف المادة الأصلية وتطوّرها بدل ما تنسخها.',
   },
   'igcse.cambridge.p2_models.desc_h2': {
-    en: 'Section B — Descriptive writing',
-    ar: 'Section B — الكتابة الوصفية',
+    en: 'Section B - Descriptive writing',
+    ar: 'Section B - الكتابة الوصفية',
   },
   'igcse.cambridge.p2_models.desc_intro': {
     en: 'Section B offers a choice between descriptive and narrative writing. Descriptive compositions are marked on the quality of your imagery, vocabulary, sentence variety, and structural control. The best descriptive writing creates atmosphere through precise, original sensory detail -- not through plot.',
-    ar: 'Section B يعطيك خيار بين الكتابة الوصفية والسردية. الإنشاء الوصفي يتقيّم على جودة الصور، المفردات، تنوّع الجمل، والسيطرة على البناء. أفضل كتابة وصفية تخلق الأجواء عن طريق تفاصيل حسية دقيقة وأصيلة — مو عن طريق الحبكة.',
+    ar: 'Section B يعطيك خيار بين الكتابة الوصفية والسردية. الإنشاء الوصفي يتقيّم على جودة الصور، المفردات، تنوّع الجمل، والسيطرة على البناء. أفضل كتابة وصفية تخلق الأجواء عن طريق تفاصيل حسية دقيقة وأصيلة - مو عن طريق الحبكة.',
   },
   'igcse.cambridge.p2_models.narr_h2': {
-    en: 'Section B — Narrative writing',
-    ar: 'Section B — الكتابة السردية',
+    en: 'Section B - Narrative writing',
+    ar: 'Section B - الكتابة السردية',
   },
   'igcse.cambridge.p2_models.narr_intro': {
     en: 'Narrative compositions are marked on plot structure, characterisation, dialogue, tension, and language quality. The best narratives are small in scale (one scene, one turning point) with precise physical detail and restrained emotion. Avoid car chases, dream endings, and plots that try to cover years in 500 words.',
     ar: 'الإنشاء السردي يتقيّم على بنية الحبكة، رسم الشخصيات، الحوار، التوتر، وجودة اللغة. أفضل القصص صغيرة في حجمها (مشهد وحد، نقطة تحوّل وحدة) مع تفاصيل جسدية دقيقة وانفعال منضبط. تجنّب مطاردات السيارات، نهايات الحلم، والحبكات اللي تحاول تغطي سنين في 500 كلمة.',
   },
 
-  // ─── Composition — Mark scheme ────────────────────────────────────────
+  // ─── Composition - Mark scheme ────────────────────────────────────────
   'igcse.cambridge.ms.hero_title': {
     en: 'Composition mark scheme',
     ar: 'نظام تصحيح الإنشاء',
@@ -10927,8 +10927,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الأسئلة الرئيسية اللي يسألها المصحّحون:',
   },
   'igcse.cambridge.ms.cs_q1': {
-    en: 'Does the piece have a clear shape — beginning, middle, end?',
-    ar: 'هل القطعة لها شكل واضح — بداية، وسط، نهاية؟',
+    en: 'Does the piece have a clear shape - beginning, middle, end?',
+    ar: 'هل القطعة لها شكل واضح - بداية، وسط، نهاية؟',
   },
   'igcse.cambridge.ms.cs_q2': {
     en: 'Are paragraphs sequenced with purpose?',
@@ -10976,12 +10976,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'هل الـ Register (رسمي، غير رسمي، سردي) متّسق؟',
   },
   'igcse.cambridge.ms.cs_bands_h2': {
-    en: 'Content and structure — band descriptors',
-    ar: 'المحتوى والبناء — وصف الـ Bands',
+    en: 'Content and structure - band descriptors',
+    ar: 'المحتوى والبناء - وصف الـ Bands',
   },
   'igcse.cambridge.ms.sa_bands_h2': {
-    en: 'Style and accuracy — band descriptors',
-    ar: 'الأسلوب والدقة — وصف الـ Bands',
+    en: 'Style and accuracy - band descriptors',
+    ar: 'الأسلوب والدقة - وصف الـ Bands',
   },
   'igcse.cambridge.ms.marks_label': { en: 'marks', ar: 'درجة' },
   'igcse.cambridge.ms.push_h2': {
@@ -11017,8 +11017,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'من Band 5 لـ Band 6 (الأسلوب)',
   },
   'igcse.cambridge.ms.push_5to6_s_body': {
-    en: 'Use one rhetorical device per piece — tricolon, anaphora or asyndeton — and hold register steady from first line to last.',
-    ar: 'استخدم Rhetorical Device وحدة بالقطعة — Tricolon أو Anaphora أو Asyndeton — وثبّت الـ Register من أول سطر لآخر سطر.',
+    en: 'Use one rhetorical device per piece - tricolon, anaphora or asyndeton - and hold register steady from first line to last.',
+    ar: 'استخدم Rhetorical Device وحدة بالقطعة - Tricolon أو Anaphora أو Asyndeton - وثبّت الـ Register من أول سطر لآخر سطر.',
   },
   'igcse.cambridge.ms.disclaimer': {
     en: 'Band descriptors are paraphrased for clarity and are not the official Cambridge mark scheme wording. Always refer to the current Cambridge IGCSE Language specification and published mark schemes for authoritative criteria.',
@@ -11188,8 +11188,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'كل نصوص Pearson Edexcel IGCSE Literature في صفحة وحدة',
   },
   'edexcel.lit.set_texts.intro': {
-    en: 'Full study guides for each prescribed text — characters, themes, key quotations, context and essay plans. Pick a text to open its complete revision guide.',
-    ar: 'أدلّة مذاكرة كاملة لكل نص مقرَّر — الشخصيات، الثيمات، الاقتباسات الأساسية، السياق، وخطط المقالات. اختر النص عشان تفتح دليله الكامل.',
+    en: 'Full study guides for each prescribed text - characters, themes, key quotations, context and essay plans. Pick a text to open its complete revision guide.',
+    ar: 'أدلّة مذاكرة كاملة لكل نص مقرَّر - الشخصيات، الثيمات، الاقتباسات الأساسية، السياق، وخطط المقالات. اختر النص عشان تفتح دليله الكامل.',
   },
   'edexcel.lit.footer_align': {
     en: 'Aligned with Pearson Edexcel specification 4ET1 · Audited April 2026',
@@ -11274,8 +11274,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تذاكر Literature بعد؟',
   },
   'edexcel.lang.studying_lit_body': {
-    en: 'See your Pearson Edexcel IGCSE Literature set texts — full study guides for Macbeth, An Inspector Calls, Of Mice and Men and more.',
-    ar: 'شوف نصوص Pearson Edexcel IGCSE Literature المقرَّرة — أدلّة مذاكرة كاملة لـ Macbeth، An Inspector Calls، Of Mice and Men، وأكثر.',
+    en: 'See your Pearson Edexcel IGCSE Literature set texts - full study guides for Macbeth, An Inspector Calls, Of Mice and Men and more.',
+    ar: 'شوف نصوص Pearson Edexcel IGCSE Literature المقرَّرة - أدلّة مذاكرة كاملة لـ Macbeth، An Inspector Calls، Of Mice and Men، وأكثر.',
   },
   'edexcel.lang.paper1.title': {
     en: 'Paper 1: Non-Fiction Texts and Transactional Writing',
@@ -11310,7 +11310,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'اختبر نفسك بأسئلة Language',
   },
 
-  // ─── AQA GCSE (canonical labels — no top-level route yet) ────────────
+  // ─── AQA GCSE (canonical labels - no top-level route yet) ────────────
   // No /aqa route exists today, but the AR toggle still needs canonical
   // Khaleeji labels in dictionary form so future AQA hub pages can wire
   // in without re-translating board names. Board codes stay Latin.
@@ -11339,7 +11339,7 @@ export const DICTIONARY: Dictionary = {
   //
   // Poem titles, poet names and anthology cluster names ("Power and
   // Conflict", "Love and Relationships", "Macbeth", "Ozymandias") stay
-  // in their original English forms — translating them would mislead
+  // in their original English forms - translating them would mislead
   // a student studying for an English Literature exam. Only UI chrome,
   // headings, CTAs and descriptive copy localise here.
   //
@@ -11364,20 +11364,20 @@ export const DICTIONARY: Dictionary = {
     ar: 'مراجعة الشِعر',
   },
   'poetry_hub.hero_lead': {
-    en: 'Master all 30 AQA anthology poems across both clusters. Interactive study pages, key quotations, technique analysis, and comparison practice — everything you need for the poetry exam.',
-    ar: 'أتقن الـ٣٠ قصيدة كلهم من مختارات AQA في المجموعتين. صفحات مذاكرة تفاعلية واقتباسات أساسية وتحليل للأساليب وتدريب على المقارنة — كل شي تحتاجه لامتحان الشِعر.',
+    en: 'Master all 30 AQA anthology poems across both clusters. Interactive study pages, key quotations, technique analysis, and comparison practice - everything you need for the poetry exam.',
+    ar: 'أتقن الـ٣٠ قصيدة كلهم من مختارات AQA في المجموعتين. صفحات مذاكرة تفاعلية واقتباسات أساسية وتحليل للأساليب وتدريب على المقارنة - كل شي تحتاجه لامتحان الشِعر.',
   },
   'poetry_hub.progress_label': {
     en: 'Poems studied',
     ar: 'القصائد اللي ذاكرتها',
   },
   'poetry_hub.progress_all_done': {
-    en: 'All poems studied — amazing work!',
-    ar: 'خلصت كل القصائد — شغل وايد عدل!',
+    en: 'All poems studied - amazing work!',
+    ar: 'خلصت كل القصائد - شغل وايد عدل!',
   },
   'poetry_hub.progress_keep_going': {
-    en: '{percent}% complete — keep going!',
-    ar: 'خلصت {percent}٪ — كمّل!',
+    en: '{percent}% complete - keep going!',
+    ar: 'خلصت {percent}٪ - كمّل!',
   },
   'poetry_hub.progress_start': {
     en: 'Start studying poems to track your progress',
@@ -11416,8 +11416,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'Section C من ورقة الشِعر يختبر قدرتك على تحليل قصيدة ما شفتها من قبل. هذي أهم الاستراتيجيات:',
   },
   'poetry_hub.unseen_tip_1': {
-    en: 'Read the poem twice — once for meaning, once for technique',
-    ar: 'اقرا القصيدة مرتين — مرة للمعنى ومرة للأسلوب',
+    en: 'Read the poem twice - once for meaning, once for technique',
+    ar: 'اقرا القصيدة مرتين - مرة للمعنى ومرة للأسلوب',
   },
   'poetry_hub.unseen_tip_2': {
     en: 'Annotate as you read: circle key words, underline imagery',
@@ -11472,8 +11472,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ابدأ بقصيدة وحدة في اليوم',
   },
   'poetry_hub.motivational_body': {
-    en: 'Studying just one poem per day means you will cover the entire anthology in a month. Pick the poem you find hardest and start there — progress beats perfection.',
-    ar: 'إذا ذاكرت قصيدة وحدة بس كل يوم، بتغطي المختارات كاملة في شهر. اختر القصيدة اللي تشوفها أصعب وابدأ منها — التقدّم أهم من الكمال.',
+    en: 'Studying just one poem per day means you will cover the entire anthology in a month. Pick the poem you find hardest and start there - progress beats perfection.',
+    ar: 'إذا ذاكرت قصيدة وحدة بس كل يوم، بتغطي المختارات كاملة في شهر. اختر القصيدة اللي تشوفها أصعب وابدأ منها - التقدّم أهم من الكمال.',
   },
   'poetry_hub.motivational_cta': {
     en: 'Start with Ozymandias',
@@ -11548,7 +11548,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'مجموعة كلمات مرتبطة بموضوع أو فكرة معيّنة',
   },
 
-  // Comparison pairings — theme labels + tips
+  // Comparison pairings - theme labels + tips
   'poetry_hub.pair.power_of_nature.theme': { en: 'Power of Nature', ar: 'قوة الطبيعة' },
   'poetry_hub.pair.power_of_nature.tip': {
     en: 'Compare how both poets present nature as a threatening, uncontrollable force.',
@@ -11576,8 +11576,8 @@ export const DICTIONARY: Dictionary = {
   },
   'poetry_hub.pair.desire_obsession.theme': { en: 'Desire and Obsession', ar: 'الرغبة والهَوَس' },
   'poetry_hub.pair.desire_obsession.tip': {
-    en: 'Compare passionate desire — one healthy, one dangerously possessive.',
-    ar: 'قارن الرغبة العاطفية — وحدة صحيّة، والثانية تملّكية وخطيرة.',
+    en: 'Compare passionate desire - one healthy, one dangerously possessive.',
+    ar: 'قارن الرغبة العاطفية - وحدة صحيّة، والثانية تملّكية وخطيرة.',
   },
   'poetry_hub.pair.memory_and_loss.theme': { en: 'Memory and Loss', ar: 'الذكرى والفقد' },
   'poetry_hub.pair.memory_and_loss.tip': {
@@ -11615,7 +11615,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'اختبر قدرتك على تذكّر الاقتباسات والسياق.',
   },
 
-  // ─── Anthology Hub (Edexcel IGCSE Language A 4EA1 — and shared
+  // ─── Anthology Hub (Edexcel IGCSE Language A 4EA1 - and shared
   //     anthology-hub chrome). Text titles + author names stay in
   //     original English.
 
@@ -11632,8 +11632,8 @@ export const DICTIONARY: Dictionary = {
     ar: '١٠ نصوص',
   },
   'anthology_hub.hero_title': {
-    en: 'Paper 1 Section A — Anthology Non-Fiction',
-    ar: 'Paper 1 Section A — نصوص غير قصصية من المختارات',
+    en: 'Paper 1 Section A - Anthology Non-Fiction',
+    ar: 'Paper 1 Section A - نصوص غير قصصية من المختارات',
   },
   'anthology_hub.hero_lead': {
     en: 'Ten prescribed non-fiction texts for Edexcel IGCSE English Language A Paper 1. Each text has been analysed with language features, structural analysis, key vocabulary and exam-style practice questions.',
@@ -11656,8 +11656,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'استخدم نسخة المختارات دايماً',
   },
   'anthology_hub.use_anthology_body': {
-    en: 'when answering Edexcel exam questions — examiners will mark against the anthology text, not the online originals.',
-    ar: 'لما تجاوب أسئلة Edexcel — المصحّحون يصحّحون بناءً على نص المختارات، مو النسخ الأصلية اللي أونلاين.',
+    en: 'when answering Edexcel exam questions - examiners will mark against the anthology text, not the online originals.',
+    ar: 'لما تجاوب أسئلة Edexcel - المصحّحون يصحّحون بناءً على نص المختارات، مو النسخ الأصلية اللي أونلاين.',
   },
   'anthology_hub.texts_heading': {
     en: 'All 10 Anthology Texts',
@@ -11676,8 +11676,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ذاكر هذا النص',
   },
   'anthology_hub.expect_heading': {
-    en: 'Paper 1 Section A — What to Expect',
-    ar: 'Paper 1 Section A — شنو تتوقّع',
+    en: 'Paper 1 Section A - What to Expect',
+    ar: 'Paper 1 Section A - شنو تتوقّع',
   },
   'anthology_hub.expect_intro': {
     en: 'In Paper 1 Section A you will be given an extract from one of the ten anthology texts. You will answer three types of question:',
@@ -11688,16 +11688,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'الاسترجاع (Q1):',
   },
   'anthology_hub.expect_q1_body': {
-    en: '"List four things about..." — straightforward identification of information from the text.',
-    ar: '"اذكر أربعة أشياء عن…" — استخراج مباشر للمعلومات من النص.',
+    en: '"List four things about..." - straightforward identification of information from the text.',
+    ar: '"اذكر أربعة أشياء عن…" - استخراج مباشر للمعلومات من النص.',
   },
   'anthology_hub.expect_q2_label': {
     en: 'Language analysis (Q2):',
     ar: 'تحليل اللغة (Q2):',
   },
   'anthology_hub.expect_q2_body': {
-    en: '"How does the writer use language to..." — close analysis of techniques and their effects on the reader.',
-    ar: '"كيف يستخدم الكاتب اللغة لـ…" — تحليل دقيق للأساليب وتأثيرها على القارئ.',
+    en: '"How does the writer use language to..." - close analysis of techniques and their effects on the reader.',
+    ar: '"كيف يستخدم الكاتب اللغة لـ…" - تحليل دقيق للأساليب وتأثيرها على القارئ.',
   },
   'anthology_hub.expect_q3_label': {
     en: 'Comparison (Q3):',
@@ -11717,7 +11717,7 @@ export const DICTIONARY: Dictionary = {
   },
 
   // ─── Deep analysis sub-pages (per-text [slug] routes) ──────────────
-  // Chrome strings only — literary body content (essay paragraphs,
+  // Chrome strings only - literary body content (essay paragraphs,
   // marker annotations, historical-context paragraphs) stays in source
   // language. Khaleeji conventions: شنو / شلون / شوف / دوّر / روح /
   // ببلاش / أبغى / وايد / الحين / إحنا. NO Levantine (شو / كيفك / ليش).
@@ -11750,8 +11750,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'استفد من المقال صح',
   },
   'analysis.deep.model_essay.footer_body': {
-    en: "Don't copy the words — copy the moves. Notice how each paragraph opens with a committed argument, embeds a short quotation inside a sentence about method, and only then reaches for context. Try writing your own answer to a comparable question and self-mark against the annotations.",
-    ar: 'ما تنسخ الكلمات — انسخ الحركات. شوف شلون كل فقرة تفتح بحجّة واضحة، وتدمج اقتباس قصير داخل جملة عن الأسلوب، وبعدين توصل للسياق. جرّب اكتب إجابتك على سؤال شبيه وصحّح بنفسك بالاستعانة بالشرح.',
+    en: "Don't copy the words - copy the moves. Notice how each paragraph opens with a committed argument, embeds a short quotation inside a sentence about method, and only then reaches for context. Try writing your own answer to a comparable question and self-mark against the annotations.",
+    ar: 'ما تنسخ الكلمات - انسخ الحركات. شوف شلون كل فقرة تفتح بحجّة واضحة، وتدمج اقتباس قصير داخل جملة عن الأسلوب، وبعدين توصل للسياق. جرّب اكتب إجابتك على سؤال شبيه وصحّح بنفسك بالاستعانة بالشرح.',
   },
   'analysis.deep.model_essay.cta_revision_hub': {
     en: 'Revision hub',
@@ -11766,25 +11766,25 @@ export const DICTIONARY: Dictionary = {
     ar: 'منشورة كمقتطفات قصيرة لغرض النقد والمراجعة تحت قسم ٣٠ من قانون Copyright, Designs and Patents Act 1988. وكل الحقوق في النص الأصلي تبقى لأصحابها.',
   },
   'analysis.deep.model_essay.fallback_title': {
-    en: 'Model essay — The English Hub',
-    ar: 'مقال نموذجي — The English Hub',
+    en: 'Model essay - The English Hub',
+    ar: 'مقال نموذجي - The English Hub',
   },
 
   // ── Model-essays index page (revision/model-essays) ──
-  // Chrome only — exam-text labels (Macbeth, Jekyll, etc.) stay literary
+  // Chrome only - exam-text labels (Macbeth, Jekyll, etc.) stay literary
   // content. Author/work descriptions stay literary so students see the
   // canonical phrasing examiners use. EVERYTHING else routes through t().
   'revision.model_essays.index.meta_title': {
-    en: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph | The English Hub',
-    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة | The English Hub',
+    en: 'Grade-9 Model Essays - Annotated Paragraph-by-Paragraph | The English Hub',
+    ar: 'مقالات نموذجية Grade-9 - شرح فقرة بفقرة | The English Hub',
   },
   'revision.model_essays.index.meta_description': {
     en: 'Annotated Grade-9 model essays for Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, and Romeo and Juliet. Paragraph-by-paragraph commentary so you can see exactly how a top-band response is built.',
     ar: 'مقالات نموذجية مشروحة Grade-9 على Macbeth و An Inspector Calls و A Christmas Carol و Jekyll and Hyde و Romeo and Juliet. شرح فقرة بفقرة عشان تشوف بالضبط شلون تتبني الإجابة من عيار Grade-9.',
   },
   'revision.model_essays.index.og_title': {
-    en: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph',
-    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة',
+    en: 'Grade-9 Model Essays - Annotated Paragraph-by-Paragraph',
+    ar: 'مقالات نموذجية Grade-9 - شرح فقرة بفقرة',
   },
   'revision.model_essays.index.og_description': {
     en: 'Top-band annotated model essays for the most-taught GCSE Literature texts. Each essay is broken down paragraph-by-paragraph with technique commentary.',
@@ -11807,12 +11807,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'مقالات مشروحة',
   },
   'revision.model_essays.index.h1': {
-    en: 'Grade-9 model essays — annotated paragraph-by-paragraph',
-    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة',
+    en: 'Grade-9 model essays - annotated paragraph-by-paragraph',
+    ar: 'مقالات نموذجية Grade-9 - شرح فقرة بفقرة',
   },
   'revision.model_essays.index.hero_body': {
-    en: 'Read a top-band response, then read the marker’s thinking next to every paragraph. Each essay is broken into the moves a Grade-9 candidate makes — thesis, embedded quotation, methodical AO2, deft AO3 — so you can copy the structure, not the words.',
-    ar: 'اقرأ إجابة من أعلى فئة، وبعدين شوف تفكير المصحّح جنب كل فقرة. كل مقال متقسّم على الحركات اللي يسوّيها طالب Grade-9 — الحجّة، الاقتباس المدمج، تحليل AO2 منهجي، AO3 ذكي — عشان تنسخ الشكل، مو الكلمات.',
+    en: 'Read a top-band response, then read the marker’s thinking next to every paragraph. Each essay is broken into the moves a Grade-9 candidate makes - thesis, embedded quotation, methodical AO2, deft AO3 - so you can copy the structure, not the words.',
+    ar: 'اقرأ إجابة من أعلى فئة، وبعدين شوف تفكير المصحّح جنب كل فقرة. كل مقال متقسّم على الحركات اللي يسوّيها طالب Grade-9 - الحجّة، الاقتباس المدمج، تحليل AO2 منهجي، AO3 ذكي - عشان تنسخ الشكل، مو الكلمات.',
   },
   'revision.model_essays.index.tagline_macbeth': {
     en: 'Ambition, guilt and the supernatural in Shakespeare’s shortest tragedy.',
@@ -11955,15 +11955,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'شلون تراجع',
   },
   'analysis.deep.set_text.how_to_revise_intro': {
-    en: 'Follow these steps for high-impact revision. The best students do not just re-read the text — they actively engage with quotation, structure and writer’s intentions.',
-    ar: 'اتبع الخطوات للمراجعة المؤثرة. أحسن الطلاب ما يكتفون بإعادة القراءة — يشتغلون بنشاط على الاقتباسات والبنية ومقاصد الكاتب.',
+    en: 'Follow these steps for high-impact revision. The best students do not just re-read the text - they actively engage with quotation, structure and writer’s intentions.',
+    ar: 'اتبع الخطوات للمراجعة المؤثرة. أحسن الطلاب ما يكتفون بإعادة القراءة - يشتغلون بنشاط على الاقتباسات والبنية ومقاصد الكاتب.',
   },
   'analysis.deep.set_text.tip1_h3': {
     en: 'Memorise short quotations',
     ar: 'احفظ اقتباسات قصيرة',
   },
   'analysis.deep.set_text.tip1_body': {
-    en: 'Aim for 10–15 short, versatile quotations. Choose ones that link to multiple themes and contain analysable language techniques.',
+    en: 'Aim for 10-15 short, versatile quotations. Choose ones that link to multiple themes and contain analysable language techniques.',
     ar: 'استهدف ١٠ إلى ١٥ اقتباس قصير ومرن. اختر اللي يربط بثيمات متعددة ويحتوي على تقنيات لغوية قابلة للتحليل.',
   },
   'analysis.deep.set_text.tip2_h3': {
@@ -12065,8 +12065,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'رجوع للنصوص المقررة',
   },
 
-  // ─── Pricing page: deep wave 2 — feature tables, FAQ, steps ─────────
-  // Wires the still-hardcoded "deeper" surfaces on /pricing — competitor
+  // ─── Pricing page: deep wave 2 - feature tables, FAQ, steps ─────────
+  // Wires the still-hardcoded "deeper" surfaces on /pricing - competitor
   // comparison table cells, the "Always free / Premium" feature lists,
   // step labels under "How free access works", and the full FAQ body.
   'pricing.feat.student_free.exam_aligned': {
@@ -12152,8 +12152,8 @@ export const DICTIONARY: Dictionary = {
   'pricing.always_free_label': { en: 'Always free', ar: 'ببلاش دايماً' },
   'pricing.premium_label': { en: 'Premium', ar: 'بريميوم' },
   'pricing.premium_then_unlimited_prefix': {
-    en: '— {n} free, then unlimited',
-    ar: '— {n} ببلاش، وبعدين بلا حدود',
+    en: '- {n} free, then unlimited',
+    ar: '- {n} ببلاش، وبعدين بلا حدود',
   },
   'pricing.school_receives.heading': {
     en: 'What your school receives',
@@ -12168,15 +12168,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'وصول مبكر للميزات الجديدة قبل الإطلاق العام',
   },
   'pricing.school_receives.3': {
-    en: 'Direct product input — your feedback shapes the roadmap',
-    ar: 'مدخلات مباشرة على المنتج — ملاحظاتك تشكّل خارطة الطريق',
+    en: 'Direct product input - your feedback shapes the roadmap',
+    ar: 'مدخلات مباشرة على المنتج - ملاحظاتك تشكّل خارطة الطريق',
   },
   'pricing.school_receives.4': {
     en: 'Priority onboarding with dedicated support',
     ar: 'تأهيل بأولوية مع دعم مخصّص',
   },
   'pricing.school_receives.5': {
-    en: 'Locked preferential pricing for 2–3 years',
+    en: 'Locked preferential pricing for 2-3 years',
     ar: 'أسعار تفضيلية مثبتة لمدة ٢-٣ سنوات',
   },
   'pricing.school_receives.6': {
@@ -12190,11 +12190,11 @@ export const DICTIONARY: Dictionary = {
     ar: 'فيه ٦ أماكن باقية · الدفعة تسكّر ٣١ ديسمبر ٢٠٢٦',
   },
   'pricing.mat_pricing_blurb': {
-    en: 'MAT pricing from {currency}{amount}/yr — bundled 3+ schools',
-    ar: 'تسعير MAT يبدأ من {currency}{amount} سنوياً — حزمة ٣ مدارس أو أكثر',
+    en: 'MAT pricing from {currency}{amount}/yr - bundled 3+ schools',
+    ar: 'تسعير MAT يبدأ من {currency}{amount} سنوياً - حزمة ٣ مدارس أو أكثر',
   },
   'pricing.founders_lock_rate': {
-    en: 'Founding partners lock in this rate for 2–3 years and shape the platform roadmap.',
+    en: 'Founding partners lock in this rate for 2-3 years and shape the platform roadmap.',
     ar: 'الشركاء المؤسسون يثبّتون السعر لمدة ٢-٣ سنوات ويشكّلون خارطة طريق المنصة.',
   },
   'pricing.estimated_std_rate': {
@@ -12214,8 +12214,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'لمّا تنحجز كل الأماكن، ما رح يفتح الدخول بهالسعر مرة ثانية.',
   },
   'pricing.cohort_2_note': {
-    en: 'After the 10 founding places: Cohort 2 pricing opens September 2026 at £6,000–£12,000/yr. Founding price is locked for the life of your contract.',
-    ar: 'بعد أماكن المؤسسين الـ١٠: تسعير الدفعة ٢ يفتح في سبتمبر ٢٠٢٦ بـ £6,000–£12,000 سنوياً. سعر المؤسسين مثبّت طول مدة عقدك.',
+    en: 'After the 10 founding places: Cohort 2 pricing opens September 2026 at £6,000-£12,000/yr. Founding price is locked for the life of your contract.',
+    ar: 'بعد أماكن المؤسسين الـ١٠: تسعير الدفعة ٢ يفتح في سبتمبر ٢٠٢٦ بـ £6,000-£12,000 سنوياً. سعر المؤسسين مثبّت طول مدة عقدك.',
   },
   'pricing.standard_from_prefix': { en: 'From', ar: 'من' },
   'pricing.per_year_short': { en: '/yr', ar: '/سنة' },
@@ -12231,8 +12231,8 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.with_any_code_prefix': { en: 'With any affiliate code or', ar: 'مع أي كود شراكة أو' },
   'pricing.with_any_code_per_year_save': {
-    en: '{currency}{annual}/year — save {currency}{saving}.',
-    ar: '{currency}{annual} سنوياً — وفّر {currency}{saving}.',
+    en: '{currency}{annual}/year - save {currency}{saving}.',
+    ar: '{currency}{annual} سنوياً - وفّر {currency}{saving}.',
   },
   'pricing.starting_checkout': { en: 'Starting checkout…', ar: 'لحظة، بنبدأ الدفع…' },
   'pricing.start_7day_trial': { en: 'Start 7-day free trial', ar: 'ابدأ تجربة ٧ أيام مجانية' },
@@ -12252,8 +12252,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ببلاش / £6.99 بريميوم',
   },
   'pricing.compare.gcsepod_price': {
-    en: '£12–£18/yr (school only)',
-    ar: '£12–£18 سنوياً (مدارس بس)',
+    en: '£12-£18/yr (school only)',
+    ar: '£12-£18 سنوياً (مدارس بس)',
   },
   'pricing.compare.row.ai_marking': {
     en: 'AI essay marking (AO-aligned)',
@@ -12276,8 +12276,8 @@ export const DICTIONARY: Dictionary = {
   'pricing.compare.value.5_boards': { en: '5 boards', ar: '٥ بوردات' },
   'pricing.compare.value.aqa_cambridge': { en: 'AQA · Cambridge', ar: 'AQA · Cambridge' },
   'pricing.compare.footnote': {
-    en: 'Pricing and features as of April 2026 — may be out of date; contact competitors for latest.',
-    ar: 'الأسعار والميزات بحسب أبريل ٢٠٢٦ — ممكن تكون قديمة؛ اتواصل مع المنافسين للأحدث.',
+    en: 'Pricing and features as of April 2026 - may be out of date; contact competitors for latest.',
+    ar: 'الأسعار والميزات بحسب أبريل ٢٠٢٦ - ممكن تكون قديمة؛ اتواصل مع المنافسين للأحدث.',
   },
   'pricing.step.label': { en: 'Step', ar: 'الخطوة' },
   'pricing.step.1.title': { en: 'Register', ar: 'سجّل' },
@@ -12292,8 +12292,8 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.step.3.title': { en: 'Upgrade', ar: 'رقّي' },
   'pricing.step.3.desc': {
-    en: 'When you’re ready, start a 7-day free trial. Card required — cancel before day 7 at no cost, or it converts automatically.',
-    ar: 'لمّا تكون جاهز، ابدأ تجربة ٧ أيام مجانية. يلزم كارت — ألغِ قبل اليوم السابع بدون تكلفة، أو تنتقل تلقائياً.',
+    en: 'When you’re ready, start a 7-day free trial. Card required - cancel before day 7 at no cost, or it converts automatically.',
+    ar: 'لمّا تكون جاهز، ابدأ تجربة ٧ أيام مجانية. يلزم كارت - ألغِ قبل اليوم السابع بدون تكلفة، أو تنتقل تلقائياً.',
   },
   'pricing.faq.q1': {
     en: 'What do I get for free before I subscribe?',
@@ -12313,8 +12313,8 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.faq.q3': { en: 'What does the Student plan cost?', ar: 'شنو سعر خطة الطالب؟' },
   'pricing.faq.a3': {
-    en: '£{monthly} per month, or £{annual} per year. With any valid affiliate code — or the house code {code} — the annual plan drops to £{withCode} (a £{savings} saving).',
-    ar: '£{monthly} شهرياً، أو £{annual} سنوياً. ومع أي كود شراكة صالح — أو الكود العام {code} — الخطة السنوية تنزل لـ £{withCode} (توفير £{savings}).',
+    en: '£{monthly} per month, or £{annual} per year. With any valid affiliate code - or the house code {code} - the annual plan drops to £{withCode} (a £{savings} saving).',
+    ar: '£{monthly} شهرياً، أو £{annual} سنوياً. ومع أي كود شراكة صالح - أو الكود العام {code} - الخطة السنوية تنزل لـ £{withCode} (توفير £{savings}).',
   },
   'pricing.faq.q4': { en: 'What does the Teacher plan cost?', ar: 'شنو سعر خطة المعلم؟' },
   'pricing.faq.a4': {
@@ -12326,8 +12326,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'شلون يشتغل خصم كود الشراكة؟',
   },
   'pricing.faq.a5': {
-    en: 'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} — this works for everyone and applies the same discount. Only applies to annual student billing.',
-    ar: 'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} — يشتغل للكل ويطبّق نفس الخصم. ينطبق فقط على فوترة الطالب السنوية.',
+    en: 'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. Only applies to annual student billing.',
+    ar: 'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق فقط على فوترة الطالب السنوية.',
   },
   'pricing.faq.q6': {
     en: 'Can I switch between monthly and annual billing?',
@@ -12362,8 +12362,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ورح نرد عليك خلال ٢٤ ساعة.',
   },
   'pricing.err.code_annual_only': {
-    en: 'Your code “{code}” only applies to annual plans — Student Annual (£{studentAnnual}/year) or Teacher Annual (£{teacherAnnual}/year). Pick an annual plan to use the discount, or remove the code to continue with this plan at the standard price.',
-    ar: 'الكود "{code}" ينطبق فقط على الخطط السنوية — الطالب السنوي (£{studentAnnual}/سنة) أو المعلم السنوي (£{teacherAnnual}/سنة). اختر خطة سنوية عشان تستخدم الخصم، أو احذف الكود عشان تكمل بالسعر القياسي.',
+    en: 'Your code “{code}” only applies to annual plans - Student Annual (£{studentAnnual}/year) or Teacher Annual (£{teacherAnnual}/year). Pick an annual plan to use the discount, or remove the code to continue with this plan at the standard price.',
+    ar: 'الكود "{code}" ينطبق فقط على الخطط السنوية - الطالب السنوي (£{studentAnnual}/سنة) أو المعلم السنوي (£{teacherAnnual}/سنة). اختر خطة سنوية عشان تستخدم الخصم، أو احذف الكود عشان تكمل بالسعر القياسي.',
   },
   'pricing.err.code_apply_failed': {
     en: "We couldn't apply that code right now. Please try again, or remove the code to continue at the standard price.",
@@ -12378,8 +12378,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما قدرنا نبدأ الدفع لأن معرّفات أسعار Stripe الحيّة ما هي موصولة في Vercel. فريق الموقع يحتاج يضيف STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL لمتغيرات بيئة الإنتاج في Vercel ويعيد النشر.',
   },
   'pricing.err.invalid_priceid': {
-    en: "We couldn't start checkout — the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy.",
-    ar: 'ما قدرنا نبدأ الدفع — معرّف سعر Stripe المُهيَّأ مو صالح في حساب Stripe هذا. تحقّق إن متغيرات البيئة تطابق معرّفات أسعار وضع LIVE وأعد النشر.',
+    en: "We couldn't start checkout - the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy.",
+    ar: 'ما قدرنا نبدأ الدفع - معرّف سعر Stripe المُهيَّأ مو صالح في حساب Stripe هذا. تحقّق إن متغيرات البيئة تطابق معرّفات أسعار وضع LIVE وأعد النشر.',
   },
   'pricing.err.stripe_rejected_prefix': {
     en: 'Stripe rejected the request:',
@@ -12437,7 +12437,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما في طلاب في الصف هذا',
   },
   'school.seating.print_heading_class_fallback': { en: 'Class', ar: 'الصف' },
-  'school.seating.print_heading_prefix': { en: 'Seating Plan — ', ar: 'خطة الجلوس — ' },
+  'school.seating.print_heading_prefix': { en: 'Seating Plan - ', ar: 'خطة الجلوس - ' },
   'school.seating.arrange.mixed.label': { en: 'Mixed Ability', ar: 'قدرات متنوّعة' },
   'school.seating.arrange.mixed.desc': {
     en: 'Spread grades evenly across the room',
@@ -12509,8 +12509,8 @@ export const DICTIONARY: Dictionary = {
   'school.group_gen.regenerate': { en: 'Regenerate', ar: 'سوّي من جديد' },
   'school.group_gen.students_suffix': { en: 'students', ar: 'طالب' },
   'school.group_gen.drag_hint': {
-    en: '— Drag students between groups to rearrange',
-    ar: '— اسحب الطلاب بين المجموعات عشان ترتّبهم',
+    en: '- Drag students between groups to rearrange',
+    ar: '- اسحب الطلاب بين المجموعات عشان ترتّبهم',
   },
   'school.group_gen.empty_select_class': {
     en: 'Select a class to generate groups',
@@ -12521,8 +12521,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما في طلاب في الصف هذا',
   },
   'school.group_gen.print_heading_prefix': {
-    en: 'Group Compositions — ',
-    ar: 'تركيبة المجموعات — ',
+    en: 'Group Compositions - ',
+    ar: 'تركيبة المجموعات - ',
   },
   'school.group_gen.print_strategy_prefix': { en: 'Strategy: ', ar: 'الطريقة: ' },
   'school.group_gen.print_class_fallback': { en: 'Class', ar: 'الصف' },
@@ -12666,12 +12666,12 @@ export const DICTIONARY: Dictionary = {
   'school.billing.founding_50_title': { en: 'Founding 50 Schools', ar: 'أوّل ٥٠ مدرسة مؤسّسة' },
   'school.billing.founding_50_pre': { en: 'Limited to the first', ar: 'محدود لأوّل' },
   'school.billing.founding_50_post_isfounder': {
-    en: 'schools — your school is in!',
-    ar: 'مدرسة — مدرستك ضمن القائمة!',
+    en: 'schools - your school is in!',
+    ar: 'مدرسة - مدرستك ضمن القائمة!',
   },
   'school.billing.founding_50_post_standard': {
-    en: 'schools — half-price founder pricing.',
-    ar: 'مدرسة — سعر المؤسّس بنصف القيمة.',
+    en: 'schools - half-price founder pricing.',
+    ar: 'مدرسة - سعر المؤسّس بنصف القيمة.',
   },
   'school.billing.example_label': { en: 'Example', ar: 'مثال' },
   'school.billing.example_pre': { en: 'A school with', ar: 'مدرسة فيها' },
@@ -12684,8 +12684,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'كمدرسة مؤسّسة.',
   },
   'school.billing.feat.per_pupil': {
-    en: 'Per-pupil pricing — only pay for active students',
-    ar: 'تسعير حسب الطالب — تدفع فقط على الطلاب النشطين',
+    en: 'Per-pupil pricing - only pay for active students',
+    ar: 'تسعير حسب الطالب - تدفع فقط على الطلاب النشطين',
   },
   'school.billing.feat.all_teachers': {
     en: 'Unlimited teacher accounts included',
@@ -12710,7 +12710,7 @@ export const DICTIONARY: Dictionary = {
   'school.billing.usage.students_enrolled': { en: 'Students enrolled', ar: 'الطلاب المسجّلين' },
   'school.billing.usage.teachers': { en: 'Teachers', ar: 'المعلمين' },
   'school.billing.usage.resources': { en: 'Resources', ar: 'الموارد' },
-  'school.billing.usage.dash': { en: '—', ar: '—' },
+  'school.billing.usage.dash': { en: '-', ar: '-' },
   'school.billing.usage.of': { en: 'of', ar: 'من' },
   'school.billing.usage.billed_per_pupil': { en: 'billed per pupil', ar: 'فوترة حسب الطالب' },
   'school.billing.usage.teachers_included': { en: 'unlimited included', ar: 'بلا حدود ضمن الباقة' },
@@ -12718,8 +12718,8 @@ export const DICTIONARY: Dictionary = {
   'school.billing.usage.all_included': { en: 'all included', ar: 'الكل ضمن الباقة' },
   'school.billing.invoice_title': { en: 'Invoice history', ar: 'سجلّ الفواتير' },
   'school.billing.invoice_empty_founder': {
-    en: 'No invoices yet — you are on FOUNDER access.',
-    ar: 'ما في فواتير لحدّ الحين — أنت على صلاحية المؤسّس.',
+    en: 'No invoices yet - you are on FOUNDER access.',
+    ar: 'ما في فواتير لحدّ الحين - أنت على صلاحية المؤسّس.',
   },
   'school.billing.invoice_empty_standard': {
     en: 'No invoices yet.',
@@ -12751,7 +12751,7 @@ export const DICTIONARY: Dictionary = {
   // ─── A-Level board hubs (OCR, Eduqas) ──────────────────────────────
   // Board names and paper/spec codes (OCR, H472, H470, J351, J352, C700QS,
   // WJEC Eduqas, Cambridge, IGCSE, GCSE, A-Level) stay in Latin script even
-  // inside Arabic — standard Gulf convention for technical/brand terms.
+  // inside Arabic - standard Gulf convention for technical/brand terms.
   'alevel.back': { en: 'Back to A-Level', ar: 'رجوع إلى A-Level' },
   'alevel.badge': { en: 'UK A-Level English', ar: 'A-Level English في المملكة المتحدة' },
   'alevel.tools.heading': { en: 'Cross-board revision tools', ar: 'أدوات مراجعة لكل البوردات' },
@@ -12764,8 +12764,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'إحنا نبني أدلة A-Level خاصة بكل بورد لـ ',
   },
   'alevel.roadmap.body_post': {
-    en: ' — set texts, comparative essays, anthology breakdowns and past-paper walkthroughs. In the meantime, use the cross-board revision tools below; each one already covers the core A-Level skills.',
-    ar: ' — النصوص المقررة، المقالات المقارنة، تحليل الأنطولوجي، وشرح الأوراق السابقة. لين ما يخلص هذا، استخدم أدوات المراجعة لكل البوردات تحت؛ كل وحدة تغطي مهارات A-Level الأساسية.',
+    en: ' - set texts, comparative essays, anthology breakdowns and past-paper walkthroughs. In the meantime, use the cross-board revision tools below; each one already covers the core A-Level skills.',
+    ar: ' - النصوص المقررة، المقالات المقارنة، تحليل الأنطولوجي، وشرح الأوراق السابقة. لين ما يخلص هذا، استخدم أدوات المراجعة لكل البوردات تحت؛ كل وحدة تغطي مهارات A-Level الأساسية.',
   },
   'alevel.footer.aligned_pre': { en: 'Aligned with ', ar: 'متوافق مع منهج ' },
   'alevel.footer.aligned_mid': { en: ' specification (', ar: ' (' },
@@ -12782,8 +12782,8 @@ export const DICTIONARY: Dictionary = {
   },
   'alevel.tool.language.title': { en: 'Language Study', ar: 'دراسة اللغة' },
   'alevel.tool.language.desc': {
-    en: 'Language study for A-Level English Language — frameworks, analysis, and written transformation.',
-    ar: 'دراسة اللغة لـ A-Level English Language — الأُطُر، التحليل، والتحويل الكتابي.',
+    en: 'Language study for A-Level English Language - frameworks, analysis, and written transformation.',
+    ar: 'دراسة اللغة لـ A-Level English Language - الأُطُر، التحليل، والتحويل الكتابي.',
   },
 
   // ─── OCR namespace ───────────────────────────────────────────────────
@@ -12926,8 +12926,8 @@ export const DICTIONARY: Dictionary = {
   'wjec.lang.spec_label': { en: 'WJEC Eduqas GCSE (C700QS)', ar: 'WJEC Eduqas GCSE (C700QS)' },
   'wjec.lang.hero.h1': { en: 'English Language Revision Hub', ar: 'مركز مراجعة اللغة الإنجليزية' },
   'wjec.lang.hero.intro': {
-    en: 'Everything you need for your WJEC Eduqas English Language GCSE. Two components covering 20th-century literature reading, creative prose writing, non-fiction reading, and writing for real purposes — fully broken down with exam technique and marking-guide guidance.',
-    ar: 'كل اللي تحتاجه لـ WJEC Eduqas English Language GCSE. مكوّنين يغطون قراءة أدب القرن العشرين، والكتابة النثرية الإبداعية، وقراءة النصوص الواقعية، والكتابة لأغراض حقيقية — مع شرح مفصّل لمهارات الامتحان وإرشادات التصحيح.',
+    en: 'Everything you need for your WJEC Eduqas English Language GCSE. Two components covering 20th-century literature reading, creative prose writing, non-fiction reading, and writing for real purposes - fully broken down with exam technique and marking-guide guidance.',
+    ar: 'كل اللي تحتاجه لـ WJEC Eduqas English Language GCSE. مكوّنين يغطون قراءة أدب القرن العشرين، والكتابة النثرية الإبداعية، وقراءة النصوص الواقعية، والكتابة لأغراض حقيقية - مع شرح مفصّل لمهارات الامتحان وإرشادات التصحيح.',
   },
   'wjec.lang.glance.h2': { en: 'Exam at a Glance', ar: 'الامتحان بنظرة سريعة' },
   'wjec.lang.glance.board': { en: 'Exam Board', ar: 'البورد' },
@@ -12942,12 +12942,12 @@ export const DICTIONARY: Dictionary = {
   'wjec.lang.table.marks': { en: 'Marks', ar: 'الدرجات' },
   'wjec.lang.table.percent': { en: '% of GCSE', ar: '٪ من الـ GCSE' },
   'wjec.lang.paper1.long': {
-    en: 'Paper 1 — 20th Century Literature Reading & Creative Prose Writing',
-    ar: 'Paper 1 — قراءة أدب القرن العشرين والكتابة النثرية الإبداعية',
+    en: 'Paper 1 - 20th Century Literature Reading & Creative Prose Writing',
+    ar: 'Paper 1 - قراءة أدب القرن العشرين والكتابة النثرية الإبداعية',
   },
   'wjec.lang.paper2.long': {
-    en: 'Paper 2 — 19th & 21st Century Non-Fiction Reading & Writing for Real Purposes',
-    ar: 'Paper 2 — قراءة النصوص الواقعية للقرن التاسع عشر والحادي والعشرين والكتابة لأغراض حقيقية',
+    en: 'Paper 2 - 19th & 21st Century Non-Fiction Reading & Writing for Real Purposes',
+    ar: 'Paper 2 - قراءة النصوص الواقعية للقرن التاسع عشر والحادي والعشرين والكتابة لأغراض حقيقية',
   },
   'wjec.lang.spoken.long': { en: 'Spoken Language Endorsement', ar: 'اعتماد التحدث' },
   'wjec.lang.spoken.reported': { en: 'Reported separately', ar: 'يُسجَّل بشكل منفصل' },
@@ -12993,39 +12993,39 @@ export const DICTIONARY: Dictionary = {
     en: 'Recent WJEC Eduqas English Language grade boundaries, what each grade looks like in practice, and how to push your marks higher.',
     ar: 'حدود الدرجات الأخيرة لـ WJEC Eduqas English Language، شكل كل درجة على أرض الواقع، وكيف ترفع علاماتك.',
   },
-  'wjec.lang.grades.badge': { en: '2023–2025 data', ar: 'بيانات ٢٠٢٣–٢٠٢٥' },
+  'wjec.lang.grades.badge': { en: '2023-2025 data', ar: 'بيانات ٢٠٢٣-٢٠٢٥' },
 
   // WJEC GCSE English Literature landing
   'wjec.lit.spec_label': { en: 'WJEC Eduqas GCSE', ar: 'WJEC Eduqas GCSE' },
   'wjec.lit.hero.h1': { en: 'English Literature Revision', ar: 'مراجعة الأدب الإنجليزي' },
   'wjec.lit.hero.intro': {
-    en: 'Everything you need to revise for WJEC Eduqas GCSE English Literature. Paper overviews, set text guides, poetry anthology analysis, and exam technique — all in one place.',
-    ar: 'كل اللي تحتاجه عشان تذاكر لـ WJEC Eduqas GCSE English Literature. نظرة عامة على الأوراق، أدلة النصوص المقررة، تحليل أنطولوجي الشعر، ومهارات الامتحان — كله في مكان واحد.',
+    en: 'Everything you need to revise for WJEC Eduqas GCSE English Literature. Paper overviews, set text guides, poetry anthology analysis, and exam technique - all in one place.',
+    ar: 'كل اللي تحتاجه عشان تذاكر لـ WJEC Eduqas GCSE English Literature. نظرة عامة على الأوراق، أدلة النصوص المقررة، تحليل أنطولوجي الشعر، ومهارات الامتحان - كله في مكان واحد.',
   },
   'wjec.lit.overview.h2': { en: 'Exam Overview', ar: 'نظرة عامة على الامتحان' },
   'wjec.lit.overview.intro': {
-    en: 'The WJEC Eduqas GCSE English Literature qualification is assessed through two externally examined papers. Paper 1 is worth 40% and Paper 2 is worth 60% of the final grade. Both papers are closed-book — no texts are allowed in the exam room.',
-    ar: 'مؤهل WJEC Eduqas GCSE English Literature يُقيَّم عبر ورقتين ممتحَنتين خارجياً. Paper 1 يساوي ٤٠٪ و Paper 2 يساوي ٦٠٪ من الدرجة النهائية. الورقتين بدون كتاب مفتوح — ما يُسمح بأي نصوص داخل قاعة الامتحان.',
+    en: 'The WJEC Eduqas GCSE English Literature qualification is assessed through two externally examined papers. Paper 1 is worth 40% and Paper 2 is worth 60% of the final grade. Both papers are closed-book - no texts are allowed in the exam room.',
+    ar: 'مؤهل WJEC Eduqas GCSE English Literature يُقيَّم عبر ورقتين ممتحَنتين خارجياً. Paper 1 يساوي ٤٠٪ و Paper 2 يساوي ٦٠٪ من الدرجة النهائية. الورقتين بدون كتاب مفتوح - ما يُسمح بأي نصوص داخل قاعة الامتحان.',
   },
   'wjec.lit.paper1.title': {
     en: 'Paper 1: Shakespeare and Poetry',
     ar: 'Paper 1: Shakespeare والشعر',
   },
   'wjec.lit.paper1.desc': {
-    en: 'Section A: Shakespeare — one play studied in depth with an extract-based essay question. Section B: Poetry — two poems from the WJEC anthology compared in a single essay.',
-    ar: 'القسم A: Shakespeare — مسرحية وحدة تُدرَس بعمق مع سؤال مقال يعتمد على مقطع. القسم B: الشعر — قصيدتين من أنطولوجي WJEC تُقارَن في مقال واحد.',
+    en: 'Section A: Shakespeare - one play studied in depth with an extract-based essay question. Section B: Poetry - two poems from the WJEC anthology compared in a single essay.',
+    ar: 'القسم A: Shakespeare - مسرحية وحدة تُدرَس بعمق مع سؤال مقال يعتمد على مقطع. القسم B: الشعر - قصيدتين من أنطولوجي WJEC تُقارَن في مقال واحد.',
   },
-  'wjec.lit.paper1.marks': { en: '80 marks — 40% of GCSE', ar: '٨٠ درجة — ٤٠٪ من الـ GCSE' },
+  'wjec.lit.paper1.marks': { en: '80 marks - 40% of GCSE', ar: '٨٠ درجة - ٤٠٪ من الـ GCSE' },
   'wjec.lit.paper1.duration': { en: '2 hours', ar: 'ساعتين' },
   'wjec.lit.paper2.title': {
     en: 'Paper 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry',
     ar: 'Paper 2: نثر ودراما ما بعد ١٩١٤، نثر القرن التاسع عشر، والشعر غير المرئي',
   },
   'wjec.lit.paper2.desc': {
-    en: 'Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry — one analysis and one comparison.',
-    ar: 'القسم A: نثر أو دراما ما بعد ١٩١٤ (مقطع ومقال). القسم B: نثر القرن التاسع عشر (مقطع ومقال). القسم C: شعر غير مرئي — تحليل واحد ومقارنة واحدة.',
+    en: 'Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry - one analysis and one comparison.',
+    ar: 'القسم A: نثر أو دراما ما بعد ١٩١٤ (مقطع ومقال). القسم B: نثر القرن التاسع عشر (مقطع ومقال). القسم C: شعر غير مرئي - تحليل واحد ومقارنة واحدة.',
   },
-  'wjec.lit.paper2.marks': { en: '80 marks — 60% of GCSE', ar: '٨٠ درجة — ٦٠٪ من الـ GCSE' },
+  'wjec.lit.paper2.marks': { en: '80 marks - 60% of GCSE', ar: '٨٠ درجة - ٦٠٪ من الـ GCSE' },
   'wjec.lit.paper2.duration': { en: '2 hours 30 minutes', ar: 'ساعتين و٣٠ دقيقة' },
   'wjec.lit.paper1.meta': {
     en: '2 hours • 80 marks • 40% of GCSE',
@@ -13094,20 +13094,20 @@ export const DICTIONARY: Dictionary = {
   },
   'cambridge.hub.0500.name': { en: 'IGCSE Language A', ar: 'IGCSE Language A' },
   'cambridge.hub.0500.tagline': {
-    en: 'For students whose first language is English — graded A* to G',
-    ar: 'للطلاب اللي لغتهم الأم إنجليزي — التقييم من A* إلى G',
+    en: 'For students whose first language is English - graded A* to G',
+    ar: 'للطلاب اللي لغتهم الأم إنجليزي - التقييم من A* إلى G',
   },
   'cambridge.hub.0500.desc': {
     en: 'Two-paper qualification testing reading comprehension, summary writing, directed writing and extended composition. Graded A*-G and sat by thousands of students in international schools every year.',
     ar: 'مؤهل من ورقتين يختبر فهم القراءة والكتابة الموجزة والكتابة الموجَّهة والإنشاء المُطوَّل. التقييم A*-G، يجلس له آلاف الطلاب بالمدارس الدولية كل سنة.',
   },
   'cambridge.hub.0500.highlight.reading': {
-    en: 'Reading Paper — comprehension, summary and directed writing',
-    ar: 'ورقة القراءة — الفهم والتلخيص والكتابة الموجَّهة',
+    en: 'Reading Paper - comprehension, summary and directed writing',
+    ar: 'ورقة القراءة - الفهم والتلخيص والكتابة الموجَّهة',
   },
   'cambridge.hub.0500.highlight.writing': {
-    en: 'Writing Paper — directed writing and composition',
-    ar: 'ورقة الكتابة — الكتابة الموجَّهة والإنشاء',
+    en: 'Writing Paper - directed writing and composition',
+    ar: 'ورقة الكتابة - الكتابة الموجَّهة والإنشاء',
   },
   'cambridge.hub.0500.highlight.grades': { en: 'Grade boundaries A*-G', ar: 'حدود الدرجات A*-G' },
   'cambridge.hub.0500.highlight.syllabus': {
@@ -13116,20 +13116,20 @@ export const DICTIONARY: Dictionary = {
   },
   'cambridge.hub.0990.name': { en: 'IGCSE Language B', ar: 'IGCSE Language B' },
   'cambridge.hub.0990.tagline': {
-    en: 'For students whose first language is English — graded 9 to 1',
-    ar: 'للطلاب اللي لغتهم الأم إنجليزي — التقييم من ٩ إلى ١',
+    en: 'For students whose first language is English - graded 9 to 1',
+    ar: 'للطلاب اللي لغتهم الأم إنجليزي - التقييم من ٩ إلى ١',
   },
   'cambridge.hub.0990.desc': {
     en: 'The 9-1 graded version of Cambridge First Language English. Identical content and assessment structure to Language A but reported on the numerical 9-1 scale.',
     ar: 'نسخة Cambridge First Language English المُقيَّمة ٩-١. نفس المحتوى وهيكل التقييم لـ Language A لكن النتائج تُسجَّل على مقياس ٩-١.',
   },
   'cambridge.hub.0990.highlight.reading': {
-    en: 'Reading Paper — comprehension, summary and language analysis',
-    ar: 'ورقة القراءة — الفهم والتلخيص وتحليل اللغة',
+    en: 'Reading Paper - comprehension, summary and language analysis',
+    ar: 'ورقة القراءة - الفهم والتلخيص وتحليل اللغة',
   },
   'cambridge.hub.0990.highlight.writing': {
-    en: 'Writing Paper — directed writing and composition',
-    ar: 'ورقة الكتابة — الكتابة الموجَّهة والإنشاء',
+    en: 'Writing Paper - directed writing and composition',
+    ar: 'ورقة الكتابة - الكتابة الموجَّهة والإنشاء',
   },
   'cambridge.hub.0990.highlight.conversion': {
     en: '9-1 vs A*-G grade conversion',
@@ -13141,8 +13141,8 @@ export const DICTIONARY: Dictionary = {
   },
   'cambridge.hub.papers_n': { en: '2 papers', ar: 'ورقتين' },
   'cambridge.hub.time_total': { en: '4h total', ar: '٤ ساعات إجمالاً' },
-  'cambridge.hub.grading.0500': { en: 'A* – G', ar: 'A* – G' },
-  'cambridge.hub.grading.0990': { en: '9 – 1', ar: '٩ – ١' },
+  'cambridge.hub.grading.0500': { en: 'A* - G', ar: 'A* - G' },
+  'cambridge.hub.grading.0990': { en: '9 - 1', ar: '٩ - ١' },
   'cambridge.hub.skills.reading.label': { en: 'Reading skills', ar: 'مهارات القراءة' },
   'cambridge.hub.skills.reading.desc': {
     en: 'Comprehension, language analysis and summary techniques',
@@ -13191,8 +13191,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مراجعة IGCSE إنجليزي لطلاب قطر',
   },
   'qatar.intro': {
-    en: 'Structured revision for the two IGCSE English specifications used in most British international schools in Doha — Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge (0500 First Language, 0990 redesigned). Calibrated to mark schemes, paced for the Qatar academic year, and accessible from school WiFi.',
-    ar: 'مراجعة مرتّبة للسبيسز اللي تستخدمها أغلب المدارس البريطانية العالمية بالدوحة — Pearson Edexcel (4ET1 الأدب، 4EA1 اللغة A) و Cambridge (0500 اللغة الأولى، 0990 المُحدّث). معايرة على مخططات التصحيح، ومضبوطة على السنة الدراسية القطرية، وتفتح من واي فاي المدرسة.',
+    en: 'Structured revision for the two IGCSE English specifications used in most British international schools in Doha - Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge (0500 First Language, 0990 redesigned). Calibrated to mark schemes, paced for the Qatar academic year, and accessible from school WiFi.',
+    ar: 'مراجعة مرتّبة للسبيسز اللي تستخدمها أغلب المدارس البريطانية العالمية بالدوحة - Pearson Edexcel (4ET1 الأدب، 4EA1 اللغة A) و Cambridge (0500 اللغة الأولى، 0990 المُحدّث). معايرة على مخططات التصحيح، ومضبوطة على السنة الدراسية القطرية، وتفتح من واي فاي المدرسة.',
   },
   'qatar.cta.get_started': { en: 'Get started', ar: 'ابدأ الحين' },
   'qatar.cta.see_specs': { en: 'See spec coverage', ar: 'شوف تغطية السبيسز' },
@@ -13201,33 +13201,33 @@ export const DICTIONARY: Dictionary = {
     ar: 'يا هي سبيسز IGCSE إنجليزي اللي تنذاكر بقطر؟',
   },
   'qatar.specs.intro': {
-    en: 'Most international schools in Doha follow a British curriculum and enter their Year 11 cohort for International GCSE English. The two boards you will see most often on timetables are Pearson Edexcel and Cambridge International — different awarding organisations with different paper structures, different anthologies, and different assessment objectives. Knowing which one your school enters you for matters, because preparing for the wrong paper wastes revision time.',
-    ar: 'أغلب المدارس العالمية بالدوحة تمشي على المنهج البريطاني وتسجل طلاب Year 11 لـ International GCSE English. اثنين بوردز بتشوفهم وايد بالجدول: Pearson Edexcel و Cambridge International — منظمتين تصدير شهادات مختلفتين، بأوراق امتحان وكتب أدبية وأهداف تقييم مختلفة. لازم تعرف يا بورد يحطّك مدرستك فيه، لأن المذاكرة للورقة الغلط وقت ضايع.',
+    en: 'Most international schools in Doha follow a British curriculum and enter their Year 11 cohort for International GCSE English. The two boards you will see most often on timetables are Pearson Edexcel and Cambridge International - different awarding organisations with different paper structures, different anthologies, and different assessment objectives. Knowing which one your school enters you for matters, because preparing for the wrong paper wastes revision time.',
+    ar: 'أغلب المدارس العالمية بالدوحة تمشي على المنهج البريطاني وتسجل طلاب Year 11 لـ International GCSE English. اثنين بوردز بتشوفهم وايد بالجدول: Pearson Edexcel و Cambridge International - منظمتين تصدير شهادات مختلفتين، بأوراق امتحان وكتب أدبية وأهداف تقييم مختلفة. لازم تعرف يا بورد يحطّك مدرستك فيه، لأن المذاكرة للورقة الغلط وقت ضايع.',
   },
   'qatar.specs.edexcel.title': {
     en: 'Pearson Edexcel International GCSE',
     ar: 'Pearson Edexcel International GCSE',
   },
   'qatar.specs.edexcel.4et1': {
-    en: '4ET1 — Literature. Two-paper exam covering an anthology of poetry and prose, an unseen poetry question, and your studied drama and prose texts. Edexcel publishes its own anthology and a fixed list of set drama and prose options.',
-    ar: '4ET1 — الأدب. امتحان من ورقتين يغطي مختارات شعر ونثر، سؤال شعر ما تشوفه قبل، ودراما ونثر مدروسة. Edexcel تنشر مختاراتها الخاصة وقائمة ثابتة لاختيارات الدراما والنثر.',
+    en: '4ET1 - Literature. Two-paper exam covering an anthology of poetry and prose, an unseen poetry question, and your studied drama and prose texts. Edexcel publishes its own anthology and a fixed list of set drama and prose options.',
+    ar: '4ET1 - الأدب. امتحان من ورقتين يغطي مختارات شعر ونثر، سؤال شعر ما تشوفه قبل، ودراما ونثر مدروسة. Edexcel تنشر مختاراتها الخاصة وقائمة ثابتة لاختيارات الدراما والنثر.',
   },
   'qatar.specs.edexcel.4ea1': {
-    en: '4EA1 — English Language A. Reading and writing assessed across two papers, with an anthology of non-fiction passages used as the reading stimulus. Imaginative and transactional writing both appear.',
-    ar: '4EA1 — لغة إنجليزية A. قراءة وكتابة على ورقتين، مع مختارات قطع غير قصصية مستخدمة كمحفّز قراءة. كتابة إبداعية ومعاملاتية كلهم يطلعون.',
+    en: '4EA1 - English Language A. Reading and writing assessed across two papers, with an anthology of non-fiction passages used as the reading stimulus. Imaginative and transactional writing both appear.',
+    ar: '4EA1 - لغة إنجليزية A. قراءة وكتابة على ورقتين، مع مختارات قطع غير قصصية مستخدمة كمحفّز قراءة. كتابة إبداعية ومعاملاتية كلهم يطلعون.',
   },
   'qatar.specs.cambridge.title': { en: 'Cambridge IGCSE', ar: 'Cambridge IGCSE' },
   'qatar.specs.cambridge.0500': {
-    en: '0500 — English as a First Language. The long-running Cambridge spec: reading skills assessed through unseen non-fiction passages, plus directed and composition writing. No published anthology — the passages are unseen on the day.',
-    ar: '0500 — الإنجليزية كلغة أولى. سبيس Cambridge القديم: مهارات القراءة تنقاس على قطع غير قصصية ما تشوفها قبل، مع كتابة موجّهة وإنشاء. ما في مختارات منشورة — القطع تطلع يوم الامتحان.',
+    en: '0500 - English as a First Language. The long-running Cambridge spec: reading skills assessed through unseen non-fiction passages, plus directed and composition writing. No published anthology - the passages are unseen on the day.',
+    ar: '0500 - الإنجليزية كلغة أولى. سبيس Cambridge القديم: مهارات القراءة تنقاس على قطع غير قصصية ما تشوفها قبل، مع كتابة موجّهة وإنشاء. ما في مختارات منشورة - القطع تطلع يوم الامتحان.',
   },
   'qatar.specs.cambridge.0990': {
-    en: '0990 — redesigned variant. Aligned to the Cambridge 9-1 grading scale used internationally. Question design has been refreshed compared with 0500, and grade boundaries report on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
-    ar: '0990 — النسخة المُحدّثة. مرتبطة بسلّم تقييم Cambridge 9-1 المستخدم عالمياً. تصميم الأسئلة تجدّد عن 0500، والحدود تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب يا سلّم تقييم يبغونه الخريجين بالشهادة.',
+    en: '0990 - redesigned variant. Aligned to the Cambridge 9-1 grading scale used internationally. Question design has been refreshed compared with 0500, and grade boundaries report on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
+    ar: '0990 - النسخة المُحدّثة. مرتبطة بسلّم تقييم Cambridge 9-1 المستخدم عالمياً. تصميم الأسئلة تجدّد عن 0500، والحدود تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب يا سلّم تقييم يبغونه الخريجين بالشهادة.',
   },
   'qatar.specs.note': {
-    en: 'If you are unsure which spec your school uses, your English teacher or head of year is the quickest source of truth — the spec code usually appears on your mock paper, your timetable, and your end-of-year report.',
-    ar: 'لو ما تدري يا سبيس مدرستك تستخدم، معلم الإنجليزي مالك أو رئيس الصف أسرع مصدر — كود السبيس عادةً يطلع على ورقة الموك مالك، والجدول، وتقرير آخر السنة.',
+    en: 'If you are unsure which spec your school uses, your English teacher or head of year is the quickest source of truth - the spec code usually appears on your mock paper, your timetable, and your end-of-year report.',
+    ar: 'لو ما تدري يا سبيس مدرستك تستخدم، معلم الإنجليزي مالك أو رئيس الصف أسرع مصدر - كود السبيس عادةً يطلع على ورقة الموك مالك، والجدول، وتقرير آخر السنة.',
   },
   'qatar.help.h2': {
     en: 'How The English Hub helps Qatar IGCSE students',
@@ -13242,8 +13242,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تغطية كاملة للمختارات Pearson Edexcel',
   },
   'qatar.help.edexcel.body': {
-    en: 'Every poem in the Edexcel poetry anthology has its own analysis page — language, form, structure, context, and a comparison route into the rest of the cluster. Drama, Shakespeare and prose set texts each have a chapters / scenes breakdown, themes, key quotations, and essay-plan templates.',
-    ar: 'كل قصيدة بمختارات Edexcel الشعرية عندها صفحة تحليل خاصة فيها — لغة، شكل، تركيب، سياق، ومسار مقارنة لباقي المجموعة. الدراما و Shakespeare والنثر المقرّر كل واحد عنده تقسيم فصول / مشاهد، ثيمات، اقتباسات أساسية، وقوالب خطط مقالات.',
+    en: 'Every poem in the Edexcel poetry anthology has its own analysis page - language, form, structure, context, and a comparison route into the rest of the cluster. Drama, Shakespeare and prose set texts each have a chapters / scenes breakdown, themes, key quotations, and essay-plan templates.',
+    ar: 'كل قصيدة بمختارات Edexcel الشعرية عندها صفحة تحليل خاصة فيها - لغة، شكل، تركيب، سياق، ومسار مقارنة لباقي المجموعة. الدراما و Shakespeare والنثر المقرّر كل واحد عنده تقسيم فصول / مشاهد، ثيمات، اقتباسات أساسية، وقوالب خطط مقالات.',
   },
   'qatar.help.edexcel.4et1_link': { en: 'Open the Edexcel 4ET1 hub', ar: 'افتح صفحة Edexcel 4ET1' },
   'qatar.help.edexcel.4ea1_link': {
@@ -13255,8 +13255,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'شرح Cambridge للشعر والنثر اللي ما تشوفه قبل',
   },
   'qatar.help.cambridge.body': {
-    en: 'Cambridge 0500 and 0990 lean heavily on unseen reading. The platform has a library of worked walkthroughs across descriptive nature writing, classic novel openings, modernist fiction, travel writing and dialogue analysis — modelling the exact thinking process the mark scheme rewards. Use them as a daily 20-minute warm-up.',
-    ar: 'Cambridge 0500 و 0990 يعتمدون وايد على القراءة الغير مرئية. المنصة فيها مكتبة شروحات تشمل كتابة وصف طبيعة، بدايات روايات كلاسيكية، أدب حداثي، أدب رحلات، وتحليل حوار — تنمذج التفكير اللي بالضبط يطلب مخطط التصحيح. استخدمها كتسخين يومي ٢٠ دقيقة.',
+    en: 'Cambridge 0500 and 0990 lean heavily on unseen reading. The platform has a library of worked walkthroughs across descriptive nature writing, classic novel openings, modernist fiction, travel writing and dialogue analysis - modelling the exact thinking process the mark scheme rewards. Use them as a daily 20-minute warm-up.',
+    ar: 'Cambridge 0500 و 0990 يعتمدون وايد على القراءة الغير مرئية. المنصة فيها مكتبة شروحات تشمل كتابة وصف طبيعة، بدايات روايات كلاسيكية، أدب حداثي، أدب رحلات، وتحليل حوار - تنمذج التفكير اللي بالضبط يطلب مخطط التصحيح. استخدمها كتسخين يومي ٢٠ دقيقة.',
   },
   'qatar.help.cambridge.0500_link': {
     en: 'Open the Cambridge 0500 hub',
@@ -13271,8 +13271,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تدريب مقالات بتصحيح الذكاء الاصطناعي',
   },
   'qatar.help.ai.body': {
-    en: 'Submit a full essay and the platform returns paragraph-level feedback against the assessment objectives for your spec — AO1 evidence, AO2 language and structure, AO3 context where it applies, AO4 comparison for Edexcel anthology questions. The feedback is calibrated to mark schemes, not a generic English checker, so the notes you get back match what your teacher would write in the margin.',
-    ar: 'أرسل مقال كامل والمنصة ترجع لك ملاحظات على مستوى الفقرات مقابل أهداف التقييم لسبيسك — AO1 الأدلة، AO2 اللغة والتركيب، AO3 السياق حيث ينطبق، AO4 المقارنة لأسئلة مختارات Edexcel. الملاحظات معايرة على مخططات التصحيح مو فاحص إنجليزي عام، فالنوتات اللي تجيك تطابق اللي معلمك بيكتبه بالهامش.',
+    en: 'Submit a full essay and the platform returns paragraph-level feedback against the assessment objectives for your spec - AO1 evidence, AO2 language and structure, AO3 context where it applies, AO4 comparison for Edexcel anthology questions. The feedback is calibrated to mark schemes, not a generic English checker, so the notes you get back match what your teacher would write in the margin.',
+    ar: 'أرسل مقال كامل والمنصة ترجع لك ملاحظات على مستوى الفقرات مقابل أهداف التقييم لسبيسك - AO1 الأدلة، AO2 اللغة والتركيب، AO3 السياق حيث ينطبق، AO4 المقارنة لأسئلة مختارات Edexcel. الملاحظات معايرة على مخططات التصحيح مو فاحص إنجليزي عام، فالنوتات اللي تجيك تطابق اللي معلمك بيكتبه بالهامش.',
   },
   'qatar.help.paths.title': { en: 'Board-specific revision paths', ar: 'مسارات مراجعة لكل بورد' },
   'qatar.help.paths.body': {
@@ -13284,8 +13284,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مراجعة مناسبة للتوقيت: قطر GMT+3',
   },
   'qatar.timezone.body1': {
-    en: 'Qatar runs on Arabia Standard Time, which is three hours ahead of UK time. For IGCSE revision that small offset is genuinely useful. Most UK students are still in lessons when Doha schools have already finished for the day, which means a Qatar-based student sitting down at four in the afternoon is opening the platform before the UK evening peak — pages load fast and AI essay feedback comes back without a queue.',
-    ar: 'قطر تمشي على توقيت السعودية، ثلاث ساعات قدّام توقيت بريطانيا. لمراجعة IGCSE هالفرق الصغير مفيد فعلاً. أغلب طلاب بريطانيا لسا بالحصص لمن مدارس الدوحة خلصت يومها، يعني الطالب القطري اللي يجلس الساعة أربع العصر يفتح المنصة قبل ذروة المساء البريطاني — الصفحات تفتح بسرعة وملاحظات الذكاء الاصطناعي ترجع بدون طابور.',
+    en: 'Qatar runs on Arabia Standard Time, which is three hours ahead of UK time. For IGCSE revision that small offset is genuinely useful. Most UK students are still in lessons when Doha schools have already finished for the day, which means a Qatar-based student sitting down at four in the afternoon is opening the platform before the UK evening peak - pages load fast and AI essay feedback comes back without a queue.',
+    ar: 'قطر تمشي على توقيت السعودية، ثلاث ساعات قدّام توقيت بريطانيا. لمراجعة IGCSE هالفرق الصغير مفيد فعلاً. أغلب طلاب بريطانيا لسا بالحصص لمن مدارس الدوحة خلصت يومها، يعني الطالب القطري اللي يجلس الساعة أربع العصر يفتح المنصة قبل ذروة المساء البريطاني - الصفحات تفتح بسرعة وملاحظات الذكاء الاصطناعي ترجع بدون طابور.',
   },
   'qatar.timezone.body2': {
     en: 'The same offset matters in May and June. Most IGCSE exam papers are written under a common international timetable, but the support and clarification windows around them tend to follow UK working hours. Revising in the Doha afternoon means you finish your session and bank your progress before UK email queues even open.',
@@ -13296,16 +13296,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'نصيحة جدولة عملية لطلاب قطر',
   },
   'qatar.timezone.tip_body': {
-    en: 'The most productive single block of the week for many Qatar-based students is a weekend morning. Friday and Saturday mornings are quiet, the heat is manageable, and the family afternoon — visits, meals, errands — has not yet started. A two-hour block from around eight to ten in the morning, two days a week, is enough to keep an entire IGCSE Literature anthology in active recall. Use weekday afternoons for shorter twenty-minute drills and save the weekend mornings for full essay writing.',
-    ar: 'أكثر فترة منتجة بالأسبوع لوايد طلاب قطر هي صباح ويك اند. صباح الجمعة والسبت هادي، الحر محتمل، وعصر العايلة — زيارات وأكل ومشاوير — ما بدا بعد. ساعتين تقريباً من الثمانية للعشرة الصباح، يومين بالأسبوع، يكفون عشان تخلّي كل مختارات أدب IGCSE بذاكرتك النشطة. استخدم عصر أيام الدراسة لتدريبات قصيرة ٢٠ دقيقة، وخلّ صباح الويك اند لكتابة المقالات الكاملة.',
+    en: 'The most productive single block of the week for many Qatar-based students is a weekend morning. Friday and Saturday mornings are quiet, the heat is manageable, and the family afternoon - visits, meals, errands - has not yet started. A two-hour block from around eight to ten in the morning, two days a week, is enough to keep an entire IGCSE Literature anthology in active recall. Use weekday afternoons for shorter twenty-minute drills and save the weekend mornings for full essay writing.',
+    ar: 'أكثر فترة منتجة بالأسبوع لوايد طلاب قطر هي صباح ويك اند. صباح الجمعة والسبت هادي، الحر محتمل، وعصر العايلة - زيارات وأكل ومشاوير - ما بدا بعد. ساعتين تقريباً من الثمانية للعشرة الصباح، يومين بالأسبوع، يكفون عشان تخلّي كل مختارات أدب IGCSE بذاكرتك النشطة. استخدم عصر أيام الدراسة لتدريبات قصيرة ٢٠ دقيقة، وخلّ صباح الويك اند لكتابة المقالات الكاملة.',
   },
   'qatar.anthology.h2': {
     en: 'Edexcel IGCSE 4ET1 anthology in detail',
     ar: 'مختارات Edexcel IGCSE 4ET1 بالتفصيل',
   },
   'qatar.anthology.body1': {
-    en: 'The Edexcel International GCSE English Literature anthology is a fixed collection of poems and prose extracts that you will be expected to know in detail by the time you sit Paper 1. The 4ET1 hub on the platform mirrors the anthology one-to-one — every poem has a dedicated page covering speaker, structure, language techniques, context, and the most common essay angles examiners reward.',
-    ar: 'مختارات Edexcel International GCSE Literature مجموعة ثابتة من القصائد ومقتطفات النثر المفروض تعرفها بالتفصيل لمن تذاكر Paper 1. صفحة 4ET1 على المنصة تطابق المختارات واحد لواحد — كل قصيدة عندها صفحة فيها المتكلم، التركيب، تقنيات اللغة، السياق، وأكثر زوايا مقالات يكافئها الفاحصون.',
+    en: 'The Edexcel International GCSE English Literature anthology is a fixed collection of poems and prose extracts that you will be expected to know in detail by the time you sit Paper 1. The 4ET1 hub on the platform mirrors the anthology one-to-one - every poem has a dedicated page covering speaker, structure, language techniques, context, and the most common essay angles examiners reward.',
+    ar: 'مختارات Edexcel International GCSE Literature مجموعة ثابتة من القصائد ومقتطفات النثر المفروض تعرفها بالتفصيل لمن تذاكر Paper 1. صفحة 4ET1 على المنصة تطابق المختارات واحد لواحد - كل قصيدة عندها صفحة فيها المتكلم، التركيب، تقنيات اللغة، السياق، وأكثر زوايا مقالات يكافئها الفاحصون.',
   },
   'qatar.anthology.body2': {
     en: 'For 4EA1 Language A students, the non-fiction anthology serves a different purpose: you analyse the passages for writers’ methods rather than memorising them. The anthology hub for the Language A spec walks through each prose passage with the techniques and structural moves you can quote in your reading-skills answer.',
@@ -13317,16 +13317,16 @@ export const DICTIONARY: Dictionary = {
   },
   'qatar.anthology.4ea1_link': { en: 'Edexcel 4EA1 anthology →', ar: 'مختارات Edexcel 4EA1 ←' },
   'qatar.compare.h2': {
-    en: 'Cambridge 0500 vs 0990 — which one is your school?',
-    ar: 'Cambridge 0500 ولا 0990 — يا واحد مدرستك؟',
+    en: 'Cambridge 0500 vs 0990 - which one is your school?',
+    ar: 'Cambridge 0500 ولا 0990 - يا واحد مدرستك؟',
   },
   'qatar.compare.body1': {
-    en: 'Cambridge International offers two parallel English as a First Language qualifications. 0500 reports grades on the long-standing A*–G scale and is the one many British international schools have used for years. 0990 is the redesigned variant that reports on the 9-1 scale, which lines up neatly with the grading scheme used inside England. Schools whose leavers continue into UK sixth forms or universities sometimes prefer 0990 for that reason, while schools with a more international destination pattern often stay on 0500.',
-    ar: 'Cambridge International تقدّم اثنين شهادات للإنجليزية كلغة أولى. 0500 تطلع الدرجات على سلّم A*–G القديم وهي اللي وايد مدارس بريطانية عالمية تستخدمها من زمان. 0990 النسخة المُحدّثة اللي تطلع على سلّم 9-1، اللي يتطابق مع نظام التقييم المستخدم داخل إنجلترا. المدارس اللي خريجيها بيكملون بسكستث فورم أو جامعات بريطانيا أحياناً يفضّلون 0990، والمدارس اللي وجهات خريجيها أكثر دولية عادةً يستمرون على 0500.',
+    en: 'Cambridge International offers two parallel English as a First Language qualifications. 0500 reports grades on the long-standing A*-G scale and is the one many British international schools have used for years. 0990 is the redesigned variant that reports on the 9-1 scale, which lines up neatly with the grading scheme used inside England. Schools whose leavers continue into UK sixth forms or universities sometimes prefer 0990 for that reason, while schools with a more international destination pattern often stay on 0500.',
+    ar: 'Cambridge International تقدّم اثنين شهادات للإنجليزية كلغة أولى. 0500 تطلع الدرجات على سلّم A*-G القديم وهي اللي وايد مدارس بريطانية عالمية تستخدمها من زمان. 0990 النسخة المُحدّثة اللي تطلع على سلّم 9-1، اللي يتطابق مع نظام التقييم المستخدم داخل إنجلترا. المدارس اللي خريجيها بيكملون بسكستث فورم أو جامعات بريطانيا أحياناً يفضّلون 0990، والمدارس اللي وجهات خريجيها أكثر دولية عادةً يستمرون على 0500.',
   },
   'qatar.compare.body2': {
-    en: 'From a content standpoint, the skills tested overlap heavily — both papers reward close reading, accurate inference, and controlled writing. The platform has separate hubs for each spec so you only revise against the question types and grade boundaries that apply to you.',
-    ar: 'من ناحية المحتوى، المهارات اللي تنقاس متشابهة وايد — كلا الورقتين تكافئ القراءة الدقيقة، الاستنتاج الصحيح، والكتابة المنضبطة. المنصة عندها صفحات منفصلة لكل سبيس عشان تذاكر بس أنواع الأسئلة وحدود الدرجات اللي تخصّك.',
+    en: 'From a content standpoint, the skills tested overlap heavily - both papers reward close reading, accurate inference, and controlled writing. The platform has separate hubs for each spec so you only revise against the question types and grade boundaries that apply to you.',
+    ar: 'من ناحية المحتوى، المهارات اللي تنقاس متشابهة وايد - كلا الورقتين تكافئ القراءة الدقيقة، الاستنتاج الصحيح، والكتابة المنضبطة. المنصة عندها صفحات منفصلة لكل سبيس عشان تذاكر بس أنواع الأسئلة وحدود الدرجات اللي تخصّك.',
   },
   'qatar.compare.0500_link': { en: 'Cambridge 0500 hub →', ar: 'صفحة Cambridge 0500 ←' },
   'qatar.compare.0990_link': { en: 'Cambridge 0990 hub →', ar: 'صفحة Cambridge 0990 ←' },
@@ -13344,8 +13344,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'يقدرون طلاب قطر يدفعون بالريال القطري؟',
   },
   'qatar.faq.a2': {
-    en: 'Subscriptions are billed in GBP through our payment processor. Most international cards issued in Qatar will work and the bank handles the QAR-to-GBP conversion at the time of purchase — the rate shown on your statement comes from your card issuer, not from us. We do not currently offer a QAR-denominated checkout.',
-    ar: 'الاشتراكات تنحاسب بالجنيه الإسترليني عبر معالج الدفع مالنا. أغلب الكروت العالمية المُصدرة بقطر بتشتغل والبنك يسوّي تحويل ريال قطري لجنيه إسترليني وقت الشراء — السعر اللي يطلع بالكشف من مصدر الكارت مالك، مو منا. ما عندنا حالياً دفع بالريال القطري.',
+    en: 'Subscriptions are billed in GBP through our payment processor. Most international cards issued in Qatar will work and the bank handles the QAR-to-GBP conversion at the time of purchase - the rate shown on your statement comes from your card issuer, not from us. We do not currently offer a QAR-denominated checkout.',
+    ar: 'الاشتراكات تنحاسب بالجنيه الإسترليني عبر معالج الدفع مالنا. أغلب الكروت العالمية المُصدرة بقطر بتشتغل والبنك يسوّي تحويل ريال قطري لجنيه إسترليني وقت الشراء - السعر اللي يطلع بالكشف من مصدر الكارت مالك، مو منا. ما عندنا حالياً دفع بالريال القطري.',
   },
   'qatar.faq.q3': {
     en: 'Does the platform work on the school WiFi (filtered networks)?',
@@ -13360,21 +13360,21 @@ export const DICTIONARY: Dictionary = {
     ar: 'هل في ترخيص معلمين للمدارس البريطانية العالمية؟',
   },
   'qatar.faq.a4': {
-    en: 'Yes. Teachers at British international schools can register for a teacher account and request a school licence covering their department. Bulk student onboarding by spreadsheet is supported. Contact us through the for-schools page to discuss a quote — pricing is set in GBP and we can invoice schools directly.',
-    ar: 'إي. المعلمون بالمدارس البريطانية العالمية يقدرون يسجلون حساب معلم ويطلبون ترخيص مدرسة يغطي قسمهم. تسجيل الطلاب الجماعي بشيت Excel مدعوم. تواصلوا معانا عبر صفحة for-schools للحديث عن العرض السعري — التسعير بالجنيه الإسترليني ونقدر نصدر فاتورة للمدارس مباشرة.',
+    en: 'Yes. Teachers at British international schools can register for a teacher account and request a school licence covering their department. Bulk student onboarding by spreadsheet is supported. Contact us through the for-schools page to discuss a quote - pricing is set in GBP and we can invoice schools directly.',
+    ar: 'إي. المعلمون بالمدارس البريطانية العالمية يقدرون يسجلون حساب معلم ويطلبون ترخيص مدرسة يغطي قسمهم. تسجيل الطلاب الجماعي بشيت Excel مدعوم. تواصلوا معانا عبر صفحة for-schools للحديث عن العرض السعري - التسعير بالجنيه الإسترليني ونقدر نصدر فاتورة للمدارس مباشرة.',
   },
   'qatar.faq.q5': {
-    en: 'Are revision schedules adapted for the Qatar academic calendar (Sept–June)?',
-    ar: 'هل جداول المراجعة مكيّفة على التقويم الدراسي القطري (سبتمبر–يونيو)؟',
+    en: 'Are revision schedules adapted for the Qatar academic calendar (Sept-June)?',
+    ar: 'هل جداول المراجعة مكيّفة على التقويم الدراسي القطري (سبتمبر-يونيو)؟',
   },
   'qatar.faq.a5': {
-    en: 'The default revision pathways are built around the May–June IGCSE exam series, which is the series most Qatar-based students sit, and the academic year runs from September. You can pace any path manually, and the AI study planner lets you input your own term dates and exam dates so the schedule fits the calendar your school actually uses.',
+    en: 'The default revision pathways are built around the May-June IGCSE exam series, which is the series most Qatar-based students sit, and the academic year runs from September. You can pace any path manually, and the AI study planner lets you input your own term dates and exam dates so the schedule fits the calendar your school actually uses.',
     ar: 'مسارات المراجعة الافتراضية مبنية حول سلسلة امتحانات IGCSE مايو-يونيو، اللي أغلب طلاب قطر يذاكرونها، والسنة الدراسية تمشي من سبتمبر. تقدر تظبط سرعة أي مسار يدوياً، ومخطط الدراسة بالذكاء الاصطناعي يخليك تدخّل تواريخ الترم والامتحانات مالك عشان الجدول يناسب التقويم اللي مدرستك تستخدمه فعلاً.',
   },
   'qatar.cta_final.h2': { en: 'Ready to start?', ar: 'مستعد تبدأ؟' },
   'qatar.cta_final.body': {
-    en: 'Pick your board and the dashboard tailors itself to your spec — Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 or Cambridge 0990.',
-    ar: 'اختر بوردك واللوحة بتترتب لسبيسك — Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 ولا Cambridge 0990.',
+    en: 'Pick your board and the dashboard tailors itself to your spec - Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 or Cambridge 0990.',
+    ar: 'اختر بوردك واللوحة بتترتب لسبيسك - Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 ولا Cambridge 0990.',
   },
 
   // ─── GCC IGCSE landing page ─────────────────────────────────────────
@@ -13396,8 +13396,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مدارس المنهج البريطاني بالخليج',
   },
   'gcc.curriculum.body1': {
-    en: 'Most British and international schools across the GCC sit students for either the Pearson Edexcel or Cambridge International IGCSE in English. Both qualifications are recognised by UK universities and by the regional regulators that audit English-medium schools in the Gulf — the choice between them is usually a school-level decision tied to teacher training and historic preference, rather than a difference in academic value.',
-    ar: 'أغلب المدارس البريطانية والعالمية بالخليج تنزّل طلابها لإما Pearson Edexcel ولا Cambridge International IGCSE بالإنجليزي. كلتا الشهادتين معترف فيهم من جامعات بريطانيا والجهات التنظيمية الإقليمية اللي تدقق على مدارس الإنجليزي بالخليج — الاختيار بينهم عادةً قرار على مستوى المدرسة مرتبط بتدريب المعلمين والتفضيل التاريخي، مو فرق بالقيمة الأكاديمية.',
+    en: 'Most British and international schools across the GCC sit students for either the Pearson Edexcel or Cambridge International IGCSE in English. Both qualifications are recognised by UK universities and by the regional regulators that audit English-medium schools in the Gulf - the choice between them is usually a school-level decision tied to teacher training and historic preference, rather than a difference in academic value.',
+    ar: 'أغلب المدارس البريطانية والعالمية بالخليج تنزّل طلابها لإما Pearson Edexcel ولا Cambridge International IGCSE بالإنجليزي. كلتا الشهادتين معترف فيهم من جامعات بريطانيا والجهات التنظيمية الإقليمية اللي تدقق على مدارس الإنجليزي بالخليج - الاختيار بينهم عادةً قرار على مستوى المدرسة مرتبط بتدريب المعلمين والتفضيل التاريخي، مو فرق بالقيمة الأكاديمية.',
   },
   'gcc.curriculum.body2': {
     en: 'In practice, schools in Dubai and Abu Dhabi tend to lean towards Pearson Edexcel, while the picture in Saudi Arabia and Qatar is more evenly split between the two boards. Kuwait, Bahrain, and Oman show a similar mix. If you are not sure which board your school enters, the simplest check is the specification code printed on your most recent mock paper or the front of your set-text edition: 4ET1 or 4EA1 means Edexcel, 0500 or 0990 means Cambridge.',
@@ -13409,8 +13409,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'في أربع سبيسز بتقابلهم فعلياً بفصول الخليج. كل واحد عنده تركيب أوراق، مخطط تصحيح، وقائمة نصوص مقرّرة خاصة فيه، فأول مهمة لأي برنامج مراجعة هي التأكد إنك تتدرب على السبيس الصح.',
   },
   'gcc.specs.4et1.title': {
-    en: 'Pearson Edexcel IGCSE 4ET1 — English Literature',
-    ar: 'Pearson Edexcel IGCSE 4ET1 — أدب إنجليزي',
+    en: 'Pearson Edexcel IGCSE 4ET1 - English Literature',
+    ar: 'Pearson Edexcel IGCSE 4ET1 - أدب إنجليزي',
   },
   'gcc.specs.4et1.body': {
     en: 'A two-paper closed-book Literature qualification covering modern prose, modern drama, a Shakespeare play, and the Pearson Edexcel Poetry Anthology, plus an unseen-poetry section. The anthology contains 35 prescribed poems from across the English-speaking world.',
@@ -13418,8 +13418,8 @@ export const DICTIONARY: Dictionary = {
   },
   'gcc.specs.4et1_link': { en: 'Open the 4ET1 hub', ar: 'افتح صفحة 4ET1' },
   'gcc.specs.4ea1.title': {
-    en: 'Pearson Edexcel IGCSE 4EA1 — English Language A',
-    ar: 'Pearson Edexcel IGCSE 4EA1 — لغة إنجليزية A',
+    en: 'Pearson Edexcel IGCSE 4EA1 - English Language A',
+    ar: 'Pearson Edexcel IGCSE 4EA1 - لغة إنجليزية A',
   },
   'gcc.specs.4ea1.body': {
     en: 'The Edexcel Language A specification, assessed by exam (with a coursework route available at some centres). Reading is tested on non-fiction extracts; writing covers transactional and imaginative tasks.',
@@ -13427,8 +13427,8 @@ export const DICTIONARY: Dictionary = {
   },
   'gcc.specs.4ea1_link': { en: 'Open the 4EA1 hub', ar: 'افتح صفحة 4EA1' },
   'gcc.specs.0500.title': {
-    en: 'Cambridge IGCSE 0500 — English as a First Language',
-    ar: 'Cambridge IGCSE 0500 — الإنجليزية كلغة أولى',
+    en: 'Cambridge IGCSE 0500 - English as a First Language',
+    ar: 'Cambridge IGCSE 0500 - الإنجليزية كلغة أولى',
   },
   'gcc.specs.0500.body': {
     en: 'The long-established Cambridge First Language paper. Two written exams test reading comprehension, summary, and directed and composition writing. Many GCC schools that have run Cambridge for years still enter cohorts on 0500.',
@@ -13436,11 +13436,11 @@ export const DICTIONARY: Dictionary = {
   },
   'gcc.specs.0500_link': { en: 'Open the 0500 hub', ar: 'افتح صفحة 0500' },
   'gcc.specs.0990.title': {
-    en: 'Cambridge IGCSE 0990 — English First Language (redesigned)',
-    ar: 'Cambridge IGCSE 0990 — اللغة الإنجليزية الأولى (محدّثة)',
+    en: 'Cambridge IGCSE 0990 - English First Language (redesigned)',
+    ar: 'Cambridge IGCSE 0990 - اللغة الإنجليزية الأولى (محدّثة)',
   },
   'gcc.specs.0990.body': {
-    en: 'The redesigned Cambridge First Language qualification, with an updated assessment model and 9–1 reporting. Skills overlap heavily with 0500, but the question weightings and rubric wording differ enough that practising against the right paper matters.',
+    en: 'The redesigned Cambridge First Language qualification, with an updated assessment model and 9-1 reporting. Skills overlap heavily with 0500, but the question weightings and rubric wording differ enough that practising against the right paper matters.',
     ar: 'شهادة Cambridge للغة الأولى المُحدّثة، بنموذج تقييم محدّث وتقارير 9-1. المهارات تتداخل وايد مع 0500، بس أوزان الأسئلة وصياغة المخططات تختلف بدرجة كافية تخلّي التدريب على الورقة الصح مهم.',
   },
   'gcc.specs.0990_link': { en: 'Open the 0990 hub', ar: 'افتح صفحة 0990' },
@@ -13461,8 +13461,8 @@ export const DICTIONARY: Dictionary = {
     ar: '**شروحات الشعر الغير مرئي لـ Cambridge.** أعمال شعر غير مرئي مع تعليقات تبيّن شلون تنتقل من القراءة الأولى لإجابة منظّمة بظروف الامتحان، مربوطة بأنواع أسئلة 0500 و 0990.',
   },
   'gcc.help.li3': {
-    en: '**AI-marked practice essays.** Submit a response and get feedback against the assessment objectives for your specific board — calibrated to mark schemes rather than a one-size-fits-all rubric.',
-    ar: '**مقالات تدريب بتصحيح ذكاء اصطناعي.** أرسل إجابة وخذ ملاحظات مقابل أهداف التقييم لبوردك المحدّد — معايرة على مخططات التصحيح مو مخطط واحد يناسب الكل.',
+    en: '**AI-marked practice essays.** Submit a response and get feedback against the assessment objectives for your specific board - calibrated to mark schemes rather than a one-size-fits-all rubric.',
+    ar: '**مقالات تدريب بتصحيح ذكاء اصطناعي.** أرسل إجابة وخذ ملاحظات مقابل أهداف التقييم لبوردك المحدّد - معايرة على مخططات التصحيح مو مخطط واحد يناسب الكل.',
   },
   'gcc.help.li4': {
     en: '**Board-aligned revision paths.** The dashboard groups your work by paper, section, and assessment objective, so Edexcel and Cambridge students see different recommended next steps even when they sit in the same classroom.',
@@ -13481,22 +13481,22 @@ export const DICTIONARY: Dictionary = {
     ar: 'السعودية وقطر والبحرين والكويت على GMT+3. الإمارات وعُمان ساعة قدّامهم على GMT+4. ولا واحدة من الست تستخدم التوقيت الصيفي، فالفرق مع بريطانيا ثابت بالشتا ويصغر بساعة بالتوقيت الصيفي البريطاني.',
   },
   'gcc.timezone.body2': {
-    en: 'For revision scheduling the practical effect is that the productive window after school finishes lands well before the UK’s evening peak. A 4pm-to-7pm session in Riyadh or Doha is a 2pm-to-5pm session in London — early enough that the AI marker and the wider site tend to be quiet, which means faster response times on submitted essays. It is also worth front-loading mock practice: a Sunday evening mock in Dubai finishes long before most UK boarding-school cohorts have started.',
-    ar: 'لجدولة المراجعة الأثر العملي هو إن نافذة الإنتاجية بعد المدرسة تجي قبل ذروة المساء البريطاني بكثير. جلسة من ٤ لـ ٧ مساءً بالرياض ولا الدوحة هي جلسة ٢ لـ ٥ بلندن — مبكر بحيث المصحح الذكي والموقع عموماً يكونون هادين، يعني أوقات استجابة أسرع على المقالات المُرسلة. كمان مفيد تقدّم تدريب الموك: موك الأحد المسا بدبي يخلّص قبل وايد مدارس البوردنغ ببريطانيا حتى تبدأ.',
+    en: 'For revision scheduling the practical effect is that the productive window after school finishes lands well before the UK’s evening peak. A 4pm-to-7pm session in Riyadh or Doha is a 2pm-to-5pm session in London - early enough that the AI marker and the wider site tend to be quiet, which means faster response times on submitted essays. It is also worth front-loading mock practice: a Sunday evening mock in Dubai finishes long before most UK boarding-school cohorts have started.',
+    ar: 'لجدولة المراجعة الأثر العملي هو إن نافذة الإنتاجية بعد المدرسة تجي قبل ذروة المساء البريطاني بكثير. جلسة من ٤ لـ ٧ مساءً بالرياض ولا الدوحة هي جلسة ٢ لـ ٥ بلندن - مبكر بحيث المصحح الذكي والموقع عموماً يكونون هادين، يعني أوقات استجابة أسرع على المقالات المُرسلة. كمان مفيد تقدّم تدريب الموك: موك الأحد المسا بدبي يخلّص قبل وايد مدارس البوردنغ ببريطانيا حتى تبدأ.',
   },
   'gcc.timezone.tip_title': { en: 'Practical scheduling tip', ar: 'نصيحة جدولة عملية' },
   'gcc.timezone.tip_body': {
-    en: 'Block 90 minutes immediately after school for active revision (essay planning, AI-marked practice, anthology comparisons), and leave the second half of the evening for low-energy review work — flashcards, reading set texts, watching walkthrough notes. The pattern works well across both GMT+3 and GMT+4 schools.',
-    ar: 'احجز ٩٠ دقيقة فوراً بعد المدرسة لمراجعة نشطة (تخطيط مقالات، تدريب بتصحيح ذكاء اصطناعي، مقارنات مختارات)، وخلّ النصف الثاني من المسا لشغل مراجعة طاقة منخفضة — بطاقات مراجعة، قراءة النصوص المقرّرة، متابعة ملاحظات الشروحات. النمط يشتغل زين بمدارس GMT+3 و GMT+4.',
+    en: 'Block 90 minutes immediately after school for active revision (essay planning, AI-marked practice, anthology comparisons), and leave the second half of the evening for low-energy review work - flashcards, reading set texts, watching walkthrough notes. The pattern works well across both GMT+3 and GMT+4 schools.',
+    ar: 'احجز ٩٠ دقيقة فوراً بعد المدرسة لمراجعة نشطة (تخطيط مقالات، تدريب بتصحيح ذكاء اصطناعي، مقارنات مختارات)، وخلّ النصف الثاني من المسا لشغل مراجعة طاقة منخفضة - بطاقات مراجعة، قراءة النصوص المقرّرة، متابعة ملاحظات الشروحات. النمط يشتغل زين بمدارس GMT+3 و GMT+4.',
   },
-  'gcc.week.h2': { en: 'Sunday–Thursday school week', ar: 'أسبوع مدرسة الأحد-الخميس' },
+  'gcc.week.h2': { en: 'Sunday-Thursday school week', ar: 'أسبوع مدرسة الأحد-الخميس' },
   'gcc.week.body1': {
     en: 'Most British curriculum schools across the GCC follow a Sunday-to-Thursday teaching week, with Friday and Saturday as the weekend. The UAE’s public sector moved to a Monday-to-Friday week in 2022, and a small number of UAE schools have followed, but the majority of British and international schools across the region still operate on the Sunday start. That gives revision two clear advantages over the UK rhythm.',
     ar: 'أغلب مدارس المنهج البريطاني بالخليج تمشي على أسبوع تدريس من الأحد للخميس، والجمعة والسبت ويك اند. القطاع الحكومي بالإمارات تحوّل لأسبوع الاثنين-الجمعة بـ٢٠٢٢، وعدد قليل من مدارس الإمارات تبعهم، بس الأغلبية من المدارس البريطانية والعالمية بالمنطقة لسا على بداية الأحد. هذا يعطي المراجعة ميزتين واضحتين عن إيقاع بريطانيا.',
   },
   'gcc.week.body2': {
-    en: 'First, your weekend genuinely is two consecutive days off-timetable, which makes long-form revision blocks (a full past paper under timed conditions, a Shakespeare re-read, an extended essay rewrite) much easier to slot in than they would be for a UK student trying to fit revision around Saturday sport or Sunday family commitments that are already routine. Second, Thursday afternoons effectively function as a Friday — energy drops, prep volume eases, and it is a good moment to review the week’s feedback rather than start anything new.',
-    ar: 'أولاً، ويك اندك فعلاً يومين متتاليين بدون جدول، وهذا يخلّي بلوكات مراجعة طويلة (ورقة سابقة كاملة بظروف وقت، إعادة قراءة Shakespeare، إعادة كتابة مقال موسّع) أسهل وايد عن الطالب البريطاني اللي يحاول يدخّل المراجعة بين رياضة السبت أو التزامات الأحد العائلية الروتينية. ثانياً، عصاري الخميس فعلياً تشتغل كجمعة — الطاقة تنزل، التحضير يخفّ، ووقت زين تراجع ملاحظات الأسبوع مو تبدأ شي جديد.',
+    en: 'First, your weekend genuinely is two consecutive days off-timetable, which makes long-form revision blocks (a full past paper under timed conditions, a Shakespeare re-read, an extended essay rewrite) much easier to slot in than they would be for a UK student trying to fit revision around Saturday sport or Sunday family commitments that are already routine. Second, Thursday afternoons effectively function as a Friday - energy drops, prep volume eases, and it is a good moment to review the week’s feedback rather than start anything new.',
+    ar: 'أولاً، ويك اندك فعلاً يومين متتاليين بدون جدول، وهذا يخلّي بلوكات مراجعة طويلة (ورقة سابقة كاملة بظروف وقت، إعادة قراءة Shakespeare، إعادة كتابة مقال موسّع) أسهل وايد عن الطالب البريطاني اللي يحاول يدخّل المراجعة بين رياضة السبت أو التزامات الأحد العائلية الروتينية. ثانياً، عصاري الخميس فعلياً تشتغل كجمعة - الطاقة تنزل، التحضير يخفّ، ووقت زين تراجع ملاحظات الأسبوع مو تبدأ شي جديد.',
   },
   'gcc.week.tip_title': { en: 'Adapted study cadence', ar: 'إيقاع دراسة مكيّف' },
   'gcc.week.tip_body': {
@@ -13523,8 +13523,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'هل المنصة متوفرة بكل دول الخليج؟',
   },
   'gcc.faq.a1': {
-    en: 'Yes. The English Hub is a public web app served from a global CDN, so students in the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, and Oman can access it the same way they would from the UK. There is no regional licence to buy and no separate Gulf-only build — the same revision content, AI marker, and account features work over standard residential and school connections.',
-    ar: 'إي. The English Hub تطبيق ويب عام يُقدَّم من CDN عالمي، فطلاب الإمارات وقطر والسعودية والكويت والبحرين وعُمان يقدرون يدخلون نفس طريقة دخول طلاب بريطانيا. ما في ترخيص إقليمي تشتريه ولا نسخة منفصلة للخليج بس — نفس محتوى المراجعة، المصحح الذكي، وخصائص الحساب تشتغل على اتصالات المنازل والمدارس العادية.',
+    en: 'Yes. The English Hub is a public web app served from a global CDN, so students in the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, and Oman can access it the same way they would from the UK. There is no regional licence to buy and no separate Gulf-only build - the same revision content, AI marker, and account features work over standard residential and school connections.',
+    ar: 'إي. The English Hub تطبيق ويب عام يُقدَّم من CDN عالمي، فطلاب الإمارات وقطر والسعودية والكويت والبحرين وعُمان يقدرون يدخلون نفس طريقة دخول طلاب بريطانيا. ما في ترخيص إقليمي تشتريه ولا نسخة منفصلة للخليج بس - نفس محتوى المراجعة، المصحح الذكي، وخصائص الحساب تشتغل على اتصالات المنازل والمدارس العادية.',
   },
   'gcc.faq.q2': {
     en: 'Can we pay in AED, SAR, or QAR?',
@@ -13570,8 +13570,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'مراجعة IGCSE إنجليزي للمدارس البريطانية العالمية',
   },
   'intl.intro': {
-    en: 'One platform that covers Pearson Edexcel and Cambridge IGCSE English side by side — calibrated to mark schemes, exam-zone-agnostic, and built so a head of department can roll the same workflow across mixed-board cohorts.',
-    ar: 'منصة واحدة تغطي Pearson Edexcel و Cambridge IGCSE English جنب لجنب — معايرة على مخططات التصحيح، مستقلة عن منطقة الامتحان، ومبنية بحيث رئيس القسم يقدر يطبّق نفس سير العمل على دفعات بوردز مختلطة.',
+    en: 'One platform that covers Pearson Edexcel and Cambridge IGCSE English side by side - calibrated to mark schemes, exam-zone-agnostic, and built so a head of department can roll the same workflow across mixed-board cohorts.',
+    ar: 'منصة واحدة تغطي Pearson Edexcel و Cambridge IGCSE English جنب لجنب - معايرة على مخططات التصحيح، مستقلة عن منطقة الامتحان، ومبنية بحيث رئيس القسم يقدر يطبّق نفس سير العمل على دفعات بوردز مختلطة.',
   },
   'intl.cta.licence': { en: 'Department licence options', ar: 'خيارات ترخيص القسم' },
   'intl.cta.teachers': { en: 'For individual teachers', ar: 'للمعلمين الأفراد' },
@@ -13581,8 +13581,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'ليش The English Hub للمدارس العالمية',
   },
   'intl.why.body1': {
-    en: 'International English departments sit at an awkward intersection. The texts and specifications are British, the students often aren’t, and the resources you can actually buy from UK publishers tend to assume a UK timetable, a UK calendar, and a UK-centric reference frame. The English Hub is built for the way British international schools actually run — not the way UK schools do.',
-    ar: 'أقسام الإنجليزي العالمية تجلس بمفترق محرج. النصوص والسبيسز بريطانية، الطلاب عادةً مو بريطانيين، والموارد اللي تقدر فعلاً تشتريها من ناشري بريطانيا تفترض جدول بريطاني وتقويم بريطاني ومرجعية بريطانية. The English Hub مبني للطريقة اللي المدارس البريطانية العالمية تشتغل فيها فعلاً — مو طريقة مدارس بريطانيا.',
+    en: 'International English departments sit at an awkward intersection. The texts and specifications are British, the students often aren’t, and the resources you can actually buy from UK publishers tend to assume a UK timetable, a UK calendar, and a UK-centric reference frame. The English Hub is built for the way British international schools actually run - not the way UK schools do.',
+    ar: 'أقسام الإنجليزي العالمية تجلس بمفترق محرج. النصوص والسبيسز بريطانية، الطلاب عادةً مو بريطانيين، والموارد اللي تقدر فعلاً تشتريها من ناشري بريطانيا تفترض جدول بريطاني وتقويم بريطاني ومرجعية بريطانية. The English Hub مبني للطريقة اللي المدارس البريطانية العالمية تشتغل فيها فعلاً - مو طريقة مدارس بريطانيا.',
   },
   'intl.why.body2_intro': { en: 'What that means in practice:', ar: 'يعني هذا بالواقع:' },
   'intl.why.li1_strong': { en: 'Spec-aligned revision.', ar: 'مراجعة متطابقة مع السبيس.' },
@@ -13600,8 +13600,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'تغطية بوردز متعددة بمنتج واحد.',
   },
   'intl.why.li3': {
-    en: 'Pearson Edexcel 4ET1, 4EA1, and Cambridge 0500, 0990 — covered in the same library, accessible from the same department licence.',
-    ar: 'Pearson Edexcel 4ET1 و 4EA1 و Cambridge 0500 و 0990 — كلهم بنفس المكتبة، تتفتح من نفس ترخيص القسم.',
+    en: 'Pearson Edexcel 4ET1, 4EA1, and Cambridge 0500, 0990 - covered in the same library, accessible from the same department licence.',
+    ar: 'Pearson Edexcel 4ET1 و 4EA1 و Cambridge 0500 و 0990 - كلهم بنفس المكتبة، تتفتح من نفس ترخيص القسم.',
   },
   'intl.why.li4_strong': {
     en: 'Exam-zone-agnostic content.',
@@ -13613,14 +13613,14 @@ export const DICTIONARY: Dictionary = {
   },
   'intl.why.li5_strong': { en: 'Calibrated to mark schemes.', ar: 'معايرة على مخططات التصحيح.' },
   'intl.why.li5': {
-    en: 'Model answers, AO weightings, and feedback rubrics are built from each board’s published mark scheme — not from one teacher’s house style.',
-    ar: 'الإجابات النموذجية وأوزان AO ومخططات الملاحظات مبنية من مخطط التصحيح المنشور لكل بورد — مو من أسلوب معلم واحد.',
+    en: 'Model answers, AO weightings, and feedback rubrics are built from each board’s published mark scheme - not from one teacher’s house style.',
+    ar: 'الإجابات النموذجية وأوزان AO ومخططات الملاحظات مبنية من مخطط التصحيح المنشور لكل بورد - مو من أسلوب معلم واحد.',
   },
   'intl.specs.eyebrow': { en: 'Specifications', ar: 'السبيسز' },
   'intl.specs.h2': { en: 'IGCSE English specs we cover', ar: 'سبيسز IGCSE إنجليزي اللي نغطيها' },
   'intl.specs.intro': {
-    en: 'Four IGCSE English specifications are the backbone of most British international school English departments. Every page on The English Hub is keyed to one of them — pick the spec your students sit and the rest follows.',
-    ar: 'أربع سبيسز IGCSE إنجليزي هم العمود الفقري لأغلب أقسام الإنجليزي بالمدارس البريطانية العالمية. كل صفحة على The English Hub مربوطة بواحد منهم — اختر السبيس اللي طلابك يذاكرونه والباقي يجي وراه.',
+    en: 'Four IGCSE English specifications are the backbone of most British international school English departments. Every page on The English Hub is keyed to one of them - pick the spec your students sit and the rest follows.',
+    ar: 'أربع سبيسز IGCSE إنجليزي هم العمود الفقري لأغلب أقسام الإنجليزي بالمدارس البريطانية العالمية. كل صفحة على The English Hub مربوطة بواحد منهم - اختر السبيس اللي طلابك يذاكرونه والباقي يجي وراه.',
   },
   'intl.specs.open_hub': { en: 'Open hub →', ar: 'افتح الصفحة ←' },
   'intl.spec.4et1.name': {
@@ -13648,11 +13648,11 @@ export const DICTIONARY: Dictionary = {
     ar: 'قراءة وكتابة موجّهة وإنشاء على ورقتين. مسار Cambridge الافتراضي للناطقين بالإنجليزية كلغة أولى بالمدارس العالمية.',
   },
   'intl.spec.0990.name': {
-    en: 'Cambridge IGCSE English Language (9–1)',
+    en: 'Cambridge IGCSE English Language (9-1)',
     ar: 'Cambridge IGCSE لغة إنجليزية (9-1)',
   },
   'intl.spec.0990.blurb': {
-    en: 'The 9–1 graded sibling of 0500, with the same paper structure but reformed grade boundaries aligned to the UK reformed scale.',
+    en: 'The 9-1 graded sibling of 0500, with the same paper structure but reformed grade boundaries aligned to the UK reformed scale.',
     ar: 'النسخة المُقيَّمة بسلّم 9-1 من 0500، بنفس تركيب الأوراق بس حدود درجات مُحدّثة متطابقة مع سلّم بريطانيا المُحدّث.',
   },
   'intl.coverage.eyebrow': { en: 'Curriculum coverage', ar: 'تغطية المنهج' },
@@ -13661,21 +13661,21 @@ export const DICTIONARY: Dictionary = {
     ar: 'التغطية عبر منهج المدرسة البريطانية العالمية',
   },
   'intl.coverage.intro': {
-    en: 'Most British international schools follow a recognisable shape — Key Stage 3 in the lower years, then either GCSE or IGCSE for the 14–16 cohort, depending on which exam zone the school enters. The English Hub is built around the same shape:',
-    ar: 'أغلب المدارس البريطانية العالمية تتبع شكل معروف — Key Stage 3 بالسنوات الأولى، بعدها GCSE ولا IGCSE لفئة ١٤-١٦ سنة، على حسب منطقة الامتحان اللي المدرسة تنزّل فيها. The English Hub مبني بنفس الشكل:',
+    en: 'Most British international schools follow a recognisable shape - Key Stage 3 in the lower years, then either GCSE or IGCSE for the 14-16 cohort, depending on which exam zone the school enters. The English Hub is built around the same shape:',
+    ar: 'أغلب المدارس البريطانية العالمية تتبع شكل معروف - Key Stage 3 بالسنوات الأولى، بعدها GCSE ولا IGCSE لفئة ١٤-١٦ سنة، على حسب منطقة الامتحان اللي المدرسة تنزّل فيها. The English Hub مبني بنفس الشكل:',
   },
-  'intl.coverage.ks3_strong': { en: 'Key Stage 3 (Years 7–9).', ar: 'Key Stage 3 (السنوات ٧-٩).' },
+  'intl.coverage.ks3_strong': { en: 'Key Stage 3 (Years 7-9).', ar: 'Key Stage 3 (السنوات ٧-٩).' },
   'intl.coverage.ks3_body': {
-    en: 'Foundational reading, analysis, and writing skills. Schools running a UK-curriculum lower school can use these as the on-ramp to IGCSE. KS3-specific landing pages are still being added — for now, browse the full revision library for KS3 material.',
-    ar: 'مهارات قراءة وتحليل وكتابة أساسية. المدارس اللي تشتغل بمنهج بريطاني للمرحلة الأولى تقدر تستخدمها كبداية نحو IGCSE. صفحات KS3 المخصصة لسا قاعدين نضيفها — للحين، تصفّح مكتبة المراجعة كاملة لمواد KS3.',
+    en: 'Foundational reading, analysis, and writing skills. Schools running a UK-curriculum lower school can use these as the on-ramp to IGCSE. KS3-specific landing pages are still being added - for now, browse the full revision library for KS3 material.',
+    ar: 'مهارات قراءة وتحليل وكتابة أساسية. المدارس اللي تشتغل بمنهج بريطاني للمرحلة الأولى تقدر تستخدمها كبداية نحو IGCSE. صفحات KS3 المخصصة لسا قاعدين نضيفها - للحين، تصفّح مكتبة المراجعة كاملة لمواد KS3.',
   },
   'intl.coverage.gcse_strong': {
     en: 'GCSE (for UK-curriculum branches).',
     ar: 'GCSE (لفروع المنهج البريطاني).',
   },
   'intl.coverage.gcse_body': {
-    en: 'Schools whose 14–16 cohort sits UK GCSE rather than IGCSE — for example a campus aligned with a UK partner school — can use the AQA, Pearson Edexcel, OCR, and WJEC Eduqas hubs.',
-    ar: 'المدارس اللي فئة ١٤-١٦ سنة عندها تذاكر GCSE بريطاني بدل IGCSE — مثلاً فرع متطابق مع مدرسة شريكة ببريطانيا — تقدر تستخدم صفحات AQA و Pearson Edexcel و OCR و WJEC Eduqas.',
+    en: 'Schools whose 14-16 cohort sits UK GCSE rather than IGCSE - for example a campus aligned with a UK partner school - can use the AQA, Pearson Edexcel, OCR, and WJEC Eduqas hubs.',
+    ar: 'المدارس اللي فئة ١٤-١٦ سنة عندها تذاكر GCSE بريطاني بدل IGCSE - مثلاً فرع متطابق مع مدرسة شريكة ببريطانيا - تقدر تستخدم صفحات AQA و Pearson Edexcel و OCR و WJEC Eduqas.',
   },
   'intl.coverage.igcse_strong': {
     en: 'IGCSE (the international standard).',
@@ -13704,13 +13704,13 @@ export const DICTIONARY: Dictionary = {
   },
   'intl.start.step1.title': { en: 'Pick your dominant board', ar: 'اختر البورد المهيمن' },
   'intl.start.step1.body': {
-    en: 'Identify the IGCSE specification that the largest share of your cohort sits — usually Cambridge 0500/0990 or Pearson Edexcel 4ET1/4EA1. Start there. The other boards remain available within the same licence.',
-    ar: 'حدّد سبيس IGCSE اللي أكبر نسبة من دفعتك تذاكره — عادةً Cambridge 0500/0990 ولا Pearson Edexcel 4ET1/4EA1. ابدأ هناك. باقي البوردز تبقى متوفرة بنفس الترخيص.',
+    en: 'Identify the IGCSE specification that the largest share of your cohort sits - usually Cambridge 0500/0990 or Pearson Edexcel 4ET1/4EA1. Start there. The other boards remain available within the same licence.',
+    ar: 'حدّد سبيس IGCSE اللي أكبر نسبة من دفعتك تذاكره - عادةً Cambridge 0500/0990 ولا Pearson Edexcel 4ET1/4EA1. ابدأ هناك. باقي البوردز تبقى متوفرة بنفس الترخيص.',
   },
   'intl.start.step2.title': { en: 'Trial with a single class', ar: 'جرّب مع فصل واحد' },
   'intl.start.step2.body': {
-    en: 'Run one Year 10 or Year 11 group through the platform for a half-term — set practice papers, use AI marking on a mock essay, and review the analytics. No fabricated success stories — judge it on your own students.',
-    ar: 'مرّر مجموعة Year 10 ولا Year 11 على المنصة لنصف ترم — حدّد أوراق تدريب، استخدم تصحيح الذكاء الاصطناعي على مقال موك، وراجع التحليلات. ما في قصص نجاح ملفّقة — احكم عليه ببقية طلابك.',
+    en: 'Run one Year 10 or Year 11 group through the platform for a half-term - set practice papers, use AI marking on a mock essay, and review the analytics. No fabricated success stories - judge it on your own students.',
+    ar: 'مرّر مجموعة Year 10 ولا Year 11 على المنصة لنصف ترم - حدّد أوراق تدريب، استخدم تصحيح الذكاء الاصطناعي على مقال موك، وراجع التحليلات. ما في قصص نجاح ملفّقة - احكم عليه ببقية طلابك.',
   },
   'intl.start.step3.title': { en: 'Roll across the department', ar: 'طبّق على القسم كله' },
   'intl.start.step3.body': {
@@ -13729,16 +13729,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'سير عمل قسم عالمي متعدد البوردز',
   },
   'intl.multi.body1': {
-    en: 'Plenty of British international schools don’t enter every student for the same board. A school might run Cambridge 0500 as the default, but enter a small EAL cohort for Pearson 4EA1 because the anthology suits them better. Or it might be the opposite — Pearson dominant, with a Cambridge sub-group for legacy reasons.',
-    ar: 'وايد مدارس بريطانية عالمية ما تنزّل كل الطلاب بنفس البورد. ممكن مدرسة تشتغل Cambridge 0500 كافتراضي، بس تنزّل دفعة EAL صغيرة على Pearson 4EA1 لأن المختارات تناسبهم أحسن. ولا العكس — Pearson مهيمن، مع مجموعة Cambridge فرعية لأسباب تاريخية.',
+    en: 'Plenty of British international schools don’t enter every student for the same board. A school might run Cambridge 0500 as the default, but enter a small EAL cohort for Pearson 4EA1 because the anthology suits them better. Or it might be the opposite - Pearson dominant, with a Cambridge sub-group for legacy reasons.',
+    ar: 'وايد مدارس بريطانية عالمية ما تنزّل كل الطلاب بنفس البورد. ممكن مدرسة تشتغل Cambridge 0500 كافتراضي، بس تنزّل دفعة EAL صغيرة على Pearson 4EA1 لأن المختارات تناسبهم أحسن. ولا العكس - Pearson مهيمن، مع مجموعة Cambridge فرعية لأسباب تاريخية.',
   },
   'intl.multi.body2': {
     en: 'One department licence on The English Hub covers every IGCSE board we publish. There are no per-board upgrades and no second account to manage. Each student sees revision pages keyed to their own specification; each teacher can flip between boards from the same dashboard. The workflow looks the same whether you run one board or four.',
     ar: 'ترخيص قسم واحد على The English Hub يغطي كل بورد IGCSE ننشره. ما في ترقيات لكل بورد ولا حساب ثاني تديره. كل طالب يشوف صفحات مراجعة مربوطة بسبيسه؛ كل معلم يقدر يتنقل بين البوردز من نفس اللوحة. سير العمل يطلع نفس الشكل سواء تشتغل ببورد واحد ولا أربعة.',
   },
   'intl.multi.body3_pre': {
-    en: 'Pricing for a department licence depends on faculty size rather than board count — see the ',
-    ar: 'تسعير ترخيص القسم يعتمد على حجم الكادر مو عدد البوردز — شوف ',
+    en: 'Pricing for a department licence depends on faculty size rather than board count - see the ',
+    ar: 'تسعير ترخيص القسم يعتمد على حجم الكادر مو عدد البوردز - شوف ',
   },
   'intl.multi.body3_link1': { en: 'pricing page', ar: 'صفحة الأسعار' },
   'intl.multi.body3_mid': {
@@ -13763,8 +13763,8 @@ export const DICTIONARY: Dictionary = {
   },
   'intl.cta_final.body_link1': { en: 'schools page', ar: 'صفحة المدارس' },
   'intl.cta_final.body_mid': {
-    en: ' — it covers licence shape, onboarding, and pricing. If you’re a single teacher trialling for your own classes, ',
-    ar: ' — تغطي شكل الترخيص والإعداد والتسعير. لو إنت معلم واحد تجرّب لفصولك، ',
+    en: ' - it covers licence shape, onboarding, and pricing. If you’re a single teacher trialling for your own classes, ',
+    ar: ' - تغطي شكل الترخيص والإعداد والتسعير. لو إنت معلم واحد تجرّب لفصولك، ',
   },
   'intl.cta_final.body_link2': {
     en: 'start on the teacher plan',
@@ -13775,23 +13775,23 @@ export const DICTIONARY: Dictionary = {
     ar: 'هل المنصة تدعم بوردز متعددة بترخيص مدرسة واحد؟',
   },
   'intl.faq.a1': {
-    en: 'Yes. A single department licence covers every board we publish. If half your cohort sits Cambridge 0500 and the other half sits Pearson Edexcel 4EA1, both groups work from the same licence — each student sees revision pages keyed to their own specification, and teachers can move between boards without switching account.',
-    ar: 'إي. ترخيص قسم واحد يغطي كل بورد ننشره. لو نصف دفعتك تذاكر Cambridge 0500 والنصف الثاني Pearson Edexcel 4EA1، كلا المجموعتين تشتغلون من نفس الترخيص — كل طالب يشوف صفحات مراجعة مربوطة بسبيسه، والمعلمين يقدرون يتنقلون بين البوردز بدون تغيير حساب.',
+    en: 'Yes. A single department licence covers every board we publish. If half your cohort sits Cambridge 0500 and the other half sits Pearson Edexcel 4EA1, both groups work from the same licence - each student sees revision pages keyed to their own specification, and teachers can move between boards without switching account.',
+    ar: 'إي. ترخيص قسم واحد يغطي كل بورد ننشره. لو نصف دفعتك تذاكر Cambridge 0500 والنصف الثاني Pearson Edexcel 4EA1، كلا المجموعتين تشتغلون من نفس الترخيص - كل طالب يشوف صفحات مراجعة مربوطة بسبيسه، والمعلمين يقدرون يتنقلون بين البوردز بدون تغيير حساب.',
   },
   'intl.faq.q2': {
     en: 'How does AI marking handle international students whose first language isn’t English?',
     ar: 'شلون يتعامل تصحيح الذكاء الاصطناعي مع الطلاب اللي إنجليزي مو لغتهم الأولى؟',
   },
   'intl.faq.a2': {
-    en: 'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives — reading, analysis, structure, vocabulary, and accuracy — rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
-    ar: 'الذكاء الاصطناعي يصحح مقابل نفس معايير مخطط التصحيح اللي البورد يستخدمه، فالملاحظات تركّز على أهداف التقييم — قراءة، تحليل، تركيب، مفردات، ودقة — مو على هل الإنجليزية لغة أولى ولا لا. طلاب EAL عادةً يستفيدون لأن الملاحظات محدّدة (يا جملة، يا AO) مو عامة. المعلمون دايماً يراجعون ويقدرون يعدّلون الدرجات قبل الطالب يشوفها.',
+    en: 'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives - reading, analysis, structure, vocabulary, and accuracy - rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
+    ar: 'الذكاء الاصطناعي يصحح مقابل نفس معايير مخطط التصحيح اللي البورد يستخدمه، فالملاحظات تركّز على أهداف التقييم - قراءة، تحليل، تركيب، مفردات، ودقة - مو على هل الإنجليزية لغة أولى ولا لا. طلاب EAL عادةً يستفيدون لأن الملاحظات محدّدة (يا جملة، يا AO) مو عامة. المعلمون دايماً يراجعون ويقدرون يعدّلون الدرجات قبل الطالب يشوفها.',
   },
   'intl.faq.q3': {
     en: 'Can we customise revision schedules for a longer or shorter academic year?',
     ar: 'نقدر نخصّص جداول المراجعة لسنة دراسية أطول ولا أقصر؟',
   },
   'intl.faq.a3': {
-    en: 'Revision content is on-demand rather than tied to a fixed UK academic calendar. Department leads pick which papers, set texts, and skills to prioritise; students work through them at their own pace. Schools running a Northern Hemisphere August–June year, a Southern Hemisphere January–November year, or a split-semester model all use the same library.',
+    en: 'Revision content is on-demand rather than tied to a fixed UK academic calendar. Department leads pick which papers, set texts, and skills to prioritise; students work through them at their own pace. Schools running a Northern Hemisphere August-June year, a Southern Hemisphere January-November year, or a split-semester model all use the same library.',
     ar: 'محتوى المراجعة عند الطلب مو مربوط بتقويم دراسي بريطاني ثابت. رؤساء الأقسام يختارون يا أوراق ونصوص مقرّرة ومهارات يقدّمونها بالأولوية؛ الطلاب يمشون فيها بسرعتهم. المدارس اللي تشتغل بسنة نصف الكرة الشمالي أغسطس-يونيو، ولا سنة نصف الكرة الجنوبي يناير-نوفمبر، ولا نموذج ترمين مقسّمين، كلهم يستخدمون نفس المكتبة.',
   },
   'intl.faq.q4': {
@@ -13799,8 +13799,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'هل المحتوى متوفر بدون نت للمدارس اللي اتصالها محدود؟',
   },
   'intl.faq.a4': {
-    en: 'The platform is web-delivered and requires a connection to load pages, submit essays for AI marking, and sync teacher dashboards. Printable resources — model answers, mark-scheme breakdowns, practice papers — can be downloaded as PDFs in advance for use in classrooms with intermittent connectivity. We do not currently ship a fully offline app.',
-    ar: 'المنصة على الويب وتحتاج اتصال عشان تفتح الصفحات وترسل المقالات لتصحيح الذكاء الاصطناعي وتزامن لوحات المعلمين. الموارد القابلة للطباعة — إجابات نموذجية، شروحات مخطط التصحيح، أوراق تدريب — تقدر تنزّلها كـ PDFs مسبقاً للاستخدام بالفصول اللي اتصالها متقطّع. ما عندنا حالياً تطبيق يشتغل بدون نت كلياً.',
+    en: 'The platform is web-delivered and requires a connection to load pages, submit essays for AI marking, and sync teacher dashboards. Printable resources - model answers, mark-scheme breakdowns, practice papers - can be downloaded as PDFs in advance for use in classrooms with intermittent connectivity. We do not currently ship a fully offline app.',
+    ar: 'المنصة على الويب وتحتاج اتصال عشان تفتح الصفحات وترسل المقالات لتصحيح الذكاء الاصطناعي وتزامن لوحات المعلمين. الموارد القابلة للطباعة - إجابات نموذجية، شروحات مخطط التصحيح، أوراق تدريب - تقدر تنزّلها كـ PDFs مسبقاً للاستخدام بالفصول اللي اتصالها متقطّع. ما عندنا حالياً تطبيق يشتغل بدون نت كلياً.',
   },
   'intl.faq.q5': {
     en: 'How do you handle GDPR and non-EU/UK data residency?',
@@ -13844,8 +13844,8 @@ export const DICTIONARY: Dictionary = {
   },
   'creators.how.step4.title': { en: 'Earn 20% recurring monthly', ar: 'اكسب ٢٠٪ متكرّر شهرياً' },
   'creators.how.step4.desc': {
-    en: 'Earn 20% of every subscription — paid every month they stay subscribed.',
-    ar: 'اكسب ٢٠٪ من كل اشتراك — يتدفع كل شهر مادام مشترك.',
+    en: 'Earn 20% of every subscription - paid every month they stay subscribed.',
+    ar: 'اكسب ٢٠٪ من كل اشتراك - يتدفع كل شهر مادام مشترك.',
   },
   'creators.how.step_label': { en: 'Step', ar: 'الخطوة' },
   'creators.calc.h2': { en: 'Earning Calculator', ar: 'حاسبة الأرباح' },
@@ -13856,8 +13856,8 @@ export const DICTIONARY: Dictionary = {
   'creators.calc.plan_suffix': { en: '/mo plan.', ar: 'باقة شهرية.' },
   'creators.calc.footnote_prefix': { en: 'Based on', ar: 'بناءً على' },
   'creators.calc.footnote_suffix': {
-    en: '/mo subscription price. Illustrative only — one programme, one set of terms; your dashboard shows your real verified earnings.',
-    ar: 'سعر اشتراك شهري. توضيحي فقط — برنامج واحد، شروط واحدة؛ لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
+    en: '/mo subscription price. Illustrative only - one programme, one set of terms; your dashboard shows your real verified earnings.',
+    ar: 'سعر اشتراك شهري. توضيحي فقط - برنامج واحد، شروط واحدة؛ لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
   },
   'creators.calc.students_referred': { en: 'students referred', ar: 'طالب موصّل' },
   'creators.calc.per_month': { en: 'per month, recurring', ar: 'بالشهر، متكرّر' },
@@ -13879,8 +13879,8 @@ export const DICTIONARY: Dictionary = {
     ar: '"أحسن موارد مراجعة GCSE"',
   },
   'creators.ideas.best.desc': {
-    en: 'Review and comparison videos — include The English Hub in your "top 5" list.',
-    ar: 'فيديوهات تقييم ومقارنة — حط The English Hub بقائمة "الخمسة الأوائل".',
+    en: 'Review and comparison videos - include The English Hub in your "top 5" list.',
+    ar: 'فيديوهات تقييم ومقارنة - حط The English Hub بقائمة "الخمسة الأوائل".',
   },
   'creators.ideas.best.platform': { en: 'YouTube / Instagram', ar: 'YouTube / Instagram' },
   'creators.ideas.swm.title': { en: '"Study with me" sessions', ar: 'جلسات "ادرس معاي"' },
@@ -13974,8 +13974,8 @@ export const DICTIONARY: Dictionary = {
   'creators.faq.h2': { en: 'Frequently Asked Questions', ar: 'الأسئلة الشائعة' },
   'creators.faq.q1': { en: 'What platforms can I promote on?', ar: 'يا منصات أقدر أروّج عليها؟' },
   'creators.faq.a1': {
-    en: 'TikTok, YouTube, Instagram, Twitter/X, blogs, WhatsApp groups — anywhere you have an audience interested in English revision.',
-    ar: 'TikTok و YouTube و Instagram و Twitter/X والمدونات وقروبات WhatsApp — أي مكان عندك جمهور مهتم بمراجعة الإنجليزي.',
+    en: 'TikTok, YouTube, Instagram, Twitter/X, blogs, WhatsApp groups - anywhere you have an audience interested in English revision.',
+    ar: 'TikTok و YouTube و Instagram و Twitter/X والمدونات وقروبات WhatsApp - أي مكان عندك جمهور مهتم بمراجعة الإنجليزي.',
   },
   'creators.faq.q2': { en: 'How does tracking work?', ar: 'شلون يشتغل التتبع؟' },
   'creators.faq.a2': {
@@ -14026,7 +14026,7 @@ export const DICTIONARY: Dictionary = {
   'school.landing.cta.primary': { en: 'See licence options', ar: 'شوف خيارات الترخيص' },
   'school.landing.cta.secondary': { en: 'Talk to us', ar: 'تواصل معانا' },
 
-  // ─── Data processing (B2B legal) — top section keys only ────────────
+  // ─── Data processing (B2B legal) - top section keys only ────────────
   'data_processing.h1': { en: 'Data Processing Information', ar: 'معلومات معالجة البيانات' },
   'data_processing.updated': { en: 'Last updated: March 2026', ar: 'آخر تحديث: مارس ٢٠٢٦' },
   'data_processing.intro_h2': { en: '1. Introduction', ar: '١. مقدمة' },
@@ -14261,12 +14261,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'موارد تدريس ببلاش',
   },
   'for_teachers_free.intro': {
-    en: 'Download a complete lesson, worksheet, and teaching guide for AQA GCSE English Literature — free, no signup required. See exactly what you get with a subscription.',
-    ar: 'نزّل درس كامل وورقة عمل ودليل تدريس لـ AQA GCSE Literature — ببلاش، بدون تسجيل. شوف بالضبط شنو تأخذ مع الاشتراك.',
+    en: 'Download a complete lesson, worksheet, and teaching guide for AQA GCSE English Literature - free, no signup required. See exactly what you get with a subscription.',
+    ar: 'نزّل درس كامل وورقة عمل ودليل تدريس لـ AQA GCSE Literature - ببلاش، بدون تسجيل. شوف بالضبط شنو تأخذ مع الاشتراك.',
   },
 
   // ─── Loading labels (meaningful AR) ────────────────────────────────
-  // (loading.root.label already defined above — keep single source.)
+  // (loading.root.label already defined above - keep single source.)
   'loading.courses.label': { en: 'Loading courses…', ar: 'لحظة، نجيب المقررات…' },
   'loading.course_detail.label': { en: 'Loading course…', ar: 'لحظة، نفتح المقرر…' },
   'loading.dashboard.label': { en: 'Loading your dashboard…', ar: 'لحظة، نجهّز لوحتك…' },
@@ -14382,12 +14382,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'مواد قابلة للطباعة مجاناً لـ GCSE و IGCSE English',
   },
   'resources.teaching.print.idx.intro': {
-    en: 'Classroom-ready PDFs covering set texts, exam technique, and writing skills. Each printable maps to a specific exam board where it applies, and is free for teachers and students to download. New sheets are released regularly — drop your email on any page below to be notified when it goes live.',
-    ar: 'ملفات PDF جاهزة للصف، تغطّي النصوص المقرّرة وتقنيات الامتحان ومهارات الكتابة. كل مادة قابلة للطباعة مرتبطة بهيئة امتحان معيّنة عند الانطباق، ومجانية للمعلّمين والطلاب. أوراق جديدة تُنشر بانتظام — حطّ إيميلك في أيّ صفحة أسفل ليصلك إشعار عند النشر.',
+    en: 'Classroom-ready PDFs covering set texts, exam technique, and writing skills. Each printable maps to a specific exam board where it applies, and is free for teachers and students to download. New sheets are released regularly - drop your email on any page below to be notified when it goes live.',
+    ar: 'ملفات PDF جاهزة للصف، تغطّي النصوص المقرّرة وتقنيات الامتحان ومهارات الكتابة. كل مادة قابلة للطباعة مرتبطة بهيئة امتحان معيّنة عند الانطباق، ومجانية للمعلّمين والطلاب. أوراق جديدة تُنشر بانتظام - حطّ إيميلك في أيّ صفحة أسفل ليصلك إشعار عند النشر.',
   },
   'resources.teaching.print.idx.coming': {
-    en: 'Coming soon — get notified',
-    ar: 'قريباً — استلم إشعاراً',
+    en: 'Coming soon - get notified',
+    ar: 'قريباً - استلم إشعاراً',
   },
   'resources.teaching.print.idx.available': { en: 'Available now', ar: 'متاح الحين' },
   'resources.teaching.print.idx.view_details': { en: 'View details', ar: 'عرض التفاصيل' },
@@ -14462,7 +14462,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'Ozymandias مقابل My Last Duchess',
   },
   'resources.tl.lp.pcc.intro': {
-    en: 'A structured comparison lesson for the AQA Power & Conflict anthology. Students build a side-by-side analysis of two poems that present dangerous, possessive power — and draft their opening comparative paragraph.',
+    en: 'A structured comparison lesson for the AQA Power & Conflict anthology. Students build a side-by-side analysis of two poems that present dangerous, possessive power - and draft their opening comparative paragraph.',
     ar: 'درس مقارنة منظّم لأنطولوجيا AQA Power & Conflict. يبني الطلاب تحليلاً جنباً إلى جنب لقصيدتين تقدّمان السلطة الخطيرة والاستحواذية، ويصوغون فقرتهم المقارنة الافتتاحية.',
   },
 
@@ -14472,9 +14472,9 @@ export const DICTIONARY: Dictionary = {
     en: 'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
     ar: 'أدلّة النصوص المقرّرة في AQA GCSE English Literature: Macbeth و Romeo and Juliet وشعر Power and Conflict، إلى جانب تقنيات الامتحان وخطط مقالات Grade 9.',
   },
-  'resources.lit.aqa.poetry.h1': { en: 'AQA Poetry Anthology', ar: 'أنطولوجيا الشعر — AQA' },
+  'resources.lit.aqa.poetry.h1': { en: 'AQA Poetry Anthology', ar: 'أنطولوجيا الشعر - AQA' },
   'resources.lit.aqa.poetry.intro': {
-    en: 'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology — Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
+    en: 'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology - Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
     ar: 'تحليل كامل لجميع القصائد الـ٣٠ في أنطولوجيا AQA GCSE English Literature: عنقودا Power and Conflict و Love and Relationships، مع الموضوعات وتحليل اللغة والبنية وأفكار المقارنة.',
   },
 
@@ -14545,8 +14545,8 @@ export const DICTIONARY: Dictionary = {
   // ExamGuideSection
   'home.guide.h2': { en: "Your Board's Exam Guide", ar: 'دليل الامتحان مال بوردك' },
   'home.guide.lead': {
-    en: 'Paper structure, mark schemes, and expert tips — tailored to your board.',
-    ar: 'تركيب الورقة ومخططات التصحيح ونصائح الخبراء — على مقاس بوردك.',
+    en: 'Paper structure, mark schemes, and expert tips - tailored to your board.',
+    ar: 'تركيب الورقة ومخططات التصحيح ونصائح الخبراء - على مقاس بوردك.',
   },
   'home.guide.your_board': { en: 'Your board', ar: 'بوردك' },
   'home.guide.cta_full': { en: 'View Full Guide →', ar: 'شوف الدليل الكامل ←' },
@@ -14558,10 +14558,10 @@ export const DICTIONARY: Dictionary = {
   // PoemOfTheDay
   'home.poem.kicker': { en: 'Poem of the Day', ar: 'قصيدة اليوم' },
   'home.poem.title': { en: '"I Wandered Lonely as a Cloud"', ar: '"I Wandered Lonely as a Cloud"' },
-  'home.poem.author': { en: '— William Wordsworth', ar: '— William Wordsworth' },
+  'home.poem.author': { en: '- William Wordsworth', ar: '- William Wordsworth' },
   'home.poem.summary': {
-    en: 'Wordsworth\'s most iconic Romantic lyric. Explore how natural imagery, personification, and the "inward eye" motif create a meditation on memory and solitude — a staple of GCSE and iGCSE English Literature.',
-    ar: 'أشهر قصيدة رومانسية لـ Wordsworth. شوف شلون الصور الطبيعية والتشخيص ودافع "العين الباطنة" يصنعون تأملاً في الذاكرة والوحدة — أساسي في GCSE و iGCSE Literature.',
+    en: 'Wordsworth\'s most iconic Romantic lyric. Explore how natural imagery, personification, and the "inward eye" motif create a meditation on memory and solitude - a staple of GCSE and iGCSE English Literature.',
+    ar: 'أشهر قصيدة رومانسية لـ Wordsworth. شوف شلون الصور الطبيعية والتشخيص ودافع "العين الباطنة" يصنعون تأملاً في الذاكرة والوحدة - أساسي في GCSE و iGCSE Literature.',
   },
   'home.poem.tag.romanticism': { en: 'Romanticism', ar: 'الرومانسية' },
   'home.poem.tag.nature': { en: 'Nature', ar: 'الطبيعة' },
@@ -14584,7 +14584,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'مسارات تعلّم منظّمة لكل مرحلة من رحلتك بالإنجليزي.',
   },
   'home.path.card.ks3_title': { en: 'KS3 Reading & Writing', ar: 'قراءة وكتابة KS3' },
-  'home.path.card.ks3_subtitle': { en: 'Years 7–9', ar: 'السنوات ٧–٩' },
+  'home.path.card.ks3_subtitle': { en: 'Years 7-9', ar: 'السنوات ٧-٩' },
   'home.path.card.ks3_desc': {
     en: 'Build your foundation with core reading comprehension, analysis, and writing skills.',
     ar: 'ابني أساسك بمهارات الفهم والتحليل والكتابة.',
@@ -14597,8 +14597,8 @@ export const DICTIONARY: Dictionary = {
   },
   'home.path.card.lit_title': { en: 'GCSE Literature', ar: 'GCSE Literature' },
   'home.path.card.lit_desc': {
-    en: 'Poetry, prose, and drama — essay technique and textual analysis for top grades.',
-    ar: 'شعر ونثر ومسرح — تقنية المقال والتحليل النصّي للدرجات العليا.',
+    en: 'Poetry, prose, and drama - essay technique and textual analysis for top grades.',
+    ar: 'شعر ونثر ومسرح - تقنية المقال والتحليل النصّي للدرجات العليا.',
   },
   'home.path.card.revision_title': { en: 'Revision & Exam Prep', ar: 'مراجعة وتحضير امتحان' },
   'home.path.card.revision_subtitle': { en: 'Exam-Ready', ar: 'جاهز للامتحان' },
@@ -14630,8 +14630,8 @@ export const DICTIONARY: Dictionary = {
   },
   'home.features.library_title': { en: 'Full Course Library', ar: 'مكتبة كورسات كاملة' },
   'home.features.library_desc': {
-    en: 'From KS3 Reading to GCSE and IGCSE Literature — courses for every stage of your English journey, with new content added regularly.',
-    ar: 'من قراءة KS3 إلى GCSE و IGCSE Literature — كورسات لكل مرحلة من رحلتك بالإنجليزي، مع محتوى جديد بانتظام.',
+    en: 'From KS3 Reading to GCSE and IGCSE Literature - courses for every stage of your English journey, with new content added regularly.',
+    ar: 'من قراءة KS3 إلى GCSE و IGCSE Literature - كورسات لكل مرحلة من رحلتك بالإنجليزي، مع محتوى جديد بانتظام.',
   },
   'home.features.ai_title': { en: 'AI-Powered Feedback', ar: 'تغذية راجعة بالذكاء الاصطناعي' },
   'home.features.ai_desc': {
@@ -14645,17 +14645,17 @@ export const DICTIONARY: Dictionary = {
   },
   'home.features.device_title': { en: 'Works on Any Device', ar: 'يشتغل على أي جهاز' },
   'home.features.device_desc': {
-    en: 'Desktop, tablet, or mobile — your courses sync seamlessly so you can study anywhere.',
-    ar: 'كمبيوتر أو تابلت أو موبايل — كورساتك تتزامن بسلاسة عشان تدرس من أي مكان.',
+    en: 'Desktop, tablet, or mobile - your courses sync seamlessly so you can study anywhere.',
+    ar: 'كمبيوتر أو تابلت أو موبايل - كورساتك تتزامن بسلاسة عشان تدرس من أي مكان.',
   },
   'home.features.cancel_title': { en: 'Cancel Anytime', ar: 'الغ في أي وقت' },
   'home.features.cancel_desc': {
-    en: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime — no questions asked.',
-    ar: 'ما في عقود مقفّلة. ابدأ بتجربة ٧ أيام ببلاش (مع بطاقة) وألغ في أي وقت — من غير ما نسألك.',
+    en: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime - no questions asked.',
+    ar: 'ما في عقود مقفّلة. ابدأ بتجربة ٧ أيام ببلاش (مع بطاقة) وألغ في أي وقت - من غير ما نسألك.',
   },
 
   // BentoFeatures
-  'home.bento.eyebrow': { en: '01 — Contents', ar: '٠١ — المحتويات' },
+  'home.bento.eyebrow': { en: '01 - Contents', ar: '٠١ - المحتويات' },
   'home.bento.h2.before': { en: 'A ', ar: 'قسم إنجليزي ' },
   'home.bento.h2.emph': { en: 'complete', ar: 'كامل' },
   'home.bento.h2.after': { en: ' English department, re-shelved.', ar: '، مرتّب من جديد.' },
@@ -14665,18 +14665,18 @@ export const DICTIONARY: Dictionary = {
     ar: 'أرسل أي مقال. خذ درجة وتفصيل AO وأهداف الخطوة الجاية بثواني.',
   },
   'home.bento.ai_demo.compelling': {
-    en: '"compelling" — precise vocabulary choice elevates register',
-    ar: '"compelling" — اختيار مفردات دقيق يرفع المستوى',
+    en: '"compelling" - precise vocabulary choice elevates register',
+    ar: '"compelling" - اختيار مفردات دقيق يرفع المستوى',
   },
   'home.bento.ai_demo.cyclical': {
-    en: '"cyclical" — structural technique impresses markers',
-    ar: '"cyclical" — تقنية بنيوية تعجب المصحّحين',
+    en: '"cyclical" - structural technique impresses markers',
+    ar: '"cyclical" - تقنية بنيوية تعجب المصحّحين',
   },
   'home.bento.ai_demo.grade8': { en: 'Grade 8', ar: 'Grade 8' },
   'home.bento.ladder_title': { en: 'Grade Ladder', ar: 'سلّم الدرجات' },
   'home.bento.ladder_desc': {
-    en: 'Visual 1–9 progression. See exactly what separates each grade boundary.',
-    ar: 'تدرّج مرئي ١–٩. شوف بالضبط شنو يفرق كل حد درجة.',
+    en: 'Visual 1-9 progression. See exactly what separates each grade boundary.',
+    ar: 'تدرّج مرئي ١-٩. شوف بالضبط شنو يفرق كل حد درجة.',
   },
   'home.bento.mocks_title': { en: 'Mock Exams', ar: 'موكات' },
   'home.bento.mocks_desc': {
@@ -14690,8 +14690,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'علّم وحدّد وحلّل الاقتباسات المهمة من النصوص المقرّرة والمقاطع غير المرئية.',
   },
   'home.bento.annotation_attribution': {
-    en: '— Mary Shelley, Frankenstein',
-    ar: '— Mary Shelley, Frankenstein',
+    en: '- Mary Shelley, Frankenstein',
+    ar: '- Mary Shelley, Frankenstein',
   },
   'home.bento.games_title': { en: 'Grade Games', ar: 'ألعاب الدرجات' },
   'home.bento.games_desc': {
@@ -14707,8 +14707,8 @@ export const DICTIONARY: Dictionary = {
   'home.bento.games.lit_bingo': { en: 'Lit Bingo', ar: 'بنغو الأدب' },
   'home.bento.boards_title': { en: 'Exam Board Hub', ar: 'مركز البوردات' },
   'home.bento.boards_desc': {
-    en: 'Every spec, every AO, every grade descriptor — organised by your board.',
-    ar: 'كل مواصفة وكل AO وكل وصف درجة — منظّمة حسب بوردك.',
+    en: 'Every spec, every AO, every grade descriptor - organised by your board.',
+    ar: 'كل مواصفة وكل AO وكل وصف درجة - منظّمة حسب بوردك.',
   },
 
   // AnthologyHero
@@ -14716,7 +14716,7 @@ export const DICTIONARY: Dictionary = {
     en: 'The English Hub · Anthology Edition',
     ar: 'The English Hub · إصدار المختارات',
   },
-  'home.anth_hero.meta_vol': { en: 'Vol. I — Spring MMXXVI', ar: 'المجلد الأول — ربيع MMXXVI' },
+  'home.anth_hero.meta_vol': { en: 'Vol. I - Spring MMXXVI', ar: 'المجلد الأول - ربيع MMXXVI' },
   'home.anth_hero.meta_stats': { en: '15 pathways · 470 lessons', ar: '١٥ مسار · ٤٧٠ درس' },
   'home.anth_hero.eyebrow': {
     en: 'An anthology for English · 2026',
@@ -14727,10 +14727,10 @@ export const DICTIONARY: Dictionary = {
   'home.anth_hero.h1.bold': { en: 'bold.', ar: 'بجرأة.' },
   'home.anth_hero.h1.land': { en: 'Land the', ar: 'احصل على' },
   'home.anth_hero.dek': {
-    en: 'Structured courses, AI essay feedback, mock exams, and revision tools — all mapped to your exam board. One platform, every grade.',
-    ar: 'كورسات منظّمة وتغذية راجعة بالذكاء الاصطناعي وموكات وأدوات مراجعة — كلها معايرة على بوردك. منصة واحدة لكل درجة.',
+    en: 'Structured courses, AI essay feedback, mock exams, and revision tools - all mapped to your exam board. One platform, every grade.',
+    ar: 'كورسات منظّمة وتغذية راجعة بالذكاء الاصطناعي وموكات وأدوات مراجعة - كلها معايرة على بوردك. منصة واحدة لكل درجة.',
   },
-  'home.anth_hero.cta_start': { en: 'Start free — no card →', ar: 'ابدأ ببلاش — من غير بطاقة ←' },
+  'home.anth_hero.cta_start': { en: 'Start free - no card →', ar: 'ابدأ ببلاش - من غير بطاقة ←' },
   'home.anth_hero.cta_demo': { en: 'Try the demo', ar: 'جرّب الديمو' },
   'home.anth_hero.chip.ai_label': {
     en: 'AI Essay Feedback',
@@ -14742,7 +14742,7 @@ export const DICTIONARY: Dictionary = {
   'home.anth_hero.chip.mocks_label': { en: '130+ Mock Exams', ar: 'أكثر من ١٣٠ موك' },
   'home.anth_hero.chip.mocks_detail': { en: 'Timed & auto-marked', ar: 'بتوقيت وتصحيح تلقائي' },
   'home.anth_hero.chip.ladder_label': { en: 'Grade Ladder', ar: 'سلّم الدرجات' },
-  'home.anth_hero.chip.ladder_detail': { en: '1–9 revision paths', ar: 'مسارات مراجعة ١–٩' },
+  'home.anth_hero.chip.ladder_detail': { en: '1-9 revision paths', ar: 'مسارات مراجعة ١-٩' },
   'home.anth_hero.chip.games_label': { en: '7 GCSE Games', ar: '٧ ألعاب GCSE' },
   'home.anth_hero.chip.games_detail': { en: 'Learn through play', ar: 'تعلّم باللعب' },
 
@@ -14754,7 +14754,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'انتقلت من Grade 4 إلى 7 خلال ست شهور. الكورسات المنظّمة والإجابات النموذجية خلّت كل شي يتضح.',
   },
   'home.testimonials.sophie.name': { en: 'Sophie T.', ar: 'Sophie T.' },
-  'home.testimonials.sophie.role': { en: 'Year 11 — AQA', ar: 'السنة ١١ — AQA' },
+  'home.testimonials.sophie.role': { en: 'Year 11 - AQA', ar: 'السنة ١١ - AQA' },
   'home.testimonials.mark.quote': {
     en: "My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.",
     ar: 'ثقة بنتي تغيّرت تماماً. صارت تبغى تراجع، وموكاتها ارتفعت درجتين.',
@@ -14766,7 +14766,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'التغذية الراجعة بالذكاء الاصطناعي كأنها مدرّس متاح ٢٤/٧. اكتشفت نقاط ضعف فاتت معلّمي.',
   },
   'home.testimonials.james.name': { en: 'James R.', ar: 'James R.' },
-  'home.testimonials.james.role': { en: 'Year 11 — Edexcel', ar: 'السنة ١١ — Edexcel' },
+  'home.testimonials.james.role': { en: 'Year 11 - Edexcel', ar: 'السنة ١١ - Edexcel' },
   'home.testimonials.patterson.quote': {
     en: 'As a Head of English, the analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
     ar: 'كرئيسة قسم إنجليزي، لوحة التحليلات وحدها توفّر علي ساعات كل أسبوع. نقدر نتابع كل طالب في كل سنة.',
@@ -14778,7 +14778,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'الموكات بحدود الدرجات مطابقة للحقيقي. حسّيت بجاهزية كاملة قبل امتحاني الفعلي.',
   },
   'home.testimonials.priya.name': { en: 'Priya K.', ar: 'Priya K.' },
-  'home.testimonials.priya.role': { en: 'Year 11 — OCR', ar: 'السنة ١١ — OCR' },
+  'home.testimonials.priya.role': { en: 'Year 11 - OCR', ar: 'السنة ١١ - OCR' },
   'home.testimonials.davies.quote': {
     en: 'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
     ar: 'أخيراً مصدر إنجليزي يغطي كل البوردات صح. باني الدروس قلّل وقت التخطيط للنص.',
@@ -14802,7 +14802,7 @@ export function lookup(key: string, locale: Locale): string {
   // Master dictionary first; fall through to the toolkit-namespaced
   // supplement (./dictionary-toolkit.ts) so /toolkit/* tool-page keys
   // resolve without bloating the main dictionary surface. Master wins
-  // on collision — by convention toolkit keys live under the
+  // on collision - by convention toolkit keys live under the
   // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
   // namespaces so collisions shouldn't arise.
   // CRITICAL ORDERING (fixed 2026-05-16): ALL hand-written override
@@ -14812,7 +14812,7 @@ export function lookup(key: string, locale: Locale): string {
   // Previously PLACEHOLDER_FIX_MAY15 and SCREENSHOT_FIX_DICTIONARY were
   // listed AFTER AUDIT_FIX_DICTIONARY, so their real copy for ~80
   // affiliate keys + 94 screenshot keys was permanently SHADOWED by
-  // junk — that is why /affiliate and /affiliates rendered placeholder
+  // junk - that is why /affiliate and /affiliates rendered placeholder
   // text. Override precedence among the curated files is kept stable;
   // only their position relative to AUDIT_FIX changed.
   const entry =
@@ -14829,10 +14829,10 @@ export function lookup(key: string, locale: Locale): string {
     // so its genuine Khaleeji Arabic wins over the English-mirror
     // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
     AFF_PUBLIC_DICTIONARY[key] ??
-    // Bucket-A curated Khaleeji — Tier-1 public surfaces (press, about,
+    // Bucket-A curated Khaleeji - Tier-1 public surfaces (press, about,
     // accessibility, footer, exam-boards, free-resources, sitemap,
     // redeem, join-school, brand, billing, resources, a-level,
-    // affiliate portal). Same curated-override tier — BEFORE every
+    // affiliate portal). Same curated-override tier - BEFORE every
     // placeholder/audit supplement so genuine Arabic wins over the
     // EN-mirror / junk-Ollama values these keys had.
     TRUST_DICTIONARY[key] ??
@@ -14841,14 +14841,14 @@ export function lookup(key: string, locale: Locale): string {
     RESOURCES_A_DICTIONARY[key] ??
     RESOURCES_B_DICTIONARY[key] ??
     MISC_T1_DICTIONARY[key] ??
-    // Bucket-A Tier-2a curated Khaleeji — authed school + parent
+    // Bucket-A Tier-2a curated Khaleeji - authed school + parent
     // dashboards. PARENT_1 before PARENT_2 so the one shared key
     // (parent.linked_child) resolves deterministically to PARENT_1.
     SCHOOL_1_DICTIONARY[key] ??
     SCHOOL_2_DICTIONARY[key] ??
     PARENT_1_DICTIONARY[key] ??
     PARENT_2_DICTIONARY[key] ??
-    // Bucket A Tier-2b — curated EN+AR for affiliate portal/components,
+    // Bucket A Tier-2b - curated EN+AR for affiliate portal/components,
     // teacher dashboard, analytics/marking/games, and the residual
     // school.* gap. Curated tier: precedes all placeholder/junk fixes.
     SCHOOL_3_DICTIONARY[key] ??
@@ -14856,21 +14856,21 @@ export function lookup(key: string, locale: Locale): string {
     AFF_COMP_DICTIONARY[key] ??
     TEACHER_DICTIONARY[key] ??
     AMG_DICTIONARY[key] ??
-    // Bucket B Phase B1 — instrumented shell + hub/index pages for the
+    // Bucket B Phase B1 - instrumented shell + hub/index pages for the
     // /ks3, /revision and /resources content families (curated EN +
     // Khaleeji AR). Precedes all placeholder/audit supplements so the
     // genuine Arabic wins over any junk/placeholder entry.
     B1_KS3_DICTIONARY[key] ??
     B1_REVISION_DICTIONARY[key] ??
     B1_RESOURCES_DICTIONARY[key] ??
-    // Bucket B Phase B1.5 — curated EN + Khaleeji AR for app-surface
+    // Bucket B Phase B1.5 - curated EN + Khaleeji AR for app-surface
     // product-UI pages: /marking + /school, /dashboard + /toolkit, and
     // /demo. Curated tier: precedes all placeholder/audit supplements so
     // genuine Arabic wins over any junk entry.
     B15_MARKING_SCHOOL_DICTIONARY[key] ??
     B15_DASHBOARD_DICTIONARY[key] ??
     B15_DEMO_DICTIONARY[key] ??
-    // EU AI Act user-facing copy (Art 13/14/50) — curated tier.
+    // EU AI Act user-facing copy (Art 13/14/50) - curated tier.
     AI_ACT_DICTIONARY[key] ??
     // Platform-admin AI-marking surfaces (versioning / eval / model perf).
     // Curated tier: precedes all placeholder/audit supplements.
@@ -14879,7 +14879,7 @@ export function lookup(key: string, locale: Locale): string {
     // /admin/marker-pay, /admin/marker-qa). Curated tier.
     MARKER_DRIVE_DICTIONARY[key] ??
     // Marketing pages (institutional repositioning, 2026-05-20):
-    // /schools · /school-pilot · /teachers · /students · /eal —
+    // /schools · /school-pilot · /teachers · /students · /eal -
     // curated EN + Khaleeji Gulf Arabic. Curated tier so genuine
     // bilingual copy wins over any placeholder/audit supplement.
     MKT_SCHOOLS_DICTIONARY[key] ??

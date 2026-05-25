@@ -1,12 +1,12 @@
 // ─── IELTS Academic Writing Task 1 prompts · Charts set 1 ───────────────────
 // A bank of six Academic Task 1 questions, each paired with a REAL chart spec
 // (a `WritingChartSpec`) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
 // Authoring rules followed here (mirroring the committed worked examples in
-// writing-prompts.ts — wt1-online-grocery / wt1-museum-visitors /
+// writing-prompts.ts - wt1-online-grocery / wt1-museum-visitors /
 // wt1-household-energy / wt1-paper-recycling):
 //   • `prompt` is INSTRUCTION ONLY. The numbers live in `chart`, never in the
 //     prompt text, so there is a single source of truth for the data.
@@ -24,14 +24,14 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_1: WritingPrompt[] = [
-  // ── 1 · grouped bar — renewable electricity by source, three countries ────
+  // ── 1 · grouped bar - renewable electricity by source, three countries ────
   {
     id: 'wt1c1-renewable-mix',
     task: 'writing-task-1',
     track: 'academic',
     title: 'Renewable electricity generation by source in three countries',
     prompt: [
-      'The bar chart below shows the amount of electricity (in terawatt-hours) generated from three renewable sources — hydro, wind and solar — in three countries in 2023.',
+      'The bar chart below shows the amount of electricity (in terawatt-hours) generated from three renewable sources - hydro, wind and solar - in three countries in 2023.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -53,7 +53,7 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 2 · line — international tourist arrivals, three regions over time ─────
+  // ── 2 · line - international tourist arrivals, three regions over time ─────
   {
     id: 'wt1c1-tourist-arrivals',
     task: 'writing-task-1',
@@ -70,7 +70,7 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
       kind: 'line',
       unit: 'millions',
       yAxisLabel: 'Arrivals (millions)',
-      caption: 'International tourist arrivals (millions) by region, 2000–2024.',
+      caption: 'International tourist arrivals (millions) by region, 2000-2024.',
       categories: ['2000', '2006', '2012', '2018', '2024'],
       series: [
         { name: 'Europe', values: [58, 71, 84, 102, 110] },
@@ -82,14 +82,14 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 3 · two pie charts — global freshwater use by sector, 1980 vs 2020 ────
+  // ── 3 · two pie charts - global freshwater use by sector, 1980 vs 2020 ────
   {
     id: 'wt1c1-freshwater-use',
     task: 'writing-task-1',
     track: 'academic',
     title: 'How fresh water is used worldwide',
     prompt: [
-      'The two pie charts below show the proportion of the world’s fresh water used by three sectors — agriculture, industry and domestic use — in 1980 and in 2020.',
+      'The two pie charts below show the proportion of the world’s fresh water used by three sectors - agriculture, industry and domestic use - in 1980 and in 2020.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -122,7 +122,7 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 4 · table — average daily internet use (hours) by age group ───────────
+  // ── 4 · table - average daily internet use (hours) by age group ───────────
   {
     id: 'wt1c1-internet-by-age',
     task: 'writing-task-1',
@@ -141,9 +141,9 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
       caption: 'Average daily internet use by age group (hours per day).',
       columns: ['Age group', '2010', '2017', '2024'],
       rows: [
-        { label: '16–24', cells: [3.1, 5.4, 7.2] },
-        { label: '25–44', cells: [2.4, 4.1, 6.0] },
-        { label: '45–64', cells: [1.2, 2.6, 4.3] },
+        { label: '16-24', cells: [3.1, 5.4, 7.2] },
+        { label: '25-44', cells: [2.4, 4.1, 6.0] },
+        { label: '45-64', cells: [1.2, 2.6, 4.3] },
         { label: '65+', cells: [0.4, 1.1, 2.5] },
       ],
     },
@@ -151,7 +151,7 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 5 · process (cyclical) — the natural water cycle ──────────────────────
+  // ── 5 · process (cyclical) - the natural water cycle ──────────────────────
   {
     id: 'wt1c1-water-cycle',
     task: 'writing-task-1',
@@ -200,7 +200,7 @@ export const WRITING_CHARTS_1: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 6 · stacked bar — university enrolment by field of study ──────────────
+  // ── 6 · stacked bar - university enrolment by field of study ──────────────
   {
     id: 'wt1c1-enrolment-fields',
     task: 'writing-task-1',

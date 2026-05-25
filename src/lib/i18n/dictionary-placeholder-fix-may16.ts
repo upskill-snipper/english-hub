@@ -1,5 +1,5 @@
 /**
- * Placeholder override — 2026-05-16
+ * Placeholder override - 2026-05-16
  *
  * A deep SEO audit found the /pricing and /for-teachers pages rendering
  * literal "Heading", "Subheading Intro", "Apply Code" as visible body
@@ -48,13 +48,13 @@ export const PLACEHOLDER_FIX_MAY16: Dictionary = {
     ar: "That code isn't valid or has expired.",
   },
   'billing.affiliate.error.network': {
-    en: "Couldn't check that code just now — please try again.",
-    ar: "Couldn't check that code just now — please try again.",
+    en: "Couldn't check that code just now - please try again.",
+    ar: "Couldn't check that code just now - please try again.",
   },
   'billing.affiliate.applied_prefix': { en: 'Code applied:', ar: 'Code applied:' },
   'billing.affiliate.applied_suffix': {
-    en: '— your discount is locked in.',
-    ar: '— your discount is locked in.',
+    en: '- your discount is locked in.',
+    ar: '- your discount is locked in.',
   },
   'billing.affiliate.remove': { en: 'Remove', ar: 'Remove' },
   'billing.affiliate.saves_prefix': { en: 'Saves you', ar: 'Saves you' },
@@ -89,19 +89,19 @@ export const PLACEHOLDER_FIX_MAY16: Dictionary = {
     ar: 'Applied to your Teacher annual plan.',
   },
   'billing.affiliate.subheading_save_prefix': { en: 'You save', ar: 'You save' },
-  // Was MISSING entirely — rendered as [[billing.affiliate.on_annual_label]]
+  // Was MISSING entirely - rendered as [[billing.affiliate.on_annual_label]]
   'billing.affiliate.on_annual_label': { en: 'on annual', ar: 'on annual' },
 
   // ── Trial countdown banner ───────────────────────────────────────
   'billing.trial.cta_upgrade_now': { en: 'Upgrade now', ar: 'Upgrade now' },
   'billing.trial.left_suffix': { en: 'left', ar: 'left' },
   'billing.trial.subline_default': {
-    en: "You're on a free trial — upgrade any time to keep full access.",
-    ar: "You're on a free trial — upgrade any time to keep full access.",
+    en: "You're on a free trial - upgrade any time to keep full access.",
+    ar: "You're on a free trial - upgrade any time to keep full access.",
   },
   'billing.trial.subline_last_day': {
-    en: 'Last day of your free trial — upgrade now to avoid losing access.',
-    ar: 'Last day of your free trial — upgrade now to avoid losing access.',
+    en: 'Last day of your free trial - upgrade now to avoid losing access.',
+    ar: 'Last day of your free trial - upgrade now to avoid losing access.',
   },
   'billing.trial.unit_day': { en: 'day', ar: 'day' },
   'billing.trial.unit_days': { en: 'days', ar: 'days' },

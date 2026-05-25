@@ -17,10 +17,10 @@
  *
  * No curated entry with genuine Arabic existed, so Arabic-mode visitors
  * saw English. This file supplies the real EN (verbatim from the
- * report-fix / placeholder-may15 source — NEVER from the audit junk)
+ * report-fix / placeholder-may15 source - NEVER from the audit junk)
  * plus genuine Khaleeji (Gulf) Arabic in a natural marketing /
  * partnership register: second-person direct address, Gulf lexis
- * (وايد، هذي، حقّك، تكسب، عمولة، عقب) — not MSA, not machine-literal.
+ * (وايد، هذي، حقّك، تكسب، عمولة، عقب) - not MSA, not machine-literal.
  * Voice matches src/lib/eal/curriculum.ts.
  *
  * For the 13 keys that exist ONLY in dictionary-audit-fix.ts with a
@@ -38,7 +38,7 @@
  * `lookup()` resolver chain at the SAME curated tier as
  * HOMEPAGE_DICTIONARY (immediately after it), which is BEFORE
  * PRESS_AND_VERIFIED_FIX / PLACEHOLDER_FIX_* / SCREENSHOT_FIX /
- * REPORT_FIX_MAY16B / AUDIT_FIX_DICTIONARY — so these curated Arabic
+ * REPORT_FIX_MAY16B / AUDIT_FIX_DICTIONARY - so these curated Arabic
  * values WIN over every placeholder/audit supplement. That precedence
  * is the entire fix.
  */
@@ -58,8 +58,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'The English Hub',
   },
   'aff_comp.public.hero.subtitle': {
-    en: "Partner with a launch-stage English revision platform. The English Hub is a new GCSE/IGCSE revision tool built by English teachers. We are recruiting our first cohort of partners now. We don't publish usage or earnings figures we can't yet evidence — your dashboard shows your real, verified referrals and commission from day one.",
-    ar: 'كن شريكاً لمنصّة مراجعة إنجليزي في مرحلة الإطلاق. The English Hub أداة مراجعة GCSE/IGCSE جديدة صاغها معلّمو إنجليزي. نحن نضم أول مجموعة من شركائنا الآن. ما ننشر أرقام استخدام أو أرباح ما نقدر نوثّقها بعد — لوحة تحكّمك تبيّن إحالاتك وعمولتك الحقيقية الموثّقة من أول يوم.',
+    en: "Partner with a launch-stage English revision platform. The English Hub is a new GCSE/IGCSE revision tool built by English teachers. We are recruiting our first cohort of partners now. We don't publish usage or earnings figures we can't yet evidence - your dashboard shows your real, verified referrals and commission from day one.",
+    ar: 'كن شريكاً لمنصّة مراجعة إنجليزي في مرحلة الإطلاق. The English Hub أداة مراجعة GCSE/IGCSE جديدة صاغها معلّمو إنجليزي. نحن نضم أول مجموعة من شركائنا الآن. ما ننشر أرقام استخدام أو أرباح ما نقدر نوثّقها بعد - لوحة تحكّمك تبيّن إحالاتك وعمولتك الحقيقية الموثّقة من أول يوم.',
   },
   'aff_comp.public.cta.get_code': {
     en: 'Get your referral code',
@@ -88,8 +88,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'رسّلنا لك اتفاقية الشراكة عشان توقّعها. عقب ما توقّعها، يفتح لك كود الإحالة ولوحة التحكّم على طول.',
   },
   'aff_comp.public.status.agreement_signed.title': {
-    en: "You're all set — welcome aboard",
-    ar: 'كل شي جاهز — حيّاك الله معانا',
+    en: "You're all set - welcome aboard",
+    ar: 'كل شي جاهز - حيّاك الله معانا',
   },
   'aff_comp.public.status.agreement_signed.message': {
     en: 'Your agreement is signed and your partner account is active. Head to your dashboard to grab your referral link and start sharing.',
@@ -110,16 +110,16 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'برنامج واحد واضح',
   },
   'aff_comp.public.why.reason1.desc': {
-    en: 'One programme, one set of terms — paid monthly. Your dashboard shows your real verified referrals and earnings, and the current commission rate that applies to you.',
-    ar: 'برنامج واحد، مجموعة شروط واحدة — تنصرف لك شهرياً. لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة، ونسبة العمولة الحالية اللي تنطبّق عليك.',
+    en: 'One programme, one set of terms - paid monthly. Your dashboard shows your real verified referrals and earnings, and the current commission rate that applies to you.',
+    ar: 'برنامج واحد، مجموعة شروط واحدة - تنصرف لك شهرياً. لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة، ونسبة العمولة الحالية اللي تنطبّق عليك.',
   },
   'aff_comp.public.why.reason2.title': {
     en: 'A product parents actually trust',
     ar: 'منتج الأهالي يثقون فيه عدل',
   },
   'aff_comp.public.why.reason2.desc': {
-    en: 'Exam-board specific revision built by English teachers — not generic AI slop. Easy to recommend honestly.',
-    ar: 'مراجعة مخصّصة لكل مجلس امتحانات، صاغها معلّمو إنجليزي — مو حشو ذكاء اصطناعي عام. تنصح فيها بصدق وبكل أريحية.',
+    en: 'Exam-board specific revision built by English teachers - not generic AI slop. Easy to recommend honestly.',
+    ar: 'مراجعة مخصّصة لكل مجلس امتحانات، صاغها معلّمو إنجليزي - مو حشو ذكاء اصطناعي عام. تنصح فيها بصدق وبكل أريحية.',
   },
   'aff_comp.public.why.reason3.title': {
     en: 'Real support, not a portal',
@@ -160,16 +160,16 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'انشره على طريقتك',
   },
   'aff_comp.public.how.step3.desc': {
-    en: 'Use our banners, screenshots and copy snippets — or write entirely your own. Whatever works for your audience.',
-    ar: 'استخدم البنرات ولقطات الشاشة والنصوص الجاهزة حقّنا — أو اكتب نصّك بالكامل بنفسك. اللي يمشي مع جمهورك.',
+    en: 'Use our banners, screenshots and copy snippets - or write entirely your own. Whatever works for your audience.',
+    ar: 'استخدم البنرات ولقطات الشاشة والنصوص الجاهزة حقّنا - أو اكتب نصّك بالكامل بنفسك. اللي يمشي مع جمهورك.',
   },
   'aff_comp.public.how.step4.title': {
     en: 'Get paid monthly',
     ar: 'تستلم فلوسك شهرياً',
   },
   'aff_comp.public.how.step4.desc': {
-    en: 'Commissions are paid monthly via Stripe or PayPal — for as long as the customer stays. Your dashboard shows the exact payout date and your real verified earnings.',
-    ar: 'العمولات تنصرف شهرياً عن طريق Stripe أو PayPal — طول ما العميل باقٍ مشترك. لوحة تحكّمك تبيّن تاريخ الصرف بالضبط وأرباحك الحقيقية الموثّقة.',
+    en: 'Commissions are paid monthly via Stripe or PayPal - for as long as the customer stays. Your dashboard shows the exact payout date and your real verified earnings.',
+    ar: 'العمولات تنصرف شهرياً عن طريق Stripe أو PayPal - طول ما العميل باقٍ مشترك. لوحة تحكّمك تبيّن تاريخ الصرف بالضبط وأرباحك الحقيقية الموثّقة.',
   },
   'aff_comp.public.how.annual_only_lead': {
     en: 'Annual plans only',
@@ -233,7 +233,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
   },
   // 2026-05-19 (H2/M15): the three fabricated stat tiles
   // ("14,000+ students", "871 board-specific revision routes",
-  // "£42 average commission per referral, year one") were removed —
+  // "£42 average commission per referral, year one") were removed -
   // no usage or earnings figures we cannot yet evidence. Replaced with
   // honest launch-stage copy. No invented replacement count.
   'aff_comp.public.impact.stat1.value': {
@@ -275,8 +275,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'كل اللي تحتاجه عشان تنشر The English Hub بثقة وتتابع نتايجك.',
   },
   'aff_comp.public.what_you_get.perk1': {
-    en: 'Recurring commission — the rate that applies to you is shown in your dashboard',
-    ar: 'عمولة متكرّرة — النسبة اللي تنطبّق عليك مبيّنة في لوحة تحكّمك',
+    en: 'Recurring commission - the rate that applies to you is shown in your dashboard',
+    ar: 'عمولة متكرّرة - النسبة اللي تنطبّق عليك مبيّنة في لوحة تحكّمك',
   },
   'aff_comp.public.what_you_get.perk2': {
     en: 'Referral tracking window confirmed in your dashboard',
@@ -310,7 +310,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
   },
   'aff_comp.public.faq.q1.a': {
     en: 'You must be 18 or over to join. Beyond that, the programme is open to anyone with a relevant audience, including educators, tutors, parent communities, content creators and education websites. There are no follower or traffic minimums. We simply ask that promotion is honest and that The English Hub is presented as an independent platform that is exam-board aligned but not endorsed by any exam board.',
-    ar: 'لازم يكون عمرك 18 سنة أو أكثر عشان تنضم. وزيادة على هذا، البرنامج مفتوح لأي واحد عنده جمهور مناسب — معلّمين، مدرّسين خصوصيين، مجتمعات أهالي، صنّاع محتوى، ومواقع تعليمية. ما في حد أدنى للمتابعين أو الزيارات. كل اللي نطلبه إن الترويج يكون صادق، وإن The English Hub تنعرض كمنصّة مستقلّة متوافقة مع مجالس الامتحانات بس مو معتمدة من أي مجلس امتحانات.',
+    ar: 'لازم يكون عمرك 18 سنة أو أكثر عشان تنضم. وزيادة على هذا، البرنامج مفتوح لأي واحد عنده جمهور مناسب - معلّمين، مدرّسين خصوصيين، مجتمعات أهالي، صنّاع محتوى، ومواقع تعليمية. ما في حد أدنى للمتابعين أو الزيارات. كل اللي نطلبه إن الترويج يكون صادق، وإن The English Hub تنعرض كمنصّة مستقلّة متوافقة مع مجالس الامتحانات بس مو معتمدة من أي مجلس امتحانات.',
   },
   'aff_comp.public.faq.q2.q': {
     en: 'How long does it take to be approved?',
@@ -350,7 +350,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
   },
   'aff_comp.public.faq.q6.a': {
     en: 'Your dashboard shows clicks on your link, sign-ups, completed annual subscriptions, pending and confirmed commission, and your current tier, all updated in real time. This gives you a clear, transparent view of how your referrals are performing at any moment.',
-    ar: 'لوحة تحكّمك تبيّن لك الضغطات على رابطك، والتسجيلات، والاشتراكات السنوية المكتملة، والعمولة المعلّقة والمؤكّدة، ومستواك الحالي — كلّها تتحدّث لحظياً. هذا يعطيك صورة واضحة وشفّافة عن أداء إحالاتك بأي لحظة.',
+    ar: 'لوحة تحكّمك تبيّن لك الضغطات على رابطك، والتسجيلات، والاشتراكات السنوية المكتملة، والعمولة المعلّقة والمؤكّدة، ومستواك الحالي - كلّها تتحدّث لحظياً. هذا يعطيك صورة واضحة وشفّافة عن أداء إحالاتك بأي لحظة.',
   },
   'aff_comp.public.faq.q7.q': {
     en: 'What happens if a referred customer cancels?',
@@ -387,8 +387,8 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'زين تعرف',
   },
   'aff_comp.public.apply.annual_only_note_body': {
-    en: 'Commission applies to referred annual subscriptions. Referrals are tracked from the first click, so you are credited even if someone subscribes later. One programme, one set of terms — confirmed in your dashboard.',
-    ar: 'العمولة تنطبّق على الاشتراكات السنوية اللي تجي عن طريقك. الإحالات تنتتبّع من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة. برنامج واحد، مجموعة شروط واحدة — مؤكّدة في لوحة تحكّمك.',
+    en: 'Commission applies to referred annual subscriptions. Referrals are tracked from the first click, so you are credited even if someone subscribes later. One programme, one set of terms - confirmed in your dashboard.',
+    ar: 'العمولة تنطبّق على الاشتراكات السنوية اللي تجي عن طريقك. الإحالات تنتتبّع من أول ضغطة، فتنحسب لك حتى لو الواحد اشترك عقب فترة. برنامج واحد، مجموعة شروط واحدة - مؤكّدة في لوحة تحكّمك.',
   },
   'aff_comp.public.apply.signin_first': {
     en: 'Sign in first',
@@ -485,7 +485,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
     ar: 'حُط',
   },
   'aff_comp.public.templates.disclosure_body_part3': {
-    en: 'label where people can see it before they click — not buried in hashtags or hidden in a "more" link.',
-    ar: 'الوسم في مكان يشوفه الناس قبل ما يضغطون — مو مدفون بين الهاشتاقات ولا مخبّى في رابط «المزيد».',
+    en: 'label where people can see it before they click - not buried in hashtags or hidden in a "more" link.',
+    ar: 'الوسم في مكان يشوفه الناس قبل ما يضغطون - مو مدفون بين الهاشتاقات ولا مخبّى في رابط «المزيد».',
   },
 }

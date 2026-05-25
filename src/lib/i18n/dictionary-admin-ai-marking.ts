@@ -1,5 +1,5 @@
 /**
- * dictionary-admin-ai-marking.ts — platform-admin AI-marking surfaces.
+ * dictionary-admin-ai-marking.ts - platform-admin AI-marking surfaces.
  *
  * Curated EN + Khaleeji (Gulf) AR for the four admin pages:
  *   /admin/ai-marking, /admin/model-performance,
@@ -18,15 +18,15 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.error_load': { en: 'Could not load this data.', ar: 'ما قدرنا نحمّل البيانات.' },
   'admin.aim.empty_generic': { en: 'No data yet.', ar: 'ما في بيانات للحين.' },
   'admin.aim.store_unavailable': {
-    en: 'The marking store is not available yet — showing an empty state.',
-    ar: 'مخزن التصحيح مو متوفّر للحين — نعرض حالة فاضية.',
+    en: 'The marking store is not available yet - showing an empty state.',
+    ar: 'مخزن التصحيح مو متوفّر للحين - نعرض حالة فاضية.',
   },
 
   // ─── /admin/ai-marking (overview) ─────────────────────────────────────────
   'admin.aim.ov.title': { en: 'AI Marking', ar: 'تصحيح الذكاء الاصطناعي' },
   'admin.aim.ov.subtitle': {
-    en: 'Teacher-in-the-loop marking — submissions, model performance and versioning.',
-    ar: 'تصحيح بإشراف المعلّم — التسليمات وأداء النموذج وإدارة الإصدارات.',
+    en: 'Teacher-in-the-loop marking - submissions, model performance and versioning.',
+    ar: 'تصحيح بإشراف المعلّم - التسليمات وأداء النموذج وإدارة الإصدارات.',
   },
   'admin.aim.ov.stat.total': { en: 'Submissions', ar: 'التسليمات' },
   'admin.aim.ov.stat.reviewed': { en: 'Teacher-reviewed', ar: 'مراجَعة من المعلّم' },
@@ -74,8 +74,8 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.mp.col.count': { en: 'Count', ar: 'العدد' },
   'admin.aim.mp.col.reason': { en: 'Reason', ar: 'السبب' },
   'admin.aim.mp.empty': {
-    en: 'No reviewed submissions yet — metrics will populate once teachers moderate AI marks.',
-    ar: 'ما في تسليمات مراجَعة للحين — المقاييس بتظهر أول ما يراجع المعلّمون درجات الذكاء.',
+    en: 'No reviewed submissions yet - metrics will populate once teachers moderate AI marks.',
+    ar: 'ما في تسليمات مراجَعة للحين - المقاييس بتظهر أول ما يراجع المعلّمون درجات الذكاء.',
   },
 
   // ─── /admin (eval scorecard, surfaced on model-performance) ───────────────
@@ -99,8 +99,8 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   // ─── /admin/prompt-management ─────────────────────────────────────────────
   'admin.aim.pm.title': { en: 'Prompt Management', ar: 'إدارة البرومبت' },
   'admin.aim.pm.subtitle': {
-    en: 'Versioned, stored marking prompts — improvable over time.',
-    ar: 'برومبتات تصحيح مُؤرشَفة بإصدارات — قابلة للتحسين مع الوقت.',
+    en: 'Versioned, stored marking prompts - improvable over time.',
+    ar: 'برومبتات تصحيح مُؤرشَفة بإصدارات - قابلة للتحسين مع الوقت.',
   },
   'admin.aim.pm.new_version': { en: 'New prompt version', ar: 'إصدار برومبت جديد' },
   'admin.aim.pm.f.prompt_key': { en: 'Prompt key', ar: 'مفتاح البرومبت' },
@@ -138,8 +138,8 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   // ─── /admin/rubric-management ─────────────────────────────────────────────
   'admin.aim.rm.title': { en: 'Rubric Versions', ar: 'إصدارات الروبرِك' },
   'admin.aim.rm.subtitle': {
-    en: 'Read-only — content-hash pointers to the in-code mark schemes.',
-    ar: 'للقراءة فقط — مؤشّرات هاش لمخططات الدرجات داخل الكود.',
+    en: 'Read-only - content-hash pointers to the in-code mark schemes.',
+    ar: 'للقراءة فقط - مؤشّرات هاش لمخططات الدرجات داخل الكود.',
   },
   'admin.aim.rm.col.scheme': { en: 'Mark scheme', ar: 'مخطط الدرجات' },
   'admin.aim.rm.col.version': { en: 'Version', ar: 'الإصدار' },

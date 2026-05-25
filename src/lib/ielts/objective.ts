@@ -1,11 +1,11 @@
-// ─── Objective (auto-marked) scoring — shared across Reading + Mock ─────────
+// ─── Objective (auto-marked) scoring - shared across Reading + Mock ─────────
 // One source of truth for marking the objective question types (mcq / tfng /
 // gap / matching) so the standalone Reading page and the Mock score identically.
 //
 // The model: most questions are worth ONE mark, but a `matching` question is
 // worth ONE MARK PER ITEM (exactly like the real exam, where e.g. "Questions
-// 14–18, match each paragraph to a heading" is five marks). So callers must use
-// MARKS — not array length — for totals, and the helpers here do that.
+// 14-18, match each paragraph to a heading" is five marks). So callers must use
+// MARKS - not array length - for totals, and the helpers here do that.
 //
 // Matching answers are stored in the same flat AnswerMap under a composite key
 // (`<questionId>::<itemId>`) via `matchKey`, so no answer-map shape change is
@@ -90,7 +90,7 @@ export function totalAnswered(questions: ObjectiveQuestion[], answers: AnswerMap
 
 /**
  * The 1-based START number for each question, accumulating MARKS so a matching
- * question reserves a numbered range (e.g. Q14 with 5 items occupies 14–18 and
+ * question reserves a numbered range (e.g. Q14 with 5 items occupies 14-18 and
  * the next question starts at 19).
  */
 export function questionStartNumbers(questions: ObjectiveQuestion[]): Record<string, number> {

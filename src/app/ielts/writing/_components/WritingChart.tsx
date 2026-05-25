@@ -1,6 +1,6 @@
 'use client'
 
-// ─── IELTS Academic Writing Task 1 — chart renderer ─────────────────────────
+// ─── IELTS Academic Writing Task 1 - chart renderer ─────────────────────────
 // Renders a WritingChartSpec as a REAL visual (bar / line / pie / table /
 // process) so a Task 1 prompt shows the data the way the exam does, instead of
 // a text-only description. Built on the shared recharts primitives + theme

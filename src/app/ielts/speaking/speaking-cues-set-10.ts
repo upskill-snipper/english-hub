@@ -1,23 +1,23 @@
-// ─── IELTS Speaking cues · Set 10 (Academic, Parts 1–3) ────────────────────
+// ─── IELTS Speaking cues · Set 10 (Academic, Parts 1-3) ────────────────────
 // A tenth batch of original IELTS-preparation practice prompts for the async
 // Speaking module. Same shape and conventions as SPEAKING_CUES, with fresh
 // everyday topics so learners can keep rotating through material without
 // repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (the natural world & getting outdoors,
 //     passing skills between generations, travel & short breaks, and community &
 //     helping others locally).
 //
-// Topics here are deliberately distinct from the base cues and Sets 2–9, which
+// Topics here are deliberately distinct from the base cues and Sets 2-9, which
 // already cover home/area, daily routine, food/cooking, weather, transport,
 // hometown, music, weekends, technology/gadgets, shopping, books/reading, sport,
 // sleep, clothes, the internet, festivals, animals/pets, neighbours, languages,
 // phones/messaging, workspaces, holidays, news, parks/gardens, films, money,
 // favourite time of day, childhood, the sea & water, indoor hobbies and special
-// days — plus a long list of cue cards (skills, journeys, websites, people
+// days - plus a long list of cue cards (skills, journeys, websites, people
 // admired, photographs, outdoor places, talents, events, decisions, hobbies,
 // helping someone, books, gifts, relaxing places, advice, older people, goals,
 // traditions, useful objects, news, buildings, meals, teachers, cities, problems,
@@ -26,7 +26,7 @@
 // cards on a place in nature, a skill learned from a family member, a short trip
 // and a person who helps others in the community.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids use the `sp-010-` prefix so
 // the coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -34,7 +34,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_10: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp-010-p1-colours',
     part: 'speaking-part-1',
@@ -88,7 +88,7 @@ export const SPEAKING_SET_10: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp-010-p2-place-in-nature',
     part: 'speaking-part-2',
@@ -150,7 +150,7 @@ export const SPEAKING_SET_10: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp-010-p3-natural-world-outdoors',
     part: 'speaking-part-3',
@@ -160,7 +160,7 @@ export const SPEAKING_SET_10: SpeakingCue[] = [
       'Do you think people today spend enough time out in nature? Why or why not?',
       'How can towns and cities make it easier for residents to enjoy green spaces?',
       'Do you think children benefit from being out in nature more than adults do?',
-      'Whose responsibility should it be to look after natural areas — individuals or the government?',
+      'Whose responsibility should it be to look after natural areas - individuals or the government?',
       'Do you think attitudes towards protecting the countryside have changed over the years?',
     ],
   },

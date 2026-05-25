@@ -1,14 +1,14 @@
 'use client'
 
 // ─── WritingStage ───────────────────────────────────────────────────────────
-// The Writing section of the mock (60 min for BOTH tasks — one shared clock,
+// The Writing section of the mock (60 min for BOTH tasks - one shared clock,
 // just like the real exam). The candidate writes Task 1 and Task 2 in two
 // textareas (with live word counts and the official minimums) and can tab
 // between them. On submit OR timer expiry we POST EACH response to
 // /api/ielts/writing-feedback (sending `task` + `track`) to obtain a band.
 //
-// Resilience (per spec): if the feedback call fails — network error, paywall
-// (403), rate limit (429), over-length, or any non-OK status — the response is
+// Resilience (per spec): if the feedback call fails - network error, paywall
+// (403), rate limit (429), over-length, or any non-OK status - the response is
 // STILL recorded and the task is marked "submitted" (no band). The mock never
 // blocks on AI availability. The Writing band reported up is the average of the
 // task bands that scored; if neither scored, status is "submitted" with a note.

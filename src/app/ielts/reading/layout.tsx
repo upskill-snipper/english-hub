@@ -6,9 +6,9 @@ import type { Metadata } from 'next'
 // is a client component and cannot export `metadata`, hence this sibling
 // server layout.)
 export const metadata: Metadata = {
-  title: 'IELTS Academic Reading Practice — The English Hub',
+  title: 'IELTS Academic Reading Practice - The English Hub',
   description:
-    'Practise IELTS Academic Reading with original passages and exam-style questions — multiple choice, True/False/Not Given, and sentence completion. Auto-marked with an estimated band score and full explanations.',
+    'Practise IELTS Academic Reading with original passages and exam-style questions - multiple choice, True/False/Not Given, and sentence completion. Auto-marked with an estimated band score and full explanations.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/reading' },
 }
 

@@ -1,11 +1,11 @@
-// ─── IELTS Mock Test — local types ─────────────────────────────────────────
+// ─── IELTS Mock Test - local types ─────────────────────────────────────────
 // Types that describe ONE assembled, timed mock test and its in-progress /
 // finished state. These are LOCAL to the /ielts/mock route: they compose the
 // shared item-bank types (@/lib/ielts/types) into a single sequenced sitting
 // without modifying any shared contract.
 //
-// A full IELTS test is sat in a fixed order — Listening, Reading, Writing,
-// Speaking — each under its own clock, with no going back to a finished
+// A full IELTS test is sat in a fixed order - Listening, Reading, Writing,
+// Speaking - each under its own clock, with no going back to a finished
 // section. We model that as an ordered list of "stages" plus a result bucket
 // per skill that the final band report reads.
 // ────────────────────────────────────────────────────────────────────────────
@@ -52,7 +52,7 @@ export const SECTION_SECONDS: Record<MockStageKind, number> = {
   // Writing is 60 minutes total for BOTH tasks (≈20 for Task 1, ≈40 for Task 2);
   // the runner shares one clock across the two tasks, exactly like the real exam.
   writing: 60 * 60,
-  // Speaking is 11–14 minutes; we budget 14 and pace the three parts within it.
+  // Speaking is 11-14 minutes; we budget 14 and pace the three parts within it.
   speaking: 14 * 60,
 }
 

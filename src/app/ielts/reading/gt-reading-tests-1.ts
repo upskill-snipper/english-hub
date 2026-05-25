@@ -1,8 +1,8 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 1) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 1) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
-// Given, and sentence/summary completion). Framed as "IELTS preparation" only —
+// Given, and sentence/summary completion). Framed as "IELTS preparation" only -
 // no official affiliation is implied. General Training track.
 //
 // GT Reading differs from Academic: instead of academic-journal passages it
@@ -17,14 +17,14 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_1: ReadingTest[] = [
   {
     id: 'gt-rd-s1-001',
-    title: 'General Training Reading — Practice Test 1',
+    title: 'General Training Reading - Practice Test 1',
     track: 'general',
     estimatedMinutes: 20,
     passages: [
-      // ── Passage 1: EVERYDAY / SOCIAL — community notice ────────────────────
+      // ── Passage 1: EVERYDAY / SOCIAL - community notice ────────────────────
       {
         id: 'gt-rd-s1-001-p1',
-        title: 'Riverside Community Pool — Visitor Information',
+        title: 'Riverside Community Pool - Visitor Information',
         body: `Welcome to Riverside Community Pool. Please read the following information before your first visit so that your time with us is safe and enjoyable.
 
 OPENING HOURS
@@ -101,10 +101,10 @@ For everyone's safety, running on the poolside is not permitted, and diving is a
           },
         ],
       },
-      // ── Passage 2: WORKPLACE — staff handbook extract ──────────────────────
+      // ── Passage 2: WORKPLACE - staff handbook extract ──────────────────────
       {
         id: 'gt-rd-s1-001-p2',
-        title: 'Staff Handbook — Requesting Annual Leave',
+        title: 'Staff Handbook - Requesting Annual Leave',
         body: `This section of the handbook explains how to request your paid annual leave. Please read it carefully, as following the correct procedure helps us keep every team properly staffed.
 
 YOUR ENTITLEMENT

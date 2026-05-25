@@ -58,7 +58,7 @@ export const SKILL_META: Record<
   },
 }
 
-// IELTS bands run 0–9 in 0.5 steps. Used for per-skill and overall scores.
+// IELTS bands run 0-9 in 0.5 steps. Used for per-skill and overall scores.
 export type Band =
   | 0
   | 0.5
@@ -136,7 +136,7 @@ export interface MatchingItem {
 
 /**
  * Matching: match each item to ONE option from a shared list. Covers the IELTS
- * formats the union previously couldn't express — Matching Headings, Matching
+ * formats the union previously couldn't express - Matching Headings, Matching
  * Features, Matching Information (which-paragraph), and Matching Sentence
  * Endings. Scores ONE mark per item (so a 5-item question is worth 5 marks),
  * mirroring the real exam. Options may be reused unless authoring says otherwise.

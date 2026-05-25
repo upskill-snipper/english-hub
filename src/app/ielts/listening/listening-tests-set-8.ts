@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 8) ─────────────────
+// ─── IELTS Academic Listening - practice test data (Set 8) ─────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,18 +6,18 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a phone call to a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a phone call to a
 //     dental surgery to book a check-up), assessed with form / note completion
 //     + a multiple-choice item. A surname is spelled and a phone number is
 //     dictated, and one detail (the appointment fee) depends on a stated choice.
-//   • Section 2 — an everyday MONOLOGUE (here: a guided talk for visitors to a
+//   • Section 2 - an everyday MONOLOGUE (here: a guided talk for visitors to a
 //     recycling centre), assessed with sentence completion + multiple choice,
 //     carrying signpost language ("first", "next", "finally") that the
 //     questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
 //     planning a geography field trip to a river valley), assessed with
 //     multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of bridge
+//   • Section 4 - an academic LECTURE / monologue (here: the history of bridge
 //     building and architecture), assessed with note/sentence completion +
 //     multiple choice.
 //
@@ -27,7 +27,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -38,12 +38,12 @@ export const LISTENING_SET_8: ListeningTest[] = [
   {
     id: 'ls-academic-8',
     title:
-      'Practice Test 8 — Booking a Dental Check-up, A Recycling Centre Tour, A Geography Field Trip & The History of Bridges',
+      'Practice Test 8 - Booking a Dental Check-up, A Recycling Centre Tour, A Geography Field Trip & The History of Bridges',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-8-s1',
-        title: 'Section 1 — Booking a dental check-up',
+        title: 'Section 1 - Booking a dental check-up',
         // ~270 words. Transactional dialogue (Section 1 style): a caller booking
         // a routine dental check-up over the phone. A surname is spelled and a
         // mobile number is dictated; one detail (the appointment fee) depends on a
@@ -68,7 +68,7 @@ MAN: What's the difference in cost?
 
 WOMAN: A standard NHS check-up is twenty-three pounds. A private check-up is forty pounds, but the appointment is longer and includes a scale and polish.
 
-MAN: I'll go private, then — I'd like the cleaning included.
+MAN: I'll go private, then - I'd like the cleaning included.
 
 WOMAN: A good choice. Now, the dentist you'll see is Dr Okonkwo, and she works Tuesdays and Thursdays. The first free slot is Thursday the ninth, at quarter past ten in the morning. Does that suit?
 
@@ -91,7 +91,7 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
               'Complete the registration form. Write ONE WORD for the answer.\n\nPatient surname: ____________',
             acceptableAnswers: ['Hartnell', 'hartnell'],
             explanation:
-              'The caller gives his name as “Gregory Hartnell” and spells the surname out: H-A-R-T-N-E-L-L. In Section 1, surnames are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives his name as “Gregory Hartnell” and spells the surname out: H-A-R-T-N-E-L-L. In Section 1, surnames are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-008-s1-q2',
@@ -99,7 +99,7 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
             prompt: 'Contact number: ____________. Write the digits exactly as you hear them.',
             acceptableAnswers: ['07833519246', '0783 3519246', '07833 519 246', '078 33 519 246'],
             explanation:
-              'The number is dictated as “oh-seven-eight-double-three, five-one-nine, two-four-six”, which is 07833519246. “Double three” means two 3s and “oh” means zero — spacing is not penalised, but every digit must be correct.',
+              'The number is dictated as “oh-seven-eight-double-three, five-one-nine, two-four-six”, which is 07833519246. “Double three” means two 3s and “oh” means zero - spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-008-s1-q3',
@@ -113,7 +113,7 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
             ],
             correctIndex: 1,
             explanation:
-              'An NHS check-up is “twenty-three pounds”, but a private check-up “is forty pounds… and includes a scale and polish.” Because he says, “I’ll go private, then — I’d like the cleaning included,” he pays £40. The distractors reuse the real figures but give the wrong reason.',
+              'An NHS check-up is “twenty-three pounds”, but a private check-up “is forty pounds… and includes a scale and polish.” Because he says, “I’ll go private, then - I’d like the cleaning included,” he pays £40. The distractors reuse the real figures but give the wrong reason.',
           },
           {
             id: 'ls-008-s1-q4',
@@ -138,7 +138,7 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
             prompt: 'The appointment is booked for Thursday the ____________. Write A NUMBER.',
             acceptableAnswers: ['9', 'ninth', '9th'],
             explanation:
-              'She offers “Thursday the ninth, at quarter past ten in the morning”, which the man accepts. The date is the 9th — ordinal numbers said aloud (ninth) map to the digits 9.',
+              'She offers “Thursday the ninth, at quarter past ten in the morning”, which the man accepts. The date is the 9th - ordinal numbers said aloud (ninth) map to the digits 9.',
           },
           {
             id: 'ls-008-s1-q7',
@@ -185,7 +185,7 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
       },
       {
         id: 'ls-academic-8-s2',
-        title: 'Section 2 — A guided tour of a recycling centre',
+        title: 'Section 2 - A guided tour of a recycling centre',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // welcoming a group of visitors to a community recycling centre and
         // explaining the layout, rules and process. Uses sequencing/signpost
@@ -195,13 +195,13 @@ WOMAN: You're very welcome. We'll see you on Thursday.`,
 
 First, a word about safety. This is a working site with vehicles moving around, so you must stay on the marked yellow path at all times, and please keep children holding an adult's hand throughout the visit.
 
-Now, let me explain how the centre is laid out. As you came in, you'll have noticed the large bays on your right. Each bay takes a different material — there's one for glass, one for paper and card, one for garden waste, and one for metal. The most common mistake visitors make is putting plastic bottles in with the glass, so do look carefully at the signs.
+Now, let me explain how the centre is laid out. As you came in, you'll have noticed the large bays on your right. Each bay takes a different material - there's one for glass, one for paper and card, one for garden waste, and one for metal. The most common mistake visitors make is putting plastic bottles in with the glass, so do look carefully at the signs.
 
 Next, we'll visit the sorting hall, which is the heart of the operation. Here, items travel along a moving belt and our staff remove anything that's been put in the wrong place by hand. I think you'll be surprised how much ends up in the wrong bin.
 
-After the sorting hall, we'll stop at the shop. This is something people often don't expect — we repair and sell furniture and bicycles that would otherwise be thrown away, and all the money raised goes to local schools.
+After the sorting hall, we'll stop at the shop. This is something people often don't expect - we repair and sell furniture and bicycles that would otherwise be thrown away, and all the money raised goes to local schools.
 
-Finally, a reminder for your own visits. The centre is open every day except Wednesday, and the busiest time is Saturday morning, so if you'd rather avoid the queues, come on a weekday afternoon. Right, let's begin — please follow me and stay together.`,
+Finally, a reminder for your own visits. The centre is open every day except Wednesday, and the busiest time is Saturday morning, so if you'd rather avoid the queues, come on a weekday afternoon. Right, let's begin - please follow me and stay together.`,
         questions: [
           {
             id: 'ls-008-s2-q11',
@@ -316,7 +316,7 @@ Finally, a reminder for your own visits. The centre is open every day except Wed
       },
       {
         id: 'ls-academic-8-s3',
-        title: 'Section 3 — Tutorial: planning a geography field trip',
+        title: 'Section 3 - Tutorial: planning a geography field trip',
         // ~290 words. Academic discussion (Section 3 style): two students (Leah and
         // Sam) and a tutor (Dr Mendoza) plan a geography field trip to a river
         // valley. Speakers debate logistics, method and equipment, so the questions
@@ -324,7 +324,7 @@ Finally, a reminder for your own visits. The centre is open every day except Wed
         // details).
         transcript: `DR MENDOZA: Right, Leah and Sam, let's finalise the plan for your river fieldwork. Where have you decided to go?
 
-LEAH: We're heading to the Calder Valley. We want to measure how the river changes as you move downstream — width, depth and the speed of the flow.
+LEAH: We're heading to the Calder Valley. We want to measure how the river changes as you move downstream - width, depth and the speed of the flow.
 
 DR MENDOZA: A solid choice. How many sites along the river will you study?
 
@@ -332,7 +332,7 @@ SAM: We're planning five sites, spaced about a kilometre apart, starting near th
 
 DR MENDOZA: Good. And what's the most important piece of equipment you'll need?
 
-LEAH: A tape measure for the width, and a metre stick for the depth. But for the speed, we'll use a float — just a small cork — and time how long it takes to travel ten metres.
+LEAH: A tape measure for the width, and a metre stick for the depth. But for the speed, we'll use a float - just a small cork - and time how long it takes to travel ten metres.
 
 DR MENDOZA: Sensible and cheap. One word of warning about the float method: take several readings at each site and use the average, because a single reading can be thrown off by the wind.
 
@@ -342,11 +342,11 @@ DR MENDOZA: Now, safety. Rivers can be deceptive. What's your plan there?
 
 LEAH: We'll all wear wellington boots, and nobody enters water above the knee. We're also taking a first-aid kit.
 
-DR MENDOZA: Essential. And the weather — have you checked the forecast?
+DR MENDOZA: Essential. And the weather - have you checked the forecast?
 
 SAM: We have. If there's heavy rain the day before, we'll postpone, because the river rises fast and the banks get slippery.
 
-DR MENDOZA: Very wise. My last suggestion: don't try to visit all five sites in one day. Split it across two — you'll get far more accurate measurements if you're not rushing.
+DR MENDOZA: Very wise. My last suggestion: don't try to visit all five sites in one day. Split it across two - you'll get far more accurate measurements if you're not rushing.
 
 LEAH: That makes sense. We'll book the minibus for both days.`,
         questions: [
@@ -370,7 +370,7 @@ LEAH: That makes sense. We'll book the minibus for both days.`,
             ],
             correctIndex: 0,
             explanation:
-              'Leah says, “We want to measure how the river changes as you move downstream — width, depth and the speed of the flow.” Option A matches the aim exactly.',
+              'Leah says, “We want to measure how the river changes as you move downstream - width, depth and the speed of the flow.” Option A matches the aim exactly.',
           },
           {
             id: 'ls-008-s3-q23',
@@ -387,7 +387,7 @@ LEAH: That makes sense. We'll book the minibus for both days.`,
               'To measure the depth of the river, the students will use a metre ____________. Write ONE WORD.',
             acceptableAnswers: ['stick'],
             explanation:
-              'Leah says, “A tape measure for the width, and a metre stick for the depth.” The answer is “stick” — the tape measure is for width, a deliberate distractor.',
+              'Leah says, “A tape measure for the width, and a metre stick for the depth.” The answer is “stick” - the tape measure is for width, a deliberate distractor.',
           },
           {
             id: 'ls-008-s3-q25',
@@ -401,7 +401,7 @@ LEAH: That makes sense. We'll book the minibus for both days.`,
             ],
             correctIndex: 1,
             explanation:
-              'Leah says, “for the speed, we’ll use a float — just a small cork — and time how long it takes to travel ten metres.” Option B matches.',
+              'Leah says, “for the speed, we’ll use a float - just a small cork - and time how long it takes to travel ten metres.” Option B matches.',
           },
           {
             id: 'ls-008-s3-q26',
@@ -456,19 +456,19 @@ LEAH: That makes sense. We'll book the minibus for both days.`,
             ],
             correctIndex: 1,
             explanation:
-              'He says, “don’t try to visit all five sites in one day. Split it across two — you’ll get far more accurate measurements if you’re not rushing.” Option B matches.',
+              'He says, “don’t try to visit all five sites in one day. Split it across two - you’ll get far more accurate measurements if you’re not rushing.” Option B matches.',
           },
         ],
       },
       {
         id: 'ls-academic-8-s4',
-        title: 'Section 4 — Lecture: the history of bridges',
+        title: 'Section 4 - Lecture: the history of bridges',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the history of bridge building
         // and architecture. Dense, factual and signposted ("let me begin", "by
         // the", "finally"), with the note/sentence-completion + multiple-choice mix
         // typical of Section 4, including one True/False/Not Given item.
-        transcript: `Good afternoon. Today I want to trace the long history of one of humanity's most useful structures — the bridge. Bridges let us cross rivers, valleys and even seas, and the story of how they were built is really the story of engineering itself.
+        transcript: `Good afternoon. Today I want to trace the long history of one of humanity's most useful structures - the bridge. Bridges let us cross rivers, valleys and even seas, and the story of how they were built is really the story of engineering itself.
 
 Let me begin with the earliest bridges. The very first were almost certainly nothing more than a tree trunk fallen across a stream, or a row of flat stepping stones. These are known as beam bridges, and the principle is simple: a flat span supported at each end. The drawback is that a beam can only stretch so far before it sags or breaks under its own weight.
 
@@ -478,7 +478,7 @@ For centuries, stone and timber were the only options. Everything changed in the
 
 By the nineteenth century, engineers were building suspension bridges, where the roadway hangs from huge cables strung between tall towers. This design can span the greatest distances of all, which is why it is used for the longest bridges in the world.
 
-Finally, a word on materials today. Most large modern bridges are built from steel and reinforced concrete — that is, concrete strengthened with steel bars inside. We'll look at how engineers test these designs next week.`,
+Finally, a word on materials today. Most large modern bridges are built from steel and reinforced concrete - that is, concrete strengthened with steel bars inside. We'll look at how engineers test these designs next week.`,
         questions: [
           {
             id: 'ls-008-s4-q31',
@@ -583,7 +583,7 @@ Finally, a word on materials today. Most large modern bridges are built from ste
               'Most large modern bridges are built from steel and reinforced ____________. Write ONE WORD.',
             acceptableAnswers: ['concrete'],
             explanation:
-              'She says, “Most large modern bridges are built from steel and reinforced concrete — that is, concrete strengthened with steel bars inside.” The answer is “concrete”.',
+              'She says, “Most large modern bridges are built from steel and reinforced concrete - that is, concrete strengthened with steel bars inside.” The answer is “concrete”.',
           },
         ],
       },

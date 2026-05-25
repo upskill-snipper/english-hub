@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 12) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 12) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,9 +8,9 @@
 //
 // This test SHOWCASES the matching question type added to the ObjectiveQuestion
 // union. It includes three matching questions across the three passages:
-//   • Passage 1 — variant:'headings'  (with two distractor headings)
-//   • Passage 2 — variant:'endings'   (sentence stems → candidate endings)
-//   • Passage 3 — variant:'features'  (statements → the named theories)
+//   • Passage 1 - variant:'headings'  (with two distractor headings)
+//   • Passage 2 - variant:'endings'   (sentence stems → candidate endings)
+//   • Passage 3 - variant:'features'  (statements → the named theories)
 // alongside the usual True/False/Not Given, MCQ and gap-completion items.
 //
 // One complete, carefully-checked test: 3 passages, 40 marks. Every answer is
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_12: ReadingTest[] = [
   {
     id: 'rd-academic-012',
-    title: 'Academic Reading — Practice Test 12',
+    title: 'Academic Reading - Practice Test 12',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -45,7 +45,7 @@ Modern cleaning products rarely rely on the surfactant alone. A washing powder i
 
 Heat and motion complete the process. Warm water makes grease softer and helps the surfactant work faster, while the tumbling of a washing machine or the scrubbing of a hand provides the mechanical energy that shakes loosened dirt free of the fibres. None of these aids removes the need for the surfactant, but together they explain why a modern wash achieves in half an hour what once took a long day of boiling and beating at the riverside.`,
         questions: [
-          // Matching — headings (with two distractors). 5 marks.
+          // Matching - headings (with two distractors). 5 marks.
           {
             id: 'rd-012-p1-q1',
             type: 'matching',
@@ -89,7 +89,7 @@ Heat and motion complete the process. Warm water makes grease softer and helps t
               },
             ],
             explanation:
-              'A explains that water slides over grease without lifting it, so plain water fails (i). B describes the molecule with a hydrophilic head and hydrophobic tail — two opposite ends (ii). C describes the surfactant surrounding the droplet to form a micelle that is carried off in the rinse (iii). D introduces ancient soap and its weakness in hard water, the grey curd (iv). The paragraph beginning "Modern cleaning products rarely rely on the surfactant alone" lists enzymes, builders and optical brighteners — the helpers in a washing powder (v). Headings vi (waterless cleaning) and vii (perfumes) are distractors not discussed in the passage.',
+              'A explains that water slides over grease without lifting it, so plain water fails (i). B describes the molecule with a hydrophilic head and hydrophobic tail - two opposite ends (ii). C describes the surfactant surrounding the droplet to form a micelle that is carried off in the rinse (iii). D introduces ancient soap and its weakness in hard water, the grey curd (iv). The paragraph beginning "Modern cleaning products rarely rely on the surfactant alone" lists enzymes, builders and optical brighteners - the helpers in a washing powder (v). Headings vi (waterless cleaning) and vii (perfumes) are distractors not discussed in the passage.',
           },
           {
             id: 'rd-012-p1-q2',
@@ -266,13 +266,13 @@ The influence of the horse was never confined to war. It carried messages and me
             explanation:
               'The fifth paragraph states that "The decisive innovation was the spoked wheel, far lighter than a solid disc, which made possible the light two-wheeled chariot." Option B is correct.',
           },
-          // Matching — sentence endings. 5 marks.
+          // Matching - sentence endings. 5 marks.
           {
             id: 'rd-012-p2-q16',
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence (1–5) with the correct ending (A–G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all.',
+              'Complete each sentence (1-5) with the correct ending (A-G) from the box below, based on the information in the passage. There are more endings than sentences, so you will not use them all.',
             options: [
               {
                 key: 'A',
@@ -331,7 +331,7 @@ The influence of the horse was never confined to war. It carried messages and me
               },
             ],
             explanation:
-              'Sentence 1 → A: the Botai left "enormous quantities of horse bones, far more than would be expected if the animals had merely been hunted." Sentence 2 → B: a rider "could travel several times farther in a day than one on foot." Sentence 3 → C: the chariot "became the dominant instrument of warfare across the Bronze Age." Sentence 4 → D: the shift depended on "equipment that let a rider control a galloping mount with his hands free to use a weapon." Sentence 5 → E: the language measures engine output "in units of horsepower." Endings F and G are distractors that contradict or are not stated in the passage (early carts were slow because of solid wheels, but that ending does not complete sentence 1–5 correctly, and crops are never grown on the steppe).',
+              'Sentence 1 → A: the Botai left "enormous quantities of horse bones, far more than would be expected if the animals had merely been hunted." Sentence 2 → B: a rider "could travel several times farther in a day than one on foot." Sentence 3 → C: the chariot "became the dominant instrument of warfare across the Bronze Age." Sentence 4 → D: the shift depended on "equipment that let a rider control a galloping mount with his hands free to use a weapon." Sentence 5 → E: the language measures engine output "in units of horsepower." Endings F and G are distractors that contradict or are not stated in the passage (early carts were slow because of solid wheels, but that ending does not complete sentence 1-5 correctly, and crops are never grown on the steppe).',
           },
           {
             id: 'rd-012-p2-q17',
@@ -365,7 +365,7 @@ Faced with unavoidable waiting, managers have learned to treat the queue not as 
 
 One of the most robust findings is that unoccupied time feels longer than occupied time. A wait with nothing to do drags, while the same interval passes quickly if attention is engaged. A celebrated illustration comes from an airport that received complaints about the long wait for luggage at the carousel. Rather than speed up the baggage handling, the airport moved the arrival gates farther from the reclaim hall, so that passengers spent most of the interval walking rather than standing idle at the belt. The actual wait was scarcely shortened, yet the complaints fell away, because the time now felt occupied.
 
-A second principle is that uncertain waits feel longer than waits of known length. Not knowing how long a delay will last breeds anxiety, and anxiety stretches time. This is why a screen that announces "your call will be answered in approximately four minutes" can soothe a caller even when the wait is no shorter than before; the information itself is a comfort. For the same reason, an unexplained wait is harder to bear than one whose cause is understood. A delay that is justified — passengers are told the aircraft is being de-iced for their safety — is tolerated far more readily than an identical delay about which nothing is said.
+A second principle is that uncertain waits feel longer than waits of known length. Not knowing how long a delay will last breeds anxiety, and anxiety stretches time. This is why a screen that announces "your call will be answered in approximately four minutes" can soothe a caller even when the wait is no shorter than before; the information itself is a comfort. For the same reason, an unexplained wait is harder to bear than one whose cause is understood. A delay that is justified - passengers are told the aircraft is being de-iced for their safety - is tolerated far more readily than an identical delay about which nothing is said.
 
 Fairness is a third and especially powerful concern. People will endure a long wait with reasonable calm provided they believe the order is just, but the sight of a latecomer being served first can provoke an anger out of all proportion to the few seconds actually lost. This insight explains a quiet revolution in the design of waiting areas. Banks and post offices have widely abandoned the old arrangement of a separate line at each counter in favour of a single combined line that feeds whichever window falls vacant next. The single line is not always faster, and may even feel longer because it looks so long, but it guarantees that customers are served strictly in the order they arrived, and that guarantee of fairness is worth more to most people than a marginal saving of time.
 
@@ -437,13 +437,13 @@ The most ambitious response, however, is to remove the need to stand in line at 
             explanation:
               'The fourth paragraph explains the airport "moved the arrival gates farther from the reclaim hall, so that passengers spent most of the interval walking rather than standing idle," making the time feel occupied. Option C is correct.',
           },
-          // Matching — features (statements → named principles/theories). 5 marks.
+          // Matching - features (statements → named principles/theories). 5 marks.
           {
             id: 'rd-012-p3-q25',
             type: 'matching',
             variant: 'features',
             prompt:
-              'The passage discusses several ideas about waiting. Match each statement (1–5) with the idea it best illustrates (A–D) from the list below. NB You may use any letter more than once.',
+              'The passage discusses several ideas about waiting. Match each statement (1-5) with the idea it best illustrates (A-D) from the list below. NB You may use any letter more than once.',
             options: [
               { key: 'A', label: 'Unoccupied time feels longer than occupied time.' },
               { key: 'B', label: 'Uncertain or unexplained waits feel longer than known ones.' },

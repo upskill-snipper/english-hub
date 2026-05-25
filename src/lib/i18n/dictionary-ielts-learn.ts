@@ -5,7 +5,7 @@
 //   • src/app/ielts/learn/page.tsx                  → the lesson library hub
 //   • src/app/ielts/learn/[skill]/[slug]/page.tsx   → a single lesson page
 //
-// SCOPE: interface copy ONLY — the hub eyebrow/heading/intro, the level filter,
+// SCOPE: interface copy ONLY - the hub eyebrow/heading/intro, the level filter,
 // the Continue-learning card, per-track progress, the lesson-page chrome
 // (breadcrumb, Mark-complete block, prev/next, footer CTAs) and the
 // "Lesson not found" panel. NO lesson CONTENT lives here: lesson titles,
@@ -15,7 +15,7 @@
 // NOT in this shard either.
 //
 // This shard is intentionally NOT wired into the global lookup() chain in
-// dictionary.ts — it is resolved locally by a useLearnT() hook in each page
+// dictionary.ts - it is resolved locally by a useLearnT() hook in each page
 // (modelled on usePlanT() in app/ielts/plan/page.tsx), falling back to the
 // shared useT() for any cross-module ielts.* key.
 //
@@ -42,8 +42,8 @@ export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'تعلّم IELTS خطوة خطوة',
   },
   'ielts.learn.hub.intro': {
-    en: 'Short, original lessons across every skill — from the very basics to a top band. Work through a track in order, or pick the topic you need. Your progress saves on this device.',
-    ar: 'دروس قصيرة وأصلية في كل مهارة — من أبسط الأساسيات لين أعلى Band. اشتغل على مسار بالترتيب، أو اختر الموضوع اللي تحتاجه. تقدّمك ينحفظ على هالجهاز.',
+    en: 'Short, original lessons across every skill - from the very basics to a top band. Work through a track in order, or pick the topic you need. Your progress saves on this device.',
+    ar: 'دروس قصيرة وأصلية في كل مهارة - من أبسط الأساسيات لين أعلى Band. اشتغل على مسار بالترتيب، أو اختر الموضوع اللي تحتاجه. تقدّمك ينحفظ على هالجهاز.',
   },
 
   // ─── Overall progress pill ── renders "{done} of {total} lessons done" ──────
@@ -76,25 +76,25 @@ export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string }>
   },
 
   // ─── Per-lesson meta (Continue card + lesson rows) ────────────────────────
-  // Renders "{min} min" — minutes stay a digit, interpolated.
+  // Renders "{min} min" - minutes stay a digit, interpolated.
   'ielts.learn.meta.minutes': { en: '{min} min', ar: '{min} دقيقة' },
   // The short form on a lesson row: "{min}m".
   'ielts.learn.meta.minutes_short': { en: '{min}m', ar: '{min} د' },
 
   // ─── Track blurbs (the one-line description under each track heading) ──────
-  // Interface copy describing each library track — NOT lesson content. Track
+  // Interface copy describing each library track - NOT lesson content. Track
   // labels themselves stay Latin (Foundation + the four skill names).
   'ielts.learn.track.blurb.foundation': {
-    en: 'New to IELTS? Start here — the format, the band scale, and the core English the test assumes.',
-    ar: 'جديد على IELTS؟ ابدأ هني — الشكل ومقياس Band واللغة الأساسية اللي يفترضها الامتحان.',
+    en: 'New to IELTS? Start here - the format, the band scale, and the core English the test assumes.',
+    ar: 'جديد على IELTS؟ ابدأ هني - الشكل ومقياس Band واللغة الأساسية اللي يفترضها الامتحان.',
   },
   'ielts.learn.track.blurb.listening': {
     en: 'Predict, follow the recording, and capture answers in the exact words within the word limit.',
     ar: 'توقّع، تابع التسجيل، والتقط الإجابات بالكلمات بالضبط ضمن حد الكلمات.',
   },
   'ielts.learn.track.blurb.reading': {
-    en: 'Skim, scan and tackle every question type — including True / False / Not Given — to time.',
-    ar: 'اقرأ بسرعة، دوّر، وعالج كل نوع سؤال — حتى True / False / Not Given — ضمن الوقت.',
+    en: 'Skim, scan and tackle every question type - including True / False / Not Given - to time.',
+    ar: 'اقرأ بسرعة، دوّر، وعالج كل نوع سؤال - حتى True / False / Not Given - ضمن الوقت.',
   },
   'ielts.learn.track.blurb.writing': {
     en: 'Plan Task 1 and Task 2, then build coherence, range and accuracy the examiner rewards.',
@@ -116,8 +116,8 @@ export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string }>
   'ielts.learn.track.practise': { en: 'Practise', ar: 'تدرّب' },
   // Empty states inside a track.
   'ielts.learn.track.empty_filtered': {
-    en: 'No lessons at this level in this track — try another level.',
-    ar: 'ما في دروس بهذا المستوى في هذا المسار — جرّب مستوى ثاني.',
+    en: 'No lessons at this level in this track - try another level.',
+    ar: 'ما في دروس بهذا المستوى في هذا المسار - جرّب مستوى ثاني.',
   },
   'ielts.learn.track.empty_soon': { en: 'Lessons coming soon.', ar: 'الدروس قريباً.' },
 
@@ -157,7 +157,7 @@ export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string }>
     ar: 'وصلت لنهاية هالمهارة.',
   },
   'ielts.learn.complete.next_lesson': { en: 'Next lesson', ar: 'الدرس التالي' },
-  // Renders "Practise {skill}" — skill label stays Latin, interpolated.
+  // Renders "Practise {skill}" - skill label stays Latin, interpolated.
   'ielts.learn.complete.practise_skill': { en: 'Practise {skill}', ar: 'تدرّب على {skill}' },
   'ielts.learn.complete.cta_title': { en: 'Finished reading?', ar: 'خلّصت القراءة؟' },
   'ielts.learn.complete.cta_body': {

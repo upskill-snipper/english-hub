@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 32) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 32) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains three matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and Matching Features — statements to materials
+// which-paragraph (Passage 2) and Matching Features - statements to materials
 // (Passage 3), alongside the usual mix of True/False/Not Given, multiple choice
 // and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_32: ReadingTest[] = [
   {
     id: 'rd-academic-032',
-    title: 'Academic Reading — Practice Test 32',
+    title: 'Academic Reading - Practice Test 32',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -30,17 +30,17 @@ export const READING_SET_32: ReadingTest[] = [
       {
         id: 'rd-academic-032-p1',
         title: 'The Making of English',
-        body: `English is spoken today by more people, in more places, than any language in history, yet it began as the obscure dialect of a few thousand settlers on a damp island at the edge of Europe. Its journey from that narrow beginning to its present reach was not the product of any deliberate plan. It was shaped, again and again, by invasion, conquest, trade and accident, each of which left its mark on the words English speakers now use without a second thought. The language that results is a curious mongrel, and the very features that students of English find most maddening — its irregular spelling, its enormous vocabulary, its habit of keeping several words where one would do — are scars left by this turbulent history.
+        body: `English is spoken today by more people, in more places, than any language in history, yet it began as the obscure dialect of a few thousand settlers on a damp island at the edge of Europe. Its journey from that narrow beginning to its present reach was not the product of any deliberate plan. It was shaped, again and again, by invasion, conquest, trade and accident, each of which left its mark on the words English speakers now use without a second thought. The language that results is a curious mongrel, and the very features that students of English find most maddening - its irregular spelling, its enormous vocabulary, its habit of keeping several words where one would do - are scars left by this turbulent history.
 
-The story begins in the fifth century, when bands of Germanic peoples, among them the Angles and the Saxons, crossed the sea from the European mainland and settled in the territory the Romans had recently abandoned. The speech they brought with them, which scholars call Old English, is the true root of the language, and it supplies most of its commonest words to this day. The everyday vocabulary of home and body and field — words such as house, child, eat, drink, earth and water — descends almost unbroken from this Germanic core. To a modern reader Old English looks utterly foreign, bristling with unfamiliar endings, but it is the foundation on which everything else was built, and its grammar still governs the small words that hold English sentences together.
+The story begins in the fifth century, when bands of Germanic peoples, among them the Angles and the Saxons, crossed the sea from the European mainland and settled in the territory the Romans had recently abandoned. The speech they brought with them, which scholars call Old English, is the true root of the language, and it supplies most of its commonest words to this day. The everyday vocabulary of home and body and field - words such as house, child, eat, drink, earth and water - descends almost unbroken from this Germanic core. To a modern reader Old English looks utterly foreign, bristling with unfamiliar endings, but it is the foundation on which everything else was built, and its grammar still governs the small words that hold English sentences together.
 
-The first great disturbance came from the north. From the late eighth century onwards, raiders and then settlers from Scandinavia, the people we loosely call the Vikings, poured into the north and east of England, and for a time much of the country lay under Norse control. The two languages, Old English and Old Norse, were close enough that speakers could half understand one another, and the result was not so much replacement as blending. Norse gave English a generous fistful of plain, useful words — sky, skin, leg, egg, knife, window and the pronoun they among them — and, more remarkably, it seems to have helped strip away many of the complicated word-endings that Old English had carried, leaving a simpler grammar behind.
+The first great disturbance came from the north. From the late eighth century onwards, raiders and then settlers from Scandinavia, the people we loosely call the Vikings, poured into the north and east of England, and for a time much of the country lay under Norse control. The two languages, Old English and Old Norse, were close enough that speakers could half understand one another, and the result was not so much replacement as blending. Norse gave English a generous fistful of plain, useful words - sky, skin, leg, egg, knife, window and the pronoun they among them - and, more remarkably, it seems to have helped strip away many of the complicated word-endings that Old English had carried, leaving a simpler grammar behind.
 
-A far more visible upheaval arrived in 1066, when William of Normandy crossed the Channel and seized the English throne. For some three centuries after the Norman Conquest, the rulers of England spoke French, and the language of the court, the law and high culture was French while English remained the despised tongue of the conquered. This long cohabitation poured a vast quantity of French vocabulary into English, especially words to do with government, law, warfare and refined living — parliament, justice, army, beef, mutton and countless others. Because the humble English word often survived alongside its grand French replacement, English ended up with pairs of near-synonyms at different levels of formality: a speaker may begin, start or commence the same action, choosing the word that fits the occasion.
+A far more visible upheaval arrived in 1066, when William of Normandy crossed the Channel and seized the English throne. For some three centuries after the Norman Conquest, the rulers of England spoke French, and the language of the court, the law and high culture was French while English remained the despised tongue of the conquered. This long cohabitation poured a vast quantity of French vocabulary into English, especially words to do with government, law, warfare and refined living - parliament, justice, army, beef, mutton and countless others. Because the humble English word often survived alongside its grand French replacement, English ended up with pairs of near-synonyms at different levels of formality: a speaker may begin, start or commence the same action, choosing the word that fits the occasion.
 
 While the vocabulary was swelling, the sound of the language was quietly transforming as well. Between roughly the fourteenth and the eighteenth centuries, the way English speakers pronounced their long vowels shifted in a sweeping and still imperfectly understood change that linguists call the Great Vowel Shift. Vowels that had once been sounded much as they still are in many continental languages migrated to new positions in the mouth, so that a word once pronounced something like 'naym' came to be said as 'name', and 'see' moved away from a sound nearer 'say'. Crucially, the change to pronunciation came after spelling had begun to settle into fixed forms, with the result that English spelling preserves, like a fly in amber, the pronunciation of an earlier age. This is a chief reason why the written language so often seems to defy its own sounds.
 
-The last chapter is one of expansion. From the seventeenth century onwards, English travelled the globe in the holds of ships, carried by traders, settlers, soldiers and administrators to the Americas, to Africa, to South Asia and to Australasia. Everywhere it went it borrowed as freely as it always had, taking words from the languages it met — bungalow and shampoo from India, canoe from the Caribbean, boomerang from Australia — and carrying them back to enrich the parent tongue. The same restless appetite for foreign words that had absorbed Norse and French now drew on the whole world, and the vocabulary of English swelled to a size unmatched by any rival. A language born of one small migration had become, through many more, the nearest thing the modern world has to a common tongue.`,
+The last chapter is one of expansion. From the seventeenth century onwards, English travelled the globe in the holds of ships, carried by traders, settlers, soldiers and administrators to the Americas, to Africa, to South Asia and to Australasia. Everywhere it went it borrowed as freely as it always had, taking words from the languages it met - bungalow and shampoo from India, canoe from the Caribbean, boomerang from Australia - and carrying them back to enrich the parent tongue. The same restless appetite for foreign words that had absorbed Norse and French now drew on the whole world, and the vocabulary of English swelled to a size unmatched by any rival. A language born of one small migration had become, through many more, the nearest thing the modern world has to a common tongue.`,
         questions: [
           // ── Matching Headings (6 items, 8 options → 2 distractors) = 6 marks ──
           {
@@ -48,7 +48,7 @@ The last chapter is one of expansion. From the seventeenth century onwards, Engl
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'The Germanic foundation of everyday words' },
               { key: 'ii', label: 'A mongrel tongue shaped by accident' },
@@ -68,7 +68,7 @@ The last chapter is one of expansion. From the seventeenth century onwards, Engl
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'viii' },
             ],
             explanation:
-              'A calls English "a curious mongrel" shaped "by invasion, conquest, trade and accident" (ii). B describes the Germanic Old English core supplying everyday words like house and water (i). C covers Norse settlers and how they helped "strip away" word-endings, leaving "a simpler grammar" (v). D explains how French "poured a vast quantity of French vocabulary into English" and created near-synonyms (iii). E describes the Great Vowel Shift, a change in sound that spelling did not follow (vi). F traces English travelling "around the globe" and borrowing words worldwide (viii). Heading iv (deliberate spelling reform) is a distractor — the passage says spelling fossilised old pronunciation, not that it was reformed; heading vii (decline as a world language) is a distractor that contradicts the passage.',
+              'A calls English "a curious mongrel" shaped "by invasion, conquest, trade and accident" (ii). B describes the Germanic Old English core supplying everyday words like house and water (i). C covers Norse settlers and how they helped "strip away" word-endings, leaving "a simpler grammar" (v). D explains how French "poured a vast quantity of French vocabulary into English" and created near-synonyms (iii). E describes the Great Vowel Shift, a change in sound that spelling did not follow (vi). F traces English travelling "around the globe" and borrowing words worldwide (viii). Heading iv (deliberate spelling reform) is a distractor - the passage says spelling fossilised old pronunciation, not that it was reformed; heading vii (decline as a world language) is a distractor that contradicts the passage.',
           },
           {
             id: 'rd-032-p1-q2',
@@ -158,7 +158,7 @@ What counts as the right reverberation time depends entirely on the purpose of t
 
 Reverberation time is far from the whole story, however, for it describes only how long sound lasts, not where it comes from or how evenly it is spread. The shape of a hall matters quite as much as its size. Curved or domed surfaces, which architects often find beautiful, are an acoustic hazard, because a concave wall can focus reflected sound into a few favoured seats while starving others, and a smooth dome may gather echoes and hurl them back at the stage. The interior must also scatter sound so that it reaches every listener from many directions at once, which is why the ornate mouldings, statues and coffered ceilings of older halls, far from being mere decoration, perform the useful task of breaking up and diffusing the sound. The narrow, high-walled 'shoebox' shape of certain nineteenth-century halls, long dismissed as old-fashioned, turned out by happy accident to scatter sound superbly, and several remain among the most admired rooms in the world.
 
-The annals of concert-hall building are consequently full of expensive failures as well as triumphs. More than one celebrated modern auditorium opened to dismay, its sound muddy or harsh or unevenly distributed, and had to be altered at great cost — its surfaces broken up, hanging panels suspended from the ceiling, or absorbent material added or stripped away. Such adjustable elements are now often built in from the start: movable reflectors, retractable curtains and chambers that can be opened or closed allow a modern hall to lengthen or shorten its reverberation to suit a symphony one night and a lecture the next. In this way designers try to escape the old dilemma, tuning a single room to more than one purpose rather than committing it forever to one.
+The annals of concert-hall building are consequently full of expensive failures as well as triumphs. More than one celebrated modern auditorium opened to dismay, its sound muddy or harsh or unevenly distributed, and had to be altered at great cost - its surfaces broken up, hanging panels suspended from the ceiling, or absorbent material added or stripped away. Such adjustable elements are now often built in from the start: movable reflectors, retractable curtains and chambers that can be opened or closed allow a modern hall to lengthen or shorten its reverberation to suit a symphony one night and a lecture the next. In this way designers try to escape the old dilemma, tuning a single room to more than one purpose rather than committing it forever to one.
 
 For all the sophistication of modern measurement, acoustics remains a discipline in which the ear has the final word. Computer models can now predict with fair accuracy how sound will behave in a room that exists only as a drawing, and scale models, sometimes filled with a substitute for air so that ultrasonic waves can stand in for ordinary sound, allow designers to listen to a building before it is built. Yet the most reliable judgement is still the impossible-to-quantify response of a trained listener, who can tell within a few notes whether a hall sings or sulks. The finest halls are admired not because they score perfectly on any single number, but because of an elusive blend of warmth, clarity and envelopment that no formula has yet fully captured.`,
         questions: [
@@ -168,7 +168,7 @@ For all the sophistication of modern measurement, acoustics remains a discipline
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -309,7 +309,7 @@ That near-universality, however, conceals an astonishing range. Lifespan varies 
 
 What all this means for human beings is the most actively contested question of all. No serious researcher claims that ageing will soon be abolished, but the field has moved from describing decline to probing whether it can be slowed. Experiments have shown that in laboratory animals a substantially reduced diet can lengthen life, and that certain genes, when altered, can do the same, hinting that lifespan is more adjustable than once believed. Other work focuses on clearing out the worn-out, non-dividing cells that accumulate in ageing tissue and appear to poison their neighbours. None of this amounts to a cure, and much that succeeds in a worm or a mouse fails in a human. Yet the direction of the work marks a profound shift: ageing is no longer regarded as an immovable fact of life, but as a biological process that, like any other, might one day be understood well enough to be influenced.`,
         questions: [
-          // ── Matching Features — statements to terms (5 items) = 5 marks ──
+          // ── Matching Features - statements to terms (5 items) = 5 marks ──
           {
             id: 'rd-032-p3-q1',
             type: 'matching',

@@ -1,17 +1,17 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-5 ───────────────────────
 // A fifth dedicated bank of SIX Academic Writing Task 2 questions (argument /
 // opinion essays). As with every Task 2 prompt, none carries a visual, so no
-// prompt defines a `chart`, `imageSrc` or `imageAlt` field — the writing page
+// prompt defines a `chart`, `imageSrc` or `imageAlt` field - the writing page
 // renders the question text from `prompt` alone.
 //
 // The six deliberately vary the task instruction across the common Task 2
 // formats: discussion (both views + opinion), opinion (agree/disagree),
 // problem & solution / causes & solutions, and advantages & disadvantages.
-// Topics are fresh and distinct from sets T2-1…T2-4 and the Wave 1–3 banks —
+// Topics are fresh and distinct from sets T2-1…T2-4 and the Wave 1-3 banks -
 // learning a second language at primary school, responsibility for tackling
 // climate change, whether social media connects or isolates people, taxing
 // unhealthy food, salary versus job satisfaction when choosing a career, and
-// the impact of international tourism on local cultures — so this set
+// the impact of international tourism on local cultures - so this set
 // complements rather than duplicates the existing item bank.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

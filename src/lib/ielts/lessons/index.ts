@@ -41,5 +41,5 @@ export function lessonById(id: string): Lesson | undefined {
   return ALL_LESSONS.find((l) => l.id === id)
 }
 
-/** Total lessons in the library — used for progress denominators. */
+/** Total lessons in the library - used for progress denominators. */
 export const LESSON_COUNT = ALL_LESSONS.length

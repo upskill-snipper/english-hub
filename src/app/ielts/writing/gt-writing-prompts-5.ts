@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — formal (to a company / a council),
+//     The register varies by prompt - formal (to a company / a council),
 //     semi-formal (to a club secretary / a colleague) or informal (to a
 //     friend). The situation and the three bullets live inside `prompt`.
 //     minWords 150, suggestedMinutes 20.
@@ -22,7 +22,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_5: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter of complaint (about a local service) ───────
+  // ── Task 1 · A - FORMAL letter of complaint (about a local service) ───────
   {
     id: 'gt5-wt1-bus-service',
     task: 'writing-task-1',
@@ -45,7 +45,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — FORMAL letter of request (to the local council) ──────────
+  // ── Task 1 · B - FORMAL letter of request (to the local council) ──────────
   {
     id: 'gt5-wt1-pedestrian-crossing',
     task: 'writing-task-1',
@@ -68,7 +68,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — SEMI-FORMAL letter (request to a club secretary) ─────────
+  // ── Task 1 · C - SEMI-FORMAL letter (request to a club secretary) ─────────
   {
     id: 'gt5-wt1-lost-property',
     task: 'writing-task-1',
@@ -91,7 +91,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · D — INFORMAL letter (arranging a visit with a friend) ────────
+  // ── Task 1 · D - INFORMAL letter (arranging a visit with a friend) ────────
   {
     id: 'gt5-wt1-visit-your-town',
     task: 'writing-task-1',
@@ -114,7 +114,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree / disagree) ───────────────────────────────
+  // ── Task 2 · A - opinion (agree / disagree) ───────────────────────────────
   {
     id: 'gt5-wt2-advertising-children',
     task: 'writing-task-2',
@@ -133,7 +133,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — problem / solution ───────────────────────────────────────
+  // ── Task 2 · B - problem / solution ───────────────────────────────────────
   {
     id: 'gt5-wt2-local-shops-closing',
     task: 'writing-task-2',
@@ -152,7 +152,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — discussion (both views + opinion) ────────────────────────
+  // ── Task 2 · C - discussion (both views + opinion) ────────────────────────
   {
     id: 'gt5-wt2-screens-vs-outdoors',
     task: 'writing-task-2',
@@ -171,7 +171,7 @@ export const GT_WRITING_SET_5: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · D — advantages / disadvantages ───────────────────────────────
+  // ── Task 2 · D - advantages / disadvantages ───────────────────────────────
   {
     id: 'gt5-wt2-recycling-rules',
     task: 'writing-task-2',

@@ -1,5 +1,5 @@
 /**
- * dictionary-marker-drive.ts — paid-marker-drive UI surfaces.
+ * dictionary-marker-drive.ts - paid-marker-drive UI surfaces.
  *
  * Curated EN + Khaleeji (Gulf) AR for the four paid-marker pages shipped in
  * commit 6f444c6f:
@@ -10,19 +10,19 @@
  *
  * These are internal staff / contracted-marker screens (not student or
  * parent facing), so the Arabic is a faithful, plain Gulf rendering of the
- * operational terms — matched to the register used in
+ * operational terms - matched to the register used in
  * dictionary-admin-ai-marking.ts. Technical tokens (AO, QWK, CSV, JSON,
  * GCSE, NDA, exam-board / paper codes, grade letters) stay in Latin script
  * per the house convention.
  *
  * EN strings are the EXACT in-file English fallbacks from each page's
- * tf()/tt() shim — once these keys resolve, the shim stops substituting and
+ * tf()/tt() shim - once these keys resolve, the shim stops substituting and
  * the screens become bilingual like the rest of the product. No page code
  * was changed.
  */
 export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─────────────────────────────────────────────────────────────────────────
-  // /admin/marker-drive — Paid Marker Drive  (admin.md.*)
+  // /admin/marker-drive - Paid Marker Drive  (admin.md.*)
   // ─────────────────────────────────────────────────────────────────────────
   'admin.md.back_to_admin': { en: 'Back to admin', ar: 'رجوع للوحة الأدمن' },
   'admin.md.refresh': { en: 'Refresh', ar: 'تحديث' },
@@ -140,7 +140,7 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
   'admin.md.col.rate': { en: 'Rate (p)', ar: 'السعر (بنس)' },
   'admin.md.col.docs': { en: 'Docs', ar: 'المستندات' },
 
-  // Marker status pills (admin.md.mstatus.<status>) — common values
+  // Marker status pills (admin.md.mstatus.<status>) - common values
   'admin.md.mstatus.active': { en: 'active', ar: 'فعّال' },
   'admin.md.mstatus.paused': { en: 'paused', ar: 'موقوف مؤقتاً' },
   'admin.md.mstatus.pending': { en: 'pending', ar: 'بانتظار' },
@@ -166,7 +166,7 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
   'admin.md.assign.done': { en: 'Assigned', ar: 'تم التوزيع' },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // /marker — Paid Marker · Review Console  (marker.*)
+  // /marker - Paid Marker · Review Console  (marker.*)
   // ─────────────────────────────────────────────────────────────────────────
   'marker.gate.title': { en: 'Marker access only', ar: 'الدخول للمصحّحين فقط' },
   'marker.gate.body': {
@@ -201,7 +201,7 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'ما عندك إجابات تنتظر المراجعة حالياً. التوزيعات الجديدة بتظهر هنا تلقائياً.',
   },
 
-  // Current item — labels
+  // Current item - labels
   'marker.gold.badge': { en: 'Gold QA', ar: 'Gold QA' },
   'marker.question.label': { en: 'Question', ar: 'السؤال' },
   'marker.studied.label': { en: 'Set text / extract', ar: 'النص المقرّر / المقتطف' },
@@ -231,14 +231,14 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'ليش غيّرت درجة/ملاحظات الذكاء؟ (إشارة تدريب)',
   },
   'marker.field.reason_hint': {
-    en: 'You changed the draft — a reason is required.',
-    ar: 'عدّلت المسودّة — لازم تكتب سبب.',
+    en: 'You changed the draft - a reason is required.',
+    ar: 'عدّلت المسودّة - لازم تكتب سبب.',
   },
 
   // Validation
   'marker.review.reason_required': {
-    en: 'Add an adjustment reason — this is the training signal whenever you change the mark or feedback.',
-    ar: 'أضف سبب تعديل — هذي إشارة التدريب كل ما تغيّر الدرجة أو الملاحظات.',
+    en: 'Add an adjustment reason - this is the training signal whenever you change the mark or feedback.',
+    ar: 'أضف سبب تعديل - هذي إشارة التدريب كل ما تغيّر الدرجة أو الملاحظات.',
   },
   'marker.review.grade_required': { en: 'Choose a final mark.', ar: 'اختر درجة نهائية.' },
   'marker.review.submit_failed': {
@@ -260,7 +260,7 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
   'marker.progress.remaining': { en: 'In this batch', ar: 'في هالدفعة' },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // /admin/marker-pay — Marker Pay & Throughput  (admin.marker_pay.*)
+  // /admin/marker-pay - Marker Pay & Throughput  (admin.marker_pay.*)
   // ─────────────────────────────────────────────────────────────────────────
   'admin.marker_pay.title': { en: 'Marker Pay & Throughput', ar: 'دفعات المصحّحين والإنتاجية' },
   'admin.marker_pay.subtitle': {
@@ -297,8 +297,8 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
   'admin.marker_pay.col.amount': { en: 'Amount', ar: 'المبلغ' },
 
   'admin.marker_pay.rate_missing': {
-    en: 'No pay rate set for this marker — amount is £0 until configured.',
-    ar: 'ما في سعر دفع محدّد لهذا المصحّح — المبلغ £0 لين يتضبط.',
+    en: 'No pay rate set for this marker - amount is £0 until configured.',
+    ar: 'ما في سعر دفع محدّد لهذا المصحّح - المبلغ £0 لين يتضبط.',
   },
   'admin.marker_pay.none': {
     en: 'No markers found for this period.',
@@ -307,11 +307,11 @@ export const MARKER_DRIVE_DICTIONARY: Record<string, { en: string; ar: string }>
   'admin.marker_pay.totals': { en: 'Totals', ar: 'الإجماليات' },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // /admin/marker-qa — Marker QA scorecard  (admin.mqa.*)
+  // /admin/marker-qa - Marker QA scorecard  (admin.mqa.*)
   // ─────────────────────────────────────────────────────────────────────────
   'admin.mqa.title': {
-    en: 'Marker QA — gold calibration & inter-marker agreement',
-    ar: 'جودة المصحّحين — معايرة Gold والتوافق بين المصحّحين',
+    en: 'Marker QA - gold calibration & inter-marker agreement',
+    ar: 'جودة المصحّحين - معايرة Gold والتوافق بين المصحّحين',
   },
   'admin.mqa.error_load': {
     en: 'Could not load the marker QA scorecard.',

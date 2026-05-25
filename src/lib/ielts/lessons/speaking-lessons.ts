@@ -9,7 +9,7 @@
 import type { Lesson } from '@/lib/ielts/curriculum'
 
 export const SPEAKING_LESSONS: Lesson[] = [
-  // ── Unit: speak-part1 — Part 1: the interview ────────────────────────────
+  // ── Unit: speak-part1 - Part 1: the interview ────────────────────────────
   {
     id: 'speak-part1-extend',
     skill: 'speaking',
@@ -22,15 +22,15 @@ export const SPEAKING_LESSONS: Lesson[] = [
     estMinutes: 11,
     body: `# Part 1: answering like a person, not a form
 
-Part 1 lasts four to five minutes. The examiner asks easy questions about you — your home, your work or studies, your free time. The trap is treating it like a form to fill in: "Do you like cooking?" → "Yes." That single word gives the examiner nothing to score, and silence follows. Part 1 is where you set the tone of the whole test: relaxed, natural answers here build the momentum that carries you into the harder parts.
+Part 1 lasts four to five minutes. The examiner asks easy questions about you - your home, your work or studies, your free time. The trap is treating it like a form to fill in: "Do you like cooking?" → "Yes." That single word gives the examiner nothing to score, and silence follows. Part 1 is where you set the tone of the whole test: relaxed, natural answers here build the momentum that carries you into the harder parts.
 
 ## The method: Answer + Reason + Example (ARE)
 
-Aim for **two to three sentences** per question. No more — Part 1 is a warm-up, not a speech.
+Aim for **two to three sentences** per question. No more - Part 1 is a warm-up, not a speech.
 
 1. **Answer** the question directly (don't dodge it).
-2. **Reason** — say *why*.
-3. **Example** — give a small, concrete detail.
+2. **Reason** - say *why*.
+3. **Example** - give a small, concrete detail.
 
 This pattern feeds three band criteria at once: it keeps you talking (Fluency & Coherence), it forces a *reason/example* link word (Coherence), and the concrete detail pulls in real vocabulary (Lexical Resource).
 
@@ -40,9 +40,9 @@ This pattern feeds three band criteria at once: it keeps you talking (Fluency & 
 
 > **Weak:** "Yes, I like it."
 
-> **Strong:** "I do, actually — though more on weekends than on weekdays. During the week I'm usually too tired after work to do anything ambitious, so I just throw something quick together. But on a Sunday I'll happily spend an hour making a proper curry from scratch."
+> **Strong:** "I do, actually - though more on weekends than on weekdays. During the week I'm usually too tired after work to do anything ambitious, so I just throw something quick together. But on a Sunday I'll happily spend an hour making a proper curry from scratch."
 
-Why the strong version scores: *Answer* ("I do, actually"), *Reason* ("too tired after work"), *Example* ("a proper curry from scratch"). Notice the natural fillers — "actually", "happily" — and the contrast structure "more on weekends than on weekdays". It sounds like a person talking, not a sentence being recited.
+Why the strong version scores: *Answer* ("I do, actually"), *Reason* ("too tired after work"), *Example* ("a proper curry from scratch"). Notice the natural fillers - "actually", "happily" - and the contrast structure "more on weekends than on weekdays". It sounds like a person talking, not a sentence being recited.
 
 ## Worked example 2
 
@@ -50,21 +50,21 @@ Why the strong version scores: *Answer* ("I do, actually"), *Reason* ("too tired
 
 > **Weak:** "Outdoors. It is better."
 
-> **Strong:** "Definitely outdoors, I'd say — I get a bit restless if I'm cooped up at home all day. I'm lucky to live near a big park, so most evenings I'll go for a run or just sit with a coffee and people-watch. There's something about fresh air that clears my head."
+> **Strong:** "Definitely outdoors, I'd say - I get a bit restless if I'm cooped up at home all day. I'm lucky to live near a big park, so most evenings I'll go for a run or just sit with a coffee and people-watch. There's something about fresh air that clears my head."
 
 Why it scores: a varied *Answer* ("Definitely outdoors, I'd say"), a *Reason* ("I get restless… cooped up"), and a vivid *Example* ("go for a run or… people-watch"). The phrasal verb *cooped up*, the collocation *clears my head*, and the relaxed *I'm lucky to* are exactly the natural lexis Part 1 rewards.
 
-## Worked example 3 — when the honest answer is "no"
+## Worked example 3 - when the honest answer is "no"
 
-You do **not** have to love the topic. A confident *negative* answer, still built with ARE, scores just as well as a positive one — examiners reward the *language*, not your enthusiasm.
+You do **not** have to love the topic. A confident *negative* answer, still built with ARE, scores just as well as a positive one - examiners reward the *language*, not your enthusiasm.
 
 **Q: "Do you like watching sports on television?"**
 
 > **Weak:** "No, I don't like it."
 
-> **Strong:** "Not really, to be honest — I've just never caught the bug. I find sitting still for two hours a bit much, and I'd usually rather be out doing something myself than watching others. The one exception is a big final, maybe, when everyone's talking about it and you get swept up in the atmosphere."
+> **Strong:** "Not really, to be honest - I've just never caught the bug. I find sitting still for two hours a bit much, and I'd usually rather be out doing something myself than watching others. The one exception is a big final, maybe, when everyone's talking about it and you get swept up in the atmosphere."
 
-Why it scores: the *Answer* is softened naturally (*Not really, to be honest*), the *Reason* is genuine (*never caught the bug… sitting still… a bit much*), and the *Example* even adds a small concession (*the one exception is a big final*). *Caught the bug* and *get swept up in the atmosphere* are idiomatic — proof that a "no" answer is no barrier to a high band.
+Why it scores: the *Answer* is softened naturally (*Not really, to be honest*), the *Reason* is genuine (*never caught the bug… sitting still… a bit much*), and the *Example* even adds a small concession (*the one exception is a big final*). *Caught the bug* and *get swept up in the atmosphere* are idiomatic - proof that a "no" answer is no barrier to a high band.
 
 ## Functional language to vary your answers
 
@@ -85,7 +85,7 @@ Why it scores: the *Answer* is softened naturally (*Not really, to be honest*), 
 Don't start every answer with "Yes" or "I think". Rotate through natural alternatives:
 
 - "I'd say so, yes…"
-- "Not really, no — I find that…"
+- "Not really, no - I find that…"
 - "It depends, honestly. If…, then…"
 
 ## Try it
@@ -93,7 +93,7 @@ Don't start every answer with "Yes" or "I think". Rotate through natural alterna
 Open **[the Speaking practice room](/ielts/speaking)** and answer five Part 1 questions out loud. Record yourself. For each one, check: did I give an Answer, a Reason, *and* an Example? Did I stop at three sentences? Did I open each answer differently? Replay it and listen for one-word answers you could expand.`,
   },
 
-  // ── Unit: speak-part2 — Part 2: the cue card ─────────────────────────────
+  // ── Unit: speak-part2 - Part 2: the cue card ─────────────────────────────
   {
     id: 'speak-part2-cuecard',
     skill: 'speaking',
@@ -106,22 +106,22 @@ Open **[the Speaking practice room](/ielts/speaking)** and answer five Part 1 qu
     estMinutes: 14,
     body: `# Part 2: plan in 60 seconds, talk for two minutes
 
-You're handed a card with a topic and four bullet prompts. You get **one minute to prepare** (with paper and a pencil) and must then speak for **one to two minutes** without interruption. Most candidates either dry up after 40 seconds or ramble with no shape. Both lose marks — the long turn is where *Fluency & Coherence* is tested hardest, because you have to sustain organised speech entirely on your own.
+You're handed a card with a topic and four bullet prompts. You get **one minute to prepare** (with paper and a pencil) and must then speak for **one to two minutes** without interruption. Most candidates either dry up after 40 seconds or ramble with no shape. Both lose marks - the long turn is where *Fluency & Coherence* is tested hardest, because you have to sustain organised speech entirely on your own.
 
 ## The method: notes, not sentences
 
-In your 60 seconds, **do not write full sentences** — you won't have time to read them. Write **one or two keywords per bullet**, plus a couple of "good words" you want to use. The bullets *are* your structure: cover each one in order, then keep going.
+In your 60 seconds, **do not write full sentences** - you won't have time to read them. Write **one or two keywords per bullet**, plus a couple of "good words" you want to use. The bullets *are* your structure: cover each one in order, then keep going.
 
 A reliable spine for "Describe a…" cards:
 
-1. **Set the scene** — what / who / when / where (turns the first bullet into context).
-2. **Develop the middle bullets** — give detail, an anecdote, sensory description.
-3. **Answer the "why/how you felt" bullet** — this is where bands are won; *explain and reflect*, don't just state.
-4. **Round off** — a closing thought so you don't stop mid-air.
+1. **Set the scene** - what / who / when / where (turns the first bullet into context).
+2. **Develop the middle bullets** - give detail, an anecdote, sensory description.
+3. **Answer the "why/how you felt" bullet** - this is where bands are won; *explain and reflect*, don't just state.
+4. **Round off** - a closing thought so you don't stop mid-air.
 
-The last bullet is almost always reflective ("explain why it was important / how you felt"). Spend the most time there — reflection produces the complex grammar and opinion language examiners reward.
+The last bullet is almost always reflective ("explain why it was important / how you felt"). Spend the most time there - reflection produces the complex grammar and opinion language examiners reward.
 
-## Worked example 1 — a place
+## Worked example 1 - a place
 
 **Card: "Describe a place you like to relax. Say where it is, how often you go, what you do there, and why you find it relaxing."**
 
@@ -141,11 +141,11 @@ Opening 20 seconds, spoken:
 
 Reflective close (the highest-scoring bullet):
 
-> "What really makes it relaxing, though, is that I leave my phone in my pocket and just let the morning slow down. After an hour by the water I feel completely unwound — it's my way of switching off before the week starts again."
+> "What really makes it relaxing, though, is that I leave my phone in my pocket and just let the morning slow down. After an hour by the water I feel completely unwound - it's my way of switching off before the week starts again."
 
 See how the bullets become a story spine, and the prepped words ("tranquil", "unwind") drop in naturally rather than being forced. The *why* bullet uses *what really makes it… is that…*, a cleft structure that lifts *Grammatical Range*.
 
-## Worked example 2 — a person
+## Worked example 2 - a person
 
 **Card: "Describe a person who has influenced you."**
 
@@ -161,9 +161,9 @@ good words: instil, take an interest, turning point
 
 A developed middle + reflective spoken stretch:
 
-> "He wasn't the warmest teacher on the surface — quite strict, actually — but he took a genuine interest in the students who tried. I remember him lending me books that weren't even on the syllabus. Looking back, that was a real turning point for me, because he instilled the idea that I could push myself far harder than I'd assumed."
+> "He wasn't the warmest teacher on the surface - quite strict, actually - but he took a genuine interest in the students who tried. I remember him lending me books that weren't even on the syllabus. Looking back, that was a real turning point for me, because he instilled the idea that I could push myself far harder than I'd assumed."
 
-Why it scores: narrative past tenses (*took, lending, instilled*), the reflective frame *Looking back… that was a turning point*, and precise lexis (*instil, take a genuine interest*) — exactly the range the long turn is designed to reveal.
+Why it scores: narrative past tenses (*took, lending, instilled*), the reflective frame *Looking back… that was a turning point*, and precise lexis (*instil, take a genuine interest*) - exactly the range the long turn is designed to reveal.
 
 ## Functional language for the long turn
 
@@ -178,11 +178,11 @@ If you reach the end early, **extend with a contrast or a hypothetical**:
 - "That said, it wasn't always like that…"
 - "If I had more time, I'd probably go there far more often, because…"
 
-These buy you 20–30 seconds and show range.
+These buy you 20-30 seconds and show range.
 
 ## Common mistakes
 
-- **Writing sentences in prep** and then reading them aloud — it sounds flat and robotic.
+- **Writing sentences in prep** and then reading them aloud - it sounds flat and robotic.
 - **Finishing in 40 seconds.** Use every bullet; reflect hard on the last one.
 - **Ignoring a bullet.** The examiner notices. Touch all four.
 - **Listing with no detail.** "I do many things there" → instead name them and add colour.
@@ -190,10 +190,10 @@ These buy you 20–30 seconds and show range.
 
 ## Try it
 
-Go to **[the Speaking practice room](/ielts/speaking)** and pick a Part 2 cue card. Take exactly **60 seconds** to make keyword notes, then speak for a full **two minutes** — record it. Afterwards, check: did I cover all four bullets, did I reach 1:45+, and did the *why/how* bullet get the most time and the most reflective language?`,
+Go to **[the Speaking practice room](/ielts/speaking)** and pick a Part 2 cue card. Take exactly **60 seconds** to make keyword notes, then speak for a full **two minutes** - record it. Afterwards, check: did I cover all four bullets, did I reach 1:45+, and did the *why/how* bullet get the most time and the most reflective language?`,
   },
 
-  // ── Unit: speak-part3 — Part 3: the discussion ───────────────────────────
+  // ── Unit: speak-part3 - Part 3: the discussion ───────────────────────────
   {
     id: 'speak-part3-develop',
     skill: 'speaking',
@@ -202,26 +202,26 @@ Go to **[the Speaking practice room](/ielts/speaking)** and pick a Part 2 cue ca
     title: 'Part 3: develop, justify and speculate',
     slug: 'part-3-discussion-developing-ideas',
     summary:
-      'Push abstract answers to band 7+ with the Point–Reason–Example–Counterpoint frame and the language of speculation.',
+      'Push abstract answers to band 7+ with the Point-Reason-Example-Counterpoint frame and the language of speculation.',
     estMinutes: 15,
     body: `# Part 3: develop, justify and speculate
 
-Part 3 is a four-to-five-minute discussion of the broader, more abstract themes behind your Part 2 topic — society, the future, advantages and drawbacks. This is where the higher bands are decided, because the questions demand *developed*, *justified* opinions, not personal anecdotes. The examiner may push back ("But isn't the opposite also true?"); welcome that — it is your chance to show you can reason under pressure.
+Part 3 is a four-to-five-minute discussion of the broader, more abstract themes behind your Part 2 topic - society, the future, advantages and drawbacks. This is where the higher bands are decided, because the questions demand *developed*, *justified* opinions, not personal anecdotes. The examiner may push back ("But isn't the opposite also true?"); welcome that - it is your chance to show you can reason under pressure.
 
 ## The method: PRE-C
 
 Stretch each answer with **Point → Reason → Example → Counterpoint**:
 
-1. **Point** — your direct position.
-2. **Reason** — the logic behind it.
-3. **Example** — evidence: a trend, a comparison, a "for instance".
-4. **Counterpoint** — acknowledge the other side ("that said…", "although…").
+1. **Point** - your direct position.
+2. **Reason** - the logic behind it.
+3. **Example** - evidence: a trend, a comparison, a "for instance".
+4. **Counterpoint** - acknowledge the other side ("that said…", "although…").
 
 The counterpoint is the band-7-to-8 move: it shows you can handle complexity and it naturally produces concessive grammar ("while it's true that…, I'd still argue…").
 
 ## Speculation: the language of "maybe"
 
-Part 3 loves future and hypothetical questions ("Will people still read books in fifty years?"). Don't commit to false certainty. Use **hedging and speculation** — it's both more accurate *and* better English:
+Part 3 loves future and hypothetical questions ("Will people still read books in fifty years?"). Don't commit to false certainty. Use **hedging and speculation** - it's both more accurate *and* better English:
 
 - "It's quite likely that…"
 - "I could imagine a future where…"
@@ -234,19 +234,19 @@ These structures (modals, second/third conditionals) are exactly the Grammatical
 
 **Q: "Do you think technology has made people less social?"**
 
-> **Weak (band 5–6):** "Yes, because people use phones a lot. They don't talk to each other. It's bad."
+> **Weak (band 5-6):** "Yes, because people use phones a lot. They don't talk to each other. It's bad."
 
-> **Strong (band 7–8):** "On balance, I'd say it's reshaped how we socialise rather than reduced it outright. The reason I'm cautious about the word *less* is that, for instance, friends now stay in touch across continents in a way that simply wasn't possible before. That said, I do accept there's a downside — you'll often see a whole table in a café glued to their screens, so the *quality* of face-to-face contact may well have suffered, even if the quantity of contact has gone up."
+> **Strong (band 7-8):** "On balance, I'd say it's reshaped how we socialise rather than reduced it outright. The reason I'm cautious about the word *less* is that, for instance, friends now stay in touch across continents in a way that simply wasn't possible before. That said, I do accept there's a downside - you'll often see a whole table in a café glued to their screens, so the *quality* of face-to-face contact may well have suffered, even if the quantity of contact has gone up."
 
-Why it scores: a hedged **Point** ("reshaped… rather than reduced"), a **Reason**, a concrete **Example** ("friends across continents"), and a genuine **Counterpoint** ("That said… a whole table glued to their screens"). Notice the precise lexis — *outright*, *on balance*, *glued to their screens* — and the contrast between *quality* and *quantity*.
+Why it scores: a hedged **Point** ("reshaped… rather than reduced"), a **Reason**, a concrete **Example** ("friends across continents"), and a genuine **Counterpoint** ("That said… a whole table glued to their screens"). Notice the precise lexis - *outright*, *on balance*, *glued to their screens* - and the contrast between *quality* and *quantity*.
 
 ## Worked example 2: a speculative question
 
 **Q: "Will traditional shops still exist in fifty years?"**
 
-> **Strong (band 7–8):** "It's hard to say with any certainty, but my sense is that they'll survive in a much-reduced form rather than vanishing altogether. Online shopping will probably keep eating into the everyday end of the market — groceries, electronics, that kind of thing. That said, I'd imagine physical shops will reinvent themselves around experiences you simply can't replicate online, like trying on clothes or sampling food. So if I had to bet, I'd say the high street won't die, but it'll look very different from today's."
+> **Strong (band 7-8):** "It's hard to say with any certainty, but my sense is that they'll survive in a much-reduced form rather than vanishing altogether. Online shopping will probably keep eating into the everyday end of the market - groceries, electronics, that kind of thing. That said, I'd imagine physical shops will reinvent themselves around experiences you simply can't replicate online, like trying on clothes or sampling food. So if I had to bet, I'd say the high street won't die, but it'll look very different from today's."
 
-Why it scores: the answer refuses false certainty (*It's hard to say… my sense is…*), uses two conditional/future structures (*will probably keep… if I had to bet, I'd say…*), and still lands a clear position. *Eating into the market* and *reinvent themselves* are natural, high-level collocations — speculation done in genuinely advanced English.
+Why it scores: the answer refuses false certainty (*It's hard to say… my sense is…*), uses two conditional/future structures (*will probably keep… if I had to bet, I'd say…*), and still lands a clear position. *Eating into the market* and *reinvent themselves* are natural, high-level collocations - speculation done in genuinely advanced English.
 
 ## Functional language for Part 3
 
@@ -264,10 +264,10 @@ Why it scores: the answer refuses false certainty (*It's hard to say… my sense
 
 ## Try it
 
-Open **[the Speaking practice room](/ielts/speaking)** and answer three Part 3 questions, recording each. For every answer, tick off the PRE-C steps and count your speculation phrases — aim for at least two hedged or conditional structures across the set. Did you offer a counterpoint *every* time, and vary how you opened each answer?`,
+Open **[the Speaking practice room](/ielts/speaking)** and answer three Part 3 questions, recording each. For every answer, tick off the PRE-C steps and count your speculation phrases - aim for at least two hedged or conditional structures across the set. Did you offer a counterpoint *every* time, and vary how you opened each answer?`,
   },
 
-  // ── Unit: speak-fluency — Fluency & coherence ────────────────────────────
+  // ── Unit: speak-fluency - Fluency & coherence ────────────────────────────
   {
     id: 'speak-fluency-flow',
     skill: 'speaking',
@@ -280,18 +280,18 @@ Open **[the Speaking practice room](/ielts/speaking)** and answer three Part 3 q
     estMinutes: 12,
     body: `# Fluency & coherence: keep going, link your ideas
 
-Fluency & Coherence is one of the four equally weighted Speaking criteria. Examiners are listening for two things: **flow** (you speak at a comfortable speed without long, awkward pauses or constant self-correction) and **coherence** (your ideas connect logically and are easy to follow). Crucially, fluency is *not* speed — speaking fast while stumbling scores worse than speaking steadily. The band-7 descriptor rewards speaking "at length without noticeable effort", and the key word is *noticeable*: small pauses are fine; long, panicked ones are not.
+Fluency & Coherence is one of the four equally weighted Speaking criteria. Examiners are listening for two things: **flow** (you speak at a comfortable speed without long, awkward pauses or constant self-correction) and **coherence** (your ideas connect logically and are easy to follow). Crucially, fluency is *not* speed - speaking fast while stumbling scores worse than speaking steadily. The band-7 descriptor rewards speaking "at length without noticeable effort", and the key word is *noticeable*: small pauses are fine; long, panicked ones are not.
 
 ## The method: buy time without going silent
 
-The enemy of fluency is the silent pause while you hunt for an idea — or the panicked "er… er… er". The fix is a small bank of **natural thinking phrases** that fill that gap *in English* and sound fluent rather than stuck:
+The enemy of fluency is the silent pause while you hunt for an idea - or the panicked "er… er… er". The fix is a small bank of **natural thinking phrases** that fill that gap *in English* and sound fluent rather than stuck:
 
 - "That's a good question, let me think…"
 - "Well, off the top of my head…"
 - "It's funny you should ask, because…"
 - "I suppose the main thing is…"
 
-Use them sparingly — one to launch an answer, not after every clause. Overused, they become a verbal tic.
+Use them sparingly - one to launch an answer, not after every clause. Overused, they become a verbal tic.
 
 ## Signposting: making coherence audible
 
@@ -308,17 +308,17 @@ These do double duty: they organise your ideas *and* fill the micro-pauses that 
 
 > **Hesitant:** "I think… er… that travel is… um… good because… you see… new things and… er… it is interesting and… yeah."
 
-> **Fluent:** "Well, off the top of my head, I'd say travel is genuinely valuable — mainly because it pulls you out of your routine and exposes you to different ways of living. Take food, for instance: you can read about a country's cuisine, but actually tasting it on the street is a completely different experience."
+> **Fluent:** "Well, off the top of my head, I'd say travel is genuinely valuable - mainly because it pulls you out of your routine and exposes you to different ways of living. Take food, for instance: you can read about a country's cuisine, but actually tasting it on the street is a completely different experience."
 
 The fluent version isn't faster; it's *smoother*. The thinking phrase launches it, "mainly because" links cause to claim, and "Take… for instance" signposts the example. The pauses that remain feel like natural breathing, not breakdowns.
 
 ## Worked example 2: rescuing a stall mid-answer
 
-Even fluent speakers lose the thread. What matters is *how you recover* — silently freezing costs marks; a smooth repair phrase does not.
+Even fluent speakers lose the thread. What matters is *how you recover* - silently freezing costs marks; a smooth repair phrase does not.
 
 > **Stalls and freezes:** "The main benefit of public transport is… um… is… *(long silence)* … I don't know how to say."
 
-> **Stalls and recovers:** "The main benefit of public transport is — how can I put this — it takes pressure off the roads. What I'm trying to say is that fewer private cars means less congestion, and that's better for everyone, really."
+> **Stalls and recovers:** "The main benefit of public transport is - how can I put this - it takes pressure off the roads. What I'm trying to say is that fewer private cars means less congestion, and that's better for everyone, really."
 
 Why the recovery scores: *how can I put this* and *what I'm trying to say is* are natural fillers that buy thinking time **in English**, keep the floor, and lead straight back into the point. The listener barely notices the wobble.
 
@@ -330,7 +330,7 @@ Why the recovery scores: *how can I put this* and *what I'm trying to say is* ar
 
 ## Common mistakes
 
-- **Repairing too much.** Constantly restarting sentences ("I go — I went — I have gone…") wrecks flow. Pick one and move on; a small grammar slip costs less than a stall.
+- **Repairing too much.** Constantly restarting sentences ("I go - I went - I have gone…") wrecks flow. Pick one and move on; a small grammar slip costs less than a stall.
 - **Memorised linkers dumped in.** "Moreover, furthermore, in addition" stacked unnaturally sounds essay-like, not spoken.
 - **Speaking too fast to seem fluent.** This causes more errors and pauses, not fewer. Aim for steady.
 - **Filler overload.** "Like, you know, basically" every few words drags your score down.
@@ -338,10 +338,10 @@ Why the recovery scores: *how can I put this* and *what I'm trying to say is* ar
 
 ## Try it
 
-Head to **[the Speaking practice room](/ielts/speaking)** and answer any three questions, recording yourself. Play it back and tally your *silent* pauses over two seconds and your "er/um" fillers. Re-answer the same questions, this time launching with a thinking phrase and using at least two signposts each. Your goal: fewer dead pauses, steadier pace — not faster speech.`,
+Head to **[the Speaking practice room](/ielts/speaking)** and answer any three questions, recording yourself. Play it back and tally your *silent* pauses over two seconds and your "er/um" fillers. Re-answer the same questions, this time launching with a thinking phrase and using at least two signposts each. Your goal: fewer dead pauses, steadier pace - not faster speech.`,
   },
 
-  // ── Unit: speak-pronunciation — Pronunciation ────────────────────────────
+  // ── Unit: speak-pronunciation - Pronunciation ────────────────────────────
   {
     id: 'speak-pronunciation-clarity',
     skill: 'speaking',
@@ -350,23 +350,23 @@ Head to **[the Speaking practice room](/ielts/speaking)** and answer any three q
     title: 'Pronunciation: stress, rhythm and intonation',
     slug: 'pronunciation-stress-rhythm-intonation',
     summary:
-      'Score on clarity, not on losing your accent — through word stress, sentence stress, and meaningful intonation.',
+      'Score on clarity, not on losing your accent - through word stress, sentence stress, and meaningful intonation.',
     estMinutes: 13,
     body: `# Pronunciation: stress, rhythm and intonation
 
-Pronunciation is the fourth Speaking criterion, and the most misunderstood. You are **not** marked on sounding British or American, and you don't need to erase your accent. You're marked on **clarity and control**: can the examiner understand you effortlessly, and do you use the features of spoken English — stress, rhythm, intonation — to carry meaning? A strong accent with clear stress beats a "neutral" accent that's flat and mumbled. The band descriptors talk about being "easy to understand" and using pronunciation features "to convey meaning" — that, not accent, is the target.
+Pronunciation is the fourth Speaking criterion, and the most misunderstood. You are **not** marked on sounding British or American, and you don't need to erase your accent. You're marked on **clarity and control**: can the examiner understand you effortlessly, and do you use the features of spoken English - stress, rhythm, intonation - to carry meaning? A strong accent with clear stress beats a "neutral" accent that's flat and mumbled. The band descriptors talk about being "easy to understand" and using pronunciation features "to convey meaning" - that, not accent, is the target.
 
 ## Three levers that matter most
 
 ### 1. Word stress
-Every multi-syllable word has a stressed syllable. Put it in the wrong place and the word can become unintelligible. Compare: **PHO**-to-graph / pho-**TO**-graph-er / pho-to-**GRAPH**-ic — same root, the stress *moves*. Getting it wrong forces the listener to work, which costs marks. Watch noun/verb pairs too: *a **RE**-cord* (noun) but *to re-**CORD*** (verb); *an **IN**-crease* but *to in-**CREASE***.
+Every multi-syllable word has a stressed syllable. Put it in the wrong place and the word can become unintelligible. Compare: **PHO**-to-graph / pho-**TO**-graph-er / pho-to-**GRAPH**-ic - same root, the stress *moves*. Getting it wrong forces the listener to work, which costs marks. Watch noun/verb pairs too: *a **RE**-cord* (noun) but *to re-**CORD*** (verb); *an **IN**-crease* but *to in-**CREASE***.
 
 ### 2. Sentence stress (rhythm)
 English is **stress-timed**: we punch the *content* words (nouns, main verbs, adjectives) and squeeze the *function* words (articles, prepositions, auxiliaries). This rhythm is what makes speech sound natural.
 
 > "I've **NEV**-er **been** to **JA**-pan, but I'd **LOVE** to **GO** one **DAY**."
 
-The capitalised words are stressed; the rest are reduced ("to" becomes a quick "tə"). Stressing *every* word equally is a classic clarity killer — it sounds robotic and hides your meaning.
+The capitalised words are stressed; the rest are reduced ("to" becomes a quick "tə"). Stressing *every* word equally is a classic clarity killer - it sounds robotic and hides your meaning.
 
 ### 3. Intonation
 Your pitch should **move**. Falling intonation signals you've finished a statement; rising intonation signals a question or "I'm not done yet". Flat, monotone delivery is the single biggest pronunciation weakness examiners flag, because it makes you hard to follow *and* sounds disengaged.
@@ -375,13 +375,13 @@ Your pitch should **move**. Falling intonation signals you've finished a stateme
 
 > **Flat (monotone, every word equal):** "i think learning a language is difficult but useful"
 
-> **Clear:** "I think learning a **LANG**uage is **DIFF**icult — *(slight pause, pitch rises)* — but **REALL**y **USE**ful."
+> **Clear:** "I think learning a **LANG**uage is **DIFF**icult - *(slight pause, pitch rises)* - but **REALL**y **USE**ful."
 
-The strong version chunks the sentence ("learning a language" / "is difficult" / "but really useful"), stresses the content words, and lets the pitch rise on the dash to flag the upcoming contrast. Same words — far easier to understand.
+The strong version chunks the sentence ("learning a language" / "is difficult" / "but really useful"), stresses the content words, and lets the pitch rise on the dash to flag the upcoming contrast. Same words - far easier to understand.
 
 ## Worked example 2: stress changes the meaning
 
-Stress is not decoration — it tells the listener *what matters*. The same sentence, stressed differently, means different things:
+Stress is not decoration - it tells the listener *what matters*. The same sentence, stressed differently, means different things:
 
 > "**I** didn't say she stole the money." → (but someone else might have said it)
 > "I didn't say **she** stole the money." → (it was someone else who stole it)
@@ -389,22 +389,22 @@ Stress is not decoration — it tells the listener *what matters*. The same sent
 
 In an answer like *"It wasn't the **price** that put me off, it was the **service**"*, landing the stress on *price* and *service* makes the contrast instantly clear; flatten it and the point is lost. Using stress to highlight your key words is exactly the "convey meaning" feature the higher bands reward.
 
-> **Quick reference — stress the content, reduce the rest:** content = nouns, main verbs, adjectives, adverbs, question words. Reduced = *a, the, to, of, and, was, can, for*. Let the reduced words shrink to a soft "schwa" sound.
+> **Quick reference - stress the content, reduce the rest:** content = nouns, main verbs, adjectives, adverbs, question words. Reduced = *a, the, to, of, and, was, can, for*. Let the reduced words shrink to a soft "schwa" sound.
 
 ## Common mistakes
 
 - **Trying to fake an accent.** It usually backfires into unclear sounds. Aim for *clear*, not "native".
 - **Flat intonation.** Practise letting your voice rise and fall; record and listen for monotony.
-- **Mumbling word endings.** Dropped final consonants ("nex" for "next", "wan" for "want") blur meaning — release them.
+- **Mumbling word endings.** Dropped final consonants ("nex" for "next", "wan" for "want") blur meaning - release them.
 - **No chunking.** Running everything together with no pauses for thought-groups makes long answers hard to follow.
 - **Wrong word stress on long words.** *com-**FOR**-table* or *pho-**TO**-graph* (instead of *com-fort-a-ble*, *PHO-to-graph*) trips the listener.
 
 ## A quick drill: the shadowing technique
 
-Pick 30 seconds of a clear English speaker (a podcast, a news clip). Play a sentence, pause, and **echo it exactly** — copying their stress and melody, not just the words. Two minutes a day trains your ear and your mouth together.
+Pick 30 seconds of a clear English speaker (a podcast, a news clip). Play a sentence, pause, and **echo it exactly** - copying their stress and melody, not just the words. Two minutes a day trains your ear and your mouth together.
 
 ## Try it
 
-Open **[the Speaking practice room](/ielts/speaking)** and record a one-minute answer. Play it back twice: first, mark every word where your stress felt wrong or flat; second, listen only for pitch — did your voice actually move, or stay level? Re-record, exaggerating the stress and intonation slightly, and deliberately punch the two most important words in each sentence. Clearer? That's the criterion working in your favour.`,
+Open **[the Speaking practice room](/ielts/speaking)** and record a one-minute answer. Play it back twice: first, mark every word where your stress felt wrong or flat; second, listen only for pitch - did your voice actually move, or stay level? Re-record, exaggerating the stress and intonation slightly, and deliberately punch the two most important words in each sentence. Clearer? That's the criterion working in your favour.`,
   },
 ]

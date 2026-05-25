@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 25) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 25) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,8 +8,8 @@
 //
 // This test is MATCHING-RICH. It contains four matching questions across three
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2) and both Matching Features — statements to
-// researchers — and Matching Sentence Endings (Passage 3), alongside the usual
+// which-paragraph (Passage 2) and both Matching Features - statements to
+// researchers - and Matching Sentence Endings (Passage 3), alongside the usual
 // mix of True/False/Not Given, multiple choice and sentence/summary completion.
 //
 // One complete, carefully-checked test: 3 passages, 40 marks (each matching item
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_25: ReadingTest[] = [
   {
     id: 'rd-academic-025',
-    title: 'Academic Reading — Practice Test 25',
+    title: 'Academic Reading - Practice Test 25',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -49,7 +49,7 @@ What does all this imply for the people who make policy? If the goal of governme
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Where money really does make a difference' },
               { key: 'ii', label: 'A paradox in the relationship between income and happiness' },
@@ -69,7 +69,7 @@ What does all this imply for the people who make policy? If the goal of governme
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vii' },
             ],
             explanation:
-              'A explains that GDP "was never designed to capture whether the people inside that economy were actually flourishing" (iii). B sets out the Easterlin "paradox" between income and happiness (ii). C gives two explanations — adaptation and comparison — for why wealth buys little contentment (vi). D argues money matters most "at the bottom of the scale" (i). E describes governments measuring progress "in new ways," from Bhutan onwards (iv). F asks "What does all this imply for the people who make policy?" (vii). Heading v (how GDP is calculated) is a distractor — the passage defines GDP but never explains its calculation; heading viii (surveys should replace economics entirely) is a distractor and is explicitly denied: "The aim is not to throw away GDP."',
+              'A explains that GDP "was never designed to capture whether the people inside that economy were actually flourishing" (iii). B sets out the Easterlin "paradox" between income and happiness (ii). C gives two explanations - adaptation and comparison - for why wealth buys little contentment (vi). D argues money matters most "at the bottom of the scale" (i). E describes governments measuring progress "in new ways," from Bhutan onwards (iv). F asks "What does all this imply for the people who make policy?" (vii). Heading v (how GDP is calculated) is a distractor - the passage defines GDP but never explains its calculation; heading viii (surveys should replace economics entirely) is a distractor and is explicitly denied: "The aim is not to throw away GDP."',
           },
           {
             id: 'rd-025-p1-q2',
@@ -99,7 +99,7 @@ What does all this imply for the people who make policy? If the goal of governme
             id: 'rd-025-p1-q4',
             type: 'gap',
             prompt:
-              'Complete the sentence with ONE word from the passage: One explanation rests on the idea of _______ — people quickly grow used to improvements, so the pleasure soon fades.',
+              'Complete the sentence with ONE word from the passage: One explanation rests on the idea of _______ - people quickly grow used to improvements, so the pleasure soon fades.',
             acceptableAnswers: ['adaptation'],
             explanation:
               'Paragraph C says, "One rests on the idea of adaptation: people quickly grow used to improvements in their circumstances." The required word is "adaptation".',
@@ -170,7 +170,7 @@ Not everyone welcomed the new technology. Some scribes and scholars lamented the
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -222,7 +222,7 @@ Not everyone welcomed the new technology. Some scribes and scholars lamented the
             id: 'rd-025-p2-q3',
             type: 'gap',
             prompt:
-              'Complete the sentence with TWO words from the passage: Gutenberg’s decisive contribution was _______ _______ — individual metal letters that could be arranged, used and then rearranged.',
+              'Complete the sentence with TWO words from the passage: Gutenberg’s decisive contribution was _______ _______ - individual metal letters that could be arranged, used and then rearranged.',
             acceptableAnswers: ['movable type'],
             explanation:
               'Paragraph B says, "His decisive contribution was movable type: individual letters, each cast in metal." The two words required are "movable type".',
@@ -310,7 +310,7 @@ Because song is learned by ear and passed from one generation to the next, it ca
 
 Dialects raise questions that researchers are still working to answer. Some have suggested that a shared dialect helps females identify males that are well suited to local conditions, since a bird singing the local song is likely to have been raised nearby; others suspect that dialects are simply an accidental by-product of copying, with no function of their own. What is clear is that birdsong, far from being the fixed and instinctive performance it was once assumed to be, is in many species a flexible, culturally transmitted tradition, handed down and quietly altered from one generation to the next, and offering biologists a rare living model of how learned behaviour evolves.`,
         questions: [
-          // ── Matching Features — statements to research findings (4 items) = 4 marks ──
+          // ── Matching Features - statements to research findings (4 items) = 4 marks ──
           {
             id: 'rd-025-p3-q1',
             type: 'matching',
@@ -353,7 +353,7 @@ Dialects raise questions that researchers are still working to answer. Some have
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence with the correct ending, A–E, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A–E.',
+              'Complete each sentence with the correct ending, A-E, from the box below. There are more endings than sentences, so you will not use them all. Write the correct letter, A-E.',
             options: [
               {
                 key: 'A',

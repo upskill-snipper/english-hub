@@ -1,15 +1,15 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 9 ────────────────────────────
 // A ninth bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–7 and the
+// Authoring rules followed throughout (mirroring chart sets 1-7 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -18,7 +18,7 @@
 //     achievable.
 //
 // Six fresh, original topics, deliberately distinct from every existing prompt
-// across the whole chart bank (sets 1–7 + the worked examples — renewable mix,
+// across the whole chart bank (sets 1-7 + the worked examples - renewable mix,
 // tourist arrivals by region, freshwater by sector, internet-by-age, water
 // cycle, enrolment, household spending, electricity sources, recycled
 // materials, butterfly/coffee/chocolate/water-treatment/bread/solar/dam
@@ -42,7 +42,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_9: WritingPrompt[] = [
-  // ── 1 · bar (single series across five purposes — comparison) ─────────────
+  // ── 1 · bar (single series across five purposes - comparison) ─────────────
   {
     id: 'wt1c9-arrivals-by-purpose',
     task: 'writing-task-1',
@@ -84,7 +84,7 @@ export const WRITING_CHARTS_9: WritingPrompt[] = [
       kind: 'line',
       unit: 'US$ thousands',
       yAxisLabel: 'Average price (US$ 000s)',
-      caption: 'Average house price by city (US$ thousands), 2000–2025.',
+      caption: 'Average house price by city (US$ thousands), 2000-2025.',
       categories: ['2000', '2005', '2010', '2015', '2020', '2025'],
       series: [
         { name: 'Riverton', values: [180, 240, 215, 290, 360, 430] },

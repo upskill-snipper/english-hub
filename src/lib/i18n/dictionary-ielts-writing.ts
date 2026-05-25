@@ -1,17 +1,17 @@
 // ─── IELTS Writing module dictionary shard ──────────────────────────────────
 // UI-chrome copy for the IELTS Academic Writing page (src/app/ielts/writing/
-// page.tsx) — English + Khaleeji (Gulf) Arabic. Scope is the interface only:
+// page.tsx) - English + Khaleeji (Gulf) Arabic. Scope is the interface only:
 // tab labels, prompt-picker chrome, timer + word-count labels, the submit
 // button, loading / paywall / error / opt-out messages, and the results labels
 // (overall band, strengths, improvements, model pointers, disclaimer).
 //
 // DELIBERATELY NOT HERE:
 //   • The writing prompts / questions themselves (src/app/ielts/writing/
-//     writing-prompts.ts) — stay English.
+//     writing-prompts.ts) - stay English.
 //   • The AI-generated feedback text (per-criterion comments, strengths,
-//     improvements) — the API route already returns Arabic when locale=ar.
+//     improvements) - the API route already returns Arabic when locale=ar.
 //   • The four marking-criterion NAMES (Task Achievement, Coherence &
-//     Cohesion, Lexical Resource, Grammatical Range) — technical IELTS terms
+//     Cohesion, Lexical Resource, Grammatical Range) - technical IELTS terms
 //     supplied as API data; they render as-is and stay English.
 //
 // Khaleeji conventions per the master dictionary header (شنو/أبغى/وايد/الحين/
@@ -26,16 +26,16 @@
 export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string }> = {
   // ── Hero ──────────────────────────────────────────────────────────────────
   'ielts.writing.hero.badge': {
-    en: 'AI band feedback — IELTS Academic',
-    ar: 'تقييم Band بالذكاء الاصطناعي — IELTS أكاديمي',
+    en: 'AI band feedback - IELTS Academic',
+    ar: 'تقييم Band بالذكاء الاصطناعي - IELTS أكاديمي',
   },
   'ielts.writing.hero.title': {
     en: 'IELTS Academic Writing',
-    ar: 'IELTS أكاديمي — الكتابة',
+    ar: 'IELTS أكاديمي - الكتابة',
   },
   'ielts.writing.hero.subtitle': {
-    en: 'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an instant predicted band for each of the four marking criteria — plus specific strengths, improvements and techniques to move up a band.',
-    ar: 'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band متوقع فوري لكل معيار من معايير التصحيح الأربعة — مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
+    en: 'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an instant predicted band for each of the four marking criteria - plus specific strengths, improvements and techniques to move up a band.',
+    ar: 'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band متوقع فوري لكل معيار من معايير التصحيح الأربعة - مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
   },
   'ielts.writing.hero.word_minutes_note': {
     en: 'Task 1 asks for at least 150 words in ~20 minutes; Task 2 asks for at least 250 words in ~40 minutes.',
@@ -44,8 +44,8 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
 
   // ── Task tabs ───────────────────────────────────────────────────────────
   // Brand terms Task 1 / Task 2 stay Latin; "Report" / "Essay" get Arabic.
-  'ielts.writing.tab.task1': { en: 'Task 1 — Report', ar: 'Task 1 — تقرير' },
-  'ielts.writing.tab.task2': { en: 'Task 2 — Essay', ar: 'Task 2 — مقال' },
+  'ielts.writing.tab.task1': { en: 'Task 1 - Report', ar: 'Task 1 - تقرير' },
+  'ielts.writing.tab.task2': { en: 'Task 2 - Essay', ar: 'Task 2 - مقال' },
 
   // ── Prompt picker / workspace chrome ──────────────────────────────────────
   // "{minutes} min · min {words} words" rendered as two labelled fragments so
@@ -59,13 +59,13 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
   'ielts.writing.workspace.change_question': { en: 'Change question', ar: 'غيّر السؤال' },
 
   // ── Timer ────────────────────────────────────────────────────────────────
-  // "{clock} remaining" — keep the clock as a separate token; this is the
+  // "{clock} remaining" - keep the clock as a separate token; this is the
   // trailing label only.
   'ielts.writing.timer.remaining': { en: 'remaining', ar: 'باقي' },
   // "Optional timer · {minutes} min"
   'ielts.writing.timer.optional': { en: 'Optional timer', ar: 'مؤقّت اختياري' },
   'ielts.writing.timer.stop': { en: 'Stop timer', ar: 'وقّف المؤقّت' },
-  // "Start {minutes}-minute timer" — split around the minute count. The unit +
+  // "Start {minutes}-minute timer" - split around the minute count. The unit +
   // noun live in the suffix so each locale reads naturally without a literal
   // hyphen in the JSX (EN "Start 20-minute timer" / AR "شغّل مؤقّت 20 دقيقة").
   'ielts.writing.timer.start_prefix': { en: 'Start', ar: 'شغّل مؤقّت' },
@@ -85,7 +85,7 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
   // ── Word count ────────────────────────────────────────────────────────────
   'ielts.writing.words.singular': { en: 'word', ar: 'كلمة' },
   'ielts.writing.words.plural': { en: 'words', ar: 'كلمة' },
-  // "· aim for {min}+ ({remaining} to go)" — assembled from two fragments
+  // "· aim for {min}+ ({remaining} to go)" - assembled from two fragments
   // around the numbers.
   'ielts.writing.words.aim_for': { en: 'aim for', ar: 'استهدف' },
   'ielts.writing.words.to_go': { en: 'to go', ar: 'باقية' },
@@ -99,8 +99,8 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
   'ielts.writing.submit.cta': { en: 'Get my band feedback', ar: 'خذ تقييم الـ Band' },
   'ielts.writing.submit.loading': { en: 'Assessing your writing…', ar: 'نقيّم كتابتك…' },
   'ielts.writing.submit.loading_note': {
-    en: 'This usually takes 15–30 seconds. Please don’t close the page.',
-    ar: 'عادة ياخذ 15–30 ثانية. لا تسكّر الصفحة من فضلك.',
+    en: 'This usually takes 15-30 seconds. Please don’t close the page.',
+    ar: 'عادة ياخذ 15-30 ثانية. لا تسكّر الصفحة من فضلك.',
   },
 
   // ── Errors / paywall ──────────────────────────────────────────────────────
@@ -159,7 +159,7 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
   },
 
   // ── Results / feedback labels ──────────────────────────────────────────────
-  // "Predicted overall band — {promptTitle}" — split so the title slots in.
+  // "Predicted overall band - {promptTitle}" - split so the title slots in.
   'ielts.writing.results.predicted_overall': {
     en: 'Predicted overall band',
     ar: 'Band الكلي المتوقع',
@@ -172,8 +172,8 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
     ar: 'تقنيات تطلّعك Band أعلى',
   },
   'ielts.writing.results.model_pointers_desc': {
-    en: 'Concrete things to try next time — not a model answer to copy.',
-    ar: 'أشياء محددة جرّبها المرة الجاية — مو إجابة نموذجية تنسخها.',
+    en: 'Concrete things to try next time - not a model answer to copy.',
+    ar: 'أشياء محددة جرّبها المرة الجاية - مو إجابة نموذجية تنسخها.',
   },
   'ielts.writing.results.disclaimer_fallback': {
     en: 'This is a predicted band for IELTS preparation only, not an official result.',

@@ -81,15 +81,15 @@ function useDiagT(): (key: string, vars?: Vars) => string {
 
 // ─── IELTS Placement Diagnostic ──────────────────────────────────────────────
 // A ~10-minute placement test that estimates a band per skill:
-//   • Reading + Listening — short auto-marked objective sets (objectiveToBand)
-//   • Writing + Speaking — an honest self-estimate (4-point confidence scale)
+//   • Reading + Listening - short auto-marked objective sets (objectiveToBand)
+//   • Writing + Speaking - an honest self-estimate (4-point confidence scale)
 // Results are saved via saveDiagnostic() and the learner is sent to /ielts/plan.
 // Every band shown is framed as an estimate, never an official result.
 // ──────────────────────────────────────────────────────────────────────────────
 
 type Phase = 'intro' | 'questions' | 'result'
 
-// Local answer state: objective answers keyed by question id; self-ratings 1–4.
+// Local answer state: objective answers keyed by question id; self-ratings 1-4.
 type ObjectiveAnswers = Record<string, string>
 type SelfRatings = Partial<Record<'writing' | 'speaking', 1 | 2 | 3 | 4>>
 

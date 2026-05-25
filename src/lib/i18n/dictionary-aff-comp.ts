@@ -1,12 +1,12 @@
 /**
  * Curated bilingual dictionary for the AUTHENTICATED affiliate portal
- * components — dashboard, tracking links, resources, payouts, settings,
+ * components - dashboard, tracking links, resources, payouts, settings,
  * the commission calculator, the tier badge and the enrolment form.
  *
  * Scope: the `aff_comp.*` namespace EXCLUDING `aff_comp.public.*`.
  * The public marketing page (`aff_comp.public.*`, rendered by
  * AffiliatePublicPage.tsx) is already curated in
- * ./dictionary-affiliates.ts (AFF_PUBLIC_DICTIONARY) — this file is the
+ * ./dictionary-affiliates.ts (AFF_PUBLIC_DICTIONARY) - this file is the
  * complementary set: every remaining `aff_comp.*` key that the portal
  * components actually render via `useT()`.
  *
@@ -15,7 +15,7 @@
  * These keys only existed in placeholder / auto-generated supplements:
  *
  *   - dictionary-placeholder-fix-may15.ts → real EN, but ar === en
- *     (the five `aff_comp.tier.tier-N.label` entries — English mirror,
+ *     (the five `aff_comp.tier.tier-N.label` entries - English mirror,
  *     so AR mode showed English).
  *   - dictionary-audit-fix.ts → junk Ollama output where the EN itself
  *     is a Title-cased path fragment ("Heading", "Subtitle", "Col Plan",
@@ -40,14 +40,14 @@
  *     match the rest of the product surface.
  *
  * The 3 screenshot-fix keys (`aff_comp.copy`, `aff_comp.copied`,
- * `aff_comp.calc.signups_dot`) are deliberately NOT included — they
+ * `aff_comp.calc.signups_dot`) are deliberately NOT included - they
  * already carry genuine Arabic (ar !== en) in
  * dictionary-screenshot-fixes.ts. The `aff_comp.public.*` keys are
- * likewise excluded — already curated in dictionary-affiliates.ts.
+ * likewise excluded - already curated in dictionary-affiliates.ts.
  *
  * Khaleeji (Gulf) conventions, matching ./dictionary-affiliates.ts and
  * src/lib/eal/curriculum.ts: second-person direct address, Gulf lexis
- * (وياك، حقّك، حقّتك، عقب، الحين، شوف، دوّر، وايد، ببلاش، قاعد) — not
+ * (وياك، حقّك، حقّتك، عقب، الحين، شوف، دوّر، وايد، ببلاش، قاعد) - not
  * MSA, not machine-literal.
  *
  * Brand / proper nouns kept untranslated (standard Gulf convention):
@@ -57,7 +57,7 @@
  * WIRING: this file only declares the export. It is wired into the
  * `lookup()` resolver chain in dictionary.ts at the curated-override
  * tier (before every placeholder/audit supplement) so these Arabic
- * values WIN over the junk ones. (dictionary.ts is edited separately —
+ * values WIN over the junk ones. (dictionary.ts is edited separately -
  * not by this file's author.)
  */
 
@@ -85,10 +85,10 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string }> = {
 
   // ─── Copy buttons (AffiliateDashboard.tsx) ───────────────────────
   // NB: aff_comp.copy / aff_comp.copied live in dictionary-screenshot-
-  // fixes.ts (already genuine AR) — only the "!" variant is ours.
+  // fixes.ts (already genuine AR) - only the "!" variant is ours.
   'aff_comp.copied_bang': { en: `Copied!`, ar: `تم النسخ!` },
 
-  // ─── Tier labels — EN BYTE-IDENTICAL from placeholder-fix-may15 ──
+  // ─── Tier labels - EN BYTE-IDENTICAL from placeholder-fix-may15 ──
   // Brand convention: "Tier N · …" stays Latin even in Arabic.
   'aff_comp.tier.tier-1.label': { en: 'Tier 1 · Starter', ar: 'Tier 1 · Starter' },
   'aff_comp.tier.tier-2.label': { en: 'Tier 2 · Standard', ar: 'Tier 2 · Standard' },
@@ -222,8 +222,8 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── Activity feed (AffiliateDashboard.tsx) ──────────────────────
   'aff_comp.dash.activity.heading': { en: `Recent activity`, ar: `آخر النشاطات` },
   'aff_comp.dash.activity.empty': {
-    en: `No activity yet — share your link to get started.`,
-    ar: `ما في نشاط لين الحين — شارك رابطك عشان تبدأ.`,
+    en: `No activity yet - share your link to get started.`,
+    ar: `ما في نشاط لين الحين - شارك رابطك عشان تبدأ.`,
   },
   'aff_comp.dash.activity.just_now': { en: `Just now`, ar: `الحين` },
   'aff_comp.dash.activity.minutes_ago_suffix': { en: `m ago`, ar: ` د` },
@@ -233,7 +233,7 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'aff_comp.dash.activity.commission_confirmed': { en: `Commission confirmed`, ar: `عمولة مؤكّدة` },
   'aff_comp.dash.activity.payout_processed': { en: `Payout processed`, ar: `دفعة منفّذة` },
 
-  // ─── Enrolment form (AffiliatePublicPage.tsx — apply flow) ───────
+  // ─── Enrolment form (AffiliatePublicPage.tsx - apply flow) ───────
   'aff_comp.enrol.field.code.label': { en: `Choose your code`, ar: `اختر كودك` },
   'aff_comp.enrol.field.code.optional': { en: `(optional)`, ar: `(اختياري)` },
   'aff_comp.enrol.field.code.placeholder': { en: `e.g. YOURNAME`, ar: `مثال: YOURNAME` },
@@ -328,8 +328,8 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: `الاشتراكات تُحتسب لك لمدّة 30 يوم عقب أول نقرة.`,
   },
   'aff_comp.resources.discount_note': {
-    en: `Your code also gives new customers a discount — a win for everyone.`,
-    ar: `كودك يعطي العملاء الجدد خصم بعد — مكسب للجميع.`,
+    en: `Your code also gives new customers a discount - a win for everyone.`,
+    ar: `كودك يعطي العملاء الجدد خصم بعد - مكسب للجميع.`,
   },
   'aff_comp.resources.annual_lean_title': {
     en: `Lean into annual plans`,

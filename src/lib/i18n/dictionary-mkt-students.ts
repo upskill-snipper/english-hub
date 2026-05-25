@@ -1,11 +1,11 @@
 /**
- * MKT_STUDENTS_DICTIONARY — /students marketing page.
+ * MKT_STUDENTS_DICTIONARY - /students marketing page.
  *
- * Bilingual shard for `src/app/students/page.tsx` — the public-facing
+ * Bilingual shard for `src/app/students/page.tsx` - the public-facing
  * "For Students" marketing page. EN values are byte-identical to the
  * current English literals on the page; AR values are curated
  * Khaleeji (Gulf) Arabic in the same warm, student-friendly marketing
- * register as `dictionary-homepage.ts` — NOT MSA, NOT Levantine, NOT
+ * register as `dictionary-homepage.ts` - NOT MSA, NOT Levantine, NOT
  * machine. Voice tuned for Gulf teenage GCSE/IGCSE learners.
  *
  * Khaleeji conventions matched:
@@ -19,22 +19,22 @@
  * Western digits throughout.
  *
  * Wired into the central resolver chain in `dictionary.ts`
- * (orchestrator owns wiring — this shard exports only the map).
+ * (orchestrator owns wiring - this shard exports only the map).
  */
 
 export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }> = {
   /* ── Metadata ── */
   'mkt.students.meta.title': {
-    en: 'For Students — practise, improve and understand English',
-    ar: 'للطلاب — تدرّب، طوّر مستواك وافهم الإنجليزي',
+    en: 'For Students - practise, improve and understand English',
+    ar: 'للطلاب - تدرّب، طوّر مستواك وافهم الإنجليزي',
   },
   'mkt.students.meta.description': {
     en: 'Revision, essay practice, comprehension and clearer feedback aligned to the exam board your school teaches, with progress tracking across English Language and Literature.',
     ar: 'مراجعة، تدريب على المقالات، فهم مقروء، وملاحظات أوضح متوافقة مع البورد اللي مدرستك تدرّسه، مع متابعة تقدّمك في English Language و Literature.',
   },
   'mkt.students.meta.og_title': {
-    en: 'For Students — The English Hub',
-    ar: 'للطلاب — The English Hub',
+    en: 'For Students - The English Hub',
+    ar: 'للطلاب - The English Hub',
   },
   'mkt.students.meta.og_description': {
     en: 'Practise, improve and understand English with clearer feedback.',
@@ -109,17 +109,17 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'خطوة',
   },
 
-  /* Journey step 1 — Pick your board */
+  /* Journey step 1 - Pick your board */
   'mkt.students.journey.step1.title': {
     en: 'Pick your board',
     ar: 'اختر البورد حقّك',
   },
   'mkt.students.journey.step1.body': {
-    en: 'Tell us your exam — AQA, Edexcel, OCR, Eduqas or IGCSE.',
-    ar: 'قل لنا أي امتحان عندك — AQA أو Edexcel أو OCR أو Eduqas أو IGCSE.',
+    en: 'Tell us your exam - AQA, Edexcel, OCR, Eduqas or IGCSE.',
+    ar: 'قل لنا أي امتحان عندك - AQA أو Edexcel أو OCR أو Eduqas أو IGCSE.',
   },
 
-  /* Journey step 2 — Revise set texts and topics */
+  /* Journey step 2 - Revise set texts and topics */
   'mkt.students.journey.step2.title': {
     en: 'Revise set texts and topics',
     ar: 'راجع النصوص المقرّرة والمواضيع',
@@ -129,7 +129,7 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'مراجعة متوافقة مع المنهج، مو ملخّصات عامّة.',
   },
 
-  /* Journey step 3 — Practise exam-style answers */
+  /* Journey step 3 - Practise exam-style answers */
   'mkt.students.journey.step3.title': {
     en: 'Practise exam-style answers',
     ar: 'تدرّب على إجابات بصيغة الامتحان',
@@ -139,17 +139,17 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'صيغ أسئلة حقيقية مع هياكل إجابة نموذجية.',
   },
 
-  /* Journey step 4 — Get clearer feedback */
+  /* Journey step 4 - Get clearer feedback */
   'mkt.students.journey.step4.title': {
     en: 'Get clearer feedback',
     ar: 'احصل على ملاحظات أوضح',
   },
   'mkt.students.journey.step4.body': {
-    en: 'AI feedback in plain English — what to fix, and why.',
-    ar: 'ملاحظات AI بإنجليزي واضح — شنو تصلّح، وليش.',
+    en: 'AI feedback in plain English - what to fix, and why.',
+    ar: 'ملاحظات AI بإنجليزي واضح - شنو تصلّح، وليش.',
   },
 
-  /* Journey step 5 — Track your progress */
+  /* Journey step 5 - Track your progress */
   'mkt.students.journey.step5.title': {
     en: 'Track your progress',
     ar: 'تابع تقدّمك',
@@ -237,16 +237,16 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'English Language و Literature، في كل المراحل الدراسية',
   },
   'mkt.students.subjects.subtitle': {
-    en: 'From KS3 foundations to A-Level analysis — all in one place.',
-    ar: 'من أساسيات KS3 لين تحليل A-Level — كله في مكان واحد.',
+    en: 'From KS3 foundations to A-Level analysis - all in one place.',
+    ar: 'من أساسيات KS3 لين تحليل A-Level - كله في مكان واحد.',
   },
   'mkt.students.subjects.ks3.title': {
     en: 'KS3 English',
     ar: 'إنجليزي KS3',
   },
   'mkt.students.subjects.ks3.body': {
-    en: 'Build the foundations — reading, writing and vocabulary practice across Years 7 to 9.',
-    ar: 'ابنِ الأساس — تدريب على القراءة والكتابة والمفردات في السنوات 7 لين 9.',
+    en: 'Build the foundations - reading, writing and vocabulary practice across Years 7 to 9.',
+    ar: 'ابنِ الأساس - تدريب على القراءة والكتابة والمفردات في السنوات 7 لين 9.',
   },
   'mkt.students.subjects.lang.title': {
     en: 'GCSE English Language',
@@ -283,8 +283,8 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'تبغى تطّلع جوّه الأول؟',
   },
   'mkt.students.demo.subtitle': {
-    en: 'Open the student demo to see how revision, feedback and progress tracking work — no sign-up needed.',
-    ar: 'افتح ديمو الطالب وشوف كيف تشتغل المراجعة والملاحظات ومتابعة التقدّم — بدون تسجيل.',
+    en: 'Open the student demo to see how revision, feedback and progress tracking work - no sign-up needed.',
+    ar: 'افتح ديمو الطالب وشوف كيف تشتغل المراجعة والملاحظات ومتابعة التقدّم - بدون تسجيل.',
   },
   'mkt.students.demo.cta_primary': {
     en: 'Open the student demo',

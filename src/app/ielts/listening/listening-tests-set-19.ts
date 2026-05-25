@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 19) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 19) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (40 questions, 10 per section) that mirror the real IELTS Listening paper,
 // with topics deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a prospective
+//   • Section 1 - an everyday transactional DIALOGUE (here: a prospective
 //     tenant phoning a letting/rental agency about a flat), assessed with form /
 //     note completion + multiple choice. A surname is spelled and a mobile
 //     number is dictated, and one detail (the deposit) depends on a stated
 //     choice (the monthly rent), so the figures stay internally consistent.
-//   • Section 2 — an everyday MONOLOGUE (here: a talk introducing a city's
-//     recycling & waste scheme — which bin takes what, collection days, drop-off
+//   • Section 2 - an everyday MONOLOGUE (here: a talk introducing a city's
+//     recycling & waste scheme - which bin takes what, collection days, drop-off
 //     points), assessed with a MATCHING block (items → bins) + sentence
 //     completion + multiple choice.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor
-//     planning a business-studies group project — topic, roles, sources,
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor
+//     planning a business-studies group project - topic, roles, sources,
 //     deadline), assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: how coffee is grown and
+//   • Section 4 - an academic LECTURE / monologue (here: how coffee is grown and
 //     processed, from climate and cultivation through harvesting, drying and
 //     roasting), assessed with note/sentence completion + multiple choice,
 //     including one True/False/Not Given item.
@@ -30,7 +30,7 @@
 //   • 'mcq'      → single best answer; `correctIndex` is 0-based.
 //   • 'tfng'     → True / False / Not Given.
 //   • 'matching' → each item scores ONE mark; `item.answer` is an option `key`.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -41,12 +41,12 @@ export const LISTENING_SET_19: ListeningTest[] = [
   {
     id: 'ls-academic-019',
     title:
-      'Practice Test 19 — Enquiring About a Flat Through a Letting Agency, A City Recycling & Waste Scheme, Planning a Business-Studies Group Project & How Coffee Is Grown and Processed',
+      'Practice Test 19 - Enquiring About a Flat Through a Letting Agency, A City Recycling & Waste Scheme, Planning a Business-Studies Group Project & How Coffee Is Grown and Processed',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-019-s1',
-        title: 'Section 1 — Enquiring about a flat through a letting agency',
+        title: 'Section 1 - Enquiring about a flat through a letting agency',
         // ~300 words. Transactional dialogue (Section 1 style): a prospective tenant
         // phoning a letting/rental agency about a flat. A surname is spelled and a
         // mobile number is dictated; one figure (the deposit, one month's rent)
@@ -62,7 +62,7 @@ MAN: Yes, it's Peter Crowley. Crowley is spelled C-R-O-W-L-E-Y.
 
 WOMAN: Thank you. And the best number to reach you on?
 
-MAN: My mobile — oh-seven-nine-three-three, five-double-one, four-eight-two.
+MAN: My mobile - oh-seven-nine-three-three, five-double-one, four-eight-two.
 
 WOMAN: Got that. Now, the Maple Road flat. The rent is six hundred and fifty pounds a month, and that includes water, but not gas or electricity.
 
@@ -80,11 +80,11 @@ WOMAN: Certainly. We do viewings on weekdays. Would Wednesday at five-thirty sui
 
 MAN: Wednesday's fine, thanks.
 
-WOMAN: Lovely. Before a viewing, we do ask everyone to fill in a short application form — it's mainly so we can run a reference check with your current employer.
+WOMAN: Lovely. Before a viewing, we do ask everyone to fill in a short application form - it's mainly so we can run a reference check with your current employer.
 
 MAN: No problem. Where do I find the form?
 
-WOMAN: I'll email you the link today. Oh, and one thing people often ask — the flat comes furnished, so you won't need to bring any large items of your own.
+WOMAN: I'll email you the link today. Oh, and one thing people often ask - the flat comes furnished, so you won't need to bring any large items of your own.
 
 MAN: That's very helpful. Thank you, Hannah.`,
         questions: [
@@ -95,7 +95,7 @@ MAN: That's very helpful. Thank you, Hannah.`,
               'Complete the enquiry form. Write ONE WORD for the answer.\n\nApplicant surname: ____________',
             acceptableAnswers: ['Crowley', 'crowley'],
             explanation:
-              'The caller gives his name as “Peter Crowley” and spells the surname: C-R-O-W-L-E-Y. In Section 1, surnames are almost always spelled aloud — write them down letter by letter.',
+              'The caller gives his name as “Peter Crowley” and spells the surname: C-R-O-W-L-E-Y. In Section 1, surnames are almost always spelled aloud - write them down letter by letter.',
           },
           {
             id: 'ls-019-s1-q2',
@@ -109,7 +109,7 @@ MAN: That's very helpful. Thank you, Hannah.`,
               '07933 51 1482',
             ],
             explanation:
-              'He dictates “oh-seven-nine-three-three, five-double-one, four-eight-two” — that is 07933 511482. “Double one” means two 1s and “oh” is zero; spacing is not penalised, but every digit must be correct.',
+              'He dictates “oh-seven-nine-three-three, five-double-one, four-eight-two” - that is 07933 511482. “Double one” means two 1s and “oh” is zero; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-019-s1-q3',
@@ -196,28 +196,28 @@ MAN: That's very helpful. Thank you, Hannah.`,
       },
       {
         id: 'ls-academic-019-s2',
-        title: 'Section 2 — A city recycling and waste scheme',
+        title: 'Section 2 - A city recycling and waste scheme',
         // ~300 words. Informational monologue (Section 2 style): a single speaker
-        // introduces a city's household recycling and waste scheme — which bin takes
+        // introduces a city's household recycling and waste scheme - which bin takes
         // what, collection days and drop-off points. A MATCHING block (items → bins,
         // 5 marks) is followed by sentence-completion + multiple-choice items, so the
         // section totals 10 marks. The bin allocations are each stated directly.
         transcript: `Hello, and thank you for coming to this short session on our city's new household recycling and waste scheme. I'm Marcus from the council's environment team, and I'll explain which bin takes what, when each one is collected, and where you can take the things that don't go in any bin.
 
-Let me start with the colours, because we've kept it simple — there are three wheelie bins. The green bin is for general rubbish, the things that can't be recycled. The blue bin is your main recycling bin, and that's where paper, cardboard and clean tins go. The brown bin is purely for garden waste — grass cuttings, leaves and hedge trimmings.
+Let me start with the colours, because we've kept it simple - there are three wheelie bins. The green bin is for general rubbish, the things that can't be recycled. The blue bin is your main recycling bin, and that's where paper, cardboard and clean tins go. The brown bin is purely for garden waste - grass cuttings, leaves and hedge trimmings.
 
-Now, a few items people always ask about. Glass bottles do not go in the blue bin, despite being recyclable — please put glass in the green bin for now, as our sorting machines can't yet handle it. Food scraps, on the other hand, should go in the brown bin, together with the garden waste; they break down well together. And plastic bottles go in the blue recycling bin with the paper and tins.
+Now, a few items people always ask about. Glass bottles do not go in the blue bin, despite being recyclable - please put glass in the green bin for now, as our sorting machines can't yet handle it. Food scraps, on the other hand, should go in the brown bin, together with the garden waste; they break down well together. And plastic bottles go in the blue recycling bin with the paper and tins.
 
 As for collection days, the green and blue bins are collected on alternating weeks, always on a Tuesday. The brown garden bin, though, is collected fortnightly on a Friday.
 
-For anything that doesn't fit our bins — old furniture, electrical goods, paint tins — we have a recycling centre on Carlton Way, open seven days a week. And finally, for clothing and shoes, there are textile banks in most supermarket car parks. Please don't put textiles in any of your home bins. Thank you, and please pick up a leaflet on your way out.`,
+For anything that doesn't fit our bins - old furniture, electrical goods, paint tins - we have a recycling centre on Carlton Way, open seven days a week. And finally, for clothing and shoes, there are textile banks in most supermarket car parks. Please don't put textiles in any of your home bins. Thank you, and please pick up a leaflet on your way out.`,
         questions: [
           {
             id: 'ls-019-s2-q11',
             type: 'matching',
             variant: 'features',
             prompt:
-              'Which bin should each item go in? Choose the correct bin for each item from the list A–C. You may use any letter more than once.',
+              'Which bin should each item go in? Choose the correct bin for each item from the list A-C. You may use any letter more than once.',
             options: [
               { key: 'A', label: 'the green bin' },
               { key: 'B', label: 'the blue bin' },
@@ -292,33 +292,33 @@ For anything that doesn't fit our bins — old furniture, electrical goods, pain
       },
       {
         id: 'ls-academic-019-s3',
-        title: 'Section 3 — Tutorial: planning a business-studies group project',
+        title: 'Section 3 - Tutorial: planning a business-studies group project',
         // ~300 words. Academic discussion (Section 3 style): two students (Sophie and
         // Ben) and a tutor (Dr Akande) plan a business-studies group project. They
         // settle on the topic, divide the roles, agree their sources and confirm the
         // deadline, so the questions mix multiple choice (decisions) with completion
-        // (concrete details). Numbering runs q21–q30 for ten marks.
+        // (concrete details). Numbering runs q21-q30 for ten marks.
         transcript: `DR AKANDE: So, Sophie and Ben, let's plan your business-studies group project. Have you chosen a topic?
 
-SOPHIE: We have. We want to look at how a local independent bookshop has survived against the online retailers — what's kept it in business.
+SOPHIE: We have. We want to look at how a local independent bookshop has survived against the online retailers - what's kept it in business.
 
 DR AKANDE: A nice case study. Specific, and you can actually visit it. Will it be just description, or are you arguing something?
 
-BEN: We're arguing that its survival comes down to customer loyalty rather than price — it can't compete on price, so it competes on service and community events.
+BEN: We're arguing that its survival comes down to customer loyalty rather than price - it can't compete on price, so it competes on service and community events.
 
-DR AKANDE: Good — a clear thesis. Now, how will you split the work between you?
+DR AKANDE: Good - a clear thesis. Now, how will you split the work between you?
 
-SOPHIE: I'll do the interview with the owner and write up the findings. Ben is stronger with numbers, so he'll handle the financial side — the sales figures and so on.
+SOPHIE: I'll do the interview with the owner and write up the findings. Ben is stronger with numbers, so he'll handle the financial side - the sales figures and so on.
 
 DR AKANDE: That plays to your strengths. What sources are you drawing on?
 
 BEN: Three, really. The interview with the owner, the shop's own sales data, which she's agreed to share, and some published industry reports on high-street retail.
 
-DR AKANDE: Make sure you reference those industry reports properly. A common mistake is quoting a statistic with no source. Now — the deadline. You know the report is due in week ten?
+DR AKANDE: Make sure you reference those industry reports properly. A common mistake is quoting a statistic with no source. Now - the deadline. You know the report is due in week ten?
 
 SOPHIE: Yes. We've set ourselves an internal deadline of the end of week eight, to leave time for editing.
 
-DR AKANDE: Very sensible — always build in a buffer. One last thing: keep the report itself focused. The word limit is three thousand words, and it's easy to go over.
+DR AKANDE: Very sensible - always build in a buffer. One last thing: keep the report itself focused. The word limit is three thousand words, and it's easy to go over.
 
 BEN: We'll watch that. Thanks, Dr Akande.`,
         questions: [
@@ -334,7 +334,7 @@ BEN: We'll watch that. Thanks, Dr Akande.`,
             ],
             correctIndex: 1,
             explanation:
-              'Sophie says they want to look at “how a local independent bookshop has survived against the online retailers — what’s kept it in business.” Option B matches the chosen topic.',
+              'Sophie says they want to look at “how a local independent bookshop has survived against the online retailers - what’s kept it in business.” Option B matches the chosen topic.',
           },
           {
             id: 'ls-019-s3-q22',
@@ -348,7 +348,7 @@ BEN: We'll watch that. Thanks, Dr Akande.`,
             ],
             correctIndex: 1,
             explanation:
-              'Ben says “its survival comes down to customer loyalty rather than price — it can’t compete on price, so it competes on service and community events.” Option B matches; the shop explicitly cannot compete on price.',
+              'Ben says “its survival comes down to customer loyalty rather than price - it can’t compete on price, so it competes on service and community events.” Option B matches; the shop explicitly cannot compete on price.',
           },
           {
             id: 'ls-019-s3-q23',
@@ -371,7 +371,7 @@ BEN: We'll watch that. Thanks, Dr Akande.`,
             ],
             correctIndex: 1,
             explanation:
-              'Sophie says, “Ben is stronger with numbers, so he’ll handle the financial side — the sales figures and so on.” Option B matches the stated reason.',
+              'Sophie says, “Ben is stronger with numbers, so he’ll handle the financial side - the sales figures and so on.” Option B matches the stated reason.',
           },
           {
             id: 'ls-019-s3-q25',
@@ -434,24 +434,24 @@ BEN: We'll watch that. Thanks, Dr Akande.`,
       },
       {
         id: 'ls-academic-019-s4',
-        title: 'Section 4 — Lecture: how coffee is grown and processed',
+        title: 'Section 4 - Lecture: how coffee is grown and processed',
         // ~315 words. Academic lecture / monologue (Section 4 style): a single speaker
         // delivers a structured lecture on how coffee is grown and processed, moving
         // from climate and cultivation through harvesting, drying and roasting. Dense,
         // factual and signposted ("let me begin", "next", "finally"), with the
         // note/sentence-completion + multiple-choice mix typical of Section 4,
-        // including one True/False/Not Given item. Numbering runs q31–q40.
-        transcript: `Good morning. Today I'm going to take you through the journey of coffee — from the plant growing on a hillside to the roasted beans you brew at home. It's a longer and more delicate process than most people realise.
+        // including one True/False/Not Given item. Numbering runs q31-q40.
+        transcript: `Good morning. Today I'm going to take you through the journey of coffee - from the plant growing on a hillside to the roasted beans you brew at home. It's a longer and more delicate process than most people realise.
 
-Let me begin with where coffee grows. The plant is fussy about climate. It thrives in a band around the equator often called the "coffee belt", and it needs a frost-free environment — even a single frost can destroy a crop. The finest beans, particularly the Arabica variety, are grown at high altitude, because cooler mountain temperatures slow the ripening and concentrate the flavour.
+Let me begin with where coffee grows. The plant is fussy about climate. It thrives in a band around the equator often called the "coffee belt", and it needs a frost-free environment - even a single frost can destroy a crop. The finest beans, particularly the Arabica variety, are grown at high altitude, because cooler mountain temperatures slow the ripening and concentrate the flavour.
 
-Next, cultivation. Coffee grows on a shrub, and it takes a surprisingly long time to become productive — a new plant yields no usable fruit for the first three or four years. The fruit itself is a small red berry, commonly known as a "cherry", and inside each cherry are usually two seeds, which are the coffee beans.
+Next, cultivation. Coffee grows on a shrub, and it takes a surprisingly long time to become productive - a new plant yields no usable fruit for the first three or four years. The fruit itself is a small red berry, commonly known as a "cherry", and inside each cherry are usually two seeds, which are the coffee beans.
 
 Now, harvesting. On the best estates the cherries are picked by hand, because they don't all ripen at once, and only the ripe red ones should be taken. Machine picking is cheaper and faster, but it strips everything from the branch, including unripe fruit.
 
 After picking, the beans must be dried. In the traditional method, the cherries are simply spread out in the sun and turned regularly, which can take several weeks.
 
-Finally, roasting — and this is where the flavour is really created. The green beans are heated, and as the temperature climbs the beans darken and the familiar aroma develops. It's worth stressing that roasting is a skilled job: a few seconds too long can turn a delicate batch bitter. Next week we'll follow the beans from the roastery to the cup.`,
+Finally, roasting - and this is where the flavour is really created. The green beans are heated, and as the temperature climbs the beans darken and the familiar aroma develops. It's worth stressing that roasting is a skilled job: a few seconds too long can turn a delicate batch bitter. Next week we'll follow the beans from the roastery to the cup.`,
         questions: [
           {
             id: 'ls-019-s4-q31',
@@ -482,7 +482,7 @@ Finally, roasting — and this is where the flavour is really created. The green
             prompt: 'According to the speaker, a single frost can destroy a coffee crop.',
             answer: 'true',
             explanation:
-              'The speaker says coffee “needs a frost-free environment — even a single frost can destroy a crop.” The statement matches the lecture, so it is True.',
+              'The speaker says coffee “needs a frost-free environment - even a single frost can destroy a crop.” The statement matches the lecture, so it is True.',
           },
           {
             id: 'ls-019-s4-q34',

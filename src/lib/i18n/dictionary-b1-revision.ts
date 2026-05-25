@@ -1,5 +1,5 @@
 /**
- * dictionary-b1-revision.ts — Bucket B Phase B1.
+ * dictionary-b1-revision.ts - Bucket B Phase B1.
  * Curated EN + Khaleeji (Gulf) Arabic for the /revision shell + hub pages.
  *
  * Khaleeji conventions (matches dictionary.ts):
@@ -270,24 +270,24 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'كيف تحصل على الدرجة 5',
   },
   'revision.grade_targets.grade5.subtitle': {
-    en: 'The "strong pass" — what you need to secure it',
-    ar: 'الاجتياز القوي — شنو تحتاج تضمنه',
+    en: 'The "strong pass" - what you need to secure it',
+    ar: 'الاجتياز القوي - شنو تحتاج تضمنه',
   },
   'revision.grade_targets.grade7.title': {
     en: 'How to Get a Grade 7',
     ar: 'كيف تحصل على الدرجة 7',
   },
   'revision.grade_targets.grade7.subtitle': {
-    en: 'Moving into the top band — what separates good from great',
-    ar: 'الدخول للمستوى الأعلى — شنو يفرّق الجيد عن المتميّز',
+    en: 'Moving into the top band - what separates good from great',
+    ar: 'الدخول للمستوى الأعلى - شنو يفرّق الجيد عن المتميّز',
   },
   'revision.grade_targets.grade9.title': {
     en: 'How to Get a Grade 9',
     ar: 'كيف تحصل على الدرجة 9',
   },
   'revision.grade_targets.grade9.subtitle': {
-    en: 'The very top — what markers look for in exceptional work',
-    ar: 'القمة — شنو يبحث عنه المصحّحون في العمل الاستثنائي',
+    en: 'The very top - what markers look for in exceptional work',
+    ar: 'القمة - شنو يبحث عنه المصحّحون في العمل الاستثنائي',
   },
 
   // Grade card titles & subtitles (A*-G)
@@ -296,8 +296,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'كيف تحصل على الدرجة C',
   },
   'revision.grade_targets.gradeC.subtitle': {
-    en: 'The pass mark — what you need to secure it',
-    ar: 'درجة الاجتياز — شنو تحتاج تضمنها',
+    en: 'The pass mark - what you need to secure it',
+    ar: 'درجة الاجتياز - شنو تحتاج تضمنها',
   },
   'revision.grade_targets.gradeC.equivalent': {
     en: 'equivalent to 9-1 Grade 4-5',
@@ -308,8 +308,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'كيف تحصل على الدرجة A',
   },
   'revision.grade_targets.gradeA.subtitle': {
-    en: 'Strong analytical work — thoughtful and developed',
-    ar: 'عمل تحليلي قوي — متأنٍّ ومتطوّر',
+    en: 'Strong analytical work - thoughtful and developed',
+    ar: 'عمل تحليلي قوي - متأنٍّ ومتطوّر',
   },
   'revision.grade_targets.gradeA.equivalent': {
     en: 'equivalent to 9-1 Grade 7',
@@ -320,8 +320,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'كيف تحصل على الدرجة A*',
   },
   'revision.grade_targets.gradeAstar.subtitle': {
-    en: 'The very top — sophisticated, conceptualised responses',
-    ar: 'القمة — إجابات متطوّرة وتصوّرية',
+    en: 'The very top - sophisticated, conceptualised responses',
+    ar: 'القمة - إجابات متطوّرة وتصوّرية',
   },
   'revision.grade_targets.gradeAstar.equivalent': {
     en: 'equivalent to 9-1 Grade 8-9',
@@ -393,8 +393,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'الأسلوب يقدر يكون الفرق بين الدرجة 5 والدرجة 9',
   },
   'revision.exam_technique.why_matters_body': {
-    en: 'You can know every quote and every context point, but without strong exam technique your knowledge stays in your head instead of on the page. These guides are tailored specifically to the {board} specification — paper structures, question types and what each grade looks like — so every tip maps to the marks you can actually earn.',
-    ar: 'تقدر تحفظ كل اقتباس وكل نقطة سياق، بس بدون أسلوب امتحان قوي تبقى معلوماتك في رأسك بدل ما تنزل على الورقة. هالأدلة مصمّمة خصيصاً لمواصفات {board} — بنية الأوراق، أنواع الأسئلة، وشكل كل درجة — بحيث كل نصيحة ترتبط بدرجات تقدر فعلاً تكسبها.',
+    en: 'You can know every quote and every context point, but without strong exam technique your knowledge stays in your head instead of on the page. These guides are tailored specifically to the {board} specification - paper structures, question types and what each grade looks like - so every tip maps to the marks you can actually earn.',
+    ar: 'تقدر تحفظ كل اقتباس وكل نقطة سياق، بس بدون أسلوب امتحان قوي تبقى معلوماتك في رأسك بدل ما تنزل على الورقة. هالأدلة مصمّمة خصيصاً لمواصفات {board} - بنية الأوراق، أنواع الأسئلة، وشكل كل درجة - بحيث كل نصيحة ترتبط بدرجات تقدر فعلاً تكسبها.',
   },
   'revision.exam_technique.guides_heading': {
     en: '{board} Technique Guides',
@@ -413,8 +413,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'اعرف شنو يبحث عنه مصحّحو {board}',
   },
   'revision.exam_technique.markers_body': {
-    en: 'Every mark in GCSE English is tied to what markers look for. AOs differ between Literature and Language papers — Literature uses AO1-AO4, while Language uses AO1-AO4 (reading) and AO5-AO6 (writing). Note that AO4 means different things in each.',
-    ar: 'كل درجة في GCSE English مرتبطة بما يبحث عنه المصحّحون. معايير AO تختلف بين أوراق Literature وLanguage — Literature تستخدم AO1-AO4، بينما Language تستخدم AO1-AO4 (قراءة) وAO5-AO6 (كتابة). لاحظ إن AO4 يعني أشياء مختلفة في كل منهم.',
+    en: 'Every mark in GCSE English is tied to what markers look for. AOs differ between Literature and Language papers - Literature uses AO1-AO4, while Language uses AO1-AO4 (reading) and AO5-AO6 (writing). Note that AO4 means different things in each.',
+    ar: 'كل درجة في GCSE English مرتبطة بما يبحث عنه المصحّحون. معايير AO تختلف بين أوراق Literature وLanguage - Literature تستخدم AO1-AO4، بينما Language تستخدم AO1-AO4 (قراءة) وAO5-AO6 (كتابة). لاحظ إن AO4 يعني أشياء مختلفة في كل منهم.',
   },
 
   // Guide card titles & descriptions
@@ -443,8 +443,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'أنواع الأسئلة',
   },
   'revision.exam_technique.guide.question_types.desc': {
-    en: 'Every {board} question type decoded — how to approach extract, comparison, creative and evaluation questions.',
-    ar: 'كل أنواع أسئلة {board} مشروحة — كيف تتعامل مع أسئلة المقتطف والمقارنة والإبداعية والتقييمية.',
+    en: 'Every {board} question type decoded - how to approach extract, comparison, creative and evaluation questions.',
+    ar: 'كل أنواع أسئلة {board} مشروحة - كيف تتعامل مع أسئلة المقتطف والمقارنة والإبداعية والتقييمية.',
   },
 
   // Quick tip titles & bodies
@@ -582,8 +582,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'IAL Hub مالك',
   },
   'revision.ial.hero_body': {
-    en: 'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (YLE0) and Language. Every section below is built around the IAL specification — not borrowed from UK A-Level.',
-    ar: 'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (YLE0) واللغة. كل قسم أدناه مبني على مواصفات IAL — مو مستعار من UK A-Level.',
+    en: 'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (YLE0) and Language. Every section below is built around the IAL specification - not borrowed from UK A-Level.',
+    ar: 'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (YLE0) واللغة. كل قسم أدناه مبني على مواصفات IAL - مو مستعار من UK A-Level.',
   },
   'revision.ial.cta_units': {
     en: 'Jump to units',
@@ -602,8 +602,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'بنية الوحدات',
   },
   'revision.ial.units_subheading': {
-    en: 'Four modular exams — two at AS, two at A2. Each carries its own weighting and demands a different revision approach.',
-    ar: 'أربعة امتحانات معيارية — اثنان في AS واثنان في A2. كل منها له وزنه الخاص ويحتاج أسلوب مراجعة مختلف.',
+    en: 'Four modular exams - two at AS, two at A2. Each carries its own weighting and demands a different revision approach.',
+    ar: 'أربعة امتحانات معيارية - اثنان في AS واثنان في A2. كل منها له وزنه الخاص ويحتاج أسلوب مراجعة مختلف.',
   },
   'revision.ial.mocks_heading': {
     en: 'Mock exam pack',
@@ -634,8 +634,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'النصوص المقرّرة',
   },
   'revision.ial.set_texts_subheading': {
-    en: 'IAL English Literature set texts — analysis and context guides.',
-    ar: 'نصوص IAL English Literature المقرّرة — أدلة التحليل والسياق.',
+    en: 'IAL English Literature set texts - analysis and context guides.',
+    ar: 'نصوص IAL English Literature المقرّرة - أدلة التحليل والسياق.',
   },
   'revision.ial.open_text': {
     en: 'Open text guide',
@@ -666,8 +666,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'معايير التقييم (AOs)',
   },
   'revision.ial.ao_subheading': {
-    en: 'Every IAL essay is marked against these five AOs. Your writing needs to serve all of them — missing one is the difference between an A and an A*.',
-    ar: 'كل مقال IAL يُصحَّح وفق هذه المعايير الخمسة. كتابتك لازم تخدم كلها — التغاضي عن معيار واحد يفرّق بين A وA*.',
+    en: 'Every IAL essay is marked against these five AOs. Your writing needs to serve all of them - missing one is the difference between an A and an A*.',
+    ar: 'كل مقال IAL يُصحَّح وفق هذه المعايير الخمسة. كتابتك لازم تخدم كلها - التغاضي عن معيار واحد يفرّق بين A وA*.',
   },
   'revision.ial.keep_going_heading': {
     en: 'Keep going',
@@ -757,8 +757,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'ليش هالأخطاء مختلفة',
   },
   'revision.common_errors.why_different_body1': {
-    en: 'Most "common mistakes" lists are about essay-writing technique (retelling, no quotation, no terminology). This list is different. Every entry below is a factual error — a misquotation, a wrong setting, a wrong date, an anthology version mix-up — that examiners can verify against the text in front of them. Get one of these wrong and the marker can\'t give you the AO2 or AO3 mark, no matter how strong the rest of the analysis is.',
-    ar: 'معظم قوائم "الأخطاء الشائعة" عن أسلوب كتابة المقال (إعادة السرد، ما في اقتباس، ما في مصطلحات). هالقائمة مختلفة. كل إدخال أدناه خطأ واقعي — اقتباس غلط، مكان غلط، تاريخ غلط، خلط في إصدار المقتطف — يقدر المصحّح يتحقق منه من النص أمامه. اغلط في واحد منها والمصحّح ما يقدر يعطيك درجة AO2 أو AO3، مهما كان باقي التحليل قوياً.',
+    en: 'Most "common mistakes" lists are about essay-writing technique (retelling, no quotation, no terminology). This list is different. Every entry below is a factual error - a misquotation, a wrong setting, a wrong date, an anthology version mix-up - that examiners can verify against the text in front of them. Get one of these wrong and the marker can\'t give you the AO2 or AO3 mark, no matter how strong the rest of the analysis is.',
+    ar: 'معظم قوائم "الأخطاء الشائعة" عن أسلوب كتابة المقال (إعادة السرد، ما في اقتباس، ما في مصطلحات). هالقائمة مختلفة. كل إدخال أدناه خطأ واقعي - اقتباس غلط، مكان غلط، تاريخ غلط، خلط في إصدار المقتطف - يقدر المصحّح يتحقق منه من النص أمامه. اغلط في واحد منها والمصحّح ما يقدر يعطيك درجة AO2 أو AO3، مهما كان باقي التحليل قوياً.',
   },
   'revision.common_errors.why_different_body2': {
     en: 'Want the technique-and-craft mistakes (retelling, no terminology, vague effects)? See the 20 essay-writing mistakes guide.',
@@ -817,8 +817,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: '20 خطأ في كتابة المقال',
   },
   'revision.common_errors.crosslink.essay_mistakes.body': {
-    en: 'Different list — the technique mistakes that cap your grade (retelling, feature-spotting, no terminology, etc.).',
-    ar: 'قائمة مختلفة — أخطاء الأسلوب اللي تحدّ من درجتك (إعادة السرد، تتبع السمات، ما في مصطلحات، إلخ).',
+    en: 'Different list - the technique mistakes that cap your grade (retelling, feature-spotting, no terminology, etc.).',
+    ar: 'قائمة مختلفة - أخطاء الأسلوب اللي تحدّ من درجتك (إعادة السرد، تتبع السمات، ما في مصطلحات، إلخ).',
   },
   'revision.common_errors.crosslink.essay_mistakes.cta': {
     en: 'Open guide',
@@ -829,8 +829,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'مركز الشعر',
   },
   'revision.common_errors.crosslink.poetry.body': {
-    en: 'Verified analysis of every anthology poem — including the misquoted lines and version flags listed above.',
-    ar: 'تحليل موثّق لكل قصيدة في المقتطف — بما فيها الأسطر المقتبسة خطأً وتنبيهات الإصدار المذكورة أعلاه.',
+    en: 'Verified analysis of every anthology poem - including the misquoted lines and version flags listed above.',
+    ar: 'تحليل موثّق لكل قصيدة في المقتطف - بما فيها الأسطر المقتبسة خطأً وتنبيهات الإصدار المذكورة أعلاه.',
   },
   'revision.common_errors.crosslink.poetry.cta': {
     en: 'Open hub',
@@ -841,8 +841,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: 'بطاقات المراجعة',
   },
   'revision.common_errors.crosslink.flashcards.body': {
-    en: 'Drill the exact wording of key quotations until they stick — with spaced-repetition review.',
-    ar: 'درّب على الصياغة الدقيقة للاقتباسات الأساسية حتى ترسخ — مع مراجعة التكرار المتباعد.',
+    en: 'Drill the exact wording of key quotations until they stick - with spaced-repetition review.',
+    ar: 'درّب على الصياغة الدقيقة للاقتباسات الأساسية حتى ترسخ - مع مراجعة التكرار المتباعد.',
   },
   'revision.common_errors.crosslink.flashcards.cta': {
     en: 'Start a session',

@@ -1,5 +1,5 @@
 /**
- * t() — server-side translation helper.
+ * t() - server-side translation helper.
  *
  * Reads the `x-lang` header that middleware stamps on every request,
  * then looks up the key in the master dictionary. Falls back to EN
@@ -31,7 +31,7 @@ async function resolveLocale(): Promise<Locale> {
     return v === 'ar' ? 'ar' : 'en'
   } catch {
     // headers() throws when called outside a request scope (e.g.
-    // at build time on fully static pages). Default to en — those
+    // at build time on fully static pages). Default to en - those
     // pages render statically in English; per-request rendering
     // sees the real locale.
     return 'en'
@@ -58,7 +58,7 @@ export async function t(key: string): Promise<string> {
 }
 
 /**
- * Batched lookup — pass an array of keys, get back the resolved
+ * Batched lookup - pass an array of keys, get back the resolved
  * strings in the same order. Cheaper than awaiting `t()` N times
  * because we read the locale once.
  */

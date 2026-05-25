@@ -1,22 +1,22 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 14) ──────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 14) ──────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary/note completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training.
+// preparation" only - no official affiliation is implied. General Training.
 //
 // GT Reading draws on EVERYDAY / SOCIAL texts (notices, timetables, advertise-
 // ments, instructions) and WORKPLACE texts (handbooks, policies, programmes),
 // plus one longer general-interest article. This file ships ONE complete,
 // carefully-checked GT test scaled to a full sitting (~40 marks):
-//   • Section 1 — a visitor notice for a city museum & art gallery (opening
+//   • Section 1 - a visitor notice for a city museum & art gallery (opening
 //     hours, ticket prices, guided tours, photography rules, facilities).
 //     Includes a Matching (features) question worth 5 marks asking which
 //     facility each statement describes; options may be reused.
-//   • Section 2 — an extract from a company dress-code & workplace-conduct
+//   • Section 2 - an extract from a company dress-code & workplace-conduct
 //     policy (appropriate clothing, ID badges, behaviour, exceptions).
-//   • Section 3 — a general-interest article on the benefits of cycling to
-//     work. Includes a Matching (headings) question covering paragraphs B–F
+//   • Section 3 - a general-interest article on the benefits of cycling to
+//     work. Includes a Matching (headings) question covering paragraphs B-F
 //     with two distractor headings, worth 5 marks.
 // Each objective item is worth ONE mark; matching items score one mark each,
 // giving 40 marks in total. Every answer is verifiable from the text and every
@@ -28,17 +28,17 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_14: ReadingTest[] = [
   {
     id: 'rd-general-014',
-    title: 'General Training Reading — Practice Test 14',
+    title: 'General Training Reading - Practice Test 14',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — city museum & gallery visitor notice.
+      // ── Section 1: EVERYDAY / SOCIAL - city museum & gallery visitor notice.
       // A Matching (features) question (5 marks) asks which of the five visitor
       // facilities each statement describes; options may be reused.
       {
         id: 'rd-gen-014-p1',
         title: 'Riverbank Museum & Art Gallery: Visitor Notice & Facilities Guide',
-        body: `PART 1 — RIVERBANK MUSEUM & ART GALLERY: VISITOR NOTICE
+        body: `PART 1 - RIVERBANK MUSEUM & ART GALLERY: VISITOR NOTICE
 
 Welcome to the Riverbank Museum & Art Gallery, the city's home for art, local history and natural science. The museum sits on the south bank of the river, two minutes from the Bridge Street tram stop. We do not have a visitor car park; the nearest one is the multi-storey on Quay Lane, which is a five-minute walk away and is half price for museum members.
 
@@ -54,23 +54,23 @@ A free guided tour of the permanent collection leaves the main hall at 11 a.m. a
 PHOTOGRAPHY
 You are welcome to take photographs for your own personal use throughout the permanent collection, but the flash must be switched off, as the light can damage delicate items. Tripods and selfie sticks are not allowed anywhere in the building. Photography of any kind is forbidden in the East Wing temporary exhibition, where many works are on loan from private owners.
 
-PART 2 — FACILITIES AT THE RIVERBANK MUSEUM
+PART 2 - FACILITIES AT THE RIVERBANK MUSEUM
 
 The museum offers five visitor facilities in addition to its galleries. Each is described below.
 
-FACILITY 1 — The Riverside Café
+FACILITY 1 - The Riverside Café
 On the ground floor, overlooking the water, the café serves hot meals, sandwiches and cakes from 10 a.m. until 4.30 p.m. You do not need a ticket to use it, and it can be reached from the street without entering the galleries. Tables cannot be reserved except for groups of ten or more.
 
-FACILITY 2 — The Cloakroom
+FACILITY 2 - The Cloakroom
 A free, staffed cloakroom beside the main entrance where you must leave large bags, umbrellas and rucksacks before entering the galleries. Items are tagged and returned against your ticket. Money and valuables should be kept with you, as the museum cannot accept responsibility for them.
 
-FACILITY 3 — The Family Activity Room
+FACILITY 3 - The Family Activity Room
 A supervised room on the first floor with craft tables and dressing-up costumes for under-tens. It is open at weekends and during school holidays only. An adult must stay in the room with their child at all times, and a small charge of two pounds per child applies.
 
-FACILITY 4 — The Museum Shop
+FACILITY 4 - The Museum Shop
 A shop near the exit selling books, prints, gifts and postcards inspired by the collection. It is open during normal museum hours and for one extra hour on the first Thursday of each month, when the museum hosts a late evening event. Purchases over fifty pounds may be posted to your home for a small fee.
 
-FACILITY 5 — The Reading Library
+FACILITY 5 - The Reading Library
 A quiet reference library of art and local-history books on the second floor. Books may be read at the tables but may not be borrowed or removed from the room. Silence must be kept, and you must sign the visitors' register before a member of staff brings out any rare item.`,
         questions: [
           {
@@ -152,13 +152,13 @@ A quiet reference library of art and local-history books on the second floor. Bo
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the five museum facilities, 1–5. For each statement below, choose the facility it describes. Write the correct number, 1–5. (Each facility may be chosen more than once.)',
+              'Look at the five museum facilities, 1-5. For each statement below, choose the facility it describes. Write the correct number, 1-5. (Each facility may be chosen more than once.)',
             options: [
-              { key: '1', label: 'Facility 1 — The Riverside Café' },
-              { key: '2', label: 'Facility 2 — The Cloakroom' },
-              { key: '3', label: 'Facility 3 — The Family Activity Room' },
-              { key: '4', label: 'Facility 4 — The Museum Shop' },
-              { key: '5', label: 'Facility 5 — The Reading Library' },
+              { key: '1', label: 'Facility 1 - The Riverside Café' },
+              { key: '2', label: 'Facility 2 - The Cloakroom' },
+              { key: '3', label: 'Facility 3 - The Family Activity Room' },
+              { key: '4', label: 'Facility 4 - The Museum Shop' },
+              { key: '5', label: 'Facility 5 - The Reading Library' },
             ],
             items: [
               {
@@ -192,7 +192,7 @@ A quiet reference library of art and local-history books on the second floor. Bo
           },
         ],
       },
-      // ── Section 2: WORKPLACE — dress-code & workplace-conduct policy ─────────
+      // ── Section 2: WORKPLACE - dress-code & workplace-conduct policy ─────────
       {
         id: 'rd-gen-014-p2',
         title: 'Staff Dress Code & Workplace Conduct Policy',
@@ -324,9 +324,9 @@ The company recognises that a single rule cannot fit everyone. Clothing or headw
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST — the benefits of cycling to work.
-      // Six labelled paragraphs (A–F). A Matching Headings question (with two
-      // distractor headings) covers paragraphs B–F and is worth 5 marks.
+      // ── Section 3: LONGER GENERAL-INTEREST - the benefits of cycling to work.
+      // Six labelled paragraphs (A-F). A Matching Headings question (with two
+      // distractor headings) covers paragraphs B-F and is worth 5 marks.
       {
         id: 'rd-gen-014-p3',
         title: 'On Your Bike: Why More of Us Are Cycling to Work',
@@ -346,14 +346,14 @@ Paragraph E
 For those tempted to try, the practical first steps are smaller than they appear. You do not need expensive equipment to begin; a well-maintained second-hand bicycle, a helmet and a set of lights are enough. It is wise to plan a route in advance, favouring quiet roads and marked cycle lanes over busy main roads, and to do a gentle practice run at the weekend before braving the rush hour. Keeping a spare set of clothes at work and learning to mend a punctured tyre will save a good deal of worry. Start with one or two days a week rather than every day, and build up as your confidence grows.
 
 Paragraph F
-None of this is to pretend that cycling to work suits everyone or every journey. A very long commute, a complete lack of safe routes, or a job that requires arriving immaculately dressed can all make it impractical, and it would be dishonest to claim otherwise. Bad weather, too, will test the resolve of even the keenest rider. Yet for a great many people the obstacles are smaller than they fear, and the rewards — to health, to the bank balance and to the air we all breathe — are larger than they expect. The hardest part, most converts agree, is simply deciding to begin.`,
+None of this is to pretend that cycling to work suits everyone or every journey. A very long commute, a complete lack of safe routes, or a job that requires arriving immaculately dressed can all make it impractical, and it would be dishonest to claim otherwise. Bad weather, too, will test the resolve of even the keenest rider. Yet for a great many people the obstacles are smaller than they fear, and the rewards - to health, to the bank balance and to the air we all breathe - are larger than they expect. The hardest part, most converts agree, is simply deciding to begin.`,
         questions: [
           {
             id: 'rd-gen-014-p3-q21',
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–vii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-vii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. Good for the city, not just the rider' },
               { key: 'ii', label: 'ii. The honest limits of cycling to work' },
@@ -371,7 +371,7 @@ None of this is to pretend that cycling to work suits everyone or every journey.
               { id: 'pF', text: 'Paragraph F', answer: 'ii' },
             ],
             explanation:
-              'Paragraph B presents cycling as "moderate aerobic exercise" that builds a habit "without ever having to set foot in a gym" — heading iii. Paragraph C is about cost: a bicycle "costs a fraction of a car and almost nothing to run" — heading v (saving money). Paragraph D says the benefits "reach well beyond the individual rider," cutting pollution and congestion — heading i (good for the city). Paragraph E gives "practical first steps" such as a route and a practice run — heading vii (getting started). Paragraph F admits cycling does not "suit everyone or every journey" — heading ii (the honest limits). Headings iv (history of the bicycle) and vi (how the law treats cyclists) are distractors that are not used.',
+              'Paragraph B presents cycling as "moderate aerobic exercise" that builds a habit "without ever having to set foot in a gym" - heading iii. Paragraph C is about cost: a bicycle "costs a fraction of a car and almost nothing to run" - heading v (saving money). Paragraph D says the benefits "reach well beyond the individual rider," cutting pollution and congestion - heading i (good for the city). Paragraph E gives "practical first steps" such as a route and a practice run - heading vii (getting started). Paragraph F admits cycling does not "suit everyone or every journey" - heading ii (the honest limits). Headings iv (history of the bicycle) and vi (how the law treats cyclists) are distractors that are not used.',
           },
           {
             id: 'rd-gen-014-p3-q22',

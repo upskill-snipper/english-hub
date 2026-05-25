@@ -3,7 +3,7 @@
 // ─── MockReport ─────────────────────────────────────────────────────────────
 // The terminal screen of the mock: a predicted band report. It shows the four
 // per-section bands (each a coloured chip), the OVERALL band computed with
-// overallBand() of the four skill bands (the official rounding rule — null until
+// overallBand() of the four skill bands (the official rounding rule - null until
 // all four scored), a short "what this means" plain-English explainer, and the
 // per-task criteria breakdown for Writing / Speaking. It is framed throughout as
 // a practice prediction, never an official result. Each skill's result has

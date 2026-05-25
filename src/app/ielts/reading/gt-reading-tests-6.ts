@@ -1,19 +1,19 @@
-// ─── IELTS General Training (GT) Reading — practice item bank (Set 6) ───────
+// ─── IELTS General Training (GT) Reading - practice item bank (Set 6) ───────
 // ORIGINAL content written for The English Hub. These passages and questions
 // are NOT reproductions of any official IELTS past paper; they are invented
 // purely to practise the GT Reading question formats (MCQ, True/False/Not
 // Given, sentence/summary completion, and Matching). Framed as "IELTS
-// preparation" only — no official affiliation is implied. General Training
+// preparation" only - no official affiliation is implied. General Training
 // track.
 //
 // GT Reading follows a graded structure: Section 1 EVERYDAY / SOCIAL texts
 // (notices, advertisements, programmes), Section 2 WORKPLACE texts (policies,
 // staff handbooks, contracts), and Section 3 a longer GENERAL-INTEREST
 // article. This file ships ONE complete, carefully-checked GT test of three
-// sections, with topics deliberately distinct from GT Sets 1–5:
-//   • Section 1 — a community arts-festival programme + a recycling notice
-//   • Section 2 — a new-employee IT & data-protection policy
-//   • Section 3 — a general-interest article on community gardens
+// sections, with topics deliberately distinct from GT Sets 1-5:
+//   • Section 1 - a community arts-festival programme + a recycling notice
+//   • Section 2 - a new-employee IT & data-protection policy
+//   • Section 3 - a general-interest article on community gardens
 // It includes TWO Matching questions: a 'features' match in Section 1 (match
 // statements to the festival/recycling notices) and a 'headings' match on the
 // six-paragraph Section 3 article. Total = 40 marks.
@@ -24,31 +24,31 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_6: ReadingTest[] = [
   {
     id: 'rd-general-006',
-    title: 'General Training Reading — Practice Test 6',
+    title: 'General Training Reading - Practice Test 6',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — festival programme + recycling notice ─
+      // ── Section 1: EVERYDAY / SOCIAL - festival programme + recycling notice ─
       {
         id: 'rd-gen-006-p1',
         title: 'Millbrook Community Arts Festival & Kerbside Recycling Notice',
-        body: `Read the festival programme (Notices A–D) and the recycling notice that follows.
+        body: `Read the festival programme (Notices A-D) and the recycling notice that follows.
 
-MILLBROOK COMMUNITY ARTS FESTIVAL — WEEKEND PROGRAMME
+MILLBROOK COMMUNITY ARTS FESTIVAL - WEEKEND PROGRAMME
 
-NOTICE A — Saturday Street Market (10.00 a.m. – 4.00 p.m., High Street)
+NOTICE A - Saturday Street Market (10.00 a.m. - 4.00 p.m., High Street)
 More than forty local makers will sell handmade jewellery, pottery and printed cloth along a closed section of the High Street. Entry is free and no ticket is needed. The market is busiest in the early afternoon, so visitors who prefer a quieter browse are advised to arrive before midday. Please note that, because the street is closed to traffic, the nearest parking is the Mill Lane car park, a seven-minute walk away.
 
-NOTICE B — Family Print Workshop (Saturday, 1.00 p.m. & 3.00 p.m., the Old Library)
+NOTICE B - Family Print Workshop (Saturday, 1.00 p.m. & 3.00 p.m., the Old Library)
 In this hands-on session, children aged six and over can make their own greetings card using simple block-printing. Each session lasts forty-five minutes and places are limited to twelve children. Booking in advance is essential, as we cannot admit anyone who has not reserved a place. A small charge of £3 per child covers all materials; accompanying adults take part free of charge.
 
-NOTICE C — Evening Folk Concert (Saturday, 7.30 p.m., St Anne's Hall)
+NOTICE C - Evening Folk Concert (Saturday, 7.30 p.m., St Anne's Hall)
 The festival closes its first day with a concert by three regional folk groups. Tickets cost £9 for adults and £5 for under-eighteens, and must be bought in advance from the festival website; no tickets will be sold at the door. Doors open at 7.00 p.m. Latecomers will be admitted only between songs, so as not to disturb the performers.
 
-NOTICE D — Sunday Sketching Walk (Sunday, 9.30 a.m., meet at the Canal Bridge)
+NOTICE D - Sunday Sketching Walk (Sunday, 9.30 a.m., meet at the Canal Bridge)
 Led by a local artist, this gentle two-hour walk along the canal offers the chance to draw the landscape at several stops. The walk is free, but numbers are capped at fifteen, so please register at the information tent on Saturday. Bring your own pencils and paper; a limited number of spare materials will be available for those who forget. The walk goes ahead in light rain but will be cancelled in a storm.
 
-KERBSIDE RECYCLING — CHANGES FROM 1 JUNE
+KERBSIDE RECYCLING - CHANGES FROM 1 JUNE
 
 From 1 June, the council is changing how recycling is collected. Each household now has two bins: a GREEN bin for paper, card and cardboard, and a BLUE bin for glass bottles, metal tins and clean plastic containers. The two bins are collected on alternating weeks, so each bin is emptied once a fortnight rather than weekly. Your collection day stays the same.
 
@@ -59,12 +59,12 @@ Please rinse food containers before placing them in the blue bin, and flatten ca
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the four festival notices, A–D. For each statement below, choose the notice it refers to. Write the correct letter, A–D. (Each notice may be chosen more than once.)',
+              'Look at the four festival notices, A-D. For each statement below, choose the notice it refers to. Write the correct letter, A-D. (Each notice may be chosen more than once.)',
             options: [
-              { key: 'A', label: 'Notice A — Saturday Street Market' },
-              { key: 'B', label: 'Notice B — Family Print Workshop' },
-              { key: 'C', label: 'Notice C — Evening Folk Concert' },
-              { key: 'D', label: 'Notice D — Sunday Sketching Walk' },
+              { key: 'A', label: 'Notice A - Saturday Street Market' },
+              { key: 'B', label: 'Notice B - Family Print Workshop' },
+              { key: 'C', label: 'Notice C - Evening Folk Concert' },
+              { key: 'D', label: 'Notice D - Sunday Sketching Walk' },
             ],
             items: [
               {
@@ -178,10 +178,10 @@ Please rinse food containers before placing them in the blue bin, and flatten ca
           },
         ],
       },
-      // ── Section 2: WORKPLACE — new-employee IT & data-protection policy ──────
+      // ── Section 2: WORKPLACE - new-employee IT & data-protection policy ──────
       {
         id: 'rd-gen-006-p2',
-        title: 'New Employee Handbook — IT and Data-Protection Policy',
+        title: 'New Employee Handbook - IT and Data-Protection Policy',
         body: `Welcome to the company. This section of your induction explains how you must use our computer systems and how you are expected to handle the personal data of customers and colleagues. You are required to read it during your first week and to confirm in the staff portal that you have understood it.
 
 ACCOUNTS AND PASSWORDS
@@ -314,7 +314,7 @@ Staff who work from home or while travelling must use the company’s secure con
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST text — community gardens ──────────
+      // ── Section 3: LONGER GENERAL-INTEREST text - community gardens ──────────
       {
         id: 'rd-gen-006-p3',
         title: 'Common Ground: The Quiet Benefits of Community Gardens',
@@ -324,9 +324,9 @@ Staff who work from home or while travelling must use the company’s secure con
 
 [C] Yet ask regular gardeners why they keep coming back, and few mention vegetables first. Again and again, they speak instead of the people they have met. A community garden draws together neighbours who might otherwise never have spoken: retired people and young families, long-term residents and recent arrivals, all working towards the same simple goal. The shared task gives strangers an easy reason to talk, and friendships form over a row of beans that might never have formed across a fence. In neighbourhoods where many people live alone, this gentle, regular contact can be quietly valuable.
 
-[D] The benefits are not only social. Tending a garden is steady physical work — digging, weeding, carrying water — that keeps people moving without ever feeling like exercise. Researchers who study wellbeing have also noted that time spent among growing plants seems to lower stress and lift mood, offering a welcome change from screens and crowded streets. For older gardeners in particular, the routine of regular visits provides not only activity but a reason to leave the house and a place where they are expected and missed.
+[D] The benefits are not only social. Tending a garden is steady physical work - digging, weeding, carrying water - that keeps people moving without ever feeling like exercise. Researchers who study wellbeing have also noted that time spent among growing plants seems to lower stress and lift mood, offering a welcome change from screens and crowded streets. For older gardeners in particular, the routine of regular visits provides not only activity but a reason to leave the house and a place where they are expected and missed.
 
-[E] Community gardens reach beyond their own fences, too. A tidy, productive plot can lift the appearance of a run-down street and give a neighbourhood a renewed sense of pride. The gardens also make room for nature: their mix of flowers, fruit and vegetables draws bees and butterflies, and even a small plot can become a refuge for wildlife in a built-up area. Children who help out learn where food really comes from — a lesson that a supermarket shelf can never teach.
+[E] Community gardens reach beyond their own fences, too. A tidy, productive plot can lift the appearance of a run-down street and give a neighbourhood a renewed sense of pride. The gardens also make room for nature: their mix of flowers, fruit and vegetables draws bees and butterflies, and even a small plot can become a refuge for wildlife in a built-up area. Children who help out learn where food really comes from - a lesson that a supermarket shelf can never teach.
 
 [F] None of this happens by accident, and it would be wrong to pretend the gardens run themselves. They depend on a core of committed volunteers, and enthusiasm can fade when the first excitement passes or when a key organiser moves away. Many gardens are established on borrowed or temporary land, and can be lost when an owner decides to build. Sensible groups guard against these dangers by sharing responsibilities widely, keeping clear agreements with landowners, and welcoming newcomers warmly so that there is always someone ready to take up the spade. Where that care is taken, a community garden can flourish for many years, feeding a neighbourhood in more ways than one.`,
         questions: [
@@ -335,7 +335,7 @@ Staff who work from home or while travelling must use the company’s secure con
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The article has six paragraphs, A–F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i–viii. There are more headings than paragraphs, so you will not use them all.',
+              'The article has six paragraphs, A-F. Choose the correct heading for paragraphs B, C, D, E and F from the list of headings below. Write the correct number, i-viii. There are more headings than paragraphs, so you will not use them all.',
             options: [
               { key: 'i', label: 'i. Fresh food, harvested at its best' },
               { key: 'ii', label: 'ii. New friendships among neighbours' },
@@ -354,7 +354,7 @@ Staff who work from home or while travelling must use the company’s secure con
               { id: 'pF', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'B is about the food itself, "picked at its ripest" and reaching the table within hours (i). C is about neighbours meeting and friendships forming (ii). D covers physical work plus lower stress and better mood — body and mind (iv). E describes wider rewards: a lifted street, pride, and a refuge for bees, butterflies and wildlife (v). F is about the dangers — fading enthusiasm and the loss of borrowed land — and how to guard against them (vi). Headings iii, vii and viii are not used.',
+              'B is about the food itself, "picked at its ripest" and reaching the table within hours (i). C is about neighbours meeting and friendships forming (ii). D covers physical work plus lower stress and better mood - body and mind (iv). E describes wider rewards: a lifted street, pride, and a refuge for bees, butterflies and wildlife (v). F is about the dangers - fading enthusiasm and the loss of borrowed land - and how to guard against them (vi). Headings iii, vii and viii are not used.',
           },
           {
             id: 'rd-gen-006-p3-q19',
@@ -460,7 +460,7 @@ Staff who work from home or while travelling must use the company’s secure con
             ],
             correctIndex: 1,
             explanation:
-              'Paragraph E says "Children who help out learn where food really comes from — a lesson that a supermarket shelf can never teach." Option B matches this point.',
+              'Paragraph E says "Children who help out learn where food really comes from - a lesson that a supermarket shelf can never teach." Option B matches this point.',
           },
         ],
       },

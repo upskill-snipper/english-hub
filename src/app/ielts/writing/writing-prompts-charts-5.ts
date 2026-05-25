@@ -1,15 +1,15 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 5 ────────────────────────────
 // A fifth bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–4 and the
+// Authoring rules followed throughout (mirroring chart sets 1-4 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -62,7 +62,7 @@ export const WRITING_CHARTS_5: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── 2 · line (single series across the twelve months — seasonal trend) ────
+  // ── 2 · line (single series across the twelve months - seasonal trend) ────
   {
     id: 'wt1c5-gym-membership',
     task: 'writing-task-1',
@@ -119,7 +119,7 @@ export const WRITING_CHARTS_5: WritingPrompt[] = [
       kind: 'table',
       unit: '%',
       caption: 'Share of each age group naming each medium as their main source of news (%), 2023.',
-      columns: ['Main news source', '18–29', '30–49', '50–69', '70+'],
+      columns: ['Main news source', '18-29', '30-49', '50-69', '70+'],
       rows: [
         { label: 'Social media', cells: [52, 33, 14, 4] },
         { label: 'News websites & apps', cells: [27, 31, 22, 9] },
@@ -150,7 +150,7 @@ export const WRITING_CHARTS_5: WritingPrompt[] = [
       unit: 'millions',
       yAxisLabel: 'Units shipped (millions)',
       caption:
-        'Global shipments of smartphones and personal computers (millions of units), 2005–2025.',
+        'Global shipments of smartphones and personal computers (millions of units), 2005-2025.',
       categories: ['2005', '2010', '2015', '2020', '2025'],
       series: [
         { name: 'Smartphones', values: [64, 305, 1424, 1290, 1210] },

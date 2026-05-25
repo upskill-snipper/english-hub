@@ -1,15 +1,15 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 3 ────────────────────────────
 // A third bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
 // Authoring rules followed throughout (mirroring chart sets 1 & 2 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -64,7 +64,7 @@ export const WRITING_CHARTS_3: WritingPrompt[] = [
     track: 'academic',
     title: 'Global CO2 emissions by sector',
     prompt: [
-      'The line graph below shows the amount of carbon dioxide emitted worldwide by three sectors — electricity and heat, transport, and industry — between 1990 and 2020, measured in billions of tonnes.',
+      'The line graph below shows the amount of carbon dioxide emitted worldwide by three sectors - electricity and heat, transport, and industry - between 1990 and 2020, measured in billions of tonnes.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -74,7 +74,7 @@ export const WRITING_CHARTS_3: WritingPrompt[] = [
       kind: 'line',
       unit: 'bn tonnes',
       yAxisLabel: 'CO2 (billion tonnes)',
-      caption: 'Global CO2 emissions by sector (billion tonnes), 1990–2020.',
+      caption: 'Global CO2 emissions by sector (billion tonnes), 1990-2020.',
       categories: ['1990', '1998', '2006', '2014', '2020'],
       series: [
         { name: 'Electricity & heat', values: [7.6, 9.1, 11.8, 13.9, 14.2] },
@@ -237,7 +237,7 @@ export const WRITING_CHARTS_3: WritingPrompt[] = [
       unit: 'hours/month',
       yAxisLabel: 'Hours per month',
       caption: 'Average monthly hours spent watching films at the cinema and by streaming, 2023.',
-      categories: ['16–24', '25–39', '40–59', '60+'],
+      categories: ['16-24', '25-39', '40-59', '60+'],
       series: [
         { name: 'Cinema', values: [4.8, 3.6, 2.1, 1.3] },
         { name: 'Streaming', values: [26.4, 22.7, 15.9, 9.2] },

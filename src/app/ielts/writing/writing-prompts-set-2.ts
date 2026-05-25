@@ -1,7 +1,7 @@
 // ─── IELTS Academic Writing prompts · Set 2 ─────────────────────────────────
 // Wave 2 prompt bank for the AI-marked Writing module: three Task 1 questions
-// (Academic — describe/summarise a visual) and three Task 2 questions
-// (opinion / discuss-both-views / problem–solution essays).
+// (Academic - describe/summarise a visual) and three Task 2 questions
+// (opinion / discuss-both-views / problem-solution essays).
 //
 // As in Set 1, no chart/graph image assets exist yet, so each Task 1 prompt
 // embeds the underlying data as a clearly-laid-out textual description INSIDE
@@ -17,7 +17,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_SET_2: WritingPrompt[] = [
-  // ── Task 1 · A — bar chart (comparison across groups) ────────────────────
+  // ── Task 1 · A - bar chart (comparison across groups) ────────────────────
   {
     id: 'wt-s2-transport-modes',
     task: 'writing-task-1',
@@ -29,10 +29,10 @@ export const WRITING_SET_2: WritingPrompt[] = [
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
       'Data (percentage of working adults using each method of travel, 2022):',
-      '• Car — Eastgate: 58%; Riverton: 41%; Hillcrest: 27%',
-      '• Bus or train — Eastgate: 19%; Riverton: 34%; Hillcrest: 30%',
-      '• Bicycle — Eastgate: 8%; Riverton: 14%; Hillcrest: 31%',
-      '• Walking — Eastgate: 15%; Riverton: 11%; Hillcrest: 12%',
+      '• Car - Eastgate: 58%; Riverton: 41%; Hillcrest: 27%',
+      '• Bus or train - Eastgate: 19%; Riverton: 34%; Hillcrest: 30%',
+      '• Bicycle - Eastgate: 8%; Riverton: 14%; Hillcrest: 31%',
+      '• Walking - Eastgate: 15%; Riverton: 11%; Hillcrest: 12%',
       '',
       'Write at least 150 words.',
     ].join('\n'),
@@ -40,7 +40,7 @@ export const WRITING_SET_2: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — line graph (trend over time, described in words) ────────
+  // ── Task 1 · B - line graph (trend over time, described in words) ────────
   {
     id: 'wt-s2-mobile-internet',
     task: 'writing-task-1',
@@ -52,8 +52,8 @@ export const WRITING_SET_2: WritingPrompt[] = [
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
       'Data (number of subscriptions in millions):',
-      '• Mobile internet — 2005: 2; 2010: 11; 2015: 38; 2020: 64; 2025: 81',
-      '• Fixed broadband — 2005: 9; 2010: 17; 2015: 22; 2020: 24; 2025: 23',
+      '• Mobile internet - 2005: 2; 2010: 11; 2015: 38; 2020: 64; 2025: 81',
+      '• Fixed broadband - 2005: 9; 2010: 17; 2015: 22; 2020: 24; 2025: 23',
       '',
       'Write at least 150 words.',
     ].join('\n'),
@@ -61,7 +61,7 @@ export const WRITING_SET_2: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — process diagram (described in words) ────────────────────
+  // ── Task 1 · C - process diagram (described in words) ────────────────────
   {
     id: 'wt-s2-water-treatment',
     task: 'writing-task-1',
@@ -86,7 +86,7 @@ export const WRITING_SET_2: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (agree/disagree) · technology / society ─────────
+  // ── Task 2 · A - opinion (agree/disagree) · technology / society ─────────
   {
     id: 'wt-s2-screen-time-children',
     task: 'writing-task-2',
@@ -105,7 +105,7 @@ export const WRITING_SET_2: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — discuss both views + opinion · health / society ─────────
+  // ── Task 2 · B - discuss both views + opinion · health / society ─────────
   {
     id: 'wt-s2-public-health-funding',
     task: 'writing-task-2',
@@ -124,7 +124,7 @@ export const WRITING_SET_2: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — problem / solution + opinion · environment / work ───────
+  // ── Task 2 · C - problem / solution + opinion · environment / work ───────
   {
     id: 'wt-s2-city-congestion',
     task: 'writing-task-2',

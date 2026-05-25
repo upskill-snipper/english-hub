@@ -48,7 +48,7 @@ const SKILL_ICON: Record<IeltsSkill, typeof Headphones> = {
 
 // Solid accent for the trend bars + legend swatches. Kept as literal strings
 // (not derived from SKILL_META.colour via .replace) so Tailwind's JIT always
-// compiles them — these mirror the per-skill accents in SKILL_META.
+// compiles them - these mirror the per-skill accents in SKILL_META.
 const SKILL_BAR_BG: Record<IeltsSkill, string> = {
   listening: 'bg-sky-400',
   reading: 'bg-emerald-400',
@@ -56,10 +56,10 @@ const SKILL_BAR_BG: Record<IeltsSkill, string> = {
   speaking: 'bg-rose-400',
 }
 
-/** Format an ISO date for the attempts list — UK style, defensively. */
+/** Format an ISO date for the attempts list - UK style, defensively. */
 function formatDate(iso: string): string {
   const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return '—'
+  if (Number.isNaN(d.getTime())) return '-'
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
@@ -81,7 +81,7 @@ function BandTrend({ attempts, ariaLabel }: { attempts: IeltsAttempt[]; ariaLabe
     <div className="flex h-32 items-end gap-1.5" role="img" aria-label={ariaLabel}>
       {series.map((a) => {
         const band = a.band as Band
-        // Bands run 0–9; give the shortest bars a visible floor.
+        // Bands run 0-9; give the shortest bars a visible floor.
         const heightPct = Math.max(8, (band / 9) * 100)
         const meta = SKILL_META[a.skill]
         return (
@@ -137,7 +137,7 @@ export default function IeltsProgressPage() {
     )
   }
 
-  // ── Empty state — no data yet ──────────────────────────────────────────────
+  // ── Empty state - no data yet ──────────────────────────────────────────────
   if (!profile.hasData) {
     return (
       <main id="main-content" className="min-h-screen bg-background">

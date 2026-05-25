@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing prompts · Task 2 set T2-8 ───────────────────────
 // An eighth dedicated bank of SIX Academic Writing Task 2 questions (argument /
 // opinion essays). As with every Task 2 prompt, none carries a visual, so no
-// prompt defines a `chart`, `imageSrc` or `imageAlt` field — the writing page
+// prompt defines a `chart`, `imageSrc` or `imageAlt` field - the writing page
 // renders the question text from `prompt` alone.
 //
 // The six deliberately mix Task 2 question formats rather than repeating one:
 // discussion (both views + opinion) for transport, traditional crafts and
 // childhood competition versus cooperation; opinion (agree/disagree) for news
 // regulation and compulsory life skills; and advantages & disadvantages for
-// developing remote natural areas. Topics — investment in public transport
+// developing remote natural areas. Topics - investment in public transport
 // versus new roads, stricter regulation of news reporting, preserving
 // traditional crafts in a modern economy, whether children gain more from
 // competition or cooperation, tourism in wilderness areas, and teaching first
-// aid and other practical life skills in school — are chosen to stay distinct
+// aid and other practical life skills in school - are chosen to stay distinct
 // from earlier sets so this bank complements rather than duplicates them.
 //
 // Each prompt follows the house style of `writing-prompts.ts`: a statement or

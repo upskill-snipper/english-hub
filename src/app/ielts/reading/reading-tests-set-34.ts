@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 34) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 34) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains four matching questions across four
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2), Matching Features — statements to figures
+// which-paragraph (Passage 2), Matching Features - statements to figures
 // (Passage 3) and Matching Sentence Endings (Passage 3), alongside the usual
 // mix of True/False/Not Given, multiple choice and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_34: ReadingTest[] = [
   {
     id: 'rd-academic-034',
-    title: 'Academic Reading — Practice Test 34',
+    title: 'Academic Reading - Practice Test 34',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ The same sensitivity that makes glaciers superb recorders also makes them vulner
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'The two ways a glacier moves' },
               { key: 'ii', label: 'From snowflake to solid ice' },
@@ -68,7 +68,7 @@ The same sensitivity that makes glaciers superb recorders also makes them vulner
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'iii' },
             ],
             explanation:
-              'A argues a glacier "looks... like the very emblem of stillness" but "the reality is almost the opposite" (iv). B traces snow being squeezed and "transformed into dense glacial ice" (ii). C describes the "two distinct ways" of movement — internal flow and basal sliding (i). D introduces the ablation zone and the balance line that is "the simplest measure of a glacier\'s health" (vii). E explains ice cores as a layered archive of past climate (vi). F covers shrinking glaciers and their effects on rivers and sea level (iii). Heading v (discovery and naming) and heading viii (generating electricity) are distractors never discussed.',
+              'A argues a glacier "looks... like the very emblem of stillness" but "the reality is almost the opposite" (iv). B traces snow being squeezed and "transformed into dense glacial ice" (ii). C describes the "two distinct ways" of movement - internal flow and basal sliding (i). D introduces the ablation zone and the balance line that is "the simplest measure of a glacier\'s health" (vii). E explains ice cores as a layered archive of past climate (vi). F covers shrinking glaciers and their effects on rivers and sea level (iii). Heading v (discovery and naming) and heading viii (generating electricity) are distractors never discussed.',
           },
           {
             id: 'rd-034-p1-q2',
@@ -154,7 +154,7 @@ What gives the silk these qualities is its molecular architecture. The thread is
 
 Just as remarkable as the material is the way the spider makes it. The silk does not exist as a thread inside the animal; it begins as a watery liquid stored in a gland, a concentrated solution of the silk proteins. As this fluid is drawn through a narrow duct towards the spinning organs, known as spinnerets, its acidity is gradually raised and salts are drawn out of it. These subtle chemical changes, together with the pulling force of the spider's own legs and weight, coax the dissolved proteins to line up and lock together, so that a liquid is converted into a solid fibre at the very moment it leaves the body. The animal is, in effect, an exquisitely controlled spinning machine that works at room temperature and wastes almost nothing.
 
-The appeal of copying such a material is obvious. A fibre as strong, light and tough as spider silk, yet produced without heat or pollution, would be valuable for everything from lightweight cables to protective clothing. The most direct approach, simply farming spiders for their silk as silkworms are farmed, has always failed for a practical reason: spiders are fiercely territorial and cannibalistic, and crowding them together to harvest their threads is impossible. Researchers therefore turned to a different strategy, inserting the genes that carry the instructions for silk proteins into other, more cooperative organisms — bacteria, yeasts and even goats engineered to secrete the proteins in their milk — in the hope of mass-producing the raw material in a tank or a herd rather than from the spiders themselves.
+The appeal of copying such a material is obvious. A fibre as strong, light and tough as spider silk, yet produced without heat or pollution, would be valuable for everything from lightweight cables to protective clothing. The most direct approach, simply farming spiders for their silk as silkworms are farmed, has always failed for a practical reason: spiders are fiercely territorial and cannibalistic, and crowding them together to harvest their threads is impossible. Researchers therefore turned to a different strategy, inserting the genes that carry the instructions for silk proteins into other, more cooperative organisms - bacteria, yeasts and even goats engineered to secrete the proteins in their milk - in the hope of mass-producing the raw material in a tank or a herd rather than from the spiders themselves.
 
 Producing the protein, however, turned out to be only half the battle, and not the harder half. The greater challenge has been spinning it. Having extracted a quantity of silk protein, scientists then have to persuade it to assemble into a fibre as good as the natural one, reproducing outside the body the delicate sequence of chemical and physical changes that the spider performs effortlessly inside its duct. Early artificial threads were brittle and weak, falling far short of the real material, because the proteins did not fold and align in the right way. Progress has been real but slow, and recreating the full toughness of natural dragline silk in the laboratory remains difficult.
 
@@ -166,7 +166,7 @@ Even so, the effort has begun to bear fruit, and the potential rewards keep the 
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -299,13 +299,13 @@ Even so, the effort has begun to bear fruit, and the potential rewards keep the 
 
 For centuries afterwards, sending a letter remained slow, costly and unreliable for everyone else. A traveller or trader might be asked to carry a letter as a favour, and where official posts did open to the public the charges were high and the rules bewildering. In many places the fee was paid not by the sender but by the recipient, and it was reckoned according to the distance the letter had travelled and the number of sheets of paper it contained. The result was a tangle of expensive and inconsistent charges that put regular correspondence beyond the reach of most people, and that encouraged all manner of tricks to dodge the cost.
 
-The change that swept this confusion away came in Britain in 1840, and it is associated above all with a reformer named Rowland Hill. Hill argued that the existing system was self-defeating: the high charges suppressed the volume of post, while the elaborate business of calculating and collecting a different fee for every letter cost more to administer than it was worth. His remedy was radical in its simplicity. There should be a single low charge for an ordinary letter regardless of the distance it travelled within the country, and crucially the fee should be paid in advance by the sender, not on delivery by the recipient. To show that payment had been made, the sender would attach a small printed label to the letter — the adhesive postage stamp, an invention that quickly spread around the world.
+The change that swept this confusion away came in Britain in 1840, and it is associated above all with a reformer named Rowland Hill. Hill argued that the existing system was self-defeating: the high charges suppressed the volume of post, while the elaborate business of calculating and collecting a different fee for every letter cost more to administer than it was worth. His remedy was radical in its simplicity. There should be a single low charge for an ordinary letter regardless of the distance it travelled within the country, and crucially the fee should be paid in advance by the sender, not on delivery by the recipient. To show that payment had been made, the sender would attach a small printed label to the letter - the adhesive postage stamp, an invention that quickly spread around the world.
 
 The effects of the penny post, as the reform became known, were dramatic. Freed from high and unpredictable charges, ordinary people began to write to one another as never before, and the volume of letters rose enormously within just a few years. Yet handling this flood of mail created a fresh problem of organisation. A letter now had to be gathered, carried, separated according to its destination and finally delivered, and doing this quickly for millions of items demanded a system of its own. Mail was brought to central offices where it was sorted, divided first into broad regions and then into ever finer divisions, before being sent onward in batches towards the addresses for which it was bound. As the volume grew, this sorting became the true bottleneck of the whole enterprise, and over the following century engineers devoted great effort to speeding it up, eventually building machines that could read an address and route a letter automatically.
 
 For a century and a half the letter reigned as the chief means of corresponding at a distance, but in the closing decades of the twentieth century it met a rival it could not outrun. Electronic mail delivered a written message in seconds, at almost no cost and across any distance, and the volume of personal letters, which had climbed for generations, began to fall. The decline was uneven. The carrying of parcels, far from collapsing, was lifted by the rise of online shopping, as goods ordered on a screen still had to be delivered to a physical door. The handwritten personal letter, by contrast, became something close to a rarity. The postal services that survive have had to remake themselves around this new balance, leaning on parcels and official correspondence rather than the private letter that once filled their sacks. The basic human wish that set the messengers riding has not disappeared; it has simply found faster wings.`,
         questions: [
-          // ── Matching Features — statements to people/things (5 items) = 5 marks ──
+          // ── Matching Features - statements to people/things (5 items) = 5 marks ──
           {
             id: 'rd-034-p3-q1',
             type: 'matching',
@@ -353,7 +353,7 @@ For a century and a half the letter reigned as the chief means of corresponding 
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence with the correct ending, A–F, from the list below. There are more endings than sentences, so you will not use them all. Write the correct letter, A–F.',
+              'Complete each sentence with the correct ending, A-F, from the list below. There are more endings than sentences, so you will not use them all. Write the correct letter, A-F.',
             options: [
               {
                 key: 'A',
@@ -418,7 +418,7 @@ For a century and a half the letter reigned as the chief means of corresponding 
               'Complete the sentence with ONE word from the passage: To prove that postage had been paid in advance, the sender attached a small printed label, the adhesive postage _______.',
             acceptableAnswers: ['stamp'],
             explanation:
-              'Paragraph C describes the sender attaching "a small printed label to the letter — the adhesive postage stamp." The required word is "stamp".',
+              'Paragraph C describes the sender attaching "a small printed label to the letter - the adhesive postage stamp." The required word is "stamp".',
           },
           {
             id: 'rd-034-p3-q6',

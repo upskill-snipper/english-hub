@@ -1,15 +1,15 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 7 ────────────────────────────
 // A seventh bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–5 and the
+// Authoring rules followed throughout (mirroring chart sets 1-5 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
 //   • every spec sets a `caption`;
@@ -38,7 +38,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_CHARTS_7: WritingPrompt[] = [
-  // ── 1 · bar (single series across six countries — comparison) ─────────────
+  // ── 1 · bar (single series across six countries - comparison) ─────────────
   {
     id: 'wt1c7-bottled-water',
     task: 'writing-task-1',
@@ -80,7 +80,7 @@ export const WRITING_CHARTS_7: WritingPrompt[] = [
       kind: 'line',
       unit: '%',
       yAxisLabel: 'Unemployment rate (%)',
-      caption: 'Annual unemployment rate as a share of the workforce (%), 2000–2025.',
+      caption: 'Annual unemployment rate as a share of the workforce (%), 2000-2025.',
       categories: ['2000', '2005', '2010', '2015', '2020', '2025'],
       series: [
         { name: 'Country X', values: [4.2, 5.1, 9.6, 6.3, 8.1, 4.5] },
@@ -237,7 +237,7 @@ export const WRITING_CHARTS_7: WritingPrompt[] = [
       unit: 'hours/day',
       yAxisLabel: 'Hours per day',
       caption: 'Average daily time on smartphone app categories by age group (hours), 2024.',
-      categories: ['13–17', '18–34', '35–54', '55+'],
+      categories: ['13-17', '18-34', '35-54', '55+'],
       series: [
         { name: 'Social media', values: [3.4, 2.8, 1.5, 0.7] },
         { name: 'Games', values: [2.1, 1.2, 0.6, 0.4] },

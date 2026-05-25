@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 18) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 18) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -8,7 +8,7 @@
 //
 // This test contains three matching questions, one per passage, each of a
 // different variant: Matching Headings (Passage 1, with distractors), Matching
-// Information / which-paragraph (Passage 2) and Matching Features — statements
+// Information / which-paragraph (Passage 2) and Matching Features - statements
 // to researchers (Passage 3), alongside the usual mix of True/False/Not Given,
 // multiple choice and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_18: ReadingTest[] = [
   {
     id: 'rd-academic-018',
-    title: 'Academic Reading — Practice Test 18',
+    title: 'Academic Reading - Practice Test 18',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ The reign of salt as a treasure could not last. In the nineteenth and twentieth 
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A body that cannot do without it' },
               { key: 'ii', label: 'How the modern world made salt cheap' },
@@ -68,7 +68,7 @@ The reign of salt as a treasure could not last. In the nineteenth and twentieth 
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'ii' },
             ],
             explanation:
-              'A explains that "the human body cannot manufacture salt" and needs a steady supply, making it a biological necessity (i). B describes preservation "before refrigeration", how salting kept meat and fish for months (iv). C covers the taxes and monopolies imposed on salt and the "protests and revolts" they provoked (vi). D lists the different sources — coastal ponds, rock-salt mines and salty springs (vii). E follows the long trade routes, from Saharan caravans to European salt roads (v). F explains how new mining, transport, canning and refrigeration "caused the price of salt to collapse" (ii). Heading iii ("Why salt is bad for human health") is a distractor — the passage discusses the need for salt, not its harms; heading viii ("A single recipe shared by every nation") is a distractor the passage never supports.',
+              'A explains that "the human body cannot manufacture salt" and needs a steady supply, making it a biological necessity (i). B describes preservation "before refrigeration", how salting kept meat and fish for months (iv). C covers the taxes and monopolies imposed on salt and the "protests and revolts" they provoked (vi). D lists the different sources - coastal ponds, rock-salt mines and salty springs (vii). E follows the long trade routes, from Saharan caravans to European salt roads (v). F explains how new mining, transport, canning and refrigeration "caused the price of salt to collapse" (ii). Heading iii ("Why salt is bad for human health") is a distractor - the passage discusses the need for salt, not its harms; heading viii ("A single recipe shared by every nation") is a distractor the passage never supports.',
           },
           {
             id: 'rd-018-p1-q2',
@@ -168,7 +168,7 @@ Today the limits on height are as much economic as structural. Engineers are con
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has six paragraphs, A–F. Which paragraph contains the following information? Write the correct letter, A–F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -300,13 +300,13 @@ Today the limits on height are as much economic as structural. Engineers are con
       {
         id: 'rd-academic-018-p3',
         title: 'The Science of Laughter',
-        body: `Laughter feels like one of the most personal of human responses, an involuntary burst of delight at something funny. Yet when scientists began to study it closely they found something surprising: most laughter has little to do with jokes at all. Researchers who eavesdropped on thousands of everyday conversations, noting exactly what was said in the moments before someone laughed, discovered that the great majority of laughs followed remarks that were not in any way humorous — banal comments, greetings and questions of the most ordinary kind. Laughter, it seemed, was less a reaction to wit than a social signal, a sound we make to smooth and bind our dealings with one another.
+        body: `Laughter feels like one of the most personal of human responses, an involuntary burst of delight at something funny. Yet when scientists began to study it closely they found something surprising: most laughter has little to do with jokes at all. Researchers who eavesdropped on thousands of everyday conversations, noting exactly what was said in the moments before someone laughed, discovered that the great majority of laughs followed remarks that were not in any way humorous - banal comments, greetings and questions of the most ordinary kind. Laughter, it seemed, was less a reaction to wit than a social signal, a sound we make to smooth and bind our dealings with one another.
 
 The most telling clue to its true purpose is that we laugh far more readily in company than alone. The psychologist Robert Provine, who pioneered the study of everyday laughter, found that people are many times more likely to laugh when others are present than when they are by themselves, even when they are doing exactly the same thing, such as watching the same comedy. This strongly suggests that laughter is fundamentally about connection rather than amusement. Provine also noticed that within a conversation it is usually the speaker, not the listener, who laughs most, which fits awkwardly with the idea that laughter is simply a response to something funny that one has heard.
 
 If laughter is a social glue, it is one we have inherited from deep in our evolutionary past. The primatologist Marina Devlin studies the play of young apes, which pant and gasp in a rhythmic way when they tumble and chase one another, especially during mock fighting. This panting, she argues, is the direct ancestor of human laughter, a signal that the rough-and-tumble is only a game and that no real aggression is meant. On this view laughter began as a way of saying "this is play", long before our ancestors could say anything at all, and its modern role in defusing tension and signalling goodwill is a refinement of that ancient function rather than a break from it.
 
-Not all laughter, however, springs from the same source, and here researchers draw an important distinction. The neuroscientist Hassan Bauer separates the spontaneous, helpless laughter that bubbles up unbidden — the kind that can leave us gasping and unable to stop — from the deliberate, polite laughter we produce on purpose to be agreeable. The two, he has shown, are driven by different pathways in the brain and even sound subtly different to the ear, so that listeners can usually tell a genuine laugh from a posed one. The polite version, he suggests, is a relatively recent overlay, a piece of voluntary social theatre laid on top of the older, automatic response we share with other animals.
+Not all laughter, however, springs from the same source, and here researchers draw an important distinction. The neuroscientist Hassan Bauer separates the spontaneous, helpless laughter that bubbles up unbidden - the kind that can leave us gasping and unable to stop - from the deliberate, polite laughter we produce on purpose to be agreeable. The two, he has shown, are driven by different pathways in the brain and even sound subtly different to the ear, so that listeners can usually tell a genuine laugh from a posed one. The polite version, he suggests, is a relatively recent overlay, a piece of voluntary social theatre laid on top of the older, automatic response we share with other animals.
 
 Because laughter binds groups together, it can also be turned outward to exclude. Bauer points out that the same signal that draws a circle of friends closer can, as mockery, be aimed at those outside the circle, and that the dread of being laughed at is a powerful force shaping human behaviour. Devlin adds that this double edge is precisely what one would expect of a signal that evolved to mark the boundaries of a group, defining who belongs by making plain who does not. Laughter, in this light, is not simply warm and benign; it is a tool for managing membership, capable of wounding as well as welcoming.
 
@@ -314,7 +314,7 @@ One further feature has long puzzled observers: laughter spreads. The sound of o
 
 Whatever its uses, laughter appears to be genuinely good for us, though scientists are careful not to overstate the case. There is reasonable evidence that a good laugh relaxes the muscles, eases the body's response to stress and may modestly improve the flow of blood, and the simple fact that laughter strengthens social bonds is itself valuable, since strong relationships are among the best predictors of long-term health. Some popular claims, however, run well ahead of what has actually been demonstrated, and Bauer cautions that laughter is no miracle cure. Its real power, the researchers broadly agree, lies less in any direct effect on the body than in its extraordinary ability to knit human beings together.`,
         questions: [
-          // ── Matching Features — statements to researchers (5 items) = 5 marks ──
+          // ── Matching Features - statements to researchers (5 items) = 5 marks ──
           {
             id: 'rd-018-p3-q1',
             type: 'matching',

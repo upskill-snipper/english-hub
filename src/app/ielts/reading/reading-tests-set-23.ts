@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 23) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 23) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 // water / how ant colonies organise themselves.
 //
 // This test is MATCHING-RICH. It contains TWO matching questions of DIFFERENT
-// variants: Matching Headings (Passage 1) and Matching Features — statements to
+// variants: Matching Headings (Passage 1) and Matching Features - statements to
 // named researchers (Passage 3), alongside the usual mix of True/False/Not
 // Given, multiple choice and sentence/summary completion.
 //
@@ -22,7 +22,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_23: ReadingTest[] = [
   {
     id: 'rd-academic-023',
-    title: 'Academic Reading — Practice Test 23',
+    title: 'Academic Reading - Practice Test 23',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -48,7 +48,7 @@ Behind the modern refrigerator lies something larger and less visible: an unbrok
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'A gift gathered from nature, not made' },
               { key: 'ii', label: 'Industry leads the way' },
@@ -68,7 +68,7 @@ Behind the modern refrigerator lies something larger and less visible: an unbrok
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'A describes how people "hunted for it where nature offered it freely", harvesting ice and snow rather than making cold (i). B explains the insight that "when a liquid evaporates into a gas it draws heat from its surroundings" and how machines harnessed it (v). C states the "earliest customers... were not households but industries that lost money to spoilage" (ii). D recounts the late-1920s "synthetic gases that were stable, non-toxic and would not catch fire", which made the appliance safe for the kitchen (iii). E covers the damage these gases did to "the layer of ozone high in the atmosphere" (vii). F introduces "an unbroken chain of cold that stretches from the field to the kitchen" (vi). Heading iv (flavour of frozen food) is a distractor the passage never discusses; heading viii (why cellars were underground) is a distractor — A mentions cellars but never explains the choice of depth as its theme.',
+              'A describes how people "hunted for it where nature offered it freely", harvesting ice and snow rather than making cold (i). B explains the insight that "when a liquid evaporates into a gas it draws heat from its surroundings" and how machines harnessed it (v). C states the "earliest customers... were not households but industries that lost money to spoilage" (ii). D recounts the late-1920s "synthetic gases that were stable, non-toxic and would not catch fire", which made the appliance safe for the kitchen (iii). E covers the damage these gases did to "the layer of ozone high in the atmosphere" (vii). F introduces "an unbroken chain of cold that stretches from the field to the kitchen" (vi). Heading iv (flavour of frozen food) is a distractor the passage never discusses; heading viii (why cellars were underground) is a distractor - A mentions cellars but never explains the choice of depth as its theme.',
           },
           {
             id: 'rd-023-p1-q2',
@@ -293,15 +293,15 @@ The benefits of all this hidden effort are easy to overlook precisely because th
 
 How this happens has fascinated biologists for decades, and the central idea to come out of their work is that the colony is governed not by command but by communication. Ants talk to one another chiefly through chemicals called pheromones, scent signals that they lay down and detect with extraordinary sensitivity. A forager returning from a rich source of food, for example, lays a trail of pheromone on its way back to the nest; other ants follow the trail to the food and reinforce it as they return, so that a path to a good source quickly becomes strong while a path to an exhausted one fades as the scent evaporates and is no longer renewed. The behaviourist Marcus Oduya, who has spent years filming foraging trails, emphasises that no ant decides which route the colony should take. The shortest route tends to win simply because ants travelling it complete the round trip fastest and so reinforce it most often. The clever outcome, he likes to say, is produced by a crowd of individuals following very simple rules.
 
-If pheromones are the colony's language, then the division of labour is among its most remarkable achievements. The tasks of the colony — foraging, caring for the young, building, defending — are shared out among the workers, and the proportion doing each job shifts as circumstances change. The myrmecologist Selina Brandt has studied how this allocation works and rejects the popular notion that ants are born into fixed careers. In many species, she points out, a worker's job depends largely on its age: young workers tend to remain inside, nursing the brood, while older ones graduate to the riskier work of foraging outside, so that the colony spends its most expendable members where danger is greatest. Yet this schedule is not rigid. Brandt has shown that if a colony suddenly loses many of its foragers, some of the younger nurses will mature faster and switch to foraging earlier than they otherwise would, restoring the balance. The system, in her words, is flexible precisely because no individual is irreplaceable.
+If pheromones are the colony's language, then the division of labour is among its most remarkable achievements. The tasks of the colony - foraging, caring for the young, building, defending - are shared out among the workers, and the proportion doing each job shifts as circumstances change. The myrmecologist Selina Brandt has studied how this allocation works and rejects the popular notion that ants are born into fixed careers. In many species, she points out, a worker's job depends largely on its age: young workers tend to remain inside, nursing the brood, while older ones graduate to the riskier work of foraging outside, so that the colony spends its most expendable members where danger is greatest. Yet this schedule is not rigid. Brandt has shown that if a colony suddenly loses many of its foragers, some of the younger nurses will mature faster and switch to foraging earlier than they otherwise would, restoring the balance. The system, in her words, is flexible precisely because no individual is irreplaceable.
 
 A third strand of research treats the colony less as a society than as a kind of distributed computer. The theorist Idris Vasquez argues that a colony solves problems in much the way a computer network does, by passing simple messages between many units none of which holds the answer alone. When ants choose the shortest path to food, or pick the best new nest site from several on offer, they are, in his analysis, performing a computation, and one that no single ant could carry out. What looks like collective wisdom, he maintains, is really the result of many parallel interactions, each trivial in itself. He is careful to add that this does not mean the colony is conscious or that it plans ahead; the ants are not aware they are computing anything, any more than the parts of a calculator understand arithmetic.
 
-This way of thinking has spread well beyond the study of insects. Engineers facing problems of their own — how to route traffic through a crowded network, how to schedule deliveries, how to coordinate fleets of small robots — have borrowed directly from the ant. Algorithms inspired by pheromone trails are now used to find efficient routes through complex systems, an approach that has proved its worth in real applications. The appeal is obvious: a method that needs no central controller is robust, because the failure of any one part does not bring down the whole, and it scales easily to very large numbers. The ant colony, it turns out, had solved problems of organisation long before human engineers even thought to ask the questions.
+This way of thinking has spread well beyond the study of insects. Engineers facing problems of their own - how to route traffic through a crowded network, how to schedule deliveries, how to coordinate fleets of small robots - have borrowed directly from the ant. Algorithms inspired by pheromone trails are now used to find efficient routes through complex systems, an approach that has proved its worth in real applications. The appeal is obvious: a method that needs no central controller is robust, because the failure of any one part does not bring down the whole, and it scales easily to very large numbers. The ant colony, it turns out, had solved problems of organisation long before human engineers even thought to ask the questions.
 
 None of this means the analogy should be pushed too far. Critics caution that an ant colony is not literally a brain, a computer or a factory, and that such comparisons, however useful, are metaphors that capture only part of the truth. The deeper lesson, most researchers agree, is more general and more surprising: that sophisticated, adaptive order can arise from the bottom up, without design, planning or anyone in charge, simply from many simple agents interacting according to simple rules. It is a lesson that unsettles our instinct to look for a leader behind every organised thing.`,
         questions: [
-          // ── Matching Features — statements to researchers (5 items) = 5 marks ──
+          // ── Matching Features - statements to researchers (5 items) = 5 marks ──
           {
             id: 'rd-023-p3-q1',
             type: 'matching',

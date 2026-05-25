@@ -4,7 +4,7 @@
 // GT Writing differs from Academic:
 //   • Task 1 is a LETTER (not a data description). The candidate responds to an
 //     everyday situation by writing a letter that covers THREE bullet points.
-//     The register varies by prompt — this set is three FORMAL letters (to a
+//     The register varies by prompt - this set is three FORMAL letters (to a
 //     library, to an employer, and to a travel company). The situation and the
 //     three bullets live inside `prompt`. minWords 150, suggestedMinutes 20.
 //   • Task 2 is an opinion / discussion essay, like Academic, but on more
@@ -20,7 +20,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const GT_WRITING_SET_9: WritingPrompt[] = [
-  // ── Task 1 · A — FORMAL letter to a library about a lost book ──────────────
+  // ── Task 1 · A - FORMAL letter to a library about a lost book ──────────────
   {
     id: 'wt1-gt9-lost-book',
     task: 'writing-task-1',
@@ -45,7 +45,7 @@ export const GT_WRITING_SET_9: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — FORMAL letter to an employer accepting a job ─────────────
+  // ── Task 1 · B - FORMAL letter to an employer accepting a job ─────────────
   {
     id: 'wt1-gt9-accept-job',
     task: 'writing-task-1',
@@ -70,7 +70,7 @@ export const GT_WRITING_SET_9: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — FORMAL letter to a travel company (request) ──────────────
+  // ── Task 1 · C - FORMAL letter to a travel company (request) ──────────────
   {
     id: 'wt1-gt9-tour-enquiry',
     task: 'writing-task-1',
@@ -95,7 +95,7 @@ export const GT_WRITING_SET_9: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — opinion (big city vs small town) ─────────────────────────
+  // ── Task 2 · A - opinion (big city vs small town) ─────────────────────────
   {
     id: 'wt2-gt9-city-vs-town',
     task: 'writing-task-2',
@@ -114,7 +114,7 @@ export const GT_WRITING_SET_9: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — opinion (agree / disagree: recycling law) ────────────────
+  // ── Task 2 · B - opinion (agree / disagree: recycling law) ────────────────
   {
     id: 'wt2-gt9-recycling-law',
     task: 'writing-task-2',
@@ -133,7 +133,7 @@ export const GT_WRITING_SET_9: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — opinion (mobile phones in schools) ───────────────────────
+  // ── Task 2 · C - opinion (mobile phones in schools) ───────────────────────
   {
     id: 'wt2-gt9-phones-in-schools',
     task: 'writing-task-2',

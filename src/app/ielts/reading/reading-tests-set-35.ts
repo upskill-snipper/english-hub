@@ -1,4 +1,4 @@
-// ─── IELTS Academic Reading — practice item bank (Set 35) ──────────────────
+// ─── IELTS Academic Reading - practice item bank (Set 35) ──────────────────
 // ORIGINAL content written for The English Hub. These passages and questions are
 // invented purely to practise the Academic Reading question formats. They are
 // NOT reproductions of any official IELTS past paper, and no official
@@ -7,7 +7,7 @@
 //
 // This test is MATCHING-RICH. It contains four matching questions across four
 // different variants: Matching Headings (Passage 1), Matching Information /
-// which-paragraph (Passage 2), Matching Features — statements to animals
+// which-paragraph (Passage 2), Matching Features - statements to animals
 // (Passage 3) and Matching Sentence Endings (Passage 3), alongside the usual mix
 // of True/False/Not Given, multiple choice and sentence/summary completion.
 //
@@ -23,7 +23,7 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const READING_SET_35: ReadingTest[] = [
   {
     id: 'rd-academic-035',
-    title: 'Academic Reading — Practice Test 35',
+    title: 'Academic Reading - Practice Test 35',
     track: 'academic',
     estimatedMinutes: 60,
     passages: [
@@ -49,7 +49,7 @@ Human beings have learned to borrow the idea. The sonar that allows ships to map
             type: 'matching',
             variant: 'headings',
             prompt:
-              'The passage has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i–viii) for each paragraph.',
+              'The passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. There are more headings than paragraphs, so you will not use them all. Write the correct number (i-viii) for each paragraph.',
             options: [
               { key: 'i', label: 'Two distant animals, one shared answer' },
               { key: 'ii', label: 'The body built for sound' },
@@ -69,7 +69,7 @@ Human beings have learned to borrow the idea. The sonar that allows ships to map
               { id: 'p1-h-f', text: 'Paragraph F', answer: 'vi' },
             ],
             explanation:
-              'A introduces a bat hunting in darkness by listening, not by sight (iii). B explains how the timing and direction of echoes are read into a picture of distance, size and movement (iv). C describes the specialised larynx, nose folds, sensitive ears and the middle-ear muscle — the body built for sound (ii). D moves to dolphins and toothed whales using the same skill in the sea (v). E names convergent evolution: two distant animals reaching one shared answer (i). F covers sonar, radar and human tongue-clicking (vi). Heading vii (bats losing eyesight) is a distractor — the passage says their eyes are small but never that sight is being lost; heading viii (training dolphins to follow ships) is never stated.',
+              'A introduces a bat hunting in darkness by listening, not by sight (iii). B explains how the timing and direction of echoes are read into a picture of distance, size and movement (iv). C describes the specialised larynx, nose folds, sensitive ears and the middle-ear muscle - the body built for sound (ii). D moves to dolphins and toothed whales using the same skill in the sea (v). E names convergent evolution: two distant animals reaching one shared answer (i). F covers sonar, radar and human tongue-clicking (vi). Heading vii (bats losing eyesight) is a distractor - the passage says their eyes are small but never that sight is being lost; heading viii (training dolphins to follow ships) is never stated.',
           },
           {
             id: 'rd-035-p1-q2',
@@ -166,7 +166,7 @@ The social effects of the spreading network were profound and not always the one
             type: 'matching',
             variant: 'information',
             prompt:
-              'The passage has five paragraphs, A–E. Which paragraph contains the following information? Write the correct letter, A–E. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
+              'The passage has five paragraphs, A-E. Which paragraph contains the following information? Write the correct letter, A-E. (You may use any letter more than once, but each statement here is found in only one paragraph.)',
             options: [
               { key: 'A', label: 'Paragraph A' },
               { key: 'B', label: 'Paragraph B' },
@@ -296,19 +296,19 @@ Soil begins with the slow breakdown of rock, a process called weathering. Frost 
 
 A healthy soil is full of life, and that life does much of the work. Earthworms drag leaves down from the surface and, by tunnelling, mix the layers and let in air and water. Countless bacteria and fungi recycle dead matter, releasing the nutrients locked within it back into a form that roots can absorb; some bacteria perform the vital service of capturing nitrogen from the air and converting it into compounds plants can use. A mere handful of fertile soil may contain more microorganisms than there are people on the planet. It is this hidden community, more than the mineral grains, that makes the difference between a living soil and a sterile one.
 
-Because soil forms so slowly and feeds so much, its loss is among the most serious of environmental problems, and the chief agent of that loss is erosion. Wind and water are constantly at work carrying soil away, and although some erosion is natural, human activity has hugely accelerated it. When land is stripped of its plant cover — by ploughing, by overgrazing, or by the clearing of forests — the bare surface is left exposed; rain then washes the loosened earth into rivers and the wind lifts the dry dust into the sky. Soil that took a thousand years to form can be carried off in a single season. Worse, it is the uppermost layer, the topsoil, that is richest in humus and nutrients and that erosion strips away first, leaving behind a poorer, less productive ground.
+Because soil forms so slowly and feeds so much, its loss is among the most serious of environmental problems, and the chief agent of that loss is erosion. Wind and water are constantly at work carrying soil away, and although some erosion is natural, human activity has hugely accelerated it. When land is stripped of its plant cover - by ploughing, by overgrazing, or by the clearing of forests - the bare surface is left exposed; rain then washes the loosened earth into rivers and the wind lifts the dry dust into the sky. Soil that took a thousand years to form can be carried off in a single season. Worse, it is the uppermost layer, the topsoil, that is richest in humus and nutrients and that erosion strips away first, leaving behind a poorer, less productive ground.
 
 Other threats compound the damage. Where irrigation water evaporates in hot climates it can leave behind a crust of salts that few crops will tolerate, a process called salinisation that has ruined farmland since ancient times. Heavy machinery presses the soil into a hard, airless mass that roots and water struggle to penetrate. And the relentless growing of a single crop, season after season, can strip the ground of particular nutrients faster than they are replaced. Each of these processes quietly reduces the land's capacity to grow food, and they often act together.
 
 The encouraging news is that soil can be protected and even rebuilt, and many of the methods are well understood. Keeping the ground covered with plants or their residues shields it from wind and rain. Ploughing along the contours of a slope, rather than up and down it, slows the run-off that carries soil away. Rotating crops and planting legumes, which host the nitrogen-fixing bacteria, restores fertility without the heavy use of artificial fertiliser. None of this is new knowledge, yet the pressure to extract the greatest possible yield in the shortest time continually works against it. The challenge, as a growing population asks ever more of a finite resource, is less to discover how to care for the soil than to find the will to do so before the thin skin of the Earth is worn away.`,
         questions: [
-          // ── Matching Features — statements to soil components (5 items) = 5 marks ──
+          // ── Matching Features - statements to soil components (5 items) = 5 marks ──
           {
             id: 'rd-035-p3-q1',
             type: 'matching',
             variant: 'features',
             prompt:
-              'Look at the following statements and the list of soil components and organisms below. Match each statement to the thing it relates to in the passage. Write the correct letter, A–D. NB You may use any letter more than once.',
+              'Look at the following statements and the list of soil components and organisms below. Match each statement to the thing it relates to in the passage. Write the correct letter, A-D. NB You may use any letter more than once.',
             options: [
               { key: 'A', label: 'Humus' },
               { key: 'B', label: 'Earthworms' },
@@ -351,7 +351,7 @@ The encouraging news is that soil can be protected and even rebuilt, and many of
             type: 'matching',
             variant: 'endings',
             prompt:
-              'Complete each sentence with the correct ending from the list below. Write the correct letter, A–F. There are more endings than sentences, so you will not use them all.',
+              'Complete each sentence with the correct ending from the list below. Write the correct letter, A-F. There are more endings than sentences, so you will not use them all.',
             options: [
               { key: 'A', label: 'it may take many centuries to build only a few centimetres.' },
               { key: 'B', label: 'few crops will tolerate the crust of salts left behind.' },

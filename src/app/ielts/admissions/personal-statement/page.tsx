@@ -1,6 +1,6 @@
 'use client'
 
-// ─── Personal-Statement Coach — AI feedback ──────────────────────────────────
+// ─── Personal-Statement Coach - AI feedback ──────────────────────────────────
 // Paste a UCAS personal-statement draft, optionally add the intended course and
 // university, watch a live word + character count (UCAS caps at 4,000 chars /
 // 47 lines), then POST to /api/ielts/statement-feedback and render structured
@@ -121,7 +121,7 @@ export default function PersonalStatementCoachPage() {
   const [feedback, setFeedback] = useState<StatementFeedback | null>(null)
   const [disclaimer, setDisclaimer] = useState<string>('')
 
-  // Children's Code AI opt-out — gate the whole tool client-side, then the API
+  // Children's Code AI opt-out - gate the whole tool client-side, then the API
   // enforces it authoritatively server-side too.
   const [aiOff, setAiOff] = useState(false)
   useEffect(() => {
@@ -222,14 +222,14 @@ export default function PersonalStatementCoachPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.05] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          {t('ielts.admissions.ps.eyebrow') || 'AI feedback — UCAS personal statement'}
+          {t('ielts.admissions.ps.eyebrow') || 'AI feedback - UCAS personal statement'}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
           {t('ielts.admissions.ps.title') || 'Personal-Statement Coach'}
         </h1>
         <p className="mt-3 max-w-2xl text-body-md text-muted-foreground">
           {t('ielts.admissions.ps.subtitle') ||
-            'Paste a draft of your UCAS personal statement and get honest, specific feedback on structure, motivation, evidence, reflection and English — plus three concrete things to fix in your next draft.'}
+            'Paste a draft of your UCAS personal statement and get honest, specific feedback on structure, motivation, evidence, reflection and English - plus three concrete things to fix in your next draft.'}
         </p>
         <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
           <Target className="size-3.5 text-primary" />
@@ -239,7 +239,7 @@ export default function PersonalStatementCoachPage() {
               'UCAS allows up to {chars} characters (about {words} words) across {lines} lines.'
             )
               .replace('{chars}', UCAS_CHAR_LIMIT.toLocaleString())
-              .replace('{words}', '500–650')
+              .replace('{words}', '500-650')
               .replace('{lines}', '47')}
           </span>
         </div>
@@ -295,7 +295,7 @@ export default function PersonalStatementCoachPage() {
               onChange={(e) => setStatement(e.target.value)}
               placeholder={
                 t('ielts.admissions.ps.draft_placeholder') ||
-                'Paste your full personal statement here — opening, why this subject, your evidence and reflection, and a forward-looking close…'
+                'Paste your full personal statement here - opening, why this subject, your evidence and reflection, and a forward-looking close…'
               }
               rows={18}
               className="resize-y leading-relaxed"
@@ -324,7 +324,7 @@ export default function PersonalStatementCoachPage() {
               {overLimit && (
                 <span className="text-destructive">
                   {t('ielts.admissions.ps.over_limit') ||
-                    'Over the UCAS limit — you’ll still get feedback, including where to cut.'}
+                    'Over the UCAS limit - you’ll still get feedback, including where to cut.'}
                 </span>
               )}
             </div>
@@ -363,7 +363,7 @@ export default function PersonalStatementCoachPage() {
           {isSubmitting && (
             <p className="text-center text-xs text-muted-foreground">
               {t('ielts.admissions.ps.submitting_note') ||
-                'This usually takes 15–30 seconds. Please don’t close the page.'}
+                'This usually takes 15-30 seconds. Please don’t close the page.'}
             </p>
           )}
 
@@ -408,7 +408,7 @@ function BackLink({ t }: { t: (key: string) => string }) {
   )
 }
 
-/** A compact 0–5 quality meter. Original visual — not an IELTS band chip. */
+/** A compact 0-5 quality meter. Original visual - not an IELTS band chip. */
 function RatingMeter({ rating }: { rating: StatementRating }) {
   const tone =
     rating >= 4
@@ -524,7 +524,7 @@ function FeedbackView({
             </CardTitle>
             <CardDescription>
               {t('ielts.admissions.ps.fb.improve_desc') ||
-                'Concrete changes to make in your next draft — not a rewrite to copy.'}
+                'Concrete changes to make in your next draft - not a rewrite to copy.'}
             </CardDescription>
           </CardHeader>
           <CardContent>

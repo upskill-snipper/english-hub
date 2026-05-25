@@ -89,11 +89,11 @@ export const SPEAKING_CRITERIA: CriterionDef<SpeakingCriterion>[] = [
 
 /** Short, learner-facing summary of what each whole band means in practice. */
 export const BAND_SUMMARY: Record<number, string> = {
-  9: 'Expert — fully operational command of English.',
-  8: 'Very good — fully operational with only occasional unsystematic inaccuracies.',
-  7: 'Good — operational command, occasional inaccuracies in unfamiliar situations.',
-  6: 'Competent — generally effective command despite some inaccuracies.',
-  5: 'Modest — partial command, copes with overall meaning in most situations.',
-  4: 'Limited — basic competence limited to familiar situations.',
-  3: 'Extremely limited — conveys and understands only general meaning.',
+  9: 'Expert - fully operational command of English.',
+  8: 'Very good - fully operational with only occasional unsystematic inaccuracies.',
+  7: 'Good - operational command, occasional inaccuracies in unfamiliar situations.',
+  6: 'Competent - generally effective command despite some inaccuracies.',
+  5: 'Modest - partial command, copes with overall meaning in most situations.',
+  4: 'Limited - basic competence limited to familiar situations.',
+  3: 'Extremely limited - conveys and understands only general meaning.',
 }

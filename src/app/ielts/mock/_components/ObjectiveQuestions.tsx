@@ -70,7 +70,7 @@ function QuestionCard({
 }) {
   const value = answers[question.id]
   const marks = questionMarks(question)
-  const numberLabel = marks > 1 ? `${startNumber}–${startNumber + marks - 1}` : String(startNumber)
+  const numberLabel = marks > 1 ? `${startNumber}-${startNumber + marks - 1}` : String(startNumber)
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">

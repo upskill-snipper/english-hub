@@ -88,7 +88,7 @@ const FEATURES = [
   },
 ]
 
-// Concrete use cases — how schools/centres actually deploy it.
+// Concrete use cases - how schools/centres actually deploy it.
 const USE_CASES = [
   {
     labelKey: 'ielts.partners.schools.usecase.sixthform.label',
@@ -107,7 +107,7 @@ const USE_CASES = [
   },
 ]
 
-// JSON-LD source — kept English (structured data, not visible UI). No visible
+// JSON-LD source - kept English (structured data, not visible UI). No visible
 // FAQ accordion renders on this page; the bilingual ielts.partners.schools.faq.*
 // keys exist in the dictionary for parity.
 const FAQS = [
@@ -119,7 +119,7 @@ const FAQS = [
   {
     question: 'Does this replace our teachers?',
     answer:
-      'No — it extends them. Automatic marking and AI band feedback handle the repetitive load so your teachers can spend their time on instruction, feedback conversations and intervention.',
+      'No - it extends them. Automatic marking and AI band feedback handle the repetitive load so your teachers can spend their time on instruction, feedback conversations and intervention.',
   },
   {
     question: 'Is it suitable for Arabic-speaking students?',

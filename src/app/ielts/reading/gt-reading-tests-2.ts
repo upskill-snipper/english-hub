@@ -1,9 +1,9 @@
-// ─── IELTS General Training Reading — practice item bank (GT Set 2) ─────────
+// ─── IELTS General Training Reading - practice item bank (GT Set 2) ─────────
 // ORIGINAL content written for The English Hub. These are NOT reproductions of
 // any official IELTS past paper; every notice, handbook extract and article
 // below is invented purely to practise the General Training Reading question
 // formats (MCQ, True/False/Not Given, and sentence/summary completion).
-// Framed as "IELTS preparation" only — no official affiliation is implied.
+// Framed as "IELTS preparation" only - no official affiliation is implied.
 //
 // GT Reading differs from Academic: instead of academic journal extracts, the
 // texts are everyday/social (Section 1), workplace (Section 2) and a longer
@@ -16,18 +16,18 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_2: ReadingTest[] = [
   {
     id: 'gt-rd-s2-001',
-    title: 'General Training Reading — Practice Test (Set 2)',
+    title: 'General Training Reading - Practice Test (Set 2)',
     track: 'general',
     estimatedMinutes: 20,
     passages: [
-      // ── Section 1: social survival — community notices + leisure listings ──
+      // ── Section 1: social survival - community notices + leisure listings ──
       {
         id: 'gt-rd-s2-001-p1',
-        title: 'Riverside Community Centre — Notices and What’s On',
-        body: `WEEKEND MARKET — NEW STALLHOLDERS WELCOME
-The Saturday market in the main hall is now open to new stallholders. A standard table costs £12 for the morning session (8 a.m.–1 p.m.) or £18 for the full day. Tables must be booked by the Thursday beforehand at the reception desk; bookings cannot be taken over the telephone. Stallholders selling hot food must bring their own fire blanket and will be asked to set up away from the children's play corner. Please note that the car park behind the hall is reserved for traders only on Saturdays.
+        title: 'Riverside Community Centre - Notices and What’s On',
+        body: `WEEKEND MARKET - NEW STALLHOLDERS WELCOME
+The Saturday market in the main hall is now open to new stallholders. A standard table costs £12 for the morning session (8 a.m.-1 p.m.) or £18 for the full day. Tables must be booked by the Thursday beforehand at the reception desk; bookings cannot be taken over the telephone. Stallholders selling hot food must bring their own fire blanket and will be asked to set up away from the children's play corner. Please note that the car park behind the hall is reserved for traders only on Saturdays.
 
-POTTERY CLASSES — SPRING TERM
+POTTERY CLASSES - SPRING TERM
 Our popular evening pottery course returns on 6 April and runs for eight weeks. Beginners are welcome; no experience is needed, and all tools and clay are provided. The fee of £80 covers the full term but does not include the cost of firing finished pieces in the kiln, which is charged separately at £2 per item. Places are limited to ten people per class, so early booking is advised. Anyone who misses a session may attend the equivalent class in the daytime group at no extra charge.
 
 LOST PROPERTY
@@ -97,10 +97,10 @@ The centre's eight-seat minibus may be hired by local groups at weekends. The dr
           },
         ],
       },
-      // ── Section 2: workplace — a staff handbook / induction guide ──────────
+      // ── Section 2: workplace - a staff handbook / induction guide ──────────
       {
         id: 'gt-rd-s2-001-p2',
-        title: 'New Staff Handbook — Working at Brightleaf Garden Centre',
+        title: 'New Staff Handbook - Working at Brightleaf Garden Centre',
         body: `WELCOME AND PROBATION
 All new employees begin on a three-month probationary period. During this time your line manager will meet you each fortnight to review your progress and answer any questions. Your role is confirmed in writing once probation has been completed successfully; until then, either side may end the employment by giving one week's notice.
 
@@ -187,11 +187,11 @@ Holiday requests must be submitted through the online rota system at least two w
 
 The numbers since then have told a more complicated story. While the borrowing of printed novels has indeed fallen in many places, overall visits to libraries that survived the cuts have in several regions begun to climb again. The reason has little to do with books in the traditional sense. People are coming through the doors for something the internet, for all its convenience, struggles to provide: a warm, quiet, public space that costs nothing to enter and asks nothing of those who use it.
 
-Librarians describe the modern branch as less a warehouse for books than a kind of community living room. On a single weekday a library may host a job-search workshop in the morning, a parent-and-toddler reading group at lunchtime, and a class teaching older residents how to use a tablet in the afternoon. Many now lend out far more than books — board games, musical instruments, even tools and seeds. The shift reflects a recognition that what a community lacks is often not information, which is abundant, but a trusted place in which to gather.
+Librarians describe the modern branch as less a warehouse for books than a kind of community living room. On a single weekday a library may host a job-search workshop in the morning, a parent-and-toddler reading group at lunchtime, and a class teaching older residents how to use a tablet in the afternoon. Many now lend out far more than books - board games, musical instruments, even tools and seeds. The shift reflects a recognition that what a community lacks is often not information, which is abundant, but a trusted place in which to gather.
 
 This broadening of purpose has not been without tension. Some long-standing users complain that the hush they once valued has given way to noise, and that staff trained to recommend novels now spend their days helping people fill in forms or fix their phones. There is a fair question buried in the grumbling: if a library does everything, does it risk doing nothing especially well? Defenders answer that the institution has always adapted, and that a library which refused to change would simply be an emptier one.
 
-Funding, however, remains precarious. A building that is busy is not necessarily a building that is safe, because the services that draw people in are rarely the ones that generate income, and councils under pressure look first at what can be measured. A reading group does not appear on a balance sheet. The challenge for the next decade, many in the profession argue, is to find ways of describing the library's value that capture what actually happens inside it — the quiet hour, the first job application, the lonely afternoon made less so — rather than simply counting the books that leave the shelves.`,
+Funding, however, remains precarious. A building that is busy is not necessarily a building that is safe, because the services that draw people in are rarely the ones that generate income, and councils under pressure look first at what can be measured. A reading group does not appear on a balance sheet. The challenge for the next decade, many in the profession argue, is to find ways of describing the library's value that capture what actually happens inside it - the quiet hour, the first job application, the lonely afternoon made less so - rather than simply counting the books that leave the shelves.`,
         questions: [
           {
             id: 'gt-rd-s2-001-p3-q13',
@@ -213,7 +213,7 @@ Funding, however, remains precarious. A building that is busy is not necessarily
             prompt: 'The article says some modern libraries lend out items other than books.',
             answer: 'true',
             explanation:
-              'The third paragraph states that many libraries "now lend out far more than books — board games, musical instruments, even tools and seeds." This supports the statement, so it is True.',
+              'The third paragraph states that many libraries "now lend out far more than books - board games, musical instruments, even tools and seeds." This supports the statement, so it is True.',
           },
           {
             id: 'gt-rd-s2-001-p3-q15',

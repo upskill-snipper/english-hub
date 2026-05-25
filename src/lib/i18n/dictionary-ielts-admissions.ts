@@ -1,13 +1,13 @@
 // ─── IELTS → UK admissions dictionary shard ─────────────────────────────────
 // Curated EN + Khaleeji (Gulf) Arabic for the three IELTS admissions surfaces:
-//   • /ielts/admissions               (hub — server component)
-//   • /ielts/admissions/personal-statement (Personal-Statement Coach — client)
-//   • /ielts/admissions/student-visa   (Student-visa basics — server component)
+//   • /ielts/admissions               (hub - server component)
+//   • /ielts/admissions/personal-statement (Personal-Statement Coach - client)
+//   • /ielts/admissions/student-visa   (Student-visa basics - server component)
 //
 // These are INFORMATIONAL/UI pages (not English-test practice content), so
 // essentially all visible copy is translated. The AI-generated personal-
 // statement feedback is produced by /api/ielts/statement-feedback (already
-// AR-aware) and rendered as-is — it is NOT keyed here.
+// AR-aware) and rendered as-is - it is NOT keyed here.
 //
 // Khaleeji conventions per the master dictionary header (شنو/شلون/أبغى/وايد/
 // الحين/إحنا/روح/شوف/دوّر/سكّر/ببلاش/لحظة); Levantine forms (شو/بحكي/كيفك/ليش)
@@ -41,8 +41,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'مسارك من IELTS لين مقعد في جامعة بريطانية',
   },
   'ielts.admissions.hub.subtitle': {
-    en: 'A clear, honest guide for students in the Gulf applying to the UK: how UCAS works and when to act, the IELTS band your course is likely to ask for, how to write a personal statement that stands out, and the student-visa basics. Then practise the English that gets you over the line — all in one place.',
-    ar: 'دليل واضح وصادق للطلاب في الخليج اللي يقدّمون على بريطانيا: شلون يشتغل UCAS ومتى تتحرّك، الـ Band المتوقّع يطلبه تخصصك في IELTS، شلون تكتب personal statement يميّزك، وأساسيات فيزا الدراسة. وبعدها تدرّب على الإنجليزي اللي يوصّلك للهدف — كله في مكان واحد.',
+    en: 'A clear, honest guide for students in the Gulf applying to the UK: how UCAS works and when to act, the IELTS band your course is likely to ask for, how to write a personal statement that stands out, and the student-visa basics. Then practise the English that gets you over the line - all in one place.',
+    ar: 'دليل واضح وصادق للطلاب في الخليج اللي يقدّمون على بريطانيا: شلون يشتغل UCAS ومتى تتحرّك، الـ Band المتوقّع يطلبه تخصصك في IELTS، شلون تكتب personal statement يميّزك، وأساسيات فيزا الدراسة. وبعدها تدرّب على الإنجليزي اللي يوصّلك للهدف - كله في مكان واحد.',
   },
   'ielts.admissions.hub.cta.coach': {
     en: 'Coach my personal statement',
@@ -53,8 +53,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'تدرّب على كتابة IELTS',
   },
   'ielts.admissions.hub.disclaimer': {
-    en: 'The English Hub is an independent preparation platform. We are not affiliated with UCAS, UK Visas and Immigration, or any university, and the guidance below is general information for your preparation — always confirm the details with each university and the official UCAS and UK government websites.',
-    ar: 'The English Hub منصّة تحضير مستقلّة. إحنا مو تابعين لـ UCAS ولا لـ UK Visas and Immigration ولا لأي جامعة، والإرشادات اللي تحت معلومات عامة لتحضيرك — دايم أكّد التفاصيل مع كل جامعة ومع مواقع UCAS والحكومة البريطانية الرسمية.',
+    en: 'The English Hub is an independent preparation platform. We are not affiliated with UCAS, UK Visas and Immigration, or any university, and the guidance below is general information for your preparation - always confirm the details with each university and the official UCAS and UK government websites.',
+    ar: 'The English Hub منصّة تحضير مستقلّة. إحنا مو تابعين لـ UCAS ولا لـ UK Visas and Immigration ولا لأي جامعة، والإرشادات اللي تحت معلومات عامة لتحضيرك - دايم أكّد التفاصيل مع كل جامعة ومع مواقع UCAS والحكومة البريطانية الرسمية.',
   },
 
   // ─── Hub: at-a-glance pathway ────────────────────────────────────────────────
@@ -78,8 +78,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.admissions.hub.glance.band.title': { en: 'Your IELTS band', ar: 'الـ Band حقّك في IELTS' },
   'ielts.admissions.hub.glance.band.body': {
-    en: 'An IELTS Academic score that meets — ideally beats — the course threshold.',
-    ar: 'درجة IELTS Academic توصل للحد المطلوب للتخصص — والأفضل تتعدّاه.',
+    en: 'An IELTS Academic score that meets - ideally beats - the course threshold.',
+    ar: 'درجة IELTS Academic توصل للحد المطلوب للتخصص - والأفضل تتعدّاه.',
   },
   'ielts.admissions.hub.glance.visa.title': { en: 'A student visa', ar: 'فيزا دراسة' },
   'ielts.admissions.hub.glance.visa.body': {
@@ -108,13 +108,13 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'اكتب الـ personal statement',
   },
   'ielts.admissions.hub.ucas.step3.body': {
-    en: 'One statement goes to all five choices, so it must work for every course you pick. This is where applicants from outside the UK most often win or lose a place — specificity and reflection matter more than ambition alone.',
-    ar: 'statement واحد يروح لكل الخيارات الخمسة، فلازم يناسب كل تخصص تختاره. هنا غالباً المتقدّمين من برّا بريطانيا يكسبون المقعد أو يضيّعونه — التحديد والتأمّل أهم من الطموح بروحه.',
+    en: 'One statement goes to all five choices, so it must work for every course you pick. This is where applicants from outside the UK most often win or lose a place - specificity and reflection matter more than ambition alone.',
+    ar: 'statement واحد يروح لكل الخيارات الخمسة، فلازم يناسب كل تخصص تختاره. هنا غالباً المتقدّمين من برّا بريطانيا يكسبون المقعد أو يضيّعونه - التحديد والتأمّل أهم من الطموح بروحه.',
   },
   'ielts.admissions.hub.ucas.step4.title': { en: 'Submit and track', ar: 'قدّم وتابع' },
   'ielts.admissions.hub.ucas.step4.body': {
-    en: 'Pay the application fee and submit. Universities then respond with offers — usually conditional (dependent on grades and/or an IELTS band) or unconditional. Track everything in your UCAS hub.',
-    ar: 'ادفع رسوم الطلب وقدّمه. بعدها الجامعات ترد بعروض — عادةً مشروطة (تعتمد على الدرجات و/أو Band معيّن في IELTS) أو غير مشروطة. تابع كل شي من لوحة UCAS حقّتك.',
+    en: 'Pay the application fee and submit. Universities then respond with offers - usually conditional (dependent on grades and/or an IELTS band) or unconditional. Track everything in your UCAS hub.',
+    ar: 'ادفع رسوم الطلب وقدّمه. بعدها الجامعات ترد بعروض - عادةً مشروطة (تعتمد على الدرجات و/أو Band معيّن في IELTS) أو غير مشروطة. تابع كل شي من لوحة UCAS حقّتك.',
   },
   'ielts.admissions.hub.ucas.step5.title': {
     en: 'Reply, then meet your conditions',
@@ -132,14 +132,14 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'جدول زمني نموذجي على {token} شهر',
   },
   'ielts.admissions.hub.timeline.row1.when': {
-    en: '18–12 months before',
-    ar: 'قبلها بـ 18–12 شهر',
+    en: '18-12 months before',
+    ar: 'قبلها بـ 18-12 شهر',
   },
   'ielts.admissions.hub.timeline.row1.what': {
     en: 'Research courses and universities. Note the IELTS band and per-component minimum each one asks for. Begin IELTS practice in earnest, targeting your weakest skill first.',
     ar: 'دوّر على التخصصات والجامعات. سجّل الـ Band المطلوب في IELTS والحد الأدنى لكل قسم اللي يطلبه كل واحد. وابدأ التدريب على IELTS بجدّية، وركّز على أضعف مهارة عندك أول.',
   },
-  'ielts.admissions.hub.timeline.row2.when': { en: '12–6 months before', ar: 'قبلها بـ 12–6 أشهر' },
+  'ielts.admissions.hub.timeline.row2.when': { en: '12-6 months before', ar: 'قبلها بـ 12-6 أشهر' },
   'ielts.admissions.hub.timeline.row2.what': {
     en: 'Draft and redraft your personal statement. Line up a teacher reference. Sit a first IELTS attempt so you know your starting band and how far you have to go.',
     ar: 'اكتب الـ personal statement وعدّله مرّة بعد مرّة. رتّب تزكية من معلّم. وسوِّ محاولة IELTS أولى عشان تعرف Band البداية وكم باقي لك للهدف.',
@@ -149,15 +149,15 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'خريف السنة قبل الدخول',
   },
   'ielts.admissions.hub.timeline.row3.what': {
-    en: 'UCAS opens. Submit early — especially for medicine, dentistry, veterinary and Oxford or Cambridge, which close in mid-October.',
-    ar: 'UCAS يفتح. قدّم بدري — خصوصاً للطب وطب الأسنان والبيطري و Oxford أو Cambridge، لأنها تسكّر منتصف أكتوبر.',
+    en: 'UCAS opens. Submit early - especially for medicine, dentistry, veterinary and Oxford or Cambridge, which close in mid-October.',
+    ar: 'UCAS يفتح. قدّم بدري - خصوصاً للطب وطب الأسنان والبيطري و Oxford أو Cambridge، لأنها تسكّر منتصف أكتوبر.',
   },
   'ielts.admissions.hub.timeline.row4.when': { en: 'Late January', ar: 'أواخر يناير' },
   'ielts.admissions.hub.timeline.row4.what': {
     en: 'The equal-consideration deadline for most courses. Applications in by this date are considered on the same footing.',
     ar: 'الموعد النهائي للنظر المتساوي لأغلب التخصصات. الطلبات اللي توصل قبل هالتاريخ تتدرس على نفس الأساس.',
   },
-  'ielts.admissions.hub.timeline.row5.when': { en: 'Spring–summer', ar: 'الربيع–الصيف' },
+  'ielts.admissions.hub.timeline.row5.when': { en: 'Spring-summer', ar: 'الربيع-الصيف' },
   'ielts.admissions.hub.timeline.row5.what': {
     en: 'Reply to your offers (firm + insurance). Meet your conditions: sit or re-sit IELTS if needed and complete your exams.',
     ar: 'رد على عروضك (firm + insurance). حقّق شروطك: سوِّ IELTS أو أعِده إذا تحتاج، وكمّل امتحاناتك.',
@@ -207,8 +207,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'عادةً بدون أي قسم تحت 6.0',
   },
   'ielts.admissions.hub.english.tier2.courses': {
-    en: 'A large share of undergraduate degrees — business, engineering, sciences, humanities and social sciences at many universities.',
-    ar: 'نسبة كبيرة من درجات البكالوريوس — إدارة الأعمال والهندسة والعلوم والإنسانيات والعلوم الاجتماعية في وايد جامعات.',
+    en: 'A large share of undergraduate degrees - business, engineering, sciences, humanities and social sciences at many universities.',
+    ar: 'نسبة كبيرة من درجات البكالوريوس - إدارة الأعمال والهندسة والعلوم والإنسانيات والعلوم الاجتماعية في وايد جامعات.',
   },
   'ielts.admissions.hub.english.tier3.detail': {
     en: 'Sometimes with a 5.5 minimum per component',
@@ -239,8 +239,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'وين يكسب المتقدّمون من برّا مقاعدهم',
   },
   'ielts.admissions.hub.ps.intro': {
-    en: 'Your personal statement is a single piece of writing (UCAS allows up to {chars} characters across {lines} lines) that goes to every course you apply to. Selective universities use it to choose between applicants who already meet the grade and IELTS thresholds — so it has to do more than say you are passionate and hard-working.',
-    ar: 'الـ personal statement حقّك نص واحد (UCAS يسمح بحد أقصى {chars} حرف على {lines} سطر) يروح لكل تخصص تقدّم له. الجامعات الانتقائية تستخدمه عشان تختار بين متقدّمين كلهم محقّقين شروط الدرجات و IELTS — فلازم يسوّي أكثر من إنه يقول إنك شغوف ومجتهد.',
+    en: 'Your personal statement is a single piece of writing (UCAS allows up to {chars} characters across {lines} lines) that goes to every course you apply to. Selective universities use it to choose between applicants who already meet the grade and IELTS thresholds - so it has to do more than say you are passionate and hard-working.',
+    ar: 'الـ personal statement حقّك نص واحد (UCAS يسمح بحد أقصى {chars} حرف على {lines} سطر) يروح لكل تخصص تقدّم له. الجامعات الانتقائية تستخدمه عشان تختار بين متقدّمين كلهم محقّقين شروط الدرجات و IELTS - فلازم يسوّي أكثر من إنه يقول إنك شغوف ومجتهد.',
   },
   'ielts.admissions.hub.ps.list_lead': {
     en: 'The strongest statements tend to:',
@@ -251,16 +251,16 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'تبدأ بشي محدّد وصادق، مو باقتباس مشهور ولا كلام مكرّر.',
   },
   'ielts.admissions.hub.ps.point2': {
-    en: 'Give a precise reason for THIS subject — and show what about it keeps you reading and thinking.',
-    ar: 'تعطي سبب دقيق لهذا التخصص بالذات — وتبيّن شنو فيه اللي يخلّيك تقرأ وتفكّر فيه باستمرار.',
+    en: 'Give a precise reason for THIS subject - and show what about it keeps you reading and thinking.',
+    ar: 'تعطي سبب دقيق لهذا التخصص بالذات - وتبيّن شنو فيه اللي يخلّيك تقرأ وتفكّر فيه باستمرار.',
   },
   'ielts.admissions.hub.ps.point3': {
     en: 'Use real evidence you own: named books, an EPQ or project, competitions, work experience, roles.',
     ar: 'تستخدم أدلة حقيقية تخصّك: كتب بأسمائها، EPQ أو مشروع، مسابقات، خبرة عمل، أدوار قمت فيها.',
   },
   'ielts.admissions.hub.ps.point4': {
-    en: 'Reflect on each example — what it changed, what question it raised — rather than just listing it.',
-    ar: 'تتأمّل في كل مثال — شنو غيّر، وش سؤال أثاره — بدل ما تسرده بس.',
+    en: 'Reflect on each example - what it changed, what question it raised - rather than just listing it.',
+    ar: 'تتأمّل في كل مثال - شنو غيّر، وش سؤال أثاره - بدل ما تسرده بس.',
   },
   'ielts.admissions.hub.ps.point5': {
     en: 'Read fluently and accurately, in an academic but natural register (especially important when English is an additional language).',
@@ -271,8 +271,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'خذ تقييم بالذكاء الاصطناعي لمسودّتك',
   },
   'ielts.admissions.hub.ps.card.body': {
-    en: 'Paste your statement into the Personal-Statement Coach and get a rating and specific comments on structure, motivation, evidence, reflection and English — plus three concrete things to fix next. It is preparation guidance, not an admissions guarantee.',
-    ar: 'الصق statement حقّك في مدرّب الـ Personal Statement وخذ تقييم وملاحظات محدّدة على البناء والدافع والأدلة والتأمّل والإنجليزي — وثلاثة أشياء ملموسة تصلّحها بعدين. هذا إرشاد للتحضير، مو ضمان قبول.',
+    en: 'Paste your statement into the Personal-Statement Coach and get a rating and specific comments on structure, motivation, evidence, reflection and English - plus three concrete things to fix next. It is preparation guidance, not an admissions guarantee.',
+    ar: 'الصق statement حقّك في مدرّب الـ Personal Statement وخذ تقييم وملاحظات محدّدة على البناء والدافع والأدلة والتأمّل والإنجليزي - وثلاثة أشياء ملموسة تصلّحها بعدين. هذا إرشاد للتحضير، مو ضمان قبول.',
   },
   'ielts.admissions.hub.ps.card.button': { en: 'Open the coach', ar: 'افتح المدرّب' },
 
@@ -280,16 +280,16 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   'ielts.admissions.hub.visa.eyebrow': { en: 'After the offer', ar: 'بعد العرض' },
   'ielts.admissions.hub.visa.title': { en: 'Student-visa basics', ar: 'أساسيات فيزا الدراسة' },
   'ielts.admissions.hub.visa.body': {
-    en: 'Most students from the Gulf will need the UK <strong>Student visa</strong>. In outline, you apply after you accept an unconditional offer and your university issues a Confirmation of Acceptance for Studies (CAS). You will typically need to evidence your accepted place, sufficient funds for fees and living costs, and — depending on your nationality and course — an approved English-language qualification such as IELTS (often the IELTS for UKVI variant; check what your university and the visa route require).',
-    ar: 'أغلب الطلاب من الخليج بيحتاجون <strong>فيزا Student</strong> البريطانية. باختصار، تقدّم عليها بعد ما تقبل عرض غير مشروط وتصدر لك الجامعة Confirmation of Acceptance for Studies (CAS). عادةً بتحتاج تثبت مقعدك المقبول، وأموال كافية للرسوم وتكاليف المعيشة، و — حسب جنسيّتك وتخصصك — مؤهّل إنجليزي معتمد مثل IELTS (غالباً نسخة IELTS for UKVI؛ شوف شنو تطلبه جامعتك ومسار الفيزا).',
+    en: 'Most students from the Gulf will need the UK <strong>Student visa</strong>. In outline, you apply after you accept an unconditional offer and your university issues a Confirmation of Acceptance for Studies (CAS). You will typically need to evidence your accepted place, sufficient funds for fees and living costs, and - depending on your nationality and course - an approved English-language qualification such as IELTS (often the IELTS for UKVI variant; check what your university and the visa route require).',
+    ar: 'أغلب الطلاب من الخليج بيحتاجون <strong>فيزا Student</strong> البريطانية. باختصار، تقدّم عليها بعد ما تقبل عرض غير مشروط وتصدر لك الجامعة Confirmation of Acceptance for Studies (CAS). عادةً بتحتاج تثبت مقعدك المقبول، وأموال كافية للرسوم وتكاليف المعيشة، و - حسب جنسيّتك وتخصصك - مؤهّل إنجليزي معتمد مثل IELTS (غالباً نسخة IELTS for UKVI؛ شوف شنو تطلبه جامعتك ومسار الفيزا).',
   },
   'ielts.admissions.hub.visa.button': {
     en: 'Read the student-visa overview',
     ar: 'اقرأ نظرة عامة على فيزا الدراسة',
   },
   'ielts.admissions.hub.visa.disclaimer': {
-    en: 'Immigration rules change and depend on your circumstances. This is general preparation information, not immigration advice — always check the official UK government (GOV.UK) guidance and your university’s international office before you act.',
-    ar: 'قوانين الهجرة تتغيّر وتعتمد على ظروفك. هذي معلومات تحضير عامة، مو استشارة هجرة — دايم راجع إرشادات الحكومة البريطانية الرسمية (GOV.UK) ومكتب الطلاب الدوليين في جامعتك قبل ما تتصرّف.',
+    en: 'Immigration rules change and depend on your circumstances. This is general preparation information, not immigration advice - always check the official UK government (GOV.UK) guidance and your university’s international office before you act.',
+    ar: 'قوانين الهجرة تتغيّر وتعتمد على ظروفك. هذي معلومات تحضير عامة، مو استشارة هجرة - دايم راجع إرشادات الحكومة البريطانية الرسمية (GOV.UK) ومكتب الطلاب الدوليين في جامعتك قبل ما تتصرّف.',
   },
 
   // ─── Hub: FAQ ────────────────────────────────────────────────────────────────
@@ -303,12 +303,12 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'شنو الـ Band اللي أحتاجه في IELTS لجامعة بريطانية؟',
   },
   'ielts.admissions.hub.faq.a1': {
-    en: 'It depends entirely on the course. Many undergraduate degrees ask for an overall IELTS Academic band of 6.0–6.5, while competitive courses such as medicine, law or those at the most selective universities often require 7.0 or higher, sometimes with a minimum in every component. Always check the specific course page for its exact requirement.',
-    ar: 'يعتمد كلياً على التخصص. وايد درجات بكالوريوس تطلب Band كلي في IELTS Academic بين 6.0–6.5، بينما التخصصات التنافسية مثل الطب والقانون أو اللي في الجامعات الأكثر انتقائية غالباً تطلب 7.0 أو أعلى، وأحياناً بحد أدنى لكل قسم. دايم شوف صفحة التخصص نفسه عشان تعرف الشرط بالضبط.',
+    en: 'It depends entirely on the course. Many undergraduate degrees ask for an overall IELTS Academic band of 6.0-6.5, while competitive courses such as medicine, law or those at the most selective universities often require 7.0 or higher, sometimes with a minimum in every component. Always check the specific course page for its exact requirement.',
+    ar: 'يعتمد كلياً على التخصص. وايد درجات بكالوريوس تطلب Band كلي في IELTS Academic بين 6.0-6.5، بينما التخصصات التنافسية مثل الطب والقانون أو اللي في الجامعات الأكثر انتقائية غالباً تطلب 7.0 أو أعلى، وأحياناً بحد أدنى لكل قسم. دايم شوف صفحة التخصص نفسه عشان تعرف الشرط بالضبط.',
   },
   'ielts.admissions.hub.faq.q2': {
-    en: 'Which IELTS module do I take for university — Academic or General Training?',
-    ar: 'أي وحدة IELTS أسوّي للجامعة — Academic ولا General Training؟',
+    en: 'Which IELTS module do I take for university - Academic or General Training?',
+    ar: 'أي وحدة IELTS أسوّي للجامعة - Academic ولا General Training؟',
   },
   'ielts.admissions.hub.faq.a2': {
     en: 'For undergraduate or postgraduate study at a UK university you take IELTS Academic. General Training is generally for work and migration routes, not degree-level study. The English Hub’s IELTS practice is built for the Academic module.',
@@ -319,24 +319,24 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'قد إيش مهم الـ personal statement مقارنةً بالدرجات و IELTS؟',
   },
   'ielts.admissions.hub.faq.a3': {
-    en: 'Grades and your English band get you over the threshold; the personal statement helps a selective course choose between applicants who all meet it. For applicants from the Gulf and elsewhere outside the UK, a specific, reflective statement — showing why this subject and what you have done about it — is one of the clearest ways to stand out.',
-    ar: 'الدرجات وبَند الإنجليزي حقّك يوصّلونك للحد المطلوب؛ والـ personal statement يساعد التخصص الانتقائي يختار بين متقدّمين كلهم محقّقينه. للمتقدّمين من الخليج وغيرهم من برّا بريطانيا، statement محدّد ومليان تأمّل — يبيّن سبب اختيار هذا التخصص وشنو سوّيت بخصوصه — من أوضح الطرق عشان تتميّز.',
+    en: 'Grades and your English band get you over the threshold; the personal statement helps a selective course choose between applicants who all meet it. For applicants from the Gulf and elsewhere outside the UK, a specific, reflective statement - showing why this subject and what you have done about it - is one of the clearest ways to stand out.',
+    ar: 'الدرجات وبَند الإنجليزي حقّك يوصّلونك للحد المطلوب؛ والـ personal statement يساعد التخصص الانتقائي يختار بين متقدّمين كلهم محقّقينه. للمتقدّمين من الخليج وغيرهم من برّا بريطانيا، statement محدّد ومليان تأمّل - يبيّن سبب اختيار هذا التخصص وشنو سوّيت بخصوصه - من أوضح الطرق عشان تتميّز.',
   },
   'ielts.admissions.hub.faq.q4': {
     en: 'When should I start, and when are the deadlines?',
     ar: 'متى لازم أبدأ، ومتى المواعيد النهائية؟',
   },
   'ielts.admissions.hub.faq.a4': {
-    en: 'Start 12–18 months before you want to begin your degree. UCAS opens in the autumn before entry; many courses have an equal-consideration deadline in late January, while medicine, dentistry, veterinary and Oxford/Cambridge close in mid-October — much earlier. Sit IELTS early enough that your band is ready when offers ask for it.',
-    ar: 'ابدأ قبل 12–18 شهر من اللي تبي تبدأ فيه درجتك. UCAS يفتح في الخريف قبل الدخول؛ وايد تخصصات عندها موعد نظر متساوي أواخر يناير، بينما الطب وطب الأسنان والبيطري و Oxford/Cambridge تسكّر منتصف أكتوبر — أبكر بوايد. سوِّ IELTS بدري كفاية عشان يكون الـ Band حقّك جاهز لمّا تطلبه العروض.',
+    en: 'Start 12-18 months before you want to begin your degree. UCAS opens in the autumn before entry; many courses have an equal-consideration deadline in late January, while medicine, dentistry, veterinary and Oxford/Cambridge close in mid-October - much earlier. Sit IELTS early enough that your band is ready when offers ask for it.',
+    ar: 'ابدأ قبل 12-18 شهر من اللي تبي تبدأ فيه درجتك. UCAS يفتح في الخريف قبل الدخول؛ وايد تخصصات عندها موعد نظر متساوي أواخر يناير، بينما الطب وطب الأسنان والبيطري و Oxford/Cambridge تسكّر منتصف أكتوبر - أبكر بوايد. سوِّ IELTS بدري كفاية عشان يكون الـ Band حقّك جاهز لمّا تطلبه العروض.',
   },
   'ielts.admissions.hub.faq.q5': {
     en: 'Do I need a student visa, and what does it require?',
     ar: 'هل أحتاج فيزا دراسة، وشنو تتطلّب؟',
   },
   'ielts.admissions.hub.faq.a5': {
-    en: 'Most students from the Gulf will need the UK Student visa. You generally apply after you accept an unconditional offer and receive a Confirmation of Acceptance for Studies (CAS) from your university. You will usually need to show your accepted offer, evidence of funds, and — depending on your nationality and course — an approved English-language qualification such as IELTS. See our student-visa basics for an overview.',
-    ar: 'أغلب الطلاب من الخليج بيحتاجون فيزا Student البريطانية. عادةً تقدّم بعد ما تقبل عرض غير مشروط وتستلم Confirmation of Acceptance for Studies (CAS) من جامعتك. غالباً بتحتاج تبيّن عرضك المقبول، وإثبات أموال، و — حسب جنسيّتك وتخصصك — مؤهّل إنجليزي معتمد مثل IELTS. شوف أساسيات فيزا الدراسة عندنا لنظرة عامة.',
+    en: 'Most students from the Gulf will need the UK Student visa. You generally apply after you accept an unconditional offer and receive a Confirmation of Acceptance for Studies (CAS) from your university. You will usually need to show your accepted offer, evidence of funds, and - depending on your nationality and course - an approved English-language qualification such as IELTS. See our student-visa basics for an overview.',
+    ar: 'أغلب الطلاب من الخليج بيحتاجون فيزا Student البريطانية. عادةً تقدّم بعد ما تقبل عرض غير مشروط وتستلم Confirmation of Acceptance for Studies (CAS) من جامعتك. غالباً بتحتاج تبيّن عرضك المقبول، وإثبات أموال، و - حسب جنسيّتك وتخصصك - مؤهّل إنجليزي معتمد مثل IELTS. شوف أساسيات فيزا الدراسة عندنا لنظرة عامة.',
   },
 
   // ─── Hub: closing CTA ────────────────────────────────────────────────────────
@@ -366,16 +366,16 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'أو اطلب من ولي أمرك يحدّث تفضيلاتك.',
   },
   'ielts.admissions.ps.eyebrow': {
-    en: 'AI feedback — UCAS personal statement',
-    ar: 'تقييم بالذكاء الاصطناعي — personal statement لـ UCAS',
+    en: 'AI feedback - UCAS personal statement',
+    ar: 'تقييم بالذكاء الاصطناعي - personal statement لـ UCAS',
   },
   'ielts.admissions.ps.title': {
     en: 'Personal-Statement Coach',
     ar: 'مدرّب الـ Personal Statement',
   },
   'ielts.admissions.ps.subtitle': {
-    en: 'Paste a draft of your UCAS personal statement and get honest, specific feedback on structure, motivation, evidence, reflection and English — plus three concrete things to fix in your next draft.',
-    ar: 'الصق مسودّة الـ personal statement حقّك لـ UCAS وخذ تقييم صادق ومحدّد على البناء والدافع والأدلة والتأمّل والإنجليزي — وثلاثة أشياء ملموسة تصلّحها في مسودّتك الجاية.',
+    en: 'Paste a draft of your UCAS personal statement and get honest, specific feedback on structure, motivation, evidence, reflection and English - plus three concrete things to fix in your next draft.',
+    ar: 'الصق مسودّة الـ personal statement حقّك لـ UCAS وخذ تقييم صادق ومحدّد على البناء والدافع والأدلة والتأمّل والإنجليزي - وثلاثة أشياء ملموسة تصلّحها في مسودّتك الجاية.',
   },
   'ielts.admissions.ps.limit_note': {
     en: 'UCAS allows up to {chars} characters (about {words} words) across {lines} lines.',
@@ -394,8 +394,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'مسودّة الـ personal statement حقّك',
   },
   'ielts.admissions.ps.draft_placeholder': {
-    en: 'Paste your full personal statement here — opening, why this subject, your evidence and reflection, and a forward-looking close…',
-    ar: 'الصق الـ personal statement كامل هنا — المقدمة، سبب اختيار هذا التخصص، أدلتك وتأمّلك، وخاتمة تتطلّع للمستقبل…',
+    en: 'Paste your full personal statement here - opening, why this subject, your evidence and reflection, and a forward-looking close…',
+    ar: 'الصق الـ personal statement كامل هنا - المقدمة، سبب اختيار هذا التخصص، أدلتك وتأمّلك، وخاتمة تتطلّع للمستقبل…',
   },
   'ielts.admissions.ps.word': { en: 'word', ar: 'كلمة' },
   'ielts.admissions.ps.words': { en: 'words', ar: 'كلمة' },
@@ -408,8 +408,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'الصق مسودّة أكمل (فقرة أو فقرتين على الأقل) عشان تجيك ملاحظات مفيدة.',
   },
   'ielts.admissions.ps.over_limit': {
-    en: 'Over the UCAS limit — you’ll still get feedback, including where to cut.',
-    ar: 'تعدّيت حد UCAS — بعدها بتجيك ملاحظات، وبتشمل وين تختصر.',
+    en: 'Over the UCAS limit - you’ll still get feedback, including where to cut.',
+    ar: 'تعدّيت حد UCAS - بعدها بتجيك ملاحظات، وبتشمل وين تختصر.',
   },
   'ielts.admissions.ps.view_premium': { en: 'View Premium plans', ar: 'شوف باقات Premium' },
   'ielts.admissions.ps.submitting': {
@@ -418,8 +418,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.admissions.ps.submit': { en: 'Get feedback', ar: 'خذ التقييم' },
   'ielts.admissions.ps.submitting_note': {
-    en: 'This usually takes 15–30 seconds. Please don’t close the page.',
-    ar: 'عادةً ياخذ 15–30 ثانية. لا تسكّر الصفحة لو سمحت.',
+    en: 'This usually takes 15-30 seconds. Please don’t close the page.',
+    ar: 'عادةً ياخذ 15-30 ثانية. لا تسكّر الصفحة لو سمحت.',
   },
   'ielts.admissions.ps.privacy_note': {
     en: 'Your draft is sent only to generate feedback. This is guidance for UK-study preparation, not an official UCAS or university service.',
@@ -477,8 +477,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'ثلاثة أشياء تحسّنها بعدين',
   },
   'ielts.admissions.ps.fb.improve_desc': {
-    en: 'Concrete changes to make in your next draft — not a rewrite to copy.',
-    ar: 'تغييرات ملموسة تسوّيها في مسودّتك الجاية — مو إعادة كتابة تنسخها.',
+    en: 'Concrete changes to make in your next draft - not a rewrite to copy.',
+    ar: 'تغييرات ملموسة تسوّيها في مسودّتك الجاية - مو إعادة كتابة تنسخها.',
   },
   'ielts.admissions.ps.fb.keep_going': { en: 'Keep going', ar: 'كمّل' },
   'ielts.admissions.ps.fb.keep_going_p1': {
@@ -513,12 +513,12 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'أساسيات فيزا Student البريطانية لطلاب الخليج',
   },
   'ielts.admissions.visa.subtitle': {
-    en: 'A plain-English overview of how the UK Student visa fits into your journey — what you need, when to apply, and how your IELTS result connects to it. Use it to prepare and to plan your timing; rely on GOV.UK and your university for the authoritative rules.',
-    ar: 'نظرة عامة وبسيطة على شلون فيزا Student البريطانية تدخل في رحلتك — شنو تحتاج، متى تقدّم، وشلون نتيجة IELTS حقّتك ترتبط فيها. استخدمها للتحضير ولتخطيط توقيتك؛ واعتمد على GOV.UK وجامعتك للقواعد المعتمدة.',
+    en: 'A plain-English overview of how the UK Student visa fits into your journey - what you need, when to apply, and how your IELTS result connects to it. Use it to prepare and to plan your timing; rely on GOV.UK and your university for the authoritative rules.',
+    ar: 'نظرة عامة وبسيطة على شلون فيزا Student البريطانية تدخل في رحلتك - شنو تحتاج، متى تقدّم، وشلون نتيجة IELTS حقّتك ترتبط فيها. استخدمها للتحضير ولتخطيط توقيتك؛ واعتمد على GOV.UK وجامعتك للقواعد المعتمدة.',
   },
   'ielts.admissions.visa.notice': {
-    en: '<strong>This is general information, not immigration advice.</strong> The English Hub is independent and not affiliated with UK Visas and Immigration. Immigration rules and financial thresholds change and depend on your personal circumstances — always confirm the current requirements on the official UK government website and with your university’s international office.',
-    ar: '<strong>هذي معلومات عامة، مو استشارة هجرة.</strong> The English Hub مستقلّة ومو تابعة لـ UK Visas and Immigration. قوانين الهجرة والحدود المالية تتغيّر وتعتمد على ظروفك الشخصية — دايم أكّد الشروط الحالية من موقع الحكومة البريطانية الرسمي ومع مكتب الطلاب الدوليين في جامعتك.',
+    en: '<strong>This is general information, not immigration advice.</strong> The English Hub is independent and not affiliated with UK Visas and Immigration. Immigration rules and financial thresholds change and depend on your personal circumstances - always confirm the current requirements on the official UK government website and with your university’s international office.',
+    ar: '<strong>هذي معلومات عامة، مو استشارة هجرة.</strong> The English Hub مستقلّة ومو تابعة لـ UK Visas and Immigration. قوانين الهجرة والحدود المالية تتغيّر وتعتمد على ظروفك الشخصية - دايم أكّد الشروط الحالية من موقع الحكومة البريطانية الرسمي ومع مكتب الطلاب الدوليين في جامعتك.',
   },
   'ielts.admissions.visa.steps.eyebrow': { en: 'The sequence', ar: 'التسلسل' },
   'ielts.admissions.visa.steps.title': {
@@ -530,8 +530,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'اقبل عرض غير مشروط',
   },
   'ielts.admissions.visa.step1.body': {
-    en: 'Your university confirms your place is secure — your grades and English-language condition (e.g. an IELTS band) are met. Until an offer is unconditional, you cannot get the document the visa needs.',
-    ar: 'جامعتك تأكّد إن مقعدك مضمون — درجاتك وشرط اللغة الإنجليزية (مثل Band معيّن في IELTS) متحقّقة. لين ما يصير العرض غير مشروط، ما تقدر تحصّل المستند اللي تحتاجه الفيزا.',
+    en: 'Your university confirms your place is secure - your grades and English-language condition (e.g. an IELTS band) are met. Until an offer is unconditional, you cannot get the document the visa needs.',
+    ar: 'جامعتك تأكّد إن مقعدك مضمون - درجاتك وشرط اللغة الإنجليزية (مثل Band معيّن في IELTS) متحقّقة. لين ما يصير العرض غير مشروط، ما تقدر تحصّل المستند اللي تحتاجه الفيزا.',
   },
   'ielts.admissions.visa.step2.title': { en: 'Receive your CAS', ar: 'استلم الـ CAS حقّك' },
   'ielts.admissions.visa.step2.body': {
@@ -540,16 +540,16 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.admissions.visa.step3.title': { en: 'Prepare your documents', ar: 'جهّز مستنداتك' },
   'ielts.admissions.visa.step3.body': {
-    en: 'Gather your passport, the CAS, evidence of funds, and your English-language evidence. Some applicants also need a tuberculosis test certificate and academic transcripts — the exact list depends on your nationality and circumstances.',
-    ar: 'جمّع جوازك، والـ CAS، وإثبات الأموال، وإثبات اللغة الإنجليزية حقّك. بعض المتقدّمين بعد يحتاجون شهادة فحص السل وكشوف الدرجات الأكاديمية — القائمة بالضبط تعتمد على جنسيّتك وظروفك.',
+    en: 'Gather your passport, the CAS, evidence of funds, and your English-language evidence. Some applicants also need a tuberculosis test certificate and academic transcripts - the exact list depends on your nationality and circumstances.',
+    ar: 'جمّع جوازك، والـ CAS، وإثبات الأموال، وإثبات اللغة الإنجليزية حقّك. بعض المتقدّمين بعد يحتاجون شهادة فحص السل وكشوف الدرجات الأكاديمية - القائمة بالضبط تعتمد على جنسيّتك وظروفك.',
   },
   'ielts.admissions.visa.step4.title': {
     en: 'Apply, pay and attend biometrics',
     ar: 'قدّم، وادفع، واحضر البصمة الحيوية',
   },
   'ielts.admissions.visa.step4.body': {
-    en: 'Apply online, pay the visa fee and the Immigration Health Surcharge, and provide biometrics. Apply in good time before your course starts — processing times vary by country and season.',
-    ar: 'قدّم أونلاين، وادفع رسوم الفيزا و Immigration Health Surcharge، وأعطِ البصمة الحيوية. قدّم في وقت مبكّر قبل ما يبدأ تخصصك — أوقات المعالجة تختلف حسب الدولة والموسم.',
+    en: 'Apply online, pay the visa fee and the Immigration Health Surcharge, and provide biometrics. Apply in good time before your course starts - processing times vary by country and season.',
+    ar: 'قدّم أونلاين، وادفع رسوم الفيزا و Immigration Health Surcharge، وأعطِ البصمة الحيوية. قدّم في وقت مبكّر قبل ما يبدأ تخصصك - أوقات المعالجة تختلف حسب الدولة والموسم.',
   },
   'ielts.admissions.visa.checklist.eyebrow': {
     en: 'What you typically need',
@@ -577,8 +577,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'إثبات لغة إنجليزية معتمد',
   },
   'ielts.admissions.visa.checklist.english.detail': {
-    en: 'Often an IELTS qualification — frequently the IELTS for UKVI variant — unless your course or nationality exempts you. Check which test and score the route requires.',
-    ar: 'غالباً مؤهّل IELTS — وكثير نسخة IELTS for UKVI — إلا إذا كان تخصصك أو جنسيّتك يعفيك. شوف أي اختبار وأي درجة يطلبها المسار.',
+    en: 'Often an IELTS qualification - frequently the IELTS for UKVI variant - unless your course or nationality exempts you. Check which test and score the route requires.',
+    ar: 'غالباً مؤهّل IELTS - وكثير نسخة IELTS for UKVI - إلا إذا كان تخصصك أو جنسيّتك يعفيك. شوف أي اختبار وأي درجة يطلبها المسار.',
   },
   'ielts.admissions.visa.checklist.passport.label': {
     en: 'Passport and personal documents',
@@ -620,8 +620,8 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'قد إيش أحتاج أبيّن من المال؟',
   },
   'ielts.admissions.visa.faq.a3': {
-    en: 'You generally need to evidence your tuition fees plus living costs for a defined period, held for a set number of days before you apply. The exact figures are set by the UK government and updated periodically — always check the current amounts on GOV.UK and confirm with your university.',
-    ar: 'عادةً تحتاج تثبت رسوم دراستك مع تكاليف المعيشة لفترة محدّدة، محتفظ فيها لعدد معيّن من الأيام قبل ما تقدّم. الأرقام بالضبط تحدّدها الحكومة البريطانية وتتحدّث دوريّاً — دايم شيك على المبالغ الحالية في GOV.UK وأكّد مع جامعتك.',
+    en: 'You generally need to evidence your tuition fees plus living costs for a defined period, held for a set number of days before you apply. The exact figures are set by the UK government and updated periodically - always check the current amounts on GOV.UK and confirm with your university.',
+    ar: 'عادةً تحتاج تثبت رسوم دراستك مع تكاليف المعيشة لفترة محدّدة، محتفظ فيها لعدد معيّن من الأيام قبل ما تقدّم. الأرقام بالضبط تحدّدها الحكومة البريطانية وتتحدّث دوريّاً - دايم شيك على المبالغ الحالية في GOV.UK وأكّد مع جامعتك.',
   },
   'ielts.admissions.visa.faq.q4': { en: 'Is this immigration advice?', ar: 'هل هذي استشارة هجرة؟' },
   'ielts.admissions.visa.faq.a4': {

@@ -1,18 +1,18 @@
 // ─── IELTS Academic Writing Task 1 · Chart set 6 ────────────────────────────
 // A sixth bank of six Academic Task 1 prompts, each paired with a REAL chart
 // spec (a `WritingChartSpec`, see src/lib/ielts/types.ts) rendered by
-// src/app/ielts/writing/_components/WritingChart.tsx — so the candidate sees an
+// src/app/ielts/writing/_components/WritingChart.tsx - so the candidate sees an
 // actual bar / line / pie / table / process visual, the way the exam presents
 // it, rather than a textual data dump.
 //
-// Authoring rules followed throughout (mirroring chart sets 1–5 and the
+// Authoring rules followed throughout (mirroring chart sets 1-5 and the
 // committed worked examples in writing-prompts.ts):
-//   • `prompt` is INSTRUCTION ONLY — it never quotes the numbers, because the
+//   • `prompt` is INSTRUCTION ONLY - it never quotes the numbers, because the
 //     data lives entirely in `chart` (one source of truth).
-//   • bar / line — every series.values length === categories.length, and each
+//   • bar / line - every series.values length === categories.length, and each
 //     carries `unit` + `yAxisLabel`;
 //   • pie '%' slices sum to ~100 (parts of one whole);
-//   • table — every row.cells length === columns.length − 1 (the row header
+//   • table - every row.cells length === columns.length − 1 (the row header
 //     occupies columns[0]);
 //   • every spec sets a `caption`;
 //   • numbers are realistic, internally consistent and tell a clear story
@@ -57,7 +57,7 @@ export const WRITING_CHARTS_6: WritingPrompt[] = [
       kind: 'line',
       unit: 'millions',
       yAxisLabel: 'Journeys (millions)',
-      caption: 'Domestic passenger journeys by rail and by air (millions), 2000–2024.',
+      caption: 'Domestic passenger journeys by rail and by air (millions), 2000-2024.',
       categories: ['2000', '2006', '2012', '2018', '2024'],
       series: [
         { name: 'Rail', values: [38, 47, 62, 84, 109] },
@@ -146,7 +146,7 @@ export const WRITING_CHARTS_6: WritingPrompt[] = [
     chart: {
       kind: 'table',
       unit: 'millions',
-      caption: 'Population of four cities (millions), by census year, 1990–2020.',
+      caption: 'Population of four cities (millions), by census year, 1990-2020.',
       columns: ['City', '1990', '2000', '2010', '2020'],
       rows: [
         { label: 'Lagos', cells: [4.8, 7.2, 10.4, 14.9] },
@@ -214,7 +214,7 @@ export const WRITING_CHARTS_6: WritingPrompt[] = [
     track: 'academic',
     title: 'Average meat consumption per person by type',
     prompt: [
-      'The line graph below shows the average amount of three types of meat — poultry, beef and pork — eaten per person each year in one country between 1980 and 2020, measured in kilograms.',
+      'The line graph below shows the average amount of three types of meat - poultry, beef and pork - eaten per person each year in one country between 1980 and 2020, measured in kilograms.',
       '',
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
@@ -224,7 +224,7 @@ export const WRITING_CHARTS_6: WritingPrompt[] = [
       kind: 'line',
       unit: 'kg',
       yAxisLabel: 'Consumption per person (kg)',
-      caption: 'Average annual meat consumption per person by type (kg), 1980–2020.',
+      caption: 'Average annual meat consumption per person by type (kg), 1980-2020.',
       categories: ['1980', '1990', '2000', '2010', '2020'],
       series: [
         { name: 'Poultry', values: [14, 21, 31, 42, 51] },

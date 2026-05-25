@@ -17,7 +17,7 @@ import type { IeltsSkill, SKILL_META } from '@/lib/ielts/types'
 // One of the four IELTS skills on the hub landing page. Driven entirely by a
 // SKILL_META entry: links to the skill's own route, uses its accent colour,
 // and shows whether responses are auto-marked (Listening/Reading) or given an
-// AI band (Writing/Speaking). Presentational — used by the server hub page.
+// AI band (Writing/Speaking). Presentational - used by the server hub page.
 // ────────────────────────────────────────────────────────────────────────────
 
 type SkillMetaEntry = (typeof SKILL_META)[IeltsSkill]

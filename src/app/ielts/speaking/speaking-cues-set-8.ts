@@ -1,15 +1,15 @@
-// ─── IELTS Speaking cues · Set 8 (Academic, Parts 1–3) ─────────────────────
+// ─── IELTS Speaking cues · Set 8 (Academic, Parts 1-3) ─────────────────────
 // An eighth batch of original IELTS-preparation practice prompts for the async
 // Speaking module. Same shape and conventions as SPEAKING_CUES, with fresh
 // everyday topics so learners can rotate through more material without repeats:
-//   • Part 1 — short interview questions on familiar, everyday topics.
-//   • Part 2 — a cue card ("long turn"): one topic + bullet prompts, with the
+//   • Part 1 - short interview questions on familiar, everyday topics.
+//   • Part 2 - a cue card ("long turn"): one topic + bullet prompts, with the
 //     standard 60s preparation / up-to-120s speaking timings.
-//   • Part 3 — a two-way discussion: more abstract, opinion-led questions that
+//   • Part 3 - a two-way discussion: more abstract, opinion-led questions that
 //     thematically extend a Part 2 topic (education & teachers, cities &
 //     tourism, problem-solving, and possessions & value).
 //
-// Topics here are deliberately distinct from the base cues and Sets 2–7 (which
+// Topics here are deliberately distinct from the base cues and Sets 2-7 (which
 // already cover home/area, daily routine, food/cooking, weather, transport,
 // hometown, music, weekends, technology, shopping, books/reading, sport, sleep,
 // clothes, the internet, festivals, animals, neighbours, languages, mobile
@@ -22,7 +22,7 @@
 // teacher who influenced you, a city you would recommend, a problem you solved
 // and a possession you would want to keep.
 //
-// All prompts are original and written for this app — they do not reproduce any
+// All prompts are original and written for this app - they do not reproduce any
 // official or third-party IELTS question bank. ids use the `sp-008-` prefix so
 // the coordinator can merge this set without colliding with the other cues.
 // ────────────────────────────────────────────────────────────────────────────
@@ -30,7 +30,7 @@
 import type { SpeakingCue } from '@/lib/ielts/types'
 
 export const SPEAKING_SET_8: SpeakingCue[] = [
-  // ─── Part 1 — Interview (everyday topics) ────────────────────────────────
+  // ─── Part 1 - Interview (everyday topics) ────────────────────────────────
   {
     id: 'sp-008-p1-parks-gardens',
     part: 'speaking-part-1',
@@ -80,7 +80,7 @@ export const SPEAKING_SET_8: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 2 — Long turn / cue card ───────────────────────────────────────
+  // ─── Part 2 - Long turn / cue card ───────────────────────────────────────
   {
     id: 'sp-008-p2-teacher-influenced-you',
     part: 'speaking-part-2',
@@ -142,7 +142,7 @@ export const SPEAKING_SET_8: SpeakingCue[] = [
     ],
   },
 
-  // ─── Part 3 — Two-way discussion (abstract, opinion-led) ─────────────────
+  // ─── Part 3 - Two-way discussion (abstract, opinion-led) ─────────────────
   {
     id: 'sp-008-p3-education-teachers',
     part: 'speaking-part-3',

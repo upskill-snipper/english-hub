@@ -10,7 +10,7 @@
 //
 // Only `ar` triggers augmentation; `en` passes through unchanged.
 //
-// Bilingual mode ('bi') was removed in May 2026 — the stacked layout
+// Bilingual mode ('bi') was removed in May 2026 - the stacked layout
 // didn't work for AI feedback content (model would emit one language
 // or the other anyway). Legacy 'bi' cookie/header values are coerced
 // to 'en' so old sessions degrade gracefully.
@@ -36,14 +36,14 @@ export function resolveLocaleFromRequest(request: NextRequest): 'en' | 'ar' {
  * is in AR mode. Kept verbatim in one place so all essay-feedback / marking
  * routes stay consistent.
  */
-export const KHALEEJI_LANGUAGE_DIRECTIVE = `LANGUAGE DIRECTIVE: The user has selected Arabic mode. Respond entirely in Khaleeji (Gulf) Arabic — use markers like شنو, شوف, الحين, إحنا, ببلاش, روح, شلون, دوّر, لحظة. Do NOT use Levantine forms (شو, بحكي, كيفك, ليش). Keep these terms in Latin script within Arabic text: The English Hub, GCSE, IGCSE, KS3, AO1-AO6, AQA, OCR, Edexcel, Cambridge, WJEC, Eduqas. Keep the student's English essay quotations IN ENGLISH (verbatim) when referring to their work — they're being taught English. Gender: binary M/F only; use masculine-default singular verbs when addressing the student.`
+export const KHALEEJI_LANGUAGE_DIRECTIVE = `LANGUAGE DIRECTIVE: The user has selected Arabic mode. Respond entirely in Khaleeji (Gulf) Arabic - use markers like شنو, شوف, الحين, إحنا, ببلاش, روح, شلون, دوّر, لحظة. Do NOT use Levantine forms (شو, بحكي, كيفك, ليش). Keep these terms in Latin script within Arabic text: The English Hub, GCSE, IGCSE, KS3, AO1-AO6, AQA, OCR, Edexcel, Cambridge, WJEC, Eduqas. Keep the student's English essay quotations IN ENGLISH (verbatim) when referring to their work - they're being taught English. Gender: binary M/F only; use masculine-default singular verbs when addressing the student.`
 
 /**
  * If the request is in AR mode, append the Khaleeji language directive to the
  * given system prompt. Otherwise return the prompt unchanged.
  *
- * The directive is appended AT THE END so the existing prompt — including the
- * JSON response contract — is untouched. The model produces the same JSON
+ * The directive is appended AT THE END so the existing prompt - including the
+ * JSON response contract - is untouched. The model produces the same JSON
  * shape; only the natural-language text inside the JSON values changes.
  */
 export function withArabicDirective(systemPrompt: string, request: NextRequest): string {

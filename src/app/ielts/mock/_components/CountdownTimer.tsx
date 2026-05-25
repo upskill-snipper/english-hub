@@ -9,7 +9,7 @@
 //
 // Lifetime + safety:
 //   • The interval is created in an effect keyed on `seconds` (the section's
-//     budget) and torn down on unmount or when the section changes — no leaked
+//     budget) and torn down on unmount or when the section changes - no leaked
 //     timers.
 //   • `onExpire` is held in a ref so a changing callback identity never restarts
 //     the clock, and a `firedRef` guard guarantees a single fire.

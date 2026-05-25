@@ -1,5 +1,5 @@
 /**
- * dictionary-mkt-teachers.ts — `/teachers` marketing page.
+ * dictionary-mkt-teachers.ts - `/teachers` marketing page.
  *
  * Externalises every visible English literal on `src/app/teachers/page.tsx`
  * (the public teachers marketing surface) under the stable
@@ -7,7 +7,7 @@
  * authored. AR values are curated Khaleeji (Gulf) Arabic in the same
  * marketing register used across `dictionary-homepage.ts` (warm,
  * conversational, direct address) and the teacher-SaaS tone of
- * `dictionary-teacher.ts` (formal-but-warm professional voice) —
+ * `dictionary-teacher.ts` (formal-but-warm professional voice) -
  * NOT MSA-stiff, NOT machine, NOT Levantine.
  *
  * Technical tokens stay in Latin per Gulf convention:
@@ -17,24 +17,24 @@
  * Western (Arabic-Indic 0-9) digits used throughout.
  *
  * This shard is wired into the master `lookup()` chain in
- * `./dictionary.ts` at the curated-override tier — BEFORE the
- * placeholder/audit supplements — by the orchestrator. Do NOT edit
+ * `./dictionary.ts` at the curated-override tier - BEFORE the
+ * placeholder/audit supplements - by the orchestrator. Do NOT edit
  * `dictionary.ts` from this shard.
  */
 
 export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ── Metadata (title + description) ─────────────────────────────────
   'mkt.teachers.meta.title': {
-    en: 'For Teachers — reduce workload, support every student',
-    ar: 'للمعلّمين — قلّل الضغط وادعم كل طالب',
+    en: 'For Teachers - reduce workload, support every student',
+    ar: 'للمعلّمين - قلّل الضغط وادعم كل طالب',
   },
   'mkt.teachers.meta.description': {
-    en: 'AI-assisted feedback, homework setting, worksheet building and clearer student insight — designed to support teacher judgement and reduce repetitive workload.',
-    ar: 'تغذية راجعة بمساعدة الـ AI، تحضير الواجبات، بناء أوراق العمل، ورؤية أوضح عن طلابك — مصمّم يدعم حكم المعلّم ويقلّل الشغل المتكرّر.',
+    en: 'AI-assisted feedback, homework setting, worksheet building and clearer student insight - designed to support teacher judgement and reduce repetitive workload.',
+    ar: 'تغذية راجعة بمساعدة الـ AI، تحضير الواجبات، بناء أوراق العمل، ورؤية أوضح عن طلابك - مصمّم يدعم حكم المعلّم ويقلّل الشغل المتكرّر.',
   },
   'mkt.teachers.meta.og_title': {
-    en: 'For Teachers — The English Hub',
-    ar: 'للمعلّمين — The English Hub',
+    en: 'For Teachers - The English Hub',
+    ar: 'للمعلّمين - The English Hub',
   },
   'mkt.teachers.meta.og_description': {
     en: 'Support every student without adding to your workload.',
@@ -55,8 +55,8 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'ادعم كل طالب بدون ما تزيد على شغلك',
   },
   'mkt.teachers.hero.subtitle': {
-    en: 'The English Hub is designed to reduce repetitive marking, give you clearer insight into class weaknesses, and help you focus more time on teaching. It supports your judgement — it does not replace it.',
-    ar: 'The English Hub مصمّم يقلّل التصحيح المتكرّر، يعطيك رؤية أوضح عن نقاط ضعف الصف، ويساعدك تركّز وقتك أكثر على التدريس. يدعم حكمك المهني — ما يحلّ محلّه.',
+    en: 'The English Hub is designed to reduce repetitive marking, give you clearer insight into class weaknesses, and help you focus more time on teaching. It supports your judgement - it does not replace it.',
+    ar: 'The English Hub مصمّم يقلّل التصحيح المتكرّر، يعطيك رؤية أوضح عن نقاط ضعف الصف، ويساعدك تركّز وقتك أكثر على التدريس. يدعم حكمك المهني - ما يحلّ محلّه.',
   },
   'mkt.teachers.hero.cta_primary': {
     en: 'See teacher pricing',
@@ -89,11 +89,11 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'شنو يتغيّر لمّا المعلّمين يستخدمون The English Hub',
   },
   'mkt.teachers.shift.lead': {
-    en: 'A qualitative shift in where teacher time goes — fewer evenings on repetitive marking, more class hours spent on what actually moves the dial.',
-    ar: 'نقلة نوعية في توزيع وقت المعلّم — ليالي أقل على التصحيح المتكرّر، وساعات صف أكثر على اللي فعلاً يفرق.',
+    en: 'A qualitative shift in where teacher time goes - fewer evenings on repetitive marking, more class hours spent on what actually moves the dial.',
+    ar: 'نقلة نوعية في توزيع وقت المعلّم - ليالي أقل على التصحيح المتكرّر، وساعات صف أكثر على اللي فعلاً يفرق.',
   },
 
-  // Without — eyebrow + heading + four bullets
+  // Without - eyebrow + heading + four bullets
   'mkt.teachers.shift.without.eyebrow': {
     en: 'Without',
     ar: 'بدون',
@@ -119,7 +119,7 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'الأنماط على مستوى الصف ما تبيّن إلا في موسم الامتحانات',
   },
 
-  // With — eyebrow + heading + four bullets
+  // With - eyebrow + heading + four bullets
   'mkt.teachers.shift.with.eyebrow': {
     en: 'With The English Hub',
     ar: 'مع The English Hub',
@@ -145,7 +145,7 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'رؤية لأنماط الصف تقدر تتصرّف عليها في الحصة الجاية',
   },
 
-  // ── 3. Feature grid — workflow surfaces ────────────────────────────
+  // ── 3. Feature grid - workflow surfaces ────────────────────────────
   'mkt.teachers.features.eyebrow': {
     en: 'Workflow surfaces',
     ar: 'محاور سير العمل',
@@ -235,8 +235,8 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'مصمّم يدعم، مو يحلّ محلّك',
   },
   'mkt.teachers.features.trust.body': {
-    en: 'AI-assisted feedback is designed to support your professional judgement and reduce repetitive workload — not to replace marking or teaching. Teachers stay in control of every decision.',
-    ar: 'التغذية الراجعة بمساعدة الـ AI مصمّمة تدعم حكمك المهني وتقلّل الشغل المتكرّر — مو تحلّ محل التصحيح ولا التدريس. المعلّم يبقى مسيطر على كل قرار.',
+    en: 'AI-assisted feedback is designed to support your professional judgement and reduce repetitive workload - not to replace marking or teaching. Teachers stay in control of every decision.',
+    ar: 'التغذية الراجعة بمساعدة الـ AI مصمّمة تدعم حكمك المهني وتقلّل الشغل المتكرّر - مو تحلّ محل التصحيح ولا التدريس. المعلّم يبقى مسيطر على كل قرار.',
   },
 
   // ── 4. A typical week ──────────────────────────────────────────────
@@ -249,8 +249,8 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'أسبوع نموذجي',
   },
   'mkt.teachers.week.lead': {
-    en: 'How the platform fits the cadence of a real English teaching week — from Monday setup through to half-term reporting.',
-    ar: 'كيف المنصّة تنسجم مع إيقاع أسبوع تدريس إنجليزي حقيقي — من تحضير الإثنين إلى تقارير منتصف الفصل.',
+    en: 'How the platform fits the cadence of a real English teaching week - from Monday setup through to half-term reporting.',
+    ar: 'كيف المنصّة تنسجم مع إيقاع أسبوع تدريس إنجليزي حقيقي - من تحضير الإثنين إلى تقارير منتصف الفصل.',
   },
   'mkt.teachers.week.step_label': {
     en: 'Step',
@@ -267,8 +267,8 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'حضّر واجبات متوافقة مع منهجك',
   },
   'mkt.teachers.week.tue_thu.day': {
-    en: 'Tue – Thu',
-    ar: 'الثلاثاء – الخميس',
+    en: 'Tue - Thu',
+    ar: 'الثلاثاء - الخميس',
   },
   'mkt.teachers.week.tue_thu.body': {
     en: 'Students practise; AI drafts first-pass feedback',
@@ -301,8 +301,8 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }>
     ar: 'شوف مساحة عمل المعلّم',
   },
   'mkt.teachers.demo.lead': {
-    en: 'Browse a sample teacher dashboard with mark queue, class analytics and student insight — no sign-up needed.',
-    ar: 'تصفّح لوحة معلّم تجريبية فيها قائمة تصحيح، وتحليلات الصف، ورؤية عن الطلاب — بدون تسجيل.',
+    en: 'Browse a sample teacher dashboard with mark queue, class analytics and student insight - no sign-up needed.',
+    ar: 'تصفّح لوحة معلّم تجريبية فيها قائمة تصحيح، وتحليلات الصف، ورؤية عن الطلاب - بدون تسجيل.',
   },
   'mkt.teachers.demo.cta_primary': {
     en: 'Open the teacher demo',

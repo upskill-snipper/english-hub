@@ -7,7 +7,7 @@
 //
 // SCOPE: chrome only. The diagnostic practice ITEMS (reading passage,
 // listening transcript, questions, options, answers) live in
-// ./diagnostic-items.ts and stay English — they are NOT in this shard.
+// ./diagnostic-items.ts and stay English - they are NOT in this shard.
 //
 // Khaleeji (Gulf) Arabic per the master dictionary header
 // (src/lib/i18n/dictionary.ts ~lines 9-28). Brand + technical terms stay in
@@ -32,8 +32,8 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   // ─── Diagnostic: page header ────────────────────────────────────────
   'ielts.diagnostic.title': { en: 'IELTS Placement Test', ar: 'اختبار تحديد المستوى IELTS' },
   'ielts.diagnostic.subtitle': {
-    en: 'A quick check of where you are right now — about {minutes} minutes. We use it to build your personalised study plan.',
-    ar: 'فحص سريع لمستواك الحين — حوالي {minutes} دقيقة. نستخدمه عشان نبني لك خطة دراسة مخصصة.',
+    en: 'A quick check of where you are right now - about {minutes} minutes. We use it to build your personalised study plan.',
+    ar: 'فحص سريع لمستواك الحين - حوالي {minutes} دقيقة. نستخدمه عشان نبني لك خطة دراسة مخصصة.',
   },
 
   // ─── Diagnostic: intro steps ────────────────────────────────────────
@@ -46,12 +46,12 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'اقرأ نص محادثة قصيرة وجاوب على 4 أسئلة.',
   },
   'ielts.diagnostic.intro.writing.body': {
-    en: 'Rate your own confidence — no essay needed yet.',
-    ar: 'قيّم ثقتك بنفسك — ما يحتاج مقال الحين.',
+    en: 'Rate your own confidence - no essay needed yet.',
+    ar: 'قيّم ثقتك بنفسك - ما يحتاج مقال الحين.',
   },
   'ielts.diagnostic.intro.speaking.body': {
-    en: 'Rate your own confidence — no recording needed yet.',
-    ar: 'قيّم ثقتك بنفسك — ما يحتاج تسجيل الحين.',
+    en: 'Rate your own confidence - no recording needed yet.',
+    ar: 'قيّم ثقتك بنفسك - ما يحتاج تسجيل الحين.',
   },
 
   // Marking tags
@@ -65,22 +65,22 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   },
 
   // ─── Diagnostic: section headings + subtitles ───────────────────────
-  'ielts.diagnostic.section.reading.title': { en: 'Part 1 — Reading', ar: 'الجزء 1 — Reading' },
+  'ielts.diagnostic.section.reading.title': { en: 'Part 1 - Reading', ar: 'الجزء 1 - Reading' },
   'ielts.diagnostic.section.reading.subtitle': {
     en: 'Read the passage, then answer the four questions below.',
     ar: 'اقرأ النص، وبعدها جاوب على الأسئلة الأربعة تحت.',
   },
   'ielts.diagnostic.section.listening.title': {
-    en: 'Part 2 — Listening',
-    ar: 'الجزء 2 — Listening',
+    en: 'Part 2 - Listening',
+    ar: 'الجزء 2 - Listening',
   },
   'ielts.diagnostic.section.listening.subtitle': {
     en: 'In the real test you would hear this once. Read the transcript, then answer.',
     ar: 'بالاختبار الحقيقي بتسمعه مرة وحدة. اقرأ النص، وبعدها جاوب.',
   },
   'ielts.diagnostic.section.selfassess.title': {
-    en: 'Part 3 — Writing & Speaking (self-estimate)',
-    ar: 'الجزء 3 — Writing و Speaking (تقدير ذاتي)',
+    en: 'Part 3 - Writing & Speaking (self-estimate)',
+    ar: 'الجزء 3 - Writing و Speaking (تقدير ذاتي)',
   },
   'ielts.diagnostic.section.selfassess.subtitle': {
     en: 'There is no quick way to auto-mark these, so rate yourself honestly. You will refine this with real practice in the Writing and Speaking modules.',
@@ -191,15 +191,15 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'هذي تقديرات، مو نتائج رسمية.',
   },
   'ielts.diagnostic.caveat.body': {
-    en: 'This placement test gives an indicative starting point. Writing and Speaking bands are self-estimates — refine them with full practice and AI feedback in the Writing and Speaking modules. Official IELTS bands can only come from a real exam.',
-    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات ذاتية — ظبّطها بالتدريب الكامل وتقييم الذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما ييي إلا من امتحان حقيقي.',
+    en: 'This placement test gives an indicative starting point. Writing and Speaking bands are self-estimates - refine them with full practice and AI feedback in the Writing and Speaking modules. Official IELTS bands can only come from a real exam.',
+    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات ذاتية - ظبّطها بالتدريب الكامل وتقييم الذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما ييي إلا من امتحان حقيقي.',
   },
 
   // ─── Plan: page header ──────────────────────────────────────────────
   'ielts.plan.title': { en: 'My IELTS Study Plan', ar: 'خطة دراسة IELTS مالي' },
   'ielts.plan.subtitle': {
-    en: 'A prioritised, weakest-first route to your target band — built from your placement test and practice so far.',
-    ar: 'مسار مرتّب حسب الأولوية، يبدأ من أضعف مهارة، وصولاً لـ Band المستهدف — مبني على اختبار تحديد المستوى والتدريب اللي سويته لين الحين.',
+    en: 'A prioritised, weakest-first route to your target band - built from your placement test and practice so far.',
+    ar: 'مسار مرتّب حسب الأولوية، يبدأ من أضعف مهارة، وصولاً لـ Band المستهدف - مبني على اختبار تحديد المستوى والتدريب اللي سويته لين الحين.',
   },
 
   // ─── Plan: empty state ──────────────────────────────────────────────
@@ -216,8 +216,8 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   // ─── Plan: target + overall ─────────────────────────────────────────
   'ielts.plan.target.heading': { en: 'Your target', ar: 'هدفك' },
   'ielts.plan.target.body': {
-    en: 'Pick the overall band you’re aiming for. Most universities ask for 6.0–7.0 overall. We’ll prioritise your weakest skills to get you there.',
-    ar: 'اختر Band الكلي اللي تبيه. أغلب الجامعات تطلب 6.0–7.0 كلي. بنرتّب أضعف مهاراتك حسب الأولوية عشان توصل له.',
+    en: 'Pick the overall band you’re aiming for. Most universities ask for 6.0-7.0 overall. We’ll prioritise your weakest skills to get you there.',
+    ar: 'اختر Band الكلي اللي تبيه. أغلب الجامعات تطلب 6.0-7.0 كلي. بنرتّب أضعف مهاراتك حسب الأولوية عشان توصل له.',
   },
   'ielts.plan.target.select_label': { en: 'Target band', ar: 'Band المستهدف' },
   'ielts.plan.target.option': { en: 'Band {band}', ar: 'Band {band}' },
@@ -244,12 +244,12 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
 
   // ─── Plan: prioritised plan section ─────────────────────────────────
   'ielts.plan.plan.heading': {
-    en: 'Your plan — weakest skills first',
-    ar: 'خطتك — أضعف المهارات أول',
+    en: 'Your plan - weakest skills first',
+    ar: 'خطتك - أضعف المهارات أول',
   },
   'ielts.plan.plan.lead_gap': {
-    en: 'Start with {skill} — it has the largest gap to Band {target}. Work down the list in order.',
-    ar: 'ابدأ بـ {skill} — عنده أكبر فرق لين Band {target}. كمّل القائمة بالترتيب.',
+    en: 'Start with {skill} - it has the largest gap to Band {target}. Work down the list in order.',
+    ar: 'ابدأ بـ {skill} - عنده أكبر فرق لين Band {target}. كمّل القائمة بالترتيب.',
   },
   'ielts.plan.plan.lead_on_target': {
     en: 'You’re meeting your target across the board. Keep practising to stay sharp and consider raising your target.',
@@ -261,17 +261,17 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   'ielts.plan.chip.baseline_needed': { en: 'Baseline needed', ar: 'يحتاج خط أساس' },
   'ielts.plan.chip.gap': { en: '+{gap} band', ar: '+{gap} Band' },
 
-  // Plan step CTA — {skill} stays the Latin skill label
+  // Plan step CTA - {skill} stays the Latin skill label
   'ielts.plan.cta.practise': { en: 'Practise {skill}', ar: 'تدرّب على {skill}' },
 
-  // Plan step copy — "no current band" (baseline)
+  // Plan step copy - "no current band" (baseline)
   'ielts.plan.step.baseline.headline': {
     en: 'Get a baseline in {skill}',
     ar: 'احصل على خط أساس في {skill}',
   },
   'ielts.plan.step.baseline.action': {
-    en: 'You haven’t practised {skill} yet, so we can’t measure the gap to Band {target}. Do one {taskKind} to set your starting point — it will reshape this whole plan.',
-    ar: 'ما تدرّبت على {skill} بعد، فما نقدر نقيس الفرق لين Band {target}. سوِّ {taskKind} وحدة عشان تحدّد نقطة بدايتك — بتعيد تشكيل الخطة كلها.',
+    en: 'You haven’t practised {skill} yet, so we can’t measure the gap to Band {target}. Do one {taskKind} to set your starting point - it will reshape this whole plan.',
+    ar: 'ما تدرّبت على {skill} بعد، فما نقدر نقيس الفرق لين Band {target}. سوِّ {taskKind} وحدة عشان تحدّد نقطة بدايتك - بتعيد تشكيل الخطة كلها.',
   },
   // {taskKind} variants for the baseline action
   'ielts.plan.taskkind.feedback': {
@@ -280,7 +280,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.plan.taskkind.practice_set': { en: 'practice set', ar: 'مجموعة تدريب' },
 
-  // Plan step copy — "meets target" (hold)
+  // Plan step copy - "meets target" (hold)
   'ielts.plan.step.hold.headline': {
     en: 'Hold your {skill} at Band {current}',
     ar: 'ثبّت {skill} مالك على Band {current}',
@@ -290,7 +290,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'أنت أصلاً على هدفك Band {target} أو فوقه هنا. خلّه حاد بتدريب مؤقّت بين فترة وفترة عشان ما ينزل، وركّز طاقتك على مهاراتك الأضعف الأول.',
   },
 
-  // Plan step copy — "has a gap" (close)
+  // Plan step copy - "has a gap" (close)
   'ielts.plan.step.close.headline': {
     en: 'Close a {gap}-band gap in {skill}',
     ar: 'سُدّ فرق {gap} Band في {skill}',
@@ -309,8 +309,8 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'دفعة مركّزة هنا بتحرّك النتيجة بسرعة.',
   },
   'ielts.plan.step.close.size_small': {
-    en: 'You’re close — a little polish should get you there.',
-    ar: 'أنت قريب — شوية تلميع بتوصّلك.',
+    en: 'You’re close - a little polish should get you there.',
+    ar: 'أنت قريب - شوية تلميع بتوصّلك.',
   },
   'ielts.plan.step.close.action_productive': {
     en: 'Submit a {skillLower} task to get AI band feedback against the official criteria.',

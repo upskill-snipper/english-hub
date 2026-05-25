@@ -1,6 +1,6 @@
 // ─── IELTS Academic Writing prompts · Set 3 ─────────────────────────────────
 // Additional prompt bank for the AI-marked Writing module, authored in parallel
-// with the Wave 1 set (`writing-prompts.ts`). Three Task 1 questions (Academic —
+// with the Wave 1 set (`writing-prompts.ts`). Three Task 1 questions (Academic -
 // describe a visual) and three Task 2 questions (advantages/disadvantages, a
 // two-part question, and an agree/disagree opinion essay).
 //
@@ -20,7 +20,7 @@
 import type { WritingPrompt } from '@/lib/ielts/types'
 
 export const WRITING_SET_3: WritingPrompt[] = [
-  // ── Task 1 · A — bar chart (comparison across categories + years) ─────────
+  // ── Task 1 · A - bar chart (comparison across categories + years) ─────────
   {
     id: 'wt-s3-commuter-transport',
     task: 'writing-task-1',
@@ -32,10 +32,10 @@ export const WRITING_SET_3: WritingPrompt[] = [
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
       'Data (percentage of commuters using each means of transport):',
-      '• Private car — 2005: 58%; 2014: 49%; 2023: 34%',
-      '• Bus or tram — 2005: 21%; 2014: 24%; 2023: 27%',
-      '• Underground rail — 2005: 15%; 2014: 19%; 2023: 23%',
-      '• Bicycle or on foot — 2005: 6%; 2014: 8%; 2023: 16%',
+      '• Private car - 2005: 58%; 2014: 49%; 2023: 34%',
+      '• Bus or tram - 2005: 21%; 2014: 24%; 2023: 27%',
+      '• Underground rail - 2005: 15%; 2014: 19%; 2023: 23%',
+      '• Bicycle or on foot - 2005: 6%; 2014: 8%; 2023: 16%',
       '',
       'Write at least 150 words.',
     ].join('\n'),
@@ -43,7 +43,7 @@ export const WRITING_SET_3: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · B — table (population ageing across regions) ────────────────
+  // ── Task 1 · B - table (population ageing across regions) ────────────────
   {
     id: 'wt-s3-ageing-population',
     task: 'writing-task-1',
@@ -55,9 +55,9 @@ export const WRITING_SET_3: WritingPrompt[] = [
       'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
       '',
       'Data (percentage of the population aged 65 and over):',
-      '• Northern region — 1990: 11%; 2020: 19%; 2050 (projected): 28%',
-      '• Coastal region — 1990: 14%; 2020: 24%; 2050 (projected): 33%',
-      '• Central region — 1990: 9%; 2020: 16%; 2050 (projected): 22%',
+      '• Northern region - 1990: 11%; 2020: 19%; 2050 (projected): 28%',
+      '• Coastal region - 1990: 14%; 2020: 24%; 2050 (projected): 33%',
+      '• Central region - 1990: 9%; 2020: 16%; 2050 (projected): 22%',
       '',
       'Write at least 150 words.',
     ].join('\n'),
@@ -65,7 +65,7 @@ export const WRITING_SET_3: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 1 · C — map (how a town centre changed over time) ───────────────
+  // ── Task 1 · C - map (how a town centre changed over time) ───────────────
   {
     id: 'wt-s3-town-centre-map',
     task: 'writing-task-1',
@@ -94,7 +94,7 @@ export const WRITING_SET_3: WritingPrompt[] = [
     suggestedMinutes: 20,
   },
 
-  // ── Task 2 · A — advantages / disadvantages (tourism) ────────────────────
+  // ── Task 2 · A - advantages / disadvantages (tourism) ────────────────────
   {
     id: 'wt-s3-mass-tourism',
     task: 'writing-task-2',
@@ -113,7 +113,7 @@ export const WRITING_SET_3: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · B — two-part question (the media / news) ────────────────────
+  // ── Task 2 · B - two-part question (the media / news) ────────────────────
   {
     id: 'wt-s3-online-news',
     task: 'writing-task-2',
@@ -132,7 +132,7 @@ export const WRITING_SET_3: WritingPrompt[] = [
     suggestedMinutes: 40,
   },
 
-  // ── Task 2 · C — opinion (agree / disagree) on science funding ───────────
+  // ── Task 2 · C - opinion (agree / disagree) on science funding ───────────
   {
     id: 'wt-s3-science-funding',
     task: 'writing-task-2',

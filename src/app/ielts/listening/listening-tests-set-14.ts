@@ -1,4 +1,4 @@
-// ─── IELTS Academic Listening — practice test data (Set 14) ────────────────
+// ─── IELTS Academic Listening - practice test data (Set 14) ────────────────
 // A parallel-authored expansion of the Listening item bank. Each set ships in
 // its OWN file to avoid edit collisions; a coordinator concatenates the exports
 // (LISTENING_TESTS, LISTENING_SET_2, LISTENING_SET_3, …) downstream.
@@ -6,19 +6,19 @@
 // This set ships ONE original FULL-LENGTH practice test: all four sections
 // (~40 questions) that mirror the real IELTS Listening paper, with topics
 // deliberately distinct from every other set:
-//   • Section 1 — an everyday transactional DIALOGUE (here: a parent phoning a
+//   • Section 1 - an everyday transactional DIALOGUE (here: a parent phoning a
 //     leisure centre to enrol two children in swimming lessons), assessed with
 //     form / note completion + a multiple-choice item. A surname is spelled and
 //     a phone number is dictated, and one detail (the total termly fee) depends
 //     on a stated choice (how many children are enrolled).
-//   • Section 2 — an everyday MONOLOGUE (here: an announcement about a museum's
+//   • Section 2 - an everyday MONOLOGUE (here: an announcement about a museum's
 //     "Late at the Museum" evening event), assessed with sentence completion +
 //     multiple choice, carrying signpost language ("first", "after that",
 //     "finally") that the questions track.
-//   • Section 3 — an ACADEMIC DISCUSSION (here: two students and a tutor in a
+//   • Section 3 - an ACADEMIC DISCUSSION (here: two students and a tutor in a
 //     tutorial preparing a group economics presentation on local food markets),
 //     assessed with multiple choice + completion.
-//   • Section 4 — an academic LECTURE / monologue (here: the history of writing
+//   • Section 4 - an academic LECTURE / monologue (here: the history of writing
 //     systems, from clay tokens to the alphabet), assessed with note/sentence
 //     completion + multiple choice, including one True/False/Not Given item.
 //
@@ -28,7 +28,7 @@
 //              in the prompt (e.g. "ONE WORD AND/OR A NUMBER").
 //   • 'mcq'  → single best answer; `correctIndex` is 0-based.
 //   • 'tfng' → True / False / Not Given.
-// `audioSrc` is intentionally left undefined — the `transcript` drives the Web
+// `audioSrc` is intentionally left undefined - the `transcript` drives the Web
 // Speech API "audio" stand-in and doubles as the post-submit review view.
 // All content below is original and written for IELTS preparation only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -39,12 +39,12 @@ export const LISTENING_SET_14: ListeningTest[] = [
   {
     id: 'ls-academic-14',
     title:
-      'Practice Test 14 — Enrolling in Swimming Lessons, A Museum Late-Opening Evening, Preparing an Economics Presentation & The History of Writing Systems',
+      'Practice Test 14 - Enrolling in Swimming Lessons, A Museum Late-Opening Evening, Preparing an Economics Presentation & The History of Writing Systems',
     estimatedMinutes: 30,
     sections: [
       {
         id: 'ls-academic-14-s1',
-        title: 'Section 1 — Enrolling children in swimming lessons',
+        title: 'Section 1 - Enrolling children in swimming lessons',
         // ~285 words. Transactional dialogue (Section 1 style): a parent phoning a
         // leisure centre to enrol her two children in swimming lessons. A surname is
         // spelled and a mobile number is dictated; one detail (the total termly fee)
@@ -64,7 +64,7 @@ WOMAN: Yes, it's oh-seven-eight-one-four, double two, six-oh-three.
 
 MAN: Lovely. Now, how many children are we enrolling?
 
-WOMAN: Two — a boy and a girl. They're seven and nine.
+WOMAN: Two - a boy and a girl. They're seven and nine.
 
 MAN: Right. At those ages they'd both go into the same class, the Dolphins group. That runs on Thursday afternoons at four o'clock.
 
@@ -74,7 +74,7 @@ MAN: It's thirty pounds per child for the term, but when you book two or more fr
 
 WOMAN: Good to know. Is there anything they need to bring?
 
-MAN: Just a swimming cap — that's compulsory in the pool. Goggles are optional, but most children prefer them.
+MAN: Just a swimming cap - that's compulsory in the pool. Goggles are optional, but most children prefer them.
 
 WOMAN: And do I pay now?
 
@@ -91,7 +91,7 @@ MAN: Exactly right. We'll see you then.`,
               'Complete the enrolment form. Write ONE WORD for the answer.\n\nParent surname: ____________',
             acceptableAnswers: ['Ashworth', 'ashworth'],
             explanation:
-              'The caller gives her name as “Karen Ashworth” and spells the surname: A-S-H-W-O-R-T-H. In Section 1, names are almost always spelled aloud — write them down letter by letter as you hear them.',
+              'The caller gives her name as “Karen Ashworth” and spells the surname: A-S-H-W-O-R-T-H. In Section 1, names are almost always spelled aloud - write them down letter by letter as you hear them.',
           },
           {
             id: 'ls-014-s1-q2',
@@ -105,7 +105,7 @@ MAN: Exactly right. We'll see you then.`,
               '07814226 03',
             ],
             explanation:
-              'She dictates the number as “oh-seven-eight-one-four, double two, six-oh-three” — that is 07814 22603. “Double two” means two 2s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
+              'She dictates the number as “oh-seven-eight-one-four, double two, six-oh-three” - that is 07814 22603. “Double two” means two 2s, and “oh” is zero; spacing is not penalised, but every digit must be correct.',
           },
           {
             id: 'ls-014-s1-q3',
@@ -113,7 +113,7 @@ MAN: Exactly right. We'll see you then.`,
             prompt: 'Number of children being enrolled: ____________. Write A NUMBER.',
             acceptableAnswers: ['2', 'two'],
             explanation:
-              'She says, “Two — a boy and a girl.” The number of children is 2. This figure also triggers the family discount in a later question — Section 1 details often connect.',
+              'She says, “Two - a boy and a girl.” The number of children is 2. This figure also triggers the family discount in a later question - Section 1 details often connect.',
           },
           {
             id: 'ls-014-s1-q4',
@@ -153,7 +153,7 @@ MAN: Exactly right. We'll see you then.`,
               'In the pool, each child must wear a swimming ____________, which is compulsory. Write ONE WORD.',
             acceptableAnswers: ['cap', 'hat'],
             explanation:
-              'He says, “Just a swimming cap — that’s compulsory in the pool.” The answer is “cap” (hat accepted as a synonym). Goggles are mentioned only as optional, a distractor.',
+              'He says, “Just a swimming cap - that’s compulsory in the pool.” The answer is “cap” (hat accepted as a synonym). Goggles are mentioned only as optional, a distractor.',
           },
           {
             id: 'ls-014-s1-q8',
@@ -191,7 +191,7 @@ MAN: Exactly right. We'll see you then.`,
       },
       {
         id: 'ls-academic-14-s2',
-        title: 'Section 2 — A museum late-opening evening event',
+        title: 'Section 2 - A museum late-opening evening event',
         // ~270 words. Informational monologue (Section 2 style): a single speaker
         // announcing the programme for a museum's "Late at the Museum" evening
         // event. Uses sequencing/signpost language ("to begin", "after that",
@@ -205,9 +205,9 @@ Our headline attraction is in the Long Gallery, where we've just unveiled a temp
 
 After that, if you fancy something hands-on, head down to the basement workshop, where you can try making your own clay lamp using Roman techniques. Places are limited, so do sign up at the front desk when you arrive.
 
-Now, refreshments. The café by the entrance is open all evening and, unusually for us, is serving drinks as well as coffee. I should mention that food and drink are not permitted in any of the galleries — please finish them in the café area.
+Now, refreshments. The café by the entrance is open all evening and, unusually for us, is serving drinks as well as coffee. I should mention that food and drink are not permitted in any of the galleries - please finish them in the café area.
 
-Finally, a reminder that the gift shop closes at nine, half an hour before the museum itself, so do your shopping early. We hope you have a wonderful evening — please explore, ask questions, and enjoy the museum after dark.`,
+Finally, a reminder that the gift shop closes at nine, half an hour before the museum itself, so do your shopping early. We hope you have a wonderful evening - please explore, ask questions, and enjoy the museum after dark.`,
         questions: [
           {
             id: 'ls-014-s2-q9',
@@ -302,7 +302,7 @@ Finally, a reminder that the gift shop closes at nine, half an hour before the m
               'Food and drink may only be consumed in the ____________ area, not in the galleries. Write ONE WORD.',
             acceptableAnswers: ['café', 'cafe'],
             explanation:
-              'She says “food and drink are not permitted in any of the galleries — please finish them in the café area.” The answer is “café” (cafe accepted).',
+              'She says “food and drink are not permitted in any of the galleries - please finish them in the café area.” The answer is “café” (cafe accepted).',
           },
           {
             id: 'ls-014-s2-q17',
@@ -334,7 +334,7 @@ Finally, a reminder that the gift shop closes at nine, half an hour before the m
       },
       {
         id: 'ls-academic-14-s3',
-        title: 'Section 3 — Tutorial: preparing an economics presentation',
+        title: 'Section 3 - Tutorial: preparing an economics presentation',
         // ~295 words. Academic discussion (Section 3 style): two students (Megan and
         // Raj) and a tutor (Dr Lowe) prepare a group economics presentation on local
         // food markets. Speakers debate the topic focus, the data they will use, a
@@ -343,7 +343,7 @@ Finally, a reminder that the gift shop closes at nine, half an hour before the m
         // (concrete details).
         transcript: `DR LOWE: Right, Megan and Raj, let's talk through your economics presentation. What have you settled on?
 
-MEGAN: We're looking at local food markets — the open-air ones in the town square — and whether they're still economically viable now that the big supermarkets dominate.
+MEGAN: We're looking at local food markets - the open-air ones in the town square - and whether they're still economically viable now that the big supermarkets dominate.
 
 DR LOWE: A good, focused question. What angle are you taking?
 
@@ -361,11 +361,11 @@ DR LOWE: That's still a usable sample, as long as you're honest about the number
 
 MEGAN: Raj will present the background and the footfall data, and I'll handle the survey results and our conclusions.
 
-DR LOWE: Sensible. And the format — slides?
+DR LOWE: Sensible. And the format - slides?
 
 RAJ: Yes, but we want to avoid death by bullet points. We're planning to build the whole thing around one big chart that we return to throughout.
 
-DR LOWE: I like that. One clear visual anchor is far more memorable than a wall of text. Just rehearse your timing — ten minutes goes very quickly.`,
+DR LOWE: I like that. One clear visual anchor is far more memorable than a wall of text. Just rehearse your timing - ten minutes goes very quickly.`,
         questions: [
           {
             id: 'ls-014-s3-q18',
@@ -425,7 +425,7 @@ DR LOWE: I like that. One clear visual anchor is far more memorable than a wall 
             ],
             correctIndex: 1,
             explanation:
-              'Raj says, “We’d planned to interview thirty traders, but a lot were too busy serving customers, so we only managed eighteen.” Option B matches — the sample was smaller than planned.',
+              'Raj says, “We’d planned to interview thirty traders, but a lot were too busy serving customers, so we only managed eighteen.” Option B matches - the sample was smaller than planned.',
           },
           {
             id: 'ls-014-s3-q23',
@@ -480,26 +480,26 @@ DR LOWE: I like that. One clear visual anchor is far more memorable than a wall 
               'The tutor reminds them to rehearse their timing, as the talk is only ____________ minutes long. Write A NUMBER.',
             acceptableAnswers: ['10', 'ten'],
             explanation:
-              'Dr Lowe says, “Just rehearse your timing — ten minutes goes very quickly.” The answer is 10.',
+              'Dr Lowe says, “Just rehearse your timing - ten minutes goes very quickly.” The answer is 10.',
           },
         ],
       },
       {
         id: 'ls-academic-14-s4',
-        title: 'Section 4 — Lecture: the history of writing systems',
+        title: 'Section 4 - Lecture: the history of writing systems',
         // ~300 words. Academic lecture / monologue (Section 4 style): a single
         // speaker delivers a structured lecture on the history of writing systems,
         // from clay accounting tokens in Mesopotamia to the alphabet. Dense, factual
         // and signposted ("let me begin", "next", "finally"), with the note/sentence-
         // completion + multiple-choice mix typical of Section 4, including one
         // True/False/Not Given item.
-        transcript: `Good morning. Today I want to trace how human beings first learned to write — a development that, more than almost any other, made history itself possible. I'll move from the very earliest records to the invention of the alphabet.
+        transcript: `Good morning. Today I want to trace how human beings first learned to write - a development that, more than almost any other, made history itself possible. I'll move from the very earliest records to the invention of the alphabet.
 
 Let me begin with the deep origins. Long before true writing, people in ancient Mesopotamia kept track of goods using small clay tokens, each shape standing for a particular item, such as a sheep or a jar of oil. These were an accounting tool, not a language, but they planted the seed.
 
-The first real writing grew out of this around five thousand years ago. The Sumerians began pressing marks into wet clay tablets with a reed, producing a script we call cuneiform — a word that simply means "wedge-shaped". At first these signs were pictures of objects, but over time they became more abstract and could represent sounds as well as things.
+The first real writing grew out of this around five thousand years ago. The Sumerians began pressing marks into wet clay tablets with a reed, producing a script we call cuneiform - a word that simply means "wedge-shaped". At first these signs were pictures of objects, but over time they became more abstract and could represent sounds as well as things.
 
-A separate system arose in Egypt at roughly the same time: hieroglyphs. It's a common myth that hieroglyphs were purely picture-writing; in fact, many of the signs stood for sounds, much like letters. Importantly, there is no firm evidence that one of these two systems copied the other — scholars generally regard them as independent inventions.
+A separate system arose in Egypt at roughly the same time: hieroglyphs. It's a common myth that hieroglyphs were purely picture-writing; in fact, many of the signs stood for sounds, much like letters. Importantly, there is no firm evidence that one of these two systems copied the other - scholars generally regard them as independent inventions.
 
 The truly revolutionary step came later, with the alphabet. Earlier scripts needed hundreds of signs, which only specialist scribes could master. The great innovation, credited to the Phoenicians, was a small set of symbols, each standing for a single sound. With only a couple of dozen signs to learn, writing was no longer the preserve of an elite. Next week we'll look at how the Greeks adapted that alphabet by adding vowels.`,
         questions: [
@@ -542,7 +542,7 @@ The truly revolutionary step came later, with the alphabet. Earlier scripts need
               'The Sumerian script is called ____________, a word meaning "wedge-shaped". Write ONE WORD.',
             acceptableAnswers: ['cuneiform'],
             explanation:
-              'The speaker says this script “we call cuneiform — a word that simply means ‘wedge-shaped’.” The answer is “cuneiform”.',
+              'The speaker says this script “we call cuneiform - a word that simply means ‘wedge-shaped’.” The answer is “cuneiform”.',
           },
           {
             id: 'ls-014-s4-q32',
@@ -589,7 +589,7 @@ The truly revolutionary step came later, with the alphabet. Earlier scripts need
             ],
             correctIndex: 2,
             explanation:
-              'The speaker says “there is no firm evidence that one of these two systems copied the other — scholars generally regard them as independent inventions.” Option C matches.',
+              'The speaker says “there is no firm evidence that one of these two systems copied the other - scholars generally regard them as independent inventions.” Option C matches.',
           },
           {
             id: 'ls-014-s4-q36',

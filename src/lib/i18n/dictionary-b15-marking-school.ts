@@ -1,4 +1,4 @@
-/** dictionary-b15-marking-school.ts — Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /marking + /school product UI. */
+/** dictionary-b15-marking-school.ts - Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /marking + /school product UI. */
 export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── /marking shared nav ──────────────────────────────────────────────────
   'marking.nav.marking': { en: 'Marking', ar: 'التصحيح' },
@@ -48,8 +48,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'marking.submit.label_title': { en: 'Title', ar: 'العنوان' },
   'marking.submit.label_title_optional': { en: '(optional)', ar: '(اختياري)' },
   'marking.submit.title_placeholder': {
-    en: 'e.g. Macbeth — ambition essay, draft 2',
-    ar: 'مثلاً: Macbeth — مقالة الطموح، المسودة 2',
+    en: 'e.g. Macbeth - ambition essay, draft 2',
+    ar: 'مثلاً: Macbeth - مقالة الطموح، المسودة 2',
   },
   'marking.submit.label_essay': { en: 'Your essay', ar: 'مقالتك' },
   'marking.submit.essay_placeholder': {
@@ -64,8 +64,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'marking.submit.btn_submit': { en: 'Submit for marking', ar: 'سلّم للتصحيح' },
   'marking.submit.btn_marking': { en: 'Marking your essay…', ar: 'يصحّح مقالتك…' },
   'marking.submit.wait_note': {
-    en: "AI marking usually takes 5–15 seconds. Please don't close this page.",
-    ar: 'التصحيح عادةً يأخذ 5–15 ثانية. لا تسكر الصفحة الحين.',
+    en: "AI marking usually takes 5-15 seconds. Please don't close this page.",
+    ar: 'التصحيح عادةً يأخذ 5-15 ثانية. لا تسكر الصفحة الحين.',
   },
 
   // ─── /marking/history ────────────────────────────────────────────────────
@@ -153,8 +153,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
     ar: 'An Inspector Calls',
   },
   'marking.sample.inspector_calls.title': {
-    en: 'An Inspector Calls — Model Essay Bank',
-    ar: 'An Inspector Calls — بنك النماذج',
+    en: 'An Inspector Calls - Model Essay Bank',
+    ar: 'An Inspector Calls - بنك النماذج',
   },
   'marking.sample.inspector_calls.subtitle': {
     en: 'Five fully-annotated model responses across two popular exam questions at Grades 5, 7 and 9. Each essay includes paragraph-level annotations, AO breakdowns and marker commentary explaining why it achieves its grade.',
@@ -183,8 +183,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   // ─── /marking/sample/jekyll-hyde ────────────────────────────────────────
   'marking.sample.jekyll_hyde.breadcrumb': { en: 'Jekyll & Hyde', ar: 'Jekyll & Hyde' },
   'marking.sample.jekyll_hyde.title': {
-    en: 'Jekyll & Hyde — Model Essay Bank',
-    ar: 'Jekyll & Hyde — بنك النماذج',
+    en: 'Jekyll & Hyde - Model Essay Bank',
+    ar: 'Jekyll & Hyde - بنك النماذج',
   },
   'marking.sample.jekyll_hyde.subtitle': {
     en: 'Three original model essays answering "How does Stevenson present the theme of duality?" at Grade 5, 7 and 9. Each essay includes paragraph annotations, AO breakdown, grade justification, and targeted improvements.',
@@ -216,8 +216,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   // ─── /marking/sample/christmas-carol ────────────────────────────────────
   'marking.sample.christmas_carol.breadcrumb': { en: 'A Christmas Carol', ar: 'A Christmas Carol' },
   'marking.sample.christmas_carol.title': {
-    en: 'A Christmas Carol — Model Essay Bank',
-    ar: 'A Christmas Carol — بنك النماذج',
+    en: 'A Christmas Carol - Model Essay Bank',
+    ar: 'A Christmas Carol - بنك النماذج',
   },
   'marking.sample.christmas_carol.subtitle': {
     en: 'Three original model essays answering "How does Dickens present Scrooge\'s transformation?" at Grade 5, 7 and 9. Each essay includes paragraph annotations, AO breakdown, grade justification, and targeted improvements.',
@@ -320,7 +320,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'school.b15.users.perm_admin_label': { en: 'School Admin', ar: 'مشرف المدرسة' },
   'school.b15.users.perm_admin_desc': {
     en: 'Full access -- manage all users, view all analytics, edit school settings',
-    ar: 'وصول كامل — تنظيم كل المستخدمين وعرض كل التحليلات وتعديل إعدادات المدرسة',
+    ar: 'وصول كامل - تنظيم كل المستخدمين وعرض كل التحليلات وتعديل إعدادات المدرسة',
   },
   'school.b15.users.perm_teacher_label': { en: 'Teacher', ar: 'معلم' },
   'school.b15.users.perm_teacher_desc': {
@@ -423,7 +423,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   },
   'school.b15.permissions.sec_audit': { en: 'Audit logging', ar: 'سجل المراجعة' },
   'school.b15.permissions.sec_audit_desc': {
-    en: 'All administrative actions are recorded in an audit log — including user management, role changes, data exports, and login events. Logs are available to school admins on request.',
+    en: 'All administrative actions are recorded in an audit log - including user management, role changes, data exports, and login events. Logs are available to school admins on request.',
     ar: 'تُسجَّل كل الإجراءات الإدارية في سجل المراجعة، بما فيها إدارة المستخدمين وتغييرات الأدوار وتصدير البيانات وأحداث تسجيل الدخول. السجلات متاحة لمشرفي المدرسة عند الطلب.',
   },
   'school.b15.permissions.sec_gdpr': { en: 'GDPR alignment', ar: 'توافق GDPR' },
@@ -501,7 +501,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
     ar: 'إنشاء رمز QR قادم قريباً',
   },
   'school.b15.join_codes.qr_desc': {
-    en: 'Soon you will be able to generate a QR code for each join code. Students and teachers can scan it with their phone camera to be taken straight to the join page — no typing required.',
+    en: 'Soon you will be able to generate a QR code for each join code. Students and teachers can scan it with their phone camera to be taken straight to the join page - no typing required.',
     ar: 'قريباً تقدر تولّد رمز QR لكل رمز انضمام. يقدر الطلاب والمعلمين يمسحونه بكاميرا الجوال وتاخذهم مباشرةً لصفحة الانضمام دون كتابة.',
   },
   'school.b15.join_codes.active_title': { en: 'Active Join Codes', ar: 'رموز الانضمام النشطة' },
@@ -682,8 +682,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'school.b15.import.tab_students': { en: 'Import Students', ar: 'استيراد الطلاب' },
   'school.b15.import.tab_teachers': { en: 'Import Teachers', ar: 'استيراد المعلمين' },
   'school.b15.import.step1_title': {
-    en: 'Step 1 — Download the Template',
-    ar: 'الخطوة 1 — حمّل القالب',
+    en: 'Step 1 - Download the Template',
+    ar: 'الخطوة 1 - حمّل القالب',
   },
   'school.b15.import.step1_desc_students': {
     en: 'Fill in the spreadsheet with your student data, then upload it below.',
@@ -702,7 +702,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
     ar: 'حمّل قالب المعلمين',
   },
   'school.b15.import.required_cols': { en: 'Required columns', ar: 'الأعمدة المطلوبة' },
-  'school.b15.import.step2_title': { en: 'Step 2 — Upload Your File', ar: 'الخطوة 2 — ارفع ملفك' },
+  'school.b15.import.step2_title': { en: 'Step 2 - Upload Your File', ar: 'الخطوة 2 - ارفع ملفك' },
   'school.b15.import.step2_desc': {
     en: 'Accepts .csv and .xlsx files.',
     ar: 'يقبل ملفات .csv و .xlsx.',
@@ -738,8 +738,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
     ar: '{count} صفوف بها أخطاء',
   },
   'school.b15.import.rows_skipped': {
-    en: '— rows with errors will be skipped during import.',
-    ar: '— الصفوف التي بها أخطاء ستُتجاوز أثناء الاستيراد.',
+    en: '- rows with errors will be skipped during import.',
+    ar: '- الصفوف التي بها أخطاء ستُتجاوز أثناء الاستيراد.',
   },
   'school.b15.import.more_rows': {
     en: '+ {count} more rows not shown',
@@ -835,8 +835,8 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
     ar: 'الطلاب يقدرون يدخلون فوراً باستخدام بريدهم وكلمة المرور المؤقتة.',
   },
   'school.b15.import.next_students_2': {
-    en: 'They join the school automatically — no manual approval needed.',
-    ar: 'ينضمون للمدرسة تلقائياً — ما يحتاج موافقة يدوية.',
+    en: 'They join the school automatically - no manual approval needed.',
+    ar: 'ينضمون للمدرسة تلقائياً - ما يحتاج موافقة يدوية.',
   },
   'school.b15.import.next_students_3': {
     en: 'Students can access all assigned content and lessons right away.',
@@ -964,7 +964,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'school.b15.import_results.import_type_teachers': { en: 'Teachers', ar: 'معلمون' },
   'school.b15.import_results.import_type_mixed': { en: 'Students & Teachers', ar: 'طلاب ومعلمون' },
 
-  // ─── /school/marking — WS-2 teacher decision / moderation block ───────────
+  // ─── /school/marking - WS-2 teacher decision / moderation block ───────────
   // Curated EN + Khaleeji (Gulf) AR. Teacher-facing operational register.
   // Exam tokens (AO, GCSE, "U") stay in Latin.
   'school_marking_review.section_title': { en: 'Teacher decision', ar: 'قرار المعلّم' },

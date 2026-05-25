@@ -1,9 +1,9 @@
-// ─── IELTS General Training Reading — practice item bank (GT Set 3) ─────────
+// ─── IELTS General Training Reading - practice item bank (GT Set 3) ─────────
 // ORIGINAL content written for The English Hub. These are NOT reproductions of
 // any official IELTS past paper; every notice, advertisement, handbook extract
 // and article below is invented purely to practise the General Training Reading
 // question formats (MCQ, True/False/Not Given, and sentence/summary completion).
-// Framed as "IELTS preparation" only — no official affiliation is implied.
+// Framed as "IELTS preparation" only - no official affiliation is implied.
 //
 // GT Reading differs from Academic: instead of academic journal extracts, the
 // texts are everyday/social (Section 1: leisure-centre notices + a volunteering
@@ -19,18 +19,18 @@ import type { ReadingTest } from '@/lib/ielts/types'
 export const GT_READING_SET_3: ReadingTest[] = [
   {
     id: 'rd-general-003',
-    title: 'General Training Reading — Practice Test 3',
+    title: 'General Training Reading - Practice Test 3',
     track: 'general',
     estimatedMinutes: 60,
     passages: [
-      // ── Section 1: EVERYDAY / SOCIAL — leisure-centre notices + a volunteering advert
+      // ── Section 1: EVERYDAY / SOCIAL - leisure-centre notices + a volunteering advert
       {
         id: 'rd-general-003-p1',
-        title: 'Maple Park Leisure Centre — Member Notices & Volunteering',
-        body: `OFF-PEAK MEMBERSHIP — NEW RATES
+        title: 'Maple Park Leisure Centre - Member Notices & Volunteering',
+        body: `OFF-PEAK MEMBERSHIP - NEW RATES
 From the first of next month, our off-peak membership will cost £29 a month, a small rise from the current £27. Off-peak members may use the gym, the pool and the studio classes on weekdays between 10 a.m. and 4 p.m., and at any time over the weekend. Please note that off-peak membership does not give access to the centre during the early-morning period (6 a.m. to 10 a.m.), which remains reserved for full members. If you wish to upgrade to full membership, you may do so at reception at any time; the difference is charged from the start of the following month, never backdated.
 
-POOL TIMETABLE — IMPORTANT CHANGE
+POOL TIMETABLE - IMPORTANT CHANGE
 The Tuesday evening public swim has moved. Lane swimming on Tuesdays now finishes at 7 p.m. rather than 8 p.m., because the far end of the pool is needed for the junior water-polo squad, which trains from 7 p.m. The Thursday family session is unaffected and still runs from 4 p.m. until 6 p.m. During school holidays an extra afternoon session is added on Wednesdays, but this is not available during term time.
 
 BOOKING STUDIO CLASSES
@@ -178,10 +178,10 @@ We are looking for friendly, reliable volunteers to support our weekend learn-to
           },
         ],
       },
-      // ── Section 2: WORKPLACE — new-employee induction & safety handbook ───────
+      // ── Section 2: WORKPLACE - new-employee induction & safety handbook ───────
       {
         id: 'rd-general-003-p2',
-        title: 'New Employee Induction — Harborne Distribution Warehouse',
+        title: 'New Employee Induction - Harborne Distribution Warehouse',
         body: `YOUR FIRST WEEK
 Every new member of warehouse staff completes an induction during their first week. On day one you will be issued with your security pass, locker key and protective equipment, and shown the layout of the site by your team leader. You cannot begin work on the warehouse floor until you have watched the safety video and signed to confirm that you understand it; this usually takes place on the morning of your second day. Office-based staff follow a slightly different induction, arranged separately by the human resources team.
 
@@ -192,7 +192,7 @@ OPERATING THE FORKLIFT TRUCKS
 Only staff who hold a current forklift licence and have been added to the site register may operate a forklift truck. Holding a licence from a previous employer is not enough on its own; you must also complete a short familiarisation session with our equipment before your name is added to the register. Forklifts must never be left with the engine running while unattended, and the keys must be returned to the supervisor's cabinet at the end of each shift. The speed limit for all vehicles inside the building is eight kilometres per hour.
 
 REPORTING ACCIDENTS AND NEAR MISSES
-Any accident, however minor, must be recorded in the accident book kept in the supervisor's office on the same day it occurs. We also ask you to report "near misses" — incidents where no one was hurt but someone could have been. Reporting a near miss is never treated as an admission of fault; on the contrary, it helps us prevent a more serious accident later. The first-aid room is next to the canteen, and a list of trained first-aiders is displayed on the noticeboard there.
+Any accident, however minor, must be recorded in the accident book kept in the supervisor's office on the same day it occurs. We also ask you to report "near misses" - incidents where no one was hurt but someone could have been. Reporting a near miss is never treated as an admission of fault; on the contrary, it helps us prevent a more serious accident later. The first-aid room is next to the canteen, and a list of trained first-aiders is displayed on the noticeboard there.
 
 FIRE PROCEDURE
 If you discover a fire, raise the alarm at the nearest call point and leave the building by the nearest marked exit. Do not stop to collect personal belongings. The assembly point is the far corner of the staff car park, beside the cycle racks. Lifts must not be used during an evacuation. A full fire drill is held twice a year, and you are expected to take part even if you are in the middle of a task.`,
@@ -335,19 +335,19 @@ If you discover a fire, raise the alarm at the nearest call point and leave the 
           },
         ],
       },
-      // ── Section 3: LONGER GENERAL-INTEREST article — taking up a craft as an adult
+      // ── Section 3: LONGER GENERAL-INTEREST article - taking up a craft as an adult
       {
         id: 'rd-general-003-p3',
         title: 'Learning a Craft in Later Life',
         body: `There is a widespread belief that the ability to acquire a practical skill belongs chiefly to the young, and that an adult who has never thrown a pot or planed a piece of wood has somehow missed the window in which such things can be learned. Teachers of traditional crafts hear this anxiety constantly, usually phrased as an apology: I should have started years ago. Yet their experience tells a different and more encouraging story. The adult beginner, they insist, brings advantages that more than compensate for a later start.
 
-The first of these is patience. A child learning to carve may rush towards a finished object, abandoning the work the moment it stops being fun. Adults, by contrast, have generally learned to tolerate the slow, unglamorous middle of a project — the hours of sanding, the repeated false starts — because adult life has already taught them that worthwhile results rarely arrive quickly. This willingness to stay with a difficulty, rather than flee from it, turns out to be far more valuable in craft work than youthful quickness of hand.
+The first of these is patience. A child learning to carve may rush towards a finished object, abandoning the work the moment it stops being fun. Adults, by contrast, have generally learned to tolerate the slow, unglamorous middle of a project - the hours of sanding, the repeated false starts - because adult life has already taught them that worthwhile results rarely arrive quickly. This willingness to stay with a difficulty, rather than flee from it, turns out to be far more valuable in craft work than youthful quickness of hand.
 
 A second advantage is the freedom that comes with low stakes. Most adults take up a craft for pleasure rather than as a livelihood, and this changes their relationship to failure. A ruined first attempt is not a catastrophe but simply part of the process, to be examined and learned from. Several instructors observe that their most anxious students are often the most capable ones, paralysed by a fear of making something imperfect, while those who shrug off their early mistakes tend to progress fastest. The lesson is not that skill does not matter, but that the fear of failing can be a heavier burden than the failing itself.
 
-There are, of course, genuine obstacles. The body of a sixty-year-old does not always do what the mind asks of it, and conditions such as stiff joints can make fine handwork tiring. Good teachers respond not by lowering their expectations but by adapting their methods — suggesting a lighter tool here, a different grip there, more frequent rests. Far from being a reason to give up, these adjustments are simply part of meeting each learner where they are. A skill pursued sensibly, at a pace that respects the body, can be sustained for decades.
+There are, of course, genuine obstacles. The body of a sixty-year-old does not always do what the mind asks of it, and conditions such as stiff joints can make fine handwork tiring. Good teachers respond not by lowering their expectations but by adapting their methods - suggesting a lighter tool here, a different grip there, more frequent rests. Far from being a reason to give up, these adjustments are simply part of meeting each learner where they are. A skill pursued sensibly, at a pace that respects the body, can be sustained for decades.
 
-Perhaps the least expected benefit is social. Workshops and evening classes draw together people who might otherwise never meet — a retired engineer beside a young parent, a shop assistant beside a former teacher — united only by a shared wish to make something with their hands. In an age when much of life is conducted alone in front of a screen, the quiet companionship of a workshop, where strangers lend one another tools and advice, answers a need that has little to do with the craft itself. Many who enrol expecting to learn woodwork or weaving find that what they value most, after a few months, is the company.
+Perhaps the least expected benefit is social. Workshops and evening classes draw together people who might otherwise never meet - a retired engineer beside a young parent, a shop assistant beside a former teacher - united only by a shared wish to make something with their hands. In an age when much of life is conducted alone in front of a screen, the quiet companionship of a workshop, where strangers lend one another tools and advice, answers a need that has little to do with the craft itself. Many who enrol expecting to learn woodwork or weaving find that what they value most, after a few months, is the company.
 
 None of this is to pretend that learning a craft in later life is effortless. Progress can be frustratingly slow, and the gap between what one imagines making and what one actually produces can be discouraging. But the teachers who spend their days with adult beginners are almost unanimous on one point: the people who flourish are not the naturally gifted, but the ones who keep turning up. Talent, they suggest, is overrated; persistence is everything. And persistence, unlike youth, is something an adult can choose.`,
         questions: [
@@ -434,7 +434,7 @@ None of this is to pretend that learning a craft in later life is effortless. Pr
             ],
             correctIndex: 2,
             explanation:
-              'The fourth paragraph says good teachers respond "not by lowering their expectations but by adapting their methods — suggesting a lighter tool here, a different grip there, more frequent rests." Option C matches; option A is explicitly rejected.',
+              'The fourth paragraph says good teachers respond "not by lowering their expectations but by adapting their methods - suggesting a lighter tool here, a different grip there, more frequent rests." Option C matches; option A is explicitly rejected.',
           },
           {
             id: 'rd-gen-003-p3-q34',

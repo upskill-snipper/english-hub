@@ -1,11 +1,11 @@
 /**
- * Toolkit-specific dictionary — keys for /toolkit/* tool pages.
+ * Toolkit-specific dictionary - keys for /toolkit/* tool pages.
  *
  * Kept in a separate file from the master dictionary.ts because the
  * toolkit surface area is its own product (AI tools, grade predictor,
  * personalised revision) and is iterated on independently of the
  * marketing / curriculum surface. Merged into the master lookup by
- * `dictionary.ts → lookup()` at runtime — callers don't need to know
+ * `dictionary.ts → lookup()` at runtime - callers don't need to know
  * which file owns a key.
  *
  * Khaleeji conventions (mirrored from dictionary.ts):
@@ -13,13 +13,13 @@
  * BANNED (Levantine): شو, بحكي, كيفك, ليش
  *
  * Latin retention: brand names (The English Hub, Toolkit), exam codes
- * (GCSE, IGCSE, AQA, OCR, Edexcel, AO1–AO6, IAL, A-Level, Unit 3/4,
+ * (GCSE, IGCSE, AQA, OCR, Edexcel, AO1-AO6, IAL, A-Level, Unit 3/4,
  * MCQ, PDF, AI) stay in Latin script inside Arabic text per Gulf
  * convention.
  *
  * GENDER POLICY: binary M/F. Male-second-person addressed by default
  * (matches the rest of the dictionary, which uses masculine "إنت/مالك"
- * forms — see action.* and tools.* entries in dictionary.ts).
+ * forms - see action.* and tools.* entries in dictionary.ts).
  */
 
 import type { Dictionary } from './dictionary'
@@ -28,8 +28,8 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
   // ─── Toolkit hub (/toolkit) ─────────────────────────────────────────
   // Student's command centre. Latin "Toolkit" retained per house style.
   'tools.meta.title': {
-    en: 'Revision toolkit — The English Hub',
-    ar: 'Toolkit المراجعة — The English Hub',
+    en: 'Revision toolkit - The English Hub',
+    ar: 'Toolkit المراجعة - The English Hub',
   },
   'tools.meta.description': {
     en: 'Free tools for GCSE & IGCSE English: quote builders, essay frames, mark-scheme checklists.',
@@ -364,8 +364,8 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
     ar: '٥ نقاط مراجعة أساسية',
   },
   'grade_predict.personal.model_para_prefix': {
-    en: 'Model Paragraph — Grade',
-    ar: 'فقرة نموذجية — درجة',
+    en: 'Model Paragraph - Grade',
+    ar: 'فقرة نموذجية - درجة',
   },
   'grade_predict.personal.annotations': { en: 'Annotations', ar: 'تعليقات' },
   'grade_predict.personal.what_to_reach_prefix': {
@@ -374,8 +374,8 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
   },
   'grade_predict.personal.challenges': { en: 'Challenge Questions', ar: 'أسئلة التحدّي' },
   'grade_predict.personal.challenges_note': {
-    en: 'These are designed to make you think beyond surface-level analysis. Do not look for a "right answer" — the thinking process is what matters.',
-    ar: 'هذه مصمّمة عشان تخلّيك تفكّر أبعد من التحليل السطحي. ما تدوّر على "جواب صح" — عملية التفكير هي اللي تهمّ.',
+    en: 'These are designed to make you think beyond surface-level analysis. Do not look for a "right answer" - the thinking process is what matters.',
+    ar: 'هذه مصمّمة عشان تخلّيك تفكّر أبعد من التحليل السطحي. ما تدوّر على "جواب صح" - عملية التفكير هي اللي تهمّ.',
   },
   'grade_predict.personal.grade9_tip.h4': {
     en: 'Grade 9 Tip: Conceptualised Responses',
@@ -392,13 +392,13 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
 
   // ─── Essay Check / AO5 Critic Simulator (/toolkit/critic) ───────────
   // Long-form persona body content (the 5 critical schools, their named
-  // figures, pushbacks and defence skeletons) stays EN-only — pedagogical
+  // figures, pushbacks and defence skeletons) stays EN-only - pedagogical
   // content rather than UI chrome. AR locale falls back gracefully via
   // lookup()'s en-default behaviour.
   'essay_check.h1': { en: 'AO5 Critic Simulator', ar: 'مُحاكي ناقد AO5' },
   'essay_check.badge.trainer': {
-    en: 'AO5 Trainer — A-Level / IAL',
-    ar: 'مدرّب AO5 — A-Level / IAL',
+    en: 'AO5 Trainer - A-Level / IAL',
+    ar: 'مدرّب AO5 - A-Level / IAL',
   },
   'essay_check.lead': {
     en: 'Pick a critical persona below. They open with a provocation about your studied text, follow up with three pushback questions, and give you a skeleton for a strong AO5 defence. Use this to practise the rhythm of critic → concede → reframe → sharpen before you hit a real Unit 3 or Unit 4 essay.',
@@ -438,8 +438,8 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
     ar: 'في إجابة Unit 3 أو Unit 4، ينبغي تسمية الموقف النقدي (مثلاً "قراءة نسوية، اتباعاً لـ Gilbert و Gubar، ستجادل بأن …")، التفاعل معه بجدية، ثم الدفاع عن موقفك ضدّه. الهيكل فوق يطابق هذا الإيقاع. المصحّحون يكافئون الإيقاع، مو فقط الاسم.',
   },
   'essay_check.footnote.prefix': {
-    en: 'Critic personas are authored practice prompts — they do not call a live AI. Use them to rehearse the rhythm; bring your own live feedback via',
-    ar: 'شخصيات الناقد هي مطالبات تمرين مكتوبة — ما تستدعي ذكاء اصطناعي حيّ. استخدمها عشان تتمرّن على الإيقاع؛ احصل على تغذية راجعة حيّة من',
+    en: 'Critic personas are authored practice prompts - they do not call a live AI. Use them to rehearse the rhythm; bring your own live feedback via',
+    ar: 'شخصيات الناقد هي مطالبات تمرين مكتوبة - ما تستدعي ذكاء اصطناعي حيّ. استخدمها عشان تتمرّن على الإيقاع؛ احصل على تغذية راجعة حيّة من',
   },
   'essay_check.footnote.link': {
     en: 'AI essay marking',

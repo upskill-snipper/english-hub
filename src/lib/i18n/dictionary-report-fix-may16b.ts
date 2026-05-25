@@ -1,12 +1,12 @@
 /**
- * Report-fix override — 2026-05-16 (batch B)
+ * Report-fix override - 2026-05-16 (batch B)
  *
  * The deep-research report flagged the LIVE /accessibility and
  * /affiliate + /affiliates pages rendering placeholder text ("Name",
  * "Desc", "H2", "Lead", "Heading", "Title Part1", "Footnote", etc.).
  *
  * Two root causes were fixed:
- *  1. dictionary.ts lookup() ordering bug — PLACEHOLDER_FIX_MAY15 and
+ *  1. dictionary.ts lookup() ordering bug - PLACEHOLDER_FIX_MAY15 and
  *     SCREENSHOT_FIX_DICTIONARY were resolved AFTER the auto-junk
  *     AUDIT_FIX_DICTIONARY, so ~80 real affiliate keys were shadowed.
  *     The chain was reordered so every curated override beats audit-fix.
@@ -19,7 +19,7 @@
  * mirrors EN as a graceful fallback until the next translation sweep.
  *
  * Accessibility copy is deliberately HONEST: it states a TARGET of
- * WCAG 2.2 AA and genuine known gaps — it does not claim full or
+ * WCAG 2.2 AA and genuine known gaps - it does not claim full or
  * externally-audited conformance.
  */
 
@@ -412,11 +412,11 @@ export const REPORT_FIX_MAY16B: Dictionary = {
   'affiliates.breadcrumb.home': { en: 'Home', ar: 'Home' },
   'affiliates.breadcrumb.self': { en: 'Affiliates', ar: 'Affiliates' },
   // NOTE: this value is fed through the root metadata title.template
-  // ('%s — The English Hub'), so it must NOT contain the brand itself
+  // ('%s - The English Hub'), so it must NOT contain the brand itself
   // or it double-brands. (Caught by site_health_monitor 2026-05-16.)
   'affiliates.public.meta.title': {
-    en: 'Affiliate Programme — Earn Recurring Commission for Partners',
-    ar: 'Affiliate Programme — Earn Recurring Commission for Partners',
+    en: 'Affiliate Programme - Earn Recurring Commission for Partners',
+    ar: 'Affiliate Programme - Earn Recurring Commission for Partners',
   },
   'affiliates.public.meta.description': {
     en: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',

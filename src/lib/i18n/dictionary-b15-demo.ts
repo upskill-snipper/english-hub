@@ -1,4 +1,4 @@
-/** dictionary-b15-demo.ts — Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /demo product UI. */
+/** dictionary-b15-demo.ts - Bucket B Phase B1.5. Curated EN + Khaleeji (Gulf) AR for /demo product UI. */
 export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ── school/progress ─────────────────────────────────────────────────────────
   'demo.b15.school_progress.demo_banner': {
@@ -120,7 +120,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'demo.b15.teacher_hw.ai_card_body': {
     en: 'Select a topic, type, and grade level -- get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.',
-    ar: 'اختر موضوع ونوع ومستوى — تأخذ واجب كامل مع جدول التصحيح ومعايير النجاح ومهام إضافية خلال ثواني.',
+    ar: 'اختر موضوع ونوع ومستوى - تأخذ واجب كامل مع جدول التصحيح ومعايير النجاح ومهام إضافية خلال ثواني.',
   },
   'demo.b15.teacher_hw.create_heading': { en: 'Create New Assignment', ar: 'سوّ واجب جديد' },
   'demo.b15.teacher_hw.field_class': { en: 'Class', ar: 'الفصل' },
@@ -969,8 +969,8 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'جهد ممتاز! راجع ما فاتك.',
   },
   'demo.b15.student_course.keep_practising': {
-    en: 'Keep practising — you will get there.',
-    ar: 'استمر في التدريب — ستصل.',
+    en: 'Keep practising - you will get there.',
+    ar: 'استمر في التدريب - ستصل.',
   },
   'demo.b15.student_course.back_module': { en: 'Back to module', ar: 'رجوع للوحدة' },
 
@@ -1030,8 +1030,8 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'هذا واحد من أكثر من 300 درس جاهز.',
   },
   'demo.b15.lessons.cta_body': {
-    en: 'Start a 7-day free trial to access them all — fully editable, printable, and aligned to your exam board. Card required, cancel before day 7.',
-    ar: 'ابدأ تجربة مجانية 7 أيام للوصول إلى الكل — قابل للتعديل والطباعة ومتوافق مع بوردك. تتطلب بطاقة، ألغِ قبل اليوم السابع.',
+    en: 'Start a 7-day free trial to access them all - fully editable, printable, and aligned to your exam board. Card required, cancel before day 7.',
+    ar: 'ابدأ تجربة مجانية 7 أيام للوصول إلى الكل - قابل للتعديل والطباعة ومتوافق مع بوردك. تتطلب بطاقة، ألغِ قبل اليوم السابع.',
   },
   'demo.b15.lessons.cta_btn': { en: 'Start 7-day trial', ar: 'ابدأ تجربة 7 أيام' },
 
@@ -1165,7 +1165,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'demo.b15.school_students.prev': { en: 'Previous', ar: 'السابق' },
   'demo.b15.school_students.next': { en: 'Next', ar: 'التالي' },
 
-  // ── school/engagement — toast keys ───────────────────────────────────────────
+  // ── school/engagement - toast keys ───────────────────────────────────────────
   'demo.b15.engagement.toast_reminder_pre': { en: 'Reminder sent to', ar: 'أُرسل تذكير إلى' },
   'demo.b15.engagement.toast_reminder_desc': {
     en: 'They will receive an email encouraging them to log in.',
@@ -1230,12 +1230,12 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'إنجاز الواجبات ثابت لكنه دون هدف السنة الدراسية البالغ 85%. ثلاثة طلاب لديهم تسليمات متأخرة.',
   },
   'demo.b15.school_teachers.trend3_pre': {
-    en: 'student flagged as at-risk. Engagement has declined over the past 2 weeks — consider individual check-ins or differentiated tasks.',
-    ar: 'طالب مُصنَّف في خطر. تراجع التفاعل خلال الأسبوعين الماضيين — فكّر في متابعة فردية أو مهام متمايزة.',
+    en: 'student flagged as at-risk. Engagement has declined over the past 2 weeks - consider individual check-ins or differentiated tasks.',
+    ar: 'طالب مُصنَّف في خطر. تراجع التفاعل خلال الأسبوعين الماضيين - فكّر في متابعة فردية أو مهام متمايزة.',
   },
   'demo.b15.school_teachers.trend3_pre_pl': {
-    en: 'students flagged as at-risk. Engagement has declined over the past 2 weeks — consider individual check-ins or differentiated tasks.',
-    ar: 'طلاب مُصنَّفون في خطر. تراجع التفاعل خلال الأسبوعين الماضيين — فكّر في متابعة فردية أو مهام متمايزة.',
+    en: 'students flagged as at-risk. Engagement has declined over the past 2 weeks - consider individual check-ins or differentiated tasks.',
+    ar: 'طلاب مُصنَّفون في خطر. تراجع التفاعل خلال الأسبوعين الماضيين - فكّر في متابعة فردية أو مهام متمايزة.',
   },
   'demo.b15.school_teachers.recommendations': { en: 'Recommendations', ar: 'التوصيات' },
   'demo.b15.school_teachers.rec1': {
