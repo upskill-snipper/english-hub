@@ -287,9 +287,9 @@ Several responses are now under way. Old mines are being reopened in regions tha
             type: 'gap',
             prompt:
               'Complete the sentence with ONE word from the passage: Erbium is used to _______ the pulses of light that travel through the optical fibres carrying the internet.',
-            acceptableAnswers: ['amplify'],
+            acceptableAnswers: ['amplify', 'amplifies'],
             explanation:
-              'The fourth paragraph says "Erbium amplifies the pulses of light that race through the optical fibres." Stated to fit the verb slot, the answer is "amplify" (the text uses "amplifies").',
+              'The fourth paragraph says "Erbium amplifies the pulses of light that race through the optical fibres." The word from the passage is "amplifies"; the form "amplify" that fits the verb slot is also accepted.',
           },
           {
             id: 'rd-007-p2-q24',

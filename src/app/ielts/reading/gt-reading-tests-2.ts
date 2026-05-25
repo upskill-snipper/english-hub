@@ -172,10 +172,10 @@ Holiday requests must be submitted through the online rota system at least two w
             id: 'gt-rd-s2-001-p2-q12',
             type: 'gap',
             prompt:
-              'Complete the sentence with TWO words from the text: During spring, holiday requests are granted in the _______ they are received.',
-            acceptableAnswers: ['order they', 'the order'],
+              'Complete the sentence with ONE word from the text: During spring, holiday requests are granted in the _______ they are received.',
+            acceptableAnswers: ['order'],
             explanation:
-              'The Requesting Time Off section states that in the busy spring period "requests are granted in the order they are received." The phrase filling the gap is "order they" (here taken as the two words after "in the").',
+              'The Requesting Time Off section states that in the busy spring period "requests are granted in the order they are received." The word filling the gap is "order".',
           },
         ],
       },

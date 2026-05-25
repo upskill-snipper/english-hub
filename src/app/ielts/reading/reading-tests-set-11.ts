@@ -256,15 +256,6 @@ The deepest obstacle to coexistence may therefore be social rather than biologic
               'Paragraph C says that with wolves present, "the elk could no longer linger safely in these exposed places. Browsing pressure eased, trees regrew, and the returning vegetation drew back beavers and songbirds." Option B matches; the patchiness of recovery is raised separately in D, which makes option D wrong.',
           },
           {
-            id: 'rd-011-p2-q6',
-            type: 'gap',
-            prompt:
-              'Complete the summary with TWO words from the passage: Scientists call a chain of effects spreading downward from a top predator through a web of life a _______.',
-            acceptableAnswers: ['trophic cascade'],
-            explanation:
-              'Paragraph C states that scientists "call such a chain of effects, spreading downward from a top predator through an entire web of life, a trophic cascade." The required answer is "trophic cascade".',
-          },
-          {
             id: 'rd-011-p2-q7',
             type: 'mcq',
             prompt: 'Why do some researchers urge caution about the Yellowstone story?',
@@ -442,15 +433,6 @@ What, then, should a company conclude? The researchers converge, despite their d
             answer: 'true',
             explanation:
               'Paragraph 5 says the associations "are learned, and they vary from one society to another, a point on which Hwang and Rele agree even as they differ on much else." This matches the statement, so it is True.',
-          },
-          {
-            id: 'rd-011-p3-q9',
-            type: 'tfng',
-            prompt:
-              'There is a universal language of colour that means the same thing in every market.',
-            answer: 'false',
-            explanation:
-              'Paragraph 5 concludes that "there is no universal language of colour waiting to be discovered," and paragraph 1 of the conclusion echoes this. The statement contradicts the passage, so it is False.',
           },
           {
             id: 'rd-011-p3-q10',

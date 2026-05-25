@@ -170,6 +170,23 @@ Permits are renewed once a year. We will send a reminder by email four weeks bef
             explanation:
               'The notice states, "We will send a reminder by email four weeks before yours runs out." The answer is "four" (the number 4 is also accepted).',
           },
+          {
+            id: 'rd-gen-008-p1-q26',
+            type: 'tfng',
+            prompt: 'Dogs of any kind are allowed throughout the museum building.',
+            answer: 'false',
+            explanation:
+              'The Facilities section says, "Assistance dogs are welcome anywhere in the building; other dogs are not." Because only assistance dogs are allowed, the statement is False.',
+          },
+          {
+            id: 'rd-gen-008-p1-q27',
+            type: 'gap',
+            prompt:
+              'Complete the sentence with ONE word and/or a number from the text: A book of ten visitor permits costs £_______.',
+            acceptableAnswers: ['18'],
+            explanation:
+              'The notice states a visitor permit "is available in books of ten for £18," so the missing number is 18.',
+          },
         ],
       },
       // ── Section 2: WORKPLACE - flexible-working request policy ──────────────
@@ -281,6 +298,38 @@ Where a manager is unsure whether a new pattern will work, they may agree to a t
             correctIndex: 2,
             explanation:
               'The "A trial period" section says, "If it has not worked well, you will return to your previous pattern, and this does not count as a refusal of your request." Option C is correct; option D is explicitly ruled out.',
+          },
+          {
+            id: 'rd-gen-008-p2-q28',
+            type: 'tfng',
+            prompt: 'The policy applies to staff who are still within their probation period.',
+            answer: 'false',
+            explanation:
+              'The opening states the policy "applies to all staff who have completed their probation period." Staff still within probation are therefore not covered, so the statement is False.',
+          },
+          {
+            id: 'rd-gen-008-p2-q29',
+            type: 'gap',
+            prompt:
+              'Complete the sentence with ONE word and/or a number from the text: A manager who is unsure about a new pattern may agree to a trial period of up to _______ months.',
+            acceptableAnswers: ['three', '3'],
+            explanation:
+              'The "A trial period" section says a manager "may agree to a trial period of up to three months." The answer is "three" (the number 3 is also accepted).',
+          },
+          {
+            id: 'rd-gen-008-p2-q30',
+            type: 'mcq',
+            prompt:
+              'According to the policy, what kinds of change may a flexible-working request seek?',
+            options: [
+              'Only a permanent change to working hours',
+              'Either a permanent change or a temporary one for an agreed period',
+              'Only a temporary change lasting less than a month',
+              'Any change, provided it is arranged informally with the manager',
+            ],
+            correctIndex: 1,
+            explanation:
+              'The "What you can ask for" section states, "You may ask for a permanent change or a temporary one for an agreed period." Option B reflects this; informal one-off arrangements (D) are explicitly excluded from the policy.',
           },
         ],
       },
@@ -404,6 +453,23 @@ The remedy that experienced teachers recommend is modest and consistent. A littl
             acceptableAnswers: ['reach'],
             explanation:
               'Paragraph F recommends "Choosing pieces that are within reach, rather than far beyond it." The missing word is "reach".',
+          },
+          {
+            id: 'rd-gen-008-p3-q31',
+            type: 'tfng',
+            prompt: 'Paragraph A reports that adult beginners include people in their seventies.',
+            answer: 'true',
+            explanation:
+              'Paragraph A describes adult beginners "in their thirties, fifties and seventies bent over guitars, keyboards and clarinets," which supports the statement, so it is True.',
+          },
+          {
+            id: 'rd-gen-008-p3-q32',
+            type: 'gap',
+            prompt:
+              "Complete the sentence with ONE word from the text: Paragraph E acknowledges that adult fingers are less _______ than a child's.",
+            acceptableAnswers: ['supple'],
+            explanation:
+              'Paragraph E states, "Adult fingers are less supple than a child’s, and progress in the early weeks can feel discouragingly slow." The missing word is "supple".',
           },
         ],
       },
