@@ -102,7 +102,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   },
   'ielts.partners.overview.offer.bilingual.body': {
     en: 'Every learner-facing screen works in English or Arabic, so instructions never get in the way of the practice for Gulf students building towards an English-medium future.',
-    ar: 'كل شاشة يشوفها الطالب تشتغل بالإنجليزي أو العربي، عشان التعليمات ما توقف بوجه التدريب لطلاب الخليج اللي يبنون مستقبلهم بلغة دراسة إنجليزية.',
+    ar: 'كل شاشة يشوفها الطالب تشتغل بالإنجليزي أو العربي، عشان التعليمات ما تصير حاجز قدّام التدريب لطلاب الخليج اللي يبنون مستقبلهم بلغة دراسة إنجليزية.',
   },
   'ielts.partners.overview.offer.feedback.title': {
     en: 'Instant AI band feedback',
@@ -545,7 +545,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   },
   'ielts.partners.schools.faq.a2': {
     en: 'No - it extends them. Automatic marking and AI band feedback handle the repetitive load so your teachers can spend their time on instruction, feedback conversations and intervention.',
-    ar: 'لا - يعزّزهم. التصحيح الآلي وتغذية الـ band الراجعة بالذكاء الاصطناعي تتولّى الشغل المتكرّر عشان مدرّسينك يصرفون وقتهم على التدريس، وجلسات التغذية الراجعة، والتدخّل.',
+    ar: 'لا - يعزّزهم. التصحيح الآلي والتغذية الراجعة للـ band بالذكاء الاصطناعي تتولّى الشغل المتكرّر عشان مدرّسينك يصرفون وقتهم على التدريس، وجلسات التغذية الراجعة، والتدخّل.',
   },
   'ielts.partners.schools.faq.q3': {
     en: 'Is it suitable for Arabic-speaking students?',

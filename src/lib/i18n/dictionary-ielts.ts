@@ -50,6 +50,6 @@ export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
     en: 'Predicted bands are practice estimates, not official results.',
     ar: 'الـ Band المتوقع تقديري للتدريب، مو نتيجة رسمية.',
   },
-  'ielts.task1': { en: 'Writing Task 1', ar: 'الكتابة - المهمة 1' },
-  'ielts.task2': { en: 'Writing Task 2', ar: 'الكتابة - المهمة 2' },
+  'ielts.task1': { en: 'Writing Task 1', ar: 'الكتابة - Task 1' },
+  'ielts.task2': { en: 'Writing Task 2', ar: 'الكتابة - Task 2' },
 }

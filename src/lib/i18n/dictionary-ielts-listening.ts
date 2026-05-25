@@ -169,8 +169,8 @@ export const IELTS_LISTENING_DICTIONARY: Record<string, { en: string; ar?: strin
 
   // Composed: `{sectionTitle} {audio_suffix}` (e.g. "Section 1 audio").
   'ielts.listening.audio.audio_suffix': { en: 'audio', ar: 'صوت' },
-  'ielts.listening.audio.status.playing': { en: 'Playing', ar: 'قيد التشغيل' },
-  'ielts.listening.audio.status.paused': { en: 'Paused', ar: 'متوقّف مؤقتاً' },
+  'ielts.listening.audio.status.playing': { en: 'Playing', ar: 'قاعد يشتغل' },
+  'ielts.listening.audio.status.paused': { en: 'Paused', ar: 'متوقّف' },
   'ielts.listening.audio.status.ready': { en: 'Ready to play', ar: 'جاهز للتشغيل' },
 
   'ielts.listening.audio.play': { en: 'Play', ar: 'تشغيل' },

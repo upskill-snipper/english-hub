@@ -109,7 +109,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.admissions.hub.ucas.step3.body': {
     en: 'One statement goes to all five choices, so it must work for every course you pick. This is where applicants from outside the UK most often win or lose a place - specificity and reflection matter more than ambition alone.',
-    ar: 'statement واحد يروح لكل الخيارات الخمسة، فلازم يناسب كل تخصص تختاره. هنا غالباً المتقدّمين من برّا بريطانيا يكسبون المقعد أو يضيّعونه - التحديد والتأمّل أهم من الطموح بروحه.',
+    ar: 'statement واحد يروح لكل الخيارات الخمسة، فلازم يناسب كل تخصص تختاره. هنا غالباً المتقدّمون من برّا بريطانيا يكسبون المقعد أو يضيّعونه - التحديد والتأمّل أهم من الطموح بروحه.',
   },
   'ielts.admissions.hub.ucas.step4.title': { en: 'Submit and track', ar: 'قدّم وتابع' },
   'ielts.admissions.hub.ucas.step4.body': {
@@ -409,7 +409,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.admissions.ps.over_limit': {
     en: 'Over the UCAS limit - you’ll still get feedback, including where to cut.',
-    ar: 'تعدّيت حد UCAS - بعدها بتجيك ملاحظات، وبتشمل وين تختصر.',
+    ar: 'تعدّيت حد UCAS - مع ذلك بتجيك ملاحظات، وبتشمل وين تختصر.',
   },
   'ielts.admissions.ps.view_premium': { en: 'View Premium plans', ar: 'شوف باقات Premium' },
   'ielts.admissions.ps.submitting': {

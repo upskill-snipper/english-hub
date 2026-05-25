@@ -34,7 +34,7 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
   'ielts.planner.title': { en: 'IELTS Study Planner', ar: 'مخطّط دراسة IELTS' },
   'ielts.planner.subtitle': {
     en: "Tell us your exam date and target band, and we'll plan backwards from the exam - front-loading your weakest skills, week by week.",
-    ar: 'قل لنا تاريخ امتحانك وBand الهدف، وإحنا نخطّط من الامتحان للخلف - نركّز على أضعف مهاراتك أول، أسبوع بأسبوع.',
+    ar: 'قل لنا تاريخ امتحانك و Band الهدف، وإحنا نخطّط من الامتحان للخلف - نركّز على أضعف مهاراتك أول، أسبوع بأسبوع.',
   },
 
   // ─── Countdown ──────────────────────────────────────────────────────
@@ -65,7 +65,7 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string 
   },
   'ielts.planner.urgency.runway': {
     en: 'Plenty of runway - build the habit and the bands will follow.',
-    ar: 'عندك وقت وايد - ابنِ العادة وBands بتجي وراها.',
+    ar: 'عندك وقت وايد - ابنِ العادة و Bands بتجي وراها.',
   },
 
   // ─── Goals form ─────────────────────────────────────────────────────

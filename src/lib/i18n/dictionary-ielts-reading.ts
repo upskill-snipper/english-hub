@@ -86,7 +86,7 @@ export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string 
   // ─── Test runner ─────────────────────────────────────────────────────────
   // Progress label is split so the counts stay numeric: "{n} of {total} answered".
   'ielts.reading.progress.of': { en: 'of', ar: 'من' },
-  'ielts.reading.progress.answered': { en: 'answered', ar: 'تم الإجابة عنها' },
+  'ielts.reading.progress.answered': { en: 'answered', ar: 'تمت الإجابة عنها' },
   'ielts.reading.progress.aria': {
     en: 'Reading progress: {answered} of {total} questions answered',
     ar: 'تقدّم القراءة: تمت الإجابة عن {answered} من {total} سؤال',

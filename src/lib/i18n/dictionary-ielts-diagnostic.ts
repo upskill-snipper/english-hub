@@ -110,7 +110,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   // Writing prompt + 4-point confidence-scale descriptions
   'ielts.diagnostic.selfassess.writing.question': {
     en: 'How confident are you writing a formal essay or describing data in clear English?',
-    ar: 'قد إيش أنت واثق إنك تكتب مقال رسمي أو تصف بيانات بإنجليزي واضح؟',
+    ar: 'شقد أنت واثق إنك تكتب مقال رسمي أو تصف بيانات بإنجليزي واضح؟',
   },
   'ielts.diagnostic.selfassess.writing.level1.desc': {
     en: 'I find it hard to write more than a few simple sentences, and I make frequent mistakes.',
@@ -132,7 +132,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   // Speaking prompt + 4-point confidence-scale descriptions
   'ielts.diagnostic.selfassess.speaking.question': {
     en: 'How confident are you speaking English about familiar and unfamiliar topics?',
-    ar: 'قد إيش أنت واثق إنك تتكلم إنجليزي عن مواضيع تعرفها وما تعرفها؟',
+    ar: 'شقد أنت واثق إنك تتكلم إنجليزي عن مواضيع تعرفها وما تعرفها؟',
   },
   'ielts.diagnostic.selfassess.speaking.level1.desc': {
     en: 'I can only say a few words or short phrases and pause a lot to find words.',
@@ -192,7 +192,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
   },
   'ielts.diagnostic.caveat.body': {
     en: 'This placement test gives an indicative starting point. Writing and Speaking bands are self-estimates - refine them with full practice and AI feedback in the Writing and Speaking modules. Official IELTS bands can only come from a real exam.',
-    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات ذاتية - ظبّطها بالتدريب الكامل وتقييم الذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما ييي إلا من امتحان حقيقي.',
+    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات ذاتية - ظبّطها بالتدريب الكامل وتقييم الذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما يجي إلا من امتحان حقيقي.',
   },
 
   // ─── Plan: page header ──────────────────────────────────────────────

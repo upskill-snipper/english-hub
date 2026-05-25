@@ -164,7 +164,7 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string 
     en: 'Predicted overall band',
     ar: 'Band الكلي المتوقع',
   },
-  'ielts.writing.results.out_of': { en: 'out of 9.0', ar: 'من 9.0' },
+  'ielts.writing.results.out_of': { en: 'out of 9.0', ar: 'من أصل 9.0' },
   'ielts.writing.results.strengths': { en: 'Strengths', ar: 'نقاط القوة' },
   'ielts.writing.results.improvements': { en: 'Areas to improve', ar: 'مجالات للتحسين' },
   'ielts.writing.results.model_pointers': {

@@ -79,7 +79,7 @@ export const IELTS_SPEAKING_DICTIONARY: Record<string, { en: string; ar?: string
   // Phase helper lines (60s / 2-minute kept numeric)
   'ielts.speaking.timer.help.idle': {
     en: 'Start the 60-second prep timer, jot a few notes, then speak for up to 2 minutes.',
-    ar: 'شغّل مؤقّت التحضير 60 ثانية، دوّن شوي ملاحظات، وبعدها تكلم لين 2 دقيقة.',
+    ar: 'شغّل مؤقّت التحضير 60 ثانية، دوّن لك بعض الملاحظات، وبعدها تكلم لين 2 دقيقة.',
   },
   'ielts.speaking.timer.help.prep': {
     en: 'Plan your answer. Recording is optional during prep.',

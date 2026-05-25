@@ -69,7 +69,7 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string }>
   //   {lead} {trfValidityYears} years.
   'ielts.guide.overview.p2_lead': {
     en: 'It assesses four skills - Listening, Reading, Writing and Speaking - each reported on a 0-9 band scale. There is no pass or fail: you receive a band for every skill and an overall band, and each institution decides the minimum it will accept. Your result is issued as a Test Report Form (TRF), valid for',
-    ar: 'يقيس أربع مهارات - Listening وReading وWriting وSpeaking - وكل وحدة تنذكر على مقياس Band من 0-9. ما في نجاح أو رسوب: تاخذ Band لكل مهارة وBand كلي، وكل مؤسسة تحدد الحد الأدنى اللي بتقبله. نتيجتك تُصدر كـ Test Report Form (TRF)، صالح لمدة',
+    ar: 'يقيس أربع مهارات - Listening وReading وWriting وSpeaking - وكل وحدة تتعطى Band من 0-9. ما في نجاح أو رسوب: تاخذ Band لكل مهارة وBand كلي، وكل مؤسسة تحدد الحد الأدنى اللي بتقبله. نتيجتك تُصدر كـ Test Report Form (TRF)، صالح لمدة',
   },
   'ielts.guide.overview.p2_years': { en: 'years', ar: 'سنوات' },
   // Paragraph 3 splits around the two share percentages:

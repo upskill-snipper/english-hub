@@ -329,7 +329,7 @@ export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string }> 
   // Resilience notes.
   'ielts.mock.speaking.note_too_short': {
     en: 'Your spoken answers were captured, but there was too little typed text to generate an AI band. Type a little of what you said next time for a predicted Speaking band.',
-    ar: 'إجاباتك المنطوقة انحفظت، بس النص المكتوب كان قليل وايد عشان نطلّع Band بالـ AI. المرة الجاية اكتب شوي من اللي قلته عشان تاخذ Band متوقع لـ Speaking.',
+    ar: 'إجاباتك المنطوقة انحفظت، بس النص المكتوب كان قليل وما يكفي عشان نطلّع Band بالـ AI. المرة الجاية اكتب شوي من اللي قلته عشان تاخذ Band متوقع لـ Speaking.',
   },
   'ielts.mock.speaking.note_service_unavailable': {
     en: 'Your spoken answers were recorded, but an AI band could not be generated this time (the feedback service may be unavailable, over its daily limit, or require a Premium subscription).',
