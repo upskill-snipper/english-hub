@@ -204,6 +204,7 @@ model User {
   mobileDevices          MobileDevice[]
   offlineEssayQueueItems OfflineEssayQueueItem[]
   markingSubmissions     MarkingSubmission[]     @relation("MarkingSubmissionStudent")
+  ieltsAttempts          IELTSAttempt[]
 
   @@index([email])
   @@index([role])
@@ -212,6 +213,37 @@ model User {
   @@index([school])
   @@index([parentId])
   @@index([linkedTeacherId])
+}
+
+// ── IELTS Academic learning loop (2026-05-25) ──────────────────────────────
+// Server-side persistence for IELTS practice attempts. A single table mirrors
+// the discriminated-union shape in src/lib/ielts/store.ts — `skill`
+// distinguishes auto-marked Listening/Reading attempts from AI-marked
+// Writing/Speaking tasks — so the client store can write through to the DB for
+// cross-device continuity and B2B teacher analytics.
+model IELTSAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill        String // 'listening' | 'reading' | 'writing' | 'speaking'
+  band         Float // 0–9 in 0.5 steps
+
+  // Objective (Listening / Reading)
+  testId   String?
+  rawScore Int?
+  total    Int?
+
+  // AI-marked task (Writing / Speaking)
+  taskType     String? // 'writing-task-1' … 'speaking-part-3'
+  promptId     String?
+  responseText String? @db.Text
+  criteria     Json? // CriterionFeedback[]
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, skill])
+  @@index([userId, createdAt])
+  @@map("ielts_attempts")
 }
 
 model Consent {

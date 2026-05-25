@@ -34,6 +34,36 @@ export function saveAttempt(attempt: IeltsAttempt): void {
   all.unshift(attempt)
   lsSet(IELTS_LS.attempts, all.slice(0, 500))
   touchStreak()
+  // Best-effort server write-through (cross-device continuity + B2B teacher
+  // analytics). localStorage above is the primary, instant store; this
+  // fire-and-forget POST is intentionally swallowed on failure (signed out, or
+  // the ielts_attempts table not migrated yet) so the UX is never blocked.
+  if (typeof window !== 'undefined') {
+    void fetch('/api/ielts/attempts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(attempt),
+      keepalive: true,
+    }).catch(() => {})
+  }
+}
+
+/**
+ * Best-effort fetch of server-persisted attempts (cross-device). Returns []
+ * when signed out or the table isn't migrated yet. Callers should MERGE this
+ * with getAttempts() (local) rather than replace, so an offline/local attempt
+ * is never lost.
+ */
+export async function getServerAttempts(): Promise<IeltsAttempt[]> {
+  if (typeof window === 'undefined') return []
+  try {
+    const res = await fetch('/api/ielts/attempts', { method: 'GET' })
+    if (!res.ok) return []
+    const data = (await res.json()) as { attempts?: IeltsAttempt[] }
+    return Array.isArray(data.attempts) ? data.attempts : []
+  } catch {
+    return []
+  }
 }
 
 export function getAttemptsForSkill(skill: IeltsSkill, attempts = getAttempts()): IeltsAttempt[] {
