@@ -34,6 +34,7 @@ import { WRITING_CHARTS_10 } from './writing-prompts-charts-10'
 import { WRITING_CHARTS_11 } from './writing-prompts-charts-11'
 import { WRITING_CHARTS_12 } from './writing-prompts-charts-12'
 import { WRITING_CHARTS_13 } from './writing-prompts-charts-13'
+import { WRITING_CHARTS_14 } from './writing-prompts-charts-14'
 import { WRITING_T2_1 } from './writing-prompts-t2-1'
 import { WRITING_T2_2 } from './writing-prompts-t2-2'
 import { WRITING_T2_3 } from './writing-prompts-t2-3'
@@ -41,6 +42,7 @@ import { WRITING_T2_4 } from './writing-prompts-t2-4'
 import { WRITING_T2_5 } from './writing-prompts-t2-5'
 import { WRITING_T2_6 } from './writing-prompts-t2-6'
 import { WRITING_T2_7 } from './writing-prompts-t2-7'
+import { WRITING_T2_8 } from './writing-prompts-t2-8'
 // General Training expansion: more letters + GT Task 2 essays.
 import { GT_WRITING_SET_2 } from './gt-writing-prompts-2'
 import { GT_WRITING_SET_3 } from './gt-writing-prompts-3'
@@ -49,6 +51,7 @@ import { GT_WRITING_SET_5 } from './gt-writing-prompts-5'
 import { GT_WRITING_SET_6 } from './gt-writing-prompts-6'
 import { GT_WRITING_SET_7 } from './gt-writing-prompts-7'
 import { GT_WRITING_SET_8 } from './gt-writing-prompts-8'
+import { GT_WRITING_SET_9 } from './gt-writing-prompts-9'
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_SET_2,
@@ -66,6 +69,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_CHARTS_11,
   ...WRITING_CHARTS_12,
   ...WRITING_CHARTS_13,
+  ...WRITING_CHARTS_14,
   ...WRITING_T2_1,
   ...WRITING_T2_2,
   ...WRITING_T2_3,
@@ -73,6 +77,7 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_T2_5,
   ...WRITING_T2_6,
   ...WRITING_T2_7,
+  ...WRITING_T2_8,
   // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
   {
     id: 'wt1-online-grocery',
@@ -310,4 +315,5 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...GT_WRITING_SET_6,
   ...GT_WRITING_SET_7,
   ...GT_WRITING_SET_8,
+  ...GT_WRITING_SET_9,
 ]

@@ -50,6 +50,10 @@ import { READING_SET_29 } from './reading-tests-set-29'
 import { READING_SET_30 } from './reading-tests-set-30'
 import { READING_SET_31 } from './reading-tests-set-31'
 import { READING_SET_32 } from './reading-tests-set-32'
+// Wave 10 (2026-05-25): more full Academic tests, each with matching questions.
+import { READING_SET_33 } from './reading-tests-set-33'
+import { READING_SET_34 } from './reading-tests-set-34'
+import { READING_SET_35 } from './reading-tests-set-35'
 // General Training reading tests (track: 'general') — filtered by the reading
 // page via the TrackToggle. These live alongside the Academic tests so the bank
 // is one filterable array.
@@ -66,6 +70,7 @@ import { GT_READING_SET_10 } from './gt-reading-tests-10'
 import { GT_READING_SET_11 } from './gt-reading-tests-11'
 import { GT_READING_SET_12 } from './gt-reading-tests-12'
 import { GT_READING_SET_13 } from './gt-reading-tests-13'
+import { GT_READING_SET_14 } from './gt-reading-tests-14'
 
 export const READING_TESTS: ReadingTest[] = [
   ...READING_SET_2,
@@ -99,6 +104,9 @@ export const READING_TESTS: ReadingTest[] = [
   ...READING_SET_30,
   ...READING_SET_31,
   ...READING_SET_32,
+  ...READING_SET_33,
+  ...READING_SET_34,
+  ...READING_SET_35,
   {
     id: 'rd-academic-001',
     title: 'Academic Reading — Practice Test 1',
@@ -477,4 +485,5 @@ The honeycomb, then, is a reminder that the elegant order we admire in nature ne
   ...GT_READING_SET_11,
   ...GT_READING_SET_12,
   ...GT_READING_SET_13,
+  ...GT_READING_SET_14,
 ]
