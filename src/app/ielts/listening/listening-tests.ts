@@ -48,6 +48,9 @@ import { LISTENING_SET_18 } from './listening-tests-set-18'
 // Wave 8 (2026-05-25): two more full 4-section tests.
 import { LISTENING_SET_19 } from './listening-tests-set-19'
 import { LISTENING_SET_20 } from './listening-tests-set-20'
+// Wave 9 (2026-05-25): two more full 4-section tests.
+import { LISTENING_SET_21 } from './listening-tests-set-21'
+import { LISTENING_SET_22 } from './listening-tests-set-22'
 
 export const LISTENING_TESTS: ListeningTest[] = [
   ...LISTENING_SET_2,
@@ -69,6 +72,8 @@ export const LISTENING_TESTS: ListeningTest[] = [
   ...LISTENING_SET_18,
   ...LISTENING_SET_19,
   ...LISTENING_SET_20,
+  ...LISTENING_SET_21,
+  ...LISTENING_SET_22,
   {
     id: 'ls-academic-1',
     title: 'Practice Test 1 — Community Library & Campus Orientation',
