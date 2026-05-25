@@ -10,8 +10,15 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { ReadingTest } from '@/lib/ielts/types'
+// Additional Academic reading tests (item-bank scaling, 2026-05-25).
+import { READING_SET_2 } from './reading-tests-set-2'
+import { READING_SET_3 } from './reading-tests-set-3'
+import { READING_SET_4 } from './reading-tests-set-4'
 
 export const READING_TESTS: ReadingTest[] = [
+  ...READING_SET_2,
+  ...READING_SET_3,
+  ...READING_SET_4,
   {
     id: 'rd-academic-001',
     title: 'Academic Reading — Practice Test 1',

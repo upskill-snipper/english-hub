@@ -14,8 +14,13 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { WritingPrompt } from '@/lib/ielts/types'
+// Additional Academic writing prompts (item-bank scaling, 2026-05-25).
+import { WRITING_SET_2 } from './writing-prompts-set-2'
+import { WRITING_SET_3 } from './writing-prompts-set-3'
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
+  ...WRITING_SET_2,
+  ...WRITING_SET_3,
   // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
   {
     id: 'wt1-online-grocery',
