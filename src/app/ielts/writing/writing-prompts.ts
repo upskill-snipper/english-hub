@@ -20,10 +20,17 @@ import { WRITING_SET_3 } from './writing-prompts-set-3'
 // General Training writing prompts (track: 'general') — Task 1 are letters.
 // Filtered by the writing page via the TrackToggle so the bank is one array.
 import { GT_WRITING_SET } from './gt-writing-prompts'
+// Premium expansion (2026-05-25): chart-based Academic Task 1 prompts + more Task 2 essays.
+import { WRITING_CHARTS_1 } from './writing-prompts-charts-1'
+import { WRITING_CHARTS_2 } from './writing-prompts-charts-2'
+import { WRITING_T2_1 } from './writing-prompts-t2-1'
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_SET_2,
   ...WRITING_SET_3,
+  ...WRITING_CHARTS_1,
+  ...WRITING_CHARTS_2,
+  ...WRITING_T2_1,
   // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
   {
     id: 'wt1-online-grocery',

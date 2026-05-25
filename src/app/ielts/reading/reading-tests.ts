@@ -14,16 +14,24 @@ import type { ReadingTest } from '@/lib/ielts/types'
 import { READING_SET_2 } from './reading-tests-set-2'
 import { READING_SET_3 } from './reading-tests-set-3'
 import { READING_SET_4 } from './reading-tests-set-4'
+// Premium expansion (2026-05-25): additional full Academic tests.
+import { READING_SET_5 } from './reading-tests-set-5'
+import { READING_SET_6 } from './reading-tests-set-6'
+import { READING_SET_7 } from './reading-tests-set-7'
 // General Training reading tests (track: 'general') — filtered by the reading
 // page via the TrackToggle. These live alongside the Academic tests so the bank
 // is one filterable array.
 import { GT_READING_SET_1 } from './gt-reading-tests-1'
 import { GT_READING_SET_2 } from './gt-reading-tests-2'
+import { GT_READING_SET_3 } from './gt-reading-tests-3'
 
 export const READING_TESTS: ReadingTest[] = [
   ...READING_SET_2,
   ...READING_SET_3,
   ...READING_SET_4,
+  ...READING_SET_5,
+  ...READING_SET_6,
+  ...READING_SET_7,
   {
     id: 'rd-academic-001',
     title: 'Academic Reading — Practice Test 1',
@@ -391,4 +399,5 @@ The honeycomb, then, is a reminder that the elegant order we admire in nature ne
   // ── General Training reading tests (track: 'general') ────────────────────
   ...GT_READING_SET_1,
   ...GT_READING_SET_2,
+  ...GT_READING_SET_3,
 ]

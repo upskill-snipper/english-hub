@@ -29,14 +29,23 @@ import {
   bandBgColour,
 } from '@/lib/ielts/bands'
 import { saveDiagnostic } from '@/lib/ielts/store'
-import { SKILL_META, type Band, type IeltsSkill, type ObjectiveQuestion } from '@/lib/ielts/types'
+import {
+  SKILL_META,
+  type Band,
+  type IeltsSkill,
+  type ListeningSection,
+  type ObjectiveQuestion,
+  type ReadingPassage,
+} from '@/lib/ielts/types'
 import { useT } from '@/lib/i18n/use-t'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
 
 import {
-  DIAGNOSTIC_READING,
-  DIAGNOSTIC_LISTENING,
+  DIAGNOSTIC_READING_PASSAGES,
+  DIAGNOSTIC_LISTENING_SECTIONS,
+  DIAGNOSTIC_READING_QUESTIONS,
+  DIAGNOSTIC_LISTENING_QUESTIONS,
   DIAGNOSTIC_ESTIMATED_MINUTES,
   SELF_ASSESS,
   selfAssessBand,
@@ -118,8 +127,8 @@ export default function IeltsDiagnosticPage() {
   const [ratings, setRatings] = useState<SelfRatings>({})
   const [result, setResult] = useState<ComputedResult | null>(null)
 
-  const readingQs = DIAGNOSTIC_READING.questions
-  const listeningQs = DIAGNOSTIC_LISTENING.questions
+  const readingQs = DIAGNOSTIC_READING_QUESTIONS
+  const listeningQs = DIAGNOSTIC_LISTENING_QUESTIONS
 
   const totalObjective = readingQs.length + listeningQs.length
   const answeredObjective = useMemo(
@@ -208,8 +217,8 @@ export default function IeltsDiagnosticPage() {
         {phase === 'questions' && (
           <QuestionsPanel
             t={t}
-            readingQs={readingQs}
-            listeningQs={listeningQs}
+            readingPassages={DIAGNOSTIC_READING_PASSAGES}
+            listeningSections={DIAGNOSTIC_LISTENING_SECTIONS}
             answers={answers}
             ratings={ratings}
             onObjective={setObjective}
@@ -302,8 +311,8 @@ function IntroPanel({ t, onStart }: { t: TFn; onStart: () => void }) {
 
 function QuestionsPanel({
   t,
-  readingQs,
-  listeningQs,
+  readingPassages,
+  listeningSections,
   answers,
   ratings,
   onObjective,
@@ -315,8 +324,8 @@ function QuestionsPanel({
   allSelfRated,
 }: {
   t: TFn
-  readingQs: ObjectiveQuestion[]
-  listeningQs: ObjectiveQuestion[]
+  readingPassages: ReadingPassage[]
+  listeningSections: ListeningSection[]
   answers: ObjectiveAnswers
   ratings: SelfRatings
   onObjective: (id: string, value: string) => void
@@ -343,50 +352,74 @@ function QuestionsPanel({
   if (!allSelfRated) gateParts.push(t('ielts.diagnostic.gate.rate_both'))
   const gateText = gateParts.join('') + t('ielts.diagnostic.gate.to_see')
 
+  // Continuous question numbering within each skill (reading 1..R, listening 1..L),
+  // computed from the per-passage/section question counts so numbers run on across
+  // the several graded passages/sections that now make up the placement test.
+  const readingBlocks: { passage: ReadingPassage; start: number }[] = []
+  let rAcc = 0
+  for (const p of readingPassages) {
+    readingBlocks.push({ passage: p, start: rAcc })
+    rAcc += p.questions.length
+  }
+  const listeningBlocks: { section: ListeningSection; start: number }[] = []
+  let lAcc = 0
+  for (const s of listeningSections) {
+    listeningBlocks.push({ section: s, start: lAcc })
+    lAcc += s.questions.length
+  }
+
   return (
     <div className="space-y-12">
-      {/* ── Reading ── */}
+      {/* ── Reading (several graded passages) ── */}
       <SkillSection
         icon={BookOpen}
         title={t('ielts.diagnostic.section.reading.title')}
         subtitle={t('ielts.diagnostic.section.reading.subtitle')}
       >
-        <PassageBlock title={DIAGNOSTIC_READING.title} body={DIAGNOSTIC_READING.body} />
-        <div className="mt-6 space-y-6">
-          {readingQs.map((q, i) => (
-            <ObjectiveQuestionCard
-              key={q.id}
-              t={t}
-              index={i + 1}
-              question={q}
-              value={answers[q.id]}
-              onChange={(v) => onObjective(q.id, v)}
-            />
+        <div className="space-y-8">
+          {readingBlocks.map(({ passage, start }) => (
+            <div key={passage.id}>
+              <PassageBlock title={passage.title} body={passage.body} />
+              <div className="mt-6 space-y-6">
+                {passage.questions.map((q, i) => (
+                  <ObjectiveQuestionCard
+                    key={q.id}
+                    t={t}
+                    index={start + i + 1}
+                    question={q}
+                    value={answers[q.id]}
+                    onChange={(v) => onObjective(q.id, v)}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </SkillSection>
 
-      {/* ── Listening ── */}
+      {/* ── Listening (several graded sections) ── */}
       <SkillSection
         icon={Headphones}
         title={t('ielts.diagnostic.section.listening.title')}
         subtitle={t('ielts.diagnostic.section.listening.subtitle')}
       >
-        <TranscriptBlock
-          t={t}
-          title={DIAGNOSTIC_LISTENING.title}
-          body={DIAGNOSTIC_LISTENING.transcript}
-        />
-        <div className="mt-6 space-y-6">
-          {listeningQs.map((q, i) => (
-            <ObjectiveQuestionCard
-              key={q.id}
-              t={t}
-              index={i + 1}
-              question={q}
-              value={answers[q.id]}
-              onChange={(v) => onObjective(q.id, v)}
-            />
+        <div className="space-y-8">
+          {listeningBlocks.map(({ section, start }) => (
+            <div key={section.id}>
+              <TranscriptBlock t={t} title={section.title} body={section.transcript} />
+              <div className="mt-6 space-y-6">
+                {section.questions.map((q, i) => (
+                  <ObjectiveQuestionCard
+                    key={q.id}
+                    t={t}
+                    index={start + i + 1}
+                    question={q}
+                    value={answers[q.id]}
+                    onChange={(v) => onObjective(q.id, v)}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </SkillSection>
@@ -728,9 +761,9 @@ function ResultPanel({
           <p className="text-sm">
             {t('ielts.diagnostic.result.tally', {
               readingCorrect,
-              readingTotal: DIAGNOSTIC_READING.questions.length,
+              readingTotal: DIAGNOSTIC_READING_QUESTIONS.length,
               listeningCorrect,
-              listeningTotal: DIAGNOSTIC_LISTENING.questions.length,
+              listeningTotal: DIAGNOSTIC_LISTENING_QUESTIONS.length,
             })}
           </p>
         </div>

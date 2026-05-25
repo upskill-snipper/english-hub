@@ -19,6 +19,9 @@ import type {
   ObjectiveQuestion,
   ReadingPassage,
 } from '@/lib/ielts/types'
+// Graded extra placement content (the 10x baseline), authored in sibling files.
+import { DIAGNOSTIC_READING_EXTRA } from './diagnostic-reading-extra'
+import { DIAGNOSTIC_LISTENING_EXTRA } from './diagnostic-listening-extra'
 
 // ─── Mini Reading passage (Academic) ───────────────────────────────────────
 
@@ -143,9 +146,25 @@ STUDENT: Brilliant. Thank you very much.`,
   ],
 }
 
-// Convenience bundles for the page.
-export const DIAGNOSTIC_READING_QUESTIONS: ObjectiveQuestion[] = DIAGNOSTIC_READING.questions
-export const DIAGNOSTIC_LISTENING_QUESTIONS: ObjectiveQuestion[] = DIAGNOSTIC_LISTENING.questions
+// ─── Aggregated placement banks (the real, 10x baseline) ───────────────────
+// The placement test now uses SEVERAL graded passages/sections so the estimated
+// band is a genuine measurement rather than a 4-question guess. The page maps
+// over these arrays; scoring flattens every question. Additional graded content
+// is authored in sibling files (diagnostic-*-extra.ts) and spread in here.
+export const DIAGNOSTIC_READING_PASSAGES: ReadingPassage[] = [
+  DIAGNOSTIC_READING,
+  ...DIAGNOSTIC_READING_EXTRA,
+]
+export const DIAGNOSTIC_LISTENING_SECTIONS: ListeningSection[] = [
+  DIAGNOSTIC_LISTENING,
+  ...DIAGNOSTIC_LISTENING_EXTRA,
+]
+
+// Flattened question bundles for the page's scoring + progress gate.
+export const DIAGNOSTIC_READING_QUESTIONS: ObjectiveQuestion[] =
+  DIAGNOSTIC_READING_PASSAGES.flatMap((p) => p.questions)
+export const DIAGNOSTIC_LISTENING_QUESTIONS: ObjectiveQuestion[] =
+  DIAGNOSTIC_LISTENING_SECTIONS.flatMap((s) => s.questions)
 
 // ─── Self-assessment (Writing & Speaking) ──────────────────────────────────
 // No short auto-marked task gives a trustworthy Writing/Speaking band, so the

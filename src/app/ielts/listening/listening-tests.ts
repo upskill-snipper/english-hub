@@ -25,10 +25,15 @@ import type { ListeningTest } from '@/lib/ielts/types'
 // Additional Academic listening tests (item-bank scaling, 2026-05-25).
 import { LISTENING_SET_2 } from './listening-tests-set-2'
 import { LISTENING_SET_3 } from './listening-tests-set-3'
+// Premium expansion (2026-05-25): additional full 4-section tests.
+import { LISTENING_SET_4 } from './listening-tests-set-4'
+import { LISTENING_SET_5 } from './listening-tests-set-5'
 
 export const LISTENING_TESTS: ListeningTest[] = [
   ...LISTENING_SET_2,
   ...LISTENING_SET_3,
+  ...LISTENING_SET_4,
+  ...LISTENING_SET_5,
   {
     id: 'ls-academic-1',
     title: 'Practice Test 1 — Community Library & Campus Orientation',
