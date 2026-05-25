@@ -46,7 +46,7 @@ export const SPEAKING_SET_13: SpeakingCue[] = [
       'How do you and your family usually take part in it?',
       'Do you prefer festivals that are lively and noisy or ones that are calmer?',
       'Is there any special food that people tend to eat at these times?',
-      'Have the way people celebrate festivals changed at all in recent years?',
+      'Has the way people celebrate festivals changed at all in recent years?',
     ],
   },
 

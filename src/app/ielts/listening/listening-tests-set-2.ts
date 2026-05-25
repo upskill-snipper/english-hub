@@ -24,7 +24,7 @@ import type { ListeningTest } from '@/lib/ielts/types'
 export const LISTENING_SET_2: ListeningTest[] = [
   {
     id: 'ls-acad-s2-1',
-    title: 'Practice Test 3 - Renting a Room & A Leisure Centre Orientation',
+    title: 'Practice Test 2 - Renting a Room & A Leisure Centre Orientation',
     estimatedMinutes: 15,
     sections: [
       {
