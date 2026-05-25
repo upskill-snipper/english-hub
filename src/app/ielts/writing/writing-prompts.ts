@@ -28,11 +28,15 @@ import { WRITING_CHARTS_4 } from './writing-prompts-charts-4'
 import { WRITING_CHARTS_5 } from './writing-prompts-charts-5'
 import { WRITING_CHARTS_6 } from './writing-prompts-charts-6'
 import { WRITING_CHARTS_7 } from './writing-prompts-charts-7'
+import { WRITING_CHARTS_8 } from './writing-prompts-charts-8'
+import { WRITING_CHARTS_9 } from './writing-prompts-charts-9'
 import { WRITING_T2_1 } from './writing-prompts-t2-1'
 import { WRITING_T2_2 } from './writing-prompts-t2-2'
+import { WRITING_T2_3 } from './writing-prompts-t2-3'
 // General Training expansion: more letters + GT Task 2 essays.
 import { GT_WRITING_SET_2 } from './gt-writing-prompts-2'
 import { GT_WRITING_SET_3 } from './gt-writing-prompts-3'
+import { GT_WRITING_SET_4 } from './gt-writing-prompts-4'
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_SET_2,
@@ -44,8 +48,11 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...WRITING_CHARTS_5,
   ...WRITING_CHARTS_6,
   ...WRITING_CHARTS_7,
+  ...WRITING_CHARTS_8,
+  ...WRITING_CHARTS_9,
   ...WRITING_T2_1,
   ...WRITING_T2_2,
+  ...WRITING_T2_3,
   // ── Task 1 · A — table of data (comparison + trend) ──────────────────────
   {
     id: 'wt1-online-grocery',
@@ -278,4 +285,5 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
   ...GT_WRITING_SET,
   ...GT_WRITING_SET_2,
   ...GT_WRITING_SET_3,
+  ...GT_WRITING_SET_4,
 ]
