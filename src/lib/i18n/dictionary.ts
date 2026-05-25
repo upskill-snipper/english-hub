@@ -79,6 +79,8 @@ import { MKT_SCHOOL_PILOT_DICTIONARY } from './dictionary-mkt-school-pilot'
 import { MKT_TEACHERS_DICTIONARY } from './dictionary-mkt-teachers'
 import { MKT_STUDENTS_DICTIONARY } from './dictionary-mkt-students'
 import { MKT_EAL_DICTIONARY } from './dictionary-mkt-eal'
+// 2026-05-25: IELTS Academic learning-loop section.
+import { IELTS_DICTIONARY } from './dictionary-ielts'
 
 export type Locale = 'en' | 'ar'
 
@@ -14871,6 +14873,7 @@ export function lookup(key: string, locale: Locale): string {
     MKT_TEACHERS_DICTIONARY[key] ??
     MKT_STUDENTS_DICTIONARY[key] ??
     MKT_EAL_DICTIONARY[key] ??
+    IELTS_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

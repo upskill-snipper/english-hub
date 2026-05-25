@@ -61,6 +61,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/creators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
 
+    // IELTS Academic learning loop (2026-05-25). /ielts/progress (personal
+    // dashboard, noindex) and /ielts/plan (user-specific) are intentionally
+    // excluded; the hub + diagnostic + four skill modules are indexable.
+    { url: `${base}/ielts`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    {
+      url: `${base}/ielts/diagnostic`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    { url: `${base}/ielts/reading`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/ielts/listening`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/ielts/writing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/ielts/speaking`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+
     // Resources hub
     { url: `${base}/resources`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
 

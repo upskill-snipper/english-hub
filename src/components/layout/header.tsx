@@ -44,6 +44,7 @@ function getNavForBoardType(
     // top-level nav headings.
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
+      { href: '/ielts', labelKey: 'ielts.nav' },
       { href: '/schools', labelKey: 'header.nav.schools' },
       { href: '/demo', labelKey: 'header.nav.demo' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
@@ -63,7 +64,7 @@ function getNavForBoardType(
     { href: '/schools', labelKey: 'header.nav.schools' },
     { href: '/teachers', labelKey: 'header.nav.teachers' },
     { href: '/students', labelKey: 'header.nav.students' },
-    { href: '/demo', labelKey: 'header.nav.demo' },
+    { href: '/ielts', labelKey: 'ielts.nav' },
     { href: '/pricing', labelKey: 'header.nav.pricing' },
   ]
 }
