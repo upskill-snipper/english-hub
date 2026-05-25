@@ -19,6 +19,7 @@ import type { Band, CriterionFeedback, IeltsSkill, IeltsTrack } from '@/lib/ielt
 import { overallBand, bandLabel, bandTier, bandColour, bandBgColour } from '@/lib/ielts/bands'
 
 import type { MockResults } from '../mock-types'
+import { useMockT } from '../use-mock-t'
 
 interface SkillRow {
   skill: IeltsSkill
@@ -39,47 +40,54 @@ export default function MockReport({
   track: IeltsTrack
   onRestart: () => void
 }) {
+  const t = useMockT()
   const rows: SkillRow[] = [
     {
       skill: 'listening',
-      label: 'Listening',
+      label: t('ielts.mock.report.label.listening'),
       band: results.listening?.band ?? null,
       detail: results.listening
-        ? `${results.listening.correct}/${results.listening.total} correct`
-        : 'Not completed',
+        ? t('ielts.mock.report.detail.correct', {
+            correct: results.listening.correct,
+            total: results.listening.total,
+          })
+        : t('ielts.mock.report.detail.not_completed'),
       status: 'scored',
       criteria: [],
     },
     {
       skill: 'reading',
-      label: 'Reading',
+      label: t('ielts.mock.report.label.reading'),
       band: results.reading?.band ?? null,
       detail: results.reading
-        ? `${results.reading.correct}/${results.reading.total} correct`
-        : 'Not completed',
+        ? t('ielts.mock.report.detail.correct', {
+            correct: results.reading.correct,
+            total: results.reading.total,
+          })
+        : t('ielts.mock.report.detail.not_completed'),
       status: 'scored',
       criteria: [],
     },
     {
       skill: 'writing',
-      label: 'Writing',
+      label: t('ielts.mock.report.label.writing'),
       band: results.writing?.band ?? null,
       detail:
         results.writing?.status === 'scored'
-          ? 'AI examiner band (Task 1 + Task 2)'
-          : 'Responses recorded',
+          ? t('ielts.mock.report.detail.writing_scored')
+          : t('ielts.mock.report.detail.recorded'),
       status: results.writing?.status ?? 'submitted',
       criteria: results.writing?.criteria ?? [],
       note: results.writing?.note,
     },
     {
       skill: 'speaking',
-      label: 'Speaking',
+      label: t('ielts.mock.report.label.speaking'),
       band: results.speaking?.band ?? null,
       detail:
         results.speaking?.status === 'scored'
-          ? 'AI band from your transcript'
-          : 'Responses recorded',
+          ? t('ielts.mock.report.detail.speaking_scored')
+          : t('ielts.mock.report.detail.recorded'),
       status: results.speaking?.status ?? 'submitted',
       criteria: results.speaking?.criteria ?? [],
       note: results.speaking?.note,
@@ -101,10 +109,10 @@ export default function MockReport({
             </div>
             <div>
               <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-                Your mock band report
+                {t('ielts.mock.report.title')}
               </h1>
               <p className="text-sm text-muted-foreground">
-                Predicted {trackLabel} IELTS bands — practice only, not an official result.
+                {t('ielts.mock.report.subtitle', { track: trackLabel })}
               </p>
             </div>
           </div>
@@ -114,18 +122,19 @@ export default function MockReport({
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-10 sm:px-6">
         {/* Overall band hero */}
         <div className={`rounded-2xl border p-6 text-center sm:p-8 ${bandBgColour(overall)}`}>
-          <p className="text-sm font-medium text-muted-foreground">Predicted overall band</p>
+          <p className="text-sm font-medium text-muted-foreground">
+            {t('ielts.mock.report.overall_label')}
+          </p>
           <div className={`mt-1 text-6xl font-bold tabular-nums ${bandColour(overall)}`}>
             {bandLabel(overall)}
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
             {overall !== null
               ? bandTier(overall)
-              : `Overall needs all four sections scored (${scoredCount}/4 so far).`}
+              : t('ielts.mock.report.overall_incomplete', { n: scoredCount })}
           </p>
           <p className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-muted-foreground">
-            The overall band is the average of your four section bands, rounded the way IELTS
-            rounds. It is an estimate for preparation and may differ from your result on test day.
+            {t('ielts.mock.report.overall_explainer')}
           </p>
         </div>
 
@@ -157,25 +166,15 @@ export default function MockReport({
         <div className="rounded-2xl border border-border/60 bg-card p-5">
           <h2 className="flex items-center gap-2 font-heading text-sm font-semibold text-foreground">
             <Info className="size-4 text-primary" />
-            What this means
+            {t('ielts.mock.report.what_heading')}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            {overall !== null ? (
-              <>
-                A predicted overall band of{' '}
-                <strong className="text-foreground">{bandLabel(overall)}</strong> places you at{' '}
-                <strong className="text-foreground">{bandTier(overall)}</strong>. Your lowest
-                section is the fastest place to gain marks — open your study plan to focus your next
-                sessions there, and re-sit a mock in a week or two to see the movement.
-              </>
-            ) : (
-              <>
-                You have a band for {scoredCount} of the four sections. Writing and Speaking are
-                scored by AI and need a Premium subscription and a typed response; complete those to
-                see your full predicted overall band. Your section bands are still saved to your
-                progress.
-              </>
-            )}
+            {overall !== null
+              ? t('ielts.mock.report.what_scored', {
+                  band: bandLabel(overall),
+                  tier: bandTier(overall),
+                })
+              : t('ielts.mock.report.what_incomplete', { n: scoredCount })}
           </p>
         </div>
 
@@ -189,7 +188,7 @@ export default function MockReport({
             >
               <h2 className="flex items-center gap-2 font-heading text-sm font-semibold text-foreground">
                 <CheckCircle2 className="size-4 text-primary" />
-                {row.label} — criteria breakdown
+                {t('ielts.mock.report.criteria_heading', { skill: row.label })}
               </h2>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {row.criteria.map((c, i) => (
@@ -218,21 +217,20 @@ export default function MockReport({
         <div className="flex flex-wrap gap-3">
           <Button size="lg" onClick={onRestart}>
             <RotateCcw className="size-4" />
-            Sit another mock
+            {t('ielts.mock.report.sit_another')}
           </Button>
           <Button size="lg" variant="outline" render={<Link href="/ielts/plan" />}>
             <CalendarDays className="size-4" />
-            Study plan
+            {t('ielts.mock.report.study_plan')}
           </Button>
           <Button size="lg" variant="outline" render={<Link href="/ielts/progress" />}>
             <TrendingUp className="size-4" />
-            View progress
+            {t('ielts.mock.report.view_progress')}
           </Button>
         </div>
 
         <p className="pb-4 text-center text-[11px] text-muted-foreground/70">
-          Predicted bands are for IELTS preparation only and are not affiliated with or endorsed by
-          the official IELTS test partners.
+          {t('ielts.mock.report.footer_disclaimer')}
         </p>
       </div>
     </main>

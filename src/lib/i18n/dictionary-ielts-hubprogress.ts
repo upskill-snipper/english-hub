@@ -174,6 +174,42 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<string, { en: string; ar?: str
     ar: 'سوِّ اختبار تحديد المستوى، خذ خطتك المخصصة، وابدأ تسكّر الفجوة لين Band المستهدف مالك.',
   },
 
+  // ─── Section 1b: the readiness program (entry points to the new surfaces) ──
+  'ielts.hubx.program.eyebrow': { en: 'Your readiness program', ar: 'برنامج جاهزيتك' },
+  'ielts.hubx.program.heading': {
+    en: 'Everything you need, in one place',
+    ar: 'كل اللي تحتاجه، في مكان واحد',
+  },
+  'ielts.hubx.program.body': {
+    en: 'From your first lesson to a full timed mock — follow the path, or jump straight to what you need today.',
+    ar: 'من أول درس لين اختبار تجريبي كامل ومؤقّت — اتبع المسار، أو انتقل طول لاللي تحتاجه اليوم.',
+  },
+  'ielts.hubx.program.learn.title': { en: 'Learn the method', ar: 'تعلّم الطريقة' },
+  'ielts.hubx.program.learn.body': {
+    en: 'Leveled lessons for every question type, from beginner to Band 9.',
+    ar: 'دروس متدرّجة لكل نوع سؤال، من المبتدئ لين Band 9.',
+  },
+  'ielts.hubx.program.dashboard.title': { en: 'Your dashboard', ar: 'لوحتك' },
+  'ielts.hubx.program.dashboard.body': {
+    en: 'Predicted band, streak and what to study next — all at a glance.',
+    ar: 'Band المتوقع وسلسلة أيامك وشنو تدرس بعدها — كله بلمحة.',
+  },
+  'ielts.hubx.program.planner.title': { en: 'Study planner', ar: 'مخطّط الدراسة' },
+  'ielts.hubx.program.planner.body': {
+    en: 'A dated, weakest-first plan built around your exam date.',
+    ar: 'خطة بمواعيد تبدأ بأضعف مهارة، مبنية حول تاريخ امتحانك.',
+  },
+  'ielts.hubx.program.mock.title': { en: 'Full mock tests', ar: 'اختبارات تجريبية كاملة' },
+  'ielts.hubx.program.mock.body': {
+    en: 'Sit a timed mock under real exam conditions and get a band.',
+    ar: 'سوِّ اختبار تجريبي مؤقّت بظروف امتحان حقيقية وخذ Band.',
+  },
+  'ielts.hubx.program.guide.title': { en: 'The exam guide', ar: 'دليل الامتحان' },
+  'ielts.hubx.program.guide.body': {
+    en: 'Structure, scoring and the mistakes that cost the most marks.',
+    ar: 'الهيكل والتقييم والأخطاء اللي تكلّف أكثر درجات.',
+  },
+
   // ══════════════════════════════════════════════════════════════════════════
   // PROGRESS  (src/app/ielts/progress/page.tsx — client, t('ielts.progress.*'))
   // ══════════════════════════════════════════════════════════════════════════

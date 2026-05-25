@@ -32,6 +32,7 @@ import { genId, saveAttempt } from '@/lib/ielts/store'
 
 import type { TaskResult } from '../mock-types'
 import { SECTION_SECONDS } from '../mock-types'
+import { useMockT } from '../use-mock-t'
 import StageHeader from './StageHeader'
 
 type TaskTab = 'writing-task-1' | 'writing-task-2'
@@ -154,6 +155,7 @@ export default function WritingStage({
   stepLabel: string
   onComplete: (result: TaskResult) => void
 }) {
+  const t = useMockT()
   const [tab, setTab] = useState<TaskTab>('writing-task-1')
   const [response1, setResponse1] = useState('')
   const [response2, setResponse2] = useState('')
@@ -187,7 +189,7 @@ export default function WritingStage({
           status: 'submitted',
           band: null,
           criteria: [],
-          note: 'Your Task 1 and Task 2 responses were recorded, but an AI band could not be generated this time (the feedback service may be unavailable, over its daily limit, or require a Premium subscription).',
+          note: t('ielts.mock.writing.note_none_scored'),
         })
         return
       }
@@ -198,13 +200,10 @@ export default function WritingStage({
         status: 'scored',
         band: roundToBand(mean),
         criteria,
-        note:
-          scoredBands.length === 1
-            ? 'Only one of your two tasks could be band-scored; the other was recorded as submitted.'
-            : undefined,
+        note: scoredBands.length === 1 ? t('ielts.mock.writing.note_one_scored') : undefined,
       })
     })()
-  }, [task1, task2, track, onComplete])
+  }, [task1, task2, track, onComplete, t])
 
   const active = tab === 'writing-task-1' ? task1 : task2
   const activeResponse = tab === 'writing-task-1' ? response1 : response2
@@ -218,8 +217,8 @@ export default function WritingStage({
   return (
     <div className="min-h-screen bg-background">
       <StageHeader
-        title="Section 3 of 4 · Writing"
-        stepLabel={`${stepLabel} · Task 1 + Task 2`}
+        title={t('ielts.mock.stage.title', { n: 3, skill: 'Writing' })}
+        stepLabel={t('ielts.mock.stage.step_writing', { skill: stepLabel })}
         seconds={SECTION_SECONDS.writing}
         onExpire={finish}
         paused={submitting}
@@ -230,7 +229,7 @@ export default function WritingStage({
             ) : (
               <Check className="size-4" />
             )}
-            Submit Writing
+            {t('ielts.mock.writing.submit')}
           </Button>
         }
       />
@@ -239,11 +238,12 @@ export default function WritingStage({
         <div className="mb-6 flex items-start gap-3 rounded-2xl border border-violet-500/25 bg-violet-500/[0.04] p-4">
           <PenLine className="mt-0.5 size-5 shrink-0 text-violet-400" aria-hidden="true" />
           <div className="text-sm text-muted-foreground">
-            <p className="font-semibold text-foreground">Writing — one hour for both tasks</p>
+            <p className="font-semibold text-foreground">{t('ielts.mock.writing.intro_title')}</p>
             <p className="mt-1">
-              Spend about 20 minutes on Task 1 ({task1.minWords}+ words) and 40 minutes on Task 2 (
-              {task2.minWords}+ words). Switch freely between the two. When you submit, or when the
-              clock reaches zero, each response is sent for an AI band — and is saved either way.
+              {t('ielts.mock.writing.intro_body', {
+                min1: task1.minWords,
+                min2: task2.minWords,
+              })}
             </p>
           </div>
         </div>
@@ -251,10 +251,12 @@ export default function WritingStage({
         <Tabs value={tab} onValueChange={(v) => setTab(v as TaskTab)}>
           <TabsList>
             <TabsTrigger value="writing-task-1">
-              Task 1 {words1 > 0 ? `· ${words1}w` : ''}
+              {t('ielts.mock.writing.tab_task1')}{' '}
+              {words1 > 0 ? t('ielts.mock.writing.tab_words', { n: words1 }) : ''}
             </TabsTrigger>
             <TabsTrigger value="writing-task-2">
-              Task 2 {words2 > 0 ? `· ${words2}w` : ''}
+              {t('ielts.mock.writing.tab_task2')}{' '}
+              {words2 > 0 ? t('ielts.mock.writing.tab_words', { n: words2 }) : ''}
             </TabsTrigger>
           </TabsList>
         </Tabs>
@@ -262,7 +264,9 @@ export default function WritingStage({
         <div className="mt-5 space-y-4">
           <div className="rounded-2xl border border-border/60 bg-card p-5">
             <span className="mb-1.5 inline-block text-[0.65rem] uppercase tracking-wide text-muted-foreground">
-              {tab === 'writing-task-1' ? 'Writing Task 1' : 'Writing Task 2'}
+              {tab === 'writing-task-1'
+                ? t('ielts.mock.writing.eyebrow_task1')
+                : t('ielts.mock.writing.eyebrow_task2')}
             </span>
             <h2 className="font-heading text-base font-semibold text-foreground">{active.title}</h2>
             <div className="mt-3 whitespace-pre-line rounded-xl border border-border/60 bg-background/50 p-4 text-sm leading-relaxed text-foreground">
@@ -272,14 +276,18 @@ export default function WritingStage({
 
           <div className="space-y-1.5">
             <label htmlFor="mock-writing-response" className="text-sm font-medium text-foreground">
-              Your response — {tab === 'writing-task-1' ? 'Task 1' : 'Task 2'}
+              {t('ielts.mock.writing.response_label', {
+                task: tab === 'writing-task-1' ? 'Task 1' : 'Task 2',
+              })}
             </label>
             <Textarea
               id="mock-writing-response"
               value={activeResponse}
               onChange={(e) => setActiveResponse(e.target.value)}
               placeholder={
-                tab === 'writing-task-1' ? 'Write your report here…' : 'Write your essay here…'
+                tab === 'writing-task-1'
+                  ? t('ielts.mock.writing.placeholder_task1')
+                  : t('ielts.mock.writing.placeholder_task2')
               }
               rows={18}
               className="resize-y leading-relaxed"
@@ -287,14 +295,21 @@ export default function WritingStage({
             />
             <div className="flex items-center justify-between text-xs">
               <span className={meetsMin ? 'text-emerald-500' : 'text-muted-foreground'}>
-                {activeWords} {activeWords === 1 ? 'word' : 'words'}
+                {activeWords === 1
+                  ? t('ielts.mock.writing.word_one', { n: activeWords })
+                  : t('ielts.mock.writing.word_other', { n: activeWords })}
                 {!meetsMin && (
                   <span className="ml-1 text-muted-foreground">
-                    · aim for {active.minWords}+ ({Math.max(0, active.minWords - activeWords)} to
-                    go)
+                    {' '}
+                    {t('ielts.mock.writing.aim_for', {
+                      min: active.minWords,
+                      remaining: Math.max(0, active.minWords - activeWords),
+                    })}
                   </span>
                 )}
-                {meetsMin && <span className="ml-1">· minimum reached</span>}
+                {meetsMin && (
+                  <span className="ml-1">{t('ielts.mock.writing.minimum_reached')}</span>
+                )}
               </span>
             </div>
           </div>
@@ -303,7 +318,7 @@ export default function WritingStage({
         {submitting && (
           <div className="mt-6 flex items-center gap-2 rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
             <Loader2 className="size-4 animate-spin text-primary" />
-            Marking your writing… this can take a few seconds. Please wait.
+            {t('ielts.mock.writing.marking_notice')}
           </div>
         )}
 
@@ -311,10 +326,7 @@ export default function WritingStage({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="flex items-start gap-2 text-sm text-muted-foreground">
               <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
-              <span>
-                Submitting marks both tasks and moves you on to Speaking. You cannot return to
-                Writing.
-              </span>
+              <span>{t('ielts.mock.writing.finish_warning')}</span>
             </p>
             <Button size="lg" onClick={finish} disabled={submitting}>
               {submitting ? (
@@ -322,7 +334,7 @@ export default function WritingStage({
               ) : (
                 <Check className="size-4" />
               )}
-              Finish Writing &amp; start Speaking
+              {t('ielts.mock.writing.finish')}
             </Button>
           </div>
         </div>

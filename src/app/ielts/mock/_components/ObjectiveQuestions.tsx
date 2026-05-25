@@ -10,17 +10,18 @@
 
 import type { ObjectiveQuestion } from '@/lib/ielts/types'
 import type { AnswerMap } from '../mock-types'
+import { useMockT, type TFn } from '../use-mock-t'
 
-const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; label: string }[] = [
-  { value: 'true', label: 'True' },
-  { value: 'false', label: 'False' },
-  { value: 'not-given', label: 'Not Given' },
+const TFNG_OPTIONS: { value: 'true' | 'false' | 'not-given'; labelKey: string }[] = [
+  { value: 'true', labelKey: 'ielts.mock.q.tfng.true' },
+  { value: 'false', labelKey: 'ielts.mock.q.tfng.false' },
+  { value: 'not-given', labelKey: 'ielts.mock.q.tfng.not_given' },
 ]
 
-const QUESTION_TYPE_LABEL: Record<ObjectiveQuestion['type'], string> = {
-  mcq: 'Multiple choice',
-  tfng: 'True / False / Not Given',
-  gap: 'Sentence completion',
+const QUESTION_TYPE_KEY: Record<ObjectiveQuestion['type'], string> = {
+  mcq: 'ielts.mock.q.type.mcq',
+  tfng: 'ielts.mock.q.type.tfng',
+  gap: 'ielts.mock.q.type.gap',
 }
 
 export function ObjectiveQuestionList({
@@ -34,11 +35,13 @@ export function ObjectiveQuestionList({
   answers: AnswerMap
   onAnswer: (id: string, value: string) => void
 }) {
+  const t = useMockT()
   return (
     <div className="space-y-4">
       {questions.map((q) => (
         <QuestionCard
           key={q.id}
+          t={t}
           question={q}
           number={questionNumber[q.id]}
           value={answers[q.id]}
@@ -50,11 +53,13 @@ export function ObjectiveQuestionList({
 }
 
 function QuestionCard({
+  t,
   question,
   number,
   value,
   onAnswer,
 }: {
+  t: TFn
   question: ObjectiveQuestion
   number: number
   value: string | undefined
@@ -71,7 +76,7 @@ function QuestionCard({
             {question.prompt}
           </p>
           <span className="mt-1.5 inline-block text-[0.65rem] uppercase tracking-wide text-muted-foreground">
-            {QUESTION_TYPE_LABEL[question.type]}
+            {t(QUESTION_TYPE_KEY[question.type])}
           </span>
         </div>
       </div>
@@ -124,7 +129,7 @@ function QuestionCard({
                     : 'border-border/60 bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground'
                 }`}
               >
-                {opt.label}
+                {t(opt.labelKey)}
               </button>
             )
           })}
@@ -136,7 +141,7 @@ function QuestionCard({
           type="text"
           value={value ?? ''}
           onChange={(e) => onAnswer(e.target.value)}
-          placeholder="Type your answer"
+          placeholder={t('ielts.mock.q.gap_placeholder')}
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}

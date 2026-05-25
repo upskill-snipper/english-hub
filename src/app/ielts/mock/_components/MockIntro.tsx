@@ -28,41 +28,44 @@ import type { IeltsTrack } from '@/lib/ielts/types'
 
 import type { AssembledMock } from '../mock-types'
 import { listeningQuestionCount, readingQuestionCount } from '../assemble'
+import { useMockT } from '../use-mock-t'
 
 type SetTrack = ReturnType<typeof useIeltsTrack>[1]
 
+// Section names stay Latin (brand terms); the minutes + blurb are chrome and
+// resolve from the dictionary at render via their keys.
 const STRUCTURE = [
   {
     icon: Headphones,
     accent: 'text-sky-500',
     bg: 'bg-sky-500/10',
     title: 'Listening',
-    minutes: '≈ 30 minutes',
-    blurb: 'Four recorded sections, ~40 questions, marked automatically.',
+    minutesKey: 'ielts.mock.intro.structure.listening.minutes',
+    blurbKey: 'ielts.mock.intro.structure.listening.blurb',
   },
   {
     icon: BookOpen,
     accent: 'text-emerald-500',
     bg: 'bg-emerald-500/10',
     title: 'Reading',
-    minutes: '60 minutes',
-    blurb: 'Long passages with ~40 questions, marked automatically.',
+    minutesKey: 'ielts.mock.intro.structure.reading.minutes',
+    blurbKey: 'ielts.mock.intro.structure.reading.blurb',
   },
   {
     icon: PenLine,
     accent: 'text-violet-400',
     bg: 'bg-violet-500/10',
     title: 'Writing',
-    minutes: '60 minutes',
-    blurb: 'Task 1 + Task 2 in one hour, given an AI examiner band.',
+    minutesKey: 'ielts.mock.intro.structure.writing.minutes',
+    blurbKey: 'ielts.mock.intro.structure.writing.blurb',
   },
   {
     icon: Mic,
     accent: 'text-rose-400',
     bg: 'bg-rose-500/10',
     title: 'Speaking',
-    minutes: '≈ 14 minutes',
-    blurb: 'A Part 1 / 2 / 3 interview, scored from a typed transcript.',
+    minutesKey: 'ielts.mock.intro.structure.speaking.minutes',
+    blurbKey: 'ielts.mock.intro.structure.speaking.blurb',
   },
 ]
 
@@ -77,6 +80,7 @@ export default function MockIntro({
   mock: AssembledMock | null
   onStart: () => void
 }) {
+  const t = useMockT()
   const trackLabel = track === 'general' ? 'General Training' : 'Academic'
 
   return (
@@ -90,11 +94,9 @@ export default function MockIntro({
             </div>
             <div>
               <h1 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-                Full IELTS Mock Test
+                {t('ielts.mock.intro.title')}
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Timed, exam-realistic practice across all four skills — with a predicted band.
-              </p>
+              <p className="text-sm text-muted-foreground">{t('ielts.mock.intro.subtitle')}</p>
             </div>
           </div>
         </div>
@@ -105,19 +107,16 @@ export default function MockIntro({
         <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-              Set up your mock
+              {t('ielts.mock.intro.setup_badge')}
             </span>
             <TrackToggle value={track} onChange={setTrack} />
           </div>
 
           <p className="text-sm leading-relaxed text-muted-foreground">
-            You are about to sit a complete{' '}
-            <strong className="text-foreground">{trackLabel}</strong> IELTS mock. The four sections
-            run back-to-back in the real exam order, each under its own countdown. When a
-            section&apos;s timer reaches zero it is submitted automatically and you{' '}
-            <strong className="text-foreground">cannot return to it</strong> — exactly like the real
-            test. Set aside about <strong className="text-foreground">2 hours 45 minutes</strong> of
-            uninterrupted time.
+            {t('ielts.mock.intro.lead', {
+              track: trackLabel,
+              minutes: t('ielts.mock.intro.duration_value'),
+            })}
           </p>
 
           {/* Structure grid */}
@@ -136,10 +135,12 @@ export default function MockIntro({
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-foreground">{s.title}</p>
-                    <p className="text-xs text-muted-foreground">{s.minutes}</p>
+                    <p className="text-xs text-muted-foreground">{t(s.minutesKey)}</p>
                   </div>
                 </div>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.blurb}</p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {t(s.blurbKey)}
+                </p>
               </div>
             ))}
           </div>
@@ -147,25 +148,36 @@ export default function MockIntro({
           {/* What this mock contains */}
           {mock && (
             <div className="mt-6 rounded-xl border border-border/40 bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
-              <p className="font-semibold text-foreground">This mock contains</p>
+              <p className="font-semibold text-foreground">
+                {t('ielts.mock.intro.contains.heading')}
+              </p>
               <ul className="mt-2 space-y-1">
                 <li>
-                  • Listening: <span className="text-foreground">{mock.listening.title}</span> (
-                  {listeningQuestionCount(mock)} questions)
+                  •{' '}
+                  {t('ielts.mock.intro.contains.listening', {
+                    title: mock.listening.title,
+                    n: listeningQuestionCount(mock),
+                  })}
                 </li>
                 <li>
-                  • Reading: <span className="text-foreground">{mock.reading.title}</span> (
-                  {readingQuestionCount(mock)} questions)
+                  •{' '}
+                  {t('ielts.mock.intro.contains.reading', {
+                    title: mock.reading.title,
+                    n: readingQuestionCount(mock),
+                  })}
                 </li>
                 <li>
-                  • Writing: <span className="text-foreground">{mock.writingTask1.title}</span>{' '}
-                  (Task 1) and <span className="text-foreground">{mock.writingTask2.title}</span>{' '}
-                  (Task 2)
+                  •{' '}
+                  {t('ielts.mock.intro.contains.writing', {
+                    title1: mock.writingTask1.title,
+                    title2: mock.writingTask2.title,
+                  })}
                 </li>
                 <li>
-                  • Speaking: a Part 1, Part 2 and Part 3 set (
-                  <span className="text-foreground">{mock.speakingPart2.title}</span> for the long
-                  turn)
+                  •{' '}
+                  {t('ielts.mock.intro.contains.speaking', {
+                    title: mock.speakingPart2.title,
+                  })}
                 </li>
               </ul>
             </div>
@@ -175,10 +187,15 @@ export default function MockIntro({
           <div className="mt-6 flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs leading-relaxed text-muted-foreground">
             <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
             <p>
-              This is a <strong className="text-foreground">practice mock</strong>. Every band is an{' '}
-              <strong className="text-foreground">estimate for preparation only</strong> — it is not
-              an official IELTS result, and your score on test day may differ. Writing and Speaking
-              bands are generated by AI.
+              {t('ielts.mock.intro.disclaimer.lead')}{' '}
+              <strong className="text-foreground">
+                {t('ielts.mock.intro.disclaimer.practice')}
+              </strong>
+              {t('ielts.mock.intro.disclaimer.mid')}{' '}
+              <strong className="text-foreground">
+                {t('ielts.mock.intro.disclaimer.estimate')}
+              </strong>{' '}
+              {t('ielts.mock.intro.disclaimer.tail')}
             </p>
           </div>
 
@@ -186,16 +203,15 @@ export default function MockIntro({
           <div className="mt-6 flex flex-wrap gap-3">
             <Button size="lg" onClick={onStart} disabled={!mock}>
               <Play className="size-4" />
-              Start full mock
+              {t('ielts.mock.intro.start')}
             </Button>
             <Button size="lg" variant="outline" render={<Link href="/ielts/plan" />}>
-              Back to study plan
+              {t('ielts.mock.intro.back_to_plan')}
             </Button>
           </div>
           {!mock && (
             <p className="mt-3 text-sm text-destructive">
-              A full {trackLabel} mock could not be assembled from the practice library right now.
-              Please try the individual skill pages, or switch track.
+              {t('ielts.mock.intro.assemble_fail', { track: trackLabel })}
             </p>
           )}
         </div>
@@ -204,11 +220,11 @@ export default function MockIntro({
         <div className="flex flex-wrap gap-3">
           <Button variant="ghost" size="sm" render={<Link href="/ielts/progress" />}>
             <TrendingUp className="size-3.5" />
-            View progress
+            {t('ielts.mock.intro.view_progress')}
           </Button>
           <Button variant="ghost" size="sm" render={<Link href="/ielts/plan" />}>
             <CalendarDays className="size-3.5" />
-            Study plan
+            {t('ielts.mock.intro.study_plan')}
           </Button>
         </div>
       </div>

@@ -46,6 +46,39 @@ import {
   type IeltsProfile,
   type IeltsSkill,
 } from '@/lib/ielts/types'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_PLANNER_DICTIONARY } from '@/lib/i18n/dictionary-ielts-planner'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// ielts.planner.* keys live in the dictionary-ielts-planner shard, which isn't
+// wired into the global lookup() chain — resolve them here against the live
+// locale, falling back to the shared useT() for cross-module ielts.* keys.
+// `vars` interpolates {token} placeholders so dynamic copy (day/week counts,
+// band labels, skill labels, phase ranges, the urgency lines) stays
+// translatable as a whole phrase. Mirrors usePlanT() in /ielts/plan exactly.
+type Vars = Record<string, string | number>
+type TFn = (key: string, vars?: Vars) => string
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function usePlannerT(): TFn {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_PLANNER_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── IELTS Study Planner (exam-date, time-aware) ────────────────────────────
 // Sibling to /ielts/plan (the weakest-first band-gap plan). This page adds the
@@ -152,7 +185,12 @@ function addDays(base: Date, days: number): Date {
 }
 
 // Build the dated, weakest-first schedule from the runway + ranked skills.
-function generatePlan(daysLeft: number, ranked: RankedSkill[], level: IeltsLevel): GeneratedPlan {
+function generatePlan(
+  daysLeft: number,
+  ranked: RankedSkill[],
+  level: IeltsLevel,
+  t: TFn,
+): GeneratedPlan {
   // Skills ordered weakest-first; rotate them through the blocks so the most
   // urgent skill is touched earliest and most often.
   const focusOrder = ranked.map((r) => r.skill)
@@ -189,10 +227,10 @@ function generatePlan(daysLeft: number, ranked: RankedSkill[], level: IeltsLevel
   if (phaseMode) {
     // Long runway → 4 phases: Foundations, Build technique, Sharpen, Exam-ready.
     const phaseNames = [
-      'Phase 1 — Foundations & weak spots',
-      'Phase 2 — Build technique across all four skills',
-      'Phase 3 — Sharpen under time pressure',
-      'Phase 4 — Exam-ready & full mocks',
+      t('ielts.planner.phase.name1'),
+      t('ielts.planner.phase.name2'),
+      t('ielts.planner.phase.name3'),
+      t('ielts.planner.phase.name4'),
     ]
     const phaseSpan = Math.floor(weeks / 4)
     let weekCursor = 0
@@ -209,14 +247,18 @@ function generatePlan(daysLeft: number, ranked: RankedSkill[], level: IeltsLevel
         kind: isLast ? 'mock-week' : p === 2 ? 'consolidate' : 'learn-practice',
         label:
           spanWeeks <= 1
-            ? `${phaseNames[p]} (week ${startWeek})`
-            : `${phaseNames[p]} (weeks ${startWeek}–${endWeek})`,
+            ? t('ielts.planner.block.phase_week', { name: phaseNames[p], start: startWeek })
+            : t('ielts.planner.block.phase_weeks', {
+                name: phaseNames[p],
+                start: startWeek,
+                end: endWeek,
+              }),
         startOffsetDays: weekCursor * 7,
         spanDays: spanWeeks * 7,
         focus,
         learnUnits,
         includeMock: isLast,
-        note: phaseNote(p, focus),
+        note: phaseNote(p, focus, t),
       })
       weekCursor += spanWeeks
     }
@@ -235,56 +277,62 @@ function generatePlan(daysLeft: number, ranked: RankedSkill[], level: IeltsLevel
       blocks.push({
         index: w,
         kind: isFinal ? 'mock-week' : isPenultimate ? 'consolidate' : 'learn-practice',
-        label: isFinal ? `Final week — exam ready` : `Week ${w + 1}`,
+        label: isFinal
+          ? t('ielts.planner.block.final_week')
+          : t('ielts.planner.block.week', { n: w + 1 }),
         startOffsetDays: w * 7,
         spanDays: 7,
         focus,
         learnUnits,
         includeMock: isFinal,
         note: isFinal
-          ? 'Sit a full timed mock, review every mistake, and rest the day before.'
+          ? t('ielts.planner.note.mock_week')
           : isPenultimate
-            ? 'Consolidate: redo your weakest question types and a half-length timed set.'
-            : weekNote(primary, secondary),
+            ? t('ielts.planner.note.consolidate')
+            : weekNote(primary, secondary, t),
       })
     }
   }
 
   // ── Milestones (anchored to the runway) ──
   const milestones: Milestone[] = []
-  milestones.push({ label: 'Plan starts — first focus session', whenDays: 0 })
+  milestones.push({ label: t('ielts.planner.milestone.plan_starts'), whenDays: 0 })
   if (daysLeft >= 21) {
     milestones.push({
-      label: `Mid-point check-in — re-take the diagnostic`,
+      label: t('ielts.planner.milestone.midpoint'),
       whenDays: Math.round(daysLeft / 2),
     })
   }
   if (daysLeft >= 7) {
-    milestones.push({ label: 'Full mock exam', whenDays: Math.max(0, daysLeft - 5) })
+    milestones.push({
+      label: t('ielts.planner.milestone.full_mock'),
+      whenDays: Math.max(0, daysLeft - 5),
+    })
   }
-  milestones.push({ label: 'Rest & light review', whenDays: Math.max(0, daysLeft - 1) })
-  milestones.push({ label: 'Exam day', whenDays: daysLeft })
+  milestones.push({ label: t('ielts.planner.milestone.rest'), whenDays: Math.max(0, daysLeft - 1) })
+  milestones.push({ label: t('ielts.planner.milestone.exam_day'), whenDays: daysLeft })
 
   return { blocks, milestones, mode: phaseMode ? 'phases' : 'weeks', weeks }
 }
 
-function weekNote(primary: IeltsSkill, secondary: IeltsSkill): string {
-  return `Main focus: ${SKILL_META[primary].label}. Keep ${SKILL_META[
-    secondary
-  ].label.toLowerCase()} warm with one short set.`
+function weekNote(primary: IeltsSkill, secondary: IeltsSkill, t: TFn): string {
+  return t('ielts.planner.note.week', {
+    primary: SKILL_META[primary].label,
+    secondaryLower: SKILL_META[secondary].label.toLowerCase(),
+  })
 }
 
-function phaseNote(phase: number, focus: IeltsSkill[]): string {
+function phaseNote(phase: number, focus: IeltsSkill[], t: TFn): string {
   const list = focus.map((s) => SKILL_META[s].label).join(', ')
   switch (phase) {
     case 0:
-      return `Get the fundamentals solid and attack your weakest skills first: ${list}.`
+      return t('ielts.planner.note.phase1', { list })
     case 1:
-      return `Learn a reliable method for every question type across ${list}.`
+      return t('ielts.planner.note.phase2', { list })
     case 2:
-      return 'Practise everything to time. Tighten accuracy and pacing on all four skills.'
+      return t('ielts.planner.note.phase3')
     default:
-      return 'Full timed mocks, targeted fixes from each mock, and confidence work.'
+      return t('ielts.planner.note.phase4')
   }
 }
 
@@ -309,22 +357,26 @@ function rightNowAction(
   minutes: Minutes,
   weakest: IeltsSkill | null,
   ranked: RankedSkill[],
+  t: TFn,
 ): RightNowAction {
   // Pick the skill to target: explicit weakest from the profile, else the top
   // of the weakest-first ranking, else reading as a safe default.
   const target = weakest ?? ranked[0]?.skill ?? 'reading'
   const meta = SKILL_META[target]
+  const skillLower = meta.label.toLowerCase()
   const firstUnit = unitsForSkill(target)[0]
 
   if (minutes === 15) {
     return {
       kind: 'learn',
-      title: `Learn: ${firstUnit ? firstUnit.title : meta.label}`,
+      title: t('ielts.planner.rightnow.learn.title', {
+        title: firstUnit ? firstUnit.title : meta.label,
+      }),
       body: firstUnit
-        ? `A focused ${meta.label.toLowerCase()} lesson — ${firstUnit.blurb} Just enough to move one thing forward.`
-        : `One short ${meta.label.toLowerCase()} lesson to keep momentum.`,
+        ? t('ielts.planner.rightnow.learn.body_unit', { skillLower, blurb: firstUnit.blurb })
+        : t('ielts.planner.rightnow.learn.body_generic', { skillLower }),
       href: '/ielts/learn',
-      cta: 'Open a lesson',
+      cta: t('ielts.planner.rightnow.learn.cta'),
       icon: BookOpen,
     }
   }
@@ -332,10 +384,10 @@ function rightNowAction(
   if (minutes === 30) {
     return {
       kind: 'practice',
-      title: `Practise: a ${meta.label} section`,
-      body: `Do one timed ${meta.label.toLowerCase()} section, then read every answer explanation. This is where your weakest skill improves fastest.`,
+      title: t('ielts.planner.rightnow.practice.title', { skill: meta.label }),
+      body: t('ielts.planner.rightnow.practice.body', { skillLower }),
       href: PRACTICE_HREF[target],
-      cta: `Start ${meta.label.toLowerCase()} practice`,
+      cta: t('ielts.planner.rightnow.practice.cta', { skillLower }),
       icon: Dumbbell,
     }
   }
@@ -343,10 +395,10 @@ function rightNowAction(
   // 60 minutes
   return {
     kind: 'mock',
-    title: 'Sit a full mock section (or a mini mock)',
-    body: 'An hour is enough for a full Listening or Reading test under exam conditions — the single best way to build stamina and spot weak points. Mark it and note what to fix.',
+    title: t('ielts.planner.rightnow.mock.title'),
+    body: t('ielts.planner.rightnow.mock.body'),
     href: '/ielts/mock',
-    cta: 'Go to mock exams',
+    cta: t('ielts.planner.rightnow.mock.cta'),
     icon: ClipboardCheck,
   }
 }
@@ -354,6 +406,7 @@ function rightNowAction(
 // ─── Page ───────────────────────────────────────────────────────────────────
 
 export default function IeltsPlannerPage() {
+  const t = usePlannerT()
   const [loaded, setLoaded] = useState(false)
   const [profile, setProfile] = useState<IeltsProfile | null>(null)
   const [diagnostic, setDiagnostic] = useState<DiagnosticResult | null>(null)
@@ -392,12 +445,15 @@ export default function IeltsPlannerPage() {
   )
 
   const plan = useMemo(
-    () => (daysLeft !== null ? generatePlan(daysLeft, ranked, level) : null),
-    [daysLeft, ranked, level],
+    () => (daysLeft !== null ? generatePlan(daysLeft, ranked, level, t) : null),
+    [daysLeft, ranked, level, t],
   )
 
   const weakest = profile?.weakestSkill ?? ranked[0]?.skill ?? null
-  const action = useMemo(() => rightNowAction(minutes, weakest, ranked), [minutes, weakest, ranked])
+  const action = useMemo(
+    () => rightNowAction(minutes, weakest, ranked, t),
+    [minutes, weakest, ranked, t],
+  )
 
   const today = useMemo(() => new Date(), [])
 
@@ -415,7 +471,7 @@ export default function IeltsPlannerPage() {
   if (!loaded) {
     return (
       <main className="min-h-screen bg-background">
-        <PlannerHeader />
+        <PlannerHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
           <div className="animate-pulse space-y-4">
             <div className="mx-auto h-8 w-64 rounded bg-muted" />
@@ -428,16 +484,17 @@ export default function IeltsPlannerPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <PlannerHeader />
+      <PlannerHeader t={t} />
 
       <div className="mx-auto max-w-4xl space-y-12 px-4 py-8 sm:px-6 sm:py-12">
         {/* ── Countdown banner (only once an exam date is set) ── */}
         {daysLeft !== null && (
-          <Countdown daysLeft={daysLeft} examDate={goals.examDate!} target={target} />
+          <Countdown t={t} daysLeft={daysLeft} examDate={goals.examDate!} target={target} />
         )}
 
         {/* ── Goals form ── */}
         <GoalsForm
+          t={t}
           goals={goals}
           target={target}
           level={level}
@@ -446,11 +503,18 @@ export default function IeltsPlannerPage() {
         />
 
         {/* ── Time-aware "right now" panel (always useful) ── */}
-        <RightNowPanel minutes={minutes} onMinutes={setMinutes} action={action} weakest={weakest} />
+        <RightNowPanel
+          t={t}
+          minutes={minutes}
+          onMinutes={setMinutes}
+          action={action}
+          weakest={weakest}
+        />
 
         {/* ── Dated plan, or an empty/initial nudge ── */}
         {hasExamDate && plan ? (
           <PlanTimeline
+            t={t}
             plan={plan}
             today={today}
             target={target}
@@ -458,18 +522,18 @@ export default function IeltsPlannerPage() {
             hasProfileData={Boolean(profile?.hasData) || Boolean(diagnostic)}
           />
         ) : (
-          <EmptyPlanState hasGoals={hasGoals} />
+          <EmptyPlanState t={t} hasGoals={hasGoals} />
         )}
 
         {/* ── Footer caveat + cross-links ── */}
-        <PlannerCaveat />
+        <PlannerCaveat t={t} />
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button variant="outline" render={<Link href="/ielts/plan" />}>
             <Target className="mr-2 h-4 w-4" />
-            See your weakest-first plan
+            {t('ielts.planner.cta.weakest_plan')}
           </Button>
           <Button variant="outline" render={<Link href="/ielts/diagnostic" />}>
-            Take the placement test
+            {t('ielts.planner.cta.placement')}
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -480,7 +544,7 @@ export default function IeltsPlannerPage() {
 
 // ─── Header ───────────────────────────────────────────────────────────────────
 
-function PlannerHeader() {
+function PlannerHeader({ t }: { t: TFn }) {
   return (
     <section className="border-b border-border bg-card">
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -489,7 +553,7 @@ function PlannerHeader() {
           className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to IELTS
+          {t('ielts.planner.back')}
         </Link>
         <div className="flex items-start gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
@@ -497,11 +561,10 @@ function PlannerHeader() {
           </div>
           <div>
             <h1 className="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-              IELTS Study Planner
+              {t('ielts.planner.title')}
             </h1>
             <p className="mt-1 max-w-2xl text-lg text-muted-foreground">
-              Tell us your exam date and target band, and we&apos;ll plan backwards from the exam —
-              front-loading your weakest skills, week by week.
+              {t('ielts.planner.subtitle')}
             </p>
           </div>
         </div>
@@ -513,10 +576,12 @@ function PlannerHeader() {
 // ─── Countdown ──────────────────────────────────────────────────────────────
 
 function Countdown({
+  t,
   daysLeft,
   examDate,
   target,
 }: {
+  t: TFn
   daysLeft: number
   examDate: string
   target: Band
@@ -531,31 +596,47 @@ function Countdown({
   })
   const urgency =
     daysLeft === 0
-      ? "It's exam day — you've got this."
+      ? t('ielts.planner.urgency.exam_day')
       : daysLeft <= 7
-        ? 'Final stretch: practise to time, rest well, stay calm.'
+        ? t('ielts.planner.urgency.final_stretch')
         : daysLeft <= 28
-          ? "You're close. Tighten technique and sit at least one full mock."
-          : 'Plenty of runway — build the habit and the bands will follow.'
+          ? t('ielts.planner.urgency.close')
+          : t('ielts.planner.urgency.runway')
+
+  // Headline count ("Today" / "{n} day(s)") and the weeks-and-days breakdown.
+  const daysCount =
+    daysLeft === 0
+      ? t('ielts.planner.countdown.today')
+      : daysLeft === 1
+        ? t('ielts.planner.countdown.day', { count: daysLeft })
+        : t('ielts.planner.countdown.days', { count: daysLeft })
+  const weeksLabel =
+    weeks === 1
+      ? t('ielts.planner.countdown.week', { count: weeks })
+      : t('ielts.planner.countdown.weeks', { count: weeks })
+  const andDays =
+    days > 0
+      ? days === 1
+        ? t('ielts.planner.countdown.and_day', { count: days })
+        : t('ielts.planner.countdown.and_days', { count: days })
+      : ''
 
   return (
     <section
       className={`rounded-2xl border p-6 shadow-soft sm:p-8 ${bandBgColour(target)}`}
-      aria-label="Exam countdown"
+      aria-label={t('ielts.planner.countdown.aria')}
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            Countdown to your exam
+            {t('ielts.planner.countdown.eyebrow')}
           </p>
-          <p className="mt-1 text-4xl font-bold tracking-tight sm:text-5xl">
-            {daysLeft === 0 ? 'Today' : `${daysLeft} ${daysLeft === 1 ? 'day' : 'days'}`}
-          </p>
+          <p className="mt-1 text-4xl font-bold tracking-tight sm:text-5xl">{daysCount}</p>
           <p className="mt-1 text-sm text-muted-foreground">
             {daysLeft > 7 && (
               <>
-                {weeks} {weeks === 1 ? 'week' : 'weeks'}
-                {days > 0 && ` and ${days} ${days === 1 ? 'day' : 'days'}`} ·{' '}
+                {weeksLabel}
+                {andDays} ·{' '}
               </>
             )}
             {examLabel}
@@ -563,7 +644,7 @@ function Countdown({
         </div>
         <div className="shrink-0 text-left sm:text-right">
           <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            Target band
+            {t('ielts.planner.countdown.target_band')}
           </p>
           <p className={`text-3xl font-bold ${bandColour(target)}`}>{bandLabel(target)}</p>
           <p className="text-[11px] text-muted-foreground">{bandTier(target)}</p>
@@ -577,12 +658,14 @@ function Countdown({
 // ─── Goals form ─────────────────────────────────────────────────────────────
 
 function GoalsForm({
+  t,
   goals,
   target,
   level,
   savedTick,
   onSave,
 }: {
+  t: TFn
   goals: IeltsGoals
   target: Band
   level: IeltsLevel
@@ -596,7 +679,9 @@ function GoalsForm({
     <section className="rounded-xl border border-border bg-card p-6 shadow-soft sm:p-8">
       <div className="mb-6 flex items-center gap-2">
         <Sparkles className="h-5 w-5 text-primary" />
-        <h2 className="font-serif text-2xl font-medium tracking-tight">Your goals</h2>
+        <h2 className="font-serif text-2xl font-medium tracking-tight">
+          {t('ielts.planner.goals.heading')}
+        </h2>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-3">
@@ -606,7 +691,7 @@ function GoalsForm({
             htmlFor="planner-target"
             className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-muted-foreground"
           >
-            Target band
+            {t('ielts.planner.goals.target_label')}
           </label>
           <select
             id="planner-target"
@@ -616,7 +701,7 @@ function GoalsForm({
           >
             {TARGET_BANDS.map((b) => (
               <option key={b} value={b}>
-                Band {bandLabel(b)}
+                {t('ielts.planner.goals.target_option', { band: bandLabel(b) })}
               </option>
             ))}
           </select>
@@ -628,7 +713,7 @@ function GoalsForm({
             htmlFor="planner-date"
             className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-muted-foreground"
           >
-            Exam date
+            {t('ielts.planner.goals.date_label')}
           </label>
           <input
             id="planner-date"
@@ -646,7 +731,7 @@ function GoalsForm({
             htmlFor="planner-level"
             className="mb-1.5 block font-mono text-xs uppercase tracking-wider text-muted-foreground"
           >
-            Your level now
+            {t('ielts.planner.goals.level_label')}
           </label>
           <select
             id="planner-level"
@@ -656,7 +741,7 @@ function GoalsForm({
           >
             {LEVELS.map((l) => (
               <option key={l.id} value={l.id}>
-                {l.label} ({l.bandRange})
+                {t('ielts.planner.goals.level_option', { label: l.label, range: l.bandRange })}
               </option>
             ))}
           </select>
@@ -671,7 +756,7 @@ function GoalsForm({
             className="inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400"
           >
             <Save className="h-3.5 w-3.5" />
-            Saved
+            {t('ielts.planner.goals.saved')}
           </span>
         )}
       </div>
@@ -684,11 +769,13 @@ function GoalsForm({
 const MINUTE_OPTIONS: Minutes[] = [15, 30, 60]
 
 function RightNowPanel({
+  t,
   minutes,
   onMinutes,
   action,
   weakest,
 }: {
+  t: TFn
   minutes: Minutes
   onMinutes: (m: Minutes) => void
   action: RightNowAction
@@ -698,18 +785,22 @@ function RightNowPanel({
     <section className="rounded-xl border border-border bg-card p-6 shadow-soft sm:p-8">
       <div className="mb-1 flex items-center gap-2">
         <Clock className="h-5 w-5 text-primary" />
-        <h2 className="font-serif text-2xl font-medium tracking-tight">What can I do right now?</h2>
+        <h2 className="font-serif text-2xl font-medium tracking-tight">
+          {t('ielts.planner.rightnow.heading')}
+        </h2>
       </div>
       <p className="mb-5 text-sm text-muted-foreground">
-        Tell us how long you&apos;ve got and we&apos;ll pick one thing
-        {weakest ? <> — aimed at your weakest skill, {SKILL_META[weakest].label}.</> : '.'}
+        {t('ielts.planner.rightnow.intro_base')}
+        {weakest
+          ? t('ielts.planner.rightnow.intro_weakest', { skill: SKILL_META[weakest].label })
+          : t('ielts.planner.rightnow.intro_end')}
       </p>
 
       {/* Minutes selector */}
       <div
         className="mb-5 inline-flex rounded-lg border border-border bg-background p-1"
         role="group"
-        aria-label="Time available"
+        aria-label={t('ielts.planner.rightnow.time_aria')}
       >
         {MINUTE_OPTIONS.map((m) => (
           <button
@@ -723,7 +814,7 @@ function RightNowPanel({
                 : 'text-muted-foreground hover:text-foreground'
             }`}
           >
-            {m} min
+            {t('ielts.planner.rightnow.minutes', { count: m })}
           </button>
         ))}
       </div>
@@ -755,12 +846,14 @@ const BLOCK_ICON: Record<BlockKind, LucideIcon> = {
 }
 
 function PlanTimeline({
+  t,
   plan,
   today,
   target,
   ranked,
   hasProfileData,
 }: {
+  t: TFn
   plan: GeneratedPlan
   today: Date
   target: Band
@@ -768,62 +861,67 @@ function PlanTimeline({
   hasProfileData: boolean
 }) {
   const weakestTwo = ranked.slice(0, 2).map((r) => SKILL_META[r.skill].label)
+  // Pre-compose the parenthetical weakest-skills list (skill labels stay Latin)
+  // so it slots into the intro sentence as one {weakest} token.
+  const weakestSuffix = weakestTwo.length
+    ? t('ielts.planner.timeline.weakest_suffix', {
+        list: weakestTwo.join(t('ielts.planner.timeline.weakest_join')),
+      })
+    : ''
+  const intro =
+    plan.mode === 'phases'
+      ? t('ielts.planner.timeline.intro_phases', {
+          weeks: plan.weeks,
+          target: bandLabel(target),
+          weakest: weakestSuffix,
+        })
+      : t('ielts.planner.timeline.intro_weeks', {
+          target: bandLabel(target),
+          weakest: weakestSuffix,
+        })
 
   return (
     <section>
       <div className="mb-2 flex items-center gap-2">
         <CalendarDays className="h-5 w-5 text-primary" />
-        <h2 className="font-serif text-2xl font-medium tracking-tight">Your dated plan</h2>
+        <h2 className="font-serif text-2xl font-medium tracking-tight">
+          {t('ielts.planner.timeline.heading')}
+        </h2>
       </div>
-      <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-        {plan.mode === 'phases' ? (
-          <>
-            With {plan.weeks} weeks to go, here&apos;s a phased plan towards Band{' '}
-            {bandLabel(target)}. It opens on your weakest skills
-            {weakestTwo.length ? <> ({weakestTwo.join(' and ')})</> : null} and builds to full mocks
-            before the exam.
-          </>
-        ) : (
-          <>
-            A week-by-week plan towards Band {bandLabel(target)}, front-loading your weakest skills
-            {weakestTwo.length ? <> ({weakestTwo.join(' and ')})</> : null} and finishing with a
-            full mock.
-          </>
-        )}
-      </p>
+      <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{intro}</p>
 
       {!hasProfileData && (
         <div className="mb-5 flex items-start gap-3 rounded-xl border border-sky-500/25 bg-sky-500/10 p-4">
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky-600 dark:text-sky-500" />
           <p className="text-xs leading-relaxed text-muted-foreground">
-            We don&apos;t have any results yet, so this plan starts even across all four skills.{' '}
+            {t('ielts.planner.timeline.nodata_lead')}{' '}
             <Link href="/ielts/diagnostic" className="font-medium text-primary hover:underline">
-              Take the 10-minute placement test
+              {t('ielts.planner.timeline.nodata_link')}
             </Link>{' '}
-            and the plan will re-focus on your real weak spots.
+            {t('ielts.planner.timeline.nodata_tail')}
           </p>
         </div>
       )}
 
       {/* Milestones strip */}
-      <Milestones milestones={plan.milestones} today={today} />
+      <Milestones t={t} milestones={plan.milestones} today={today} />
 
       {/* Blocks */}
       <ol className="mt-6 space-y-3">
         {plan.blocks.map((block) => (
-          <PlanBlockCard key={block.index} block={block} today={today} />
+          <PlanBlockCard key={block.index} t={t} block={block} today={today} />
         ))}
       </ol>
     </section>
   )
 }
 
-function Milestones({ milestones, today }: { milestones: Milestone[]; today: Date }) {
+function Milestones({ t, milestones, today }: { t: TFn; milestones: Milestone[]; today: Date }) {
   return (
     <div className="rounded-xl border border-border bg-muted/30 p-4">
       <p className="mb-3 flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
         <Flag className="h-3.5 w-3.5" />
-        Milestones
+        {t('ielts.planner.milestones.heading')}
       </p>
       <ul className="grid gap-2 sm:grid-cols-2">
         {milestones.map((m, i) => {
@@ -849,7 +947,7 @@ function Milestones({ milestones, today }: { milestones: Milestone[]; today: Dat
   )
 }
 
-function PlanBlockCard({ block, today }: { block: PlanBlock; today: Date }) {
+function PlanBlockCard({ t, block, today }: { t: TFn; block: PlanBlock; today: Date }) {
   const Icon = BLOCK_ICON[block.kind]
   const start = new Date(today.getTime() + block.startOffsetDays * MS_PER_DAY)
   const end = new Date(today.getTime() + (block.startOffsetDays + block.spanDays - 1) * MS_PER_DAY)
@@ -874,7 +972,7 @@ function PlanBlockCard({ block, today }: { block: PlanBlock; today: Date }) {
             <div className="mt-3">
               <p className="mb-1.5 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
                 <BookOpen className="h-3 w-3" />
-                Learn
+                {t('ielts.planner.block.learn')}
               </p>
               <ul className="space-y-1">
                 {block.learnUnits.map((u) => (
@@ -909,7 +1007,9 @@ function PlanBlockCard({ block, today }: { block: PlanBlock; today: Date }) {
                 className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors hover:border-primary/40 ${SKILL_META[skill].bgColour} ${SKILL_META[skill].colour}`}
               >
                 <Dumbbell className="h-3 w-3" />
-                Practise {SKILL_META[skill].label.toLowerCase()}
+                {t('ielts.planner.block.practise_skill', {
+                  skillLower: SKILL_META[skill].label.toLowerCase(),
+                })}
               </Link>
             ))}
             {block.includeMock && (
@@ -918,7 +1018,7 @@ function PlanBlockCard({ block, today }: { block: PlanBlock; today: Date }) {
                 className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary transition-colors hover:border-primary/50"
               >
                 <ClipboardCheck className="h-3 w-3" />
-                Full mock exam
+                {t('ielts.planner.block.full_mock')}
               </Link>
             )}
           </div>
@@ -930,23 +1030,25 @@ function PlanBlockCard({ block, today }: { block: PlanBlock; today: Date }) {
 
 // ─── Empty / initial state ───────────────────────────────────────────────────
 
-function EmptyPlanState({ hasGoals }: { hasGoals: boolean }) {
+function EmptyPlanState({ t, hasGoals }: { t: TFn; hasGoals: boolean }) {
   return (
     <section className="rounded-xl border border-dashed border-border bg-card/50 p-8 text-center sm:p-12">
       <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-muted/50">
         <CalendarDays className="h-8 w-8 text-muted-foreground" />
       </div>
       <h2 className="mb-2 font-serif text-xl font-medium">
-        {hasGoals ? 'Add your exam date to build the plan' : 'Set your goals to get a dated plan'}
+        {hasGoals
+          ? t('ielts.planner.empty.title_has_goals')
+          : t('ielts.planner.empty.title_no_goals')}
       </h2>
       <p className="mx-auto mb-6 max-w-md text-sm leading-relaxed text-muted-foreground">
         {hasGoals
-          ? 'Pick your exam date above and we’ll lay out a week-by-week schedule that works backwards from the exam, front-loading your weakest skills.'
-          : 'Choose a target band, exam date and your current level above. Not sure where you stand? Take the quick placement test first and we’ll tailor the plan to your weak spots.'}
+          ? t('ielts.planner.empty.body_has_goals')
+          : t('ielts.planner.empty.body_no_goals')}
       </p>
       <Button render={<Link href="/ielts/diagnostic" />}>
         <Target className="mr-2 h-4 w-4" />
-        Take the placement test
+        {t('ielts.planner.empty.cta')}
       </Button>
     </section>
   )
@@ -954,16 +1056,13 @@ function EmptyPlanState({ hasGoals }: { hasGoals: boolean }) {
 
 // ─── Caveat ───────────────────────────────────────────────────────────────────
 
-function PlannerCaveat() {
+function PlannerCaveat({ t }: { t: TFn }) {
   return (
     <div className="flex items-start gap-3 rounded-xl border border-amber-500/25 bg-amber-500/10 p-4">
       <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-500" />
       <p className="text-xs leading-relaxed text-muted-foreground">
-        <span className="font-semibold text-foreground">
-          This plan is a guide, not a guarantee.
-        </span>{' '}
-        It adapts to your exam date and results, but real progress comes from consistent practice.
-        Adjust the pace to fit your week — little and often beats cramming.
+        <span className="font-semibold text-foreground">{t('ielts.planner.caveat.strong')}</span>{' '}
+        {t('ielts.planner.caveat.body')}
       </p>
     </div>
   )

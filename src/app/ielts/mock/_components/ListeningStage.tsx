@@ -20,6 +20,7 @@ import { objectiveToBand } from '@/lib/ielts/bands'
 import type { ObjectiveResult, AnswerMap } from '../mock-types'
 import { countCorrect, countAnswered } from '../marking'
 import { SECTION_SECONDS } from '../mock-types'
+import { useMockT } from '../use-mock-t'
 import StageHeader from './StageHeader'
 import { ObjectiveQuestionList } from './ObjectiveQuestions'
 
@@ -32,6 +33,7 @@ export default function ListeningStage({
   stepLabel: string
   onComplete: (result: ObjectiveResult) => void
 }) {
+  const t = useMockT()
   const [answers, setAnswers] = useState<AnswerMap>({})
   // Guard so auto-submit (timer) and manual submit can never double-fire.
   const finishedRef = useRef(false)
@@ -72,14 +74,14 @@ export default function ListeningStage({
   return (
     <div className="min-h-screen bg-background">
       <StageHeader
-        title="Section 1 of 4 · Listening"
-        stepLabel={`${stepLabel} · ${answered}/${total} answered`}
+        title={t('ielts.mock.stage.title', { n: 1, skill: 'Listening' })}
+        stepLabel={t('ielts.mock.stage.step_answered', { skill: stepLabel, answered, total })}
         seconds={SECTION_SECONDS.listening}
         onExpire={finish}
         action={
           <Button size="sm" onClick={finish}>
             <Check className="size-4" />
-            Submit Listening
+            {t('ielts.mock.listening.submit')}
           </Button>
         }
       />
@@ -89,11 +91,7 @@ export default function ListeningStage({
           <Headphones className="mt-0.5 size-5 shrink-0 text-sky-500" aria-hidden="true" />
           <div className="text-sm text-muted-foreground">
             <p className="font-semibold text-foreground">{test.title}</p>
-            <p className="mt-1">
-              Play each section&apos;s audio, then answer its questions. In the real exam the
-              recording plays once — here you may replay to practise. Your answers are marked
-              automatically when you submit or when the timer reaches zero.
-            </p>
+            <p className="mt-1">{t('ielts.mock.listening.intro')}</p>
           </div>
         </div>
 
@@ -105,13 +103,16 @@ export default function ListeningStage({
               <section key={section.id} className="space-y-4">
                 <div>
                   <span className="inline-block rounded-full border border-border/60 px-2.5 py-0.5 text-[0.7rem] font-medium text-muted-foreground">
-                    Part {sIndex + 1}
+                    {t('ielts.mock.listening.part', { n: sIndex + 1 })}
                   </span>
                   <h2 className="mt-2 font-serif text-xl font-medium tracking-tight text-foreground">
                     {section.title}
                   </h2>
                   <p className="mt-0.5 text-xs text-muted-foreground">
-                    Questions {startNumber}–{endNumber}
+                    {t('ielts.mock.listening.questions_range', {
+                      start: startNumber,
+                      end: endNumber,
+                    })}
                   </p>
                 </div>
 
@@ -135,13 +136,13 @@ export default function ListeningStage({
         <div className="mt-10 rounded-2xl border border-border/60 bg-card p-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">
-              You have answered{' '}
-              <span className="font-semibold tabular-nums text-foreground">{answered}</span> of{' '}
-              {total}. Submitting moves you on to Reading and you cannot return.
+              {t('ielts.mock.listening.footer_lead')}{' '}
+              <span className="font-semibold tabular-nums text-foreground">{answered}</span>{' '}
+              {t('ielts.mock.listening.footer_tail', { total })}
             </p>
             <Button size="lg" onClick={finish}>
               <Check className="size-4" />
-              Finish Listening &amp; start Reading
+              {t('ielts.mock.listening.finish')}
             </Button>
           </div>
         </div>

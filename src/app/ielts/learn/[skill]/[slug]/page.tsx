@@ -26,6 +26,38 @@ import { levelMeta, unitsForSkill, type Lesson } from '@/lib/ielts/curriculum'
 import { lessonBySlug, lessonsForUnit } from '@/lib/ielts/lessons'
 import { getCompletedLessons, markLessonComplete } from '@/lib/ielts/store'
 import { SKILL_META, type IeltsSkill } from '@/lib/ielts/types'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_LEARN_DICTIONARY } from '@/lib/i18n/dictionary-ielts-learn'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// ielts.learn.* keys live in the dictionary-ielts-learn shard, which isn't wired
+// into the global lookup() chain — resolve them here against the live locale,
+// falling back to the shared useT() for any cross-module ielts.* key. `vars`
+// interpolates {token} placeholders (minutes, skill labels) so wrapping phrases
+// stay translatable as a whole. Modelled on usePlanT() in app/ielts/plan/page.tsx.
+type Vars = Record<string, string | number>
+type LearnTFn = (key: string, vars?: Vars) => string
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function useLearnT(): LearnTFn {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_LEARN_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── IELTS lesson page ─────────────────────────────────────────────────────
 // Renders one self-study lesson: title + est. minutes + level badge, the
@@ -85,6 +117,7 @@ function orderedSkillLessons(skill: LearnTrack): Lesson[] {
 }
 
 export default function IeltsLessonPage() {
+  const t = useLearnT()
   // Route params come from the [skill]/[slug] segments. useParams() is the
   // repo convention for reading them in a client component (see e.g.
   // app/learn/[courseId]/[moduleId]). Values are URL-decoded by Next.
@@ -123,15 +156,14 @@ export default function IeltsLessonPage() {
             <Library className="h-7 w-7 text-muted-foreground" aria-hidden />
           </span>
           <h1 className="mt-5 font-serif text-2xl font-semibold tracking-tight text-foreground">
-            Lesson not found
+            {t('ielts.learn.notfound.title')}
           </h1>
           <p className="mx-auto mt-3 max-w-md leading-relaxed text-muted-foreground">
-            We couldn&rsquo;t find that lesson. It may have moved or the link may be incomplete.
-            Head back to the library to find what you need.
+            {t('ielts.learn.notfound.body')}
           </p>
           <Button className="mt-7 gap-2" render={<Link href="/ielts/learn" />}>
             <Library className="h-4 w-4" aria-hidden />
-            Back to the learning library
+            {t('ielts.learn.notfound.back')}
           </Button>
         </div>
       </main>
@@ -160,7 +192,7 @@ export default function IeltsLessonPage() {
               className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
-              Library
+              {t('ielts.learn.crumb.library')}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 text-border" aria-hidden />
             <Link
@@ -197,12 +229,12 @@ export default function IeltsLessonPage() {
                 </Badge>
                 <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                   <Clock className="h-3.5 w-3.5" aria-hidden />
-                  {lesson.estMinutes} min read
+                  {t('ielts.learn.lesson.minutes_read', { min: lesson.estMinutes })}
                 </span>
                 {mounted && complete ? (
                   <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-500">
                     <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
-                    Completed
+                    {t('ielts.learn.lesson.completed')}
                   </span>
                 ) : null}
               </div>
@@ -225,12 +257,12 @@ export default function IeltsLessonPage() {
                 </span>
                 <div>
                   <p className="font-serif text-base font-semibold text-foreground">
-                    Lesson complete
+                    {t('ielts.learn.complete.done_title')}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     {next
-                      ? 'Keep the momentum going with the next one.'
-                      : 'You’ve reached the end of this skill.'}
+                      ? t('ielts.learn.complete.done_body_next')
+                      : t('ielts.learn.complete.done_body_end')}
                   </p>
                 </div>
               </div>
@@ -239,7 +271,7 @@ export default function IeltsLessonPage() {
                   className="shrink-0 gap-2"
                   render={<Link href={`/ielts/learn/${next.skill}/${next.slug}`} />}
                 >
-                  Next lesson
+                  {t('ielts.learn.complete.next_lesson')}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               ) : (
@@ -249,7 +281,7 @@ export default function IeltsLessonPage() {
                   render={<Link href={practiceHref(skillKey)} />}
                 >
                   <Dumbbell className="h-4 w-4" aria-hidden />
-                  Practise {trackLabel(skillKey)}
+                  {t('ielts.learn.complete.practise_skill', { skill: trackLabel(skillKey) })}
                 </Button>
               )}
             </div>
@@ -257,10 +289,10 @@ export default function IeltsLessonPage() {
             <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
               <div>
                 <p className="font-serif text-base font-semibold text-foreground">
-                  Finished reading?
+                  {t('ielts.learn.complete.cta_title')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Mark this lesson complete to track your progress and unlock your next step.
+                  {t('ielts.learn.complete.cta_body')}
                 </p>
               </div>
               <Button
@@ -270,7 +302,7 @@ export default function IeltsLessonPage() {
                 disabled={!mounted}
               >
                 <Check className="h-4 w-4" aria-hidden />
-                Mark complete
+                {t('ielts.learn.complete.mark')}
               </Button>
             </div>
           )}
@@ -278,7 +310,7 @@ export default function IeltsLessonPage() {
 
         {/* ── Prev / next within the skill ──────────────────────────── */}
         {prev || next ? (
-          <nav aria-label="Lesson navigation" className="mt-6 grid gap-3 sm:grid-cols-2">
+          <nav aria-label={t('ielts.learn.nav.aria')} className="mt-6 grid gap-3 sm:grid-cols-2">
             {prev ? (
               <Link
                 href={`/ielts/learn/${prev.skill}/${prev.slug}`}
@@ -287,7 +319,7 @@ export default function IeltsLessonPage() {
                 <ChevronLeft className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
                 <span className="min-w-0">
                   <span className="block text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-                    Previous
+                    {t('ielts.learn.nav.previous')}
                   </span>
                   <span className="block truncate text-sm font-medium text-foreground group-hover:text-primary">
                     {prev.title}
@@ -304,7 +336,7 @@ export default function IeltsLessonPage() {
               >
                 <span className="min-w-0">
                   <span className="block text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-                    Next
+                    {t('ielts.learn.nav.next')}
                   </span>
                   <span className="block truncate text-sm font-medium text-foreground group-hover:text-primary">
                     {next.title}
@@ -327,7 +359,7 @@ export default function IeltsLessonPage() {
             render={<Link href="/ielts/learn" />}
           >
             <Library className="h-4 w-4" aria-hidden />
-            All lessons
+            {t('ielts.learn.footer.all_lessons')}
           </Button>
           <Button
             variant="outline"
@@ -336,7 +368,7 @@ export default function IeltsLessonPage() {
             render={<Link href={practiceHref(skillKey)} />}
           >
             <Dumbbell className="h-4 w-4" aria-hidden />
-            Practise {trackLabel(skillKey)}
+            {t('ielts.learn.complete.practise_skill', { skill: trackLabel(skillKey) })}
             <ArrowRight className="h-3.5 w-3.5" />
           </Button>
         </div>

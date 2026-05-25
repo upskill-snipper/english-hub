@@ -31,6 +31,39 @@ import {
 import { lessonsForUnit, LESSON_COUNT } from '@/lib/ielts/lessons'
 import { getCompletedLessons } from '@/lib/ielts/store'
 import { IELTS_SKILLS, SKILL_META, type IeltsSkill } from '@/lib/ielts/types'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_LEARN_DICTIONARY } from '@/lib/i18n/dictionary-ielts-learn'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// ielts.learn.* keys live in the dictionary-ielts-learn shard, which isn't wired
+// into the global lookup() chain — resolve them here against the live locale,
+// falling back to the shared useT() for any cross-module ielts.* key. `vars`
+// interpolates {token} placeholders so phrases that wrap a dynamic value (lesson
+// counts, skill labels) stay translatable as a whole. Modelled on usePlanT()
+// in app/ielts/plan/page.tsx.
+type Vars = Record<string, string | number>
+type LearnTFn = (key: string, vars?: Vars) => string
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function useLearnT(): LearnTFn {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_LEARN_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── IELTS LEARN hub — the self-learning library ───────────────────────────
 // A scannable, encouraging library of every IELTS lesson, organised by skill
@@ -53,6 +86,7 @@ type LearnTrack = IeltsSkill | 'foundation'
 interface TrackMeta {
   id: LearnTrack
   label: string
+  /** i18n key (ielts.learn.track.blurb.*) resolved against the live locale at render. */
   blurb: string
   icon: typeof BookOpen
   colour: string
@@ -65,8 +99,7 @@ const TRACKS: TrackMeta[] = [
   {
     id: 'foundation',
     label: 'Foundation',
-    blurb:
-      'New to IELTS? Start here — the format, the band scale, and the core English the test assumes.',
+    blurb: 'ielts.learn.track.blurb.foundation',
     icon: Compass,
     colour: 'text-amber-400',
     bgColour: 'bg-amber-500/10',
@@ -75,8 +108,7 @@ const TRACKS: TrackMeta[] = [
   {
     id: 'listening',
     label: SKILL_META.listening.label,
-    blurb:
-      'Predict, follow the recording, and capture answers in the exact words within the word limit.',
+    blurb: 'ielts.learn.track.blurb.listening',
     icon: Headphones,
     colour: SKILL_META.listening.colour,
     bgColour: SKILL_META.listening.bgColour,
@@ -85,8 +117,7 @@ const TRACKS: TrackMeta[] = [
   {
     id: 'reading',
     label: SKILL_META.reading.label,
-    blurb:
-      'Skim, scan and tackle every question type — including True / False / Not Given — to time.',
+    blurb: 'ielts.learn.track.blurb.reading',
     icon: BookOpen,
     colour: SKILL_META.reading.colour,
     bgColour: SKILL_META.reading.bgColour,
@@ -95,7 +126,7 @@ const TRACKS: TrackMeta[] = [
   {
     id: 'writing',
     label: SKILL_META.writing.label,
-    blurb: 'Plan Task 1 and Task 2, then build coherence, range and accuracy the examiner rewards.',
+    blurb: 'ielts.learn.track.blurb.writing',
     icon: PenLine,
     colour: SKILL_META.writing.colour,
     bgColour: SKILL_META.writing.bgColour,
@@ -104,8 +135,7 @@ const TRACKS: TrackMeta[] = [
   {
     id: 'speaking',
     label: SKILL_META.speaking.label,
-    blurb:
-      'Give natural, extended answers across all three parts with fluency and clear pronunciation.',
+    blurb: 'ielts.learn.track.blurb.speaking',
     icon: Mic,
     colour: SKILL_META.speaking.colour,
     bgColour: SKILL_META.speaking.bgColour,
@@ -124,6 +154,7 @@ function lessonHref(lesson: Lesson): string {
 }
 
 export default function IeltsLearnHubPage() {
+  const t = useLearnT()
   const [mounted, setMounted] = useState(false)
   const [completed, setCompleted] = useState<Set<string>>(new Set())
   const [activeLevel, setActiveLevel] = useState<IeltsLevel | 'all'>('all')
@@ -189,7 +220,7 @@ export default function IeltsLearnHubPage() {
             className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to IELTS
+            {t('ielts.learn.back')}
           </Link>
           <div className="flex items-start gap-3">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
@@ -197,15 +228,13 @@ export default function IeltsLearnHubPage() {
             </span>
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-clay-500">
-                Self-study library
+                {t('ielts.learn.hub.eyebrow')}
               </p>
               <h1 className="mt-1 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-                Learn IELTS, step by step
+                {t('ielts.learn.hub.heading')}
               </h1>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Short, original lessons across every skill — from the very basics to a top band.
-                Work through a track in order, or pick the topic you need. Your progress saves on
-                this device.
+                {t('ielts.learn.hub.intro')}
               </p>
             </div>
           </div>
@@ -215,9 +244,11 @@ export default function IeltsLearnHubPage() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs text-muted-foreground">
               <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden />
               <span className="font-semibold text-foreground" suppressHydrationWarning>
-                {mounted ? totalDone : 0}
-              </span>{' '}
-              of {LESSON_COUNT} lessons done
+                {t('ielts.learn.hub.progress_pill', {
+                  done: mounted ? totalDone : 0,
+                  total: LESSON_COUNT,
+                })}
+              </span>
             </span>
           </div>
         </div>
@@ -225,19 +256,19 @@ export default function IeltsLearnHubPage() {
 
       <div className="mx-auto max-w-5xl space-y-10 px-4 py-8 sm:px-6">
         {/* ── Continue learning ───────────────────────────────────────── */}
-        <ContinueCard mounted={mounted} lesson={continueLesson} hasProgress={totalDone > 0} />
+        <ContinueCard t={t} mounted={mounted} lesson={continueLesson} hasProgress={totalDone > 0} />
 
         {/* ── Level filter ────────────────────────────────────────────── */}
         <section aria-labelledby="level-filter-heading">
           <h2 id="level-filter-heading" className="sr-only">
-            Filter lessons by level
+            {t('ielts.learn.filter.sr_heading')}
           </h2>
           <div className="flex flex-wrap items-center gap-2">
             <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Level
+              {t('ielts.learn.filter.label')}
             </span>
             <LevelChip
-              label="All levels"
+              label={t('ielts.learn.filter.all_levels')}
               active={activeLevel === 'all'}
               onClick={() => setActiveLevel('all')}
             />
@@ -260,6 +291,7 @@ export default function IeltsLearnHubPage() {
         {trackSections.map(({ track, visibleUnits, total, done }) => (
           <TrackSection
             key={track.id}
+            t={t}
             track={track}
             visibleUnits={visibleUnits}
             total={total}
@@ -277,10 +309,12 @@ export default function IeltsLearnHubPage() {
 // ── Continue learning card ──────────────────────────────────────────────────
 
 function ContinueCard({
+  t,
   mounted,
   lesson,
   hasProgress,
 }: {
+  t: LearnTFn
   mounted: boolean
   lesson: Lesson | undefined
   hasProgress: boolean
@@ -294,7 +328,7 @@ function ContinueCard({
   if (!lesson) {
     return (
       <section
-        aria-label="Continue learning"
+        aria-label={t('ielts.learn.continue.aria')}
         className="rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.06] p-6"
       >
         <div className="flex items-center gap-3">
@@ -303,10 +337,10 @@ function ContinueCard({
           </span>
           <div>
             <h2 className="font-serif text-lg font-semibold text-foreground">
-              You&rsquo;ve completed everything here
+              {t('ielts.learn.continue.done_title')}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Nice work. Put it into practice, or switch the level filter to find more.
+              {t('ielts.learn.continue.done_body')}
             </p>
           </div>
         </div>
@@ -319,13 +353,15 @@ function ContinueCard({
 
   return (
     <section
-      aria-label="Continue learning"
+      aria-label={t('ielts.learn.continue.aria')}
       className="rounded-2xl border border-primary/25 bg-gradient-to-br from-card via-card to-primary/[0.05] p-6 shadow-soft"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
-            {hasProgress ? 'Continue learning' : 'Start learning'}
+            {hasProgress
+              ? t('ielts.learn.continue.eyebrow')
+              : t('ielts.learn.continue.start_eyebrow')}
           </p>
           <h2 className="mt-1.5 truncate font-serif text-xl font-semibold tracking-tight text-foreground">
             {lesson.title}
@@ -337,7 +373,7 @@ function ContinueCard({
             <span className={cn('font-semibold capitalize', accent)}>{lesson.skill}</span>
             <span className="inline-flex items-center gap-1">
               <Clock className="h-3.5 w-3.5" aria-hidden />
-              {lesson.estMinutes} min
+              {t('ielts.learn.meta.minutes', { min: lesson.estMinutes })}
             </span>
             <Badge variant="outline" className="font-mono text-[10px] uppercase tracking-wide">
               {levelMeta(lesson.level).label}
@@ -350,7 +386,9 @@ function ContinueCard({
           render={<Link href={lessonHref(lesson)} />}
         >
           <PlayCircle className="h-5 w-5" aria-hidden />
-          {hasProgress ? 'Continue' : 'Begin'}
+          {hasProgress
+            ? t('ielts.learn.continue.btn_continue')
+            : t('ielts.learn.continue.btn_begin')}
         </Button>
       </div>
     </section>
@@ -391,6 +429,7 @@ function LevelChip({
 // ── One track (Foundation or a skill) with its units + lessons ──────────────
 
 function TrackSection({
+  t,
   track,
   visibleUnits,
   total,
@@ -399,6 +438,7 @@ function TrackSection({
   completed,
   levelFiltered,
 }: {
+  t: LearnTFn
   track: TrackMeta
   visibleUnits: UnitWithLessons[]
   total: number
@@ -428,16 +468,19 @@ function TrackSection({
             >
               {track.label}
             </h2>
-            <p className="text-xs text-muted-foreground">{track.blurb}</p>
+            <p className="text-xs text-muted-foreground">{t(track.blurb)}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <span
             className="font-mono text-xs text-muted-foreground"
             suppressHydrationWarning
-            aria-label={`${mounted ? done : 0} of ${total} lessons completed`}
+            aria-label={t('ielts.learn.track.progress_aria', {
+              done: mounted ? done : 0,
+              total,
+            })}
           >
-            {mounted ? done : 0} / {total} done
+            {t('ielts.learn.track.progress', { done: mounted ? done : 0, total })}
           </span>
           <Button
             variant="ghost"
@@ -445,7 +488,7 @@ function TrackSection({
             className={cn('h-8 gap-1.5 px-2.5', track.colour)}
             render={<Link href={track.practiceHref} />}
           >
-            Practise
+            {t('ielts.learn.track.practise')}
             <ArrowRight className="h-3.5 w-3.5" />
           </Button>
         </div>
@@ -462,8 +505,8 @@ function TrackSection({
       {visibleUnits.length === 0 ? (
         <p className="mt-4 rounded-xl border border-dashed border-border/60 bg-card/40 px-4 py-6 text-center text-sm text-muted-foreground">
           {levelFiltered
-            ? 'No lessons at this level in this track — try another level.'
-            : 'Lessons coming soon.'}
+            ? t('ielts.learn.track.empty_filtered')
+            : t('ielts.learn.track.empty_soon')}
         </p>
       ) : (
         <div className="mt-4 space-y-5">
@@ -476,7 +519,11 @@ function TrackSection({
               <ul className="grid gap-2 sm:grid-cols-2">
                 {lessons.map((lesson) => (
                   <li key={lesson.id}>
-                    <LessonRow lesson={lesson} complete={mounted && completed.has(lesson.id)} />
+                    <LessonRow
+                      t={t}
+                      lesson={lesson}
+                      complete={mounted && completed.has(lesson.id)}
+                    />
                   </li>
                 ))}
               </ul>
@@ -490,7 +537,7 @@ function TrackSection({
 
 // ── A single lesson link row ────────────────────────────────────────────────
 
-function LessonRow({ lesson, complete }: { lesson: Lesson; complete: boolean }) {
+function LessonRow({ t, lesson, complete }: { t: LearnTFn; lesson: Lesson; complete: boolean }) {
   return (
     <Link
       href={lessonHref(lesson)}
@@ -501,7 +548,10 @@ function LessonRow({ lesson, complete }: { lesson: Lesson; complete: boolean }) 
     >
       <span className="mt-0.5 shrink-0" suppressHydrationWarning>
         {complete ? (
-          <CheckCircle2 className="h-5 w-5 text-emerald-500" aria-label="Completed" />
+          <CheckCircle2
+            className="h-5 w-5 text-emerald-500"
+            aria-label={t('ielts.learn.lesson.completed_aria')}
+          />
         ) : (
           <Circle
             className="h-5 w-5 text-muted-foreground/40 group-hover:text-muted-foreground/70"
@@ -516,7 +566,7 @@ function LessonRow({ lesson, complete }: { lesson: Lesson; complete: boolean }) 
           </span>
           <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[11px] text-muted-foreground">
             <Clock className="h-3 w-3" aria-hidden />
-            {lesson.estMinutes}m
+            {t('ielts.learn.meta.minutes_short', { min: lesson.estMinutes })}
           </span>
         </span>
         <span className="mt-0.5 line-clamp-2 block text-xs leading-relaxed text-muted-foreground">

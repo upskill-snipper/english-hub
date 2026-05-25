@@ -20,6 +20,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Clock, AlertTriangle } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useMockT } from '../use-mock-t'
 
 interface CountdownTimerProps {
   /** Total budget for this section, in seconds. Changing it resets the clock. */
@@ -54,6 +55,7 @@ export default function CountdownTimer({
   criticalAt = 60,
   className,
 }: CountdownTimerProps) {
+  const t = useMockT()
   const [remaining, setRemaining] = useState(seconds)
 
   // Keep the latest onExpire without re-arming the interval when it changes.
@@ -113,7 +115,7 @@ export default function CountdownTimer({
       <span aria-hidden="true">{formatClock(remaining)}</span>
       {/* Polite, low-frequency announcement for assistive tech. */}
       <span className="sr-only" role="timer" aria-live="off">
-        {formatClock(remaining)} remaining
+        {t('ielts.mock.timer.remaining', { time: formatClock(remaining) })}
       </span>
     </div>
   )

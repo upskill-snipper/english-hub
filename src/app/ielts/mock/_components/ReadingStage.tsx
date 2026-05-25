@@ -19,6 +19,7 @@ import { objectiveToBand } from '@/lib/ielts/bands'
 import type { ObjectiveResult, AnswerMap } from '../mock-types'
 import { countCorrect, countAnswered } from '../marking'
 import { SECTION_SECONDS } from '../mock-types'
+import { useMockT } from '../use-mock-t'
 import StageHeader from './StageHeader'
 import { ObjectiveQuestionList } from './ObjectiveQuestions'
 
@@ -33,6 +34,7 @@ export default function ReadingStage({
   stepLabel: string
   onComplete: (result: ObjectiveResult) => void
 }) {
+  const t = useMockT()
   const [answers, setAnswers] = useState<AnswerMap>({})
   const finishedRef = useRef(false)
 
@@ -72,14 +74,14 @@ export default function ReadingStage({
   return (
     <div className="min-h-screen bg-background">
       <StageHeader
-        title="Section 2 of 4 · Reading"
-        stepLabel={`${stepLabel} · ${answered}/${total} answered`}
+        title={t('ielts.mock.stage.title', { n: 2, skill: 'Reading' })}
+        stepLabel={t('ielts.mock.stage.step_answered', { skill: stepLabel, answered, total })}
         seconds={SECTION_SECONDS.reading}
         onExpire={finish}
         action={
           <Button size="sm" onClick={finish}>
             <Check className="size-4" />
-            Submit Reading
+            {t('ielts.mock.reading.submit')}
           </Button>
         }
       />
@@ -89,10 +91,7 @@ export default function ReadingStage({
           <BookOpen className="mt-0.5 size-5 shrink-0 text-emerald-500" aria-hidden="true" />
           <div className="text-sm text-muted-foreground">
             <p className="font-semibold text-foreground">{test.title}</p>
-            <p className="mt-1">
-              Read each passage and answer all {total} questions in 60 minutes. Manage your own time
-              across the passages. Answers are marked automatically on submit or at zero.
-            </p>
+            <p className="mt-1">{t('ielts.mock.reading.intro', { total })}</p>
           </div>
         </div>
 
@@ -102,7 +101,7 @@ export default function ReadingStage({
               <div className="lg:sticky lg:top-20 lg:self-start">
                 <div className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
                   <span className="mb-3 inline-block rounded-full border border-border/60 px-2.5 py-0.5 text-[0.7rem] font-medium text-muted-foreground">
-                    Passage {pIndex + 1}
+                    {t('ielts.mock.reading.passage', { n: pIndex + 1 })}
                   </span>
                   <h2 className="font-serif text-xl font-medium tracking-tight">{passage.title}</h2>
                   <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/90">
@@ -126,13 +125,13 @@ export default function ReadingStage({
         <div className="mt-10 rounded-2xl border border-border/60 bg-card p-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">
-              You have answered{' '}
-              <span className="font-semibold tabular-nums text-foreground">{answered}</span> of{' '}
-              {total}. Submitting moves you on to Writing and you cannot return.
+              {t('ielts.mock.reading.footer_lead')}{' '}
+              <span className="font-semibold tabular-nums text-foreground">{answered}</span>{' '}
+              {t('ielts.mock.reading.footer_tail', { total })}
             </p>
             <Button size="lg" onClick={finish}>
               <Check className="size-4" />
-              Finish Reading &amp; start Writing
+              {t('ielts.mock.reading.finish')}
             </Button>
           </div>
         </div>

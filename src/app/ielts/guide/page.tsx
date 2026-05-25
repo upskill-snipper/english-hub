@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   IELTS_OVERVIEW,
@@ -61,8 +62,11 @@ const SKILL_ICON: Record<IeltsSkill, typeof Headphones> = {
 const sittingHours = Math.floor(SITTING_MINUTES / 60)
 const sittingMins = SITTING_MINUTES % 60
 
-// FAQ content — surfaced both visually and as FAQ schema. Answers are assembled
-// from exam-facts so the structured data never drifts from the page.
+// FAQ content for the FAQPageJsonLd structured data — kept English for SEO
+// (search engines index the canonical English page). Answers are assembled from
+// exam-facts so the structured data never drifts from the reference figures.
+// The visible accordion uses a locale-aware copy built inside the component:
+// translated connective phrasing wrapped around the same exam-facts values.
 const HARDEST_LABEL = SKILL_META[HARDEST_SKILL].label
 const FAQS: { question: string; answer: string }[] = [
   {
@@ -88,9 +92,141 @@ const FAQS: { question: string; answer: string }[] = [
   },
 ]
 
-export default function IeltsGuidePage() {
+export default async function IeltsGuidePage() {
   const academicPct = Math.round(IELTS_OVERVIEW.academicShare * 100)
   const generalPct = Math.round(IELTS_OVERVIEW.generalTrainingShare * 100)
+
+  // Shared interpolation values reused by the localised FAQ (and mirroring the
+  // English FAQS schema above). These are exam-facts figures, never translated.
+  const sittingDuration = `${sittingHours}h${sittingMins.toString().padStart(2, '0')}`
+  const speakingMins = SECTION_FACTS.find((s) => s.skill === 'speaking')?.timeMinutes ?? 14
+  const hardestMean = SECTION_FACTS.find((s) => s.skill === HARDEST_SKILL)?.meanBandAcademic ?? ''
+
+  // ── Resolve all UI chrome up front (server component: no await inside JSX
+  // .map()). Factual values are spliced in from exam-facts at render time. ──
+
+  // Back link + hero.
+  const backLabel = await t('ielts.guide.back')
+  const heroEyebrow = await t('ielts.guide.hero.eyebrow')
+  const heroTitle = await t('ielts.guide.hero.title')
+  const heroIntro = await t('ielts.guide.hero.intro')
+  const heroCtaDiagnostic = await t('ielts.guide.hero.cta_diagnostic')
+  const heroCtaHub = await t('ielts.guide.hero.cta_hub')
+  const heroDisclaimer = await t('ielts.guide.hero.disclaimer')
+
+  // 1. Overview.
+  const overviewEyebrow = await t('ielts.guide.overview.eyebrow')
+  const overviewTitle = await t('ielts.guide.overview.title')
+  const overviewP1Lead = await t('ielts.guide.overview.p1_lead')
+  const overviewP1Mid = await t('ielts.guide.overview.p1_mid')
+  const overviewP1Tail = await t('ielts.guide.overview.p1_tail')
+  const overviewP2Lead = await t('ielts.guide.overview.p2_lead')
+  const overviewP2Years = await t('ielts.guide.overview.p2_years')
+  const overviewP3Lead = await t('ielts.guide.overview.p3_lead')
+  const overviewP3AcademicOpen = await t('ielts.guide.overview.p3_academic_open')
+  const overviewP3AcademicClose = await t('ielts.guide.overview.p3_academic_close')
+  const overviewP3GeneralOpen = await t('ielts.guide.overview.p3_general_open')
+  const overviewP3GeneralClose = await t('ielts.guide.overview.p3_general_close')
+  const statYrs = await t('ielts.guide.overview.stat.yrs')
+  const overviewStats = [
+    {
+      icon: Globe2,
+      value: IELTS_OVERVIEW.testsPerYear,
+      label: await t('ielts.guide.overview.stat.tests_per_year'),
+    },
+    {
+      icon: ListChecks,
+      value: `${IELTS_OVERVIEW.trfValidityYears} ${statYrs}`,
+      label: await t('ielts.guide.overview.stat.trf_validity'),
+    },
+    {
+      icon: BookOpen,
+      value: `${academicPct}%`,
+      label: await t('ielts.guide.overview.stat.take_academic'),
+    },
+    {
+      icon: ClipboardList,
+      value: `${generalPct}%`,
+      label: await t('ielts.guide.overview.stat.take_general'),
+    },
+  ]
+
+  // 2. The four sections.
+  const sectionsEyebrow = await t('ielts.guide.sections.eyebrow')
+  const sectionsTitle = await t('ielts.guide.sections.title')
+  const sectionsIntro = await t('ielts.guide.sections.intro')
+  const sectionsMinutes = await t('ielts.guide.sections.minutes')
+  const sectionsMean = await t('ielts.guide.sections.mean')
+  const sittingLead = await t('ielts.guide.sections.sitting_lead')
+  const sittingTail = await t('ielts.guide.sections.sitting_tail')
+
+  // 3. Scoring.
+  const scoringEyebrow = await t('ielts.guide.scoring.eyebrow')
+  const scoringTitle = await t('ielts.guide.scoring.title')
+  const scoringIntroLead = await t('ielts.guide.scoring.intro_lead')
+  const scoringColBand = await t('ielts.guide.scoring.col.band')
+  const scoringColLevel = await t('ielts.guide.scoring.col.level')
+  const scoringColMeaning = await t('ielts.guide.scoring.col.meaning')
+
+  // 4. Where people struggle.
+  const struggleEyebrow = await t('ielts.guide.struggle.eyebrow')
+  const struggleTitle = await t('ielts.guide.struggle.title')
+  const struggleCalloutLead = await t('ielts.guide.struggle.callout_lead')
+  const struggleCalloutTail = await t('ielts.guide.struggle.callout_tail')
+  const struggleCtaWriting = await t('ielts.guide.struggle.cta_writing')
+  const struggleCtaLearn = await t('ielts.guide.struggle.cta_learn')
+  const struggleBadgeHardest = await t('ielts.guide.struggle.badge_hardest')
+
+  // 5. Typical requirements.
+  const requirementsEyebrow = await t('ielts.guide.requirements.eyebrow')
+  const requirementsTitle = await t('ielts.guide.requirements.title')
+  const requirementsIntroLead = await t('ielts.guide.requirements.intro_lead')
+  const requirementsIntroEmphasis = await t('ielts.guide.requirements.intro_emphasis')
+  const requirementsIntroTail = await t('ielts.guide.requirements.intro_tail')
+  const requirementsColWhere = await t('ielts.guide.requirements.col.where')
+  const requirementsColPurpose = await t('ielts.guide.requirements.col.purpose')
+  const requirementsColMin = await t('ielts.guide.requirements.col.min')
+
+  // 6. The process.
+  const processEyebrow = await t('ielts.guide.process.eyebrow')
+  const processTitle = await t('ielts.guide.process.title')
+
+  // FAQ — localised accordion copy. Each answer = translated connective
+  // fragment(s) + the same exam-facts figures used by the English schema above.
+  const faqEyebrow = await t('ielts.guide.faq.eyebrow')
+  const faqTitle = await t('ielts.guide.faq.title')
+  const faqList: { question: string; answer: string }[] = [
+    {
+      question: await t('ielts.guide.faq.q1.question'),
+      answer: `${SCORING_RULE} ${await t('ielts.guide.faq.q1.answer_context')}`,
+    },
+    {
+      question: await t('ielts.guide.faq.q2.question'),
+      answer: `${await t('ielts.guide.faq.q2.answer_a')} ${sittingDuration} (${SITTING_MINUTES} ${await t(
+        'ielts.guide.faq.q2.minutes_word',
+      )}) ${await t('ielts.guide.faq.q2.answer_b')} ${speakingMins} ${await t(
+        'ielts.guide.faq.q2.answer_c',
+      )}`,
+    },
+    {
+      question: await t('ielts.guide.faq.q3.question'),
+      answer: `${HARDEST_LABEL} ${await t(
+        'ielts.guide.faq.q3.answer_a',
+      )} ${hardestMean}. ${ONE_SKILL_RETAKE_NOTE}`,
+    },
+    {
+      question: await t('ielts.guide.faq.q4.question'),
+      answer: `${await t('ielts.guide.faq.q4.answer_a')} ${IELTS_OVERVIEW.trfValidityYears} ${await t(
+        'ielts.guide.faq.q4.years_word',
+      )}. ${await t('ielts.guide.faq.q4.answer_b')} ${IELTS_OVERVIEW.acceptedBy}.`,
+    },
+  ]
+
+  // Closing CTA.
+  const ctaHeading = await t('ielts.guide.cta.heading')
+  const ctaBody = await t('ielts.guide.cta.body')
+  const ctaCtaDiagnostic = await t('ielts.guide.cta.cta_diagnostic')
+  const ctaCtaLearn = await t('ielts.guide.cta.cta_learn')
 
   return (
     <main className="min-h-screen bg-background">
@@ -111,22 +247,20 @@ export default function IeltsGuidePage() {
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to IELTS
+          {backLabel}
         </Button>
 
         {/* ── Hero ──────────────────────────────────────────────────── */}
         <section className="mt-4 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.05] p-6 sm:p-10">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
             <ScrollText className="size-3.5" />
-            IELTS reference
+            {heroEyebrow}
           </span>
           <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-5xl">
-            The complete IELTS exam guide
+            {heroTitle}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Everything you need to understand the test before you book it: the four sections and
-            their timings, how the 0–9 band scale is scored, where candidates lose marks, and the
-            step-by-step process from registration to results.
+            {heroIntro}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button
@@ -135,7 +269,7 @@ export default function IeltsGuidePage() {
               render={<Link href="/ielts/diagnostic" />}
             >
               <Target className="size-4" />
-              Take the free diagnostic
+              {heroCtaDiagnostic}
             </Button>
             <Button
               variant="outline"
@@ -143,57 +277,43 @@ export default function IeltsGuidePage() {
               className="h-12 gap-2 px-7 text-base"
               render={<Link href="/ielts" />}
             >
-              Explore the IELTS hub
+              {heroCtaHub}
               <ArrowRight className="size-4" />
             </Button>
           </div>
           <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground/80">
-            An independent, factual reference. The English Hub is not affiliated with the official
-            IELTS test owners. Band requirements are set per institution and may change — always
-            confirm the current requirement with your university, employer or immigration authority.
+            {heroDisclaimer}
           </p>
         </section>
 
         {/* ── 1. Overview ───────────────────────────────────────────── */}
         <section aria-labelledby="overview-heading" className="mt-14">
-          <SectionHeading id="overview-heading" eyebrow="The basics" title="What IELTS is" />
+          <SectionHeading id="overview-heading" eyebrow={overviewEyebrow} title={overviewTitle} />
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
             <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
               <p>
-                The International English Language Testing System (IELTS) is the world&rsquo;s most
-                widely recognised English-proficiency test, taken{' '}
-                <strong className="text-foreground">{IELTS_OVERVIEW.testsPerYear}</strong> times a
-                year. It is jointly owned by {IELTS_OVERVIEW.ownedBy}, and accepted by{' '}
+                {overviewP1Lead}{' '}
+                <strong className="text-foreground">{IELTS_OVERVIEW.testsPerYear}</strong>{' '}
+                {overviewP1Mid} {IELTS_OVERVIEW.ownedBy}
+                {overviewP1Tail}{' '}
                 <strong className="text-foreground">{IELTS_OVERVIEW.acceptedBy}</strong>.
               </p>
               <p>
-                It assesses four skills — Listening, Reading, Writing and Speaking — each reported
-                on a <strong className="text-foreground">0–9 band scale</strong>. There is no pass
-                or fail: you receive a band for every skill and an overall band, and each
-                institution decides the minimum it will accept. Your result is issued as a Test
-                Report Form (TRF), valid for{' '}
-                <strong className="text-foreground">{IELTS_OVERVIEW.trfValidityYears} years</strong>
+                {overviewP2Lead}{' '}
+                <strong className="text-foreground">
+                  {IELTS_OVERVIEW.trfValidityYears} {overviewP2Years}
+                </strong>
                 .
               </p>
               <p>
-                There are two versions. <strong className="text-foreground">Academic</strong>{' '}
-                (around {academicPct}% of test takers) is for university study and professional
-                registration; <strong className="text-foreground">General Training</strong> (around{' '}
-                {generalPct}%) is for work and migration. Listening and Speaking are identical
-                across both; only Reading and Writing differ.
+                {overviewP3Lead} <strong className="text-foreground">Academic</strong>{' '}
+                {overviewP3AcademicOpen} {academicPct}% {overviewP3AcademicClose}{' '}
+                <strong className="text-foreground">General Training</strong>{' '}
+                {overviewP3GeneralOpen} {generalPct}%{overviewP3GeneralClose}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3 self-start">
-              {[
-                { icon: Globe2, value: IELTS_OVERVIEW.testsPerYear, label: 'tests sat per year' },
-                {
-                  icon: ListChecks,
-                  value: `${IELTS_OVERVIEW.trfValidityYears} yrs`,
-                  label: 'TRF validity',
-                },
-                { icon: BookOpen, value: `${academicPct}%`, label: 'take Academic' },
-                { icon: ClipboardList, value: `${generalPct}%`, label: 'take General Training' },
-              ].map(({ icon: Icon, value, label }) => (
+              {overviewStats.map(({ icon: Icon, value, label }) => (
                 <div
                   key={label}
                   className="rounded-2xl border border-border/60 bg-card p-5 shadow-soft"
@@ -209,14 +329,9 @@ export default function IeltsGuidePage() {
 
         {/* ── 2. The four sections ──────────────────────────────────── */}
         <section aria-labelledby="sections-heading" className="mt-16">
-          <SectionHeading
-            id="sections-heading"
-            eyebrow="Test structure"
-            title="The four sections"
-          />
+          <SectionHeading id="sections-heading" eyebrow={sectionsEyebrow} title={sectionsTitle} />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Each module is timed and marked independently. The published means below are the
-            real-world Academic averages — useful context for setting a realistic target.
+            {sectionsIntro}
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {SECTION_FACTS.map((section) => {
@@ -240,12 +355,13 @@ export default function IeltsGuidePage() {
                         </h3>
                         <p className="flex items-center gap-1 text-xs text-muted-foreground">
                           <Clock className="size-3" aria-hidden />
-                          {section.timeMinutes} minutes
+                          {section.timeMinutes} {sectionsMinutes}
                         </p>
                       </div>
                     </div>
                     <Badge variant="secondary" className="shrink-0">
-                      mean ~{section.meanBandAcademic}
+                      {sectionsMean}
+                      {section.meanBandAcademic}
                     </Badge>
                   </div>
                   <p className="mt-4 text-sm font-medium text-foreground">
@@ -261,29 +377,27 @@ export default function IeltsGuidePage() {
           <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary/[0.04] p-5">
             <Clock className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
             <p className="text-sm leading-relaxed text-foreground">
-              Listening, Reading and Writing are sat back-to-back in one sitting of{' '}
-              <strong>
-                {sittingHours}h{sittingMins.toString().padStart(2, '0')}
-              </strong>{' '}
-              ({SITTING_MINUTES} minutes) with no breaks. Speaking is held separately — the same
-              day, or up to seven days apart.
+              {sittingLead} <strong>{sittingDuration}</strong> ({SITTING_MINUTES} {sectionsMinutes}){' '}
+              {sittingTail}
             </p>
           </div>
         </section>
 
         {/* ── 3. Scoring ────────────────────────────────────────────── */}
         <section aria-labelledby="scoring-heading" className="mt-16">
-          <SectionHeading id="scoring-heading" eyebrow="How it's marked" title="The band scale" />
+          <SectionHeading id="scoring-heading" eyebrow={scoringEyebrow} title={scoringTitle} />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Every skill is scored from 0 to 9 against the same descriptors. {SCORING_RULE}
+            {scoringIntroLead} {SCORING_RULE}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
             <table className="w-full border-collapse text-left">
               <thead>
                 <tr className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-3 font-semibold">Band</th>
-                  <th className="px-4 py-3 font-semibold">Level</th>
-                  <th className="hidden px-4 py-3 font-semibold sm:table-cell">What it means</th>
+                  <th className="px-4 py-3 font-semibold">{scoringColBand}</th>
+                  <th className="px-4 py-3 font-semibold">{scoringColLevel}</th>
+                  <th className="hidden px-4 py-3 font-semibold sm:table-cell">
+                    {scoringColMeaning}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -312,25 +426,20 @@ export default function IeltsGuidePage() {
 
         {/* ── 4. Where people struggle ──────────────────────────────── */}
         <section aria-labelledby="struggle-heading" className="mt-16">
-          <SectionHeading
-            id="struggle-heading"
-            eyebrow="Common mistakes"
-            title="Where candidates lose marks"
-          />
+          <SectionHeading id="struggle-heading" eyebrow={struggleEyebrow} title={struggleTitle} />
           <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-violet-500/20 bg-violet-500/[0.05] p-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
               <PenLine className="mt-0.5 size-5 shrink-0 text-violet-400" aria-hidden />
               <p className="text-sm leading-relaxed text-foreground">
-                <strong>{HARDEST_LABEL}</strong> is the lowest-scoring module for most candidates
-                worldwide — and lowest of all for Gulf learners (the published Academic mean is only
-                ~{SECTION_FACTS.find((s) => s.skill === HARDEST_SKILL)?.meanBandAcademic}). If you
-                only have time to fix one thing, fix this.
+                <strong>{HARDEST_LABEL}</strong> {struggleCalloutLead}
+                {hardestMean}
+                {struggleCalloutTail}
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-              <Button render={<Link href="/ielts/writing" />}>Practise Writing</Button>
+              <Button render={<Link href="/ielts/writing" />}>{struggleCtaWriting}</Button>
               <Button variant="outline" render={<Link href="/ielts/learn" />}>
-                Study the skills
+                {struggleCtaLearn}
               </Button>
             </div>
           </div>
@@ -357,7 +466,7 @@ export default function IeltsGuidePage() {
                     </h3>
                     {isHardest ? (
                       <Badge variant="secondary" className="ml-auto">
-                        hardest
+                        {struggleBadgeHardest}
                       </Badge>
                     ) : null}
                   </div>
@@ -382,21 +491,21 @@ export default function IeltsGuidePage() {
         <section aria-labelledby="requirements-heading" className="mt-16">
           <SectionHeading
             id="requirements-heading"
-            eyebrow="What you'll need"
-            title="Typical band requirements"
+            eyebrow={requirementsEyebrow}
+            title={requirementsTitle}
           />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            These are indicative ranges only. Every university, employer and immigration authority{' '}
-            <strong className="text-foreground">sets its own minimum</strong> — and IELTS itself has
-            no pass/fail. Always check the exact requirement for your specific course or visa.
+            {requirementsIntroLead}{' '}
+            <strong className="text-foreground">{requirementsIntroEmphasis}</strong>{' '}
+            {requirementsIntroTail}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
             <table className="w-full border-collapse text-left">
               <thead>
                 <tr className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-3 font-semibold">Where</th>
-                  <th className="px-4 py-3 font-semibold">Purpose</th>
-                  <th className="px-4 py-3 font-semibold">Typical minimum</th>
+                  <th className="px-4 py-3 font-semibold">{requirementsColWhere}</th>
+                  <th className="px-4 py-3 font-semibold">{requirementsColPurpose}</th>
+                  <th className="px-4 py-3 font-semibold">{requirementsColMin}</th>
                 </tr>
               </thead>
               <tbody>
@@ -419,7 +528,7 @@ export default function IeltsGuidePage() {
 
         {/* ── 6. The process ────────────────────────────────────────── */}
         <section aria-labelledby="process-heading" className="mt-16">
-          <SectionHeading id="process-heading" eyebrow="Step by step" title="The test process" />
+          <SectionHeading id="process-heading" eyebrow={processEyebrow} title={processTitle} />
           <ol className="mt-8 space-y-4">
             {PROCESS_STEPS.map((step, i) => (
               <li
@@ -446,9 +555,9 @@ export default function IeltsGuidePage() {
 
         {/* ── FAQ ───────────────────────────────────────────────────── */}
         <section aria-labelledby="faq-heading" className="mt-16">
-          <SectionHeading id="faq-heading" eyebrow="Quick answers" title="IELTS FAQs" />
+          <SectionHeading id="faq-heading" eyebrow={faqEyebrow} title={faqTitle} />
           <div className="mt-8 space-y-3">
-            {FAQS.map((faq) => (
+            {faqList.map((faq) => (
               <details
                 key={faq.question}
                 className="group rounded-2xl border border-border/60 bg-card p-5 [&_summary]:cursor-pointer"
@@ -470,11 +579,10 @@ export default function IeltsGuidePage() {
               id="cta-heading"
               className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Know the exam. Now build the band.
+              {ctaHeading}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Start with a free diagnostic to find your weakest skill, then follow a personalised
-              path of practice and instant AI feedback across all four sections.
+              {ctaBody}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -483,7 +591,7 @@ export default function IeltsGuidePage() {
                 render={<Link href="/ielts/diagnostic" />}
               >
                 <Target className="size-4" />
-                Take the free diagnostic
+                {ctaCtaDiagnostic}
               </Button>
               <Button
                 variant="outline"
@@ -491,7 +599,7 @@ export default function IeltsGuidePage() {
                 className="h-12 gap-2 px-7 text-base"
                 render={<Link href="/ielts/learn" />}
               >
-                Study the skills
+                {ctaCtaLearn}
                 <ArrowRight className="size-4" />
               </Button>
             </div>

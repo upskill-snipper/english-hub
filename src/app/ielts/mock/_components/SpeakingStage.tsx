@@ -33,6 +33,7 @@ import { genId, saveAttempt } from '@/lib/ielts/store'
 
 import type { TaskResult } from '../mock-types'
 import { SECTION_SECONDS } from '../mock-types'
+import { useMockT, type TFn } from '../use-mock-t'
 import StageHeader from './StageHeader'
 import { formatClock } from './CountdownTimer'
 
@@ -69,6 +70,7 @@ export default function SpeakingStage({
   stepLabel,
   onComplete,
 }: SpeakingStageProps) {
+  const t = useMockT()
   const [t1, setT1] = useState('')
   const [t2, setT2] = useState('')
   const [t3, setT3] = useState('')
@@ -176,9 +178,7 @@ export default function SpeakingStage({
     void (async () => {
       // Not enough typed to score (API floor is 20 chars) → record only.
       if (combined.trim().length < 20) {
-        recordSubmitted(
-          'Your spoken answers were captured, but there was too little typed text to generate an AI band. Type a little of what you said next time for a predicted Speaking band.',
-        )
+        recordSubmitted(t('ielts.mock.speaking.note_too_short'))
         return
       }
 
@@ -195,17 +195,13 @@ export default function SpeakingStage({
         })
 
         if (!res.ok) {
-          recordSubmitted(
-            'Your spoken answers were recorded, but an AI band could not be generated this time (the feedback service may be unavailable, over its daily limit, or require a Premium subscription).',
-          )
+          recordSubmitted(t('ielts.mock.speaking.note_service_unavailable'))
           return
         }
 
         const data = (await res.json().catch(() => null)) as { feedback?: unknown } | null
         if (!data || !isTaskFeedback(data.feedback)) {
-          recordSubmitted(
-            'Your spoken answers were recorded, but the AI feedback was unreadable this time.',
-          )
+          recordSubmitted(t('ielts.mock.speaking.note_unreadable'))
           return
         }
 
@@ -228,18 +224,16 @@ export default function SpeakingStage({
         }
         onComplete({ skill: 'speaking', status: 'scored', band, criteria })
       } catch {
-        recordSubmitted(
-          'Your spoken answers were recorded, but the network request for AI feedback failed.',
-        )
+        recordSubmitted(t('ielts.mock.speaking.note_network_failed'))
       }
     })()
-  }, [clearSub, part1, part2, part3, onComplete])
+  }, [clearSub, part1, part2, part3, onComplete, t])
 
   return (
     <div className="min-h-screen bg-background">
       <StageHeader
-        title="Section 4 of 4 · Speaking"
-        stepLabel={`${stepLabel} · Parts 1–3`}
+        title={t('ielts.mock.stage.title', { n: 4, skill: 'Speaking' })}
+        stepLabel={t('ielts.mock.stage.step_speaking', { skill: stepLabel })}
         seconds={SECTION_SECONDS.speaking}
         onExpire={finish}
         paused={submitting}
@@ -250,7 +244,7 @@ export default function SpeakingStage({
             ) : (
               <Check className="size-4" />
             )}
-            Submit Speaking
+            {t('ielts.mock.speaking.submit')}
           </Button>
         }
       />
@@ -259,21 +253,16 @@ export default function SpeakingStage({
         <div className="mb-6 flex items-start gap-3 rounded-2xl border border-rose-500/25 bg-rose-500/[0.04] p-4">
           <Mic className="mt-0.5 size-5 shrink-0 text-rose-400" aria-hidden="true" />
           <div className="text-sm text-muted-foreground">
-            <p className="font-semibold text-foreground">
-              Speaking — about 14 minutes, three parts
-            </p>
-            <p className="mt-1">
-              Answer each part aloud as you would with an examiner. Recording is optional and only
-              for your own review — it is never uploaded. To get a predicted band, type a little of
-              what you said in each box; the text is what we assess in this version.
-            </p>
+            <p className="font-semibold text-foreground">{t('ielts.mock.speaking.intro_title')}</p>
+            <p className="mt-1">{t('ielts.mock.speaking.intro_body')}</p>
           </div>
         </div>
 
         <div className="space-y-8">
           {/* Part 1 */}
           <PartBlock
-            badge="Part 1 · Interview"
+            t={t}
+            badge={t('ielts.mock.speaking.badge_part1')}
             title={part1.title}
             value={t1}
             onChange={setT1}
@@ -293,7 +282,8 @@ export default function SpeakingStage({
 
           {/* Part 2 — long turn with prep/speak sub-timer */}
           <PartBlock
-            badge="Part 2 · Long turn (cue card)"
+            t={t}
+            badge={t('ielts.mock.speaking.badge_part2')}
             title={part2.title}
             value={t2}
             onChange={setT2}
@@ -317,28 +307,29 @@ export default function SpeakingStage({
                   className={phase === 'speaking' ? 'size-4 text-rose-400' : 'size-4 text-sky-400'}
                 />
                 <span className="font-medium text-foreground">
-                  {phase === 'idle' &&
-                    'You get 1 minute to prepare, then up to 2 minutes to speak.'}
-                  {phase === 'prep' && `Preparing — ${formatClock(subLeft)}`}
-                  {phase === 'speaking' && `Speaking — ${formatClock(subLeft)}`}
-                  {phase === 'done' && 'Long turn finished.'}
+                  {phase === 'idle' && t('ielts.mock.speaking.longturn_idle')}
+                  {phase === 'prep' &&
+                    t('ielts.mock.speaking.longturn_prep', { time: formatClock(subLeft) })}
+                  {phase === 'speaking' &&
+                    t('ielts.mock.speaking.longturn_speaking', { time: formatClock(subLeft) })}
+                  {phase === 'done' && t('ielts.mock.speaking.longturn_done')}
                 </span>
               </div>
               <div className="ml-auto flex gap-2">
                 {phase === 'idle' && (
                   <Button type="button" size="sm" variant="outline" onClick={startPrep}>
                     <Timer className="size-3.5" />
-                    Start preparation
+                    {t('ielts.mock.speaking.start_prep')}
                   </Button>
                 )}
                 {phase === 'prep' && (
                   <Button type="button" size="sm" onClick={startSpeakingNow}>
-                    Start speaking now
+                    {t('ielts.mock.speaking.start_speaking')}
                   </Button>
                 )}
                 {(phase === 'prep' || phase === 'speaking') && (
                   <Button type="button" size="sm" variant="ghost" onClick={stopLongTurn}>
-                    Stop
+                    {t('ielts.mock.speaking.stop')}
                   </Button>
                 )}
               </div>
@@ -347,7 +338,8 @@ export default function SpeakingStage({
 
           {/* Part 3 */}
           <PartBlock
-            badge="Part 3 · Discussion"
+            t={t}
+            badge={t('ielts.mock.speaking.badge_part3')}
             title={part3.title}
             value={t3}
             onChange={setT3}
@@ -369,7 +361,7 @@ export default function SpeakingStage({
         {submitting && (
           <div className="mt-6 flex items-center gap-2 rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
             <Loader2 className="size-4 animate-spin text-primary" />
-            Assessing your speaking… this can take a few seconds. Please wait.
+            {t('ielts.mock.speaking.marking_notice')}
           </div>
         )}
 
@@ -378,8 +370,9 @@ export default function SpeakingStage({
             <p className="flex items-start gap-2 text-sm text-muted-foreground">
               <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
               <span>
-                Submitting finishes the mock and takes you to your band report. Typed{' '}
-                {countWords([t1, t2, t3].join(' '))} words so far across the three parts.
+                {t('ielts.mock.speaking.finish_warning', {
+                  n: countWords([t1, t2, t3].join(' ')),
+                })}
               </span>
             </p>
             <Button size="lg" onClick={finish} disabled={submitting}>
@@ -388,7 +381,7 @@ export default function SpeakingStage({
               ) : (
                 <Check className="size-4" />
               )}
-              Finish mock &amp; see my band
+              {t('ielts.mock.speaking.finish')}
             </Button>
           </div>
         </div>
@@ -398,6 +391,7 @@ export default function SpeakingStage({
 }
 
 function PartBlock({
+  t,
   badge,
   title,
   value,
@@ -405,6 +399,7 @@ function PartBlock({
   disabled,
   children,
 }: {
+  t: TFn
   badge: string
   title: string
   value: string
@@ -422,7 +417,7 @@ function PartBlock({
       <Textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Type a little of what you said (optional, but needed for a band)…"
+        placeholder={t('ielts.mock.speaking.part_placeholder')}
         rows={4}
         className="mt-2 resize-y"
         disabled={disabled}

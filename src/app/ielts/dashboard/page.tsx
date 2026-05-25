@@ -52,6 +52,39 @@ import {
 import { bandColour, bandBgColour, bandLabel, bandTier } from '@/lib/ielts/bands'
 import type { Lesson } from '@/lib/ielts/curriculum'
 import type { IeltsGoals } from '@/lib/ielts/store'
+import { useT } from '@/lib/i18n/use-t'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { IELTS_DASHBOARD_DICTIONARY } from '@/lib/i18n/dictionary-ielts-dashboard'
+
+// ─── Local i18n helper ────────────────────────────────────────────────────────
+// ielts.dashboard.* keys live in the dictionary-ielts-dashboard shard, which
+// isn't wired into the global lookup() chain — resolve them here against the
+// live locale, falling back to the shared useT() for cross-module ielts.* keys.
+// `vars` interpolates {token} placeholders so dynamic copy (bands, day counts,
+// lesson fractions, streak counts, gap steps) stays translatable as a whole
+// phrase. Modelled exactly on usePlanT() in src/app/ielts/plan/page.tsx.
+type Vars = Record<string, string | number>
+type TFn = (key: string, vars?: Vars) => string
+
+function interpolate(template: string, vars?: Vars): string {
+  if (!vars) return template
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  )
+}
+
+function useDashboardT(): TFn {
+  const tBase = useT()
+  const locale = useLocale()
+  return (key: string, vars?: Vars) => {
+    const entry = IELTS_DASHBOARD_DICTIONARY[key]
+    if (entry) {
+      const value = locale === 'ar' && entry.ar ? entry.ar : entry.en
+      return interpolate(value, vars)
+    }
+    return interpolate(tBase(key), vars)
+  }
+}
 
 // ─── My IELTS Dashboard — the signed-in learner home ───────────────────────
 // Mirrors the GCSE "Your Hub" (/revision) + /dashboard experience for the IELTS
@@ -147,6 +180,7 @@ function rankSkills(profile: IeltsProfile, target: Band | null): RankedSkill[] {
 }
 
 export default function IeltsDashboardPage() {
+  const t = useDashboardT()
   const [mounted, setMounted] = useState(false)
   const [profile, setProfile] = useState<IeltsProfile | null>(null)
   const [goals, setGoalsState] = useState<IeltsGoals>({})
@@ -230,7 +264,7 @@ export default function IeltsDashboardPage() {
   if (!mounted || !profile) {
     return (
       <main id="main-content" className="min-h-screen bg-background">
-        <DashboardHeader />
+        <DashboardHeader t={t} />
         <div className="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6">
           <div className="h-44 animate-pulse rounded-2xl border border-border bg-card" />
           <div className="grid gap-4 lg:grid-cols-3">
@@ -250,7 +284,7 @@ export default function IeltsDashboardPage() {
 
   return (
     <main id="main-content" className="min-h-screen bg-background">
-      <DashboardHeader />
+      <DashboardHeader t={t} />
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 pb-16 sm:px-6">
         {/* ── HERO: target · predicted · countdown · streak ─────────────── */}
@@ -262,17 +296,17 @@ export default function IeltsDashboardPage() {
             aria-hidden
             className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
           />
-          <PanelEyebrow>My IELTS Dashboard</PanelEyebrow>
+          <PanelEyebrow>{t('ielts.dashboard.hero.eyebrow')}</PanelEyebrow>
           <h1
             id="ielts-dashboard-heading"
             className="mt-2 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            {hasData ? 'Here’s where you stand today.' : 'Welcome — let’s build your IELTS plan.'}
+            {hasData
+              ? t('ielts.dashboard.hero.heading.has_data')
+              : t('ielts.dashboard.hero.heading.cold')}
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {hasData
-              ? 'Your predicted band, exam countdown and what to study next — all in one place. Keep your weakest skill moving and the overall band follows.'
-              : 'Take the placement test or set your goal and we’ll turn it into a focused, weakest-first study plan.'}
+            {hasData ? t('ielts.dashboard.hero.sub.has_data') : t('ielts.dashboard.hero.sub.cold')}
           </p>
 
           {/* Headline stat pills */}
@@ -283,9 +317,11 @@ export default function IeltsDashboardPage() {
               className="group inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/60 px-3.5 py-1.5 text-xs transition-colors hover:border-emerald-500/40 hover:bg-emerald-500/[0.05]"
             >
               <Target className="size-3.5 text-emerald-500" aria-hidden />
-              <span className="text-muted-foreground">Target</span>
+              <span className="text-muted-foreground">{t('ielts.dashboard.pill.target')}</span>
               <span className="font-semibold text-foreground">
-                {targetBand !== null ? `Band ${bandLabel(targetBand)}` : 'Set a goal'}
+                {targetBand !== null
+                  ? t('ielts.dashboard.pill.band_value', { band: bandLabel(targetBand) })
+                  : t('ielts.dashboard.pill.set_goal')}
               </span>
               {targetBand === null && (
                 <ArrowRight className="size-3 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
@@ -300,9 +336,11 @@ export default function IeltsDashboardPage() {
               )}
             >
               <TrendingUp className={cn('size-3.5', bandColour(overall))} aria-hidden />
-              <span className="text-muted-foreground">Predicted</span>
+              <span className="text-muted-foreground">{t('ielts.dashboard.pill.predicted')}</span>
               <span className={cn('font-semibold', bandColour(overall))}>
-                {overall !== null ? `Band ${bandLabel(overall)}` : 'Not yet predicted'}
+                {overall !== null
+                  ? t('ielts.dashboard.pill.band_value', { band: bandLabel(overall) })
+                  : t('ielts.dashboard.pill.not_predicted')}
               </span>
             </span>
 
@@ -312,8 +350,13 @@ export default function IeltsDashboardPage() {
                 <CalendarDays className="size-3.5 text-primary" aria-hidden />
                 <span className="font-semibold text-foreground">
                   {daysLeft === 0
-                    ? 'Exam day is here'
-                    : `${daysLeft} day${daysLeft === 1 ? '' : 's'} to your exam`}
+                    ? t('ielts.dashboard.pill.exam_today')
+                    : t(
+                        daysLeft === 1
+                          ? 'ielts.dashboard.pill.days_to_exam_one'
+                          : 'ielts.dashboard.pill.days_to_exam_other',
+                        { days: daysLeft },
+                      )}
                 </span>
               </span>
             ) : (
@@ -322,7 +365,9 @@ export default function IeltsDashboardPage() {
                 className="group inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/60 px-3.5 py-1.5 text-xs transition-colors hover:border-primary/40 hover:bg-primary/[0.05]"
               >
                 <CalendarDays className="size-3.5 text-primary" aria-hidden />
-                <span className="font-semibold text-foreground">Set your exam date</span>
+                <span className="font-semibold text-foreground">
+                  {t('ielts.dashboard.pill.set_exam_date')}
+                </span>
                 <ArrowRight className="size-3 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
               </Link>
             )}
@@ -334,7 +379,9 @@ export default function IeltsDashboardPage() {
                 aria-hidden
               />
               <span className="font-semibold text-foreground">
-                {streak > 0 ? `${streak}-day streak` : 'Start your streak today'}
+                {streak > 0
+                  ? t('ielts.dashboard.pill.streak', { streak })
+                  : t('ielts.dashboard.pill.start_streak')}
               </span>
             </span>
 
@@ -342,7 +389,7 @@ export default function IeltsDashboardPage() {
             {levelLabel && (
               <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/60 px-3.5 py-1.5 text-xs">
                 <BarChart3 className="size-3.5 text-cyan-500" aria-hidden />
-                <span className="text-muted-foreground">Level</span>
+                <span className="text-muted-foreground">{t('ielts.dashboard.pill.level')}</span>
                 <span className="font-semibold text-foreground">{levelLabel}</span>
               </span>
             )}
@@ -350,15 +397,14 @@ export default function IeltsDashboardPage() {
 
           {overall !== null && (
             <p className="mt-3 font-mono text-[11px] text-muted-foreground">
-              {bandTier(overall)} · predicted bands are estimates from your practice, not a
-              guarantee.
+              {t('ielts.dashboard.hero.estimate_note', { tier: bandTier(overall) })}
             </p>
           )}
         </section>
 
         {/* ── QUICK ACTIONS ─────────────────────────────────────────────── */}
         <section
-          aria-label="Quick actions"
+          aria-label={t('ielts.dashboard.qa.aria')}
           className="flex flex-col gap-2 sm:flex-row sm:flex-wrap"
         >
           <Button
@@ -367,7 +413,9 @@ export default function IeltsDashboardPage() {
             render={<Link href={nextLesson ? lessonHref(nextLesson) : '/ielts/learn'} />}
           >
             <Play className="size-4" aria-hidden />
-            {lessonsDone === 0 ? 'Start learning' : 'Continue learning'}
+            {lessonsDone === 0
+              ? t('ielts.dashboard.qa.start_learning')
+              : t('ielts.dashboard.qa.continue_learning')}
             <ArrowRight className="size-4" aria-hidden />
           </Button>
           <Button
@@ -377,7 +425,7 @@ export default function IeltsDashboardPage() {
             render={<Link href="/ielts/mock" />}
           >
             <ClipboardCheck className="size-4" aria-hidden />
-            Take a mock
+            {t('ielts.dashboard.qa.take_mock')}
           </Button>
           <Button
             variant="outline"
@@ -386,7 +434,7 @@ export default function IeltsDashboardPage() {
             render={<Link href="/ielts/planner" />}
           >
             <Map className="size-4" aria-hidden />
-            Study plan
+            {t('ielts.dashboard.qa.study_plan')}
           </Button>
           <Button
             variant="outline"
@@ -395,7 +443,7 @@ export default function IeltsDashboardPage() {
             render={<Link href={PRACTICE_HREF[recommendedSkill]} />}
           >
             <Dumbbell className="size-4" aria-hidden />
-            Practise a skill
+            {t('ielts.dashboard.qa.practise_skill')}
           </Button>
         </section>
 
@@ -418,23 +466,22 @@ export default function IeltsDashboardPage() {
                     id="ielts-empty-heading"
                     className="font-serif text-xl font-semibold text-foreground"
                   >
-                    No practice yet — start here
+                    {t('ielts.dashboard.empty.title')}
                   </h2>
                   <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                    Take the quick placement test to estimate your bands, or set your target band
-                    and exam date and we’ll build the schedule around it. Not sure where to begin?{' '}
-                    <span className="font-medium text-foreground">Writing</span> is the most common
-                    weak spot — see the recommendation below.
+                    {t('ielts.dashboard.empty.body_lead')}{' '}
+                    <span className="font-medium text-foreground">Writing</span>{' '}
+                    {t('ielts.dashboard.empty.body_tail')}
                   </p>
                 </div>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
                 <Button size="lg" className="gap-2" render={<Link href="/ielts/diagnostic" />}>
-                  Take the placement test
+                  {t('ielts.dashboard.empty.cta_test')}
                   <ArrowRight className="size-4" aria-hidden />
                 </Button>
                 <Button variant="outline" size="lg" render={<Link href="/ielts/planner" />}>
-                  Set goals
+                  {t('ielts.dashboard.empty.cta_goals')}
                 </Button>
               </div>
             </div>
@@ -442,19 +489,22 @@ export default function IeltsDashboardPage() {
         )}
 
         {/* ── 3-LENS GRID (In progress · Recommended next · Per-skill) ──── */}
-        <section aria-label="Your IELTS overview" className="grid gap-4 lg:grid-cols-3">
+        <section
+          aria-label={t('ielts.dashboard.overview.aria')}
+          className="grid gap-4 lg:grid-cols-3"
+        >
           {/* Lens 1 — In progress */}
           <GlassPanel accent="primary" className="p-5">
-            <PanelEyebrow>In progress</PanelEyebrow>
+            <PanelEyebrow>{t('ielts.dashboard.lens.inprogress.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <Clock className="size-4 text-primary" aria-hidden />
-              Pick up where you left off
+              {t('ielts.dashboard.lens.inprogress.title')}
             </h2>
 
             <ul className="mt-4 space-y-2">
               {inProgress.length === 0 && (
                 <li className="rounded-lg border border-dashed border-border/50 px-3 py-3 text-xs text-muted-foreground">
-                  Nothing in progress yet — start a lesson or take the placement test to begin.
+                  {t('ielts.dashboard.lens.inprogress.empty')}
                 </li>
               )}
               {inProgress.map((row) => {
@@ -484,9 +534,16 @@ export default function IeltsDashboardPage() {
                         </span>
                         <span className="block truncate text-[0.7rem] text-muted-foreground">
                           {row.lessonsTotal > 0
-                            ? `${row.lessonsDone} of ${row.lessonsTotal} lessons`
-                            : 'In progress'}
-                          {row.band !== null ? ` · Band ${bandLabel(row.band)}` : ''}
+                            ? t('ielts.dashboard.lens.inprogress.lessons_frac', {
+                                done: row.lessonsDone,
+                                total: row.lessonsTotal,
+                              })
+                            : t('ielts.dashboard.lens.inprogress.in_progress')}
+                          {row.band !== null
+                            ? t('ielts.dashboard.lens.inprogress.band_suffix', {
+                                band: bandLabel(row.band),
+                              })
+                            : ''}
                         </span>
                       </span>
                       <ArrowRight className="size-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
@@ -500,31 +557,35 @@ export default function IeltsDashboardPage() {
               href="/ielts/progress"
               className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-all hover:gap-1.5"
             >
-              View progress <ArrowRight className="size-3" aria-hidden />
+              {t('ielts.dashboard.lens.inprogress.view_progress')}{' '}
+              <ArrowRight className="size-3" aria-hidden />
             </Link>
           </GlassPanel>
 
           {/* Lens 2 — Recommended next (weakest skill, or Writing-first cold start) */}
           <GlassPanel accent="clay" className="p-5">
-            <PanelEyebrow>Recommended next</PanelEyebrow>
+            <PanelEyebrow>{t('ielts.dashboard.lens.recommended.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <Sparkles className="size-4 text-clay-600" aria-hidden />
-              {hasData ? 'Your highest-leverage focus' : 'A strong place to start'}
+              {hasData
+                ? t('ielts.dashboard.lens.recommended.title.has_data')
+                : t('ielts.dashboard.lens.recommended.title.cold')}
             </h2>
 
             <RecommendedNext
               skill={recommendedSkill}
               band={hasData ? (profile.skills[recommendedSkill]?.band ?? null) : null}
               isColdStart={!hasData}
+              t={t}
             />
           </GlassPanel>
 
           {/* Lens 3 — Per-skill band chips */}
           <GlassPanel accent="teal" className="p-5">
-            <PanelEyebrow>Your bands</PanelEyebrow>
+            <PanelEyebrow>{t('ielts.dashboard.lens.bands.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <BarChart3 className="size-4 text-teal-500" aria-hidden />
-              Band by skill
+              {t('ielts.dashboard.lens.bands.title')}
             </h2>
 
             <div className="mt-4 grid grid-cols-2 gap-2">
@@ -563,7 +624,8 @@ export default function IeltsDashboardPage() {
               href="/ielts/progress"
               className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-teal-600 transition-all hover:gap-1.5"
             >
-              Full progress <ArrowRight className="size-3" aria-hidden />
+              {t('ielts.dashboard.lens.bands.full_progress')}{' '}
+              <ArrowRight className="size-3" aria-hidden />
             </Link>
           </GlassPanel>
         </section>
@@ -576,20 +638,21 @@ export default function IeltsDashboardPage() {
               className="flex items-center gap-2 font-serif text-xl font-medium text-foreground"
             >
               <Flag className="size-5 text-muted-foreground" aria-hidden />
-              What to study next
+              {t('ielts.dashboard.study_next.heading')}
             </h2>
             <div className="flex items-center gap-3">
               <Link
                 href="/ielts/plan"
                 className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-all hover:gap-1.5"
               >
-                Full plan <ArrowUpRight className="size-3" aria-hidden />
+                {t('ielts.dashboard.study_next.full_plan')}{' '}
+                <ArrowUpRight className="size-3" aria-hidden />
               </Link>
               <Link
                 href="/ielts/planner"
                 className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-foreground"
               >
-                Dated schedule
+                {t('ielts.dashboard.study_next.dated_schedule')}
               </Link>
             </div>
           </div>
@@ -624,12 +687,12 @@ export default function IeltsDashboardPage() {
                             variant="default"
                             className="ml-2 align-middle text-[0.6rem] uppercase tracking-wider"
                           >
-                            Start here
+                            {t('ielts.dashboard.study_next.start_here')}
                           </Badge>
                         )}
                       </p>
                       <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                        {studyNextReason(row, targetBand)}
+                        {studyNextReason(row, targetBand, t)}
                       </p>
                     </div>
                   </div>
@@ -642,7 +705,7 @@ export default function IeltsDashboardPage() {
                         render={<Link href={lessonHref(firstLesson)} />}
                       >
                         <BookOpen className="size-3.5" aria-hidden />
-                        Learn
+                        {t('ielts.dashboard.study_next.learn')}
                       </Button>
                     )}
                     <Button
@@ -651,7 +714,7 @@ export default function IeltsDashboardPage() {
                       render={<Link href={PRACTICE_HREF[row.skill]} />}
                     >
                       <Dumbbell className="size-3.5" aria-hidden />
-                      Practise
+                      {t('ielts.dashboard.study_next.practise')}
                     </Button>
                   </div>
                 </li>
@@ -667,24 +730,26 @@ export default function IeltsDashboardPage() {
             className="mb-4 flex items-center gap-2 font-serif text-xl font-medium text-foreground"
           >
             <Clock className="size-5 text-muted-foreground" aria-hidden />
-            Recently studied
+            {t('ielts.dashboard.recent.heading')}
           </h2>
 
           {recentAttempts.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-border/60 bg-card/40 p-6 text-center">
               <p className="text-sm text-muted-foreground">
-                Your practice attempts will appear here. Try a{' '}
+                {t('ielts.dashboard.recent.empty_lead')}{' '}
                 <Link
                   href={PRACTICE_HREF[recommendedSkill]}
                   className="font-medium text-primary hover:underline"
                 >
-                  {SKILL_META[recommendedSkill].label.toLowerCase()} task
+                  {t('ielts.dashboard.recent.empty_skill_task', {
+                    skill: SKILL_META[recommendedSkill].label.toLowerCase(),
+                  })}
                 </Link>{' '}
-                or a{' '}
+                {t('ielts.dashboard.recent.empty_mid')}{' '}
                 <Link href="/ielts/mock" className="font-medium text-primary hover:underline">
-                  full mock
+                  {t('ielts.dashboard.recent.empty_mock')}
                 </Link>{' '}
-                to get started.
+                {t('ielts.dashboard.recent.empty_tail')}
               </p>
             </div>
           ) : (
@@ -718,7 +783,7 @@ export default function IeltsDashboardPage() {
                       variant="outline"
                       className={cn('shrink-0 font-mono', bandColour(a.band))}
                     >
-                      Band {bandLabel(a.band)}
+                      {t('ielts.dashboard.pill.band_value', { band: bandLabel(a.band) })}
                     </Badge>
                   </Link>
                 )
@@ -727,8 +792,12 @@ export default function IeltsDashboardPage() {
           )}
 
           <p className="mt-3 font-mono text-[11px] text-muted-foreground">
-            {lessonsDone} of {LESSON_COUNT} lessons complete · {attempts.length} practice{' '}
-            {attempts.length === 1 ? 'attempt' : 'attempts'} logged.
+            {t(
+              attempts.length === 1
+                ? 'ielts.dashboard.recent.footer_one'
+                : 'ielts.dashboard.recent.footer_other',
+              { done: lessonsDone, total: LESSON_COUNT, attempts: attempts.length },
+            )}
           </p>
         </section>
       </div>
@@ -742,10 +811,12 @@ function RecommendedNext({
   skill,
   band,
   isColdStart,
+  t,
 }: {
   skill: IeltsSkill
   band: Band | null
   isColdStart: boolean
+  t: TFn
 }) {
   const meta = SKILL_META[skill]
   const Icon = SKILL_ICON[skill]
@@ -769,27 +840,27 @@ function RecommendedNext({
             {meta.label}
             {!isColdStart && band !== null && (
               <span className={cn('ml-2 font-mono text-xs', bandColour(band))}>
-                Band {bandLabel(band)}
+                {t('ielts.dashboard.pill.band_value', { band: bandLabel(band) })}
               </span>
             )}
           </p>
           <p className="mt-1 text-[0.78rem] leading-relaxed text-muted-foreground">
-            {isColdStart ? (
-              <>
-                Writing is the lowest-scoring module for almost every nationality — and the lowest
-                of all for Gulf learners. It’s the highest-leverage place to begin
-                {section ? ` (the global mean is just Band ${section.meanBandAcademic}).` : '.'}
-              </>
-            ) : (
-              <>
-                This is your weakest skill right now, so it’s where focused practice lifts your
-                overall band fastest.
-              </>
-            )}
+            {isColdStart
+              ? t('ielts.dashboard.lens.recommended.body.cold', {
+                  section: section
+                    ? t('ielts.dashboard.lens.recommended.mean_tail', {
+                        band: section.meanBandAcademic,
+                      })
+                    : '.',
+                })
+              : t('ielts.dashboard.lens.recommended.body.weakest')}
           </p>
           {topMistake && (
             <p className="mt-2 text-[0.72rem] leading-relaxed text-muted-foreground">
-              <span className="font-medium text-foreground">Watch out for:</span> {topMistake}
+              <span className="font-medium text-foreground">
+                {t('ielts.dashboard.lens.recommended.watch_out')}
+              </span>{' '}
+              {topMistake}
             </p>
           )}
         </div>
@@ -804,12 +875,14 @@ function RecommendedNext({
             render={<Link href={`/ielts/learn/${skill}/${firstLesson.slug}`} />}
           >
             <BookOpen className="size-3.5" aria-hidden />
-            Learn the method
+            {t('ielts.dashboard.lens.recommended.learn_method')}
           </Button>
         )}
         <Button size="sm" className="gap-1.5" render={<Link href={PRACTICE_HREF[skill]} />}>
           <Dumbbell className="size-3.5" aria-hidden />
-          Practise {meta.label.toLowerCase()}
+          {t('ielts.dashboard.lens.recommended.practise_skill', {
+            skill: meta.label.toLowerCase(),
+          })}
         </Button>
       </div>
     </div>
@@ -818,25 +891,29 @@ function RecommendedNext({
 
 // ─── "Why this skill is next" microcopy for the prioritised list ────────────
 
-function studyNextReason(row: RankedSkill, target: Band | null): string {
+function studyNextReason(row: RankedSkill, target: Band | null, t: TFn): string {
   if (row.band === null) {
     return row.skill === HARDEST_SKILL
-      ? 'Not measured yet — and the toughest module for most learners, so it’s worth a baseline early.'
-      : 'Not measured yet — take a short practice set to get a baseline band.'
+      ? t('ielts.dashboard.reason.unknown_hardest')
+      : t('ielts.dashboard.reason.unknown_other')
   }
   if (target !== null && row.gap > 0) {
     const steps = Math.round(row.gap * 2) / 2
-    return `Band ${bandLabel(row.band)} now vs your Band ${bandLabel(target)} target — about ${steps} band${steps === 1 ? '' : 's'} to close.`
+    return t(steps === 1 ? 'ielts.dashboard.reason.gap_one' : 'ielts.dashboard.reason.gap_other', {
+      current: bandLabel(row.band),
+      target: bandLabel(target),
+      steps,
+    })
   }
   if (target !== null && row.gap === 0) {
-    return `Band ${bandLabel(row.band)} — at or above your target. Keep it warm with light practice.`
+    return t('ielts.dashboard.reason.met', { current: bandLabel(row.band) })
   }
-  return `Band ${bandLabel(row.band)} — keep building range and accuracy.`
+  return t('ielts.dashboard.reason.no_target', { current: bandLabel(row.band) })
 }
 
 // ─── Shared header (used by skeleton + populated states) ────────────────────
 
-function DashboardHeader() {
+function DashboardHeader({ t }: { t: TFn }) {
   return (
     <section className="border-b border-border bg-card">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
@@ -845,7 +922,7 @@ function DashboardHeader() {
           className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          IELTS hub
+          {t('ielts.dashboard.header.back')}
         </Link>
         <div className="flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
@@ -853,11 +930,9 @@ function DashboardHeader() {
           </span>
           <div>
             <p className="font-serif text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-              My IELTS Dashboard
+              {t('ielts.dashboard.header.title')}
             </p>
-            <p className="text-sm text-muted-foreground">
-              Your learner home for the IELTS readiness program.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('ielts.dashboard.header.subtitle')}</p>
           </div>
         </div>
       </div>

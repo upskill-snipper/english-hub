@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import {
   Stethoscope,
+  BookOpen,
+  BookMarked,
+  CalendarDays,
   Map,
   Dumbbell,
   Sparkles,
@@ -136,6 +139,44 @@ export default async function IeltsHubPage() {
     },
   ]
 
+  // "Your readiness program" — direct entry points to the new program surfaces
+  // (learn / dashboard / planner / mock / guide). Resolved up front like moreCards.
+  const programEyebrow = await t('ielts.hubx.program.eyebrow')
+  const programHeading = await t('ielts.hubx.program.heading')
+  const programBody = await t('ielts.hubx.program.body')
+  const programCards = [
+    {
+      href: '/ielts/learn',
+      icon: BookOpen,
+      title: await t('ielts.hubx.program.learn.title'),
+      body: await t('ielts.hubx.program.learn.body'),
+    },
+    {
+      href: '/ielts/dashboard',
+      icon: LayoutDashboard,
+      title: await t('ielts.hubx.program.dashboard.title'),
+      body: await t('ielts.hubx.program.dashboard.body'),
+    },
+    {
+      href: '/ielts/planner',
+      icon: CalendarDays,
+      title: await t('ielts.hubx.program.planner.title'),
+      body: await t('ielts.hubx.program.planner.body'),
+    },
+    {
+      href: '/ielts/mock',
+      icon: ClipboardCheck,
+      title: await t('ielts.hubx.program.mock.title'),
+      body: await t('ielts.hubx.program.mock.body'),
+    },
+    {
+      href: '/ielts/guide',
+      icon: BookMarked,
+      title: await t('ielts.hubx.program.guide.title'),
+      body: await t('ielts.hubx.program.guide.body'),
+    },
+  ]
+
   // Remaining standalone hub copy — section eyebrows, headings, bodies, the
   // secondary CTA, hero badge chips and inline link labels.
   const viewProgress = await t('ielts.hubx.view_progress')
@@ -214,6 +255,47 @@ export default async function IeltsHubPage() {
               >
                 {l}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 1b. The readiness program — direct entry points */}
+      <section aria-labelledby="program-heading" className="border-b border-border/60 bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-500">
+              {programEyebrow}
+            </p>
+            <h2
+              id="program-heading"
+              className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
+              {programHeading}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+              {programBody}
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {programCards.map(({ href, icon: Icon, title: cardTitle, body }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 shadow-soft transition-colors hover:border-primary/40"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">
+                  {cardTitle}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                  {exploreLabel}{' '}
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
