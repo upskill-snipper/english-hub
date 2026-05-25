@@ -13,6 +13,7 @@
 import { Mic, MicOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useDictation } from '@/lib/speech/use-dictation'
+import { useT } from '@/lib/i18n/use-t'
 
 export interface DictationButtonProps {
   /** Called with each finalised chunk of recognised text. */
@@ -29,10 +30,11 @@ export interface DictationButtonProps {
 export function DictationButton({
   onText,
   lang,
-  label = 'Dictate',
+  label,
   iconOnly = false,
   className,
 }: DictationButtonProps) {
+  const t = useT()
   const { supported, listening, interim, toggle } = useDictation({
     lang,
     onFinal: onText,
@@ -41,19 +43,16 @@ export function DictationButton({
   // Graceful degradation: no mic where the browser can't do speech recognition.
   if (!supported) return null
 
+  const idleLabel = label ?? t('speech.dictate')
+  const listeningLabel = t('speech.listening')
+
   return (
     <button
       type="button"
       onClick={toggle}
       aria-pressed={listening}
-      aria-label={listening ? 'Stop dictation' : `${label} — speak to type`}
-      title={
-        listening
-          ? interim
-            ? `Listening… ${interim}`
-            : 'Listening… (click to stop)'
-          : `${label} — speak to type`
-      }
+      aria-label={listening ? t('speech.stop') : idleLabel}
+      title={listening ? (interim ? `${listeningLabel} ${interim}` : listeningLabel) : idleLabel}
       className={cn(
         'inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors',
         listening
@@ -67,7 +66,7 @@ export function DictationButton({
       ) : (
         <Mic className="h-4 w-4" aria-hidden />
       )}
-      {!iconOnly && <span>{listening ? 'Listening…' : label}</span>}
+      {!iconOnly && <span>{listening ? listeningLabel : idleLabel}</span>}
     </button>
   )
 }

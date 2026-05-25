@@ -10,6 +10,7 @@ import { AOBreakdown, type AOScore } from '@/components/marking/AOBreakdown'
 import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedEssay'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { useT } from '@/lib/i18n/use-t'
+import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 
 /* ─── Types ────────────────────────────────────────────────── */
 
@@ -449,6 +450,16 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     ? result.nextStepsToNextGrade
     : FALLBACK_NEXT_STEPS
 
+  // Combined feedback text for free browser read-aloud (accessibility / EAL).
+  const feedbackToRead = [
+    result.summary ? `Summary. ${result.summary}` : '',
+    strengths.length ? `Strengths. ${strengths.join('. ')}.` : '',
+    improvements.length ? `Areas to improve. ${improvements.join('. ')}.` : '',
+    nextGradeAdvice.length ? `To reach the next grade. ${nextGradeAdvice.join('. ')}.` : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ────────────────────────────────────── */}
@@ -477,6 +488,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       {/* Accurate AI-result disclosure (EU AI Act Art 13/50) — this is a
           predicted, AI-generated, non-human-reviewed grade. */}
       <AiMarkingNotice className="mb-6" />
+
+      {/* Listen to feedback — free browser read-aloud (helpful for EAL learners). */}
+      <div className="mb-6 flex justify-end">
+        <ReadAloudButton text={feedbackToRead} label="Listen to feedback" lang="en-GB" />
+      </div>
 
       {/* ── Grade + AO side-by-side ───────────────────────── */}
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">

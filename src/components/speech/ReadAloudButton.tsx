@@ -10,6 +10,7 @@
 import { Volume2, Square } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useSpeak } from '@/lib/speech/use-speak'
+import { useT } from '@/lib/i18n/use-t'
 
 export interface ReadAloudButtonProps {
   /** The text to read aloud. */
@@ -25,21 +26,25 @@ export interface ReadAloudButtonProps {
 export function ReadAloudButton({
   text,
   lang,
-  label = 'Read aloud',
+  label,
   iconOnly = false,
   className,
 }: ReadAloudButtonProps) {
+  const t = useT()
   const { supported, speaking, speak, stop } = useSpeak()
 
   if (!supported || !text?.trim()) return null
+
+  const idleLabel = label ?? t('speech.read_aloud')
+  const stopLabel = t('speech.stop')
 
   return (
     <button
       type="button"
       onClick={() => (speaking ? stop() : speak(text, { lang }))}
       aria-pressed={speaking}
-      aria-label={speaking ? 'Stop reading' : label}
-      title={label}
+      aria-label={speaking ? stopLabel : idleLabel}
+      title={idleLabel}
       className={cn(
         'inline-flex items-center justify-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground',
         className,
@@ -50,7 +55,7 @@ export function ReadAloudButton({
       ) : (
         <Volume2 className="h-4 w-4" aria-hidden />
       )}
-      {!iconOnly && <span>{speaking ? 'Stop' : label}</span>}
+      {!iconOnly && <span>{speaking ? stopLabel : idleLabel}</span>}
     </button>
   )
 }
